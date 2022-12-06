@@ -52,7 +52,7 @@ sf::Vector2f Tile::getPos()
 	return m_tile.getPosition();
 }
 
-void Tile::setColour(sf::Color t_color)
+void Tile::setTileColour(sf::Color t_color)
 {
 	m_tile.setFillColor(t_color);
 	defaultColour = t_color;

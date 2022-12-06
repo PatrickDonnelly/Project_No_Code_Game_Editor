@@ -40,7 +40,7 @@ public:
 	Tile(sf::Font& t_font);
 	float m_width = 32.0f;
 	void setPosition(float m_x, float m_y);
-	void setColour(sf::Color t_color);
+	void setTileColour(sf::Color t_color);
 	void setBorderColour(sf::Color t_color);
 	void resetBorderColour();
 	sf::Color defaultColour;

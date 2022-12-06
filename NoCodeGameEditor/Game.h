@@ -5,6 +5,8 @@
 #include <array>
 #include "Tile.h"
 #include "Grid.h"
+#include "Button.h"
+#include "Label.h"
 
 class Game
 {
@@ -17,10 +19,18 @@ private:
 
 	Grid* m_grid{ nullptr };
 
+	void setUpFontAndText();
 	void processEvents();
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
 	void render();
+
+	sf::Font m_ArialFont;
+	sf::Text m_text;
+
+	const static int noOfButtons = 2;
+	Button m_buttons[noOfButtons];
+	Label* m_labels[noOfButtons];
 
 	sf::RenderWindow m_window;
 	bool m_exitGame; // control exiting game
