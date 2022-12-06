@@ -13,6 +13,9 @@ class Grid
 private:
 
 public:
+
+
+
 	bool roomValid = false;
 	bool changed = true;
 	int m_vectGridSize = 4;
