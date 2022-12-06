@@ -34,11 +34,14 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_vectGrid.at(i).at(j)->cellType == "Floor")
 				{
 					m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(188, 143, 143));
-					CheckValidityOfWalls(i, j);
+					m_vectGrid.at(i).at(j)->cellType = "Wall";
+					//CheckValidityOfWalls(i, j);
 				}
 				else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
 				{
 					m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(200, 200, 220));
+					m_vectGrid.at(i).at(j)->cellType = "Floor";
+
 				}
 			}
 			else
@@ -49,45 +52,57 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 	}
 }
 
-void Grid::CheckValidityOfWalls(int t_x, int t_y)
+void Grid::CheckValidityOfWalls(int t_row, int t_col)
 {
-	//for (int i = 0; i < m_vectGridSize; ++i)
-	//{
-	//	for (int j = 0; j < m_vectGridSize; ++j)
-	//	{
-	if (m_vectGrid.at(t_x).at(t_y)->cellType != "Wall")
+	sf::Vector2i up{ t_row, t_col - 1 };
+	sf::Vector2i down{ t_row, t_col + 1 };
+	sf::Vector2i right{ t_row + 1, t_col };
+	sf::Vector2i left{ t_row - 1, t_col };
+
+	counter = 0;
+	if (up.y >= 0)
 	{
-		m_vectGrid.at(t_x).at(t_y)->cellType = "Wall";
+		if (m_vectGrid.at(up.x).at(up.y)->cellType == "Wall")
+		{
+			
+			counter = counter + 1;
+			std::cout << counter << std::endl;
+		}
 	}
-			counter = 0;
-			int offsetx[] = { 0,1,0,-1 };
-			int offsety[] = { -1,0,1,0 };
-			for (int k = 0; k < 4; k++)
-			{
-				int nx = t_x + offsetx[k];
-				int ny = t_y + offsety[k];
-				if (nx < 0 || nx >4 || ny < 0 || ny >4)
-				{
-					continue;
-				}
-				if (m_vectGrid.at(ny).at(nx)->cellType == "Wall")
-				{
-					counter = counter + 1;;
-					std::cout << counter << std::endl;
-				}
-				if (counter == 2)
-				{
-					m_vectGrid.at(t_y).at(t_x)->cellType = "Valid Wall";
-				}
-				else
-				{
-					m_vectGrid.at(t_y).at(t_x)->cellType = "Not Valid";
-				}
-				
-			}
-			std::cout << m_vectGrid.at(t_y).at(t_x)->cellType << std::endl;
-	//	}
-	//}
+	if (down.y <m_vectGrid.size())
+	{
+		if (m_vectGrid.at(down.x).at(down.y)->cellType == "Wall")
+		{
+			counter = counter + 1;
+			std::cout << counter << std::endl;
+		}
+	}
+	if (left.x >= 0)
+	{
+		if (m_vectGrid.at(left.x).at(left.y)->cellType == "Wall")
+		{
+			counter = counter + 1;
+			std::cout << counter << std::endl;
+		}
+	}
+	if (right.x < m_vectGrid.size())
+	{
+		if (m_vectGrid.at(right.x).at(right.y)->cellType == "Wall")
+		{
+			counter = counter + 1;
+			std::cout << counter << std::endl;
+		}
+	}
+	if (counter == 2)
+	{
+		m_vectGrid.at(t_row).at(t_col)->setColour(sf::Color::Blue);
+		m_vectGrid.at(t_row).at(t_col)->validInvalid = "ValidWall";
+	}
+	else
+	{
+		m_vectGrid.at(t_row).at(t_col)->validInvalid = "NotValid";
+		m_vectGrid.at(t_row).at(t_col)->setColour(sf::Color::Red);
+	}
 }
 
 void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
@@ -110,8 +125,35 @@ void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 		}
 	}
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	{
+		roomValid = true;
+		for (int i = 0; i < m_vectGridSize; ++i)
+		{
+			for (int j = 0; j < m_vectGridSize; ++j)
+			{
+				if (m_vectGrid.at(i).at(j)->cellType == "Wall")
+				{
+					CheckValidityOfWalls(i, j);
+				}
+				if (m_vectGrid.at(i).at(j)->validInvalid == "NotValid")
+				{
+					roomValid = false;
+					std::cout << "This room is not valid" << std::endl;
+				}
+			}
+		}
+		if (roomValid)
+		{
+			std::cout << "This room is valid" << std::endl;
+		}
+		else
+		{
+			std::cout << "This room is invalid" << std::endl;
+
+		}
+	}
 	placeRemove( m_window);
-	
 }
 
 void Grid::render(sf::RenderWindow* t_window)

@@ -15,10 +15,12 @@ public:
 	bool m_bottom = false;
 	bool m_left = false;
 	bool m_right = false;
+	bool checked = false;
 
 	std::string cellType = " ";
 	std::string cornerwall = "CornerWall";
 	std::string sidewall = "SideWall";
+	std::string validInvalid = " ";
 
 	sf::Text m_text;
 	sf::Vector2i rowColumn{};
