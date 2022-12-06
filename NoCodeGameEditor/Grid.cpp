@@ -28,14 +28,13 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)
 		{
-			if (m_vectGrid.at(i).at(j)->getTile().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
+			if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 			{
 				m_vectGrid.at(i).at(j)->setBorderColour(sf::Color::Red);
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_vectGrid.at(i).at(j)->cellType == "Floor")
 				{
 					m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(188, 143, 143));
 					m_vectGrid.at(i).at(j)->cellType = "Wall";
-					//CheckValidityOfWalls(i, j);
 				}
 				else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
 				{
@@ -146,6 +145,20 @@ void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 		if (roomValid)
 		{
 			std::cout << "This room is valid" << std::endl;
+			for (int i = 0; i < m_vectGridSize; ++i)
+			{
+				for (int j = 0; j < m_vectGridSize; ++j)
+				{
+					if (m_vectGrid.at(i).at(j)->cellType == "Wall")
+					{
+						m_vectGrid.at(i).at(j)->setWallSprite();
+					}
+					else if (m_vectGrid.at(i).at(j)->cellType == "Floor")
+					{
+						m_vectGrid.at(i).at(j)->setFloorSprite();
+					}
+				}
+			}
 		}
 		else
 		{
@@ -164,6 +177,7 @@ void Grid::render(sf::RenderWindow* t_window)
 	{
 		for (int j = 0; j < m_vectGridSize; j++)
 		{
+			t_window->draw(m_vectGrid.at(i).at(j)->getTileBorder());
 			t_window->draw(m_vectGrid.at(i).at(j)->getTile());
 		}
 	}
@@ -189,7 +203,7 @@ void Grid::regenerateGrid(int t_changeInSize)
 		{
 			m_vectGrid.at(i).at(j)->setPosition(m_vectGrid.at(i).at(j)->m_width * i + 960 - (m_vectGridSize * 16), m_vectGrid.at(i).at(j)->m_width * j + 540 - (m_vectGridSize * 16));
 			m_vectGrid.at(i).at(j)->rowColumn = sf::Vector2i{ i,j };
-			m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(200, 200, 220));
+			m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(200, 200, 220,0));
 			m_vectGrid.at(i).at(j)->cellType = "Floor";
 		}
 	}

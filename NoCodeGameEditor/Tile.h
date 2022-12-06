@@ -17,6 +17,14 @@ public:
 	bool m_right = false;
 	bool checked = false;
 
+	sf::Sprite m_cellSprite;
+	sf::Texture m_floorTexture;
+	sf::Texture m_wallTexture;
+
+	void setWallSprite();
+	void setFloorSprite();
+	void setUpSprites();
+
 	std::string cellType = " ";
 	std::string cornerwall = "CornerWall";
 	std::string sidewall = "SideWall";
@@ -36,6 +44,7 @@ public:
 	void setBorderColour(sf::Color t_color);
 	void resetBorderColour();
 	sf::Color defaultColour;
-	sf::RectangleShape getTile() { return m_tile; }
+	sf::RectangleShape getTileBorder() { return m_tile; }
+	sf::Sprite getTile() { return m_cellSprite; }
 };
 #endif // !TILE_HPP
