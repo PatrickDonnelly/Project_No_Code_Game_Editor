@@ -16,7 +16,8 @@ class Grid
 private:
 
 public:
-
+	sf::Vector2f m_firstTilePosition{};
+	bool m_playerSet = false;
 	const int minimumWalls = 15;
 	int wallsPlaced = 0;
 	bool firstFloorSet = false;

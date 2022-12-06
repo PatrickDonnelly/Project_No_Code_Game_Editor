@@ -7,6 +7,7 @@ Game::Game() :
 {
 	setUpFontAndText();
 	m_grid = new Grid();
+	m_player = new Player();
 	for (int i = 0; i < noOfButtons; i++)
 	{
 		m_buttons[i] = Button();
@@ -111,7 +112,13 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+	if (m_grid->firstFloorSet && m_grid->m_playerSet == false)
+	{
+		m_grid->m_playerSet = true;
+		m_player->getSprite()->setPosition(m_grid->m_firstTilePosition.x+16, m_grid->m_firstTilePosition.y + 16);
+	}
 	m_grid->update(t_deltaTime, m_window);
+	m_player->update(t_deltaTime, m_window);
 }
 
 void Game::render()
@@ -123,5 +130,6 @@ void Game::render()
 		m_window.draw(m_buttons[i].getButtonSprite());
 		m_labels[i]->render(&m_window);
 	}
+	m_player->render(m_window);
 	m_window.display();
 }

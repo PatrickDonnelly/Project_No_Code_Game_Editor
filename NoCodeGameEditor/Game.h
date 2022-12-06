@@ -7,6 +7,7 @@
 #include "Grid.h"
 #include "Button.h"
 #include "Label.h"
+#include "Player.h"
 
 class Game
 {
@@ -18,6 +19,7 @@ public:
 private:
 
 	Grid* m_grid{ nullptr };
+	Player* m_player;
 
 	void setUpFontAndText();
 	void processEvents();

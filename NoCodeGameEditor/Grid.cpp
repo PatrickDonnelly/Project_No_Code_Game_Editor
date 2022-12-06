@@ -69,6 +69,7 @@ void Grid::GenerateRoomSprites()
 				{
 					if (m_vectGrid.at(right.x).at(j)->cellType != "Wall" && firstFloorSet == false)
 					{
+						m_firstTilePosition = m_vectGrid.at(right.x).at(j)->getPos();
 						m_vectGrid.at(right.x).at(j)->cellType = "Floor";
 						m_vectGrid.at(right.x).at(j)->setFloorSprite();
 						m_vectGrid.at(right.x).at(j)->m_checked = true;
@@ -257,6 +258,7 @@ void Grid::regenerateGrid()
 {
 	m_vectGrid.clear();
 	wallsPlaced = 0;
+	m_playerSet = false;
 	firstFloorSet = false;
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
