@@ -21,7 +21,8 @@ public:
 	void regenerateGrid(int t_changeInSize);
 	sf::Text m_helpText;
 	sf::RectangleShape m_background;
-
+	void CheckValidityOfWalls(int t_x, int t_y);
+	int counter = 0;
 	Grid();
 	void render(sf::RenderWindow* t_window);
 	void update(sf::Time t_deltaTime, sf::RenderWindow& m_window);

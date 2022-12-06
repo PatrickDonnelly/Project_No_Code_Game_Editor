@@ -11,10 +11,20 @@ private:
 	sf::RectangleShape m_tile;
 
 public:
+	bool m_top = false;
+	bool m_bottom = false;
+	bool m_left = false;
+	bool m_right = false;
+
+	std::string cellType = " ";
+	std::string cornerwall = "CornerWall";
+	std::string sidewall = "SideWall";
+
 	sf::Text m_text;
 	sf::Vector2i rowColumn{};
 	sf::Vector2f m_vector{};
 	sf::Vector2f getPos();
+
 
 	void setUpText(sf::Font& t_font);
 	Tile(sf::Font& t_font);
