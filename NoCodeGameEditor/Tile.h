@@ -15,7 +15,7 @@ public:
 	bool m_bottom = false;
 	bool m_left = false;
 	bool m_right = false;
-	bool checked = false;
+	bool m_checked = false;
 
 	sf::Sprite m_cellSprite;
 	sf::Texture m_floorTexture;
@@ -25,7 +25,7 @@ public:
 	void setFloorSprite();
 	void setUpSprites();
 
-	std::string cellType = " ";
+	std::string cellType = "Empty";
 	std::string cornerwall = "CornerWall";
 	std::string sidewall = "SideWall";
 	std::string validInvalid = " ";

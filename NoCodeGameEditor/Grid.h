@@ -7,6 +7,9 @@
 #include <iostream>
 #include <vector>
 #include <stdio.h>
+#include <list>
+#include <queue>
+
 
 class Grid
 {
@@ -15,7 +18,7 @@ private:
 public:
 
 
-
+	bool firstFloorSet = false;
 	bool roomValid = false;
 	bool changed = true;
 	int m_vectGridSize = 4;
@@ -27,6 +30,7 @@ public:
 	sf::RectangleShape m_background;
 	void CheckValidityOfWalls(int t_x, int t_y);
 	int counter = 0;
+	std::queue<Tile*> m_tileQueue{};
 	Grid();
 	void render(sf::RenderWindow* t_window);
 	void update(sf::Time t_deltaTime, sf::RenderWindow& m_window);

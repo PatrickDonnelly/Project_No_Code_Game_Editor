@@ -31,15 +31,15 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 			if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 			{
 				m_vectGrid.at(i).at(j)->setBorderColour(sf::Color::Red);
-				if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_vectGrid.at(i).at(j)->cellType == "Floor")
+				if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_vectGrid.at(i).at(j)->cellType == "Empty")
 				{
 					m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(188, 143, 143));
 					m_vectGrid.at(i).at(j)->cellType = "Wall";
 				}
 				else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
 				{
-					m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(200, 200, 220));
-					m_vectGrid.at(i).at(j)->cellType = "Floor";
+					m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(0,0,0,0));
+					m_vectGrid.at(i).at(j)->cellType = "Empty";
 
 				}
 			}
@@ -144,20 +144,60 @@ void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 		}
 		if (roomValid)
 		{
+
 			std::cout << "This room is valid" << std::endl;
 			for (int i = 0; i < m_vectGridSize; ++i)
 			{
 				for (int j = 0; j < m_vectGridSize; ++j)
 				{
+					sf::Vector2i right{ i + 1, j };
+					sf::Vector2i down{ i, j + 1 };
+					sf::Vector2i left{ i - 1, j };
+					sf::Vector2i up{ i, j - 1 };
 					if (m_vectGrid.at(i).at(j)->cellType == "Wall")
 					{
 						m_vectGrid.at(i).at(j)->setWallSprite();
-					}
-					else if (m_vectGrid.at(i).at(j)->cellType == "Floor")
-					{
-						m_vectGrid.at(i).at(j)->setFloorSprite();
+						if (right.x < m_vectGrid.size())
+						{
+							if (m_vectGrid.at(right.x).at(j)->cellType != "Wall" && firstFloorSet == false)
+							{
+								m_vectGrid.at(right.x).at(j)->cellType = "Floor";
+								m_vectGrid.at(right.x).at(j)->setFloorSprite();
+								m_vectGrid.at(right.x).at(j)->m_checked = true;
+								firstFloorSet = true;
+								m_tileQueue.push(m_vectGrid.at(right.x).at(j));
+							}
+						}
 					}
 				}
+			}
+
+			while (!m_tileQueue.empty())
+			{
+
+				for (int direction = 0; direction < 9; direction++)
+				{
+					if (direction == 4)
+					{
+						continue; // stops starting point being assigned a cost
+					}
+
+					int l_row = m_tileQueue.front()->rowColumn.x + (direction / 3) - 1;
+					int l_col = m_tileQueue.front()->rowColumn.y + (direction % 3) - 1;
+
+					if (l_row >= 0 && l_row < 50 && l_col >= 0 && l_col < 50 && m_vectGrid.at(l_row).at(l_col)->m_checked == false)
+					{
+						if (m_vectGrid.at(l_row).at(l_col)->cellType != "Empty")
+						{
+							continue; // stops endless loop
+						}
+						m_vectGrid.at(l_row).at(l_col)->m_checked = true;
+						m_vectGrid.at(l_row).at(l_col)->cellType = "Floor";
+						m_vectGrid.at(l_row).at(l_col)->setFloorSprite();
+						m_tileQueue.push(m_vectGrid.at(l_row).at(l_col));
+					}
+				}
+				m_tileQueue.pop();
 			}
 		}
 		else
@@ -188,6 +228,7 @@ void Grid::regenerateGrid(int t_changeInSize)
 {
 	m_vectGrid.clear();
 	m_vectGridSize = m_vectGridSize + (t_changeInSize);
+	firstFloorSet = false;
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
 		std::vector<Tile*> row;
@@ -204,7 +245,7 @@ void Grid::regenerateGrid(int t_changeInSize)
 			m_vectGrid.at(i).at(j)->setPosition(m_vectGrid.at(i).at(j)->m_width * i + 960 - (m_vectGridSize * 16), m_vectGrid.at(i).at(j)->m_width * j + 540 - (m_vectGridSize * 16));
 			m_vectGrid.at(i).at(j)->rowColumn = sf::Vector2i{ i,j };
 			m_vectGrid.at(i).at(j)->setColour(sf::Color::Color(200, 200, 220,0));
-			m_vectGrid.at(i).at(j)->cellType = "Floor";
+			m_vectGrid.at(i).at(j)->cellType = "Empty";
 		}
 	}
 }
