@@ -4,6 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Tile.h"
+#include "Colliders.h"
 #include <iostream>
 #include <vector>
 #include <stdio.h>
@@ -11,11 +12,18 @@
 #include <queue>
 
 
+
 class Grid
 {
 private:
 
 public:
+
+	sf::Vector2f m_colStartPos{};
+	sf::Vector2f m_colEndPos{};
+	int noOfWallColliders = 0;
+
+	std::vector<Colliders*> m_vectColliders;
 	sf::Vector2f m_firstTilePosition{};
 	bool m_playerSet = false;
 	const int minimumWalls = 15;
@@ -40,6 +48,7 @@ public:
 	void GenerateRoomSprites();
 	void checkRoomValidity();
 	void clearUnusedCells();
+	void setUpWallColliders();
 };
 #endif // !GRID_HPP
 

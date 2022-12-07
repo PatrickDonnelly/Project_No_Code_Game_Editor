@@ -6,6 +6,7 @@ Grid::Grid()
 	m_background.setSize(sf::Vector2f{ 250.0f,1080.0f });
 	m_background.setPosition(1670, 0);
 	m_background.setFillColor(sf::Color::Color(40,40,40,255));
+	m_vectColliders.push_back(new Colliders());
 	regenerateGrid();
 }
 
@@ -108,8 +109,40 @@ void Grid::GenerateRoomSprites()
 		}
 		m_tileQueue.pop();
 	}
-
+	setUpWallColliders();
 	clearUnusedCells();
+}
+
+void Grid::setUpWallColliders()
+{
+
+	for (int i = 0; i < m_vectGridSize; ++i)
+	{
+		for (int j = 0; j < m_vectGridSize; ++j)
+		{
+
+			// and wall found
+			if (m_vectGrid.at(i).at(j)->cellType == "Wall" && m_vectGrid.at(i).at(j)->m_colliderCheck == false && i < m_vectGridSize - 1)
+			{
+				m_vectGrid.at(i).at(j)->m_colliderCheck = true;
+				m_colStartPos = m_vectGrid.at(i).at(j)->getPos();
+			}
+			else if (i > 0 (m_vectGrid.at(i).at(j)->cellType == "Empty" || m_vectGrid.at(i).at(j)->cellType == "Floor"))
+			{
+				m_colEndPos = m_vectGrid.at(i-1).at(j)->getPos();
+
+				m_vectColliders.at(noOfWallColliders)->setUpHorizontalWallBounds(m_colStartPos.x,m_colEndPos.x);
+				m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.setPosition(m_colStartPos);
+				if (m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.getSize().x > 32)
+				{
+					m_vectColliders.push_back(new Colliders());
+					noOfWallColliders++;
+				}
+				std::cout << noOfWallColliders << std::endl;
+				continue;
+			}
+		}
+	}
 }
 
 void Grid::clearUnusedCells()
@@ -141,18 +174,18 @@ void Grid::checkRoomValidity()
 			if (m_vectGrid.at(i).at(j)->validInvalid == "NotValid")
 			{
 				roomValid = false;
-				std::cout << "This room is not valid" << std::endl;
+				//std::cout << "This room is not valid" << std::endl;
 			}
 		}
 	}
 	if (roomValid && wallsPlaced >= minimumWalls)
 	{
-		std::cout << "This room is valid" << std::endl;
+		//std::cout << "This room is valid" << std::endl;
 		GenerateRoomSprites();
 	}
 	else
 	{
-		std::cout << "This room is invalid" << std::endl;
+		//std::cout << "This room is invalid" << std::endl;
 		for (int i = 0; i < m_vectGridSize; ++i)
 		{
 			for (int j = 0; j < m_vectGridSize; ++j)
@@ -178,7 +211,7 @@ void Grid::CheckValidityOfWalls(int t_row, int t_col)
 		{
 			
 			counter = counter + 1;
-			std::cout << counter << std::endl;
+			//std::cout << counter << std::endl;
 		}
 	}
 	if (down.y <m_vectGrid.size())
@@ -186,7 +219,7 @@ void Grid::CheckValidityOfWalls(int t_row, int t_col)
 		if (m_vectGrid.at(down.x).at(down.y)->cellType == "Wall")
 		{
 			counter = counter + 1;
-			std::cout << counter << std::endl;
+			//std::cout << counter << std::endl;
 		}
 	}
 	if (left.x >= 0)
@@ -194,7 +227,7 @@ void Grid::CheckValidityOfWalls(int t_row, int t_col)
 		if (m_vectGrid.at(left.x).at(left.y)->cellType == "Wall")
 		{
 			counter = counter + 1;
-			std::cout << counter << std::endl;
+			//std::cout << counter << std::endl;
 		}
 	}
 	if (right.x < m_vectGrid.size())
@@ -202,7 +235,7 @@ void Grid::CheckValidityOfWalls(int t_row, int t_col)
 		if (m_vectGrid.at(right.x).at(right.y)->cellType == "Wall")
 		{
 			counter = counter + 1;
-			std::cout << counter << std::endl;
+			//std::cout << counter << std::endl;
 		}
 	}
 	if (counter == 2)
@@ -251,11 +284,16 @@ void Grid::render(sf::RenderWindow* t_window)
 			t_window->draw(m_vectGrid.at(i).at(j)->getTile());
 		}
 	}
+	for (int i = 0; i < m_vectColliders.size(); i++)
+	{
+		m_vectColliders.at(i)->render(t_window);
+	}
 }
 
 
 void Grid::regenerateGrid()
 {
+	noOfWallColliders = 0;
 	m_vectGrid.clear();
 	wallsPlaced = 0;
 	m_playerSet = false;
@@ -278,6 +316,7 @@ void Grid::regenerateGrid()
 			m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(200, 200, 220,0));
 			m_vectGrid.at(i).at(j)->cellType = "Empty";
 			m_vectGrid.at(i).at(j)->m_checked = false;
+			m_vectGrid.at(i).at(j)->m_colliderCheck = false;
 		}
 	}
 }
