@@ -116,6 +116,7 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_grid->m_playerSet = true;
 		m_player->getSprite()->setPosition(m_grid->m_firstTilePosition.x+16, m_grid->m_firstTilePosition.y + 16);
+		std::cout << m_player->getSprite()->getPosition().x << std::endl;
 	}
 	m_grid->update(t_deltaTime, m_window);
 	m_player->update(t_deltaTime, m_window);

@@ -22,6 +22,8 @@ public:
 	sf::Vector2f m_colStartPos{};
 	sf::Vector2f m_colEndPos{};
 	int noOfWallColliders = 0;
+	bool startFound = false;
+	bool roomGenerated = false;
 
 	std::vector<Colliders*> m_vectColliders;
 	sf::Vector2f m_firstTilePosition{};

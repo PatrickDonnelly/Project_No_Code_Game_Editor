@@ -115,31 +115,81 @@ void Grid::GenerateRoomSprites()
 
 void Grid::setUpWallColliders()
 {
-
-	for (int i = 0; i < m_vectGridSize; ++i)
+	for (int j = 0; j < m_vectGridSize; j++)
 	{
-		for (int j = 0; j < m_vectGridSize; ++j)
+		for (int i = 0; i < m_vectGridSize; i++)
 		{
 
 			// and wall found
-			if (m_vectGrid.at(i).at(j)->cellType == "Wall" && m_vectGrid.at(i).at(j)->m_colliderCheck == false && i < m_vectGridSize - 1)
+			if (i < m_vectGridSize -1 && m_vectGrid.at(i).at(j)->cellType == "Wall" && startFound == false)
 			{
-				m_vectGrid.at(i).at(j)->m_colliderCheck = true;
-				m_colStartPos = m_vectGrid.at(i).at(j)->getPos();
-			}
-			else if (i > 0 (m_vectGrid.at(i).at(j)->cellType == "Empty" || m_vectGrid.at(i).at(j)->cellType == "Floor"))
-			{
-				m_colEndPos = m_vectGrid.at(i-1).at(j)->getPos();
-
-				m_vectColliders.at(noOfWallColliders)->setUpHorizontalWallBounds(m_colStartPos.x,m_colEndPos.x);
-				m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.setPosition(m_colStartPos);
-				if (m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.getSize().x > 32)
+				if (m_vectGrid.at(i + 1).at(j)->cellType == "Wall")
 				{
-					m_vectColliders.push_back(new Colliders());
-					noOfWallColliders++;
+					startFound = true;
+					m_colStartPos = m_vectGrid.at(i).at(j)->getPos();
+					std::cout << "here" << std::endl;
 				}
-				std::cout << noOfWallColliders << std::endl;
 				continue;
+			}
+			else if (startFound == true)
+			{
+				if (i < m_vectGridSize) // goes to end of grid cell 4
+				{
+					if (m_vectGrid.at(i).at(j)->cellType == "Empty" || m_vectGrid.at(i).at(j)->cellType == "Floor" || i == m_vectGridSize - 1)
+					{
+						startFound = false;
+						m_colEndPos = m_vectGrid.at(i).at(j)->getPos();
+
+
+						m_vectColliders.push_back(new Colliders());
+						m_vectColliders.at(noOfWallColliders)->setUpHorizontalWallBounds(m_colStartPos.x, m_colEndPos.x);
+						m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.setPosition(m_colStartPos);
+						noOfWallColliders++;
+
+						std::cout << noOfWallColliders << std::endl;
+						continue;
+					}
+				}
+			}
+		}
+	}
+	for (int i = 0; i < m_vectGridSize; i++)
+	{
+		for (int j = 0; j < m_vectGridSize; j++)
+		{
+
+
+			// and wall found
+			if (j < m_vectGridSize - 1 && m_vectGrid.at(i).at(j)->cellType == "Wall" && startFound == false)
+			{
+				if (m_vectGrid.at(i).at(j+1)->cellType == "Wall")
+				{
+					startFound = true;
+					m_colStartPos = m_vectGrid.at(i).at(j)->getPos();
+					std::cout << "here" << std::endl;
+				}
+				continue;
+			}
+			else if (startFound == true)
+			{
+				if (j < m_vectGridSize) // goes to end of grid cell 4
+				{
+					if (m_vectGrid.at(i).at(j)->cellType == "Empty" || m_vectGrid.at(i).at(j)->cellType == "Floor" || j == m_vectGridSize - 1)
+					{
+						startFound = false;
+						m_colEndPos = m_vectGrid.at(i).at(j)->getPos();
+						int loc = m_colEndPos.y - m_colStartPos.y;
+
+							m_vectColliders.push_back(new Colliders());
+							m_vectColliders.at(noOfWallColliders)->setUpVerticalWallBounds(m_colStartPos.y, m_colEndPos.y);
+							m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.setPosition(m_colStartPos);
+							noOfWallColliders++;
+						
+						std::cout << noOfWallColliders << std::endl;
+
+						continue;
+					}
+				}
 			}
 		}
 	}
@@ -178,8 +228,9 @@ void Grid::checkRoomValidity()
 			}
 		}
 	}
-	if (roomValid && wallsPlaced >= minimumWalls)
+	if (roomValid && wallsPlaced >= minimumWalls && roomGenerated == false)
 	{
+		roomGenerated = true;
 		//std::cout << "This room is valid" << std::endl;
 		GenerateRoomSprites();
 	}
@@ -295,9 +346,11 @@ void Grid::regenerateGrid()
 {
 	noOfWallColliders = 0;
 	m_vectGrid.clear();
+	m_vectColliders.clear();
 	wallsPlaced = 0;
 	m_playerSet = false;
 	firstFloorSet = false;
+	roomGenerated = false;
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
 		std::vector<Tile*> row;

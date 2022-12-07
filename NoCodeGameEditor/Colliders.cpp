@@ -29,23 +29,15 @@ void Colliders::init()
 void Colliders::setUpHorizontalWallBounds(float m_startPos, float m_endPos)
 {
 	// horizontal
-	float l_size = m_startPos - m_endPos;
-	if (l_size < 0)
-	{
-		l_size = l_size * -1;
-	}
+	float l_size = m_endPos - m_startPos;
 	m_wallColliderBounds.setSize(sf::Vector2f(l_size, 32.0f));
 }
 
 void Colliders::setUpVerticalWallBounds(float m_startPos, float m_endPos)
 {
 	// horizontal
-	float l_size = m_startPos - m_endPos;
-	if (l_size < 0)
-	{
-		l_size = l_size * -1;
-	}
-	m_wallColliderBounds.setSize(sf::Vector2f(l_size, 32.0f));
+	float l_size = m_endPos - m_startPos;
+	m_wallColliderBounds.setSize(sf::Vector2f(32.0f, l_size));
 }
 
 void Colliders::render(sf::RenderWindow* t_window)
