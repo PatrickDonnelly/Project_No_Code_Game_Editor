@@ -45,10 +45,10 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && m_vectGrid.at(i).at(j)->cellType == "Floor")
 				{
-					if (noOfObstacles < 5)
+					if (m_statues.size() < 5)
 					{
 						m_statues.push_back(new Obstacle);
-						m_vectGrid.at(i).at(j)->cellType = "FloorObstacle";
+						//m_vectGrid.at(i).at(j)->cellType = "FloorObstacle";
 						m_statues.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
 						noOfObstacles++;
 					}
@@ -332,7 +332,7 @@ void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 		}
 	}
 	placeRemove( m_window);
-	for (int i = 0; i < noOfObstacles; i++)
+	for (int i = 0; i < m_statues.size(); i++)
 	{
 		m_statues.at(i)->getSprite()->setPosition(m_statues.at(i)->getBounds()->getPosition());
 	}
@@ -354,7 +354,7 @@ void Grid::render(sf::RenderWindow* t_window)
 	{
 		m_vectColliders.at(i)->render(t_window);
 	}
-	for (int i = 0; i < noOfObstacles; i++)
+	for (int i = 0; i < m_statues.size(); i++)
 	{
 		t_window->draw(*m_statues.at(i)->getSprite());
 		t_window->draw(*m_statues.at(i)->getBounds());

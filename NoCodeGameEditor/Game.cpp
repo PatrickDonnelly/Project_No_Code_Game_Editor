@@ -134,7 +134,28 @@ void Game::update(sf::Time t_deltaTime)
 
 			}
 			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_statues.at(i)->getBounds(), 0.4f);
+
+
 		}
+		std::vector<Obstacle*>::iterator it;
+		int i = 0;
+		
+		for (it = m_grid->m_statues.begin(); it != m_grid->m_statues.end();)
+		{
+			Obstacle* l_obstacle = *it;
+				if (m_checkCollision.checkCollision(m_player->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
+				{
+					std::cout << "herrrrreeeeeeeee" << std::endl;
+					it = m_grid->m_statues.erase(it);
+					
+					m_grid->noOfObstacles--;
+				}
+				else
+				{
+					it++;
+				}
+		}
+
 		for (int i = 0; i < m_grid->m_statues.size(); i++)
 		{
 			for (int j = 0; j < m_grid->m_statues.size(); j++)
@@ -142,6 +163,7 @@ void Game::update(sf::Time t_deltaTime)
 				if (j < m_grid->m_statues.size() - 1)
 				{
 					m_checkCollision.checkCollision(m_grid->m_statues.at(i)->getBounds(), m_grid->m_statues.at(j + 1)->getBounds(), 0.5f);
+					
 				}
 			}
 		}

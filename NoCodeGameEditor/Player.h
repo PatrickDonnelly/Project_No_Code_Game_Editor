@@ -9,7 +9,10 @@
 enum class AnimationState
 {
 	None,
-	Idle,
+	IdleLeft,
+	IdleRight,
+	IdleUp,
+	IdleDown,
 	WalkingLeft,
 	WalkingRight,
 	WalkingUp,
@@ -28,11 +31,17 @@ public:
 	sf::Texture m_playerTexture;
 	sf::RectangleShape m_playerCentre;
 
+	sf::Sprite m_weaponSprite;
+	sf::Texture m_weaponTexture;
+	int m_weaponBoundsWidth;
+	int m_weaponBoundsHeight;
+	sf::RectangleShape m_weaponBounds;
+
 	bool m_colliding;
 	void setUpSprite();
 	void setUpPlayerBounds();
 	void setUpAnimation();
-	void movement();
+	bool movement(sf::Time deltaTime);
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
 
@@ -46,6 +55,7 @@ public:
 
 	sf::Sprite* getSprite();
 	sf::RectangleShape* getBounds();
+	sf::RectangleShape* getWeaponBounds();
 
 	AnimationState getAnimationState();
 	void setAnimationState(AnimationState& t_current, AnimationState t_new);
@@ -58,7 +68,7 @@ private:
 
 	sf::IntRect m_rectSourceSprite{0,0,16,16};
 	Animator animations[int(AnimationState::Count)];
-	AnimationState currentAnimationState = AnimationState::Idle;
+	AnimationState currentAnimationState = AnimationState::IdleLeft;
 };
 
 #endif // !PLAYER_HPP
