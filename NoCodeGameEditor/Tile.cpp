@@ -14,9 +14,11 @@ Tile::Tile(sf::Font& t_font)
 	setUpText(t_font);
 	setUpSprites();
 	m_tile.setSize(sf::Vector2f(m_width, m_width));
+	m_tile.setOrigin(sf::Vector2f(m_width/2.0f, m_width/2.0f));
 	m_tile.setFillColor(sf::Color(sf::Color(0,0,0,0)));
 	m_tile.setOutlineThickness(1.0f);
 	m_tile.setOutlineColor(sf::Color(sf::Color(0, 255, 0, 150)));
+	m_cellSprite.setOrigin(16.0f, 16.0f);
 }
 
 void Tile::setPosition(float t_x, float t_y)

@@ -31,6 +31,8 @@ void Colliders::setUpHorizontalWallBounds(float m_startPos, float m_endPos)
 	// horizontal
 	float l_size = m_endPos - m_startPos;
 	m_wallColliderBounds.setSize(sf::Vector2f(l_size, 32.0f));
+	m_wallColliderBounds.setOrigin(l_size / 2.0f, 16.0f);
+	m_wallColliderBounds.setPosition(m_wallColliderBounds.getPosition().x + (l_size / 2.0f) -16.0f, m_wallColliderBounds.getPosition().y);
 }
 
 void Colliders::setUpVerticalWallBounds(float m_startPos, float m_endPos)
@@ -38,6 +40,8 @@ void Colliders::setUpVerticalWallBounds(float m_startPos, float m_endPos)
 	// horizontal
 	float l_size = m_endPos - m_startPos;
 	m_wallColliderBounds.setSize(sf::Vector2f(32.0f, l_size));
+	m_wallColliderBounds.setOrigin(16.0f, l_size / 2.0f);
+	m_wallColliderBounds.setPosition(m_wallColliderBounds.getPosition().x, m_wallColliderBounds.getPosition().y + (l_size/2.0f) -16.0f);
 }
 
 void Colliders::render(sf::RenderWindow* t_window)
@@ -48,5 +52,5 @@ void Colliders::render(sf::RenderWindow* t_window)
 
 sf::RectangleShape* Colliders::getBounds()
 {
-	return nullptr;
+	return &m_wallColliderBounds;
 }

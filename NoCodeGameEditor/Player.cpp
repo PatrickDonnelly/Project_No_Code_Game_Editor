@@ -62,21 +62,20 @@ void Player::movement()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
-			m_playerSprite.move(0, -m_speed);
+		m_playerBounds.move(0, -m_speed);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
-			m_playerSprite.move(0, m_speed);
+		m_playerBounds.move(0, m_speed);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-			m_playerSprite.move(-m_speed, 0);
+			m_playerBounds.move(-m_speed, 0);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-			m_playerSprite.move(m_speed, 0);
+			m_playerBounds.move(m_speed, 0);
 	}
-	m_playerBounds.setPosition(m_playerSprite.getPosition());
 }
 
 
@@ -84,7 +83,9 @@ void Player::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 
 	movement();
+	m_playerSprite.setPosition(m_playerBounds.getPosition());
 	m_playerCentre.setPosition(m_playerSprite.getPosition());
+	
 }
 
 void Player::render(sf::RenderWindow& window)

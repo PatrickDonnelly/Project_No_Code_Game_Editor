@@ -115,11 +115,19 @@ void Game::update(sf::Time t_deltaTime)
 	if (m_grid->firstFloorSet && m_grid->m_playerSet == false)
 	{
 		m_grid->m_playerSet = true;
-		m_player->getSprite()->setPosition(m_grid->m_firstTilePosition.x+16, m_grid->m_firstTilePosition.y + 16);
+		m_player->getBounds()->setPosition(m_grid->m_firstTilePosition.x+16, m_grid->m_firstTilePosition.y + 16);
 		std::cout << m_player->getSprite()->getPosition().x << std::endl;
 	}
 	m_grid->update(t_deltaTime, m_window);
 	m_player->update(t_deltaTime, m_window);
+	if (m_grid->m_vectColliders.size() > 0)
+	{
+		for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
+		{
+			m_player->getBounds();
+			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_vectColliders.at(i)->getBounds(), 0.0f);
+		}
+	}
 }
 
 void Game::render()

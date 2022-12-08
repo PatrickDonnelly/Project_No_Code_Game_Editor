@@ -8,6 +8,7 @@
 #include "Button.h"
 #include "Label.h"
 #include "Player.h"
+#include "Collision.h"
 
 class Game
 {
@@ -20,6 +21,7 @@ private:
 
 	Grid* m_grid{ nullptr };
 	Player* m_player;
+	Collision m_checkCollision;
 
 	void setUpFontAndText();
 	void processEvents();
