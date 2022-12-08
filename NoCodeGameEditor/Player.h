@@ -5,6 +5,19 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#include "Animator.h"
+
+enum class AnimationState
+{
+	None,
+	Idle,
+	WalkingLeft,
+	WalkingRight,
+	WalkingUp,
+	WalkingDown,
+	Count
+};
+
 class Player
 {
 
@@ -16,11 +29,10 @@ public:
 	sf::Texture m_playerTexture;
 	sf::RectangleShape m_playerCentre;
 
-	//Collision m_Collision;
-
 	bool m_colliding;
 	void setUpSprite();
 	void setUpPlayerBounds();
+	void setUpAnimation();
 	void movement();
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
@@ -36,12 +48,18 @@ public:
 	sf::Sprite* getSprite();
 	sf::RectangleShape* getBounds();
 
+	AnimationState getAnimationState();
+	void setAnimationState(AnimationState& t_current, AnimationState t_new);
+	void animate(sf::Time deltaTime);
+
 	void init();
 	void loadAssets();
 
 private:
 
 	sf::IntRect m_rectSourceSprite{0,0,16,16};
+	Animator animations[int(AnimationState::Count)];
+	AnimationState currentAnimationState = AnimationState::Idle;
 };
 
 #endif // !PLAYER_HPP

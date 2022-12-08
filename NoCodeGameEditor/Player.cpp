@@ -11,6 +11,7 @@ Player::Player()
 	loadAssets();
 	init();
 	setUpPlayerBounds();
+	setUpAnimation();
 }
 
 Player::~Player()
@@ -47,6 +48,15 @@ void Player::setUpPlayerBounds()
 	m_playerCentre.setPosition(m_playerSprite.getPosition());
 }
 
+void Player::setUpAnimation()
+{
+	animations[int(AnimationState::Idle)] = Animator(0, 0, m_frameSize, m_frameSize, m_spriteSheetName,1);
+	animations[int(AnimationState::WalkingDown)] = Animator(0, 0, m_frameSize, m_frameSize, m_spriteSheetName, 3);
+	animations[int(AnimationState::WalkingUp)] = Animator(48, 0, m_frameSize, m_frameSize, m_spriteSheetName, 3);
+	animations[int(AnimationState::WalkingLeft)] = Animator(16, 0, m_frameSize, m_frameSize, m_spriteSheetName, 3);
+	animations[int(AnimationState::WalkingRight)] = Animator(32, 0, m_frameSize, m_frameSize, m_spriteSheetName, 3);
+}
+
 void Player::setUpSprite()
 {
 
@@ -60,21 +70,26 @@ void Player::setUpSprite()
 
 void Player::movement()
 {
+	setAnimationState(currentAnimationState, AnimationState::Idle);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
 		m_playerBounds.move(0, -m_speed);
+		setAnimationState(currentAnimationState, AnimationState::WalkingUp);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
 		m_playerBounds.move(0, m_speed);
+		setAnimationState(currentAnimationState, AnimationState::WalkingDown);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
 			m_playerBounds.move(-m_speed, 0);
+			setAnimationState(currentAnimationState, AnimationState::WalkingLeft);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 			m_playerBounds.move(m_speed, 0);
+			setAnimationState(currentAnimationState, AnimationState::WalkingRight);
 	}
 }
 
@@ -83,6 +98,7 @@ void Player::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 
 	movement();
+	animate(deltaTime);
 	m_playerSprite.setPosition(m_playerBounds.getPosition());
 	m_playerCentre.setPosition(m_playerSprite.getPosition());
 	
@@ -103,4 +119,23 @@ sf::Sprite* Player::getSprite()
 sf::RectangleShape* Player::getBounds()
 {
 	return &m_playerBounds;
+}
+
+AnimationState Player::getAnimationState()
+{
+	return currentAnimationState;
+}
+
+void Player::setAnimationState(AnimationState& t_current, AnimationState t_new)
+{
+	if (t_current != t_new)
+	{
+		t_current = t_new;
+	}
+}
+
+void Player::animate(sf::Time deltaTime)
+{
+	animations[int(currentAnimationState)].Update(deltaTime.asSeconds());
+	animations[int(currentAnimationState)].ApplyChangesToSprite(m_playerSprite);
 }
