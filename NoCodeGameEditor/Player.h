@@ -3,7 +3,6 @@
 #define PLAYER_HPP
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
 
 #include "Animator.h"
 

@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "Tile.h"
 #include "Colliders.h"
+#include "Obstacle.h"
 #include <iostream>
 #include <vector>
 #include <stdio.h>
@@ -19,6 +20,8 @@ private:
 
 public:
 
+	int noOfObstacles = 0;
+	std::vector <Obstacle*> m_statues;
 	sf::Vector2f m_colStartPos{};
 	sf::Vector2f m_colEndPos{};
 	int noOfWallColliders = 0;

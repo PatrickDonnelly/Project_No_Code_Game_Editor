@@ -9,6 +9,7 @@
 #include "Label.h"
 #include "Player.h"
 #include "Collision.h"
+#include "Obstacle.h"
 
 class Game
 {

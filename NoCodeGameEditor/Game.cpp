@@ -124,10 +124,29 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
 		{
-			m_player->getBounds();
 			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_vectColliders.at(i)->getBounds(), 0.0f);
 		}
+		for (int i = 0; i < m_grid->m_statues.size(); i++)
+		{
+			for (int j = 0; j < m_grid->m_vectColliders.size(); j++)
+			{
+				m_checkCollision.checkCollision(m_grid->m_statues.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
+
+			}
+			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_statues.at(i)->getBounds(), 0.4f);
+		}
+		for (int i = 0; i < m_grid->m_statues.size(); i++)
+		{
+			for (int j = 0; j < m_grid->m_statues.size(); j++)
+			{
+				if (j < m_grid->m_statues.size() - 1)
+				{
+					m_checkCollision.checkCollision(m_grid->m_statues.at(i)->getBounds(), m_grid->m_statues.at(j + 1)->getBounds(), 0.5f);
+				}
+			}
+		}
 	}
+
 }
 
 void Game::render()
