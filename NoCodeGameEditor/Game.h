@@ -10,6 +10,7 @@
 #include "Player.h"
 #include "Collision.h"
 #include "Obstacle.h"
+#include "Weapon.h"
 
 class Game
 {
@@ -23,6 +24,7 @@ private:
 	Grid* m_grid{ nullptr };
 	Player* m_player;
 	Collision m_checkCollision;
+	Weapon* m_spear;
 
 	void setUpFontAndText();
 	void processEvents();

@@ -8,6 +8,7 @@ Game::Game() :
 	setUpFontAndText();
 	m_grid = new Grid();
 	m_player = new Player();
+	m_spear = new Weapon(m_player);
 	for (int i = 0; i < noOfButtons; i++)
 	{
 		m_buttons[i] = Button();
@@ -65,6 +66,9 @@ void Game::processEvents()
 	sf::Event newEvent;
 	while (m_window.pollEvent(newEvent))
 	{
+		m_spear->processEvents(newEvent);
+
+
 		if (sf::Event::Closed == newEvent.type) // window message
 		{
 			m_exitGame = true;
@@ -120,6 +124,8 @@ void Game::update(sf::Time t_deltaTime)
 	}
 	m_grid->update(t_deltaTime, m_window);
 	m_player->update(t_deltaTime, m_window);
+	m_spear->update(t_deltaTime, m_window);
+
 	if (m_grid->m_vectColliders.size() > 0)
 	{
 		for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
@@ -131,29 +137,28 @@ void Game::update(sf::Time t_deltaTime)
 			for (int j = 0; j < m_grid->m_vectColliders.size(); j++)
 			{
 				m_checkCollision.checkCollision(m_grid->m_statues.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
-
 			}
 			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_statues.at(i)->getBounds(), 0.4f);
-
-
 		}
 		std::vector<Obstacle*>::iterator it;
-		int i = 0;
-		
-		for (it = m_grid->m_statues.begin(); it != m_grid->m_statues.end();)
+		if (m_spear->m_weaponUsed)
 		{
-			Obstacle* l_obstacle = *it;
-				if (m_checkCollision.checkCollision(m_player->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
+			std::cout << m_spear->getWeaponBounds()->getSize().x << " : " << m_spear->getWeaponBounds()->getSize().y << std::endl;
+
+			for (it = m_grid->m_statues.begin(); it != m_grid->m_statues.end();)
+			{
+				Obstacle* l_obstacle = *it;
+				if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
 				{
-					std::cout << "herrrrreeeeeeeee" << std::endl;
 					it = m_grid->m_statues.erase(it);
-					
+
 					m_grid->noOfObstacles--;
 				}
 				else
 				{
 					it++;
 				}
+			}
 		}
 
 		for (int i = 0; i < m_grid->m_statues.size(); i++)
@@ -163,7 +168,6 @@ void Game::update(sf::Time t_deltaTime)
 				if (j < m_grid->m_statues.size() - 1)
 				{
 					m_checkCollision.checkCollision(m_grid->m_statues.at(i)->getBounds(), m_grid->m_statues.at(j + 1)->getBounds(), 0.5f);
-					
 				}
 			}
 		}
@@ -180,6 +184,7 @@ void Game::render()
 		m_window.draw(m_buttons[i].getButtonSprite());
 		m_labels[i]->render(&m_window);
 	}
+	m_spear->render(m_window);
 	m_player->render(m_window);
 	m_window.display();
 }

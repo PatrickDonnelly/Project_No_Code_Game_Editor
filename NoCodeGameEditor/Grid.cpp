@@ -48,7 +48,7 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 					if (m_statues.size() < 5)
 					{
 						m_statues.push_back(new Obstacle);
-						//m_vectGrid.at(i).at(j)->cellType = "FloorObstacle";
+						m_vectGrid.at(i).at(j)->cellType = "FloorObstacle";
 						m_statues.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
 						noOfObstacles++;
 					}

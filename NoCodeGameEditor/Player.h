@@ -5,20 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "Animator.h"
-
-enum class AnimationState
-{
-	None,
-	IdleLeft,
-	IdleRight,
-	IdleUp,
-	IdleDown,
-	WalkingLeft,
-	WalkingRight,
-	WalkingUp,
-	WalkingDown,
-	Count
-};
+#include "AnimationState.h"
 
 class Player
 {
@@ -27,6 +14,7 @@ public:
 	Player();
 	~Player();
 
+	bool m_weaponEnabled = false;
 	sf::Sprite m_playerSprite;
 	sf::Texture m_playerTexture;
 	sf::RectangleShape m_playerCentre;
@@ -44,7 +32,7 @@ public:
 	bool movement(sf::Time deltaTime);
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
-
+	bool moving = false;
 	int m_frameSize;
 	float m_speed;
 	int m_velocity;
