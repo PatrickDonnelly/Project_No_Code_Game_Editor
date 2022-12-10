@@ -22,6 +22,11 @@ class Colliders
 		sf::RectangleShape m_wallCentre;
 		sf::RectangleShape m_wallColliderBounds;
 
+		std::vector<Colliders> m_wallColliders;
+		int noOfWallColliders = 0;
+		void setHorizontalWallColliders(sf::Vector2f t_colStartPos, sf::Vector2f t_colEndPos);
+		void setVerticalWallColliders(sf::Vector2f t_colStartPos, sf::Vector2f t_colEndPos);
+
 		int m_wallBoundsWidth;
 		int m_wallBoundsHeight;
 };

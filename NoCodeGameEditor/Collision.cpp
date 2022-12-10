@@ -5,8 +5,8 @@ Collision::Collision()
 
 }
 
-Collision::Collision(Player* t_player, Grid* t_grid, Weapon* t_weapon) :
-	m_player(t_player), m_grid(t_grid), m_weapon(t_weapon)
+Collision::Collision(Player* t_player, RoomData* t_roomData, Weapon* t_weapon, Colliders* t_walls) :
+	m_player(t_player), m_roomData(t_roomData), m_weapon(t_weapon), m_walls(t_walls)
 {
 }
 
@@ -15,21 +15,33 @@ Collision::~Collision()
 
 }
 
-void Collision::setColliders(sf::RectangleShape* t_objectOne, std::vector<Colliders*> t_objectTwo, int t_sizeOne, float t_weight)
+void Collision::update(sf::Time t_deltaTime)
 {
-	for (int i = 0; i < t_sizeOne; i++)
+	setColliders(m_player->getBounds(), m_walls->m_wallColliders, m_walls->m_wallColliders.size(), 0.0f);
+	setColliders(m_roomData->m_roomStatues, m_walls->m_wallColliders, m_roomData->m_roomStatues.size(), m_walls->m_wallColliders.size(), 0.0f);
+	setColliders(m_player->getBounds(), m_roomData->m_roomStatues, m_roomData->m_roomStatues.size(), 0.4f);
+	setColliders(m_roomData->m_roomStatues, m_roomData->m_roomStatues.size(), 0.5f);
+	if (m_weapon->m_weaponUsed)
 	{
-		checkCollision(t_objectOne, t_objectTwo.at(i)->getBounds(), t_weight);
+		setColliders();
 	}
 }
 
-void Collision::setColliders(std::vector<Obstacle*> t_objectOne, std::vector<Colliders*> t_objectTwo, int t_sizeOne, int t_sizeTwo, float t_weight)
+void Collision::setColliders(sf::RectangleShape* t_objectOne, std::vector<Colliders> t_objectTwo, int t_sizeOne, float t_weight)
+{
+	for (int i = 0; i < t_sizeOne; i++)
+	{
+		checkCollision(t_objectOne, t_objectTwo.at(i).getBounds(), t_weight);
+	}
+}
+
+void Collision::setColliders(std::vector<Obstacle*> t_objectOne, std::vector<Colliders> t_objectTwo, int t_sizeOne, int t_sizeTwo, float t_weight)
 {
 	for (int i = 0; i < t_sizeOne; i++)
 	{
 		for (int j = 0; j < t_sizeTwo; j++)
 		{
-			checkCollision(t_objectOne.at(i)->getBounds(), t_objectTwo.at(j)->getBounds(), t_weight);
+			checkCollision(t_objectOne.at(i)->getBounds(), t_objectTwo.at(j).getBounds(), t_weight);
 		}
 	}
 }
@@ -59,36 +71,18 @@ void Collision::setColliders(sf::RectangleShape* t_objectOne, std::vector<Obstac
 void Collision::setColliders()
 {
 	std::vector<Obstacle*>::iterator it;
-	for (it = m_grid->m_statues.begin(); it != m_grid->m_statues.end();)
+	for (it = m_roomData->m_roomStatues.begin(); it != m_roomData->m_roomStatues.end();)
 	{
 		Obstacle* l_obstacle = *it;
 		if (checkCollision(m_weapon->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
 		{
-			it = m_grid->m_statues.erase(it);
-			m_grid->noOfObstacles--;
+			it = m_roomData->m_roomStatues.erase(it);
 		}
 		else
 		{
 			it++;
 		}
 	}
-}
-
-
-void Collision::update(sf::Time t_deltaTime)
-{
-	if (m_grid->m_vectColliders.size() > 0)
-	{
-		setColliders(m_player->getBounds(), m_grid->m_vectColliders, m_grid->m_vectColliders.size(), 0.0f);
-		setColliders(m_grid->m_statues, m_grid->m_vectColliders, m_grid->m_statues.size(), m_grid->m_vectColliders.size(), 0.0f);
-		setColliders(m_player->getBounds(), m_grid->m_statues, m_grid->m_statues.size(), 0.4f);
-		setColliders(m_grid->m_statues, m_grid->m_statues.size(), 0.5f);
-		if (m_weapon->m_weaponUsed)
-		{
-			setColliders();
-		}
-	}
-
 }
 
 bool Collision::checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleShape* t_objectTwo, float t_push)

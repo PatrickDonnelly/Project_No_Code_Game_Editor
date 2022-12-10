@@ -11,6 +11,7 @@
 #include "Collision.h"
 #include "Obstacle.h"
 #include "Weapon.h"
+#include "RoomCreator.h"
 
 class Game
 {
@@ -25,6 +26,9 @@ private:
 	Player* m_player;
 	Collision m_checkCollision;
 	Weapon* m_spear;
+	Colliders* m_wallCollider;
+	RoomData* m_roomData;
+	RoomCreator* m_roomCreator;
 
 	void setUpFontAndText();
 	void processEvents();

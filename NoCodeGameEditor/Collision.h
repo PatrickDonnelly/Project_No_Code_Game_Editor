@@ -8,26 +8,28 @@
 #include "Colliders.h"
 #include "Weapon.h"
 #include "Obstacle.h"
+#include "Roomdata.h"
 
 class Collision
 {
 public:
 	Collision();
-	Collision(Player* t_player, Grid* t_grid, Weapon* t_weapon);
+	Collision(Player* t_player, RoomData* t_roomData, Weapon* t_weapon, Colliders* t_walls);
 	~Collision();
 
 	Player* m_player;
-	Grid* m_grid;
+	RoomData* m_roomData;
 	Weapon* m_weapon;
+	Colliders* m_walls;
 
 
 
 	//sf::RectangleShape& m_body;
 	void update(sf::Time deltaTime);
 
-	void setColliders(sf::RectangleShape* t_objectOne, std::vector<Colliders*> t_objectTwo, int t_size, float t_weight);
+	void setColliders(sf::RectangleShape* t_objectOne, std::vector<Colliders> t_objectTwo, int t_size, float t_weight);
 	void setColliders(sf::RectangleShape* t_objectOne, std::vector<Obstacle*> t_objectTwo, int t_size, float t_weight);
-	void setColliders(std::vector<Obstacle*> t_objectOne, std::vector<Colliders*> t_objectTwo, int t_sizeOne, int t_sizeTwo, float t_weight);
+	void setColliders(std::vector<Obstacle*> t_objectOne, std::vector<Colliders> t_objectTwo, int t_sizeOne, int t_sizeTwo, float t_weight);
 	void setColliders(std::vector<Obstacle*> t_objectOne, int t_sizeOne, float t_weight);
 	void setColliders();
 

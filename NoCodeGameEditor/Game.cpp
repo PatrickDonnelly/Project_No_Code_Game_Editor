@@ -8,8 +8,11 @@ Game::Game() :
 	setUpFontAndText();
 	m_grid = new Grid();
 	m_player = new Player();
+	m_wallCollider = new Colliders();
+	m_roomData = new RoomData();
 	m_spear = new Weapon(m_player);
-	m_checkCollision = Collision(m_player, m_grid, m_spear);
+	m_roomCreator = new RoomCreator(m_grid, m_roomData, m_wallCollider);
+	m_checkCollision = Collision(m_player, m_roomData, m_spear, m_wallCollider);
 	for (int i = 0; i < noOfButtons; i++)
 	{
 		m_buttons[i] = Button();
@@ -78,6 +81,25 @@ void Game::processEvents()
 		{
 			processKeys(newEvent);
 		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		{
+			if (m_grid->m_vectGridSize < 16)
+			{
+				m_grid->m_vectGridSize = m_grid->m_vectGridSize + 1;
+				m_grid->regenerateGrid();
+				m_roomCreator->clearRoom();
+			}
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			if (m_grid->m_vectGridSize > 5)
+			{
+				m_grid->m_vectGridSize = m_grid->m_vectGridSize - 1;
+				m_grid->regenerateGrid();
+				m_roomCreator->clearRoom();
+			}
+		}
 		for (int i = 0; i < noOfButtons; i++)
 		{
 			if (m_buttons[i].getButtonSprite().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
@@ -88,10 +110,11 @@ void Game::processEvents()
 					if (m_labels[i]->getTextString() == "Clear Grid")
 					{
 						m_grid->regenerateGrid();
+						m_roomCreator->clearRoom();
 					}
 					else if (m_labels[i]->getTextString() == "Generate Room")
 					{
-						m_grid->checkRoomValidity();
+						m_roomCreator->checkRoomValidity();
 					}
 				}
 			}
@@ -117,22 +140,26 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
-	if (m_grid->firstFloorSet && m_grid->m_playerSet == false)
+	if (m_roomCreator->firstFloorSet && m_roomCreator->m_playerSet == false)
 	{
-		m_grid->m_playerSet = true;
-		m_player->getBounds()->setPosition(m_grid->m_firstTilePosition.x+16, m_grid->m_firstTilePosition.y + 16);
-		std::cout << m_player->getSprite()->getPosition().x << std::endl;
+		m_roomCreator->m_playerSet = true;
+		m_player->getBounds()->setPosition(m_roomCreator->m_firstTilePosition.x, m_roomCreator->m_firstTilePosition.y);
 	}
 	m_grid->update(t_deltaTime, m_window);
+	m_roomCreator->update(t_deltaTime, m_window);
 	m_player->update(t_deltaTime, m_window);
 	m_spear->update(t_deltaTime, m_window);
-	m_checkCollision.update(t_deltaTime);
+	if(m_roomCreator->roomValid)
+	{
+		m_checkCollision.update(t_deltaTime);
+	}
 }
 
 void Game::render()
 {
 	m_window.clear(sf::Color::Black);
 	m_grid->render(&m_window);
+	m_roomCreator->render(&m_window);
 	for (int i = 0; i < noOfButtons; i++)
 	{
 		m_window.draw(m_buttons[i].getButtonSprite());
