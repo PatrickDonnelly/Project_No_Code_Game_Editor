@@ -54,6 +54,12 @@ public:
 	void checkRoomValidity();
 	void clearUnusedCells();
 	void setUpWallColliders();
+	void increaseGridSize();
+	void decreaseGridSize();
+
+	std::string m_selectedObject;
+	void setSelectedObject(std::string t_objectName);
+
 };
 #endif // !GRID_HPP
 

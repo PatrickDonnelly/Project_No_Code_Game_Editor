@@ -51,6 +51,9 @@
     <ClInclude Include="AnimationState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UiBuildMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -87,6 +90,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UiBuildMode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

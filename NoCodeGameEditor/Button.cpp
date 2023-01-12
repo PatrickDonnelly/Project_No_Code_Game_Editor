@@ -3,6 +3,7 @@
 
 Button::Button()
 {
+	m_selected = false;
 	initButton();
 }
 
@@ -27,6 +28,21 @@ void Button::initButton()
 	m_buttonSprite.setOrigin(m_buttonSprite.getGlobalBounds().width / 2, m_buttonSprite.getGlobalBounds().height / 2);
 }
 
+void Button::resize(float m_xScale, float m_yScale)
+{
+	m_buttonSprite.setScale(m_xScale, m_yScale);
+}
+
+bool Button::getSelected()
+{
+	return m_selected;
+}
+
+void Button::setSelected(bool t_tf)
+{
+	m_selected = t_tf;
+}
+
 void Button::setButtonSprite(sf::Sprite t_buttonSprite)
 {
 	m_buttonSprite = t_buttonSprite;
@@ -42,6 +58,11 @@ void Button::highlighted()
 	m_buttonSprite.setTexture(m_buttonHighlightTexture);
 }
 
+void Button::setColor(sf::Color t_color)
+{
+	m_buttonSprite.setColor(t_color);
+}
+
 sf::Sprite Button::getButtonSprite()
 {
 	return m_buttonSprite;
@@ -55,4 +76,9 @@ sf::Vector2f Button::getButtonPosition()
 void Button::setButtonPosition(sf::Vector2f t_position)
 {
 	m_buttonSprite.setPosition(t_position);
+}
+
+void Button::render(sf::RenderWindow* t_window)
+{
+	t_window->draw(m_buttonSprite);
 }

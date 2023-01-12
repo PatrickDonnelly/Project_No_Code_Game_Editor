@@ -11,6 +11,15 @@
 #include "Collision.h"
 #include "Obstacle.h"
 #include "Weapon.h"
+#include "UiBuildMode.h"
+
+typedef enum {
+	MENU = 0,
+	BUILDING = 1,
+	PLACING = 2,
+	GAMEPLAY_TESTING = 3,
+	GAMEPLAY = 4
+}GameStates;
 
 class Game
 {
@@ -25,6 +34,7 @@ private:
 	Player* m_player;
 	Collision m_checkCollision;
 	Weapon* m_spear;
+	UiBuildMode m_uiBuildMode;
 
 	void setUpFontAndText();
 	void processEvents();
@@ -34,10 +44,6 @@ private:
 
 	sf::Font m_ArialFont;
 	sf::Text m_text;
-
-	const static int noOfButtons = 2;
-	Button m_buttons[noOfButtons];
-	Label* m_labels[noOfButtons];
 
 	sf::RenderWindow m_window;
 	bool m_exitGame; // control exiting game

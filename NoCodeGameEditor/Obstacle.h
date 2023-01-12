@@ -15,8 +15,10 @@ class Obstacle
 
 public:
 	Obstacle();
+	Obstacle(std::string t_typeTag);
 	~Obstacle();
 
+	std::string m_tag;
 
 	void init();
 	void setUpSprite();

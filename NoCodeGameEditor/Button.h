@@ -18,10 +18,16 @@ public:
 	void setButtonPosition(sf::Vector2f t_position);
 	void setButtonSprite(sf::Sprite t_buttonSprite);
 	void highlighted();
+	void setColor(sf::Color t_color);
 	void setButtonTexture();
+	void render(sf::RenderWindow* t_window);
+	void resize(float m_xScale, float m_yScale);
+	bool getSelected();
+	void setSelected(bool t_tf);
 
 private:
 
+	bool m_selected;
 	sf::Sprite m_buttonSprite;
 	sf::Texture m_buttonTexture;
 	sf::Texture m_buttonHighlightTexture;

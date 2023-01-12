@@ -3,6 +3,11 @@
 
 Obstacle::Obstacle()
 {
+}
+
+Obstacle::Obstacle(std::string t_typeTag)
+{
+	m_tag = t_typeTag;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;
 	setUpSprite();
@@ -28,7 +33,7 @@ void Obstacle::setUpSprite()
 
 void Obstacle::setObstacleTexture(sf::Texture& t_texture)
 {
-	if (!t_texture.loadFromFile("ASSETS\\IMAGES\\statue.png"))
+	if (!t_texture.loadFromFile("ASSETS\\IMAGES\\" + m_tag + ".png"))
 	{
 		std::cout << "Can't load main menu bgt" << std::endl;
 	}

@@ -9,17 +9,7 @@ Game::Game() :
 	m_grid = new Grid();
 	m_player = new Player();
 	m_spear = new Weapon(m_player);
-	for (int i = 0; i < noOfButtons; i++)
-	{
-		m_buttons[i] = Button();
-		m_buttons[i].m_buttonIndex = i;
-		m_buttons[i].setButtonPosition(sf::Vector2f{ 820.0f + (i * 280), 900.0f });
-
-		m_labels[i] = new Label(m_ArialFont);
-		m_labels[i]->setTextPosition(m_buttons[i].getButtonPosition());
-	}
-	m_labels[0]->setText("Clear Grid");
-	m_labels[1]->setText("Generate Room");
+	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid);
 }
 
 Game::~Game()
@@ -67,7 +57,7 @@ void Game::processEvents()
 	while (m_window.pollEvent(newEvent))
 	{
 		m_spear->processEvents(newEvent);
-
+		m_uiBuildMode.processEvents(newEvent, m_window);
 
 		if (sf::Event::Closed == newEvent.type) // window message
 		{
@@ -76,28 +66,6 @@ void Game::processEvents()
 		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
 		{
 			processKeys(newEvent);
-		}
-		for (int i = 0; i < noOfButtons; i++)
-		{
-			if (m_buttons[i].getButtonSprite().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
-			{
-				m_buttons[i].highlighted();
-				if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-				{
-					if (m_labels[i]->getTextString() == "Clear Grid")
-					{
-						m_grid->regenerateGrid();
-					}
-					else if (m_labels[i]->getTextString() == "Generate Room")
-					{
-						m_grid->checkRoomValidity();
-					}
-				}
-			}
-			else
-			{
-				m_buttons[i].setButtonTexture();
-			}
 		}
 	}
 }
@@ -179,11 +147,7 @@ void Game::render()
 {
 	m_window.clear(sf::Color::Black);
 	m_grid->render(&m_window);
-	for (int i = 0; i < noOfButtons; i++)
-	{
-		m_window.draw(m_buttons[i].getButtonSprite());
-		m_labels[i]->render(&m_window);
-	}
+	m_uiBuildMode.render(&m_window);
 	m_spear->render(m_window);
 	m_player->render(m_window);
 	m_window.display();

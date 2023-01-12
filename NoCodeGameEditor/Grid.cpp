@@ -28,38 +28,65 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)
 		{
-			if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
+			if (!roomGenerated)
 			{
-				m_vectGrid.at(i).at(j)->setBorderColour(sf::Color::Red);
-				if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_vectGrid.at(i).at(j)->cellType == "Empty")
+				if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 				{
-					m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(188, 143, 143));
-					m_vectGrid.at(i).at(j)->cellType = "Wall";
-					wallsPlaced++;
-				}
-				else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right) && m_vectGrid.at(i).at(j)->cellType == "Wall")
-				{
-					m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(0,0,0,0));
-					m_vectGrid.at(i).at(j)->cellType = "Empty";
-					wallsPlaced--;
-				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && m_vectGrid.at(i).at(j)->cellType == "Floor")
-				{
-					if (m_statues.size() < 5)
+					m_vectGrid.at(i).at(j)->setBorderColour(sf::Color::Red);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_vectGrid.at(i).at(j)->cellType == "Empty")
 					{
-						m_statues.push_back(new Obstacle);
-						m_vectGrid.at(i).at(j)->cellType = "FloorObstacle";
-						m_statues.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
-						noOfObstacles++;
+						m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(188, 143, 143));
+						m_vectGrid.at(i).at(j)->cellType = "Wall";
+						wallsPlaced++;
 					}
+					else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right) && m_vectGrid.at(i).at(j)->cellType == "Wall")
+					{
+						m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(0, 0, 0, 0));
+						m_vectGrid.at(i).at(j)->cellType = "Empty";
+						wallsPlaced--;
+					}
+
+				}
+				else
+				{
+					m_vectGrid.at(i).at(j)->resetBorderColour();
 				}
 			}
 			else
 			{
-				m_vectGrid.at(i).at(j)->resetBorderColour();
+				if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
+				{
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_selectedObject == "Statue")
+					{
+						if (m_statues.size() < 20)
+						{
+							if(m_vectGrid.at(i).at(j)->cellType == "Floor")
+							{
+								m_statues.push_back(new Obstacle(m_selectedObject));
+								m_vectGrid.at(i).at(j)->cellType = m_selectedObject;
+								m_statues.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
+								noOfObstacles++;
+							}
+						}
+					}
+					else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_selectedObject == "Grass")
+					{
+						if (m_statues.size() < 20)
+						{
+							if (m_vectGrid.at(i).at(j)->cellType == "Floor")
+							{
+								m_statues.push_back(new Obstacle(m_selectedObject));
+								m_vectGrid.at(i).at(j)->cellType = m_selectedObject;
+								m_statues.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
+								noOfObstacles++;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
+			
 }
 
 void Grid::GenerateRoomSprites()
@@ -312,25 +339,32 @@ void Grid::CheckValidityOfWalls(int t_row, int t_col)
 	}
 }
 
+void Grid::increaseGridSize()
+{
+	if (m_vectGridSize < 16)
+	{
+		m_vectGridSize = m_vectGridSize + 1;
+		regenerateGrid();
+	}
+}
+
+void Grid::decreaseGridSize()
+{
+	if (m_vectGridSize > 5)
+	{
+		m_vectGridSize = m_vectGridSize - 1;
+		regenerateGrid();
+	}
+}
+
+void Grid::setSelectedObject(std::string t_objectName)
+{
+	m_selectedObject = t_objectName;
+}
+
+
 void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	{
-		if (m_vectGridSize < 16)
-		{
-			m_vectGridSize = m_vectGridSize + 1;
-			regenerateGrid();
-		}
-	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		if (m_vectGridSize > 5)
-		{
-			m_vectGridSize = m_vectGridSize - 1;
-			regenerateGrid();
-		}
-	}
 	placeRemove( m_window);
 	for (int i = 0; i < m_statues.size(); i++)
 	{
