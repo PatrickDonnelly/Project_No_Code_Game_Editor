@@ -12,14 +12,9 @@
 #include "Obstacle.h"
 #include "Weapon.h"
 #include "UiBuildMode.h"
+#include "GameState.h"
 
-typedef enum {
-	MENU = 0,
-	BUILDING = 1,
-	PLACING = 2,
-	GAMEPLAY_TESTING = 3,
-	GAMEPLAY = 4
-}GameStates;
+
 
 class Game
 {
@@ -30,6 +25,8 @@ public:
 
 private:
 
+
+	GameState* m_gameState;
 	Grid* m_grid{ nullptr };
 	Player* m_player;
 	Collision m_checkCollision;

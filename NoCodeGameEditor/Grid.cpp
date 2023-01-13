@@ -2,6 +2,11 @@
 
 Grid::Grid()
 {
+}
+
+Grid::Grid(GameState* t_gameState)
+{
+	m_gameState = t_gameState;
 	setUpFont();
 	m_background.setSize(sf::Vector2f{ 250.0f,1080.0f });
 	m_background.setPosition(1670, 0);
@@ -42,31 +47,33 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)
 		{
-			if (!roomGenerated)
+			if (m_gameState->getState() == State::ROOM_BUILD)
 			{
-				if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
+				if (!roomGenerated)
 				{
-					m_vectGrid.at(i).at(j)->setBorderColour(sf::Color::Red);
-					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_vectGrid.at(i).at(j)->cellType == "Empty")
+					if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 					{
-						m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(188, 143, 143));
-						m_vectGrid.at(i).at(j)->cellType = "Wall";
-						wallsPlaced++;
+						m_vectGrid.at(i).at(j)->setBorderColour(sf::Color::Red);
+						if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_vectGrid.at(i).at(j)->cellType == "Empty")
+						{
+							m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(188, 143, 143));
+							m_vectGrid.at(i).at(j)->cellType = "Wall";
+							wallsPlaced++;
+						}
+						else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right) && m_vectGrid.at(i).at(j)->cellType == "Wall")
+						{
+							m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(0, 0, 0, 0));
+							m_vectGrid.at(i).at(j)->cellType = "Empty";
+							wallsPlaced--;
+						}
 					}
-					else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right) && m_vectGrid.at(i).at(j)->cellType == "Wall")
+					else
 					{
-						m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(0, 0, 0, 0));
-						m_vectGrid.at(i).at(j)->cellType = "Empty";
-						wallsPlaced--;
+						m_vectGrid.at(i).at(j)->resetBorderColour();
 					}
-
-				}
-				else
-				{
-					m_vectGrid.at(i).at(j)->resetBorderColour();
 				}
 			}
-			else
+			else if(m_gameState->getState() == State::ROOM_PLACE_OBJECTS)
 			{
 				if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 				{
@@ -301,6 +308,7 @@ void Grid::checkRoomValidity()
 		roomGenerated = true;
 		//std::cout << "This room is valid" << std::endl;
 		GenerateRoomSprites();
+		m_gameState->setState(State::ROOM_PLACE_OBJECTS);
 	}
 	else
 	{

@@ -13,7 +13,7 @@ class Collision
 public:
 	Collision();
 	~Collision();
-
+	
 	//sf::RectangleShape& m_body;
 	bool checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleShape* t_objectTwo, float t_push); // 0 player to wall wont move, 1 push other object crate
 	bool checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleShape* t_objectTwo); // 0 player to wall wont move, 1 push other object crate

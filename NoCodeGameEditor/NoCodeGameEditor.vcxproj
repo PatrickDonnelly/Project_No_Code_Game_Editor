@@ -135,6 +135,7 @@
     <ClInclude Include="Colliders.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="Obstacle.h" />
@@ -149,6 +150,7 @@
     <ClCompile Include="Colliders.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />

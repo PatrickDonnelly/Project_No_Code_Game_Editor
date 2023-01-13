@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <list>
 #include <queue>
+#include "GameState.h"
 
 
 
@@ -20,6 +21,7 @@ private:
 
 public:
 
+	GameState* m_gameState;
 	int noOfObstacles = 0;
 	int maxObstacles = 196;
 	std::vector <Obstacle*> m_placedObjects;
@@ -48,6 +50,7 @@ public:
 	int counter = 0;
 	std::queue<Tile*> m_tileQueue{};
 	Grid();
+	Grid(GameState* t_gameState);
 	void render(sf::RenderWindow* t_window);
 	void update(sf::Time t_deltaTime, sf::RenderWindow& m_window);
 	void placeRemove(sf::RenderWindow& m_window);

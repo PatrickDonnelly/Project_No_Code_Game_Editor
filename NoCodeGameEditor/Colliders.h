@@ -11,7 +11,7 @@ class Colliders
 
 		Colliders();
 		~Colliders();
-
+		
 		void init();
 		void setUpHorizontalWallBounds(float m_startPos, float m_endPos);
 		void setUpVerticalWallBounds(float m_startPos, float m_endPos);

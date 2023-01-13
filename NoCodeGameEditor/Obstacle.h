@@ -15,7 +15,7 @@ class Obstacle
 
 	int m_row;
 	int m_col;
-
+	
 public:
 	Obstacle();
 	Obstacle(std::string t_typeTag);

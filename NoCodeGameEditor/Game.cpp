@@ -5,11 +5,12 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
 	m_exitGame{ false } //when true game will exit
 {
+	m_gameState = new GameState(State::ROOM_BUILD);
 	setUpFontAndText();
-	m_grid = new Grid();
+	m_grid = new Grid(m_gameState);
 	m_player = new Player();
 	m_spear = new Weapon(m_player);
-	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid);
+	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState);
 }
 
 Game::~Game()
@@ -94,62 +95,65 @@ void Game::update(sf::Time t_deltaTime)
 	m_player->update(t_deltaTime, m_window);
 	m_spear->update(t_deltaTime, m_window);
 
-	if (m_grid->m_vectColliders.size() > 0)
+	if (m_gameState->getState() == State::ROOM_TEST)
 	{
-		for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
+		if (m_grid->m_vectColliders.size() > 0)
 		{
-			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_vectColliders.at(i)->getBounds(), 0.0f);
-		}
-		for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
-		{
-			for (int j = 0; j < m_grid->m_vectColliders.size(); j++)
+			for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
 			{
-				m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
+				m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_vectColliders.at(i)->getBounds(), 0.0f);
 			}
-			if (m_grid->m_placedObjects.at(i)->isCollidable())
+			for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
 			{
-				m_player->m_speed = m_player->m_defaultSpeed;
-				if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
+				for (int j = 0; j < m_grid->m_vectColliders.size(); j++)
 				{
-					m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
+					m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
 				}
-				else
+				if (m_grid->m_placedObjects.at(i)->isCollidable())
 				{
-					m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
-				}
-			}
-		}
-		std::vector<Obstacle*>::iterator it;
-		if (m_spear->m_weaponUsed)
-		{
-			std::cout << m_spear->getWeaponBounds()->getSize().x << " : " << m_spear->getWeaponBounds()->getSize().y << std::endl;
-
-			for (it = m_grid->m_placedObjects.begin(); it != m_grid->m_placedObjects.end();)
-			{
-				Obstacle* l_obstacle = *it;
-				if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
-				{
-					it = m_grid->m_placedObjects.erase(it);
-
-					m_grid->noOfObstacles--;
-				}
-				else
-				{
-					it++;
-				}
-			}
-		}
-
-		for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
-		{
-			for (int j = 0; j < m_grid->m_placedObjects.size(); j++)
-			{
-
-				if (j < m_grid->m_placedObjects.size() - 1)
-				{
-					if (m_grid->m_placedObjects.at(i)->isCollidable() && m_grid->m_placedObjects.at(j+1)->isCollidable())
+					m_player->m_speed = m_player->m_defaultSpeed;
+					if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
 					{
-						m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_placedObjects.at(j + 1)->getBounds(), 0.5f);
+						m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
+					}
+					else
+					{
+						m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
+					}
+				}
+			}
+			std::vector<Obstacle*>::iterator it;
+			if (m_spear->m_weaponUsed)
+			{
+				std::cout << m_spear->getWeaponBounds()->getSize().x << " : " << m_spear->getWeaponBounds()->getSize().y << std::endl;
+
+				for (it = m_grid->m_placedObjects.begin(); it != m_grid->m_placedObjects.end();)
+				{
+					Obstacle* l_obstacle = *it;
+					if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
+					{
+						it = m_grid->m_placedObjects.erase(it);
+
+						m_grid->noOfObstacles--;
+					}
+					else
+					{
+						it++;
+					}
+				}
+			}
+
+			for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
+			{
+				for (int j = 0; j < m_grid->m_placedObjects.size(); j++)
+				{
+
+					if (j < m_grid->m_placedObjects.size() - 1)
+					{
+						if (m_grid->m_placedObjects.at(i)->isCollidable() && m_grid->m_placedObjects.at(j + 1)->isCollidable())
+						{
+							m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_placedObjects.at(j + 1)->getBounds(), 0.5f);
+						}
 					}
 				}
 			}
