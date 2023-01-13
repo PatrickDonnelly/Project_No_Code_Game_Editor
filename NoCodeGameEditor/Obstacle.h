@@ -19,7 +19,8 @@ public:
 	~Obstacle();
 
 	std::string m_tag;
-
+	bool m_isCollidable = false;
+	bool isCollidable();
 	void init();
 	void setUpSprite();
 	void setObstacleTexture(sf::Texture& t_texture);

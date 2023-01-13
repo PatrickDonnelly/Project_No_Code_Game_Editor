@@ -17,13 +17,13 @@ void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont)
 		m_texturedLabels.at(i)->setTextPosition(sf::Vector2f(m_selectableObjects.at(i).getButtonPosition().x + 2, m_selectableObjects.at(i).getButtonPosition().y + 24));
 	}
 	m_texturedLabels.at(0)->setText("Statue");
-	m_texturedLabels.at(0)->setLabelSprite("statue.png");
+	m_texturedLabels.at(0)->setLabelSprite(m_texturedLabels.at(0)->getText().getString());
 	m_texturedLabels.at(1)->setText("Grass");
-	m_texturedLabels.at(1)->setLabelSprite("Grass.png");		
-	m_texturedLabels.at(2)->setText("STATUE");
-	m_texturedLabels.at(2)->setLabelSprite("statue.png");		
-	m_texturedLabels.at(3)->setText("STATUE");
-	m_texturedLabels.at(3)->setLabelSprite("statue.png");
+	m_texturedLabels.at(1)->setLabelSprite(m_texturedLabels.at(1)->getText().getString());
+	m_texturedLabels.at(2)->setText("Potion");
+	m_texturedLabels.at(2)->setLabelSprite(m_texturedLabels.at(2)->getText().getString());
+	m_texturedLabels.at(3)->setText("Enemy");
+	m_texturedLabels.at(3)->setLabelSprite(m_texturedLabels.at(3)->getText().getString());
 }
 
 void UiBuildMode::setUpGridFunctionButtons(sf::Font t_arialFont)

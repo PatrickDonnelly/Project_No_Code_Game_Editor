@@ -21,7 +21,7 @@ private:
 public:
 
 	int noOfObstacles = 0;
-	std::vector <Obstacle*> m_statues;
+	std::vector <Obstacle*> m_placedObjects;
 	sf::Vector2f m_colStartPos{};
 	sf::Vector2f m_colEndPos{};
 	int noOfWallColliders = 0;
@@ -57,7 +57,9 @@ public:
 	void increaseGridSize();
 	void decreaseGridSize();
 
+	bool checkValidSelection();
 	std::string m_selectedObject;
+	std::vector<std::string> m_selectableObjects;
 	void setSelectedObject(std::string t_objectName);
 
 };

@@ -6,6 +6,11 @@ Grid::Grid()
 	m_background.setSize(sf::Vector2f{ 250.0f,1080.0f });
 	m_background.setPosition(1670, 0);
 	m_background.setFillColor(sf::Color::Color(40,40,40,255));
+	m_selectableObjects.push_back("Statue");
+	m_selectableObjects.push_back("Grass");
+	m_selectableObjects.push_back("Potion");
+	m_selectableObjects.push_back("Enemy");
+
 	regenerateGrid();
 }
 
@@ -21,7 +26,17 @@ void Grid::setUpFont()
 	m_helpText.setCharacterSize(18U);
 	m_helpText.setFillColor(sf::Color::White);
 }
-
+bool Grid::checkValidSelection()
+{
+	for (int i = 0; i < m_selectableObjects.size(); i++)
+	{
+		if (m_selectableObjects.at(i) != m_selectedObject)
+		{
+			return true;
+		}
+		return false;
+	}
+}
 void Grid::placeRemove(sf::RenderWindow& m_window)
 {
 	for (int i = 0; i < m_vectGridSize; ++i)
@@ -56,29 +71,19 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 			{
 				if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 				{
-					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_selectedObject == "Statue")
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) /*&& m_selectedObject == "Statue"*/)
 					{
-						if (m_statues.size() < 20)
+						if(checkValidSelection());
 						{
-							if(m_vectGrid.at(i).at(j)->cellType == "Floor")
+							if (m_placedObjects.size() < 20)
 							{
-								m_statues.push_back(new Obstacle(m_selectedObject));
-								m_vectGrid.at(i).at(j)->cellType = m_selectedObject;
-								m_statues.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
-								noOfObstacles++;
-							}
-						}
-					}
-					else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && m_selectedObject == "Grass")
-					{
-						if (m_statues.size() < 20)
-						{
-							if (m_vectGrid.at(i).at(j)->cellType == "Floor")
-							{
-								m_statues.push_back(new Obstacle(m_selectedObject));
-								m_vectGrid.at(i).at(j)->cellType = m_selectedObject;
-								m_statues.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
-								noOfObstacles++;
+								if (m_vectGrid.at(i).at(j)->cellType == "Floor")
+								{
+									m_placedObjects.push_back(new Obstacle(m_selectedObject));
+									m_vectGrid.at(i).at(j)->cellType = m_selectedObject;
+									m_placedObjects.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
+									noOfObstacles++;
+								}
 							}
 						}
 					}
@@ -366,9 +371,9 @@ void Grid::setSelectedObject(std::string t_objectName)
 void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
 	placeRemove( m_window);
-	for (int i = 0; i < m_statues.size(); i++)
+	for (int i = 0; i < m_placedObjects.size(); i++)
 	{
-		m_statues.at(i)->getSprite()->setPosition(m_statues.at(i)->getBounds()->getPosition());
+		m_placedObjects.at(i)->getSprite()->setPosition(m_placedObjects.at(i)->getBounds()->getPosition());
 	}
 }
 
@@ -388,10 +393,10 @@ void Grid::render(sf::RenderWindow* t_window)
 	{
 		m_vectColliders.at(i)->render(t_window);
 	}
-	for (int i = 0; i < m_statues.size(); i++)
+	for (int i = 0; i < m_placedObjects.size(); i++)
 	{
-		t_window->draw(*m_statues.at(i)->getSprite());
-		t_window->draw(*m_statues.at(i)->getBounds());
+		t_window->draw(*m_placedObjects.at(i)->getSprite());
+		t_window->draw(*m_placedObjects.at(i)->getBounds());
 	}
 }
 
@@ -402,7 +407,7 @@ void Grid::regenerateGrid()
 	noOfObstacles = 0;
 	m_vectGrid.clear();
 	m_vectColliders.clear();
-	m_statues.clear();
+	m_placedObjects.clear();
 	wallsPlaced = 0;
 	m_playerSet = false;
 	firstFloorSet = false;

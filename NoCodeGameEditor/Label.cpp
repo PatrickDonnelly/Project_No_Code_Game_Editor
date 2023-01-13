@@ -36,7 +36,7 @@ void Label::setText(std::string t_text)
 void Label::setLabelSprite(std::string t_spriteName)
 {
 	m_image = true;
-	if (!m_labelTexture.loadFromFile("ASSETS\\IMAGES\\" + t_spriteName))
+	if (!m_labelTexture.loadFromFile("ASSETS\\IMAGES\\" + t_spriteName + ".png"))
 	{
 		std::cout << "Couldn't load Texture in Label.cpp" << std::endl;
 		m_image = false;

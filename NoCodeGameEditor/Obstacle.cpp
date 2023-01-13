@@ -7,6 +7,11 @@ Obstacle::Obstacle()
 
 Obstacle::Obstacle(std::string t_typeTag)
 {
+	m_isCollidable = false;
+	if (t_typeTag != "Grass")
+	{
+		m_isCollidable = true;
+	}
 	m_tag = t_typeTag;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;
@@ -17,6 +22,11 @@ Obstacle::Obstacle(std::string t_typeTag)
 
 Obstacle::~Obstacle()
 {
+}
+
+bool Obstacle::isCollidable()
+{
+	return m_isCollidable;
 }
 
 void Obstacle::init()

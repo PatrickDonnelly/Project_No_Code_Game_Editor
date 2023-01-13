@@ -100,25 +100,28 @@ void Game::update(sf::Time t_deltaTime)
 		{
 			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_vectColliders.at(i)->getBounds(), 0.0f);
 		}
-		for (int i = 0; i < m_grid->m_statues.size(); i++)
+		for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
 		{
 			for (int j = 0; j < m_grid->m_vectColliders.size(); j++)
 			{
-				m_checkCollision.checkCollision(m_grid->m_statues.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
+				m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
 			}
-			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_statues.at(i)->getBounds(), 0.4f);
+			if (m_grid->m_placedObjects.at(i)->isCollidable())
+			{
+				m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
+			}
 		}
 		std::vector<Obstacle*>::iterator it;
 		if (m_spear->m_weaponUsed)
 		{
 			std::cout << m_spear->getWeaponBounds()->getSize().x << " : " << m_spear->getWeaponBounds()->getSize().y << std::endl;
 
-			for (it = m_grid->m_statues.begin(); it != m_grid->m_statues.end();)
+			for (it = m_grid->m_placedObjects.begin(); it != m_grid->m_placedObjects.end();)
 			{
 				Obstacle* l_obstacle = *it;
 				if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
 				{
-					it = m_grid->m_statues.erase(it);
+					it = m_grid->m_placedObjects.erase(it);
 
 					m_grid->noOfObstacles--;
 				}
@@ -129,13 +132,17 @@ void Game::update(sf::Time t_deltaTime)
 			}
 		}
 
-		for (int i = 0; i < m_grid->m_statues.size(); i++)
+		for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
 		{
-			for (int j = 0; j < m_grid->m_statues.size(); j++)
+			for (int j = 0; j < m_grid->m_placedObjects.size(); j++)
 			{
-				if (j < m_grid->m_statues.size() - 1)
+
+				if (j < m_grid->m_placedObjects.size() - 1)
 				{
-					m_checkCollision.checkCollision(m_grid->m_statues.at(i)->getBounds(), m_grid->m_statues.at(j + 1)->getBounds(), 0.5f);
+					if (m_grid->m_placedObjects.at(i)->isCollidable() && m_grid->m_placedObjects.at(j)->isCollidable())
+					{
+						m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_placedObjects.at(j + 1)->getBounds(), 0.5f);
+					}
 				}
 			}
 		}
