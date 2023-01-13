@@ -13,10 +13,15 @@ class Obstacle
 	int m_boundsWidth;
 	int m_boundsHeight;
 
+	int m_row;
+	int m_col;
+
 public:
 	Obstacle();
 	Obstacle(std::string t_typeTag);
 	~Obstacle();
+
+
 
 	std::string m_tag;
 	bool m_isCollidable = false;
@@ -29,6 +34,12 @@ public:
 	void render(sf::RenderWindow& window);
 	sf::Sprite* getSprite();
 	sf::RectangleShape* getBounds();
+
+	void setRowColumn(int t_row, int t_col);
+
+	int getRow();
+
+	int getColumn();
 
 };
 #endif // !OBSTACLE_HPP

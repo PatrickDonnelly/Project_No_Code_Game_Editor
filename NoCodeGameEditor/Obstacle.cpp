@@ -81,3 +81,19 @@ sf::RectangleShape* Obstacle::getBounds()
 {
     return &m_obstacleBounds;
 }
+
+void Obstacle::setRowColumn(int t_row, int t_col)
+{
+	m_row = t_row;
+	m_col = t_col;
+}
+
+int Obstacle::getRow()
+{
+	return m_row;
+}
+
+int Obstacle::getColumn()
+{
+	return m_col;
+}

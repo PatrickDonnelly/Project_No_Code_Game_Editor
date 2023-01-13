@@ -29,14 +29,11 @@ void Grid::setUpFont()
 }
 bool Grid::checkValidSelection()
 {
-	for (int i = 0; i < m_selectableObjects.size(); i++)
+	if (!m_selectedObject.empty())
 	{
-		if (m_selectableObjects.at(i) != m_selectedObject)
-		{
-			return true;
-		}
-		return false;
+		return true;
 	}
+	return false;
 }
 void Grid::placeRemove(sf::RenderWindow& m_window)
 {
@@ -75,7 +72,7 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 				{
 					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 					{
-						if (checkValidSelection());
+						if (checkValidSelection())
 						{
 							if (m_placedObjects.size() < maxObstacles)
 							{
@@ -84,6 +81,7 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 									m_placedObjects.push_back(new Obstacle(m_selectedObject));
 									m_vectGrid.at(i).at(j)->cellType = m_selectedObject;
 									m_placedObjects.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
+									m_placedObjects.at(noOfObstacles)->setRowColumn(i,j);
 									noOfObstacles++;
 								}
 							}
@@ -94,16 +92,16 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 
 						if (m_placedObjects.size() > 0)
 						{
-							if (m_vectGrid.at(i).at(j)->cellType != "Floor")
-							{
+
 								std::vector<Obstacle*>::iterator it;
 								for (it = m_placedObjects.begin(); it != m_placedObjects.end();)
 								{
 									Obstacle* l_obstacle = *it;
 									if (l_obstacle->getBounds()->getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 									{
+										// resets the right tile even if the object was moved
+										m_vectGrid.at(l_obstacle->getRow()).at(l_obstacle->getColumn())->cellType = "Floor";
 										it = m_placedObjects.erase(it);
-										m_vectGrid.at(i).at(j)->cellType = "Floor";
 										noOfObstacles--;
 									}
 									else
@@ -111,7 +109,7 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 										it++;
 									}
 								}
-							}
+							
 						}
 					}
 				}
