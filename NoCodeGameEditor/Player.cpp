@@ -4,6 +4,7 @@
 Player::Player()
 {
 	m_frameSize = 16;
+	m_defaultSpeed = 2.0f;
 	m_speed = 2.0f;
 	m_playerBoundsHeight = 28;
 	m_playerBoundsWidth = 16;

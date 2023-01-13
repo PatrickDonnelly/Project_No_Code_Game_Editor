@@ -21,6 +21,7 @@ private:
 public:
 
 	int noOfObstacles = 0;
+	int maxObstacles = 196;
 	std::vector <Obstacle*> m_placedObjects;
 	sf::Vector2f m_colStartPos{};
 	sf::Vector2f m_colEndPos{};

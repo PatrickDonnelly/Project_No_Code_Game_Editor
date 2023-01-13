@@ -57,6 +57,27 @@ bool Collision::checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleSha
 	return false;
 }
 
+bool Collision::checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleShape* t_objectTwo)
+{
+	sf::Vector2f l_objectTwoPosition = t_objectTwo->getPosition();
+	sf::Vector2f l_objectTwoSize = t_objectTwo->getSize() / 2.0f;
+	sf::Vector2f l_objectOnePosition = t_objectOne->getPosition();
+	sf::Vector2f l_objectOneHalfSize = t_objectOne->getSize() / 2.0f;
+
+	float l_deltaX = l_objectTwoPosition.x - l_objectOnePosition.x;
+	float l_deltaY = l_objectTwoPosition.y - l_objectOnePosition.y;
+
+	float l_intersectX = abs(l_deltaX) - (l_objectTwoSize.x + l_objectOneHalfSize.x);
+	float l_intersectY = abs(l_deltaY) - (l_objectTwoSize.y + l_objectOneHalfSize.y);
+
+	if (l_intersectX < 0.0f && l_intersectY < 0.0f)
+	{
+		return true;
+	}
+
+	return false;
+}
+
 void Collision::move(float t_deltaX, float t_deltaY, sf::RectangleShape* t_object)
 {
 	t_object->move(t_deltaX, t_deltaY);

@@ -108,7 +108,15 @@ void Game::update(sf::Time t_deltaTime)
 			}
 			if (m_grid->m_placedObjects.at(i)->isCollidable())
 			{
-				m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
+				m_player->m_speed = m_player->m_defaultSpeed;
+				if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
+				{
+					m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
+				}
+				else
+				{
+					m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
+				}
 			}
 		}
 		std::vector<Obstacle*>::iterator it;
@@ -139,7 +147,7 @@ void Game::update(sf::Time t_deltaTime)
 
 				if (j < m_grid->m_placedObjects.size() - 1)
 				{
-					if (m_grid->m_placedObjects.at(i)->isCollidable() && m_grid->m_placedObjects.at(j)->isCollidable())
+					if (m_grid->m_placedObjects.at(i)->isCollidable() && m_grid->m_placedObjects.at(j+1)->isCollidable())
 					{
 						m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_placedObjects.at(j + 1)->getBounds(), 0.5f);
 					}

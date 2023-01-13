@@ -10,6 +10,7 @@ Grid::Grid()
 	m_selectableObjects.push_back("Grass");
 	m_selectableObjects.push_back("Potion");
 	m_selectableObjects.push_back("Enemy");
+	m_selectableObjects.push_back("Water");
 
 	regenerateGrid();
 }
@@ -39,6 +40,7 @@ bool Grid::checkValidSelection()
 }
 void Grid::placeRemove(sf::RenderWindow& m_window)
 {
+	std::cout << noOfObstacles << std::endl;
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)
@@ -71,11 +73,11 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 			{
 				if (m_vectGrid.at(i).at(j)->getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 				{
-					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) /*&& m_selectedObject == "Statue"*/)
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 					{
-						if(checkValidSelection());
+						if (checkValidSelection());
 						{
-							if (m_placedObjects.size() < 20)
+							if (m_placedObjects.size() < maxObstacles)
 							{
 								if (m_vectGrid.at(i).at(j)->cellType == "Floor")
 								{
@@ -87,12 +89,37 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 							}
 						}
 					}
+					else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
+					{
+
+						if (m_placedObjects.size() > 0)
+						{
+							if (m_vectGrid.at(i).at(j)->cellType != "Floor")
+							{
+								std::vector<Obstacle*>::iterator it;
+								for (it = m_placedObjects.begin(); it != m_placedObjects.end();)
+								{
+									Obstacle* l_obstacle = *it;
+									if (l_obstacle->getBounds()->getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
+									{
+										it = m_placedObjects.erase(it);
+										m_vectGrid.at(i).at(j)->cellType = "Floor";
+										noOfObstacles--;
+									}
+									else
+									{
+										it++;
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
 	}
-			
 }
+
 
 void Grid::GenerateRoomSprites()
 {

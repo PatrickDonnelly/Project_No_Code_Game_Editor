@@ -2,10 +2,10 @@
 
 void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont)
 {
-	for (int i = 0; i < noOfButtons; i++)
+	for (int i = 0; i < 6; i++)
 	{
 		m_selectableObjects.push_back(Button());
-		m_selectableObjects.at(i).setButtonPosition(sf::Vector2f{ 820.0f + (i * 80), 200.0f });
+		m_selectableObjects.at(i).setButtonPosition(sf::Vector2f{ 768.0f + (i * 64), 200.0f });
 		m_selectableObjects.at(i).resize(0.25, 1.0f);
 
 		m_texturedLabels.push_back(new Label(t_arialFont));
@@ -24,6 +24,10 @@ void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont)
 	m_texturedLabels.at(2)->setLabelSprite(m_texturedLabels.at(2)->getText().getString());
 	m_texturedLabels.at(3)->setText("Enemy");
 	m_texturedLabels.at(3)->setLabelSprite(m_texturedLabels.at(3)->getText().getString());
+	m_texturedLabels.at(4)->setText("Water");
+	m_texturedLabels.at(4)->setLabelSprite(m_texturedLabels.at(4)->getText().getString());
+	m_texturedLabels.at(5)->setText("Hole");
+	m_texturedLabels.at(5)->setLabelSprite(m_texturedLabels.at(5)->getText().getString());
 }
 
 void UiBuildMode::setUpGridFunctionButtons(sf::Font t_arialFont)
