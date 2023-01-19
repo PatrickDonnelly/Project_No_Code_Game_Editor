@@ -16,6 +16,7 @@ private:
 	void setUpGridFunctionButtons(sf::Font t_arialFont);
 	void setUpTestBuildButtons(sf::Font t_arialFont);
 	void setUpTextureRoomButtons(sf::Font t_arialFont);
+	void setUpPlacementModeButtons(sf::Font t_arialFont);
 	sf::Font m_arialFont;
 public:
 
@@ -29,18 +30,21 @@ public:
 	// buttons for building the room
 	// -. + , clear, generate
 	std::vector<Button> m_buildButtons;
-	std::vector<Label> m_buildButtonLabels;
+	std::vector<Label*> m_buildButtonLabels;
 
 	// buttons for texturing the room
 	// save, rebuild room, texture buttons floor, texture buttons walls
 	std::vector<Button> m_textureRoomButtons;
-	std::vector<Label> m_textureRoomLabels;
+	std::vector<Label*> m_textureRoomLabels;
 
 
 	// buttons for placing objects
 	// object buttons, test, rebuild room, clear objects
 	std::vector<Button> m_selectableObjects;
-	std::vector<Label> m_texturedLabels;
+	std::vector<Label*> m_texturedLabels;
+
+	std::vector<Button> m_placementOptions;
+	std::vector<Label*> m_placementOptionsLabels;
 
 	// buttons for testing
 	// save room, place more objects, start over

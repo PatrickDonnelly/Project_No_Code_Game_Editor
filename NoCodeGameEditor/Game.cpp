@@ -159,7 +159,6 @@ void Game::update(sf::Time t_deltaTime)
 			}
 		}
 	}
-
 }
 
 void Game::render()
@@ -167,7 +166,10 @@ void Game::render()
 	m_window.clear(sf::Color::Black);
 	m_grid->render(&m_window);
 	m_uiBuildMode.render(&m_window);
-	m_spear->render(m_window);
-	m_player->render(m_window);
+	if (m_gameState->m_currentGameState == State::ROOM_TEST)
+	{
+		m_spear->render(m_window);
+		m_player->render(m_window);
+	}
 	m_window.display();
 }

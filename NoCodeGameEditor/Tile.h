@@ -17,6 +17,7 @@ public:
 	bool m_right = false;
 	bool m_checked = false;
 	bool m_colliderCheck = false;
+	bool m_hasObject = false;
 
 	sf::Sprite m_cellSprite;
 	sf::Texture m_floorTexture;

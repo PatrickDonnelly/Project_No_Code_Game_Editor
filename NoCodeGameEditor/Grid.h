@@ -30,7 +30,7 @@ public:
 	int noOfWallColliders = 0;
 	bool startFound = false;
 	bool roomGenerated = false;
-
+	void clearObjects();
 	std::vector<Colliders*> m_vectColliders;
 	sf::Vector2f m_firstTilePosition{};
 	bool m_playerSet = false;

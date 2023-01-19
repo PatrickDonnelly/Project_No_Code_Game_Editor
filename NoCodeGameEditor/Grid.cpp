@@ -83,10 +83,10 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 						{
 							if (m_placedObjects.size() < maxObstacles)
 							{
-								if (m_vectGrid.at(i).at(j)->cellType == "Floor")
+								if (m_vectGrid.at(i).at(j)->cellType == "Floor" && m_vectGrid.at(i).at(j)->m_hasObject == false)
 								{
 									m_placedObjects.push_back(new Obstacle(m_selectedObject));
-									m_vectGrid.at(i).at(j)->cellType = m_selectedObject;
+									m_vectGrid.at(i).at(j)->m_hasObject = true;
 									m_placedObjects.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
 									m_placedObjects.at(noOfObstacles)->setRowColumn(i,j);
 									noOfObstacles++;
@@ -107,7 +107,7 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 									if (l_obstacle->getBounds()->getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 									{
 										// resets the right tile even if the object was moved
-										m_vectGrid.at(l_obstacle->getRow()).at(l_obstacle->getColumn())->cellType = "Floor";
+										m_vectGrid.at(l_obstacle->getRow()).at(l_obstacle->getColumn())->m_hasObject = false;
 										it = m_placedObjects.erase(it);
 										noOfObstacles--;
 									}
@@ -120,6 +120,22 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+void Grid::clearObjects()
+{
+	m_placedObjects.clear();
+	noOfObstacles = m_placedObjects.size();
+	for (int i = 0; i < m_vectGridSize; ++i)
+	{
+		for (int j = 0; j < m_vectGridSize; ++j)
+		{
+			if (m_vectGrid.at(i).at(j)->cellType == "Floor")
+			{
+				m_vectGrid.at(i).at(j)->m_hasObject = false;
 			}
 		}
 	}
