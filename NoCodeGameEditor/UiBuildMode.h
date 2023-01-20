@@ -51,6 +51,8 @@ public:
 	std::vector<Button> m_testingButtons;
 	std::vector<Label*> m_testingButtonLabels;
 
+	std::vector<sf::Vector2f> m_storePositions;
+
 	Grid* m_grid;
 
 };

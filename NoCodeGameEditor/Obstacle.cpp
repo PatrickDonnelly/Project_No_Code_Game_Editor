@@ -8,7 +8,7 @@ Obstacle::Obstacle()
 Obstacle::Obstacle(std::string t_typeTag)
 {
 	m_isCollidable = false;
-	if (t_typeTag != "Grass" && t_typeTag != "Water")
+	if (t_typeTag != "Grass" && t_typeTag != "Water" && t_typeTag != "Floor")
 	{
 		m_isCollidable = true;
 	}

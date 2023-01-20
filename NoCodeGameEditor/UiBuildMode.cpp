@@ -232,12 +232,15 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 						else if (m_placementOptionsLabels.at(i)->getTextString() == "Test Room")
 						{
 							m_gameState->m_currentGameState = State::ROOM_TEST;
+							for (int j = 0; j < m_grid->m_placedObjects.size(); ++j)
+							{
+								m_storePositions.push_back(m_grid->m_placedObjects.at(j)->getSprite()->getPosition());
+							}
 							// need to move player into scene here
 						}
 						else if (m_placementOptionsLabels.at(i)->getTextString() == "Clear Room")
 						{
 							m_grid->clearObjects();
-							// need to reset floor tiles cell state
 						}
 					}
 				}
@@ -264,7 +267,14 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 							// Go back to placing objects
 							// reset the objects position
 							//cahnge state
+							for (int j = 0; j < m_grid->m_placedObjects.size(); ++j)
+							{
+								m_grid->m_placedObjects.at(j)->getBounds()->setPosition(m_storePositions.at(j));
+							}
+							m_storePositions.clear();
+							m_grid->m_playerSet = false;
 							m_gameState->m_currentGameState = State::ROOM_PLACE_OBJECTS;
+
 						}
 						else if (m_testingButtonLabels.at(i)->getTextString() == "Save Room")
 						{

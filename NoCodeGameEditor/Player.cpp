@@ -6,7 +6,7 @@ Player::Player()
 	m_frameSize = 16;
 	m_defaultSpeed = 2.0f;
 	m_speed = 2.0f;
-	m_playerBoundsHeight = 28;
+	m_playerBoundsHeight = 8;
 	m_playerBoundsWidth = 16;
 	m_spriteSheetName = "MyDude.png";
 	loadAssets();
@@ -124,7 +124,7 @@ void Player::update(sf::Time deltaTime, sf::RenderWindow& window)
 		}
 	}
 	animate(deltaTime);
-	m_playerSprite.setPosition(m_playerBounds.getPosition());
+	m_playerSprite.setPosition(m_playerBounds.getPosition().x, m_playerBounds.getPosition().y - 10);
 	m_playerCentre.setPosition(m_playerSprite.getPosition());
 	
 }

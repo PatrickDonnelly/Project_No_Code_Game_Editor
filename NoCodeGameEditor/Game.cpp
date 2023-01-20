@@ -91,12 +91,21 @@ void Game::update(sf::Time t_deltaTime)
 		m_player->getBounds()->setPosition(m_grid->m_firstTilePosition.x+16, m_grid->m_firstTilePosition.y + 16);
 		std::cout << m_player->getSprite()->getPosition().x << std::endl;
 	}
+	
 	m_grid->update(t_deltaTime, m_window);
-	m_player->update(t_deltaTime, m_window);
-	m_spear->update(t_deltaTime, m_window);
+
+	if (m_gameState->m_currentGameState == State::ROOM_TEST)
+	{
+		m_player->update(t_deltaTime, m_window);
+		m_spear->update(t_deltaTime, m_window);
+	}
 
 	if (m_gameState->getState() == State::ROOM_TEST)
 	{
+		// player and walls
+		// objects and walls
+		m_player->m_speed = m_player->m_defaultSpeed;
+
 		if (m_grid->m_vectColliders.size() > 0)
 		{
 			for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
@@ -121,10 +130,24 @@ void Game::update(sf::Time t_deltaTime)
 						m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
 					}
 				}
+				else // if not collidable
+				{
+					if (m_grid->m_placedObjects.at(i)->m_tag == "Water")
+					{
+						if (m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds()))
+						{
+							m_player->m_speed = m_player->m_defaultSpeed * 0.5f;
+						}
+
+						
+					}
+				}
 			}
-			std::vector<Obstacle*>::iterator it;
+
+			// Spear vs Obstacles
 			if (m_spear->m_weaponUsed)
 			{
+				std::vector<Obstacle*>::iterator it;
 				std::cout << m_spear->getWeaponBounds()->getSize().x << " : " << m_spear->getWeaponBounds()->getSize().y << std::endl;
 
 				for (it = m_grid->m_placedObjects.begin(); it != m_grid->m_placedObjects.end();)
@@ -143,6 +166,7 @@ void Game::update(sf::Time t_deltaTime)
 				}
 			}
 
+			// grid objects against grid objects
 			for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
 			{
 				for (int j = 0; j < m_grid->m_placedObjects.size(); j++)

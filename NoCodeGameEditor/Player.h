@@ -14,7 +14,7 @@ public:
 	Player();
 	~Player();
 
-	int m_defaultSpeed;
+	float m_defaultSpeed;
 	bool m_weaponEnabled = false;
 	sf::Sprite m_playerSprite;
 	sf::Texture m_playerTexture;
