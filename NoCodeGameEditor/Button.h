@@ -24,10 +24,13 @@ public:
 	void resize(float m_xScale, float m_yScale);
 	bool getSelected();
 	void setSelected(bool t_tf);
+	bool isEnabled();
+	void setEnabled(bool t_onOff) { m_enabled = t_onOff; }
 
 private:
 
 	bool m_selected;
+	bool m_enabled = false;
 	sf::Sprite m_buttonSprite;
 	sf::Texture m_buttonTexture;
 	sf::Texture m_buttonHighlightTexture;

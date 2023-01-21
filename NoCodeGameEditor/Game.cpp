@@ -5,7 +5,7 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
 	m_exitGame{ false } //when true game will exit
 {
-	m_gameState = new GameState(State::ROOM_BUILD);
+	m_gameState = new GameState(State::ROOM_PLACE_OBJECTS);
 	setUpFontAndText();
 	m_grid = new Grid(m_gameState);
 	m_player = new Player();

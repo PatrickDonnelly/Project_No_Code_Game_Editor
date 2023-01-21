@@ -23,7 +23,7 @@ public:
 	void setTextPosition(sf::Vector2f t_pos);
 	void clear();
 	void render(sf::RenderWindow* t_window);
-	void setLabelSprite(std::string t_spriteName);
+	void setLabelSprite(std::string t_spriteName, std::string t_path);
 	void setTexturePosition(sf::Vector2f t_pos);
 
 	void setTextColor(sf::Color t_color);

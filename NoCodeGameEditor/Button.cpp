@@ -43,6 +43,11 @@ void Button::setSelected(bool t_tf)
 	m_selected = t_tf;
 }
 
+bool Button::isEnabled()
+{
+	return m_enabled;
+}
+
 void Button::setButtonSprite(sf::Sprite t_buttonSprite)
 {
 	m_buttonSprite = t_buttonSprite;

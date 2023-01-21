@@ -42,7 +42,7 @@ bool Grid::checkValidSelection()
 }
 void Grid::placeRemove(sf::RenderWindow& m_window)
 {
-	std::cout << noOfObstacles << std::endl;
+	//std::cout << noOfObstacles << std::endl;
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)
@@ -411,9 +411,9 @@ void Grid::decreaseGridSize()
 	}
 }
 
-void Grid::setSelectedObject(std::string t_objectName)
+void Grid::setSelectedObject(std::string t_path, std::string t_objectName)
 {
-	m_selectedObject = t_objectName;
+	m_selectedObject = t_path + t_objectName;
 }
 
 

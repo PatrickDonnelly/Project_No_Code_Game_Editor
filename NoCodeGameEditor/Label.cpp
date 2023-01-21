@@ -33,10 +33,10 @@ void Label::setText(std::string t_text)
 	m_labelText.setOrigin(m_labelText.getGlobalBounds().width / 2,m_labelText.getGlobalBounds().height/2);
 }
 
-void Label::setLabelSprite(std::string t_spriteName)
+void Label::setLabelSprite(std::string t_spriteName, std::string t_path)
 {
 	m_image = true;
-	if (!m_labelTexture.loadFromFile("ASSETS\\IMAGES\\" + t_spriteName + ".png"))
+	if (!m_labelTexture.loadFromFile(t_path + t_spriteName + ".png"))
 	{
 		std::cout << "Couldn't load Texture in Label.cpp" << std::endl;
 		m_image = false;
@@ -101,5 +101,8 @@ void Label::render(sf::RenderWindow* t_window)
 	{
 		t_window->draw(m_labelSprite);
 	}
-	t_window->draw(m_labelText);
+	else
+	{
+		t_window->draw(m_labelText);
+	}
 }
