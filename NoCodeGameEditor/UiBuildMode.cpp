@@ -1,10 +1,10 @@
 #include "UiBuildMode.h"
 
-void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont, int t_noOfObjects, std::vector<std::vector<Button*>> t_objectButtons, std::vector<Label*> t_labels, std::vector<std::string> t_objects)
+void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects)
 {
 	int buttonsMade = 0;
 	int maxButtons = t_objects.size();
-	int noOfButtonsPerRow = 0;
+	int noOfButtonsPerRow = 6;
 	int noOfRows = 0;
 
 	if (t_objects.size() % noOfButtonsPerRow != 0)
@@ -18,31 +18,101 @@ void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont, int t_noOfObj
 
 	for (int i = 0; i < noOfRows; i++)
 	{
-		for (int j = 0; j < noOfButtonsPerRow; i++)
+		std::vector<Button*> row;
+		std::vector<Label*> rowLabels;
+		for (int j = 0; j < noOfButtonsPerRow; j++)
 		{
 			if (buttonsMade < maxButtons)
 			{
-				t_objectButtons.at(i).push_back(new Button());
-				t_objectButtons.at(i).at(j)->setButtonPosition(sf::Vector2f{ 768.0f + (i * 64), 200.0f });
-				t_objectButtons.at(i).at(j)->resize(0.25, 1.0f);
-
-				t_labels.push_back(new Label(t_arialFont));
+				buttonsMade++;
+				row.push_back(new Button());
+				rowLabels.push_back(new Label(t_arialFont));
 			}
+
 		}
+		t_objectButtons.push_back(row);
+		t_labels.push_back(rowLabels);
+	}
+	std::vector<std::vector<Button>>::iterator row;
+	std::vector<Button>::iterator col;
+	int rowIndex = 0;
+	int colIndex = 0;
+
+	for ( auto& row : m_selectableFloorButtons)
+	{
+
+		colIndex = 0;
+		for (auto& col : row)
+		{
+	
+
+
+			//if (buttonsMade < maxButtons)
+			//{
+				//buttonsMade++;
+				//t_objectButtons.at(i).at(j).push_back(new Button());
+			col->setButtonPosition(sf::Vector2f(768.0f + (colIndex * 64), 200.0f + (rowIndex * 80)));
+			col->resize(0.25, 1.0f);
+
+			colIndex++;
+
+
+		}
+		rowIndex++;
 	}
 
-	for (int i = 0; i < t_labels.size(); i++)
+	std::vector<std::vector<Label>>::iterator rowLabels;
+	std::vector<Label>::iterator colLabels;
+	colIndex = 0;
+	rowIndex = 0;
+	int index = 0;
+	for (auto& rowLabels : m_selectableFloorLabels)
 	{
-		t_labels.at(i)->setTextColor(sf::Color::White);
-		t_labels.at(i)->setTextOutlineColor(sf::Color::Black);
-		t_labels.at(i)->setTextSize(11.0f);
-		t_labels.at(i)->setTextOutlineThickness(2.0f);
-		//t_labels.at(i)->setTexturePosition(t_objectButtons.at(i).at(j)->getButtonPosition());
-		//t_labels.at(i)->setTextPosition(sf::Vector2f(t_objectButtons.at(i).at(j)->getButtonPosition().x + 2, t_objects.at(i).at(j)->getButtonPosition().y + 24));
-		t_labels.at(i)->setText(t_objects.at(i));
-		t_labels.at(i)->setLabelSprite(m_texturedLabels.at(0)->getText().getString());
+		colIndex = 0;
+		for (auto& colLabels : rowLabels)
+		{
+
+
+			colLabels->setTextColor(sf::Color::White);
+			colLabels->setTextOutlineColor(sf::Color::Black);
+			colLabels->setTextSize(11.0f);
+			colLabels->setTextOutlineThickness(2.0f);
+			colLabels->setTexturePosition(t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition());
+			colLabels->setTextPosition(sf::Vector2f(t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition().x + 2, t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition().y + 24));
+			colLabels->setText(t_objects.at(index));
+			colLabels->setLabelSprite(t_objects.at(index));
+			colIndex++;
+			index++;
+			std::cout << colLabels->getTextPosition().x << " : " << colLabels->getTextPosition().y << std::endl;
+		}
+		rowIndex++;
 	}
 }
+
+//void UiBuildMode::setUpLabels(std::vector<Button>::iterator t_col, std::vector<Label*>& t_labels, std::vector<std::vector<Button*>>& t_objectButtons, ststd::vector<std::string> t_objects)
+//{
+//	int i = t_row;
+//	int j = t_col;
+//	if (i == 1)
+//	{
+//		j = t_col + 6;
+//	}
+//	else if (i == 2)
+//	{
+//		j = t_col + 12;
+//	}
+//
+//
+//	t_labels.at(11)->setTextColor(sf::Color::White);
+//	t_labels.at(11)->setTextOutlineColor(sf::Color::Black);
+//	t_labels.at(11)->setTextSize(11.0f);
+//	t_labels.at(11)->setTextOutlineThickness(2.0f);
+//	t_labels.at(11)->setTexturePosition(t_col->getButtonPosition());
+//	t_labels.at(11)->setTextPosition(sf::Vector2f(t_col->getButtonPosition().x + 2, t_col->getButtonPosition().y + 24));
+//	t_labels.at(11)->setText(t_objects.at(0));
+//	t_labels.at(11)->setLabelSprite(t_objects.at(0));
+//	std::cout << t_labels.at(j)->getTextPosition().x << " : " << t_labels.at(j)->getTextPosition().y << std::endl;
+//}
 
 void UiBuildMode::setUpGridFunctionButtons(sf::Font t_arialFont)
 {
@@ -168,12 +238,26 @@ UiBuildMode::UiBuildMode(sf::Font t_arialFont, Grid* t_grid, GameState* t_curren
 	m_gameState = t_currentGameState;
 	m_grid = t_grid;
 	m_arialFont = t_arialFont;
-	setUpPlaceableItemsButtons(m_arialFont);
+
+	std::string path = "ASSETS/IMAGES/Terrain/Grass/";
+	for (auto& entry : fs::directory_iterator(path))
+	{
+		std::string temp = entry.path().filename().string();
+		temp.resize(temp.size() - 4);
+		m_floors.push_back(temp);
+	}
+
+
+
+
+
+
+	setUpPlaceableItemsButtons(m_arialFont, m_selectableFloorButtons, m_selectableFloorLabels, m_floors);
 	setUpPlacementModeButtons(m_arialFont);
 	setUpCategoryButtons(m_arialFont);
 	setUpGridFunctionButtons(m_arialFont);
 	setUpTestBuildButtons(m_arialFont);
-	setUpTextureRoomButtons(m_arialFont);
+	//setUpTextureRoomButtons(m_arialFont);
 }
 
 UiBuildMode::UiBuildMode()
@@ -226,32 +310,38 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 
 
 
-	for (int i = 0; i < m_selectableObjects.size(); i++)
+	for (int i = 0; i < 2; i++)
 	{
-		if (m_selectableObjects.at(i).getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+		for (int j = 0; j < 6; j++)
 		{
-			if (t_event.type == sf::Event::MouseButtonReleased)
+			if (m_selectableFloorButtons.at(i).at(j)->getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
 			{
-				if (t_event.mouseButton.button == sf::Mouse::Left)
+				if (t_event.type == sf::Event::MouseButtonReleased)
 				{
-					for (int j = 0; j < m_selectableObjects.size(); j++)
+					if (t_event.mouseButton.button == sf::Mouse::Left)
 					{
-						m_selectableObjects.at(j).setSelected(false);
-					}
-					m_selectableObjects.at(i).setSelected(true);
+						for (int k = 0; k < 2; k++)
+						{
+							for (int l = 0; l < 6; l++)
+							{
+								m_selectableFloorButtons.at(k).at(l)->setSelected(false);
+							}
+						}
+						m_selectableFloorButtons.at(i).at(j)->setSelected(true);
 
-					if (m_selectableObjects.at(i).getSelected())
-					{
-						m_selectableObjects.at(i).setColor(sf::Color::Red);
-						// send selected object to grid
-						m_grid->setSelectedObject(m_texturedLabels.at(i)->getText().getString());
+						if (m_selectableFloorButtons.at(i).at(j)->getSelected())
+						{
+							m_selectableFloorButtons.at(i).at(j)->setColor(sf::Color::Red);
+							// send selected object to grid
+							m_grid->setSelectedObject(m_selectableFloorLabels.at(i).at(j)->getText().getString());
+						}
 					}
 				}
 			}
-		}
-		if (!m_selectableObjects.at(i).getSelected())
-		{
-			m_selectableObjects.at(i).setColor(sf::Color::White);
+			if (!m_selectableFloorButtons.at(i).at(j)->getSelected())
+			{
+				m_selectableFloorButtons.at(i).at(j)->setColor(sf::Color::White);
+			}
 		}
 	}
 
@@ -399,6 +489,31 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 		{
 			m_placementOptions.at(i).render(t_window);
 			m_placementOptionsLabels.at(i)->render(t_window);
+		}
+
+		std::vector<std::vector<Button>>::iterator row;
+		std::vector<Button>::iterator col;
+
+
+		for (const auto& row:m_selectableFloorButtons)
+		{
+			for (const auto& col:row)
+			{
+				//t_window->draw(col->getButtonSprite());
+				col->render(t_window);
+			}
+		}
+
+		std::vector<std::vector<std::string>>::iterator rowLabel;
+		std::vector<std::string>::iterator colLabel;
+
+		for (const auto& rowLabel : m_selectableFloorLabels)
+		{
+			for (const auto& colLabel : rowLabel)
+			{
+				//t_window->draw(col->getButtonSprite());
+				colLabel->render(t_window);
+			}
 		}
 	}
 	if (m_gameState->m_currentGameState == State::ROOM_TEST)

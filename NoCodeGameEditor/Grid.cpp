@@ -42,7 +42,7 @@ bool Grid::checkValidSelection()
 }
 void Grid::placeRemove(sf::RenderWindow& m_window)
 {
-	std::cout << noOfObstacles << std::endl;
+	//std::cout << noOfObstacles << std::endl;
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)

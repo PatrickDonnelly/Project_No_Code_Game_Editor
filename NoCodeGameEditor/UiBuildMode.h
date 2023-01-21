@@ -7,18 +7,23 @@
 #include "Label.h"
 #include "Grid.h"
 #include "GameState.h"
+#include <fstream>
+#include <iostream>
+#include <filesystem>
+namespace fs = std::filesystem;
+
 
 class UiBuildMode
 {
 private:
 
-	void setUpPlaceableItemsButtons(sf::Font t_arialFont, int t_noOfObjects, std::vector<std::vector<Button*>> t_objectButtons, std::vector<Label*> t_labels, std::vector<std::string> t_objects);
+	void setUpPlaceableItemsButtons(sf::Font t_arialFont, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects);
 	void setUpGridFunctionButtons(sf::Font t_arialFont);
 	void setUpTestBuildButtons(sf::Font t_arialFont);
 	void setUpTextureRoomButtons(sf::Font t_arialFont);
 	void setUpPlacementModeButtons(sf::Font t_arialFont);
 	void setUpCategoryButtons(sf::Font t_arialFont);
-
+	void setUpLabels(std::vector<Button>::iterator t_col, std::vector<Label*>& t_labels, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::string>t_objects);
 
 	void processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindow& t_window);
 	void processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWindow& t_window);
@@ -61,7 +66,7 @@ public:
 	std::vector<std::string> m_walls;
 
 	std::vector<std::vector<Button*>> m_selectableFloorButtons;
-	std::vector<Label*> m_selectableFloorLabels;
+	std::vector<std::vector<Label*>> m_selectableFloorLabels;
 	std::vector<std::string> m_floors;
 
 	std::vector<std::vector<Button*>> m_selectableDecorationButtons;
@@ -85,6 +90,8 @@ public:
 	std::vector<sf::Vector2f> m_storePositions;
 
 	Grid* m_grid;
+
+
 
 };
 #endif // !UIBUILDMODE_HPP
