@@ -411,9 +411,9 @@ void Grid::decreaseGridSize()
 	}
 }
 
-void Grid::setSelectedObject(std::string t_objectName)
+void Grid::setSelectedObject(std::string t_path, std::string t_objectName)
 {
-	m_selectedObject = t_objectName;
+	m_selectedObject = t_path + t_objectName;
 }
 
 

@@ -64,7 +64,7 @@ public:
 	bool checkValidSelection();
 	std::string m_selectedObject;
 	std::vector<std::string> m_selectableObjects;
-	void setSelectedObject(std::string t_objectName);
+	void setSelectedObject(std::string t_path, std::string t_objectName);
 
 };
 #endif // !GRID_HPP

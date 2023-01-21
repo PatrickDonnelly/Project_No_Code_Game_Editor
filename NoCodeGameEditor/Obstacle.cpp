@@ -43,7 +43,7 @@ void Obstacle::setUpSprite()
 
 void Obstacle::setObstacleTexture(sf::Texture& t_texture)
 {
-	if (!t_texture.loadFromFile("ASSETS\\IMAGES\\Terrain\\Grass\\" + m_tag + ".png"))
+	if (!t_texture.loadFromFile(m_tag + ".png"))
 	{
 		std::cout << "Can't load main menu bgt" << std::endl;
 	}
