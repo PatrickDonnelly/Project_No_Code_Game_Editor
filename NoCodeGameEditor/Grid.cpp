@@ -434,18 +434,27 @@ void Grid::render(sf::RenderWindow* t_window)
 	{
 		for (int j = 0; j < m_vectGridSize; j++)
 		{
-			t_window->draw(m_vectGrid.at(i).at(j)->getTileBorder());
+			if (m_gridEnabled)
+			{
+				t_window->draw(m_vectGrid.at(i).at(j)->getTileBorder());
+			}
 			t_window->draw(m_vectGrid.at(i).at(j)->getTile());
 		}
 	}
-	for (int i = 0; i < m_vectColliders.size(); i++)
+	if (m_collidersEnabled)
 	{
-		m_vectColliders.at(i)->render(t_window);
+		for (int i = 0; i < m_vectColliders.size(); i++)
+		{
+			m_vectColliders.at(i)->render(t_window);
+		}
 	}
 	for (int i = 0; i < m_placedObjects.size(); i++)
 	{
 		t_window->draw(*m_placedObjects.at(i)->getSprite());
-		t_window->draw(*m_placedObjects.at(i)->getBounds());
+		if (m_collidersEnabled)
+		{
+			t_window->draw(*m_placedObjects.at(i)->getBounds());
+		}
 	}
 }
 

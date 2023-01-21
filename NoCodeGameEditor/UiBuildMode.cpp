@@ -216,7 +216,21 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 	m_currentRowText.setOutlineThickness(1.0f);
 	m_currentRowText.setPosition(1390.0f,240.0f);
 
+	m_gridOnOffText.setString("Grid On");
+	m_gridOnOffText.setFont(t_arialFont);
+	m_gridOnOffText.setFillColor(sf::Color::Black);
+	m_gridOnOffText.setOutlineColor(sf::Color::White);
+	m_gridOnOffText.setCharacterSize(16.0f);
+	m_gridOnOffText.setOutlineThickness(1.0f);
+	m_gridOnOffText.setPosition(1260.0f, 466.0f);
 
+	m_collidersOnOffText.setString("Colliders On");
+	m_collidersOnOffText.setFont(t_arialFont);
+	m_collidersOnOffText.setFillColor(sf::Color::Black);
+	m_collidersOnOffText.setOutlineColor(sf::Color::White);
+	m_collidersOnOffText.setCharacterSize(16.0f);
+	m_collidersOnOffText.setOutlineThickness(1.0f);
+	m_collidersOnOffText.setPosition(1260.0f, 530.0f);
 
 	std::string path = "ASSETS/IMAGES/Terrain/Grass/";
 	for (auto& entry : fs::directory_iterator(path))
@@ -272,6 +286,13 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 		m_prevNextbuttons.push_back(new Button());
 		m_prevNextbuttons.at(i)->setButtonPosition(sf::Vector2f(390.0f + (i * 1070), 200.0f ));
 		m_prevNextbuttons.at(i)->resize(0.1f, 0.4f);
+	}
+
+	for (int i = 0; i < 2; ++i)
+	{
+		m_toggleGridButtons.push_back(new Button());
+		m_toggleGridButtons.at(i)->setButtonPosition(sf::Vector2f(1240.0f, 476.0f + (i*64)));
+		m_toggleGridButtons.at(i)->resize(0.1f, 0.4f);
 	}
 
 
@@ -392,7 +413,31 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 		colIndex = 0;
 		rowIndex += 1;
 	}
-
+	for (int i = 0; i < m_toggleGridButtons.size(); i++)
+	{
+		if (m_toggleGridButtons.at(i)->getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+		{
+			m_toggleGridButtons.at(i)->highlighted();
+			if (t_event.type == sf::Event::MouseButtonReleased)
+			{
+				if (t_event.mouseButton.button == sf::Mouse::Left)
+				{
+					if (i == 0)
+					{
+						m_grid->setGridEnabled();
+					}
+					else
+					{
+						m_grid->setCollidersEnabled();
+					}
+				}
+			}
+		}
+		else
+		{
+			m_toggleGridButtons.at(i)->setButtonTexture();
+		}
+	}
 
 	for (int i = 0; i < m_objectCategoryButtons.size(); i++)
 	{
@@ -659,9 +704,16 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 	if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 	{
 		t_window->draw(m_currentRowText);
+		t_window->draw(m_gridOnOffText);
+		t_window->draw(m_collidersOnOffText);
+
 		for (int i = 0; i < 2; ++i)
 		{
 			m_prevNextbuttons.at(i)->render(t_window);
+		}
+		for (int i = 0; i < 2; ++i)
+		{
+			m_toggleGridButtons.at(i)->render(t_window);
 		}
 		for (int i = 0; i < m_objectCategoryButtons.size(); i++)
 		{

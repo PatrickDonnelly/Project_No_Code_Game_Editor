@@ -106,8 +106,11 @@ public:
 	int m_rowsEnemies = 0;
 
 	std::vector<Button*> m_prevNextbuttons;
+	std::vector<Button*> m_toggleGridButtons;
 	int m_currentRowIndex = 0;
 	sf::Text m_currentRowText;
+	sf::Text m_collidersOnOffText;
+	sf::Text m_gridOnOffText;
 	void deselectButtons(std::vector<std::vector<Button*>>& t_objectButtons);
 
 	// buttons for testing
