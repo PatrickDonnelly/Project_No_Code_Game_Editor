@@ -11,13 +11,16 @@ private:
 	sf::RectangleShape m_tile;
 
 public:
+
+	bool m_hasObject = false;
+
 	bool m_top = false;
 	bool m_bottom = false;
 	bool m_left = false;
 	bool m_right = false;
 	bool m_checked = false;
 	bool m_colliderCheck = false;
-	bool m_hasObject = false;
+
 
 	sf::Sprite m_cellSprite;
 	sf::Texture m_floorTexture;

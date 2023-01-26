@@ -1,4 +1,6 @@
 #include "UiBuildMode.h"
+#include <fstream>
+#include <iostream>
 
 void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
 {
@@ -112,7 +114,7 @@ void UiBuildMode::setUpGridFunctionButtons(sf::Font t_arialFont)
 
 void UiBuildMode::setUpTestBuildButtons(sf::Font t_arialFont)
 {
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		m_testingButtons.push_back(Button());
 		m_testingButtons.at(i).setButtonPosition(sf::Vector2f{820.0f + (i * 280), 900.0f});
@@ -121,12 +123,18 @@ void UiBuildMode::setUpTestBuildButtons(sf::Font t_arialFont)
 			m_testingButtons.at(i) = Button();
 			m_testingButtons.at(i).setButtonPosition(sf::Vector2f{820.0f, 1000.0f});
 		}
+		else if (i == 3)
+		{
+			m_testingButtons.at(i) = Button();
+			m_testingButtons.at(i).setButtonPosition(sf::Vector2f{ 820.0f + 280.0f, 1000.0f });
+		}
 		m_testingButtonLabels.push_back(new Label(t_arialFont));
 		m_testingButtonLabels.at(i)->setTextPosition(m_buildButtons.at(i).getButtonPosition());
 	}
 	m_testingButtonLabels.at(0)->setText("Place Objects");
 	m_testingButtonLabels.at(1)->setText("Save Room");
 	m_testingButtonLabels.at(2)->setText("Start Over");
+	m_testingButtonLabels.at(3)->setText("Load Room");
 }
 
 void UiBuildMode::setUpPlacementModeButtons(sf::Font t_arialFont)
@@ -564,7 +572,76 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Save Room")
 					{
 						// save room here;
+						std::ofstream saveRoomData;
+						saveRoomData.open("Room.txt");
+						for (int i = 0; i < m_grid->m_vectGridSize; ++i)
+						{
+							for (int j = 0; j < m_grid->m_vectGridSize; ++j)
+							{
+								if (m_grid->m_vectGrid.at(i).at(j)->cellType != "Empty")
+								{
+									saveRoomData << m_grid->m_vectGrid.at(i).at(j)->cellType << " : " << "xPosition : " << m_grid->m_vectGrid.at(i).at(j)->getPos().x << " yPosition : " << m_grid->m_vectGrid.at(i).at(j)->getPos().y << "\n";
+								}
+								
+							}
+						}
+						for (int i = 0; i < m_grid->m_placedObjects.size(); ++i)
+						{
+							if (m_grid->m_placedObjects.size() != 0)
+							{
+								saveRoomData << m_grid->m_placedObjects.at(i)->m_tag << " : " << "xPosition : " << m_grid->m_placedObjects.at(i)->getSprite()->getPosition().x << " yPosition : " << m_grid->m_placedObjects.at(i)->getSprite()->getPosition().y << "\n";
+							}
+						}
+
+						saveRoomData.close();
 					}
+					//else if (m_testingButtonLabels.at(i)->getTextString() == "Load Room")
+					//{
+					//	// save room here;
+					//	std::ifstream loadRoomData;
+					//	loadRoomData.open("Room.txt");
+
+					//	if (loadRoomData.fail())
+					//	{
+					//		std::cout << "failed to load file Room.txt";
+					//	}
+					//	else
+					//	{
+
+
+					//		for (int i = 0; i < m_grid->m_vectGridSize; ++i)
+					//		{
+					//			std::vector<Tile*> row;
+					//			for (int j = 0; j < m_grid->m_vectGridSize; ++j)
+					//			{
+					//				row.push_back(new Tile(m_textFont));
+					//			}
+					//			m_grid->m_vectGrid.push_back(row);
+					//		}
+					//		for (int i = 0; i < m_grid->m_vectGridSize; ++i)
+					//		{
+					//			for (int j = 0; j < m_grid->m_vectGridSize; ++j)
+					//			{
+					//				m_grid->m_vectGrid.at(i).at(j)->setPosition(m_grid->m_vectGrid.at(i).at(j)->m_width * i + 960 - (m_grid->m_vectGridSize * 16), m_grid->m_vectGrid.at(i).at(j)->m_width * j + 540 - (m_grid->m_vectGridSize * 16));
+					//				m_grid->m_vectGrid.at(i).at(j)->rowColumn = sf::Vector2i{ i,j };
+					//				m_grid->m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(200, 200, 220, 0));
+					//				m_grid->m_vectGrid.at(i).at(j)->cellType = "Empty";
+					//				m_grid->m_vectGrid.at(i).at(j)->m_checked = false;
+					//				m_grid->m_vectGrid.at(i).at(j)->m_colliderCheck = false;
+					//			}
+					//		}
+					//	}
+					//		for (int i = 0; i < m_grid->m_placedObjects.size(); ++i)
+					//		{
+					//			if (m_grid->m_placedObjects.size() != 0)
+					//			{
+					//			//	saveRoomData << m_grid->m_placedObjects.at(i)->m_tag << " : " << "xPosition : " << m_grid->m_placedObjects.at(i)->getSprite()->getPosition().x << " yPosition : " << m_grid->m_placedObjects.at(i)->getSprite()->getPosition().y << "\n";
+					//			}
+					//		}
+					//	
+
+					//	loadRoomData.close();
+					//}
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Start Over")
 					{
 						m_grid->regenerateGrid();
