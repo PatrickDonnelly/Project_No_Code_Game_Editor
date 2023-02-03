@@ -13,7 +13,7 @@
 #include "Weapon.h"
 #include "UiBuildMode.h"
 #include "GameState.h"
-
+#include "DialogueBox.h"
 
 
 class Game
@@ -32,12 +32,14 @@ private:
 	Collision m_checkCollision;
 	Weapon* m_spear;
 	UiBuildMode m_uiBuildMode;
+	DialogueBox* m_dialogueBox{nullptr};
 
 	void setUpFontAndText();
 	void processEvents();
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
 	void render();
+
 
 	sf::Font m_ArialFont;
 	sf::Text m_text;

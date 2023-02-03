@@ -7,10 +7,12 @@ Game::Game() :
 {
 	m_gameState = new GameState(State::ROOM_PLACE_OBJECTS);
 	setUpFontAndText();
+	m_dialogueBox = new DialogueBox(m_ArialFont);
 	m_grid = new Grid(m_gameState);
 	m_player = new Player();
 	m_spear = new Weapon(m_player);
 	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState);
+
 }
 
 Game::~Game()
@@ -68,6 +70,10 @@ void Game::processEvents()
 		{
 			processKeys(newEvent);
 		}
+		if (sf::Event::TextEntered == newEvent.type)
+		{
+			m_dialogueBox->typing(newEvent);
+		}
 	}
 }
 
@@ -77,6 +83,7 @@ void Game::processKeys(sf::Event t_event)
 	{
 		m_exitGame = true;
 	}
+
 }
 
 void Game::update(sf::Time t_deltaTime)
@@ -195,5 +202,6 @@ void Game::render()
 		m_spear->render(m_window);
 		m_player->render(m_window);
 	}
+	m_dialogueBox->render(&m_window);
 	m_window.display();
 }
