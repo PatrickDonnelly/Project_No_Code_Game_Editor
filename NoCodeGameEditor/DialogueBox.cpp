@@ -66,8 +66,33 @@ void DialogueBox::render(sf::RenderWindow* t_window)
 
 		t_window->draw(m_dialogueBox);
 		t_window->draw(m_textBox);
-	
+		std::string temp = m_textBox.getString();
+		std::cout << "width : " << m_textBox.getGlobalBounds().width << std::endl;
+		std::cout << "height : " << m_textBox.getGlobalBounds().height << std::endl;
 
+		for (int i = 0; i < temp.length(); i++)
+		{
+			if (m_text.str().at(i) != '\n')
+			{
+				if (m_textBox.findCharacterPos(i).x > 600)
+				{
+					//m_text << "\n";
+					std::string temp = m_textBox.getString();
+					char character = temp.at(i - 1);
+					char char2 = temp.at(i);
+					temp.pop_back();
+					temp.pop_back();
+					temp += "\n";
+					temp += (character + char2);
+					m_text.clear();;
+					m_text << temp;
+					m_textBox.setString(m_text.str());
+				}
+			}
+			std::cout << "X Position of char : " << m_textBox.findCharacterPos(i).x << std::endl;
+			std::cout << "Y Position of char : " << m_textBox.findCharacterPos(i).y << std::endl;
+
+		}
 
 
 }
