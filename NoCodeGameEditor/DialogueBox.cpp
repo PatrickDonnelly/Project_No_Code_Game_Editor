@@ -40,8 +40,8 @@ sf::Vector2f DialogueBox::getDialogueBoxPosition()
 
 void DialogueBox::initDialogueBox()
 {
-	m_dialogueBox.setSize(sf::Vector2f(1000.0f, 200.0f));
-	m_dialogueBox.setPosition(440.0f, 600.0f);
+	m_dialogueBox.setSize(sf::Vector2f(1600.0f, 200.0f));
+	m_dialogueBox.setPosition(160.0f, 840.0f);
 	m_dialogueBox.setOutlineThickness(2.0f);
 	m_dialogueBox.setOutlineColor(sf::Color::Green);
 	m_dialogueBox.setFillColor(sf::Color::Black);
@@ -101,7 +101,7 @@ void DialogueBox::inputTextBox(int t_character)
 	m_textBox.setString(m_text.str());
 	std::string temp = m_textBox.getString();
 	//std::cout << "width : " << m_textBox.getGlobalBounds().width << std::endl;
-	std::cout << "height : " << m_textBox.getGlobalBounds().height << std::endl;
+	//std::cout << "height : " << m_textBox.getGlobalBounds().height << std::endl;
 	std::string word;
 	for (int i = 0; i < temp.length(); i++)
 	{

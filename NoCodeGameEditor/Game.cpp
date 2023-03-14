@@ -5,13 +5,14 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
 	m_exitGame{ false } //when true game will exit
 {
-	m_gameState = new GameState(State::ROOM_PLACE_OBJECTS);
+	m_gameState = new GameState(State::CREATE_DIALOGUE);
 	setUpFontAndText();
-	m_dialogueBox = new DialogueBox(m_ArialFont);
 	m_grid = new Grid(m_gameState);
 	m_player = new Player();
 	m_spear = new Weapon(m_player);
 	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState);
+	m_dialogueBox = new DialogueBox(m_ArialFont);
+	m_textEditor = new TextEditor(m_ArialFont, m_gameState);
 
 }
 
@@ -61,6 +62,7 @@ void Game::processEvents()
 	{
 		m_spear->processEvents(newEvent);
 		m_uiBuildMode.processEvents(newEvent, m_window);
+		m_textEditor->processTextEditorButtons(newEvent, m_window);
 
 		if (sf::Event::Closed == newEvent.type) // window message
 		{
@@ -70,9 +72,13 @@ void Game::processEvents()
 		{
 			processKeys(newEvent);
 		}
-		if (sf::Event::TextEntered == newEvent.type)
+		if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
 		{
-			m_dialogueBox->typing(newEvent);
+			if (sf::Event::TextEntered == newEvent.type)
+			{
+				m_dialogueBox->typing(newEvent);
+				m_textEditor->typing(newEvent);
+			}
 		}
 	}
 }
@@ -202,6 +208,10 @@ void Game::render()
 		m_spear->render(m_window);
 		m_player->render(m_window);
 	}
-	m_dialogueBox->render(&m_window);
+	if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
+	{
+		m_dialogueBox->render(&m_window);
+		m_textEditor->render(&m_window);
+	}
 	m_window.display();
 }

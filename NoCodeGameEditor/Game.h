@@ -14,6 +14,7 @@
 #include "UiBuildMode.h"
 #include "GameState.h"
 #include "DialogueBox.h"
+#include "TextEditor.h"
 
 
 class Game
@@ -33,6 +34,7 @@ private:
 	Weapon* m_spear;
 	UiBuildMode m_uiBuildMode;
 	DialogueBox* m_dialogueBox{nullptr};
+	TextEditor* m_textEditor{ nullptr };
 
 	void setUpFontAndText();
 	void processEvents();

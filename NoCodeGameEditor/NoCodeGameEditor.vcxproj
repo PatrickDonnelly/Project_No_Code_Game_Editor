@@ -139,9 +139,11 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="InputField.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="TextEditor.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="UiBuildMode.h" />
     <ClInclude Include="Weapon.h" />
@@ -155,10 +157,12 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="InputField.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="TextEditor.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="UiBuildMode.cpp" />
     <ClCompile Include="Weapon.cpp" />
