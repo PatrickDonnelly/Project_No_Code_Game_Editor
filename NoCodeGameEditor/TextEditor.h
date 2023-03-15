@@ -8,6 +8,10 @@
 #include "GameState.h"
 #include "PopUp.h"
 #include "InputField.h"
+#include <fstream>
+#include <iostream>
+#include <filesystem>
+namespace fs = std::filesystem;
 
 #define ENTER_KEY 13
 #define ESCAPE_KEY 27
@@ -21,9 +25,17 @@ public:
 	TextEditor(sf::Font& t_font, GameState* t_currentGameState);
 	~TextEditor();
 
-
+	void setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path);
+	std::vector<std::vector<Button*>> m_selectableDialogueButtons;
+	std::vector<std::vector<Label*>> m_selectableDialogueLabels;
+	std::vector<std::string> m_DialogueOptions;
+	std::string m_pathDialogue = "DialogueBoxes/";
+	int m_rowsDialogue = 0;
+	int m_currentRowIndex = 0;
+	std::vector<Button*> m_prevNextbuttons;
+	std::string fileName = "";
 	void initInputFields();
-
+	void setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons);
 
 	void render(sf::RenderWindow* t_window);
 	bool isEnabled();

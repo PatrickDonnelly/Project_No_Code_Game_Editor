@@ -19,6 +19,164 @@ TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 	initText();
 	setUpTextEditorButtons(t_font);
 	setPopUpButtons(t_font);
+
+	std::string path = "Dialogue/";
+	for (auto& entry : fs::directory_iterator(path))
+	{
+		std::string temp = entry.path().filename().string();
+		temp.resize(temp.size() - 4);
+		std::cout << "here : " << temp << std::endl;
+		m_DialogueOptions.push_back(temp);
+	}
+	setUpPlaceableItemsButtons(m_font, m_rowsDialogue, m_selectableDialogueButtons, m_selectableDialogueLabels, m_DialogueOptions, path);
+	for (int i = 0; i < 2; ++i)
+	{
+		m_prevNextbuttons.push_back(new Button());
+		m_prevNextbuttons.at(i)->setButtonPosition(sf::Vector2f(60.0f, 175 + (i * 640)));
+		m_prevNextbuttons.at(i)->resize(0.1f, 0.4f);
+	}
+}
+
+void TextEditor::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons)
+{
+	for (int i = 0; i < m_prevNextbuttons.size(); ++i)
+	{
+		if (m_prevNextbuttons.at(i)->getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+		{
+			m_prevNextbuttons.at(i)->highlighted();
+			if (t_event.type == sf::Event::MouseButtonReleased)
+			{
+				if (t_event.key.code == sf::Mouse::Left)
+				{
+					if (i == 0)
+					{
+						m_currentRowIndex -= 1;
+					}
+					else
+					{
+						m_currentRowIndex += 1;
+					}
+					if (m_currentRowIndex >= t_rows)
+					{
+						m_currentRowIndex = 0;
+					}
+					else if (m_currentRowIndex < 0)
+					{
+						m_currentRowIndex = t_rows - 1;
+					}
+					//m_currentRowText.setString(std::to_string(m_currentRowIndex + 1) + " / " + std::to_string(t_rows));
+					std::vector<std::vector<Button>>::iterator row;
+					std::vector<Button>::iterator col;
+					int rowIndex = 0;
+					int colIndex = 0;
+
+					for (auto& row : t_objectButtons)
+					{
+						colIndex = 0;
+						for (auto& col : row)
+						{
+							if (m_currentRowIndex == rowIndex)
+							{
+								t_objectButtons.at(m_currentRowIndex).at(colIndex)->setEnabled(true);
+							}
+							else
+							{
+								t_objectButtons.at(rowIndex).at(colIndex)->setEnabled(false);
+							}
+							colIndex++;
+						}
+						rowIndex++;
+					}
+				}
+			}
+		}
+		else
+		{
+			m_prevNextbuttons.at(i)->setButtonTexture();
+		}
+	}
+	std::cout << m_currentRowIndex << std::endl;
+}
+
+void TextEditor::setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
+{
+	int buttonsMade = 0;
+	int maxButtons = t_objects.size();
+	int noOfButtonsPerRow = 20;
+	int noOfRows = 0;
+
+	if (t_objects.size() % noOfButtonsPerRow != 0)
+	{
+		noOfRows = (t_objects.size() / noOfButtonsPerRow) + 1;
+		t_rows = noOfRows;
+	}
+	else
+	{
+		noOfRows = t_objects.size() / noOfButtonsPerRow;
+		t_rows = noOfRows;
+	}
+
+	for (int i = 0; i < noOfRows; i++)
+	{
+		std::vector<Button*> row;
+		std::vector<Label*> rowLabels;
+		for (int j = 0; j < noOfButtonsPerRow; j++)
+		{
+			if (buttonsMade < maxButtons)
+			{
+				buttonsMade++;
+				row.push_back(new Button());
+				rowLabels.push_back(new Label(t_arialFont));
+			}
+
+		}
+		t_objectButtons.push_back(row);
+		t_labels.push_back(rowLabels);
+	}
+	std::vector<std::vector<Button>>::iterator row;
+	std::vector<Button>::iterator col;
+	int rowIndex = 0;
+	int colIndex = 0;
+
+	for (auto& row : t_objectButtons)
+	{
+		colIndex = 0;
+		for (auto& col : row)
+		{
+			if (rowIndex == 0)
+			{
+				col->setEnabled(true);
+			}
+			col->setButtonPosition(sf::Vector2f(50.0f, 210.0f + (colIndex * 30)));
+			col->resize(0.75f, 0.4f);
+			colIndex++;
+		}
+		rowIndex++;
+	}
+
+	std::vector<std::vector<Label>>::iterator rowLabels;
+	std::vector<Label>::iterator colLabels;
+	colIndex = 0;
+	rowIndex = 0;
+	int index = 0;
+	for (auto& rowLabels : t_labels)
+	{
+		colIndex = 0;
+		for (auto& colLabels : rowLabels)
+		{
+			colLabels->setTextColor(sf::Color::White);
+			colLabels->setTextOutlineColor(sf::Color::Black);
+			colLabels->setTextSize(16.0f);
+			colLabels->setTextOutlineThickness(2.0f);
+			colLabels->setTexturePosition(t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition());
+			colLabels->setTextPosition(sf::Vector2f(t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition().x + 2, t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition().y));
+			colLabels->setText(t_objects.at(index));
+			colIndex++;
+			index++;
+			//std::cout << colLabels->getTextPosition().x << " : " << colLabels->getTextPosition().y << std::endl;
+		}
+		rowIndex++;
+	}
 }
 
 void TextEditor::initText()
@@ -61,6 +219,11 @@ void TextEditor::render(sf::RenderWindow* t_window)
 		m_textEditorLabels.at(i)->render(t_window);
 	}
 
+	for (int i = 0; i < 2; ++i)
+	{
+		m_prevNextbuttons.at(i)->render(t_window);
+	}
+
 	if (m_popUpBox.isEnabled())
 	{
 		m_popUpBox.render(t_window);
@@ -70,12 +233,112 @@ void TextEditor::render(sf::RenderWindow* t_window)
 			m_popUpButtonLabels.at(i)->render(t_window);
 		}
 	}
+
+	std::vector<std::vector<Button>>::iterator row;
+	std::vector<Button>::iterator col;
+	std::vector<std::vector<std::string>>::iterator rowLabel;
+	std::vector<std::string>::iterator colLabel;
+	int rowIndex = 0;
+
+	for (const auto& row : m_selectableDialogueButtons)
+	{
+		for (const auto& col : row)
+		{
+			if (rowIndex == m_currentRowIndex)
+			{
+				//std::cout << "here" << std::endl;
+				//t_window->draw(col->getButtonSprite());
+				col->render(t_window);
+			}
+		}
+		rowIndex++;
+	}
+
+	rowIndex = 0;
+	for (const auto& rowLabel : m_selectableDialogueLabels)
+	{
+		for (const auto& colLabel : rowLabel)
+		{
+			if (rowIndex == m_currentRowIndex)
+			{
+				//t_window->draw(col->getButtonSprite());
+				colLabel->render(t_window);
+			}
+		}
+		rowIndex++;
+	}
 }
 
 void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
 	{
+		setVisibleRow(t_event, t_window, m_rowsDialogue, m_selectableDialogueButtons);
+
+
+		std::vector<std::vector<Button>>::iterator row;
+		std::vector<Button>::iterator col;
+		int rowIndex = 0;
+		int colIndex = 0;
+
+		for (const auto& row : m_selectableDialogueButtons)
+		{
+
+			for (const auto& col : row)
+			{
+
+				if (col->getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+				{
+					col->highlighted();
+					if (t_event.type == sf::Event::MouseButtonReleased)
+					{
+						if (t_event.mouseButton.button == sf::Mouse::Left)
+						{
+							if (col->isEnabled())
+							{
+								//deselectButtons(t_objectButtons);
+								std::vector<std::vector<Button>>::iterator temprow;
+								std::vector<Button>::iterator tempcol;
+								for (const auto& temprow : m_selectableDialogueButtons)
+								{
+									for (const auto& tempcol : temprow)
+									{
+										col->setSelected(false);
+										if (!col->getSelected())
+										{
+											std::cout << ("White") << std::endl;
+											col->setColor(sf::Color::White);
+										}
+									}
+								}
+								fileName = m_selectableDialogueLabels.at(rowIndex).at(colIndex)->getText().getString();
+								col->setSelected(true);
+
+								if (col->getSelected())
+								{
+									col->setColor(sf::Color::Blue);
+									std::cout << ("Red") << std::endl;
+
+									// send selected object to grid
+									//m_grid->setSelectedObject(t_path, t_labels.at(rowIndex).at(colIndex)->getText().getString());
+								}
+
+							}
+						}
+					}
+				}
+				else
+				{
+					col->setButtonTexture();
+				}
+
+				colIndex += 1;
+			}
+			colIndex = 0;
+			rowIndex += 1;
+		}
+
+		
 		if (!m_popUpBox.isEnabled())
 		{
 			if (m_mainBody->GetInputField().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
@@ -194,7 +457,8 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 								std::string line_content;
 								std::string lineContentAppended;
 								
-								std::ifstream my_file("Dialogue/" + m_title->GetText()+ ".txt");
+								
+								std::ifstream my_file("Dialogue/" + fileName+ ".txt");
 
 								std::cout << "Dialogue/" << m_title->GetText() << ".txt" << std::endl;
 								while (std::getline(my_file, line_content)) {
@@ -207,12 +471,8 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 									std::cout << "Line: " << lines << " content: " << line_content << std::endl;
 								}
 								m_mainBody->SetString(lineContentAppended);
-								//m_text.str(lineContentAppended);
-								//m_textBox.setString(lineContentAppended);
+								m_title->SetString(fileName);
 								my_file.close();
-
-
-								// Load dialogue here
 							}
 						}
 					}

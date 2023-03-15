@@ -314,31 +314,31 @@ UiBuildMode::~UiBuildMode()
 
 void UiBuildMode::processDialogueButtons(sf::Event t_event, sf::RenderWindow& t_window)
 {
-	for (int i = 0; i < m_dialogueButtons.size(); i++)
-	{
-		if (m_dialogueButtons.at(i).getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
-		{
-			m_dialogueButtons.at(i).highlighted();
-			if (t_event.type == sf::Event::MouseButtonReleased)
-			{
-				if (t_event.mouseButton.button == sf::Mouse::Left)
-				{
-					if (m_buildButtonLabels.at(i)->getTextString() == "Save")
-					{
-						// Save dialogue here
-					}
-					else if (m_buildButtonLabels.at(i)->getTextString() == "Exit")
-					{
-						// Toggle dialogue box off
-					}
-				}
-			}
-		}
-		else
-		{
-			m_dialogueButtons.at(i).setButtonTexture();
-		}
-	}
+	//for (int i = 0; i < m_dialogueButtons.size(); i++)
+	//{
+	//	if (m_dialogueButtons.at(i).getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+	//	{
+	//		m_dialogueButtons.at(i).highlighted();
+	//		if (t_event.type == sf::Event::MouseButtonReleased)
+	//		{
+	//			if (t_event.mouseButton.button == sf::Mouse::Left)
+	//			{
+	//				if (m_buildButtonLabels.at(i)->getTextString() == "Save")
+	//				{
+	//					 Save dialogue here
+	//				}
+	//				else if (m_buildButtonLabels.at(i)->getTextString() == "Exit")
+	//				{
+	//					 Toggle dialogue box off
+	//				}
+	//			}
+	//		}
+	//	}
+	//	else
+	//	{
+	//		m_dialogueButtons.at(i).setButtonTexture();
+	//	}
+	//}
 }
 
 void UiBuildMode::processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindow& t_window)
