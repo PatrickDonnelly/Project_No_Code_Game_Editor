@@ -18,10 +18,10 @@ class Obstacle
 	
 public:
 	Obstacle();
-	Obstacle(std::string t_typeTag);
+	Obstacle(std::string t_typeTag, std::string t_path);
 	~Obstacle();
 
-
+	std::string m_tempPath = "";
 
 	std::string m_tag;
 	bool m_isCollidable = false;

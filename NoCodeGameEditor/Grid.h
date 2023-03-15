@@ -67,7 +67,7 @@ public:
 	void setSelectedObject(std::string t_path, std::string t_objectName);
 	bool m_gridEnabled = true;
 	bool m_collidersEnabled = true;
-
+	std::string m_tempTag = "";
 	void setGridEnabled() { m_gridEnabled = !m_gridEnabled; }
 	void setCollidersEnabled() { m_collidersEnabled = !m_collidersEnabled; }
 

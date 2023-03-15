@@ -76,8 +76,16 @@ void Game::processEvents()
 		{
 			if (sf::Event::TextEntered == newEvent.type)
 			{
-				m_dialogueBox->typing(newEvent);
-				m_textEditor->typing(newEvent);
+				//m_dialogueBox->typing(newEvent);
+				//m_textEditor->typing(newEvent);
+				if (m_textEditor->GetMainBody()->GetSelected())
+				{
+					m_textEditor->GetMainBody()->typing(newEvent);
+				}
+				else if (m_textEditor->GetTitle()->GetSelected())
+				{
+					m_textEditor->GetTitle()->typing(newEvent);
+				}
 			}
 		}
 	}

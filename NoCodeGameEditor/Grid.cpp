@@ -85,7 +85,7 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 							{
 								if (m_vectGrid.at(i).at(j)->cellType == "Floor" && m_vectGrid.at(i).at(j)->m_hasObject == false)
 								{
-									m_placedObjects.push_back(new Obstacle(m_selectedObject));
+									m_placedObjects.push_back(new Obstacle(m_tempTag,m_selectedObject));
 									m_vectGrid.at(i).at(j)->m_hasObject = true;
 									m_placedObjects.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
 									m_placedObjects.at(noOfObstacles)->setRowColumn(i,j);
@@ -413,6 +413,7 @@ void Grid::decreaseGridSize()
 
 void Grid::setSelectedObject(std::string t_path, std::string t_objectName)
 {
+	m_tempTag = t_path;
 	m_selectedObject = t_path + t_objectName;
 }
 
