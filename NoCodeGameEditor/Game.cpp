@@ -174,11 +174,20 @@ void Game::update(sf::Time t_deltaTime)
 				for (it = m_grid->m_placedObjects.begin(); it != m_grid->m_placedObjects.end();)
 				{
 					Obstacle* l_obstacle = *it;
-					if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
+					if (l_obstacle->isCollidable())
 					{
-						it = m_grid->m_placedObjects.erase(it);
+						if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
+						{
 
-						m_grid->noOfObstacles--;
+							it = m_grid->m_placedObjects.erase(it);
+
+							m_grid->noOfObstacles--;
+						}
+						else
+						{
+							it++;
+						}
+
 					}
 					else
 					{

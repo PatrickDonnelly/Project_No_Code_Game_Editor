@@ -8,9 +8,6 @@ Grid::Grid(GameState* t_gameState)
 {
 	m_gameState = t_gameState;
 	setUpFont();
-	m_background.setSize(sf::Vector2f{ 250.0f,1080.0f });
-	m_background.setPosition(1670, 0);
-	m_background.setFillColor(sf::Color::Color(40,40,40,255));
 	m_selectableObjects.push_back("Statue");
 	m_selectableObjects.push_back("Grass");
 	m_selectableObjects.push_back("Potion");
@@ -26,11 +23,6 @@ void Grid::setUpFont()
 	{
 
 	}
-	m_helpText.setFont(m_textFont);
-	m_helpText.setString("Right Click Mouse to \nplace floor tiles. \n\n\n\nLeft Click Mouse to \nplace walls tiles. \n\n\n\nPress Up To \nincrease Grid Size \n\n\n\nPress Down to \nDecrease grid Size.");
-	m_helpText.setPosition(1700, 200);
-	m_helpText.setCharacterSize(18U);
-	m_helpText.setFillColor(sf::Color::White);
 }
 bool Grid::checkValidSelection()
 {
@@ -429,8 +421,6 @@ void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 
 void Grid::render(sf::RenderWindow* t_window)
 {
-	t_window->draw(m_background);
-	t_window->draw(m_helpText);
 	for (int i = 0; i < m_vectGridSize; i++)
 	{
 		for (int j = 0; j < m_vectGridSize; j++)

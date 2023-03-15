@@ -196,7 +196,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 								
 								std::ifstream my_file("Dialogue/" + m_title->GetText()+ ".txt");
 
-
+								std::cout << "Dialogue/" << m_title->GetText() << ".txt" << std::endl;
 								while (std::getline(my_file, line_content)) {
 									lines++;
 
@@ -204,7 +204,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 									lineContentAppended.append("\n");
 									m_mainBody->ClearText();
 
-									//std::cout << "Line: " << lines << " content: " << line_content << std::endl;
+									std::cout << "Line: " << lines << " content: " << line_content << std::endl;
 								}
 								m_mainBody->SetString(lineContentAppended);
 								//m_text.str(lineContentAppended);

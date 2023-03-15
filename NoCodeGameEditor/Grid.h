@@ -44,8 +44,6 @@ public:
 	sf::Font m_textFont;
 	void setUpFont();
 	void regenerateGrid();
-	sf::Text m_helpText;
-	sf::RectangleShape m_background;
 	void CheckValidityOfWalls(int t_x, int t_y);
 	int counter = 0;
 	std::queue<Tile*> m_tileQueue{};
