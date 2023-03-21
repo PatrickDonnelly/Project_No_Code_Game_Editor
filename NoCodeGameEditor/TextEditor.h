@@ -11,6 +11,9 @@
 #include <fstream>
 #include <iostream>
 #include <filesystem>
+#include "CheckBox.h"
+#include "DialogueBox.h"
+
 namespace fs = std::filesystem;
 
 #define ENTER_KEY 13
@@ -47,9 +50,16 @@ public:
 
 private:
 
+	DialogueBox* m_dialogueBox;
+	CheckBox* m_previewDialogueCheckBox;
+
 	InputField* m_mainBody;
 	InputField* m_title;
 
+	bool saving = false;
+	void loadDialogue();
+	void refreshDialogue();
+	void clearDialogue();
 
 	PopUp m_popUpBox;
 	std::vector<Button*> m_popUpButtons;

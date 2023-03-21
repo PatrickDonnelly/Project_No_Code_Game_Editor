@@ -26,11 +26,15 @@ public:
 	void setDialogueBoxSprite(sf::Sprite t_dialogueSprite);
 	void render(sf::RenderWindow* t_window);
 	bool isEnabled();
-	void setEnabled(bool t_onOff) { m_enabled = t_onOff; }
+	void setEnabled() { m_enabled = !m_enabled; }
 	void typing(sf::Event t_event);
+	void setDialogueText(std::string t_dialogue) { m_textBox.setString(t_dialogue); }
+
+	void splitString(std::string t_dialogueText);
+
 
 private:
-
+	std::vector<std::string> m_dialogue;
 	GameState* m_gameState;
 	bool m_enabled = false;
 	sf::Sprite m_dialogueBoxSprite;

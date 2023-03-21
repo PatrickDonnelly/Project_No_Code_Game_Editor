@@ -133,6 +133,7 @@
     <ClInclude Include="AnimationState.h" />
     <ClInclude Include="Animator.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="CheckBox.h" />
     <ClInclude Include="Colliders.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="DialogueBox.h" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Animator.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="CheckBox.cpp" />
     <ClCompile Include="Colliders.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="DialogueBox.cpp" />

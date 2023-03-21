@@ -14,7 +14,7 @@ class InputField
 public:
 
 	InputField();
-	InputField(sf::Font& t_font);
+	InputField(sf::Font& t_font, bool t_multiline, int t_chatacterLimit);
 	~InputField();
 
 
@@ -48,6 +48,7 @@ private:
 	sf::Font m_font;
 	void initText();
 	int m_characterLimit = 500;
+	bool m_multiline;
 };
 #endif  // !INPUTFIELD_HPP
 

@@ -9,9 +9,12 @@ TextEditor::TextEditor()
 
 TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 {
+	m_dialogueBox = new DialogueBox(t_font);
+	m_previewDialogueCheckBox = new CheckBox(t_font);
 	m_popUpBox = PopUp(&t_font);
-	m_mainBody = new InputField(t_font);
-	m_title = new InputField(t_font);
+	m_mainBody = new InputField(t_font, true, 0);
+	m_title = new InputField(t_font, false, 25);
+	std::string path = "Dialogue/";
 
 	m_gameState = t_currentGameState;
 	m_font = t_font;
@@ -19,15 +22,7 @@ TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 	initText();
 	setUpTextEditorButtons(t_font);
 	setPopUpButtons(t_font);
-
-	std::string path = "Dialogue/";
-	for (auto& entry : fs::directory_iterator(path))
-	{
-		std::string temp = entry.path().filename().string();
-		temp.resize(temp.size() - 4);
-		std::cout << "here : " << temp << std::endl;
-		m_DialogueOptions.push_back(temp);
-	}
+	loadDialogue();
 	setUpPlaceableItemsButtons(m_font, m_rowsDialogue, m_selectableDialogueButtons, m_selectableDialogueLabels, m_DialogueOptions, path);
 	for (int i = 0; i < 2; ++i)
 	{
@@ -35,6 +30,31 @@ TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 		m_prevNextbuttons.at(i)->setButtonPosition(sf::Vector2f(60.0f, 175 + (i * 640)));
 		m_prevNextbuttons.at(i)->resize(0.1f, 0.4f);
 	}
+}
+
+void TextEditor::loadDialogue()
+{
+	std::string path = "Dialogue/";
+	for (auto& entry : fs::directory_iterator(path))
+	{
+		std::string temp = entry.path().filename().string();
+		temp.resize(temp.size() - 4);
+		m_DialogueOptions.push_back(temp);
+	}
+}
+
+void TextEditor::refreshDialogue()
+{
+	std::string path = "Dialogue/";
+	loadDialogue();
+	setUpPlaceableItemsButtons(m_font, m_rowsDialogue, m_selectableDialogueButtons, m_selectableDialogueLabels, m_DialogueOptions, path);
+}
+
+void TextEditor::clearDialogue()
+{
+	m_DialogueOptions.clear();
+	m_selectableDialogueLabels.clear();
+	m_selectableDialogueButtons.clear();
 }
 
 void TextEditor::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons)
@@ -95,7 +115,7 @@ void TextEditor::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, in
 			m_prevNextbuttons.at(i)->setButtonTexture();
 		}
 	}
-	std::cout << m_currentRowIndex << std::endl;
+	//std::cout << m_currentRowIndex << std::endl;
 }
 
 void TextEditor::setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
@@ -166,10 +186,10 @@ void TextEditor::setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, s
 		{
 			colLabels->setTextColor(sf::Color::White);
 			colLabels->setTextOutlineColor(sf::Color::Black);
-			colLabels->setTextSize(16.0f);
+			colLabels->setTextSize(14.0f);
 			colLabels->setTextOutlineThickness(2.0f);
 			colLabels->setTexturePosition(t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition());
-			colLabels->setTextPosition(sf::Vector2f(t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition().x + 2, t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition().y));
+			colLabels->setTextPosition(sf::Vector2f(t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition().x + 10, t_objectButtons.at(rowIndex).at(colIndex)->getButtonPosition().y));
 			colLabels->setText(t_objects.at(index));
 			colIndex++;
 			index++;
@@ -267,12 +287,31 @@ void TextEditor::render(sf::RenderWindow* t_window)
 		}
 		rowIndex++;
 	}
+
+	m_previewDialogueCheckBox->render(t_window);
+	m_dialogueBox->render(t_window);
 }
 
 void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
 	{
+		if (m_previewDialogueCheckBox->getCheckBoxBounds().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+		{
+			//col->highlighted();
+			if (t_event.type == sf::Event::MouseButtonReleased)
+			{
+				if (t_event.mouseButton.button == sf::Mouse::Left)
+				{
+					m_previewDialogueCheckBox->setEnabled();
+					m_previewDialogueCheckBox->toggleColor();
+
+					m_dialogueBox->setEnabled();
+				}
+			}
+		}
+
+
 		setVisibleRow(t_event, t_window, m_rowsDialogue, m_selectableDialogueButtons);
 
 
@@ -306,7 +345,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 										col->setSelected(false);
 										if (!col->getSelected())
 										{
-											std::cout << ("White") << std::endl;
+											//std::cout << ("White") << std::endl;
 											col->setColor(sf::Color::White);
 										}
 									}
@@ -317,7 +356,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 								if (col->getSelected())
 								{
 									col->setColor(sf::Color::Blue);
-									std::cout << ("Red") << std::endl;
+									//std::cout << ("Red") << std::endl;
 
 									// send selected object to grid
 									//m_grid->setSelectedObject(t_path, t_labels.at(rowIndex).at(colIndex)->getText().getString());
@@ -386,7 +425,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 								file.open("Dialogue/" + m_title->GetText() + ".txt");
 								if (file)
 								{
-
+									saving = true;
 									//std::cout << "File exists" << std::endl;
 									m_popUpBox.setPopUpEnabled();
 
@@ -423,10 +462,48 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 								else
 								{
 									// printing the error message
-									std::cout << "File does not exists" << std::endl;
+									std::cout << "File does not exist" << std::endl;
 									std::ofstream out("Dialogue/" +m_title->GetText() + ".txt");
 									out << m_mainBody->GetText();
 									out.close();
+									clearDialogue();
+									refreshDialogue();
+								}
+							}
+							else if (m_textEditorLabels.at(i)->getTextString() == "Delete")
+							{
+								saving = false;
+								//std::cout << "File exists" << std::endl;
+								m_popUpBox.setPopUpEnabled();
+
+								unsigned lines = 0;
+								std::string line_content;
+								std::string lineContentAppended;
+								std::ifstream my_file("PopUpMessages/deleteFile.txt");
+
+
+								while (std::getline(my_file, line_content)) {
+									lines++;
+
+
+									lineContentAppended.append(line_content);
+									lineContentAppended.append("\n");
+
+
+									//std::cout << "Line: " << lines << " content: " << line_content << std::endl;
+								}
+
+								my_file.close();
+
+								m_popUpBox.setPopUpBoxText(lineContentAppended);
+
+								for (int i = 0; i < 2; i++)
+								{
+
+									m_popUpButtons.at(i)->setButtonPosition(
+										sf::Vector2f{ m_popUpBox.getPopUpBoxPosition().x + (m_popUpBox.getPopUpBoxBounds().x / 2) + (i * 200) - 100,
+														m_popUpBox.getPopUpBoxPosition().y + (m_popUpBox.getPopUpBoxBounds().y) - (m_popUpButtons.at(i)->getButtonSprite().getGlobalBounds().height) });
+									m_popUpButtonLabels.at(i)->setTextPosition(m_popUpButtons.at(i)->getButtonPosition());
 								}
 							}
 							else if (m_textEditorLabels.at(i)->getTextString() == "Exit")
@@ -436,19 +513,9 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 							else if (m_textEditorLabels.at(i)->getTextString() == "Clear")
 							{
 								std::cout << "Clear Pressed" << std::endl;
-								if (m_mainBody->GetSelected())
-								{
-									std::cout << "Clearing main body" << std::endl;
-
-									m_mainBody->ClearText();
-								}
-								else if (m_title->GetSelected())
-								{
-									std::cout << "Clearing title" << std::endl;
-
-									m_title->ClearText();
-								}
-
+								m_mainBody->ClearText();
+								m_title->ClearText();
+								m_dialogueBox->splitString(m_mainBody->GetText());
 							}
 							else if (m_textEditorLabels.at(i)->getTextString() == "Load")
 							{
@@ -472,6 +539,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 								}
 								m_mainBody->SetString(lineContentAppended);
 								m_title->SetString(fileName);
+								m_dialogueBox->splitString(m_mainBody->GetText());
 								my_file.close();
 							}
 						}
@@ -494,14 +562,27 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 					{
 						if (t_event.mouseButton.button == sf::Mouse::Left)
 						{
-							if (m_popUpButtonLabels.at(i)->getTextString() == "Save")
+							if (m_popUpButtonLabels.at(i)->getTextString() == "Continue")
 							{
-								
-								std::ofstream out("Dialogue/" + m_title->GetText() + ".txt");
-								out << m_mainBody->GetText();
-								out.close();
-								m_popUpBox.setPopUpEnabled();
-
+								if (saving)
+								{
+									saving = false;
+									std::ofstream out("Dialogue/" + m_title->GetText() + ".txt");
+									out << m_mainBody->GetText();
+									out.close();
+									m_popUpBox.setPopUpEnabled();
+								}
+								else
+								{
+									std::cout << "Deleting" << std::endl;
+									std::string filename = "Dialogue/" + m_title->GetText() + ".txt";
+									remove(filename.c_str());
+									m_mainBody->ClearText();
+									m_title->ClearText();
+									m_popUpBox.setPopUpEnabled();
+								}
+								clearDialogue();
+								refreshDialogue();
 								
 							}
 							else if (m_popUpButtonLabels.at(i)->getTextString() == "Cancel")
@@ -518,7 +599,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 
 void TextEditor::setUpTextEditorButtons(sf::Font t_arialFont)
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		m_textEditorButtons.push_back(new Button());
 		m_textEditorButtons.at(i)->setButtonPosition(sf::Vector2f{ 215.0f + (i * 162.0f), 50.0f });
@@ -535,6 +616,8 @@ void TextEditor::setUpTextEditorButtons(sf::Font t_arialFont)
 	m_textEditorLabels.at(1)->setText("Load");
 	m_textEditorLabels.at(2)->setText("Clear");
 	m_textEditorLabels.at(3)->setText("Exit");
+	m_textEditorLabels.at(4)->setText("Delete");
+
 }
 
 void TextEditor::setPopUpButtons(sf::Font t_arialFont)
@@ -555,7 +638,7 @@ void TextEditor::setPopUpButtons(sf::Font t_arialFont)
 		m_popUpButtonLabels.at(i)->setTextPosition(m_popUpButtons.at(i)->getButtonPosition());
 	}
 	m_popUpButtonLabels.at(0)->setText("Cancel");
-	m_popUpButtonLabels.at(1)->setText("Save");
+	m_popUpButtonLabels.at(1)->setText("Continue");
 }
 
 bool TextEditor::isEnabled()

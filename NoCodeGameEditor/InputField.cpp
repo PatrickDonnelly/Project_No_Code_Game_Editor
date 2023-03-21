@@ -7,8 +7,8 @@ InputField::InputField()
 
 }
 
-InputField::InputField(sf::Font& t_font) :
-	m_font(t_font)
+InputField::InputField(sf::Font& t_font, bool t_multiline, int t_characterLimit) :
+	m_font(t_font), m_multiline(t_multiline), m_characterLimit(t_characterLimit)
 {
 	initText();
 	initInputField();
@@ -168,16 +168,27 @@ void InputField::typing(sf::Event t_event)
 	int currentCharacter = t_event.text.unicode;
 	if (currentCharacter < 128)
 	{
+		if (m_characterLimit == 0)
+		{
+			inputTextBox(currentCharacter);
+			if (!m_multiline && currentCharacter == ENTER_KEY)
+			{
+				deletePreviousCharacter();
+			}
+		}
+		else if (m_text.str().length() < m_characterLimit)
+		{
 
-		inputTextBox(currentCharacter);
-		//if (m_text.str().length() <= m_characterLimit)
-		//{
-		//	inputTextBox(currentCharacter);
-		//}
-		//else if (m_text.str().length() > m_characterLimit || currentCharacter == 8)
-		//{
-		//	deletePreviousCharacter();
-		//}
+			inputTextBox(currentCharacter);
+			if (!m_multiline && currentCharacter == ENTER_KEY)
+			{
+				deletePreviousCharacter();
+			}
+		}
+		else if (m_text.str().length() > m_characterLimit || currentCharacter == BACKSPACE_KEY)
+		{
+			deletePreviousCharacter();
+		}
 	}
 	//else
 	//{

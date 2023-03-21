@@ -10,7 +10,7 @@ class Label
 public:
 
 	Label();
-	Label(sf::Font t_font);
+	Label(sf::Font& t_font);
 	~Label();
 
 
