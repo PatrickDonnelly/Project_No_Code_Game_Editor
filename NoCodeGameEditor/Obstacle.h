@@ -4,6 +4,8 @@
 #define OBSTACLE_HPP
 
 #include <SFML/Graphics.hpp>
+#include "CheckBox.h"
+#include "DialogueBox.h"
 
 class Obstacle
 {
@@ -40,7 +42,16 @@ public:
 	int getRow();
 
 	int getColumn();
+	bool m_hasDialogue = false;
+	CheckBox m_whenDamaged;
+	CheckBox m_whenDead;
+	CheckBox m_whenInRadius;
+	int m_detectionRadius;
+	CheckBox m_whenInteracted;
 
+	std::vector<std::string> m_dialoguePaths;
+	DialogueBox m_dialogue;
+	//CheckBox
 };
 #endif // !OBSTACLE_HPP
 

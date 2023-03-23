@@ -1,6 +1,6 @@
 #include "UiBuildMode.h"
 
-void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
+void UiBuildMode::setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
 {
 	int buttonsMade = 0;
 	int maxButtons = t_objects.size();
@@ -82,7 +82,7 @@ void UiBuildMode::setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, 
 	}
 }
 
-void UiBuildMode::setUpGridFunctionButtons(sf::Font t_arialFont)
+void UiBuildMode::setUpGridFunctionButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -110,7 +110,7 @@ void UiBuildMode::setUpGridFunctionButtons(sf::Font t_arialFont)
 	m_buildButtonLabels.at(3)->setText("+");
 }
 
-void UiBuildMode::setUpTestBuildButtons(sf::Font t_arialFont)
+void UiBuildMode::setUpTestBuildButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -129,7 +129,7 @@ void UiBuildMode::setUpTestBuildButtons(sf::Font t_arialFont)
 	m_testingButtonLabels.at(2)->setText("Start Over");
 }
 
-void UiBuildMode::setUpPlacementModeButtons(sf::Font t_arialFont)
+void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -148,7 +148,7 @@ void UiBuildMode::setUpPlacementModeButtons(sf::Font t_arialFont)
 	m_placementOptionsLabels.at(2)->setText("Clear Room");
 }
 
-void UiBuildMode::setUpCategoryButtons(sf::Font t_arialFont)
+void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 5; i++)
 	{
@@ -171,7 +171,7 @@ void UiBuildMode::setUpCategoryButtons(sf::Font t_arialFont)
 
 }
 
-void UiBuildMode::setUpTextureRoomButtons(sf::Font t_arialFont)
+void UiBuildMode::setUpTextureRoomButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 6; i++)
 	{
@@ -206,6 +206,7 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 	m_gameState = t_currentGameState;
 	m_grid = t_grid;
 	m_arialFont = t_arialFont;
+	m_inspector = new Inspector(m_arialFont);
 	m_currentTab = TabState::TAB_DECORATIONS;
 
 	m_currentRowText.setString("1 / 3");
@@ -610,7 +611,7 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 	}
 }
 
-void UiBuildMode::setUpDialogueButtons(sf::Font t_arialFont)
+void UiBuildMode::setUpDialogueButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 2; i++)
 	{
@@ -958,6 +959,6 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 			m_testingButtonLabels.at(i)->render(t_window);
 		}
 	}
-
+	m_inspector->render(t_window);
 
 }

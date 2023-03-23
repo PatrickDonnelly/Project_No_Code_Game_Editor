@@ -141,6 +141,8 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="InputField.h" />
+    <ClInclude Include="Inspector.h" />
+    <ClInclude Include="InspectorOptions.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
@@ -161,6 +163,8 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="InputField.cpp" />
+    <ClCompile Include="Inspector.cpp" />
+    <ClCompile Include="InspectorOptions.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />

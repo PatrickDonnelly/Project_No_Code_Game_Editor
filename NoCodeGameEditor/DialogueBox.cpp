@@ -70,9 +70,6 @@ void DialogueBox::render(sf::RenderWindow* t_window)
 		t_window->draw(m_dialogueBox);
 		t_window->draw(m_textBox);
 	}
-
-
-
 }
 
 bool DialogueBox::isEnabled()

@@ -10,7 +10,7 @@ TextEditor::TextEditor()
 TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 {
 	m_dialogueBox = new DialogueBox(t_font);
-	m_previewDialogueCheckBox = new CheckBox(t_font);
+	m_previewDialogueCheckBox = new CheckBox(t_font, "Preview Dialogue");
 	m_popUpBox = PopUp(&t_font);
 	m_mainBody = new InputField(t_font, true, 0);
 	m_title = new InputField(t_font, false, 25);
@@ -118,7 +118,7 @@ void TextEditor::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, in
 	//std::cout << m_currentRowIndex << std::endl;
 }
 
-void TextEditor::setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
+void TextEditor::setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
 {
 	int buttonsMade = 0;
 	int maxButtons = t_objects.size();
@@ -597,7 +597,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 	}
 }
 
-void TextEditor::setUpTextEditorButtons(sf::Font t_arialFont)
+void TextEditor::setUpTextEditorButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 5; i++)
 	{
@@ -620,7 +620,7 @@ void TextEditor::setUpTextEditorButtons(sf::Font t_arialFont)
 
 }
 
-void TextEditor::setPopUpButtons(sf::Font t_arialFont)
+void TextEditor::setPopUpButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 2; i++)
 	{

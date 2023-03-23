@@ -28,7 +28,7 @@ public:
 	TextEditor(sf::Font& t_font, GameState* t_currentGameState);
 	~TextEditor();
 
-	void setUpPlaceableItemsButtons(sf::Font t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path);
+	void setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path);
 	std::vector<std::vector<Button*>> m_selectableDialogueButtons;
 	std::vector<std::vector<Label*>> m_selectableDialogueLabels;
 	std::vector<std::string> m_DialogueOptions;
@@ -65,8 +65,8 @@ private:
 	std::vector<Button*> m_popUpButtons;
 	std::vector<Label*> m_popUpButtonLabels;
 
-	void setUpTextEditorButtons(sf::Font t_arialFont);
-	void setPopUpButtons(sf::Font t_arialFont);
+	void setUpTextEditorButtons(sf::Font& t_arialFont);
+	void setPopUpButtons(sf::Font& t_arialFont);
 
 	std::vector<Button*> m_textEditorButtons;
 	std::vector<Label*> m_textEditorLabels;

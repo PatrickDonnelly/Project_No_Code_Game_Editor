@@ -19,7 +19,7 @@ public:
 	std::string	getTextString();
 
 	void setText(std::string t_text);
-	void initText(sf::Font t_font);
+	void initText(sf::Font& t_font);
 	void setTextPosition(sf::Vector2f t_pos);
 	void clear();
 	void render(sf::RenderWindow* t_window);

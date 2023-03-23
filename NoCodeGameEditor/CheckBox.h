@@ -8,7 +8,7 @@ class CheckBox
 public:
 
 	CheckBox();
-	CheckBox(sf::Font& t_font);
+	CheckBox(sf::Font& t_font, std::string t_tag);
 	~CheckBox();
 
 
@@ -19,7 +19,7 @@ public:
 	void setEnabled() { m_enabled = !m_enabled; }
 	sf::Sprite getCheckBoxSprite() { return sf::Sprite(); }
 	sf::RectangleShape getCheckBoxBounds() { return m_checkBox; }
-
+	void setCheckBoxPosition(sf::Vector2f t_pos);
 
 	sf::Vector2f getCheckBoxPosition() { return m_checkBoxSprite.getPosition(); }
 	std::string getText() { return m_text.getString(); }
@@ -29,7 +29,7 @@ public:
 private:
 
 	Label* m_checkBoxLabel;
-
+	std::string m_tag;
 	bool m_enabled = false;
 	sf::Sprite m_checkBoxSprite;
 	sf::Texture m_checkBoxTexture;
