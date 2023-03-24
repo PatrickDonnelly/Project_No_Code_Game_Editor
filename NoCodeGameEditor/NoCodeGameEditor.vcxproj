@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="AnimationState.h" />
     <ClInclude Include="Animator.h" />
+    <ClInclude Include="Attributes.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CheckBox.h" />
     <ClInclude Include="Colliders.h" />

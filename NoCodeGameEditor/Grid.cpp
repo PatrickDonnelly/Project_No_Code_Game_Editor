@@ -77,10 +77,13 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 							{
 								if (m_vectGrid.at(i).at(j)->cellType == "Floor" && m_vectGrid.at(i).at(j)->m_hasObject == false)
 								{
-									m_placedObjects.push_back(new Obstacle(m_tempTag,m_selectedObject));
-									m_vectGrid.at(i).at(j)->m_hasObject = true;
-									m_placedObjects.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
-									m_placedObjects.at(noOfObstacles)->setRowColumn(i,j);
+									m_enemies.push_back(new Enemy(m_tempTag, m_selectedObject));
+									m_enemies.at(m_enemies.size() - 1)->getEnemyBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
+									m_enemies.at(m_enemies.size()-1)->setRowColumn(i, j);
+									//m_placedObjects.push_back(new Obstacle(m_tempTag,m_selectedObject));
+									//m_vectGrid.at(i).at(j)->m_hasObject = true;
+									//m_placedObjects.at(noOfObstacles)->getBounds()->setPosition(m_vectGrid.at(i).at(j)->getPos());
+									//m_placedObjects.at(noOfObstacles)->setRowColumn(i,j);
 									noOfObstacles++;
 								}
 							}
@@ -116,6 +119,13 @@ void Grid::placeRemove(sf::RenderWindow& m_window)
 		}
 	}
 }
+
+//template <typename T>
+//void Grid::addObjectToGrid(std::vector<T*> t_vectorOfObjects)
+//{
+//
+//}
+
 
 void Grid::clearObjects()
 {
@@ -413,9 +423,13 @@ void Grid::setSelectedObject(std::string t_path, std::string t_objectName)
 void Grid::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
 	placeRemove( m_window);
-	for (int i = 0; i < m_placedObjects.size(); i++)
+	//for (int i = 0; i < m_placedObjects.size(); i++)
+	//{
+	//	m_placedObjects.at(i)->getSprite()->setPosition(m_placedObjects.at(i)->getBounds()->getPosition());
+	//}
+	for (int i = 0; i < m_enemies.size(); i++)
 	{
-		m_placedObjects.at(i)->getSprite()->setPosition(m_placedObjects.at(i)->getBounds()->getPosition());
+		m_enemies.at(i)->getEnemySprite()->setPosition(m_enemies.at(i)->getEnemyBounds()->getPosition());
 	}
 }
 
@@ -439,12 +453,20 @@ void Grid::render(sf::RenderWindow* t_window)
 			m_vectColliders.at(i)->render(t_window);
 		}
 	}
-	for (int i = 0; i < m_placedObjects.size(); i++)
+	//for (int i = 0; i < m_placedObjects.size(); i++)
+	//{
+	//	m_placedObjects.at(i)->render(*t_window);
+	//	if (m_collidersEnabled)
+	//	{
+	//		t_window->draw(*m_placedObjects.at(i)->getBounds());
+	//	}
+	//}
+	for (int i = 0; i < m_enemies.size(); i++)
 	{
-		m_placedObjects.at(i)->render(*t_window);
+		m_enemies.at(i)->render(*t_window);
 		if (m_collidersEnabled)
 		{
-			t_window->draw(*m_placedObjects.at(i)->getBounds());
+			t_window->draw(*m_enemies.at(i)->getEnemyBounds());
 		}
 	}
 }
@@ -456,6 +478,7 @@ void Grid::regenerateGrid()
 	noOfObstacles = 0;
 	m_vectGrid.clear();
 	m_vectColliders.clear();
+	m_enemies.clear();
 	m_placedObjects.clear();
 	wallsPlaced = 0;
 	m_playerSet = false;

@@ -12,7 +12,7 @@
 #include <list>
 #include <queue>
 #include "GameState.h"
-
+#include "Enemy.h"
 
 
 class Grid
@@ -20,7 +20,7 @@ class Grid
 private:
 
 public:
-
+	std::vector <Enemy*> m_enemies;
 	GameState* m_gameState;
 	int noOfObstacles = 0;
 	int maxObstacles = 196;
@@ -69,6 +69,8 @@ public:
 	void setGridEnabled() { m_gridEnabled = !m_gridEnabled; }
 	void setCollidersEnabled() { m_collidersEnabled = !m_collidersEnabled; }
 
+
+	//void addObjectToGrid(std::vector<T*> t_vectorOfObjects)
 };
 #endif // !GRID_HPP
 
