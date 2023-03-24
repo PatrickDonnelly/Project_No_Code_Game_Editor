@@ -33,6 +33,7 @@ public:
 
 private:
 	int m_noOfOptions;
+	void setUpFontAndText();
 	void initInspectorOptions();
 	std::vector<InspectorOptions*> m_inspectorOptions;
 	Label* m_inspectorLabel;

@@ -959,6 +959,6 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 			m_testingButtonLabels.at(i)->render(t_window);
 		}
 	}
-	m_inspector->render(t_window);
+	//m_inspector->render(t_window);
 
 }

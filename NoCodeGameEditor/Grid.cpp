@@ -441,7 +441,7 @@ void Grid::render(sf::RenderWindow* t_window)
 	}
 	for (int i = 0; i < m_placedObjects.size(); i++)
 	{
-		t_window->draw(*m_placedObjects.at(i)->getSprite());
+		m_placedObjects.at(i)->render(*t_window);
 		if (m_collidersEnabled)
 		{
 			t_window->draw(*m_placedObjects.at(i)->getBounds());

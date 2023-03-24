@@ -1,17 +1,31 @@
 #include "Inspector.h"
 
-Inspector::Inspector()
+Inspector::Inspector(sf::Font& t_font)
 {
 }
 
-Inspector::Inspector(sf::Font& t_font)
+Inspector::Inspector()
 {
-    m_font = t_font;
     initInspector();
     m_noOfOptions = 4;
     m_inspectorLabel = new Label(m_font);
     initInspectorOptions();
     initText();
+}
+
+void Inspector::setUpFontAndText()
+{
+    if (!m_font.loadFromFile("ASSETS\\FONTS\\Arial.ttf"))
+    {
+        std::cout << "problem loading arial black font" << std::endl;
+    }
+    m_text.setFont(m_font);
+    m_text.setStyle(sf::Text::Underlined | sf::Text::Italic | sf::Text::Bold);
+    m_text.setPosition(400.0f, 400.0f);
+    m_text.setCharacterSize(16U);
+    m_text.setOutlineColor(sf::Color::White);
+    m_text.setFillColor(sf::Color::Black);
+    m_text.setOutlineThickness(1.0f);
 }
 
 Inspector::~Inspector()
@@ -95,6 +109,7 @@ void Inspector::splitString(std::string t_dialogueText)
 
 void Inspector::initText()
 {
+    setUpFontAndText();
     m_text.setFont(m_font);
     m_text.setCharacterSize(20.0f);
     m_text.setFillColor(sf::Color::Blue);
