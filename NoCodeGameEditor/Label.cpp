@@ -1,7 +1,8 @@
 #include "Label.h"
 
-Label::Label(sf::Font t_font) : m_labelFont(t_font)
+Label::Label(sf::Font& t_font) : m_labelFont(t_font)
 {
+	m_labelFont = t_font;
 	initText(t_font);
 	m_image = false;
 }
@@ -16,15 +17,19 @@ Label::~Label()
 
 }
 
-void Label::initText(sf::Font t_font)
+void Label::initText(sf::Font& t_font)
 {
-	m_labelText.setString(" ");
-	m_labelFont = t_font;
+	m_labelText.setString(" dumnnnnnnn");
+	//if (!m_labelFont.loadFromFile("ASSETS\\FONTS\\Arial.ttf"))
+	//{
+	//	std::cout << "problem loading arial black font" << std::endl;
+	//}
+	//m_text.setFont(m_labelFont);
 	m_labelText.setFont(m_labelFont);
 	m_labelText.setCharacterSize(24U);
-	m_labelText.setFillColor(sf::Color::Black);
-	//m_labelText.setOutlineThickness(1.0f);
-	//m_labelText.setOutlineColor(sf::Color::Red);
+	m_labelText.setFillColor(sf::Color::White);
+	m_labelText.setOutlineThickness(2.0f);
+	m_labelText.setOutlineColor(sf::Color::Black);
 }
 
 void Label::setText(std::string t_text)

@@ -6,7 +6,8 @@ enum class State {
 	ROOM_TEXTURE = 2,
 	ROOM_PLACE_OBJECTS = 3,
 	ROOM_TEST = 4,
-	ROOM_SAVE = 5
+	ROOM_SAVE = 5,
+	CREATE_DIALOGUE = 6
 };
 
 

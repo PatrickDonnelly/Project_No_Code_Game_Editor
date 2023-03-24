@@ -5,18 +5,20 @@ Obstacle::Obstacle()
 {
 }
 
-Obstacle::Obstacle(std::string t_typeTag)
+Obstacle::Obstacle(std::string t_typeTag, std::string t_path)
 {
 	m_isCollidable = false;
-	if (t_typeTag != "Grass" && t_typeTag != "Water" && t_typeTag != "Floor")
+	if (t_typeTag != "ASSETS/IMAGES/Terrain/Grass/" && t_typeTag != "Water" && t_typeTag != "Floor")
 	{
 		m_isCollidable = true;
 	}
 	m_tag = t_typeTag;
+	m_tempPath = t_path;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;
 	setUpSprite();
 	setUpBounds();
+	m_inspector = new Inspector();
 
 }
 
@@ -43,7 +45,7 @@ void Obstacle::setUpSprite()
 
 void Obstacle::setObstacleTexture(sf::Texture& t_texture)
 {
-	if (!t_texture.loadFromFile(m_tag + ".png"))
+	if (!t_texture.loadFromFile(m_tempPath + ".png"))
 	{
 		std::cout << "Can't load main menu bgt" << std::endl;
 	}
@@ -69,7 +71,12 @@ void Obstacle::update(sf::Time deltaTime, sf::RenderWindow& window)
 void Obstacle::render(sf::RenderWindow& window)
 {
 	window.draw(m_obstacleSprite);
-	window.draw(m_obstacleBounds);
+	if (m_boundsOn)
+	{
+		window.draw(m_obstacleBounds);
+	}
+
+	m_inspector->render(&window);
 }
 
 sf::Sprite* Obstacle::getSprite()

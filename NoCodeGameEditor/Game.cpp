@@ -5,12 +5,15 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
 	m_exitGame{ false } //when true game will exit
 {
-	m_gameState = new GameState(State::ROOM_PLACE_OBJECTS);
+	m_gameState = new GameState(State::CREATE_DIALOGUE);
 	setUpFontAndText();
 	m_grid = new Grid(m_gameState);
 	m_player = new Player();
 	m_spear = new Weapon(m_player);
 	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState);
+	m_dialogueBox = new DialogueBox(m_ArialFont);
+	m_textEditor = new TextEditor(m_ArialFont, m_gameState);
+
 }
 
 Game::~Game()
@@ -59,6 +62,7 @@ void Game::processEvents()
 	{
 		m_spear->processEvents(newEvent);
 		m_uiBuildMode.processEvents(newEvent, m_window);
+		m_textEditor->processTextEditorButtons(newEvent, m_window);
 
 		if (sf::Event::Closed == newEvent.type) // window message
 		{
@@ -67,6 +71,22 @@ void Game::processEvents()
 		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
 		{
 			processKeys(newEvent);
+		}
+		if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
+		{
+			if (sf::Event::TextEntered == newEvent.type)
+			{
+				//m_dialogueBox->typing(newEvent);
+				//m_textEditor->typing(newEvent);
+				if (m_textEditor->GetMainBody()->GetSelected())
+				{
+					m_textEditor->GetMainBody()->typing(newEvent);
+				}
+				else if (m_textEditor->GetTitle()->GetSelected())
+				{
+					m_textEditor->GetTitle()->typing(newEvent);
+				}
+			}
 		}
 	}
 }
@@ -77,6 +97,7 @@ void Game::processKeys(sf::Event t_event)
 	{
 		m_exitGame = true;
 	}
+
 }
 
 void Game::update(sf::Time t_deltaTime)
@@ -91,7 +112,8 @@ void Game::update(sf::Time t_deltaTime)
 		m_player->getBounds()->setPosition(m_grid->m_firstTilePosition.x+16, m_grid->m_firstTilePosition.y + 16);
 		std::cout << m_player->getSprite()->getPosition().x << std::endl;
 	}
-	
+
+
 	m_grid->update(t_deltaTime, m_window);
 
 	if (m_gameState->m_currentGameState == State::ROOM_TEST)
@@ -153,11 +175,20 @@ void Game::update(sf::Time t_deltaTime)
 				for (it = m_grid->m_placedObjects.begin(); it != m_grid->m_placedObjects.end();)
 				{
 					Obstacle* l_obstacle = *it;
-					if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
+					if (l_obstacle->isCollidable())
 					{
-						it = m_grid->m_placedObjects.erase(it);
+						if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
+						{
 
-						m_grid->noOfObstacles--;
+							it = m_grid->m_placedObjects.erase(it);
+
+							m_grid->noOfObstacles--;
+						}
+						else
+						{
+							it++;
+						}
+
 					}
 					else
 					{
@@ -194,6 +225,11 @@ void Game::render()
 	{
 		m_spear->render(m_window);
 		m_player->render(m_window);
+	}
+	if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
+	{
+		//m_dialogueBox->render(&m_window);
+		m_textEditor->render(&m_window);
 	}
 	m_window.display();
 }

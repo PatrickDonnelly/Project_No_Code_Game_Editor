@@ -44,8 +44,6 @@ public:
 	sf::Font m_textFont;
 	void setUpFont();
 	void regenerateGrid();
-	sf::Text m_helpText;
-	sf::RectangleShape m_background;
 	void CheckValidityOfWalls(int t_x, int t_y);
 	int counter = 0;
 	std::queue<Tile*> m_tileQueue{};
@@ -67,7 +65,7 @@ public:
 	void setSelectedObject(std::string t_path, std::string t_objectName);
 	bool m_gridEnabled = true;
 	bool m_collidersEnabled = true;
-
+	std::string m_tempTag = "";
 	void setGridEnabled() { m_gridEnabled = !m_gridEnabled; }
 	void setCollidersEnabled() { m_collidersEnabled = !m_collidersEnabled; }
 
