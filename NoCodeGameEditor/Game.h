@@ -15,7 +15,8 @@
 #include "GameState.h"
 #include "DialogueBox.h"
 #include "TextEditor.h"
-
+#include "RoomCreation.h"
+#include "ObjectPlacement.h"
 
 class Game
 {
@@ -29,6 +30,8 @@ private:
 
 	GameState* m_gameState;
 	Grid* m_grid{ nullptr };
+	RoomCreation* m_roomCreation{ nullptr };
+	ObjectPlacement* m_objectPlacement{ nullptr };
 	Player* m_player;
 	Collision m_checkCollision;
 	Weapon* m_spear;

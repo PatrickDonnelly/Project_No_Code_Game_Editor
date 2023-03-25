@@ -1,12 +1,11 @@
-#include "Enemy.h"
-
+#include "Terrain.h"
 #include <iostream>
 
-Enemy::Enemy()
+Terrain::Terrain()
 {
 }
 
-Enemy::Enemy(std::string t_typeTag, std::string t_path)
+Terrain::Terrain(std::string t_typeTag, std::string t_path)
 {
 	m_isCollidable = false;
 	m_tag = t_typeTag;
@@ -17,17 +16,17 @@ Enemy::Enemy(std::string t_typeTag, std::string t_path)
 	init();
 }
 
-Enemy::~Enemy()
+Terrain::~Terrain()
 {
 }
 
-void Enemy::init()
+void Terrain::init()
 {
 	setUpSprite();
 	setUpBounds();
 }
 
-void Enemy::setUpSprite()
+void Terrain::setUpSprite()
 {
 	setTexture(m_objectTexture);
 	m_objectSprite.setOrigin(16, 16);
@@ -35,7 +34,7 @@ void Enemy::setUpSprite()
 	m_objectSprite.setPosition(100, 100);
 }
 
-void Enemy::setTexture(sf::Texture& t_texture)
+void Terrain::setTexture(sf::Texture& t_texture)
 {
 	if (!t_texture.loadFromFile(m_path + ".png"))
 	{
@@ -44,12 +43,12 @@ void Enemy::setTexture(sf::Texture& t_texture)
 	m_objectSprite.setTexture(t_texture);
 }
 
-void Enemy::setPathToTexture(std::string t_path)
+void Terrain::setPathToTexture(std::string t_path)
 {
 	m_path = t_path;
 }
 
-void Enemy::setUpBounds()
+void Terrain::setUpBounds()
 {
 	m_objectBounds.setSize(sf::Vector2f(m_boundsWidth, m_boundsHeight));
 	m_objectBounds.setOrigin(m_boundsWidth / 2, (m_boundsHeight / 2));
@@ -59,13 +58,12 @@ void Enemy::setUpBounds()
 	m_objectBounds.setPosition(m_objectSprite.getPosition());
 }
 
-void Enemy::update(sf::Time deltaTime, sf::RenderWindow& window)
+void Terrain::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 	m_objectSprite.setPosition(m_objectBounds.getPosition());
-
 }
 
-void Enemy::render(sf::RenderWindow& window)
+void Terrain::render(sf::RenderWindow& window)
 {
 	window.draw(m_objectSprite);
 	if (m_boundsOn)

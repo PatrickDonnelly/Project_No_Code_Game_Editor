@@ -1,17 +1,17 @@
 #pragma once
 
-#ifndef ENEMY_HPP
-#define ENEMY_HPP
+#ifndef TERRAIN_HPP
+#define TERRAIN_HPP
 
 #include "Object.h"
 
-class Enemy : public Object
+class Terrain : public Object
 {
 
 public:
-	Enemy();
-	Enemy(std::string t_typeTag, std::string t_path);
-	~Enemy();
+	Terrain();
+	Terrain(std::string t_typeTag, std::string t_path);
+	~Terrain();
 
 	void init();
 	void setUpSprite();
@@ -20,13 +20,5 @@ public:
 	void setUpBounds();
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
-
-
-	bool m_hasDialogue = false;
-	int m_detectionRadius;
-	std::vector<std::string> m_dialoguePaths;
-	DialogueBox m_dialogue;
-
 };
-#endif // !ENEMY_HPP
-
+#endif // !TERRAIN_HPP

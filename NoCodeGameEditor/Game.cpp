@@ -5,12 +5,14 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
 	m_exitGame{ false } //when true game will exit
 {
-	m_gameState = new GameState(State::CREATE_DIALOGUE);
+	m_gameState = new GameState(State::ROOM_BUILD);
 	setUpFontAndText();
 	m_grid = new Grid(m_gameState);
+	m_roomCreation = new RoomCreation(m_gameState, m_grid);
+	m_objectPlacement = new ObjectPlacement(m_gameState, m_grid);
 	m_player = new Player();
 	m_spear = new Weapon(m_player);
-	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState);
+	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState, m_roomCreation, m_objectPlacement);
 	m_dialogueBox = new DialogueBox(m_ArialFont);
 	m_textEditor = new TextEditor(m_ArialFont, m_gameState);
 
@@ -106,15 +108,24 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
-	if (m_grid->firstFloorSet && m_grid->m_playerSet == false)
+	if (m_roomCreation->firstFloorSet && m_grid->m_playerSet == false)
 	{
 		m_grid->m_playerSet = true;
-		m_player->getBounds()->setPosition(m_grid->m_firstTilePosition.x+16, m_grid->m_firstTilePosition.y + 16);
+		m_player->getBounds()->setPosition(m_roomCreation->m_firstTilePosition.x+16, m_roomCreation->m_firstTilePosition.y + 16);
 		std::cout << m_player->getSprite()->getPosition().x << std::endl;
 	}
 
 
-	m_grid->update(t_deltaTime, m_window);
+	//m_grid->update(t_deltaTime, m_window);
+	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
+	{
+		m_roomCreation->update(t_deltaTime, m_window);
+	}
+	if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
+	{
+		m_objectPlacement->update(t_deltaTime, m_window);
+	}
+
 
 	if (m_gameState->m_currentGameState == State::ROOM_TEST)
 	{
@@ -122,98 +133,98 @@ void Game::update(sf::Time t_deltaTime)
 		m_spear->update(t_deltaTime, m_window);
 	}
 
-	if (m_gameState->getState() == State::ROOM_TEST)
-	{
-		// player and walls
-		// objects and walls
-		m_player->m_speed = m_player->m_defaultSpeed;
+	//if (m_gameState->getState() == State::ROOM_TEST)
+	//{
+	//	// player and walls
+	//	// objects and walls
+	//	m_player->m_speed = m_player->m_defaultSpeed;
 
-		if (m_grid->m_vectColliders.size() > 0)
-		{
-			for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
-			{
-				m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_vectColliders.at(i)->getBounds(), 0.0f);
-			}
-			for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
-			{
-				for (int j = 0; j < m_grid->m_vectColliders.size(); j++)
-				{
-					m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
-				}
-				if (m_grid->m_placedObjects.at(i)->isCollidable())
-				{
-					m_player->m_speed = m_player->m_defaultSpeed;
-					if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
-					{
-						m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
-					}
-					else
-					{
-						m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
-					}
-				}
-				else // if not collidable
-				{
-					if (m_grid->m_placedObjects.at(i)->m_tag == "Water")
-					{
-						if (m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds()))
-						{
-							m_player->m_speed = m_player->m_defaultSpeed * 0.5f;
-						}
+	//	if (m_grid->m_vectColliders.size() > 0)
+	//	{
+	//		for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
+	//		{
+	//			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_vectColliders.at(i)->getBounds(), 0.0f);
+	//		}
+	//		for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
+	//		{
+	//			for (int j = 0; j < m_grid->m_vectColliders.size(); j++)
+	//			{
+	//				m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
+	//			}
+	//			if (m_grid->m_placedObjects.at(i)->isCollidable())
+	//			{
+	//				m_player->m_speed = m_player->m_defaultSpeed;
+	//				if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
+	//				{
+	//					m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
+	//				}
+	//				else
+	//				{
+	//					m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
+	//				}
+	//			}
+	//			else // if not collidable
+	//			{
+	//				if (m_grid->m_placedObjects.at(i)->m_tag == "Water")
+	//				{
+	//					if (m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds()))
+	//					{
+	//						m_player->m_speed = m_player->m_defaultSpeed * 0.5f;
+	//					}
 
-						
-					}
-				}
-			}
+	//					
+	//				}
+	//			}
+	//		}
 
-			// Spear vs Obstacles
-			if (m_spear->m_weaponUsed)
-			{
-				std::vector<Obstacle*>::iterator it;
-				std::cout << m_spear->getWeaponBounds()->getSize().x << " : " << m_spear->getWeaponBounds()->getSize().y << std::endl;
+	//		// Spear vs Obstacles
+	//		if (m_spear->m_weaponUsed)
+	//		{
+	//			std::vector<Obstacle*>::iterator it;
+	//			std::cout << m_spear->getWeaponBounds()->getSize().x << " : " << m_spear->getWeaponBounds()->getSize().y << std::endl;
 
-				for (it = m_grid->m_placedObjects.begin(); it != m_grid->m_placedObjects.end();)
-				{
-					Obstacle* l_obstacle = *it;
-					if (l_obstacle->isCollidable())
-					{
-						if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
-						{
+	//			for (it = m_grid->m_placedObjects.begin(); it != m_grid->m_placedObjects.end();)
+	//			{
+	//				Obstacle* l_obstacle = *it;
+	//				if (l_obstacle->isCollidable())
+	//				{
+	//					if (m_checkCollision.checkCollision(m_spear->getWeaponBounds(), l_obstacle->getBounds(), 0.4f))
+	//					{
 
-							it = m_grid->m_placedObjects.erase(it);
+	//						it = m_grid->m_placedObjects.erase(it);
 
-							m_grid->noOfObstacles--;
-						}
-						else
-						{
-							it++;
-						}
+	//						m_grid->noOfObstacles--;
+	//					}
+	//					else
+	//					{
+	//						it++;
+	//					}
 
-					}
-					else
-					{
-						it++;
-					}
-				}
-			}
+	//				}
+	//				else
+	//				{
+	//					it++;
+	//				}
+	//			}
+	//		}
 
-			// grid objects against grid objects
-			for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
-			{
-				for (int j = 0; j < m_grid->m_placedObjects.size(); j++)
-				{
+	//		// grid objects against grid objects
+	//		for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
+	//		{
+	//			for (int j = 0; j < m_grid->m_placedObjects.size(); j++)
+	//			{
 
-					if (j < m_grid->m_placedObjects.size() - 1)
-					{
-						if (m_grid->m_placedObjects.at(i)->isCollidable() && m_grid->m_placedObjects.at(j + 1)->isCollidable())
-						{
-							m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_placedObjects.at(j + 1)->getBounds(), 0.5f);
-						}
-					}
-				}
-			}
-		}
-	}
+	//				if (j < m_grid->m_placedObjects.size() - 1)
+	//				{
+	//					if (m_grid->m_placedObjects.at(i)->isCollidable() && m_grid->m_placedObjects.at(j + 1)->isCollidable())
+	//					{
+	//						m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_placedObjects.at(j + 1)->getBounds(), 0.5f);
+	//					}
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
 }
 
 void Game::render()
@@ -221,6 +232,11 @@ void Game::render()
 	m_window.clear(sf::Color::Black);
 	m_grid->render(&m_window);
 	m_uiBuildMode.render(&m_window);
+	m_objectPlacement->render(&m_window);
+	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
+	{
+		m_roomCreation->render(&m_window);
+	}
 	if (m_gameState->m_currentGameState == State::ROOM_TEST)
 	{
 		m_spear->render(m_window);
