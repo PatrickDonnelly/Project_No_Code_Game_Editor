@@ -17,6 +17,8 @@
 #include "TextEditor.h"
 #include "RoomCreation.h"
 #include "ObjectPlacement.h"
+#include "TextureManager.h"
+#include "FontManager.h"
 
 class Game
 {
@@ -38,7 +40,8 @@ private:
 	UiBuildMode m_uiBuildMode;
 	DialogueBox* m_dialogueBox{nullptr};
 	TextEditor* m_textEditor{ nullptr };
-
+	TextureManager* m_textureManager{ nullptr };
+	FontManager m_fontManager;
 	void setUpFontAndText();
 	void processEvents();
 	void processKeys(sf::Event t_event);

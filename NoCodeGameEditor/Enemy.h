@@ -4,15 +4,16 @@
 #define ENEMY_HPP
 
 #include "Object.h"
+#include "TextureManager.h"
 
 class Enemy : public Object
 {
 
 public:
 	Enemy();
-	Enemy(std::string t_typeTag, std::string t_path);
+	Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager);
 	~Enemy();
-
+	TextureManager* m_textureManager;
 	void init();
 	void setUpSprite();
 	void setTexture(sf::Texture& t_texture);

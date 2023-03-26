@@ -4,15 +4,16 @@
 #define TERRAIN_HPP
 
 #include "Object.h"
+#include "TextureManager.h"
 
 class Terrain : public Object
 {
 
 public:
 	Terrain();
-	Terrain(std::string t_typeTag, std::string t_path);
+	Terrain(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager);
 	~Terrain();
-
+	TextureManager* m_textureManager;
 	void init();
 	void setUpSprite();
 	void setTexture(sf::Texture& t_texture);

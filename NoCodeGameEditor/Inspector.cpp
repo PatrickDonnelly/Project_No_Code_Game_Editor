@@ -6,6 +6,7 @@ Inspector::Inspector(sf::Font& t_font)
 
 Inspector::Inspector()
 {
+    m_fontManager = FontManager();
     initInspector();
     m_noOfOptions = 4;
     m_inspectorLabel = new Label(m_font);
@@ -15,17 +16,15 @@ Inspector::Inspector()
 
 void Inspector::setUpFontAndText()
 {
-    if (!m_font.loadFromFile("ASSETS\\FONTS\\Arial.ttf"))
-    {
-        std::cout << "problem loading arial black font" << std::endl;
-    }
+    m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
     m_text.setFont(m_font);
     m_text.setStyle(sf::Text::Underlined | sf::Text::Italic | sf::Text::Bold);
-    m_text.setPosition(400.0f, 400.0f);
-    m_text.setCharacterSize(16U);
-    m_text.setOutlineColor(sf::Color::White);
-    m_text.setFillColor(sf::Color::Black);
+    m_text.setPosition(10.0f, 10.0f);
+    m_text.setCharacterSize(160U);
+    m_text.setOutlineColor(sf::Color::Red);
+    m_text.setFillColor(sf::Color::Blue);
     m_text.setOutlineThickness(1.0f);
+    m_text.setString("TEST");
 }
 
 Inspector::~Inspector()
@@ -89,6 +88,8 @@ void Inspector::setInspectorSprite(sf::Sprite t_dialogueSprite)
 
 void Inspector::render(sf::RenderWindow* t_window)
 {
+   // m_fontManager.getNumberOfFonts();
+
     t_window->draw(m_inspectorBGShape);
     m_inspectorLabel->render(t_window);
     t_window->draw(m_text);
@@ -110,12 +111,6 @@ void Inspector::splitString(std::string t_dialogueText)
 void Inspector::initText()
 {
     setUpFontAndText();
-    m_text.setFont(m_font);
-    m_text.setCharacterSize(20.0f);
-    m_text.setFillColor(sf::Color::Blue);
-    m_text.setOutlineColor(sf::Color::Red);
-    m_text.setOutlineThickness(2.0f);
-    m_text.setPosition(10.0f, 10.0f);
     m_inspectorLabel->setText("Inspector");
     m_inspectorLabel->setTextPosition(sf::Vector2f(m_inspectorBGShape.getPosition().x + m_inspectorBGShape.getGlobalBounds().width /2, 10));
 }

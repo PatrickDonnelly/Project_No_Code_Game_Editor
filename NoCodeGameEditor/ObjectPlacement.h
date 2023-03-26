@@ -18,6 +18,7 @@
 #include "Item.h"
 #include "Decoration.h"
 #include "Grid.h"
+#include "TextureManager.h"
 
 //template <typename T, typename Type>
 //void addObjectToGrid(std::vector<T*> t_vectorOfObjects, int t_i, int t_j, std::string t_tag, std::string t_selectedObject, std::vector<std::vector<Tile*>> t_grid)
@@ -88,12 +89,12 @@ public:
 	GameState* m_gameState;
 
 	ObjectPlacement();
-	ObjectPlacement(GameState* t_gameState, Grid* t_grid);
+	ObjectPlacement(GameState* t_gameState, Grid* t_grid, TextureManager* t_texturemanager);
 	~ObjectPlacement();
 	Grid* m_grid;
-
+	TextureManager* m_textureManager;
 	int noOfObstacles = 0;
-	int maxObstacles = 196;
+	int maxObstacles = 190;
 
 
 	void clearObjects();
@@ -111,6 +112,7 @@ public:
 
 	bool m_collidersEnabled = true;
 	std::string m_tempTag = "";
+	void setCollidersEnabled() { m_collidersEnabled = !m_collidersEnabled; }
 	//void setGridEnabled() { m_gridEnabled = !m_gridEnabled; }
 	//void setCollidersEnabled() { m_collidersEnabled = !m_collidersEnabled; }
 

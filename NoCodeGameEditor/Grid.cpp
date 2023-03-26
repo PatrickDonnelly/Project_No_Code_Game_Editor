@@ -4,8 +4,9 @@ Grid::Grid()
 {
 }
 
-Grid::Grid(GameState* t_gameState)
+Grid::Grid(GameState* t_gameState, TextureManager* t_textureManager)
 {
+	m_textureManager = t_textureManager;
 	m_gameState = t_gameState;
 	setUpFont();
 	regenerateGrid();
@@ -81,7 +82,7 @@ void Grid::regenerateGrid()
 		std::vector<Tile*> row;
 		for (int j = 0; j < m_vectGridSize; ++j)
 		{
-			row.push_back(new Tile(m_textFont));
+			row.push_back(new Tile(m_textFont, m_textureManager));
 		}
 		m_vectGrid.push_back(row);
 	}

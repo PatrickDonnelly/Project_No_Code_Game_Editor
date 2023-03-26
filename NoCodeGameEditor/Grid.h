@@ -17,12 +17,14 @@
 #include "Wall.h"
 #include "Item.h"
 #include "Decoration.h"
+#include "TextureManager.h"
 
 
 
 class Grid
 {
 private:
+	TextureManager* m_textureManager;
 
 public:
 
@@ -46,7 +48,7 @@ public:
 
 
 	Grid();
-	Grid(GameState* t_gameState);
+	Grid(GameState* t_gameState, TextureManager* t_textureManager);
 	void render(sf::RenderWindow* t_window);
 
 	void clearUnusedCells();

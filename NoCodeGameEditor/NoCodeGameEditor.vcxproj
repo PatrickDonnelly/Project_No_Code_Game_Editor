@@ -140,6 +140,7 @@
     <ClInclude Include="Decoration.h" />
     <ClInclude Include="DialogueBox.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Grid.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="RoomCreation.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="TextEditor.h" />
+    <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="UiBuildMode.h" />
     <ClInclude Include="Wall.h" />
@@ -171,6 +173,7 @@
     <ClCompile Include="Decoration.cpp" />
     <ClCompile Include="DialogueBox.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Grid.cpp" />
@@ -189,6 +192,7 @@
     <ClCompile Include="RoomCreation.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="TextEditor.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="UiBuildMode.cpp" />
     <ClCompile Include="Wall.cpp" />

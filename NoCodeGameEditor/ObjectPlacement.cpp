@@ -4,8 +4,9 @@ ObjectPlacement::ObjectPlacement()
 {
 }
 
-ObjectPlacement::ObjectPlacement(GameState* t_gameState, Grid* t_grid)
+ObjectPlacement::ObjectPlacement(GameState* t_gameState, Grid* t_grid, TextureManager* t_textureManager)
 {
+	m_textureManager = t_textureManager;
 	m_gameState = t_gameState;
 	m_grid = t_grid;
 }
@@ -42,53 +43,62 @@ void ObjectPlacement::placeRemove(sf::RenderWindow& m_window)
 
 							if (m_tempTag.find("Enemies") != std::string::npos)
 							{
-								m_enemies.push_back(new Enemy(m_tempTag, m_selectedObject));
+								m_enemies.push_back(new Enemy(m_tempTag, m_selectedObject, m_textureManager));
 								m_grid->m_vectGrid.at(i).at(j)->m_hasObject = true;
 								m_enemies.at(m_enemies.size() - 1)->getBounds()->setPosition(m_grid->m_vectGrid.at(i).at(j)->getPos());
 								m_enemies.at(m_enemies.size() - 1)->getSprite()->setPosition(m_enemies.at(m_enemies.size() - 1)->getBounds()->getPosition());
 								m_enemies.at(m_enemies.size() - 1)->setRowColumn(i, j);
+								
 							}
 							if (m_tempTag.find("Item") != std::string::npos)
 							{
-								m_items.push_back(new Enemy(m_tempTag, m_selectedObject));
+								m_items.push_back(new Item(m_tempTag, m_selectedObject, m_textureManager));
 								m_grid->m_vectGrid.at(i).at(j)->m_hasObject = true;
 								m_items.at(m_items.size() - 1)->getBounds()->setPosition(m_grid->m_vectGrid.at(i).at(j)->getPos());
 								m_items.at(m_items.size() - 1)->getSprite()->setPosition(m_items.at(m_items.size() - 1)->getBounds()->getPosition());
 								m_items.at(m_items.size() - 1)->setRowColumn(i, j);
+								
 							}
 							if (m_tempTag.find("Decoration") != std::string::npos)
 							{
-								m_decorations.push_back(new Enemy(m_tempTag, m_selectedObject));
+								m_decorations.push_back(new Decoration(m_tempTag, m_selectedObject, m_textureManager));
 								m_grid->m_vectGrid.at(i).at(j)->m_hasObject = true;
 								m_decorations.at(m_decorations.size() - 1)->getBounds()->setPosition(m_grid->m_vectGrid.at(i).at(j)->getPos());
 								m_decorations.at(m_decorations.size() - 1)->getSprite()->setPosition(m_decorations.at(m_decorations.size() - 1)->getBounds()->getPosition());
 								m_decorations.at(m_decorations.size() - 1)->setRowColumn(i, j);
+								
 							}
 							if (m_tempTag.find("Wall") != std::string::npos)
 							{
-								m_walls.push_back(new Enemy(m_tempTag, m_selectedObject));
+								m_walls.push_back(new Wall(m_tempTag, m_selectedObject, m_textureManager));
 								m_grid->m_vectGrid.at(i).at(j)->m_hasObject = true;
 								m_walls.at(m_walls.size() - 1)->getBounds()->setPosition(m_grid->m_vectGrid.at(i).at(j)->getPos());
 								m_walls.at(m_walls.size() - 1)->getSprite()->setPosition(m_walls.at(m_walls.size() - 1)->getBounds()->getPosition());
 								m_walls.at(m_walls.size() - 1)->setRowColumn(i, j);
+								
 							}
-							noOfObstacles++;
+							
 						}
 						if (m_grid->m_vectGrid.at(i).at(j)->cellType == "Floor")
 						{
 							if (m_tempTag.find("Terrain") != std::string::npos)
 							{
-								m_terrain.push_back(new Terrain(m_tempTag, m_selectedObject));
-								// check collision for overlapping terrain
-								m_terrain.at(m_terrain.size() - 1)->getBounds()->setPosition(m_grid->m_vectGrid.at(i).at(j)->getPos());
-								m_terrain.at(m_terrain.size() - 1)->getSprite()->setPosition(m_terrain.at(m_terrain.size() - 1)->getBounds()->getPosition());
+								//m_terrain.push_back(new Terrain(m_tempTag, m_selectedObject, m_textureManager));
+								//// check collision for overlapping terrain
+								//m_terrain.at(m_terrain.size() - 1)->getBounds()->setPosition(m_grid->m_vectGrid.at(i).at(j)->getPos());
+								//m_terrain.at(m_terrain.size() - 1)->getSprite()->setPosition(m_terrain.at(m_terrain.size() - 1)->getBounds()->getPosition());
 
-								m_terrain.at(m_terrain.size() - 1)->setRowColumn(i, j);
+								//m_terrain.at(m_terrain.size() - 1)->setRowColumn(i, j);
+								noOfObstacles++;
+								std::cout << "no : " << noOfObstacles << std::endl;
+								m_grid->m_vectGrid.at(i).at(j)->setFloorSprite(m_selectedObject);
 							}
+
 						}
 
 					}
 				}
+				
 			}
 			else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
 			{
@@ -139,7 +149,7 @@ void ObjectPlacement::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 
 void ObjectPlacement::render(sf::RenderWindow* t_window)
 {
-	renderPlacedObjects(m_terrain, t_window, m_collidersEnabled);
+	//renderPlacedObjects(m_terrain, t_window, m_collidersEnabled);
 	renderPlacedObjects(m_decorations, t_window, m_collidersEnabled);
 	renderPlacedObjects(m_items, t_window, m_collidersEnabled);
 	renderPlacedObjects(m_enemies, t_window, m_collidersEnabled);

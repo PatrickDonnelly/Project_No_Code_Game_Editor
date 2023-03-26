@@ -462,6 +462,8 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 					else
 					{
 						m_grid->setCollidersEnabled();
+						m_roomCreation->setCollidersEnabled();
+						m_objectPlacement->setCollidersEnabled();
 					}
 				}
 			}
@@ -544,6 +546,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 						{
 							m_roomCreation->resetValues();
 							m_grid->regenerateGrid();
+							m_objectPlacement->clearObjects();
 							m_gameState->m_currentGameState = State::ROOM_BUILD;
 						}
 						else if (m_placementOptionsLabels.at(i)->getTextString() == "Test Room")
@@ -691,7 +694,6 @@ void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, i
 			m_prevNextbuttons.at(i)->setButtonTexture();
 		}
 	}
-	std::cout << m_currentRowIndex << std::endl;
 }
 
 

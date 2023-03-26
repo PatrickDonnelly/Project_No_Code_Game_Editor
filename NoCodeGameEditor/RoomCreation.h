@@ -58,7 +58,7 @@ public:
 	void clearUnusedCells();
 	void setUpWallColliders();
 
-
+	void setCollidersEnabled() { m_collidersEnabled = !m_collidersEnabled; }
 
 
 	bool m_collidersEnabled = true;

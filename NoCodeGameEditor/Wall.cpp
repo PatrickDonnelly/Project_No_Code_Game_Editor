@@ -6,8 +6,9 @@ Wall::Wall()
 {
 }
 
-Wall::Wall(std::string t_typeTag, std::string t_path)
+Wall::Wall(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
 {
+	m_textureManager = t_textureManager;
 	m_isCollidable = false;
 	m_tag = t_typeTag;
 	m_path = t_path;
@@ -37,11 +38,12 @@ void Wall::setUpSprite()
 
 void Wall::setTexture(sf::Texture& t_texture)
 {
-	if (!t_texture.loadFromFile(m_path + ".png"))
-	{
-		std::cout << "Can't load main menu bgt" << std::endl;
-	}
-	m_objectSprite.setTexture(t_texture);
+	m_objectTexture = m_textureManager->getTexture(m_path + ".png");
+	//if (!t_texture.loadFromFile(m_path + ".png"))
+	//{
+	//	std::cout << "Can't load main menu bgt" << std::endl;
+	//}
+	m_objectSprite.setTexture(m_objectTexture);
 }
 
 void Wall::setPathToTexture(std::string t_path)
@@ -68,10 +70,5 @@ void Wall::update(sf::Time deltaTime, sf::RenderWindow& window)
 void Wall::render(sf::RenderWindow& window)
 {
 	window.draw(m_objectSprite);
-	if (m_boundsOn)
-	{
-		window.draw(m_objectBounds);
-	}
-
 	m_inspector->render(&window);
 }

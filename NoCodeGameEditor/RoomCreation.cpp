@@ -122,7 +122,6 @@ void RoomCreation::setUpWallColliders()
 				{
 					startFound = true;
 					m_colStartPos = m_grid->m_vectGrid.at(i).at(j)->getPos();
-					std::cout << "here" << std::endl;
 				}
 				continue;
 			}
@@ -141,8 +140,6 @@ void RoomCreation::setUpWallColliders()
 						m_vectColliders.at(noOfWallColliders)->setUpHorizontalWallBounds(m_colStartPos.x, m_colEndPos.x);
 
 						noOfWallColliders++;
-
-						std::cout << noOfWallColliders << std::endl;
 						continue;
 					}
 				}
@@ -162,7 +159,6 @@ void RoomCreation::setUpWallColliders()
 				{
 					startFound = true;
 					m_colStartPos = m_grid->m_vectGrid.at(i).at(j)->getPos();
-					std::cout << "here" << std::endl;
 				}
 				continue;
 			}
@@ -181,8 +177,6 @@ void RoomCreation::setUpWallColliders()
 						m_vectColliders.at(noOfWallColliders)->setUpVerticalWallBounds(m_colStartPos.y, m_colEndPos.y);
 
 						noOfWallColliders++;
-
-						std::cout << noOfWallColliders << std::endl;
 
 						continue;
 					}
@@ -265,12 +259,13 @@ void RoomCreation::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 
 void RoomCreation::render(sf::RenderWindow* t_window)
 {
-
-		for (int i = 0; i < m_vectColliders.size(); i++)
+	for (int i = 0; i < m_vectColliders.size(); i++)
+	{
+		if (m_collidersEnabled)
 		{
 			t_window->draw(*m_vectColliders.at(i)->getBounds());
 		}
-	
+	}
 }
 
 void RoomCreation::CheckValidityOfWalls(int t_row, int t_col)

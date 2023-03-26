@@ -3,12 +3,15 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "TextureManager.h"
 
 class Tile
 {
 private:
 
 	sf::RectangleShape m_tile;
+	TextureManager* m_textureManager;
+
 
 public:
 	bool m_top = false;
@@ -36,10 +39,12 @@ public:
 	sf::Vector2i rowColumn{};
 	sf::Vector2f m_vector{};
 	sf::Vector2f getPos();
-
+	std::string m_path = "";
 
 	void setUpText(sf::Font& t_font);
-	Tile(sf::Font& t_font);
+	Tile(sf::Font& t_font, TextureManager* t_textureManager);
+	~Tile();
+	void setFloorSprite(std::string t_path);
 	float m_width = 32.0f;
 	void setPosition(float m_x, float m_y);
 	void setTileColour(sf::Color t_color);

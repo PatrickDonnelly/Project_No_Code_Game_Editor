@@ -7,6 +7,7 @@
 #include "Label.h"
 #include "GameState.h"
 #include "InspectorOptions.h"
+#include "FontManager.h"
 
 class Inspector
 {
@@ -15,6 +16,7 @@ public:
 	Inspector();
 	Inspector(sf::Font& t_font);
 	~Inspector();
+	FontManager m_fontManager;
 
 	sf::Sprite getInspectorSprite();
 	sf::Vector2f getInspectorPosition();

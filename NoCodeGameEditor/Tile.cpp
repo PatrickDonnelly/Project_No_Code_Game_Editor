@@ -9,8 +9,13 @@ void Tile::setUpText(sf::Font& t_font)
 	m_text.setFillColor(sf::Color::White);
 }
 
-Tile::Tile(sf::Font& t_font)
+Tile::~Tile()
 {
+}
+
+Tile::Tile(sf::Font& t_font, TextureManager* t_textureManager)
+{
+	m_textureManager = t_textureManager;
 	setUpText(t_font);
 	setUpSprites();
 	m_tile.setSize(sf::Vector2f(m_width, m_width));
@@ -34,6 +39,16 @@ void Tile::setWallSprite()
 
 void Tile::setFloorSprite()
 {
+	m_cellSprite.setTexture(m_floorTexture);
+}
+
+void Tile::setFloorSprite(std::string t_path)
+{
+	m_floorTexture = m_textureManager->getTexture(t_path + ".png");
+	//if (!t_texture.loadFromFile(m_path + ".png"))
+	//{
+	//	std::cout << "Can't load main menu bgt" << std::endl;
+	//}
 	m_cellSprite.setTexture(m_floorTexture);
 }
 

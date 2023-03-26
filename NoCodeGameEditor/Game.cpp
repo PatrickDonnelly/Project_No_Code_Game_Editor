@@ -5,11 +5,12 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
 	m_exitGame{ false } //when true game will exit
 {
+	m_textureManager = new TextureManager();
 	m_gameState = new GameState(State::ROOM_BUILD);
 	setUpFontAndText();
-	m_grid = new Grid(m_gameState);
+	m_grid = new Grid(m_gameState, m_textureManager);
 	m_roomCreation = new RoomCreation(m_gameState, m_grid);
-	m_objectPlacement = new ObjectPlacement(m_gameState, m_grid);
+	m_objectPlacement = new ObjectPlacement(m_gameState, m_grid, m_textureManager);
 	m_player = new Player();
 	m_spear = new Weapon(m_player);
 	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState, m_roomCreation, m_objectPlacement);
@@ -44,6 +45,9 @@ void Game::run()
 
 void Game::setUpFontAndText()
 {
+	m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+
+
 	if (!m_ArialFont.loadFromFile("ASSETS\\FONTS\\Arial.ttf"))
 	{
 		std::cout << "problem loading arial black font" << std::endl;
@@ -112,11 +116,13 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_grid->m_playerSet = true;
 		m_player->getBounds()->setPosition(m_roomCreation->m_firstTilePosition.x+16, m_roomCreation->m_firstTilePosition.y + 16);
-		std::cout << m_player->getSprite()->getPosition().x << std::endl;
+		//std::cout << m_player->getSprite()->getPosition().x << std::endl;
 	}
 
-
+	//m_textureManager->getNumberOfTextures();
+	//m_fontManager.getNumberOfFonts();
 	//m_grid->update(t_deltaTime, m_window);
+	
 	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 	{
 		m_roomCreation->update(t_deltaTime, m_window);
