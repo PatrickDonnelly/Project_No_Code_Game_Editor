@@ -15,6 +15,7 @@ public:
 
 	Inspector();
 	Inspector(sf::Font& t_font);
+	Inspector(std::string t_title);
 	~Inspector();
 	FontManager m_fontManager;
 
@@ -27,10 +28,12 @@ public:
 	void render(sf::RenderWindow* t_window);
 	bool isEnabled();
 	void setEnabled() { m_enabled = !m_enabled; }
+	void update(sf::Time deltaTime, sf::RenderWindow& window);
 
 	//void setInspectorText(std::string t_dialogue) { m_textBox.setString(t_dialogue); }
 
 	void splitString(std::string t_dialogueText);
+	void setTextString(std::string t_text) { m_text.setString(t_text); }
 	
 
 private:
@@ -45,7 +48,7 @@ private:
 	sf::Sprite m_inspectorSprite;
 	sf::Texture m_inspectorTexture;
 	sf::RectangleShape m_inspectorBGShape;
-
+	std::string m_title;
 	//std::string m_text;
 	sf::Text m_text;
 	sf::Font m_font;

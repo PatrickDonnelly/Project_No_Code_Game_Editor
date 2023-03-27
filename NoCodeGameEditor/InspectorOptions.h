@@ -18,12 +18,15 @@ public:
 	InspectorOptions(sf::Font& t_font, int noOfOptions, std::string t_tag);
 	~InspectorOptions();
 
+
 	sf::Sprite getInspectorOptionsSprite();
 	sf::Vector2f getInspectorOptionsPosition();
 
 	void initInspectorOptions();
 
 	void setInspectorOptionsPosition(sf::Vector2f t_pos);
+	void update(sf::Time deltaTime, sf::RenderWindow& window);
+
 	void render(sf::RenderWindow* t_window);
 	bool isEnabled();
 	void setEnabled() { m_enabled = !m_enabled; }

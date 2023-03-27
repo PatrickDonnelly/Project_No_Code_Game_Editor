@@ -21,7 +21,7 @@ public:
 	void setUpBounds();
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
-
+	int count = 0;
 
 	bool m_hasDialogue = false;
 	int m_detectionRadius;

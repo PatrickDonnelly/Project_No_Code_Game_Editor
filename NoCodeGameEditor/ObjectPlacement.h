@@ -51,24 +51,39 @@ void setSpriteAndBounds(std::vector<T*>& t_objects)
 }
 
 template <typename T>
-void deleteObject(std::vector<T*>& t_objects, Grid* t_grid, int& t_noOfObstacles, sf::RenderWindow& m_window)
+void deleteObject(std::vector<T*>& t_objects, Grid* t_grid, Object* t_currentlySelected, sf::RenderWindow& m_window)
 {
 	if (t_objects.size() > 0)
 	{
 		for (typename std::vector<T*>::iterator iter = t_objects.begin(); iter != t_objects.end();)
 		{
+			(*iter)->setSelected(false);
 			//(*iter)->getBounds()->getGlobalBounds();
 			if ((*iter)->getBounds()->getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 			{
 				// resets the right tile even if the object was moved
 				t_grid->m_vectGrid.at((*iter)->getRow()).at((*iter)->getColumn())->m_hasObject = false;
+				t_grid->m_vectGrid.at((*iter)->getRow()).at((*iter)->getColumn())->m_objectType = "";
 				iter = t_objects.erase(iter);
-				t_noOfObstacles--;
 			}
 			else
 			{
 				iter++;
 			}
+		}
+	}
+}
+
+template <typename T>
+void setSelected(std::vector<T*>& t_objects, sf::RenderWindow* t_window, Object* t_currentlySelected)
+{
+	for (int i = 0; i < t_objects.size(); ++i)
+	{
+		if (t_objects.at(i)->getBounds()->getGlobalBounds().contains(t_window->mapPixelToCoords(sf::Mouse::getPosition(*t_window))))
+		{
+
+			t_currentlySelected = t_objects.at(i);
+			t_currentlySelected->setSelected(true);
 		}
 	}
 }
@@ -79,13 +94,20 @@ class ObjectPlacement
 {
 private:
 
+	void setSelectedGridObject(std::vector<Object*>& t_enemies, sf::RenderWindow& m_window);
+	sf::Vector2i m_originalPosition{ 0,0 };
+	std::string m_storedObjectType = "";
+
 public:
+	sf::Clock m_clock;
+	sf::Time m_doubleClickTime = sf::Time::Zero;
+	bool checkForDoubleClick(sf::Clock& t_clock, sf::Time& t_doubleClickTime);
 	std::vector <Object*> m_enemies;
 	std::vector <Object*> m_terrain;
 	std::vector <Object*> m_walls;
 	std::vector <Object*> m_items;
 	std::vector <Object*> m_decorations;
-
+	Object* m_currentlySelected{nullptr};
 	GameState* m_gameState;
 
 	ObjectPlacement();
@@ -102,7 +124,7 @@ public:
 
 	void render(sf::RenderWindow* t_window);
 	void update(sf::Time t_deltaTime, sf::RenderWindow& m_window);
-	void placeRemove(sf::RenderWindow& m_window);
+	void placeRemove(sf::Event t_event, sf::RenderWindow& m_window);
 
 
 	bool checkValidSelection();

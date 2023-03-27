@@ -26,10 +26,12 @@ protected:
 	std::string m_tag;
 	bool m_isCollidable = false;
 
+
 public:
 	Object();
 	~Object();
-
+	bool m_isSelected = false;
+	bool m_moving = false;
 	virtual void init() = 0;
 	virtual void setUpSprite() = 0;
 	virtual void setTexture(sf::Texture& t_texture) = 0;
@@ -46,6 +48,9 @@ public:
 	int getRow() { return m_row; }
 	int getColumn() { return m_col; }
 	void setCollidable(bool t_state) { m_isCollidable = t_state; }
+	void setSelected(bool t_state) { m_isSelected = t_state; if(m_isSelected)m_objectSprite.setColor(sf::Color::Red); if (!m_isSelected)m_objectSprite.setColor(sf::Color::White);
+	}
+	void setMoving(bool t_state) { m_moving = t_state; }
 	void setTag(std::string t_tag) { m_tag = t_tag; }
 	std::string getTag() { return m_tag; }
 	std::string getPath() { return m_path; }

@@ -69,5 +69,9 @@ void Terrain::update(sf::Time deltaTime, sf::RenderWindow& window)
 void Terrain::render(sf::RenderWindow& window)
 {
 	window.draw(m_objectSprite);
-	m_inspector->render(&window);
+	if (m_isSelected)
+	{
+		m_inspector->setTextString("Terrain");
+		m_inspector->render(&window);
+	}
 }

@@ -130,9 +130,7 @@ public:
 	Grid* m_grid;
 	RoomCreation* m_roomCreation;
 	ObjectPlacement* m_objectPlacement;
-
-
-
+	
 
 };
 #endif // !UIBUILDMODE_HPP

@@ -421,7 +421,6 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 							deselectButtons(t_objectButtons);
 
 							col->setSelected(true);
-
 							if (col->getSelected())
 							{
 								col->setColor(sf::Color::Red);
@@ -700,6 +699,7 @@ void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, i
 void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Event newEvent = t_event;
+
 	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 	{
 		processBuildRoomButtonInput(t_event,t_window);

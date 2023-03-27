@@ -70,5 +70,9 @@ void Decoration::update(sf::Time deltaTime, sf::RenderWindow& window)
 void Decoration::render(sf::RenderWindow& window)
 {
 	window.draw(m_objectSprite);
-	m_inspector->render(&window);
+	if (m_isSelected)
+	{
+		m_inspector->setTextString("Decoration");
+		m_inspector->render(&window);
+	}
 }

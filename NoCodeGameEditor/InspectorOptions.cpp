@@ -120,6 +120,10 @@ void InspectorOptions::setInspectorOptionsPosition(sf::Vector2f t_pos)
     m_inspectorOptionsBGShape.setPosition(t_pos);
 }
 
+void InspectorOptions::update(sf::Time deltaTime, sf::RenderWindow& window)
+{
+}
+
 
 
 void InspectorOptions::render(sf::RenderWindow* t_window)
@@ -146,12 +150,7 @@ void InspectorOptions::splitString(std::string t_dialogueText)
 
 void InspectorOptions::initText()
 {
-    //m_text.setFont(m_font);
-    //m_text.setCharacterSize(20.0f);
-    //m_text.setFillColor(sf::Color::Blue);
-    //m_text.setOutlineColor(sf::Color::Red);
-    //m_text.setOutlineThickness(2.0f);
-    //m_text.setPosition(10.0f, 10.0f);
+
     m_inspectorOptionsLabel->setText(m_tag);
     m_inspectorOptionsLabel->setTextPosition(sf::Vector2f(m_inspectorOptionsBGShape.getPosition().x + m_inspectorOptionsLabel->getText().getGlobalBounds().width /2 + 5, m_inspectorOptionsBGShape.getPosition().y +10));
 }

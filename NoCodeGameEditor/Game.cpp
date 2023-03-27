@@ -94,6 +94,10 @@ void Game::processEvents()
 				}
 			}
 		}
+		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
+		{
+			m_objectPlacement->placeRemove(newEvent, m_window);
+		}
 	}
 }
 
@@ -121,16 +125,13 @@ void Game::update(sf::Time t_deltaTime)
 
 	//m_textureManager->getNumberOfTextures();
 	//m_fontManager.getNumberOfFonts();
-	//m_grid->update(t_deltaTime, m_window);
+	m_objectPlacement->update(t_deltaTime, m_window);
 	
 	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 	{
 		m_roomCreation->update(t_deltaTime, m_window);
 	}
-	if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
-	{
-		m_objectPlacement->update(t_deltaTime, m_window);
-	}
+
 
 
 	if (m_gameState->m_currentGameState == State::ROOM_TEST)
@@ -139,51 +140,80 @@ void Game::update(sf::Time t_deltaTime)
 		m_spear->update(t_deltaTime, m_window);
 	}
 
-	//if (m_gameState->getState() == State::ROOM_TEST)
-	//{
-	//	// player and walls
-	//	// objects and walls
-	//	m_player->m_speed = m_player->m_defaultSpeed;
+	if (m_gameState->getState() == State::ROOM_TEST)
+	{
+		// player and walls
+		// objects and walls
+		m_player->m_speed = m_player->m_defaultSpeed;
 
-	//	if (m_grid->m_vectColliders.size() > 0)
-	//	{
-	//		for (int i = 0; i < m_grid->m_vectColliders.size(); i++)
-	//		{
-	//			m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_vectColliders.at(i)->getBounds(), 0.0f);
-	//		}
-	//		for (int i = 0; i < m_grid->m_placedObjects.size(); i++)
-	//		{
-	//			for (int j = 0; j < m_grid->m_vectColliders.size(); j++)
-	//			{
-	//				m_checkCollision.checkCollision(m_grid->m_placedObjects.at(i)->getBounds(), m_grid->m_vectColliders.at(j)->getBounds(), 0.0f);
-	//			}
-	//			if (m_grid->m_placedObjects.at(i)->isCollidable())
-	//			{
-	//				m_player->m_speed = m_player->m_defaultSpeed;
-	//				if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
-	//				{
-	//					m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
-	//				}
-	//				else
-	//				{
-	//					m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
-	//				}
-	//			}
-	//			else // if not collidable
-	//			{
-	//				if (m_grid->m_placedObjects.at(i)->m_tag == "Water")
-	//				{
-	//					if (m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds()))
-	//					{
-	//						m_player->m_speed = m_player->m_defaultSpeed * 0.5f;
-	//					}
+		if (m_roomCreation->m_vectColliders.size() > 0)
+		{
+			for (int i = 0; i < m_roomCreation->m_vectColliders.size(); i++)
+			{
+				m_checkCollision.checkCollision(m_player->getBounds(), m_roomCreation->m_vectColliders.at(i)->getBounds(), 0.0f);
+			}
+			for (int i = 0; i < m_objectPlacement->m_decorations.size(); i++)
+			{
+				for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+				{
+					m_checkCollision.checkCollision(m_objectPlacement->m_decorations.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
+					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_decorations.at(i)->getBounds(), 0.5f);
+				}
+			}
+			for (int i = 0; i < m_objectPlacement->m_items.size(); i++)
+			{
+				for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+				{
+					m_checkCollision.checkCollision(m_objectPlacement->m_items.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
+					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_items.at(i)->getBounds(), 0.0f);
 
-	//					
-	//				}
-	//			}
-	//		}
+				}
+			}
+			for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+			{
+				for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+				{
+					m_checkCollision.checkCollision(m_objectPlacement->m_enemies.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
+					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_enemies.at(i)->getBounds(), 0.0f);
 
-	//		// Spear vs Obstacles
+				}
+			}
+			for (int i = 0; i < m_objectPlacement->m_walls.size(); i++)
+			{
+				for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+				{
+					m_checkCollision.checkCollision(m_objectPlacement->m_walls.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
+					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_walls.at(i)->getBounds(), 0.0f);
+				}
+			}
+
+			//if (m_grid->m_placedObjects.at(i)->isCollidable())
+			//{
+			//	m_player->m_speed = m_player->m_defaultSpeed;
+			//	if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
+			//	{
+			//		m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
+			//	}
+			//	else
+			//	{
+			//		m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
+			//	}
+			//}
+			//else // if not collidable
+			//{
+			//	if (m_grid->m_placedObjects.at(i)->m_tag == "Water")
+			//	{
+			//		if (m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds()))
+			//		{
+			//			m_player->m_speed = m_player->m_defaultSpeed * 0.5f;
+			//		}
+
+			//		
+			//	}
+			//}
+		}
+
+			// Spear vs Obstacles
 	//		if (m_spear->m_weaponUsed)
 	//		{
 	//			std::vector<Obstacle*>::iterator it;
@@ -230,7 +260,7 @@ void Game::update(sf::Time t_deltaTime)
 	//			}
 	//		}
 	//	}
-	//}
+	}
 }
 
 void Game::render()

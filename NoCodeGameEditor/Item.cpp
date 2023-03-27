@@ -70,5 +70,9 @@ void Item::update(sf::Time deltaTime, sf::RenderWindow& window)
 void Item::render(sf::RenderWindow& window)
 {
 	window.draw(m_objectSprite);
-	m_inspector->render(&window);
+	if (m_isSelected)
+	{
+		m_inspector->setTextString("Item");
+		m_inspector->render(&window);
+	}
 }
