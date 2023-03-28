@@ -5,6 +5,7 @@
 
 #include "Object.h"
 #include "TextureManager.h"
+#include "Attributes.h"
 
 class Enemy : public Object
 {
@@ -14,6 +15,7 @@ public:
 	Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager);
 	~Enemy();
 	TextureManager* m_textureManager;
+	Attributes* m_enemyAttributes;
 	void init();
 	void setUpSprite();
 	void setTexture(sf::Texture& t_texture);

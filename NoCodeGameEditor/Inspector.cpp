@@ -125,9 +125,19 @@ void Inspector::splitString(std::string t_dialogueText)
 {
 }
 
+void Inspector::addDialogueTab()
+{
+
+}
+
+void Inspector::updateDialogueTab()
+{
+}
+
 void Inspector::initText()
 {
     setUpFontAndText();
     m_inspectorLabel->setText("Inspector - " + m_title);
     m_inspectorLabel->setTextPosition(sf::Vector2f(1522+ m_inspectorLabel->getText().getGlobalBounds().width/2, (m_inspectorLabel->getText().getGlobalBounds().height / 2)));
 }
+

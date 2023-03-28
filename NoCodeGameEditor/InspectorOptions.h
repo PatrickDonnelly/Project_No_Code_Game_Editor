@@ -37,6 +37,7 @@ public:
 
 	void initOptions();
 private:
+
 	std::string m_tag;
 	std::vector<CheckBox*> m_options;
 	int m_noOfOptions;
