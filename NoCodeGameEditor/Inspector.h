@@ -37,6 +37,15 @@ public:
 	
 
 private:
+
+	void addDialogueTab();
+	void updateDialogueTab();
+	Button* m_addDialogueButton;
+	std::vector<std::string> m_dialogueFileNames;
+	std::vector<Label> m_labels;
+	//Object* m_object;
+
+
 	int m_noOfOptions;
 	void setUpFontAndText();
 	void initInspectorOptions();
