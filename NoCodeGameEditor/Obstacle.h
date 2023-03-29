@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include "CheckBox.h"
 #include "DialogueBox.h"
-#include "Inspector.h"
+
 
 struct InspectorData
 {
@@ -19,8 +19,8 @@ struct InspectorData
 
 class Obstacle
 {
-	InspectorData m_inspectorData;
-	Inspector* m_inspector;
+	//InspectorData m_inspectorData;
+	//Inspector* m_inspector;
 	sf::Texture m_obstacleTexture;
 	sf::Sprite m_obstacleSprite;
 	sf::RectangleShape m_obstacleBounds;

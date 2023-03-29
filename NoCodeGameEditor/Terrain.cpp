@@ -14,7 +14,7 @@ Terrain::Terrain(std::string t_typeTag, std::string t_path, TextureManager* t_te
 	m_path = t_path;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;
-	m_inspector = new Inspector();
+	//m_inspector = new Inspector();
 	init();
 }
 
@@ -71,7 +71,7 @@ void Terrain::render(sf::RenderWindow& window)
 	window.draw(m_objectSprite);
 	if (m_isSelected)
 	{
-		m_inspector->setTextString("Terrain");
-		m_inspector->render(&window);
+		//m_inspector->setTextString("Terrain");
+		//m_inspector->render(&window);
 	}
 }

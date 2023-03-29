@@ -15,7 +15,7 @@ public:
 	Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager);
 	~Enemy();
 	TextureManager* m_textureManager;
-	Attributes* m_enemyAttributes;
+	//Attributes* m_enemyAttributes;
 	void init();
 	void setUpSprite();
 	void setTexture(sf::Texture& t_texture);
@@ -29,6 +29,8 @@ public:
 	int m_detectionRadius;
 	std::vector<std::string> m_dialoguePaths;
 	DialogueBox m_dialogue;
+	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Enemy"; }
+	std::string getObjectCategory() { return m_objectCategory; }
 
 };
 #endif // !ENEMY_HPP

@@ -16,6 +16,7 @@ Game::Game() :
 	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState, m_roomCreation, m_objectPlacement);
 	m_dialogueBox = new DialogueBox(m_ArialFont);
 	m_textEditor = new TextEditor(m_ArialFont, m_gameState);
+	m_inspector = new Inspector(m_objectPlacement);
 
 }
 

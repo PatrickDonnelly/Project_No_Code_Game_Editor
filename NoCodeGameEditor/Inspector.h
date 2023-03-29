@@ -1,3 +1,4 @@
+#pragma once
 #ifndef INSPECTOR_HPP
 #define INSPECTOR_HPP
 #include <SFML/Graphics.hpp>
@@ -8,13 +9,20 @@
 #include "GameState.h"
 #include "InspectorOptions.h"
 #include "FontManager.h"
+//#include "Object.h"
+//#include "Enemy.h"
+//#include "Attributes.h"
+#include "ObjectPlacement.h"
+
 
 class Inspector
 {
 public:
 
 	Inspector();
+	Inspector(ObjectPlacement* t_objects);
 	Inspector(sf::Font& t_font);
+	//Inspector(std::string t_title, Attributes& t_object);
 	Inspector(std::string t_title);
 	~Inspector();
 	FontManager m_fontManager;
@@ -37,13 +45,15 @@ public:
 	
 
 private:
-
+	bool isNull();
 	void addDialogueTab();
 	void updateDialogueTab();
 	Button* m_addDialogueButton;
+	Label* m_addDialogueLabel;
 	std::vector<std::string> m_dialogueFileNames;
 	std::vector<Label> m_labels;
-	//Object* m_object;
+	//Attributes m_objectData;
+	ObjectPlacement* m_objects;
 
 
 	int m_noOfOptions;

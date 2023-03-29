@@ -14,7 +14,7 @@ Wall::Wall(std::string t_typeTag, std::string t_path, TextureManager* t_textureM
 	m_path = t_path;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;
-	m_inspector = new Inspector();
+	//m_inspector = new Inspector();
 	init();
 }
 
@@ -72,7 +72,7 @@ void Wall::render(sf::RenderWindow& window)
 	window.draw(m_objectSprite);
 	if (m_isSelected)
 	{
-		m_inspector->setTextString("Wall");
-		m_inspector->render(&window);
+		//m_inspector->setTextString("Wall");
+		//m_inspector->render(&window);
 	}
 }

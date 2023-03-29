@@ -26,6 +26,7 @@ public:
 	void setSelected(bool t_tf);
 	bool isEnabled();
 	void setEnabled(bool t_onOff) { m_enabled = t_onOff; }
+	bool isButtonClicked(sf::Event& t_event, sf::RenderWindow* t_window);
 
 private:
 

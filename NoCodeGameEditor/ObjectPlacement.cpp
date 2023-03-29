@@ -305,3 +305,11 @@ void ObjectPlacement::setSelectedGridObject(std::vector<Object*>& t_objects, sf:
 	}
 }
 
+Object* ObjectPlacement::getSelectedGridObject()
+{
+	if (m_currentlySelected != nullptr)
+	{
+		return m_currentlySelected;
+	}
+}
+

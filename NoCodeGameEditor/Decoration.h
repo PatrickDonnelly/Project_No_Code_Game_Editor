@@ -23,6 +23,9 @@ public:
 	void setUpBounds();
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
+
+	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Decorations"; }
+	std::string getObjectCategory() { return m_objectCategory; }
 };
 #endif // !DECORATION_HPP
 

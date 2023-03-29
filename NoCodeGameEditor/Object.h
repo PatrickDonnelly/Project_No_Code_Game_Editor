@@ -6,14 +6,14 @@
 #include <SFML/Graphics.hpp>
 #include "CheckBox.h"
 #include "DialogueBox.h"
-#include "Inspector.h"
+//#include "Inspector.h"
 #include "Attributes.h"
 
 class Object
 {
 protected:
-	Attributes m_inpectorData;
-	Inspector* m_inspector;
+
+	//Inspector* m_inspector;
 	sf::Texture m_objectTexture;
 	sf::Sprite m_objectSprite;
 	sf::RectangleShape m_objectBounds;
@@ -25,15 +25,20 @@ protected:
 	std::string m_path = "";
 	std::string m_tag;
 	bool m_isCollidable = false;
+	std::string m_objectCategory;
 
 
 public:
 	Object();
 	~Object();
+	Attributes m_inpectorData;
 	bool m_isSelected = false;
 	bool m_moving = false;
+
 	virtual void init() = 0;
 	virtual void setUpSprite() = 0;
+	virtual void setObjectCategory(std::string t_ObjectCategory) = 0;
+	virtual std::string getObjectCategory() = 0;
 	virtual void setTexture(sf::Texture& t_texture) = 0;
 	virtual void setPathToTexture(std::string t_path) = 0;
 	virtual void setUpBounds() = 0;

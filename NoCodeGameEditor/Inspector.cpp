@@ -1,21 +1,53 @@
 #include "Inspector.h"
 
-Inspector::Inspector(sf::Font& t_font)
+Inspector::Inspector(sf::Font & t_font)
 {
 }
 
 Inspector::Inspector(std::string t_title)
 {
+}
+
+Inspector::Inspector(ObjectPlacement* t_objects)
+{
+    m_objects = t_objects;
     m_fontManager = FontManager();
     m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
     initInspector();
     m_noOfOptions = 4;
     m_inspectorLabel = new Label(m_font);
-    initInspectorOptions();
-    m_title = t_title;
+    //             initInspectorOptions();
+
     //m_text.setString(t_title);
     initText();
+
+    addDialogueTab();
 }
+
+bool Inspector::isNull()
+{
+    if (m_objects->getSelectedGridObject() == nullptr)
+    {
+        return true;
+    }
+    return false;
+}
+
+//Inspector::Inspector(std::string t_title, Attributes& t_object)
+//{
+//    m_objectData = t_object;
+//    m_fontManager = FontManager();
+//    m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+//    initInspector();
+//    m_noOfOptions = 4;
+//    m_inspectorLabel = new Label(m_font);
+//    initInspectorOptions();
+//    m_title = t_title;
+//    //m_text.setString(t_title);
+//    initText();
+//
+//    addDialogueTab();
+//}
 
 Inspector::Inspector()
 {
@@ -46,32 +78,33 @@ void Inspector::initInspectorOptions()
 {
     for (int i = 0; i < m_noOfOptions; ++i)
     {
-/*        if (i == 0)
-            m_inspectorOptions.push_back(new InspectorOptions(m_font, 7, "Behaviour"));
-        */if (i == 0)
-        {
-            m_inspectorOptions.push_back(new InspectorOptions(m_font, 3, "Dialogue"));
-            m_inspectorOptions.at(i)->setInspectorOptionsPosition(sf::Vector2f(m_inspectorOptions.at(0)->getInspectorOptionsPosition().x, 
-                m_inspectorOptions.at(0)->getInspectorOptionsPosition().y + m_inspectorOptions.at(0)->getInspectorOptionsSprite().getGlobalBounds().height));
-        }
-        //if (i == 2)
-        //{
-        //    m_inspectorOptions.push_back(new InspectorOptions(m_font, 3, "Stats"));
-        //    m_inspectorOptions.at(i)->setInspectorOptionsPosition(sf::Vector2f(m_inspectorOptions.at(1)->getInspectorOptionsPosition().x,
-        //        m_inspectorOptions.at(1)->getInspectorOptionsPosition().y + m_inspectorOptions.at(1)->getInspectorOptionsSprite().getGlobalBounds().height));
-        //}
-        //if (i == 3)
-        //{
-        //    m_inspectorOptions.push_back(new InspectorOptions(m_font, 4, "Sound"));
-        //    m_inspectorOptions.at(i)->setInspectorOptionsPosition(sf::Vector2f(m_inspectorOptions.at(2)->getInspectorOptionsPosition().x,
-        //        m_inspectorOptions.at(2)->getInspectorOptionsPosition().y + m_inspectorOptions.at(2)->getInspectorOptionsSprite().getGlobalBounds().height));
-        //}
+        /*        if (i == 0)
+                    m_inspectorOptions.push_back(new InspectorOptions(m_font, 7, "Behaviour"));
+                */if (i == 0)
+                {
+                    m_inspectorOptions.push_back(new InspectorOptions(m_font, 3, "Dialogue"));
+                    m_inspectorOptions.at(i)->setInspectorOptionsPosition(sf::Vector2f(m_inspectorOptions.at(0)->getInspectorOptionsPosition().x,
+                        m_inspectorOptions.at(0)->getInspectorOptionsPosition().y + m_inspectorOptions.at(0)->getInspectorOptionsSprite().getGlobalBounds().height));
+                }
+                //if (i == 2)
+                //{
+                //    m_inspectorOptions.push_back(new InspectorOptions(m_font, 3, "Stats"));
+                //    m_inspectorOptions.at(i)->setInspectorOptionsPosition(sf::Vector2f(m_inspectorOptions.at(1)->getInspectorOptionsPosition().x,
+                //        m_inspectorOptions.at(1)->getInspectorOptionsPosition().y + m_inspectorOptions.at(1)->getInspectorOptionsSprite().getGlobalBounds().height));
+                //}
+                //if (i == 3)
+                //{
+                //    m_inspectorOptions.push_back(new InspectorOptions(m_font, 4, "Sound"));
+                //    m_inspectorOptions.at(i)->setInspectorOptionsPosition(sf::Vector2f(m_inspectorOptions.at(2)->getInspectorOptionsPosition().x,
+                //        m_inspectorOptions.at(2)->getInspectorOptionsPosition().y + m_inspectorOptions.at(2)->getInspectorOptionsSprite().getGlobalBounds().height));
+                //}
 
 
-/*        m_inspectorOptions.at(i).setCheckBoxPosition(sf::Vector2f(
-            (m_inspectorOptionsLabel->getText().getPosition().x),
-            (m_inspectorOptionsLabel->getText().getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
-   */ }
+        /*        m_inspectorOptions.at(i).setCheckBoxPosition(sf::Vector2f(
+                    (m_inspectorOptionsLabel->getText().getPosition().x),
+                    (m_inspectorOptionsLabel->getText().getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
+           */
+    }
 }
 
 sf::Sprite Inspector::getInspectorSprite()
@@ -99,7 +132,7 @@ void Inspector::setInspectorSprite(sf::Sprite t_dialogueSprite)
 
 void Inspector::render(sf::RenderWindow* t_window)
 {
-   // m_fontManager.getNumberOfFonts();
+    // m_fontManager.getNumberOfFonts();
 
     t_window->draw(m_inspectorBGShape);
     for (int i = 0; i < m_noOfOptions; ++i)
@@ -108,7 +141,11 @@ void Inspector::render(sf::RenderWindow* t_window)
     }
     m_inspectorLabel->render(t_window);
     t_window->draw(m_text);
-
+    if (m_objects->getSelectedGridObject()->m_inpectorData.m_allowedDialogue)
+    {
+        m_addDialogueButton->render(t_window);
+        m_addDialogueLabel->render(t_window);
+    }
 }
 
 bool Inspector::isEnabled()
@@ -127,17 +164,29 @@ void Inspector::splitString(std::string t_dialogueText)
 
 void Inspector::addDialogueTab()
 {
-
+    if (m_objects->getSelectedGridObject()->m_inpectorData.m_allowedDialogue)
+    {
+        m_addDialogueButton = new Button();
+        m_addDialogueButton->setButtonPosition(sf::Vector2f(50, 50));
+        m_addDialogueButton->resize(0.125f, 0.4f);
+        m_addDialogueLabel = new Label();
+        m_addDialogueLabel->setText("+");
+        m_addDialogueLabel->setTextPosition(sf::Vector2f(m_addDialogueButton->getButtonPosition().x, m_addDialogueButton->getButtonPosition().y - 5));
+    }
 }
 
 void Inspector::updateDialogueTab()
 {
+    if (m_objects->getSelectedGridObject()->m_inpectorData.m_allowedDialogue)
+    {
+
+    }
 }
 
 void Inspector::initText()
 {
     setUpFontAndText();
     m_inspectorLabel->setText("Inspector - " + m_title);
-    m_inspectorLabel->setTextPosition(sf::Vector2f(1522+ m_inspectorLabel->getText().getGlobalBounds().width/2, (m_inspectorLabel->getText().getGlobalBounds().height / 2)));
+    m_inspectorLabel->setTextPosition(sf::Vector2f(1522 + m_inspectorLabel->getText().getGlobalBounds().width / 2, (m_inspectorLabel->getText().getGlobalBounds().height / 2)));
 }
 

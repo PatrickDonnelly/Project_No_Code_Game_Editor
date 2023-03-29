@@ -99,6 +99,7 @@ private:
 	std::string m_storedObjectType = "";
 
 public:
+	Object* getSelectedGridObject();
 	sf::Clock m_clock;
 	sf::Time m_doubleClickTime = sf::Time::Zero;
 	bool checkForDoubleClick(sf::Clock& t_clock, sf::Time& t_doubleClickTime);

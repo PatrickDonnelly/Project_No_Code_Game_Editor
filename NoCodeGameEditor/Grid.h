@@ -12,11 +12,11 @@
 #include <list>
 #include <queue>
 #include "GameState.h"
-#include "Enemy.h"
-#include "Terrain.h"
-#include "Wall.h"
-#include "Item.h"
-#include "Decoration.h"
+//#include "Enemy.h"
+//#include "Terrain.h"
+//#include "Wall.h"
+//#include "Item.h"
+//#include "Decoration.h"
 #include "TextureManager.h"
 
 

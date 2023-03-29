@@ -14,7 +14,8 @@ Enemy::Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textur
 	m_path = t_path;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;
-	m_inspector = new Inspector("Enemy");
+	m_inpectorData.m_allowedDialogue = true;
+	//m_inspector = new Inspector("Enemy", m_inpectorData);
 	init();
 }
 
@@ -78,6 +79,6 @@ void Enemy::render(sf::RenderWindow& window)
 	if(m_isSelected)
 	{
 		//m_inspector->setTextString("Enemy");
-		m_inspector->render(&window);
+		//m_inspector->render(&window);
 	}
 }

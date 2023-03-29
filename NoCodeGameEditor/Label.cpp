@@ -1,15 +1,31 @@
 #include "Label.h"
 
-Label::Label(sf::Font& t_font) : m_labelFont(t_font)
+Label::Label(sf::Font& t_font)
 {
-	m_labelFont = t_font;
-	initText(t_font);
+	m_fontManager = FontManager();
+	m_labelFont = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+
+	initText();
 	m_image = false;
+}
+
+Label::Label(sf::Font& t_font, bool t_isOn)
+{
+	m_fontManager = FontManager();
+	m_labelFont = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+	m_hasBG = t_isOn;
+
+	initText();
+	m_image = false;
+	setUpBG();
 }
 
 Label::Label()
 {
-
+	m_fontManager = FontManager();
+	m_labelFont = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+	initText();
+	m_image = false;
 }
 
 Label::~Label()
@@ -17,7 +33,27 @@ Label::~Label()
 
 }
 
-void Label::initText(sf::Font& t_font)
+void Label::setUpBG()
+{
+	if (m_hasBG)
+	{
+		m_labelBG.setSize(sf::Vector2f(m_labelText.getGlobalBounds().width + 5, m_labelText.getGlobalBounds().height + 5));
+		m_labelBG.setOrigin(m_labelBG.getGlobalBounds().width / 2, m_labelBG.getGlobalBounds().height / 2);
+		m_labelBG.setPosition(m_labelText.getPosition());
+		m_labelBG.setFillColor(sf::Color::White);
+		m_labelBG.setOutlineThickness(-1.0f);
+		m_labelBG.setOutlineColor(sf::Color::Black);
+	}
+}
+
+void Label::updateLabelBG()
+{
+	m_labelBG.setSize(sf::Vector2f(m_labelText.getGlobalBounds().width + 5, m_labelText.getGlobalBounds().height + 5));
+	m_labelBG.setOrigin(m_labelBG.getGlobalBounds().width / 2, m_labelBG.getGlobalBounds().height / 2);
+	m_labelBG.setPosition(m_labelText.getPosition());
+}
+
+void Label::initText()
 {
 	m_labelText.setString(" dumnnnnnnn");
 	//if (!m_labelFont.loadFromFile("ASSETS\\FONTS\\Arial.ttf"))
