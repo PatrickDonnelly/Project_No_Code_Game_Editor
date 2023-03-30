@@ -6,7 +6,7 @@ ObjectPlacement::ObjectPlacement()
 
 ObjectPlacement::ObjectPlacement(GameState* t_gameState, Grid* t_grid, TextureManager* t_textureManager)
 {
-	m_currentlySelected = new Decoration();
+	//m_currentlySelected = new Decoration();
 	m_currentlySelected = nullptr;
 	m_textureManager = t_textureManager;
 	m_gameState = t_gameState;
@@ -301,6 +301,7 @@ void ObjectPlacement::setSelectedGridObject(std::vector<Object*>& t_objects, sf:
 		{
 			m_currentlySelected = t_objects.at(i);
 			m_currentlySelected->setSelected(true);
+
 		}
 	}
 }
@@ -310,6 +311,10 @@ Object* ObjectPlacement::getSelectedGridObject()
 	if (m_currentlySelected != nullptr)
 	{
 		return m_currentlySelected;
+	}
+	else
+	{
+		return nullptr;
 	}
 }
 

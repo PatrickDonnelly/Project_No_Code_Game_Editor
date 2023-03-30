@@ -6,14 +6,14 @@
 #include <SFML/Graphics.hpp>
 #include "CheckBox.h"
 #include "DialogueBox.h"
-//#include "Inspector.h"
+#include "Inspector.h"
 #include "Attributes.h"
 
 class Object
 {
 protected:
 
-	//Inspector* m_inspector;
+	Inspector* m_inspector;
 	sf::Texture m_objectTexture;
 	sf::Sprite m_objectSprite;
 	sf::RectangleShape m_objectBounds;
@@ -34,6 +34,7 @@ public:
 	Attributes m_inpectorData;
 	bool m_isSelected = false;
 	bool m_moving = false;
+	bool m_hasBeenSelected = false;
 
 	virtual void init() = 0;
 	virtual void setUpSprite() = 0;
@@ -53,10 +54,10 @@ public:
 	int getRow() { return m_row; }
 	int getColumn() { return m_col; }
 	void setCollidable(bool t_state) { m_isCollidable = t_state; }
-	void setSelected(bool t_state) { m_isSelected = t_state; if(m_isSelected)m_objectSprite.setColor(sf::Color::Red); if (!m_isSelected)m_objectSprite.setColor(sf::Color::White);
-	}
+	void setSelected(bool t_state) { m_isSelected = t_state; if(m_isSelected)m_objectSprite.setColor(sf::Color::Red); if (!m_isSelected)m_objectSprite.setColor(sf::Color::White); }
 	void setMoving(bool t_state) { m_moving = t_state; }
 	void setTag(std::string t_tag) { m_tag = t_tag; }
+	Inspector* getInspector() { return m_inspector; }
 	std::string getTag() { return m_tag; }
 	std::string getPath() { return m_path; }
 };

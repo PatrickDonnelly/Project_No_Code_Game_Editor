@@ -8,46 +8,46 @@ Inspector::Inspector(std::string t_title)
 {
 }
 
-Inspector::Inspector(ObjectPlacement* t_objects)
-{
-    m_objects = t_objects;
-    m_fontManager = FontManager();
-    m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
-    initInspector();
-    m_noOfOptions = 4;
-    m_inspectorLabel = new Label(m_font);
-    //             initInspectorOptions();
-
-    //m_text.setString(t_title);
-    initText();
-
-    addDialogueTab();
-}
-
-bool Inspector::isNull()
-{
-    if (m_objects->getSelectedGridObject() == nullptr)
-    {
-        return true;
-    }
-    return false;
-}
-
-//Inspector::Inspector(std::string t_title, Attributes& t_object)
+//Inspector::Inspector(ObjectPlacement* t_objects)
 //{
-//    m_objectData = t_object;
+//    m_objects = t_objects;
 //    m_fontManager = FontManager();
 //    m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
 //    initInspector();
 //    m_noOfOptions = 4;
 //    m_inspectorLabel = new Label(m_font);
-//    initInspectorOptions();
-//    m_title = t_title;
+//    //             initInspectorOptions();
+//
 //    //m_text.setString(t_title);
 //    initText();
 //
-//    addDialogueTab();
+//    //addDialogueTab();
 //}
+//
+//bool Inspector::isNull()
+//{
+//    if (m_objects->getSelectedGridObject() == nullptr)
+//    {
+//        return true;
+//    }
+//    return false;
+//}
+
+Inspector::Inspector(std::string t_title, Attributes& t_object)
+{
+    m_objectData = t_object;
+    m_fontManager = FontManager();
+    m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+    initInspector();
+    m_noOfOptions = 4;
+    m_inspectorLabel = new Label(m_font);
+    initInspectorOptions();
+    m_title = t_title;
+    m_text.setString(t_title);
+    initText();
+
+    addDialogueTab();
+}
 
 Inspector::Inspector()
 {
@@ -133,19 +133,35 @@ void Inspector::setInspectorSprite(sf::Sprite t_dialogueSprite)
 void Inspector::render(sf::RenderWindow* t_window)
 {
     // m_fontManager.getNumberOfFonts();
+    //if (m_objects->getSelectedGridObject() != nullptr)
+    //{
+        t_window->draw(m_inspectorBGShape);
+        /*for (int i = 0; i < m_noOfOptions; ++i)
+        {
+            m_inspectorOptions.at(0)->render(t_window);
+        }*/
+        m_inspectorLabel->render(t_window);
+        t_window->draw(m_text);
+        if (m_objectData.m_allowedDialogue)
+        {
+                m_addCategoryLabel->render(t_window);
+                m_addDialogueButton->render(t_window);
+                m_addDialogueLabel->render(t_window);
+        }
+        auto iter2 = m_dialogueButtons.begin(); iter2 != m_dialogueButtons.end();
+        auto iter3 = m_dialogueLabels.begin(); iter3 != m_dialogueLabels.end();
+        for (auto iter1 = m_deleteButtons.begin(); iter1 != m_deleteButtons.end();)
+        {
+            //m_dialogueButtons.at(i)->render(t_window);
+            //m_dialogueLabels.at(i)->render(t_window);
+            //m_deleteButtons.at(i)->render(t_window);
+            (*iter1)->render(t_window);
+            (*iter2)->render(t_window);
+            (*iter3)->render(t_window);
+            iter1++; iter2++; iter3++;
+        }
 
-    t_window->draw(m_inspectorBGShape);
-    for (int i = 0; i < m_noOfOptions; ++i)
-    {
-        m_inspectorOptions.at(0)->render(t_window);
-    }
-    m_inspectorLabel->render(t_window);
-    t_window->draw(m_text);
-    if (m_objects->getSelectedGridObject()->m_inpectorData.m_allowedDialogue)
-    {
-        m_addDialogueButton->render(t_window);
-        m_addDialogueLabel->render(t_window);
-    }
+   // }
 }
 
 bool Inspector::isEnabled()
@@ -162,12 +178,101 @@ void Inspector::splitString(std::string t_dialogueText)
 {
 }
 
+void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
+{
+    sf::Event newEvent = t_event;
+    //if (m_objects->getSelectedGridObject() != nullptr)
+    //{
+    //    addDialogueTab();
+    //}
+
+        if (m_addDialogueButton->isButtonClicked(t_event, &t_window))
+        {
+            std::cout << "Button Clicked";
+
+            if (m_dialogueButtons.size() == 0)
+            {
+                m_dialogueButtons.push_back(new Button());
+                m_dialogueButtons.at(m_dialogueButtons.size() - 1)->setButtonPosition(
+                    sf::Vector2f(
+                        m_addCategoryLabel->getTextPosition().x + 64,
+                        m_addCategoryLabel->getTextPosition().y +32));
+                m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(1.0f, 0.4f);
+            }
+            else
+            {
+                m_dialogueButtons.push_back(new Button());
+                m_dialogueButtons.at(m_dialogueButtons.size() - 1)->setButtonPosition(
+                    sf::Vector2f(m_dialogueButtons.at(m_dialogueButtons.size() - 2)->getButtonPosition().x,
+                        m_dialogueButtons.at(m_dialogueButtons.size() - 2)->getButtonPosition().y +  32));
+                m_dialogueButtons.at(m_dialogueButtons.size() - 2)->resize(1.0f, 0.4f);
+            }
+            m_dialogueLabels.push_back(new Label());
+            m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setText("Add Dialogue");
+            m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setTextPosition(sf::Vector2f(m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x, m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
+            m_deleteButtons.push_back(new Button());
+            m_deleteButtons.at(m_deleteButtons.size() - 1)->setButtonPosition(
+                sf::Vector2f(
+                    m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x + (m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonSprite().getGlobalBounds().width /2) +32,
+                    m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
+            m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(1.0f, 0.4f);
+            m_deleteButtons.at(m_deleteButtons.size() - 1)->resize(0.125f, 0.4f);
+            // add a delete button
+            // add a dialogue open button
+            // add label with the dialogue name
+        }
+
+        auto iter2 = m_dialogueButtons.begin();
+        auto iter3 = m_dialogueLabels.begin();
+
+        for (auto iter1 = m_deleteButtons.begin(); iter1 != m_deleteButtons.end();)
+        {
+            if ((*iter1)->isButtonClicked(t_event, &t_window))
+            {
+                iter1 = m_deleteButtons.erase(iter1);
+                iter2= m_dialogueButtons.erase(iter2);
+                iter3 = m_dialogueLabels.erase(iter3);
+
+                repositionDialogueButtons(iter1, iter2, iter3);
+                break;
+            }
+            else
+            {
+                iter1++;
+                iter2++;
+                iter3++;
+            }
+        }
+
+}
+
+void Inspector::repositionDialogueButtons(std::vector<Button*>::iterator t_iter1, std::vector<Button*>::iterator t_iter2, std::vector<Label*>::iterator t_iter3)
+{
+    auto iterCopy2 = t_iter2;
+    auto iterCopy3 = t_iter3;
+
+    for (auto iterCopy1 = t_iter1; iterCopy1 != m_deleteButtons.end();)
+    {
+        (*iterCopy1)->setButtonPosition(sf::Vector2f((*iterCopy1)->getButtonPosition().x, (*iterCopy1)->getButtonPosition().y - 32));
+        (*iterCopy2)->setButtonPosition(sf::Vector2f((*iterCopy2)->getButtonPosition().x, (*iterCopy2)->getButtonPosition().y - 32));
+        (*iterCopy3)->setTextPosition(sf::Vector2f((*iterCopy3)->getTextPosition().x, (*iterCopy3)->getTextPosition().y - 32));
+        iterCopy1++;
+        iterCopy2++;
+        iterCopy3++;
+    }
+}
+
 void Inspector::addDialogueTab()
 {
-    if (m_objects->getSelectedGridObject()->m_inpectorData.m_allowedDialogue)
+    if (m_objectData.m_allowedDialogue)
     {
+        m_addCategoryLabel = new Label();
+        m_addCategoryLabel->setText("Dialogue : ");
+        m_addCategoryLabel->setTextPosition(sf::Vector2f(m_inspectorLabel->getTextPosition().x - (m_addCategoryLabel->getText().getGlobalBounds().width /2) + 16, m_addCategoryLabel->getTextPosition().y + 64));
+
+       // m_objects->getSelectedGridObject()->m_hasBeenSelected = true;
         m_addDialogueButton = new Button();
-        m_addDialogueButton->setButtonPosition(sf::Vector2f(50, 50));
+        m_addDialogueButton->setButtonPosition(sf::Vector2f(m_addCategoryLabel->getTextPosition().x + m_addCategoryLabel->getText().getGlobalBounds().width, m_addCategoryLabel->getTextPosition().y));
         m_addDialogueButton->resize(0.125f, 0.4f);
         m_addDialogueLabel = new Label();
         m_addDialogueLabel->setText("+");
@@ -177,10 +282,10 @@ void Inspector::addDialogueTab()
 
 void Inspector::updateDialogueTab()
 {
-    if (m_objects->getSelectedGridObject()->m_inpectorData.m_allowedDialogue)
-    {
+    //if (m_objects->getSelectedGridObject()->m_inpectorData.m_allowedDialogue)
+    //{
 
-    }
+    //}
 }
 
 void Inspector::initText()

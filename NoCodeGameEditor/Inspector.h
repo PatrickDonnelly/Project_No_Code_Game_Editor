@@ -11,8 +11,10 @@
 #include "FontManager.h"
 //#include "Object.h"
 //#include "Enemy.h"
-//#include "Attributes.h"
-#include "ObjectPlacement.h"
+#include "Attributes.h"
+//#include "ObjectPlacement.h"
+
+
 
 
 class Inspector
@@ -20,9 +22,9 @@ class Inspector
 public:
 
 	Inspector();
-	Inspector(ObjectPlacement* t_objects);
+	//Inspector(ObjectPlacement* t_objects);
 	Inspector(sf::Font& t_font);
-	//Inspector(std::string t_title, Attributes& t_object);
+	Inspector(std::string t_title, Attributes& t_object);
 	Inspector(std::string t_title);
 	~Inspector();
 	FontManager m_fontManager;
@@ -37,6 +39,7 @@ public:
 	bool isEnabled();
 	void setEnabled() { m_enabled = !m_enabled; }
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
+	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);
 
 	//void setInspectorText(std::string t_dialogue) { m_textBox.setString(t_dialogue); }
 
@@ -50,10 +53,16 @@ private:
 	void updateDialogueTab();
 	Button* m_addDialogueButton;
 	Label* m_addDialogueLabel;
+	Label* m_addCategoryLabel;
+	void repositionDialogueButtons(std::vector<Button*>::iterator t_iter1, std::vector<Button*>::iterator t_iter2, std::vector<Label*>::iterator t_iter3);
+
 	std::vector<std::string> m_dialogueFileNames;
 	std::vector<Label> m_labels;
-	//Attributes m_objectData;
-	ObjectPlacement* m_objects;
+	Attributes m_objectData;
+	//ObjectPlacement* m_objects;
+	std::vector<Button*> m_deleteButtons;
+	std::vector<Button*> m_dialogueButtons;
+	std::vector<Label*> m_dialogueLabels;
 
 
 	int m_noOfOptions;

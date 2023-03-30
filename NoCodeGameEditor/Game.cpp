@@ -16,7 +16,7 @@ Game::Game() :
 	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState, m_roomCreation, m_objectPlacement);
 	m_dialogueBox = new DialogueBox(m_ArialFont);
 	m_textEditor = new TextEditor(m_ArialFont, m_gameState);
-	m_inspector = new Inspector(m_objectPlacement);
+	//m_inspector = new Inspector(m_objectPlacement);
 
 }
 
@@ -70,6 +70,7 @@ void Game::processEvents()
 		m_spear->processEvents(newEvent);
 		m_uiBuildMode.processEvents(newEvent, m_window);
 		m_textEditor->processTextEditorButtons(newEvent, m_window);
+		//m_inspector->processEvents(newEvent, m_window);
 
 		if (sf::Event::Closed == newEvent.type) // window message
 		{
@@ -98,6 +99,10 @@ void Game::processEvents()
 		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 		{
 			m_objectPlacement->placeRemove(newEvent, m_window);
+			if (m_objectPlacement->m_currentlySelected != nullptr)
+			{
+				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window);
+			}
 		}
 	}
 }
@@ -270,6 +275,7 @@ void Game::render()
 	m_grid->render(&m_window);
 	m_uiBuildMode.render(&m_window);
 	m_objectPlacement->render(&m_window);
+	//m_inspector->render(&m_window);
 	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 	{
 		m_roomCreation->render(&m_window);
