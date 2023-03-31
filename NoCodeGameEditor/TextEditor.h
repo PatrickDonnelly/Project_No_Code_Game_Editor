@@ -43,7 +43,7 @@ public:
 	void render(sf::RenderWindow* t_window);
 	bool isEnabled();
 	void setEnabled(bool t_onOff) { m_enabled = t_onOff; }
-	void processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window);
+	void processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window, Label* t_label);
 	InputField* GetTitle() { return m_title; }
 	InputField* GetMainBody() { return m_mainBody; }
 

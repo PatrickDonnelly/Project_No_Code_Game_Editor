@@ -44,7 +44,7 @@ public:
 	void setEnabled() { m_enabled = !m_enabled; }
 
 	bool isButtonClicked(sf::Event& t_event, sf::RenderWindow* t_window);
-	void checkEnabledOptions(std::map<std::string, std::string>& t_dialoguePaths);
+	void checkEnabledOptions(std::map<std::string, std::string>& t_dialoguePaths, std::string t_fileName);
 private:
 	bool m_opened = false;
 	bool m_selected;

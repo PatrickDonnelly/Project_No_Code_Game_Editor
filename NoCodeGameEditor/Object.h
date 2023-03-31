@@ -64,6 +64,7 @@ public:
 	DialogueBox* getDialogueBox() { return m_dialogue; }
 	std::map<std::string, std::string> m_dialoguePaths;
 	std::map<std::string, std::string> getDialoguePaths() { return m_dialoguePaths; }
+	virtual void loadDialogue() = 0;
 	//std::map<std::string, std::string> getDialoguePaths() { return m_dialoguePaths; }
 };
 #endif // !OBJECT_HPP

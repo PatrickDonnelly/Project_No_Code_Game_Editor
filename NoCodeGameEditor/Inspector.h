@@ -47,7 +47,7 @@ public:
 
 	void splitString(std::string t_dialogueText);
 	void setTextString(std::string t_text) { m_text.setString(t_text); }
-	
+	Label* m_currentLabel;
 
 private:
 	bool isNull();
@@ -62,7 +62,7 @@ private:
 	void repositionDialogueButtons();
 	//TextEditor m_textEditor;
 	GameState* m_gameState;
-	Label* m_currentLabel;
+
 	void saveChanges(std::map<std::string, std::string>& t_dialoguePaths);
 
 

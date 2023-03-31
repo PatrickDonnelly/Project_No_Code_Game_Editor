@@ -39,30 +39,31 @@ void DropDownMenu::setUpDropDownMenu()
 	}
 }
 
-void DropDownMenu::checkEnabledOptions(std::map<std::string, std::string>& t_dialoguePaths)
+void DropDownMenu::checkEnabledOptions(std::map<std::string, std::string>& t_dialoguePaths, std::string t_fileName)
 {
 	if (m_type == "IsDialogue")
 	{
+		t_dialoguePaths.clear();
 		for (int i = 0; i < m_dropDownMenuOptions.size(); i++)
 		{
 			if (m_currentlyEnabledDialogueOption == "Interacted")
 			{
-				t_dialoguePaths[m_currentlyEnabledDialogueOption] = "File";
+				t_dialoguePaths[m_currentlyEnabledDialogueOption] = t_fileName;
 				break;
 			}
 			else if (m_currentlyEnabledDialogueOption == "InRange")
 			{
-				t_dialoguePaths[m_currentlyEnabledDialogueOption] = "File";
+				t_dialoguePaths[m_currentlyEnabledDialogueOption] = t_fileName;
 				break;
 			}
 			else if (m_currentlyEnabledDialogueOption == "Damaged")
 			{
-				t_dialoguePaths[m_currentlyEnabledDialogueOption] = "File";
+				t_dialoguePaths[m_currentlyEnabledDialogueOption] = t_fileName;
 				break;
 			}
 			else if (m_currentlyEnabledDialogueOption == "Defeated")
 			{
-				t_dialoguePaths[m_currentlyEnabledDialogueOption] = "File";
+				t_dialoguePaths[m_currentlyEnabledDialogueOption] = t_fileName;
 				break;
 			}
 		}

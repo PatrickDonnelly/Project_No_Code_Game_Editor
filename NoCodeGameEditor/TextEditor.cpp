@@ -292,7 +292,7 @@ void TextEditor::render(sf::RenderWindow* t_window)
 	m_dialogueBox->render(t_window);
 }
 
-void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window)
+void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window, Label* t_dialogueLabel)
 {
 	if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
 	{
@@ -540,6 +540,10 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 								m_mainBody->SetString(lineContentAppended);
 								m_title->SetString(fileName);
 								m_dialogueBox->splitString(m_mainBody->GetText());
+								if (t_dialogueLabel != nullptr)
+								{
+									t_dialogueLabel->setText(fileName);
+								}
 								my_file.close();
 							}
 						}

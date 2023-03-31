@@ -34,6 +34,7 @@ public:
 	std::string getObjectCategory() { return m_objectCategory; }
 
 	DialogueBox* getDialogueBox() { return m_dialogue; }
+
 	void loadDialogue();
 };
 #endif // !ENEMY_HPP

@@ -84,6 +84,7 @@ void DialogueBox::splitString(std::string t_dialogueText)
 {
 
 	m_dialogue.clear();
+	m_textBox.setString("");
 	std::string tmp;
 	std::stringstream ss(t_dialogueText);
 

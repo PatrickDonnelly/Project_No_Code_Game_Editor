@@ -192,7 +192,8 @@ void Inspector::saveChanges(std::map<std::string, std::string>& t_dialoguePaths)
 {
     for (int i = 0; i < m_dialogueDropDownMenu.size(); i++)
     {
-        m_dialogueDropDownMenu.at(i)->checkEnabledOptions(t_dialoguePaths);
+        m_dialogueDropDownMenu.at(i)->checkEnabledOptions(t_dialoguePaths, m_dialogueLabels.at(i)->getText().getString());
+        
     }
 }
 
@@ -203,6 +204,7 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
 
     if (m_applyButton->isButtonClicked(t_event, &t_window))
     {
+        std::cout << "Applied changes to object" << std::endl;
         saveChanges(t_dialoguePaths);
     }
 
@@ -313,6 +315,13 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
             iter4++;
         }
     }
+    //if (m_currentLabel != nullptr)
+    //{
+    //    std::cout << t_fileName << std::endl;
+    //    m_currentLabel->setText(t_fileName);
+    //    m_currentLabel = nullptr;
+    //}
+    std::cout << t_fileName << std::endl;
     auto iter1 = m_dialogueLabels.begin();
     for (auto iter = m_dialogueButtons.begin(); iter != m_dialogueButtons.end();)
     {
@@ -330,10 +339,7 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
         }
     }
 
-    if (m_currentLabel != nullptr)
-    {
-        m_currentLabel->setText(t_fileName);
-    }
+
 
 }
 

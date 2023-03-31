@@ -75,12 +75,13 @@ void Game::processEvents()
 				std::cout << "urggggh" << std::endl;
 				//m_currentObject->getBounds()->setPosition(10.0f,10.0f);
 				m_currentObject->getDialogueBox()->setEnabled();
+				m_currentObject->loadDialogue();
 				// play current enemies dialogue here.
 			}
 		}
 		m_spear->processEvents(newEvent);
 		m_uiBuildMode.processEvents(newEvent, m_window);
-		m_textEditor->processTextEditorButtons(newEvent, m_window);
+
 		//m_inspector->processEvents(newEvent, m_window);
 
 		if (sf::Event::Closed == newEvent.type) // window message
@@ -110,9 +111,14 @@ void Game::processEvents()
 		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 		{
 			m_objectPlacement->placeRemove(newEvent, m_window);
+
+		}
+		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS || m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
+		{
 			if (m_objectPlacement->m_currentlySelected != nullptr)
 			{
 				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), m_objectPlacement->m_currentlySelected->m_dialoguePaths);
+				m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
 			}
 		}
 	}
@@ -193,23 +199,36 @@ void Game::update(sf::Time t_deltaTime)
 					m_checkCollision.checkCollision(m_objectPlacement->m_enemies.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
 					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_enemies.at(i)->getBounds(), 0.0f);
 					
-					if (m_checkCollision.checkCollision(m_player->getInteractionBounds(), m_objectPlacement->m_enemies.at(i)->getBounds()))
-					{
 
-						m_player->setInteract(true);
-						m_currentObject = m_objectPlacement->m_enemies.at(i);
-					}
-					else
-					{
-
-						m_player->setInteract(false);
-						m_currentObject = nullptr;
-
-
-					}
 
 
 				}
+			}
+			m_player->setInteract(false);
+			for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+			{
+
+					if (m_checkCollision.checkCollision(m_player->getInteractionBounds(), m_objectPlacement->m_enemies.at(i)->getBounds()))
+					{
+						m_player->setInteract(true);
+						m_currentObject = m_objectPlacement->m_enemies.at(i);
+						std::cout << "Can Interact" << std::endl;
+						break;
+					}
+					else
+					{
+						if (i == m_objectPlacement->m_enemies.size() - 1 && m_player->getInteract() == false)
+						{
+							m_currentObject = nullptr;
+							std::cout << "Cannot Interact" << std::endl;
+						}
+						
+
+
+					}
+
+
+				
 			}
 			for (int i = 0; i < m_objectPlacement->m_walls.size(); i++)
 			{

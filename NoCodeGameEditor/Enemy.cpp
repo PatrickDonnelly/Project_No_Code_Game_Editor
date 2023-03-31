@@ -90,10 +90,11 @@ void Enemy::render(sf::RenderWindow& window)
 
 void Enemy::loadDialogue()
 {
-	if (m_hasDialogue == true)
+	if (m_dialoguePaths.size() != 0)
 	{
 		for (auto iter = m_dialoguePaths.begin(); iter != m_dialoguePaths.end(); iter++)
 		{
+			std::cout << iter->second << std::endl;
 			if(iter->first == "Interacted")
 			{
 				m_dialogue->loadText(iter->second);
