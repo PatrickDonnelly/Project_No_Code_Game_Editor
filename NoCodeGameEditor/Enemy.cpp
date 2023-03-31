@@ -61,11 +61,19 @@ void Enemy::setUpBounds()
 	m_objectBounds.setOutlineColor(sf::Color::Green);
 	m_objectBounds.setOutlineThickness(1.0f);
 	m_objectBounds.setPosition(m_objectSprite.getPosition());
+
+	m_detectionRadius.setSize(sf::Vector2f(256.0f,256.0f));
+	m_detectionRadius.setOrigin(128, 128);
+	m_detectionRadius.setFillColor(sf::Color(sf::Color(0, 255, 0, 100)));
+	m_detectionRadius.setOutlineColor(sf::Color::Green);
+	m_detectionRadius.setOutlineThickness(1.0f);
+	m_detectionRadius.setPosition(m_objectSprite.getPosition());
 }
 
 void Enemy::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 	m_objectSprite.setPosition(m_objectBounds.getPosition());
+	m_detectionRadius.setPosition(m_objectSprite.getPosition());
 	if (m_isSelected)
 	{
 		//count++;
@@ -76,6 +84,10 @@ void Enemy::update(sf::Time deltaTime, sf::RenderWindow& window)
 
 void Enemy::render(sf::RenderWindow& window)
 {
+	if(getSelected())
+	{
+		window.draw(m_detectionRadius);
+	}
 	window.draw(m_objectSprite);
 	if(m_isSelected)
 	{
@@ -88,17 +100,33 @@ void Enemy::render(sf::RenderWindow& window)
 	}
 }
 
-void Enemy::loadDialogue()
+void Enemy::loadDialogue(std::string t_dialogueType)
 {
 	if (m_dialoguePaths.size() != 0)
 	{
+		//std::cout << m_dialoguePaths.size() << std::endl;
 		for (auto iter = m_dialoguePaths.begin(); iter != m_dialoguePaths.end(); iter++)
 		{
-			std::cout << iter->second << std::endl;
-			if(iter->first == "Interacted")
+			//std::cout << iter->first << " : " << iter->second << std::endl;
+			if (t_dialogueType == "Interacted")
 			{
-				m_dialogue->loadText(iter->second);
+
+				if (iter->first == "Interacted")
+				{
+					m_dialogue->loadText(iter->second);
+					break;
+				}
 			}
+			else if (t_dialogueType == "InRange" && !inRangePlayed)
+			{
+				if (iter->first == "InRange")
+				{
+					inRangePlayed = true;
+					m_dialogue->loadText(iter->second);
+					break;
+				}
+			}
+ 
 		}
 
 	}

@@ -6,10 +6,13 @@
 #include "Object.h"
 #include "TextureManager.h"
 #include "Attributes.h"
+#include <SFML/Graphics.hpp>
 
 
 class Enemy : public Object
 {
+private:
+	sf::RectangleShape m_detectionRadius;
 
 public:
 	Enemy();
@@ -27,7 +30,7 @@ public:
 	int count = 0;
 
 	bool m_hasDialogue = false;
-	int m_detectionRadius;
+
 
 	
 	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Enemy"; }
@@ -35,7 +38,12 @@ public:
 
 	DialogueBox* getDialogueBox() { return m_dialogue; }
 
-	void loadDialogue();
+	void loadDialogue(std::string t_dialogueType) override;
+	bool inRangePlayed = false;
+	bool getInRange() override{ return inRangePlayed; }
+	std::map<std::string, std::string>* getDialoguePaths() override { return &m_dialoguePaths; }
+	sf::RectangleShape* getDetectionRadius() override { return& m_detectionRadius; }
+	void setDetectionRadius(int t_noOfCells) { m_detectionRadius.setSize(sf::Vector2f(32.0f * t_noOfCells, 32.0f * t_noOfCells)); }
 };
 #endif // !ENEMY_HPP
 

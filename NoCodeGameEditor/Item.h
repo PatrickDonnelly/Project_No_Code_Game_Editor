@@ -25,7 +25,7 @@ public:
 
 	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Item"; }
 	std::string getObjectCategory() { return m_objectCategory; }
-	void loadDialogue() { ; }
+
 };
 #endif // !ITEM_HPP
 

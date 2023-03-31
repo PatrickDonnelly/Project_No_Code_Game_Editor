@@ -43,7 +43,7 @@ void DropDownMenu::checkEnabledOptions(std::map<std::string, std::string>& t_dia
 {
 	if (m_type == "IsDialogue")
 	{
-		t_dialoguePaths.clear();
+
 		for (int i = 0; i < m_dropDownMenuOptions.size(); i++)
 		{
 			if (m_currentlyEnabledDialogueOption == "Interacted")
@@ -68,6 +68,7 @@ void DropDownMenu::checkEnabledOptions(std::map<std::string, std::string>& t_dia
 			}
 		}
 	}
+
 }
 
 void DropDownMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)

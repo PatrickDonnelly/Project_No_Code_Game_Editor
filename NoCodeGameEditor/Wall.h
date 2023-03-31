@@ -25,7 +25,7 @@ public:
 
 	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Wall"; }
 	std::string getObjectCategory() { return m_objectCategory; }
-	void loadDialogue() { ; }
+
 };
 #endif // !WALL_HPP
 

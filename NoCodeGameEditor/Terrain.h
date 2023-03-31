@@ -21,6 +21,6 @@ public:
 	void setUpBounds();
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
-	void loadDialogue() { ; }
+
 };
 #endif // !TERRAIN_HPP

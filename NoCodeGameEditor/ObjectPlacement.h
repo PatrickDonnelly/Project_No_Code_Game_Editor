@@ -88,7 +88,20 @@ void setSelected(std::vector<T*>& t_objects, sf::RenderWindow* t_window, Object*
 	}
 }
 
-
+//template <typename T>
+//void setSelectedGridObjectt(std::vector<T*>& t_objects, sf::RenderWindow* t_window, Object* t_currentlySelected)
+//{
+//	for (int i = 0; i < t_objects.size(); ++i)
+//	{
+//		if (t_objects.at(i)->getBounds()->getGlobalBounds().contains(t_window->mapPixelToCoords(sf::Mouse::getPosition(*t_window))))
+//		{
+//
+//			t_currentlySelected = t_objects.at(i);
+//			t_currentlySelected->setSelected(true);
+//			break;
+//		}
+//	}
+//}
 
 class ObjectPlacement
 {

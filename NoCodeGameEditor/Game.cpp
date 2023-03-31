@@ -68,57 +68,69 @@ void Game::processEvents()
 	sf::Event newEvent;
 	while (m_window.pollEvent(newEvent))
 	{
-		if (m_player->getInteract())
+		if (m_gameState->getState() != State::PAUSE_GAME)
+		{
+			if (m_player->getInteract())
+			{
+				if (m_player->isInteracting(newEvent))
+				{
+					std::cout << "urggggh" << std::endl;
+					//m_currentObject->getBounds()->setPosition(10.0f,10.0f);
+					m_currentObject->getDialogueBox()->setEnabled();
+					m_currentObject->loadDialogue("Interacted");
+					m_gameState->setState(State::PAUSE_GAME);
+					// play current enemies dialogue here.
+				}
+			}
+			m_spear->processEvents(newEvent);
+			m_uiBuildMode.processEvents(newEvent, m_window);
+
+			//m_inspector->processEvents(newEvent, m_window);
+
+			if (sf::Event::Closed == newEvent.type) // window message
+			{
+				m_exitGame = true;
+			}
+			if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
+			{
+				processKeys(newEvent);
+			}
+			if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
+			{
+				if (sf::Event::TextEntered == newEvent.type)
+				{
+					//m_dialogueBox->typing(newEvent);
+					//m_textEditor->typing(newEvent);
+					if (m_textEditor->GetMainBody()->GetSelected())
+					{
+						m_textEditor->GetMainBody()->typing(newEvent);
+					}
+					else if (m_textEditor->GetTitle()->GetSelected())
+					{
+						m_textEditor->GetTitle()->typing(newEvent);
+					}
+				}
+			}
+			if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
+			{
+				m_objectPlacement->placeRemove(newEvent, m_window);
+
+			}
+			if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS || m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
+			{
+				if (m_objectPlacement->m_currentlySelected != nullptr)
+				{
+					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
+					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
+				}
+			}
+		}
+		else
 		{
 			if (m_player->isInteracting(newEvent))
 			{
-				std::cout << "urggggh" << std::endl;
-				//m_currentObject->getBounds()->setPosition(10.0f,10.0f);
+				m_gameState->setState(m_gameState->getPreviousState());
 				m_currentObject->getDialogueBox()->setEnabled();
-				m_currentObject->loadDialogue();
-				// play current enemies dialogue here.
-			}
-		}
-		m_spear->processEvents(newEvent);
-		m_uiBuildMode.processEvents(newEvent, m_window);
-
-		//m_inspector->processEvents(newEvent, m_window);
-
-		if (sf::Event::Closed == newEvent.type) // window message
-		{
-			m_exitGame = true;
-		}
-		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
-		{
-			processKeys(newEvent);
-		}
-		if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
-		{
-			if (sf::Event::TextEntered == newEvent.type)
-			{
-				//m_dialogueBox->typing(newEvent);
-				//m_textEditor->typing(newEvent);
-				if (m_textEditor->GetMainBody()->GetSelected())
-				{
-					m_textEditor->GetMainBody()->typing(newEvent);
-				}
-				else if (m_textEditor->GetTitle()->GetSelected())
-				{
-					m_textEditor->GetTitle()->typing(newEvent);
-				}
-			}
-		}
-		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
-		{
-			m_objectPlacement->placeRemove(newEvent, m_window);
-
-		}
-		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS || m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
-		{
-			if (m_objectPlacement->m_currentlySelected != nullptr)
-			{
-				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), m_objectPlacement->m_currentlySelected->m_dialoguePaths);
-				m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
 			}
 		}
 	}
@@ -139,80 +151,82 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
-	if (m_roomCreation->firstFloorSet && m_grid->m_playerSet == false)
+	if (m_gameState->getState() != State::PAUSE_GAME)
 	{
-		m_grid->m_playerSet = true;
-		m_player->getBounds()->setPosition(m_roomCreation->m_firstTilePosition.x+16, m_roomCreation->m_firstTilePosition.y + 16);
-		//std::cout << m_player->getSprite()->getPosition().x << std::endl;
-	}
-
-	//m_textureManager->getNumberOfTextures();
-	//m_fontManager.getNumberOfFonts();
-	m_objectPlacement->update(t_deltaTime, m_window);
-	
-	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
-	{
-		m_roomCreation->update(t_deltaTime, m_window);
-	}
-
-
-
-	if (m_gameState->m_currentGameState == State::ROOM_TEST)
-	{
-		m_player->update(t_deltaTime, m_window);
-		m_spear->update(t_deltaTime, m_window);
-	}
-
-	if (m_gameState->getState() == State::ROOM_TEST)
-	{
-		// player and walls
-		// objects and walls
-		m_player->m_speed = m_player->m_defaultSpeed;
-
-		if (m_roomCreation->m_vectColliders.size() > 0)
+		if (m_roomCreation->firstFloorSet && m_grid->m_playerSet == false)
 		{
-			for (int i = 0; i < m_roomCreation->m_vectColliders.size(); i++)
+			m_grid->m_playerSet = true;
+			m_player->getBounds()->setPosition(m_roomCreation->m_firstTilePosition.x + 16, m_roomCreation->m_firstTilePosition.y + 16);
+			//std::cout << m_player->getSprite()->getPosition().x << std::endl;
+		}
+
+		//m_textureManager->getNumberOfTextures();
+		//m_fontManager.getNumberOfFonts();
+		m_objectPlacement->update(t_deltaTime, m_window);
+
+		if (m_gameState->m_currentGameState == State::ROOM_BUILD)
+		{
+			m_roomCreation->update(t_deltaTime, m_window);
+		}
+
+
+
+		if (m_gameState->m_currentGameState == State::ROOM_TEST)
+		{
+			m_player->update(t_deltaTime, m_window);
+			m_spear->update(t_deltaTime, m_window);
+		}
+
+		if (m_gameState->getState() == State::ROOM_TEST)
+		{
+			// player and walls
+			// objects and walls
+			m_player->m_speed = m_player->m_defaultSpeed;
+
+			if (m_roomCreation->m_vectColliders.size() > 0)
 			{
-				m_checkCollision.checkCollision(m_player->getBounds(), m_roomCreation->m_vectColliders.at(i)->getBounds(), 0.0f);
-			}
-			for (int i = 0; i < m_objectPlacement->m_decorations.size(); i++)
-			{
-				for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+				for (int i = 0; i < m_roomCreation->m_vectColliders.size(); i++)
 				{
-					m_checkCollision.checkCollision(m_objectPlacement->m_decorations.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
-					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_decorations.at(i)->getBounds(), 0.5f);
+					m_checkCollision.checkCollision(m_player->getBounds(), m_roomCreation->m_vectColliders.at(i)->getBounds(), 0.0f);
 				}
-			}
-			for (int i = 0; i < m_objectPlacement->m_items.size(); i++)
-			{
-				for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+				for (int i = 0; i < m_objectPlacement->m_decorations.size(); i++)
 				{
-					m_checkCollision.checkCollision(m_objectPlacement->m_items.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
-					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_items.at(i)->getBounds(), 0.0f);
-
+					for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+					{
+						m_checkCollision.checkCollision(m_objectPlacement->m_decorations.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
+						m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_decorations.at(i)->getBounds(), 0.5f);
+					}
 				}
-			}
-			for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
-			{
-				for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+				for (int i = 0; i < m_objectPlacement->m_items.size(); i++)
 				{
-					m_checkCollision.checkCollision(m_objectPlacement->m_enemies.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
-					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_enemies.at(i)->getBounds(), 0.0f);
-					
+					for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+					{
+						m_checkCollision.checkCollision(m_objectPlacement->m_items.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
+						m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_items.at(i)->getBounds(), 0.0f);
 
-
-
+					}
 				}
-			}
-			m_player->setInteract(false);
-			for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
-			{
+				for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+				{
+					for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+					{
+						m_checkCollision.checkCollision(m_objectPlacement->m_enemies.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
+						m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_enemies.at(i)->getBounds(), 0.0f);
+
+
+
+
+					}
+				}
+				m_player->setInteract(false);
+				for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+				{
 
 					if (m_checkCollision.checkCollision(m_player->getInteractionBounds(), m_objectPlacement->m_enemies.at(i)->getBounds()))
 					{
 						m_player->setInteract(true);
 						m_currentObject = m_objectPlacement->m_enemies.at(i);
-						std::cout << "Can Interact" << std::endl;
+						//std::cout << "Can Interact" << std::endl;
 						break;
 					}
 					else
@@ -220,50 +234,72 @@ void Game::update(sf::Time t_deltaTime)
 						if (i == m_objectPlacement->m_enemies.size() - 1 && m_player->getInteract() == false)
 						{
 							m_currentObject = nullptr;
-							std::cout << "Cannot Interact" << std::endl;
+							//std::cout << "Cannot Interact" << std::endl;
 						}
-						
+					}
+				}
 
+				for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+				{
+
+					if (m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_enemies.at(i)->getDetectionRadius()))
+					{
+						if (!m_objectPlacement->m_enemies.at(i)->getInRange())
+						{
+							m_objectPlacement->m_enemies.at(i)->getDialogueBox()->setEnabled();
+							m_objectPlacement->m_enemies.at(i)->loadDialogue("InRange");
+							m_currentObject = m_objectPlacement->m_enemies.at(i);
+							m_gameState->setState(State::PAUSE_GAME);
+						}
+						//m_currentObject = m_objectPlacement->m_enemies.at(i);
+						//m_currentObject->getDialogueBox()->setEnabled();
+						//m_currentObject->loadDialogue();
+						//std::cout << "Within Range Of Enemy" << std::endl;
+						break;
+					}
+					else
+					{
+						//m_currentObject->getDialogueBox()->setEnabled();
+						//m_currentObject->loadDialogue();
+						//std::cout << "Out of Range Safe" << std::endl;
 
 					}
-
-
-				
-			}
-			for (int i = 0; i < m_objectPlacement->m_walls.size(); i++)
-			{
-				for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
-				{
-					m_checkCollision.checkCollision(m_objectPlacement->m_walls.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
-					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_walls.at(i)->getBounds(), 0.0f);
 				}
+
+				for (int i = 0; i < m_objectPlacement->m_walls.size(); i++)
+				{
+					for (int j = 0; j < m_roomCreation->m_vectColliders.size(); j++)
+					{
+						m_checkCollision.checkCollision(m_objectPlacement->m_walls.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
+						m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_walls.at(i)->getBounds(), 0.0f);
+					}
+				}
+
+				//if (m_grid->m_placedObjects.at(i)->isCollidable())
+				//{
+				//	m_player->m_speed = m_player->m_defaultSpeed;
+				//	if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
+				//	{
+				//		m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
+				//	}
+				//	else
+				//	{
+				//		m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
+				//	}
+				//}
+				//else // if not collidable
+				//{
+				//	if (m_grid->m_placedObjects.at(i)->m_tag == "Water")
+				//	{
+				//		if (m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds()))
+				//		{
+				//			m_player->m_speed = m_player->m_defaultSpeed * 0.5f;
+				//		}
+
+				//		
+				//	}
+				//}
 			}
-
-			//if (m_grid->m_placedObjects.at(i)->isCollidable())
-			//{
-			//	m_player->m_speed = m_player->m_defaultSpeed;
-			//	if (m_grid->m_placedObjects.at(i)->m_tag != "Hole")
-			//	{
-			//		m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.4f);
-			//	}
-			//	else
-			//	{
-			//		m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds(), 0.0f);
-			//	}
-			//}
-			//else // if not collidable
-			//{
-			//	if (m_grid->m_placedObjects.at(i)->m_tag == "Water")
-			//	{
-			//		if (m_checkCollision.checkCollision(m_player->getBounds(), m_grid->m_placedObjects.at(i)->getBounds()))
-			//		{
-			//			m_player->m_speed = m_player->m_defaultSpeed * 0.5f;
-			//		}
-
-			//		
-			//	}
-			//}
-		}
 
 			// Spear vs Obstacles
 	//		if (m_spear->m_weaponUsed)
@@ -312,6 +348,7 @@ void Game::update(sf::Time t_deltaTime)
 	//			}
 	//		}
 	//	}
+		}
 	}
 }
 
@@ -326,7 +363,7 @@ void Game::render()
 	{
 		m_roomCreation->render(&m_window);
 	}
-	if (m_gameState->m_currentGameState == State::ROOM_TEST)
+	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::PAUSE_GAME)
 	{
 		m_spear->render(m_window);
 		m_player->render(m_window);

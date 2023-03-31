@@ -26,7 +26,7 @@ public:
 
 	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Decorations"; }
 	std::string getObjectCategory() { return m_objectCategory; }
-	void loadDialogue() { ; }
+
 };
 #endif // !DECORATION_HPP
 

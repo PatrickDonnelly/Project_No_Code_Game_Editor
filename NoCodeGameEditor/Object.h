@@ -26,6 +26,7 @@ protected:
 	std::string m_tag;
 	bool m_isCollidable = false;
 	std::string m_objectCategory;
+	sf::RectangleShape m_detectionRadius;
 
 
 public:
@@ -55,6 +56,7 @@ public:
 	int getRow() { return m_row; }
 	int getColumn() { return m_col; }
 	void setCollidable(bool t_state) { m_isCollidable = t_state; }
+	bool getSelected() { return m_isSelected; }
 	void setSelected(bool t_state) { m_isSelected = t_state; if(m_isSelected)m_objectSprite.setColor(sf::Color::Red); if (!m_isSelected)m_objectSprite.setColor(sf::Color::White); }
 	void setMoving(bool t_state) { m_moving = t_state; }
 	void setTag(std::string t_tag) { m_tag = t_tag; }
@@ -63,8 +65,10 @@ public:
 	std::string getPath() { return m_path; }
 	DialogueBox* getDialogueBox() { return m_dialogue; }
 	std::map<std::string, std::string> m_dialoguePaths;
-	std::map<std::string, std::string> getDialoguePaths() { return m_dialoguePaths; }
-	virtual void loadDialogue() = 0;
+	virtual bool getInRange() { return NULL; }
+	virtual std::map<std::string, std::string>* getDialoguePaths() { return& m_dialoguePaths; }
+	virtual void loadDialogue(std::string t_loadDialogue) { ; }
+	virtual sf::RectangleShape* getDetectionRadius() { return& m_detectionRadius; }
 	//std::map<std::string, std::string> getDialoguePaths() { return m_dialoguePaths; }
 };
 #endif // !OBJECT_HPP

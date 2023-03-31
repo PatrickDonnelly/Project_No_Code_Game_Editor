@@ -190,10 +190,10 @@ void Inspector::splitString(std::string t_dialogueText)
 
 void Inspector::saveChanges(std::map<std::string, std::string>& t_dialoguePaths)
 {
+    t_dialoguePaths.clear();
     for (int i = 0; i < m_dialogueDropDownMenu.size(); i++)
     {
         m_dialogueDropDownMenu.at(i)->checkEnabledOptions(t_dialoguePaths, m_dialogueLabels.at(i)->getText().getString());
-        
     }
 }
 
@@ -206,6 +206,13 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
     {
         std::cout << "Applied changes to object" << std::endl;
         saveChanges(t_dialoguePaths);
+        std::cout << t_dialoguePaths.size() << std::endl;
+        for (auto iter = t_dialoguePaths.begin(); iter != t_dialoguePaths.end(); iter++)
+        {
+            std::cout << iter->first << " : in Inpspector " << iter->second << std::endl;
+
+
+        }
     }
 
     if (m_addDialogueButton->isButtonClicked(t_event, &t_window))
