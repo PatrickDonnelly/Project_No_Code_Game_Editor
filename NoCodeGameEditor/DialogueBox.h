@@ -6,6 +6,7 @@
 #include "Button.h"
 #include "Label.h"
 #include "GameState.h"
+#include "FontManager.h"
 
 #define ENTER_KEY 13
 #define ESCAPE_KEY 27
@@ -31,7 +32,7 @@ public:
 	void setDialogueText(std::string t_dialogue) { m_textBox.setString(t_dialogue); }
 
 	void splitString(std::string t_dialogueText);
-
+	void loadText(std::string t_filenName);
 
 private:
 	std::vector<std::string> m_dialogue;
@@ -40,6 +41,7 @@ private:
 	sf::Sprite m_dialogueBoxSprite;
 	sf::Texture m_dialogueBoxTexture;
 	sf::RectangleShape m_dialogueBox;
+	FontManager m_fontManager;
 
 	void inputTextBox(int t_character);
 	void deletePreviousCharacter();

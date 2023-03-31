@@ -87,3 +87,18 @@ void Button::render(sf::RenderWindow* t_window)
 {
 	t_window->draw(m_buttonSprite);
 }
+
+bool Button::isButtonClicked(sf::Event& t_event, sf::RenderWindow* t_window)
+{
+	if (m_buttonSprite.getGlobalBounds().contains((*t_window).mapPixelToCoords(sf::Mouse::getPosition(*t_window))))
+	{
+		if (t_event.type == sf::Event::MouseButtonReleased)
+		{
+			if (t_event.mouseButton.button == sf::Mouse::Left)
+			{
+					return true;
+			}
+		}
+	}
+	return false;
+}

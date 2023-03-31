@@ -2,21 +2,25 @@
 #define CHECKBOX_HPP
 #include <SFML/Graphics.hpp>
 #include "Label.h"
+#include "FontManager.h"
 
 class CheckBox
 {
 public:
 
 	CheckBox();
-	CheckBox(sf::Font& t_font, std::string t_tag);
+	CheckBox(std::string t_tag);
 	~CheckBox();
+	FontManager m_fontManager;
 
-
+	std::string getTag() { return m_tag; }
+	bool isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window);
 	void initCheckBox();
 
 	void render(sf::RenderWindow* t_window);
 	bool isEnabled() { return m_enabled; };
-	void setEnabled() { m_enabled = !m_enabled; }
+	void setEnabled() { m_enabled = !m_enabled; toggleColor(); }
+	void setEnabled(bool t_onOff) { m_enabled = t_onOff; toggleColor(); }
 	sf::Sprite getCheckBoxSprite() { return sf::Sprite(); }
 	sf::RectangleShape getCheckBoxBounds() { return m_checkBox; }
 	void setCheckBoxPosition(sf::Vector2f t_pos);

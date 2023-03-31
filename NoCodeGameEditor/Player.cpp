@@ -47,6 +47,13 @@ void Player::setUpPlayerBounds()
 	m_playerCentre.setOrigin(1.0f, 1.0f);
 	m_playerCentre.setFillColor(sf::Color::Cyan);
 	m_playerCentre.setPosition(m_playerSprite.getPosition());
+
+	m_playerInteractionRadius.setSize(sf::Vector2f(16.0f, 16.0f));
+	m_playerInteractionRadius.setOrigin(8.0f, 8.0f);
+	m_playerInteractionRadius.setFillColor(sf::Color(sf::Color(0, 255, 0, 125)));
+	m_playerInteractionRadius.setOutlineColor(sf::Color::Green);
+	m_playerInteractionRadius.setOutlineThickness(1.0f);
+	m_playerInteractionRadius.setPosition(m_playerSprite.getPosition().x - 16.0f, m_playerSprite.getPosition().y);
 }
 
 void Player::setUpAnimation()
@@ -78,24 +85,29 @@ bool Player::movement(sf::Time deltaTime)
 	{
 		m_playerBounds.move(0, -m_speed);
 		setAnimationState(currentAnimationState, AnimationState::WalkingUp);
+		m_playerInteractionRadius.setPosition(m_playerSprite.getPosition().x, m_playerSprite.getPosition().y -16);
 		moving = true;
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
 		m_playerBounds.move(0, m_speed);
 		setAnimationState(currentAnimationState, AnimationState::WalkingDown);
+		m_playerInteractionRadius.setPosition(m_playerSprite.getPosition().x, m_playerSprite.getPosition().y +16);
+
 		moving = true;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
 			m_playerBounds.move(-m_speed, 0);
 			setAnimationState(currentAnimationState, AnimationState::WalkingLeft);
+			m_playerInteractionRadius.setPosition(m_playerSprite.getPosition().x - 16.0f, m_playerSprite.getPosition().y);
 			moving = true;
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 			m_playerBounds.move(m_speed, 0);
 			setAnimationState(currentAnimationState, AnimationState::WalkingRight);
+			m_playerInteractionRadius.setPosition(m_playerSprite.getPosition().x + 16.0f, m_playerSprite.getPosition().y);
 			moving = true;
 	}
 	return moving;;
@@ -134,6 +146,7 @@ void Player::render(sf::RenderWindow& window)
 	window.draw(m_playerSprite);
 	window.draw(m_playerBounds);
 	window.draw(m_playerCentre);
+	window.draw(m_playerInteractionRadius);
 }
 
 sf::Sprite* Player::getSprite()
@@ -163,4 +176,22 @@ void Player::animate(sf::Time deltaTime)
 {
 	animations[int(currentAnimationState)].Update(deltaTime.asSeconds());
 	animations[int(currentAnimationState)].ApplyChangesToSprite(m_playerSprite);
+}
+
+bool Player::isInteracting(sf::Event t_event)
+{
+
+	if (t_event.type == sf::Event::KeyReleased)
+	{
+		if (t_event.key.code == sf::Keyboard::Space)
+		{
+ 			return true;
+		}
+	}
+	
+	return false;
+}
+sf::RectangleShape* Player::getInteractionBounds()
+{
+	return &m_playerInteractionRadius;
 }

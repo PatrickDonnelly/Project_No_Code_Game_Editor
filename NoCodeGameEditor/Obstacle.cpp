@@ -18,7 +18,7 @@ Obstacle::Obstacle(std::string t_typeTag, std::string t_path)
 	m_boundsWidth = 32;
 	setUpSprite();
 	setUpBounds();
-	m_inspector = new Inspector();
+	//m_inspector = new Inspector();
 
 }
 
@@ -76,7 +76,7 @@ void Obstacle::render(sf::RenderWindow& window)
 		window.draw(m_obstacleBounds);
 	}
 
-	m_inspector->render(&window);
+	//m_inspector->render(&window);
 }
 
 sf::Sprite* Obstacle::getSprite()

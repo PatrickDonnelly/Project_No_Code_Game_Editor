@@ -3,6 +3,9 @@
 
 DialogueBox::DialogueBox()
 {
+	m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+	initDialogueBox();
+	initText();
 
 }
 
@@ -81,6 +84,7 @@ void DialogueBox::splitString(std::string t_dialogueText)
 {
 
 	m_dialogue.clear();
+	m_textBox.setString("");
 	std::string tmp;
 	std::stringstream ss(t_dialogueText);
 
@@ -92,4 +96,29 @@ void DialogueBox::splitString(std::string t_dialogueText)
 	{
 		m_textBox.setString(m_textBox.getString() + m_dialogue.at(i));
 	}
+}
+
+void DialogueBox::loadText(std::string t_fileName)
+{
+
+	unsigned lines = 0;
+	std::string line_content;
+	std::string lineContentAppended;
+
+
+	std::ifstream my_file("Dialogue/" + t_fileName + ".txt");
+
+
+	while (std::getline(my_file, line_content)) {
+		lines++;
+
+		lineContentAppended.append(line_content);
+		lineContentAppended.append("\n");
+
+		std::cout << "Line: " << lines << " content: " << line_content << std::endl;
+	}
+
+
+	splitString(lineContentAppended);
+	my_file.close();
 }

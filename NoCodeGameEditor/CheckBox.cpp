@@ -6,11 +6,13 @@ CheckBox::CheckBox()
 
 }
 
-CheckBox::CheckBox(sf::Font& t_font, std::string t_tag)
+CheckBox::CheckBox(std::string t_tag)
 {
-	m_font = t_font;
-	m_checkBoxLabel = new Label(t_font);
+	m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+	m_checkBoxLabel = new Label(m_font);
+	
 	m_tag = t_tag;
+	m_checkBoxLabel->setText(m_tag);
 	initCheckBox();
 	initText();
 
@@ -19,14 +21,14 @@ CheckBox::CheckBox(sf::Font& t_font, std::string t_tag)
 
 void CheckBox::initText()
 {
-	m_text.setFont(m_font);
-	m_text.setCharacterSize(20.0f);
-	m_text.setFillColor(sf::Color::Black);
-	m_text.setOutlineColor(sf::Color::White);
-	m_text.setOutlineThickness(2.0f);
-	m_text.setPosition(10.0f, 10.0f);
-	m_checkBoxLabel->setText(m_tag);
-	m_checkBoxLabel->setTextPosition(sf::Vector2f(m_checkBox.getPosition().x + (m_checkBoxLabel->getText().getGlobalBounds().width /2) + m_checkBox.getGlobalBounds().width, m_checkBox.getPosition().y + (m_checkBoxLabel->getText().getGlobalBounds().height / 2)));
+	//m_text.setFont(m_font);
+	//m_text.setCharacterSize(20.0f);
+	//m_text.setFillColor(sf::Color::Black);
+	//m_text.setOutlineColor(sf::Color::White);
+	//m_text.setOutlineThickness(2.0f);
+	//m_text.setPosition(10.0f, 10.0f);
+	//m_checkBoxLabel->setText(m_tag);
+	//m_checkBoxLabel->setTextPosition(sf::Vector2f(m_checkBox.getPosition().x + (m_checkBoxLabel->getText().getGlobalBounds().width /2) + m_checkBox.getGlobalBounds().width, m_checkBox.getPosition().y + (m_checkBoxLabel->getText().getGlobalBounds().height / 2)));
 }
 
 
@@ -79,6 +81,22 @@ void CheckBox::render(sf::RenderWindow* t_window)
 	//t_window->draw(m_checkBoxSprite);
 
 	t_window->draw(m_checkBox);
-	t_window->draw(m_text);
+	//t_window->draw(m_text);
 	m_checkBoxLabel->render(t_window);
+}
+
+bool CheckBox::isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window)
+{
+	if (m_checkBox.getGlobalBounds().contains((*t_window).mapPixelToCoords(sf::Mouse::getPosition(*t_window))))
+	{
+		if (t_event.type == sf::Event::MouseButtonReleased)
+		{
+			if (t_event.mouseButton.button == sf::Mouse::Left)
+			{
+				setEnabled();
+				return true;
+			}
+		}
+	}
+	return false;
 }

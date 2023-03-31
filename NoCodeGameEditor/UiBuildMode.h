@@ -11,6 +11,9 @@
 #include <fstream>
 #include <iostream>
 #include <filesystem>
+#include "RoomCreation.h"
+#include "ObjectPlacement.h"
+
 namespace fs = std::filesystem;
 
 enum class TabState {
@@ -46,7 +49,7 @@ private:
 	sf::Font m_arialFont;
 public:
 
-	UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState);
+	UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState, RoomCreation* t_roomCreation, ObjectPlacement* t_objectPlacement);
 	UiBuildMode();
 	~UiBuildMode();
 	GameState* m_gameState;
@@ -125,8 +128,9 @@ public:
 	std::vector<sf::Vector2f> m_storePositions;
 
 	Grid* m_grid;
-
-
+	RoomCreation* m_roomCreation;
+	ObjectPlacement* m_objectPlacement;
+	
 
 };
 #endif // !UIBUILDMODE_HPP

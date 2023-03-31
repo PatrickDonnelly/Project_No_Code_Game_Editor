@@ -23,19 +23,19 @@ void InspectorOptions::initOptions()
         for (int i = 0; i < m_noOfOptions; ++i)
         {
             if (i == 0)
-                m_options.push_back(new CheckBox(m_font, "Multi"));
+                m_options.push_back(new CheckBox("Multi"));
             if (i == 1)
-                m_options.push_back(new CheckBox(m_font, "Patrol"));
+                m_options.push_back(new CheckBox("Patrol"));
             if (i == 2)
-                m_options.push_back(new CheckBox(m_font, "Wander"));
+                m_options.push_back(new CheckBox("Wander"));
             if (i == 3)
-                m_options.push_back(new CheckBox(m_font, "Follow"));
+                m_options.push_back(new CheckBox("Follow"));
             if (i == 4)
-                m_options.push_back(new CheckBox(m_font, "Static"));
+                m_options.push_back(new CheckBox("Static"));
             if (i == 5)
-                m_options.push_back(new CheckBox(m_font, "ConeVision"));
+                m_options.push_back(new CheckBox("ConeVision"));
             if (i == 6)
-                m_options.push_back(new CheckBox(m_font, "RadialVision"));
+                m_options.push_back(new CheckBox("RadialVision"));
 
             m_options.at(i)->setCheckBoxPosition(sf::Vector2f(
                 (m_inspectorOptionsLabel->getText().getPosition().x),
@@ -47,11 +47,11 @@ void InspectorOptions::initOptions()
         for (int i = 0; i < m_noOfOptions; ++i)
         {
             if (i == 0)
-                m_options.push_back(new CheckBox(m_font, "Health"));
+                m_options.push_back(new CheckBox("Health"));
             if (i == 1)
-                m_options.push_back(new CheckBox(m_font, "Attack"));
+                m_options.push_back(new CheckBox("Attack"));
             if (i == 2)
-                m_options.push_back(new CheckBox(m_font, "Speed"));
+                m_options.push_back(new CheckBox("Speed"));
 
             m_options.at(i)->setCheckBoxPosition(sf::Vector2f(
                 (m_inspectorOptionsLabel->getText().getPosition().x),
@@ -63,13 +63,13 @@ void InspectorOptions::initOptions()
         for (int i = 0; i < m_noOfOptions; ++i)
         {
             if (i == 0)
-                m_options.push_back(new CheckBox(m_font, "Add Sound"));
+                m_options.push_back(new CheckBox("Add Sound"));
             if (i == 1)
-                m_options.push_back(new CheckBox(m_font, "Play When hit"));
+                m_options.push_back(new CheckBox("Play When hit"));
             if (i == 2)
-                m_options.push_back(new CheckBox(m_font, "Play On Death"));
+                m_options.push_back(new CheckBox("Play On Death"));
             if (i == 3)
-                m_options.push_back(new CheckBox(m_font, "Play On Interaction"));
+                m_options.push_back(new CheckBox("Play On Interaction"));
 
 
             m_options.at(i)->setCheckBoxPosition(sf::Vector2f(
@@ -82,7 +82,7 @@ void InspectorOptions::initOptions()
         for (int i = 0; i < m_noOfOptions; ++i)
         {
 
-            m_options.push_back(new CheckBox(m_font, "Add Dialogue"));
+            m_options.push_back(new CheckBox("Add Dialogue"));
 
 
             m_options.at(i)->setCheckBoxPosition(sf::Vector2f(
@@ -120,6 +120,10 @@ void InspectorOptions::setInspectorOptionsPosition(sf::Vector2f t_pos)
     m_inspectorOptionsBGShape.setPosition(t_pos);
 }
 
+void InspectorOptions::update(sf::Time deltaTime, sf::RenderWindow& window)
+{
+}
+
 
 
 void InspectorOptions::render(sf::RenderWindow* t_window)
@@ -146,12 +150,7 @@ void InspectorOptions::splitString(std::string t_dialogueText)
 
 void InspectorOptions::initText()
 {
-    //m_text.setFont(m_font);
-    //m_text.setCharacterSize(20.0f);
-    //m_text.setFillColor(sf::Color::Blue);
-    //m_text.setOutlineColor(sf::Color::Red);
-    //m_text.setOutlineThickness(2.0f);
-    //m_text.setPosition(10.0f, 10.0f);
+
     m_inspectorOptionsLabel->setText(m_tag);
     m_inspectorOptionsLabel->setTextPosition(sf::Vector2f(m_inspectorOptionsBGShape.getPosition().x + m_inspectorOptionsLabel->getText().getGlobalBounds().width /2 + 5, m_inspectorOptionsBGShape.getPosition().y +10));
 }

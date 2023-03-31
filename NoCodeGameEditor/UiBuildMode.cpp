@@ -201,10 +201,12 @@ void UiBuildMode::setUpTextureRoomButtons(sf::Font& t_arialFont)
 	//m_textureRoomLabels.at(5)->setLabelSprite(m_texturedLabels.at(5)->getText().getString());
 }
 
-UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState)
+UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState, RoomCreation* t_roomCreation, ObjectPlacement* t_objectPlacement)
 {
 	m_gameState = t_currentGameState;
 	m_grid = t_grid;
+	m_objectPlacement = t_objectPlacement;
+	m_roomCreation = t_roomCreation;
 	m_arialFont = t_arialFont;
 	m_inspector = new Inspector(m_arialFont);
 	m_currentTab = TabState::TAB_DECORATIONS;
@@ -359,7 +361,7 @@ void UiBuildMode::processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindo
 					}
 					else if (m_buildButtonLabels.at(i)->getTextString() == "Generate Room")
 					{
-						m_grid->checkRoomValidity();
+						m_roomCreation->checkRoomValidity();
 					}
 					else if (m_buildButtonLabels.at(i)->getTextString() == "-")
 					{
@@ -419,12 +421,11 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 							deselectButtons(t_objectButtons);
 
 							col->setSelected(true);
-
 							if (col->getSelected())
 							{
 								col->setColor(sf::Color::Red);
 								// send selected object to grid
-								m_grid->setSelectedObject(t_path, t_labels.at(rowIndex).at(colIndex)->getText().getString());
+								m_objectPlacement->setSelectedObject(t_path, t_labels.at(rowIndex).at(colIndex)->getText().getString());
 							}
 						}
 					}
@@ -460,6 +461,8 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 					else
 					{
 						m_grid->setCollidersEnabled();
+						m_roomCreation->setCollidersEnabled();
+						m_objectPlacement->setCollidersEnabled();
 					}
 				}
 			}
@@ -540,21 +543,23 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 					{
 						if (m_placementOptionsLabels.at(i)->getTextString() == "Rebuild Room")
 						{
+							m_roomCreation->resetValues();
 							m_grid->regenerateGrid();
+							m_objectPlacement->clearObjects();
 							m_gameState->m_currentGameState = State::ROOM_BUILD;
 						}
 						else if (m_placementOptionsLabels.at(i)->getTextString() == "Test Room")
 						{
 							m_gameState->m_currentGameState = State::ROOM_TEST;
-							for (int j = 0; j < m_grid->m_placedObjects.size(); ++j)
-							{
-								m_storePositions.push_back(m_grid->m_placedObjects.at(j)->getSprite()->getPosition());
-							}
+							//for (int j = 0; j < m_objectPlacement->m_placedObjects.size(); ++j)
+							//{
+							//	m_storePositions.push_back(m_objectPlacement->m_placedObjects.at(j)->getSprite()->getPosition());
+							//}
 							// need to move player into scene here
 						}
 						else if (m_placementOptionsLabels.at(i)->getTextString() == "Clear Room")
 						{
-							m_grid->clearObjects();
+							m_objectPlacement->clearObjects();
 						}
 					}
 				}
@@ -583,10 +588,10 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 						// Go back to placing objects
 						// reset the objects position
 						//cahnge state
-						for (int j = 0; j < m_grid->m_placedObjects.size(); ++j)
-						{
-							m_grid->m_placedObjects.at(j)->getBounds()->setPosition(m_storePositions.at(j));
-						}
+						//for (int j = 0; j < m_objectPlacement->m_placedObjects.size(); ++j)
+						//{
+						//	m_objectPlacement->m_placedObjects.at(j)->getBounds()->setPosition(m_storePositions.at(j));
+						//}
 						m_storePositions.clear();
 						m_grid->m_playerSet = false;
 						m_gameState->m_currentGameState = State::ROOM_PLACE_OBJECTS;
@@ -688,13 +693,13 @@ void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, i
 			m_prevNextbuttons.at(i)->setButtonTexture();
 		}
 	}
-	std::cout << m_currentRowIndex << std::endl;
 }
 
 
 void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Event newEvent = t_event;
+
 	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 	{
 		processBuildRoomButtonInput(t_event,t_window);

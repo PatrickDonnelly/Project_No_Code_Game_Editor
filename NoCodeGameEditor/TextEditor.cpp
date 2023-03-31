@@ -10,7 +10,7 @@ TextEditor::TextEditor()
 TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 {
 	m_dialogueBox = new DialogueBox(t_font);
-	m_previewDialogueCheckBox = new CheckBox(t_font, "Preview Dialogue");
+	m_previewDialogueCheckBox = new CheckBox("Preview Dialogue");
 	m_popUpBox = PopUp(&t_font);
 	m_mainBody = new InputField(t_font, true, 0);
 	m_title = new InputField(t_font, false, 25);
@@ -292,7 +292,7 @@ void TextEditor::render(sf::RenderWindow* t_window)
 	m_dialogueBox->render(t_window);
 }
 
-void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window)
+void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window, Label* t_dialogueLabel)
 {
 	if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
 	{
@@ -540,6 +540,10 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 								m_mainBody->SetString(lineContentAppended);
 								m_title->SetString(fileName);
 								m_dialogueBox->splitString(m_mainBody->GetText());
+								if (t_dialogueLabel != nullptr)
+								{
+									t_dialogueLabel->setText(fileName);
+								}
 								my_file.close();
 							}
 						}

@@ -7,7 +7,8 @@ enum class State {
 	ROOM_PLACE_OBJECTS = 3,
 	ROOM_TEST = 4,
 	ROOM_SAVE = 5,
-	CREATE_DIALOGUE = 6
+	CREATE_DIALOGUE = 6,
+	PAUSE_GAME =7
 };
 
 
@@ -22,7 +23,8 @@ public:
 	State m_currentGameState;
 	State m_previousGameState;
 
-	void setState(State t_state) { m_currentGameState = t_state; }
+	void setState(State t_state) { m_previousGameState = m_currentGameState; m_currentGameState = t_state; }
 	State getState() { return m_currentGameState; }
+	State getPreviousState() { return m_previousGameState; }
 };
 
