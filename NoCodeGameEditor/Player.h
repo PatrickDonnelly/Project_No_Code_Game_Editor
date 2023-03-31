@@ -14,6 +14,12 @@ public:
 	Player();
 	~Player();
 
+	sf::RectangleShape m_playerInteractionRadius;
+	bool isInteracting(sf::Event newEvent);
+	bool m_canInteract = false;
+	void setInteract(bool tf) { m_canInteract = tf; }
+	bool getInteract() { return m_canInteract; }
+
 	float m_defaultSpeed;
 	bool m_weaponEnabled = false;
 	sf::Sprite m_playerSprite;
@@ -44,6 +50,8 @@ public:
 
 	sf::Sprite* getSprite();
 	sf::RectangleShape* getBounds();
+	sf::RectangleShape* getInteractionBounds();
+
 	sf::RectangleShape* getWeaponBounds();
 
 	AnimationState getAnimationState();

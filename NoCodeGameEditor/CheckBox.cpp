@@ -85,7 +85,7 @@ void CheckBox::render(sf::RenderWindow* t_window)
 	m_checkBoxLabel->render(t_window);
 }
 
-void CheckBox::isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window)
+bool CheckBox::isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window)
 {
 	if (m_checkBox.getGlobalBounds().contains((*t_window).mapPixelToCoords(sf::Mouse::getPosition(*t_window))))
 	{
@@ -94,8 +94,9 @@ void CheckBox::isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window)
 			if (t_event.mouseButton.button == sf::Mouse::Left)
 			{
 				setEnabled();
+				return true;
 			}
 		}
 	}
-
+	return false;
 }

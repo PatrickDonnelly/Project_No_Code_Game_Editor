@@ -16,6 +16,7 @@ Enemy::Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textur
 	m_boundsWidth = 32;
 	m_inpectorData.m_allowedDialogue = true;
 	m_inspector = new Inspector("Enemy", m_inpectorData);
+	m_dialogue = new DialogueBox();
 	init();
 }
 
@@ -80,5 +81,24 @@ void Enemy::render(sf::RenderWindow& window)
 	{
 		//m_inspector->setTextString("Enemy");
 		m_inspector->render(&window);
+	}
+	if (m_dialogue->isEnabled())
+	{
+		m_dialogue->render(&window);
+	}
+}
+
+void Enemy::loadDialogue()
+{
+	if (m_hasDialogue == true)
+	{
+		for (auto iter = m_dialoguePaths.begin(); iter != m_dialoguePaths.end(); iter++)
+		{
+			if(iter->first == "Interacted")
+			{
+				m_dialogue->loadText(iter->second);
+			}
+		}
+
 	}
 }

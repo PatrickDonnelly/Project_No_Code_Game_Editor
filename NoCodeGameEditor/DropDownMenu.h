@@ -44,11 +44,13 @@ public:
 	void setEnabled() { m_enabled = !m_enabled; }
 
 	bool isButtonClicked(sf::Event& t_event, sf::RenderWindow* t_window);
-
+	void checkEnabledOptions(std::map<std::string, std::string>& t_dialoguePaths);
 private:
 	bool m_opened = false;
 	bool m_selected;
 	bool m_enabled = false;
+	bool m_checkBoxClicked = false;
+	std::string m_currentlyEnabledDialogueOption;
 	sf::Sprite m_buttonSprite;
 	sf::Texture m_buttonTexture;
 	sf::Texture m_buttonHighlightTexture;

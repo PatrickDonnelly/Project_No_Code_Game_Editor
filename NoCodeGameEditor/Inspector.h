@@ -41,7 +41,7 @@ public:
 	bool isEnabled();
 	void setEnabled() { m_enabled = !m_enabled; }
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
-	void processEvents(sf::Event t_event, sf::RenderWindow& t_window, GameState* t_gameState, std::string t_fileName);
+	void processEvents(sf::Event t_event, sf::RenderWindow& t_window, GameState* t_gameState, std::string t_fileName, std::map<std::string, std::string>& t_dialoguePaths);
 
 	//void setInspectorText(std::string t_dialogue) { m_textBox.setString(t_dialogue); }
 
@@ -54,6 +54,7 @@ private:
 	void addDialogueTab();
 	void updateDialogueTab();
 	Button* m_addDialogueButton;
+	Button* m_applyButton;
 	Label* m_addDialogueLabel;
 	Label* m_addCategoryLabel;
 	void repositionDropDown(std::vector<Button*>::iterator t_iter1, std::vector<Button*>::iterator t_iter2, std::vector<Label*>::iterator t_iter3, std::vector<DropDownMenu*>::iterator t_iter4, int t_offset);
@@ -62,6 +63,7 @@ private:
 	//TextEditor m_textEditor;
 	GameState* m_gameState;
 	Label* m_currentLabel;
+	void saveChanges(std::map<std::string, std::string>& t_dialoguePaths);
 
 
 	std::vector<std::string> m_dialogueFileNames;

@@ -13,8 +13,8 @@ public:
 	~CheckBox();
 	FontManager m_fontManager;
 
-
-	void isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window);
+	std::string getTag() { return m_tag; }
+	bool isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window);
 	void initCheckBox();
 
 	void render(sf::RenderWindow* t_window);

@@ -32,6 +32,7 @@ public:
 	Object();
 	~Object();
 	Attributes m_inpectorData;
+	DialogueBox* m_dialogue;
 	bool m_isSelected = false;
 	bool m_moving = false;
 	bool m_hasBeenSelected = false;
@@ -60,6 +61,10 @@ public:
 	Inspector* getInspector() { return m_inspector; }
 	std::string getTag() { return m_tag; }
 	std::string getPath() { return m_path; }
+	DialogueBox* getDialogueBox() { return m_dialogue; }
+	std::map<std::string, std::string> m_dialoguePaths;
+	std::map<std::string, std::string> getDialoguePaths() { return m_dialoguePaths; }
+	//std::map<std::string, std::string> getDialoguePaths() { return m_dialoguePaths; }
 };
 #endif // !OBJECT_HPP
 

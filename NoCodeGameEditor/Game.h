@@ -49,7 +49,7 @@ private:
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
 	void render();
-	
+	Object* m_currentObject{ nullptr };
 
 	sf::Font m_ArialFont;
 	sf::Text m_text;

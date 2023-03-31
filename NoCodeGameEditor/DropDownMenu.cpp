@@ -39,6 +39,36 @@ void DropDownMenu::setUpDropDownMenu()
 	}
 }
 
+void DropDownMenu::checkEnabledOptions(std::map<std::string, std::string>& t_dialoguePaths)
+{
+	if (m_type == "IsDialogue")
+	{
+		for (int i = 0; i < m_dropDownMenuOptions.size(); i++)
+		{
+			if (m_currentlyEnabledDialogueOption == "Interacted")
+			{
+				t_dialoguePaths[m_currentlyEnabledDialogueOption] = "File";
+				break;
+			}
+			else if (m_currentlyEnabledDialogueOption == "InRange")
+			{
+				t_dialoguePaths[m_currentlyEnabledDialogueOption] = "File";
+				break;
+			}
+			else if (m_currentlyEnabledDialogueOption == "Damaged")
+			{
+				t_dialoguePaths[m_currentlyEnabledDialogueOption] = "File";
+				break;
+			}
+			else if (m_currentlyEnabledDialogueOption == "Defeated")
+			{
+				t_dialoguePaths[m_currentlyEnabledDialogueOption] = "File";
+				break;
+			}
+		}
+	}
+}
+
 void DropDownMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 
@@ -59,10 +89,49 @@ void DropDownMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	{
 		for (int i =0; i < m_dropDownMenuOptions.size(); i++)
 		{
-			m_dropDownMenuOptions.at(i).isCheckBoxClicked(t_event, &t_window);
+			if(m_dropDownMenuOptions.at(i).isCheckBoxClicked(t_event, &t_window))
+			{
+				m_currentlyEnabledDialogueOption = m_dropDownMenuOptions.at(i).getTag();
+				m_checkBoxClicked = true;
+			}
 		}
 	}
+	if (m_checkBoxClicked)
+	{
+		m_checkBoxClicked = false;
+		for (int i = 0; i < m_dropDownMenuOptions.size(); i++)
+		{
+			if (m_currentlyEnabledDialogueOption == "InRange")
+			{
+				if (m_dropDownMenuOptions.at(i).getTag() != m_currentlyEnabledDialogueOption)
+				{
+					m_dropDownMenuOptions.at(i).setEnabled(false);
+				}
+			}
+			else if (m_currentlyEnabledDialogueOption == "Interacted")
+			{
+				if (m_dropDownMenuOptions.at(i).getTag() != m_currentlyEnabledDialogueOption)
+				{
+					m_dropDownMenuOptions.at(i).setEnabled(false);
+				}
+			}
+			else if (m_currentlyEnabledDialogueOption == "Damaged")
+			{
+				if (m_dropDownMenuOptions.at(i).getTag() != m_currentlyEnabledDialogueOption)
+				{
+					m_dropDownMenuOptions.at(i).setEnabled(false);
+				}
+			}
+			else if (m_currentlyEnabledDialogueOption == "Defeated")
+			{
+				if (m_dropDownMenuOptions.at(i).getTag() != m_currentlyEnabledDialogueOption)
+				{
+					m_dropDownMenuOptions.at(i).setEnabled(false);
+				}
+			}
+		}
 
+	}
 }
 
 void DropDownMenu::render(sf::RenderWindow* t_window)

@@ -7,6 +7,7 @@
 #include "TextureManager.h"
 #include "Attributes.h"
 
+
 class Enemy : public Object
 {
 
@@ -27,11 +28,13 @@ public:
 
 	bool m_hasDialogue = false;
 	int m_detectionRadius;
-	std::vector<std::string> m_dialoguePaths;
-	DialogueBox m_dialogue;
+
+	
 	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Enemy"; }
 	std::string getObjectCategory() { return m_objectCategory; }
 
+	DialogueBox* getDialogueBox() { return m_dialogue; }
+	void loadDialogue();
 };
 #endif // !ENEMY_HPP
 

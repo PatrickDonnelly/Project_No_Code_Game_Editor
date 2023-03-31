@@ -32,6 +32,7 @@ void Game::run()
 	sf::Time timePerFrame = sf::seconds(1.0f / fps); // 60 fps
 	while (m_window.isOpen())
 	{
+
 		processEvents(); // as many as possible
 		timeSinceLastUpdate += clock.restart();
 		while (timeSinceLastUpdate > timePerFrame)
@@ -67,6 +68,16 @@ void Game::processEvents()
 	sf::Event newEvent;
 	while (m_window.pollEvent(newEvent))
 	{
+		if (m_player->getInteract())
+		{
+			if (m_player->isInteracting(newEvent))
+			{
+				std::cout << "urggggh" << std::endl;
+				//m_currentObject->getBounds()->setPosition(10.0f,10.0f);
+				m_currentObject->getDialogueBox()->setEnabled();
+				// play current enemies dialogue here.
+			}
+		}
 		m_spear->processEvents(newEvent);
 		m_uiBuildMode.processEvents(newEvent, m_window);
 		m_textEditor->processTextEditorButtons(newEvent, m_window);
@@ -101,7 +112,7 @@ void Game::processEvents()
 			m_objectPlacement->placeRemove(newEvent, m_window);
 			if (m_objectPlacement->m_currentlySelected != nullptr)
 			{
-				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText());
+				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), m_objectPlacement->m_currentlySelected->m_dialoguePaths);
 			}
 		}
 	}
@@ -181,6 +192,22 @@ void Game::update(sf::Time t_deltaTime)
 				{
 					m_checkCollision.checkCollision(m_objectPlacement->m_enemies.at(i)->getBounds(), m_roomCreation->m_vectColliders.at(j)->getBounds(), 0.0f);
 					m_checkCollision.checkCollision(m_player->getBounds(), m_objectPlacement->m_enemies.at(i)->getBounds(), 0.0f);
+					
+					if (m_checkCollision.checkCollision(m_player->getInteractionBounds(), m_objectPlacement->m_enemies.at(i)->getBounds()))
+					{
+
+						m_player->setInteract(true);
+						m_currentObject = m_objectPlacement->m_enemies.at(i);
+					}
+					else
+					{
+
+						m_player->setInteract(false);
+						m_currentObject = nullptr;
+
+
+					}
+
 
 				}
 			}

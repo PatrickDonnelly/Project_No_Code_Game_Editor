@@ -124,6 +124,10 @@ void Inspector::initInspector()
     m_inspectorBGShape.setOutlineThickness(4.0f);
     m_inspectorBGShape.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
     m_inspectorBGShape.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+
+    m_applyButton = new Button();
+    m_applyButton->resize(0.125f, 0.4f);
+    m_applyButton->setButtonPosition(sf::Vector2f(1880.0f, 32.0f));
 }
 
 void Inspector::setInspectorSprite(sf::Sprite t_dialogueSprite)
@@ -166,6 +170,7 @@ void Inspector::render(sf::RenderWindow* t_window)
             (*iter)->render(t_window);
         }
 
+        m_applyButton->render(t_window);
    // }
 }
 
@@ -183,10 +188,23 @@ void Inspector::splitString(std::string t_dialogueText)
 {
 }
 
-void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, GameState* t_gameState, std::string t_fileName)
+void Inspector::saveChanges(std::map<std::string, std::string>& t_dialoguePaths)
+{
+    for (int i = 0; i < m_dialogueDropDownMenu.size(); i++)
+    {
+        m_dialogueDropDownMenu.at(i)->checkEnabledOptions(t_dialoguePaths);
+    }
+}
+
+void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, GameState* t_gameState, std::string t_fileName, std::map<std::string, std::string>& t_dialoguePaths)
 {
     m_gameState = t_gameState;
     sf::Event newEvent = t_event;
+
+    if (m_applyButton->isButtonClicked(t_event, &t_window))
+    {
+        saveChanges(t_dialoguePaths);
+    }
 
     if (m_addDialogueButton->isButtonClicked(t_event, &t_window))
     {
@@ -262,6 +280,11 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
             iterd++;
         }
     }
+
+    //for (auto iter = m_dialogueDropDownMenu.begin(); iter != m_dialogueDropDownMenu.end();)
+    //{
+    //    if((*iter)->)
+    //}
        
 
     auto iter2 = m_dialogueButtons.begin();
