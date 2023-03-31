@@ -139,6 +139,7 @@
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Decoration.h" />
     <ClInclude Include="DialogueBox.h" />
+    <ClInclude Include="DropDownMenu.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Decoration.cpp" />
     <ClCompile Include="DialogueBox.cpp" />
+    <ClCompile Include="DropDownMenu.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />

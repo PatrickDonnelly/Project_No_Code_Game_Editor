@@ -45,7 +45,7 @@ Inspector::Inspector(std::string t_title, Attributes& t_object)
     m_title = t_title;
     m_text.setString(t_title);
     initText();
-
+    m_currentLabel = nullptr;
     addDialogueTab();
 }
 
@@ -148,8 +148,8 @@ void Inspector::render(sf::RenderWindow* t_window)
                 m_addDialogueButton->render(t_window);
                 m_addDialogueLabel->render(t_window);
         }
-        auto iter2 = m_dialogueButtons.begin(); iter2 != m_dialogueButtons.end();
-        auto iter3 = m_dialogueLabels.begin(); iter3 != m_dialogueLabels.end();
+        auto iter2 = m_dialogueButtons.begin();
+        auto iter3 = m_dialogueLabels.begin();
         for (auto iter1 = m_deleteButtons.begin(); iter1 != m_deleteButtons.end();)
         {
             //m_dialogueButtons.at(i)->render(t_window);
@@ -159,6 +159,11 @@ void Inspector::render(sf::RenderWindow* t_window)
             (*iter2)->render(t_window);
             (*iter3)->render(t_window);
             iter1++; iter2++; iter3++;
+        }
+
+        for (auto iter = m_dialogueDropDownMenu.begin(); iter != m_dialogueDropDownMenu.end(); iter++)
+        {
+            (*iter)->render(t_window);
         }
 
    // }
@@ -178,87 +183,203 @@ void Inspector::splitString(std::string t_dialogueText)
 {
 }
 
-void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
+void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, GameState* t_gameState, std::string t_fileName)
 {
+    m_gameState = t_gameState;
     sf::Event newEvent = t_event;
-    //if (m_objects->getSelectedGridObject() != nullptr)
-    //{
-    //    addDialogueTab();
-    //}
 
-        if (m_addDialogueButton->isButtonClicked(t_event, &t_window))
+    if (m_addDialogueButton->isButtonClicked(t_event, &t_window))
+    {
+        std::cout << "Button Clicked";
+
+        if (m_dialogueButtons.size() == 0)
         {
-            std::cout << "Button Clicked";
-
-            if (m_dialogueButtons.size() == 0)
-            {
-                m_dialogueButtons.push_back(new Button());
-                m_dialogueButtons.at(m_dialogueButtons.size() - 1)->setButtonPosition(
-                    sf::Vector2f(
-                        m_addCategoryLabel->getTextPosition().x + 64,
-                        m_addCategoryLabel->getTextPosition().y +32));
-                m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(1.0f, 0.4f);
-            }
-            else
-            {
-                m_dialogueButtons.push_back(new Button());
-                m_dialogueButtons.at(m_dialogueButtons.size() - 1)->setButtonPosition(
-                    sf::Vector2f(m_dialogueButtons.at(m_dialogueButtons.size() - 2)->getButtonPosition().x,
-                        m_dialogueButtons.at(m_dialogueButtons.size() - 2)->getButtonPosition().y +  32));
-                m_dialogueButtons.at(m_dialogueButtons.size() - 2)->resize(1.0f, 0.4f);
-            }
-            m_dialogueLabels.push_back(new Label());
-            m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setText("Add Dialogue");
-            m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setTextPosition(sf::Vector2f(m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x, m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
-            m_deleteButtons.push_back(new Button());
-            m_deleteButtons.at(m_deleteButtons.size() - 1)->setButtonPosition(
+            m_dialogueButtons.push_back(new Button());
+            m_dialogueButtons.at(m_dialogueButtons.size() - 1)->setButtonPosition(
                 sf::Vector2f(
-                    m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x + (m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonSprite().getGlobalBounds().width /2) +32,
-                    m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
+                    m_addCategoryLabel->getTextPosition().x + 100,
+                    m_addCategoryLabel->getTextPosition().y + 32));
             m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(1.0f, 0.4f);
-            m_deleteButtons.at(m_deleteButtons.size() - 1)->resize(0.125f, 0.4f);
-            // add a delete button
-            // add a dialogue open button
-            // add label with the dialogue name
         }
-
-        auto iter2 = m_dialogueButtons.begin();
-        auto iter3 = m_dialogueLabels.begin();
-
-        for (auto iter1 = m_deleteButtons.begin(); iter1 != m_deleteButtons.end();)
+        else
         {
-            if ((*iter1)->isButtonClicked(t_event, &t_window))
-            {
-                iter1 = m_deleteButtons.erase(iter1);
-                iter2= m_dialogueButtons.erase(iter2);
-                iter3 = m_dialogueLabels.erase(iter3);
-
-                repositionDialogueButtons(iter1, iter2, iter3);
-                break;
-            }
-            else
-            {
-                iter1++;
-                iter2++;
-                iter3++;
-            }
+            m_dialogueButtons.push_back(new Button());
+            m_dialogueButtons.at(m_dialogueButtons.size() - 1)->setButtonPosition(
+                sf::Vector2f(m_dialogueButtons.at(m_dialogueButtons.size() - 2)->getButtonPosition().x,
+                    m_dialogueButtons.at(m_dialogueButtons.size() - 2)->getButtonPosition().y + 32));
+            m_dialogueButtons.at(m_dialogueButtons.size() - 2)->resize(1.0f, 0.4f);
         }
+        m_dialogueLabels.push_back(new Label());
+        m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setText("Add Dialogue");
+        m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setTextPosition(sf::Vector2f(m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x, m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
+
+        m_deleteButtons.push_back(new Button());
+        m_deleteButtons.at(m_deleteButtons.size() - 1)->setButtonPosition(
+            sf::Vector2f(
+                m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x + (m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonSprite().getGlobalBounds().width / 2) + 32,
+                m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
+        m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(1.0f, 0.4f);
+        m_deleteButtons.at(m_deleteButtons.size() - 1)->resize(0.125f, 0.4f);
+
+        m_dialogueDropDownMenu.push_back(new DropDownMenu("IsDialogue"));
+        m_dialogueDropDownMenu.at(m_dialogueDropDownMenu.size() - 1)->setDropDownMenuPosition(m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition(), m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonSprite().getGlobalBounds().width);
+    }
+
+    auto itera = m_dialogueButtons.begin();
+    auto iterb = m_dialogueLabels.begin();
+    auto iterc = m_deleteButtons.begin();
+
+    for (auto iterd = m_dialogueDropDownMenu.begin(); iterd != m_dialogueDropDownMenu.end();)
+    {
+        (*iterd)->processEvents(t_event, t_window);
+        if ((*iterd)->isEnabled() && !(*iterd)->isOpened())
+        {
+            (*iterd)->setOpened();
+            itera++;
+            iterb++;
+            iterc++;
+            iterd++;
+            repositionDropDown(iterc, itera, iterb, iterd, +162);
+            break;
+        }
+        else if (!(*iterd)->isEnabled() && (*iterd)->isOpened())
+        {
+
+            (*iterd)->setOpened();
+            itera++;
+            iterb++;
+            iterc++;
+            iterd++;
+            repositionDropDown(iterc, itera, iterb, iterd, -162);
+            break;
+
+        }
+        else
+        {
+            itera++;
+            iterb++;
+            iterc++;
+            iterd++;
+        }
+    }
+       
+
+    auto iter2 = m_dialogueButtons.begin();
+    auto iter3 = m_dialogueLabels.begin();
+    auto iter4 = m_dialogueDropDownMenu.begin();
+
+
+    for (auto iter1 = m_deleteButtons.begin(); iter1 != m_deleteButtons.end();)
+    {
+        if ((*iter1)->isButtonClicked(t_event, &t_window))
+        {
+
+            iter1 = m_deleteButtons.erase(iter1);
+            iter2 = m_dialogueButtons.erase(iter2);
+            iter3 = m_dialogueLabels.erase(iter3);
+            iter4 = m_dialogueDropDownMenu.erase(iter4);
+            repositionDialogueButtons();
+
+            break;
+        }
+        else
+        {
+            iter1++;
+            iter2++;
+            iter3++;
+            iter4++;
+        }
+    }
+    auto iter1 = m_dialogueLabels.begin();
+    for (auto iter = m_dialogueButtons.begin(); iter != m_dialogueButtons.end();)
+    {
+        if ((*iter)->isButtonClicked(t_event, &t_window))
+        {
+            std::cout << "Dialogue button Clicked" << std::endl;
+            m_gameState->setState(State::CREATE_DIALOGUE);
+            m_currentLabel = (*iter1);
+            break;
+        }
+        else
+        {
+            iter++;
+            iter1++;
+        }
+    }
+
+    if (m_currentLabel != nullptr)
+    {
+        m_currentLabel->setText(t_fileName);
+    }
 
 }
 
-void Inspector::repositionDialogueButtons(std::vector<Button*>::iterator t_iter1, std::vector<Button*>::iterator t_iter2, std::vector<Label*>::iterator t_iter3)
+void Inspector::repositionDialogueButtons()
+{
+    for (int i = 0; i < m_dialogueDropDownMenu.size(); i++)
+    {
+        if (m_dialogueDropDownMenu.at(i)->isOpened())
+        {
+            m_dialogueDropDownMenu.at(i)->setOpened();
+        }
+        if (m_dialogueDropDownMenu.at(i)->isEnabled())
+        {
+            m_dialogueDropDownMenu.at(i)->setEnabled();
+        }
+    }
+    for (int i = 0; i < m_dialogueButtons.size(); i++)
+    {
+        if (i == 0)
+        {
+
+            m_dialogueButtons.at(i)->setButtonPosition(
+                sf::Vector2f(
+                    m_addCategoryLabel->getTextPosition().x + 100,
+                    m_addCategoryLabel->getTextPosition().y + 32));
+
+        }
+        else
+        {
+            m_dialogueButtons.at(i)->setButtonPosition(
+                sf::Vector2f(m_dialogueButtons.at(i-1)->getButtonPosition().x,
+                    m_dialogueButtons.at(i-1)->getButtonPosition().y+32));
+
+        }
+
+
+        m_dialogueLabels.at(i)->setTextPosition(sf::Vector2f(m_dialogueButtons.at(i)->getButtonPosition().x, m_dialogueButtons.at(i)->getButtonPosition().y));
+
+
+        m_deleteButtons.at(i)->setButtonPosition(
+            sf::Vector2f(
+                m_dialogueButtons.at(i)->getButtonPosition().x + (m_dialogueButtons.at(i)->getButtonSprite().getGlobalBounds().width / 2) + 32,
+                m_dialogueButtons.at(i)->getButtonPosition().y));
+ 
+
+
+        m_dialogueDropDownMenu.at(i)->setDropDownMenuPosition(m_dialogueButtons.at(i)->getButtonPosition(), m_dialogueButtons.at(i)->getButtonSprite().getGlobalBounds().width);
+    }
+}
+
+void Inspector::repositionDropDown(std::vector<Button*>::iterator t_iter1, std::vector<Button*>::iterator t_iter2, std::vector<Label*>::iterator t_iter3, std::vector<DropDownMenu*>::iterator t_iter4, int t_offset)
 {
     auto iterCopy2 = t_iter2;
     auto iterCopy3 = t_iter3;
+    auto iterCopy4 = t_iter4;
+
 
     for (auto iterCopy1 = t_iter1; iterCopy1 != m_deleteButtons.end();)
     {
-        (*iterCopy1)->setButtonPosition(sf::Vector2f((*iterCopy1)->getButtonPosition().x, (*iterCopy1)->getButtonPosition().y - 32));
-        (*iterCopy2)->setButtonPosition(sf::Vector2f((*iterCopy2)->getButtonPosition().x, (*iterCopy2)->getButtonPosition().y - 32));
-        (*iterCopy3)->setTextPosition(sf::Vector2f((*iterCopy3)->getTextPosition().x, (*iterCopy3)->getTextPosition().y - 32));
+        (*iterCopy1)->setButtonPosition(sf::Vector2f((*iterCopy1)->getButtonPosition().x, (*iterCopy1)->getButtonPosition().y + t_offset));
+        (*iterCopy2)->setButtonPosition(sf::Vector2f((*iterCopy2)->getButtonPosition().x, (*iterCopy2)->getButtonPosition().y + t_offset));
+        (*iterCopy3)->setTextPosition(sf::Vector2f((*iterCopy3)->getTextPosition().x, (*iterCopy3)->getTextPosition().y + t_offset));
+        (*iterCopy4)->setDropDownMenuPosition((*iterCopy2)->getButtonPosition(), (*iterCopy2)->getButtonSprite().getGlobalBounds().width);
+
         iterCopy1++;
         iterCopy2++;
         iterCopy3++;
+        iterCopy4++;
+
     }
 }
 

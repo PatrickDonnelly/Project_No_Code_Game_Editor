@@ -114,6 +114,9 @@
     <ClInclude Include="FontManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DropDownMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -210,6 +213,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FontManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DropDownMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

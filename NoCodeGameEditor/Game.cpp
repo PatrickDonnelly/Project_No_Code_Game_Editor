@@ -101,7 +101,7 @@ void Game::processEvents()
 			m_objectPlacement->placeRemove(newEvent, m_window);
 			if (m_objectPlacement->m_currentlySelected != nullptr)
 			{
-				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window);
+				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText());
 			}
 		}
 	}

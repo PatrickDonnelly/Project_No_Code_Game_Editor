@@ -13,6 +13,8 @@
 //#include "Enemy.h"
 #include "Attributes.h"
 //#include "ObjectPlacement.h"
+//#include "TextEditor.h"
+#include "DropDownMenu.h"
 
 
 
@@ -39,7 +41,7 @@ public:
 	bool isEnabled();
 	void setEnabled() { m_enabled = !m_enabled; }
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
-	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);
+	void processEvents(sf::Event t_event, sf::RenderWindow& t_window, GameState* t_gameState, std::string t_fileName);
 
 	//void setInspectorText(std::string t_dialogue) { m_textBox.setString(t_dialogue); }
 
@@ -54,7 +56,13 @@ private:
 	Button* m_addDialogueButton;
 	Label* m_addDialogueLabel;
 	Label* m_addCategoryLabel;
-	void repositionDialogueButtons(std::vector<Button*>::iterator t_iter1, std::vector<Button*>::iterator t_iter2, std::vector<Label*>::iterator t_iter3);
+	void repositionDropDown(std::vector<Button*>::iterator t_iter1, std::vector<Button*>::iterator t_iter2, std::vector<Label*>::iterator t_iter3, std::vector<DropDownMenu*>::iterator t_iter4, int t_offset);
+
+	void repositionDialogueButtons();
+	//TextEditor m_textEditor;
+	GameState* m_gameState;
+	Label* m_currentLabel;
+
 
 	std::vector<std::string> m_dialogueFileNames;
 	std::vector<Label> m_labels;
@@ -63,6 +71,8 @@ private:
 	std::vector<Button*> m_deleteButtons;
 	std::vector<Button*> m_dialogueButtons;
 	std::vector<Label*> m_dialogueLabels;
+	std::vector<DropDownMenu*> m_dialogueDropDownMenu;
+
 
 
 	int m_noOfOptions;
@@ -71,7 +81,6 @@ private:
 	std::vector<InspectorOptions*> m_inspectorOptions;
 	Label* m_inspectorLabel;
 	std::vector<std::string> m_dialogue;
-	GameState* m_gameState;
 	bool m_enabled = false;
 	sf::Sprite m_inspectorSprite;
 	sf::Texture m_inspectorTexture;
