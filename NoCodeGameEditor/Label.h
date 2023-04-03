@@ -13,6 +13,7 @@ public:
 	Label();
 	Label(sf::Font& t_font);
 	Label(sf::Font& t_font, bool t_isOn);
+	Label(std::string t_labelText);
 	~Label();
 
 

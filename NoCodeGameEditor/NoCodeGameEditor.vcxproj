@@ -150,6 +150,8 @@
     <ClInclude Include="InspectorOptions.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Label.h" />
+    <ClInclude Include="LevelList.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectPlacement.h" />
@@ -184,7 +186,9 @@
     <ClCompile Include="InspectorOptions.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Label.cpp" />
+    <ClCompile Include="LevelList.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectPlacement.cpp" />

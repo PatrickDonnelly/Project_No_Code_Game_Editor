@@ -9,6 +9,20 @@
 #include "Inspector.h"
 #include "Attributes.h"
 
+struct ObjectData {
+	std::string m_tag;
+	sf::Vector2f m_position;
+	bool m_enabled;
+	bool m_isCollidable;
+	int m_row;
+	int m_col;
+	std::string m_path;
+	std::string m_objectCategory;
+	int m_boundsWidth;
+	int m_boundsHeight;
+	int m_detectionRadius;
+};
+
 class Object
 {
 protected:

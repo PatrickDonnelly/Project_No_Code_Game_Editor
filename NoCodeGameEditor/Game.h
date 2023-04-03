@@ -19,6 +19,8 @@
 #include "ObjectPlacement.h"
 #include "TextureManager.h"
 #include "FontManager.h"
+#include "MainMenu.h"
+#include "LevelList.h"
 //#include "Inspector.h"
 
 class Game
@@ -30,7 +32,7 @@ public:
 
 private:
 
-
+	MainMenu m_mainMenu;
 	GameState* m_gameState;
 	Grid* m_grid{ nullptr };
 	RoomCreation* m_roomCreation{ nullptr };
@@ -43,6 +45,7 @@ private:
 	TextEditor* m_textEditor{ nullptr };
 	TextureManager* m_textureManager{ nullptr };
 	FontManager m_fontManager;
+	LevelList m_levelList;
 	//Inspector* m_inspector{ nullptr };
 	void setUpFontAndText();
 	void processEvents();

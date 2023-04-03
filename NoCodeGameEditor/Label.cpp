@@ -9,6 +9,16 @@ Label::Label(sf::Font& t_font)
 	m_image = false;
 }
 
+Label::Label(std::string t_labelText)
+{
+	m_fontManager = FontManager();
+	m_labelFont = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
+
+	initText();
+	setText(t_labelText);
+	m_image = false;
+}
+
 Label::Label(sf::Font& t_font, bool t_isOn)
 {
 	m_fontManager = FontManager();

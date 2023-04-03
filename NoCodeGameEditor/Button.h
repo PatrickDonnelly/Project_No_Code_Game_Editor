@@ -1,6 +1,7 @@
 #ifndef BUTTON_HPP
 #define BUTTON_HPP
 #include <SFML/Graphics.hpp>
+#include "Label.h"
 
 
 class Button
@@ -8,7 +9,10 @@ class Button
 public:
 
 	Button();
+	Button(std::string t_labelText);
 	~Button();
+
+
 
 	sf::Sprite getButtonSprite();
 	sf::Vector2f getButtonPosition();
@@ -27,11 +31,12 @@ public:
 	bool isEnabled();
 	void setEnabled(bool t_onOff) { m_enabled = t_onOff; }
 	bool isButtonClicked(sf::Event& t_event, sf::RenderWindow* t_window);
-
+	Label* getButtonLabel() { return m_label; }
 private:
-
+	Label* m_label;
 	bool m_selected;
 	bool m_enabled = false;
+	bool m_hasLabel = false;;
 	sf::Sprite m_buttonSprite;
 	sf::Texture m_buttonTexture;
 	sf::Texture m_buttonHighlightTexture;

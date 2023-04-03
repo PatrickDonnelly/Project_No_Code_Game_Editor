@@ -8,7 +8,12 @@ enum class State {
 	ROOM_TEST = 4,
 	ROOM_SAVE = 5,
 	CREATE_DIALOGUE = 6,
-	PAUSE_GAME =7
+	PAUSE_GAME =7, 
+	LOAD_GAME = 8,
+	PLAY_GAME = 9,
+	GAME_LIST = 10,
+	SAVING = 11,
+	LEVEL_LIST = 12
 };
 
 

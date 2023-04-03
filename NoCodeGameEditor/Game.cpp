@@ -5,8 +5,12 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
 	m_exitGame{ false } //when true game will exit
 {
+
 	m_textureManager = new TextureManager();
-	m_gameState = new GameState(State::ROOM_BUILD);
+	m_gameState = new GameState(State::MENU);
+	m_mainMenu = MainMenu(m_gameState);
+	m_levelList = LevelList(m_gameState);
+
 	setUpFontAndText();
 	m_grid = new Grid(m_gameState, m_textureManager);
 	m_roomCreation = new RoomCreation(m_gameState, m_grid);
@@ -68,6 +72,14 @@ void Game::processEvents()
 	sf::Event newEvent;
 	while (m_window.pollEvent(newEvent))
 	{
+		if (m_gameState->getState() == State::MENU || m_gameState->getState() == State::ROOM_BUILD)
+		{
+			m_mainMenu.processEvents(newEvent, m_window);
+		}
+		if (m_gameState->getState() == State::GAME_LIST)
+		{
+			m_levelList.processEvents(newEvent, m_window);
+		}
 		if (m_gameState->getState() != State::PAUSE_GAME)
 		{
 			if (m_player->getInteract())
@@ -83,7 +95,10 @@ void Game::processEvents()
 				}
 			}
 			m_spear->processEvents(newEvent);
-			m_uiBuildMode.processEvents(newEvent, m_window);
+			//if (m_gameState->getState()==State::ROOM_PLACE_OBJECTS)
+			//{
+				m_uiBuildMode.processEvents(newEvent, m_window);
+		//	}
 
 			//m_inspector->processEvents(newEvent, m_window);
 
@@ -150,6 +165,82 @@ void Game::update(sf::Time t_deltaTime)
 	if (m_exitGame)
 	{
 		m_window.close();
+	}
+	if (m_gameState->getState() == State::SAVING)
+	{
+		std::cout << "Saving Game" << std::endl;
+
+		// creating an ifstream object named file
+		std::ifstream file;
+
+		// opening the file
+		file.open("Dialogue/testSave.csv");
+		if (file)
+		{
+			//saving = true;
+			//std::cout << "File exists" << std::endl;
+			//m_popUpBox.setPopUpEnabled();
+
+			//unsigned lines = 0;
+			//std::string line_content;
+			//std::string lineContentAppended;
+			//std::ifstream my_file("PopUpMessages/fileExists.txt");
+
+
+			//while (std::getline(my_file, line_content)) {
+			//	lines++;
+
+
+			//	lineContentAppended.append(line_content);
+			//	lineContentAppended.append("\n");
+
+
+				//std::cout << "Line: " << lines << " content: " << line_content << std::endl;
+			//}
+
+			//my_file.close();
+
+			//m_popUpBox.setPopUpBoxText(lineContentAppended);
+
+			//for (int i = 0; i < 2; i++)
+			//{
+
+			//	m_popUpButtons.at(i)->setButtonPosition(
+			//		sf::Vector2f{ m_popUpBox.getPopUpBoxPosition().x + (m_popUpBox.getPopUpBoxBounds().x / 2) + (i * 200) - 100,
+			//						m_popUpBox.getPopUpBoxPosition().y + (m_popUpBox.getPopUpBoxBounds().y) - (m_popUpButtons.at(i)->getButtonSprite().getGlobalBounds().height) });
+			//	m_popUpButtonLabels.at(i)->setTextPosition(m_popUpButtons.at(i)->getButtonPosition());
+			//}
+		}
+		//else
+		//{
+		//	// printing the error message
+		std::cout << "File does not exist" << std::endl;
+		std::ofstream out("Games/testsave.csv");
+		for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+		{
+			out << m_objectPlacement->m_enemies.at(i)->getTag() << "," << m_objectPlacement->m_enemies.at(i)->getSprite()->getPosition().x << "," << m_objectPlacement->m_enemies.at(i)->getSprite()->getPosition().y << "\n";
+		}
+		out.close();
+		m_gameState->setState(m_gameState->getPreviousState());
+		//clearDialogue();
+		//	refreshDialogue();
+		//}
+
+
+
+
+	}
+	if (m_gameState->getState() == State::MENU)
+	{
+		// load files
+		// switch to play game
+		//m_gameState->setState(State::PLAY_GAME);
+	}
+	if (m_gameState->getState() == State::LOAD_GAME)
+	{
+		// load files
+		// switch to play game
+		m_gameState->setState(State::PLAY_GAME);
 	}
 	if (m_gameState->getState() != State::PAUSE_GAME)
 	{
@@ -355,15 +446,32 @@ void Game::update(sf::Time t_deltaTime)
 void Game::render()
 {
 	m_window.clear(sf::Color::Black);
-	m_grid->render(&m_window);
-	m_uiBuildMode.render(&m_window);
-	m_objectPlacement->render(&m_window);
+	if (m_gameState->getState() == State::ROOM_PLACE_OBJECTS || m_gameState->getState() == State::ROOM_BUILD 
+		|| m_gameState->getState() == State::ROOM_TEST || m_gameState->getState() == State::SAVING)
+	{
+		m_grid->render(&m_window);
+		m_uiBuildMode.render(&m_window);
+		m_objectPlacement->render(&m_window);
+	}
+	if (m_gameState->getState() == State::MENU)
+	{
+		m_mainMenu.render(&m_window);
+		// load files
+		// switch to play game
+		//m_gameState->setState(State::PLAY_GAME);
+	}
+	if (m_gameState->getState() == State::GAME_LIST || m_gameState->getState() == State::ROOM_BUILD)
+	{
+		m_levelList.render(&m_window);
+	}
 	//m_inspector->render(&m_window);
-	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
+	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS ||
+		m_gameState->getState() == State::SAVING)
 	{
 		m_roomCreation->render(&m_window);
 	}
-	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::PAUSE_GAME)
+	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::PAUSE_GAME ||
+		m_gameState->getState() == State::SAVING)
 	{
 		m_spear->render(m_window);
 		m_player->render(m_window);
