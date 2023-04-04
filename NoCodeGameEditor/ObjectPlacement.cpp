@@ -11,6 +11,20 @@ ObjectPlacement::ObjectPlacement(GameState* t_gameState, Grid* t_grid, TextureMa
 	m_textureManager = t_textureManager;
 	m_gameState = t_gameState;
 	m_grid = t_grid;
+	//for (int i = 0; i < m_grid->m_vectGridSize; ++i)
+	//{
+	//	for (int j = 0; j < m_grid->m_vectGridSize; ++j)
+	//	{
+	//		if (m_grid->m_vectGrid.at(i).at(j)->cellType == "Wall")
+	//		{
+	//			m_walls.push_back(new Wall());
+	//		}
+	//		else if (m_grid->m_vectGrid.at(i).at(j)->cellType == "Floor")
+	//		{
+
+	//		}
+	//	}
+	//}
 }
 
 ObjectPlacement::~ObjectPlacement()

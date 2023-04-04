@@ -8,6 +8,7 @@ Item::Item()
 
 Item::Item(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
 {
+	m_uuid = UUID();
 	m_textureManager = t_textureManager;
 	m_isCollidable = false;
 	m_tag = t_typeTag;

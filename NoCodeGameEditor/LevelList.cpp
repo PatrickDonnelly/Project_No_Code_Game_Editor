@@ -93,7 +93,8 @@ void LevelList::render(sf::RenderWindow* t_window)
 
 	if (m_currentGameState->getState() == State::GAME_LIST || m_currentGameState->getState() == State::ROOM_BUILD)
 	{
-		for (auto& row : m_selectableGameButtons) {
+		for (auto& row : m_selectableGameButtons)
+		{
 			for (auto& col : row)
 			{
 				col->render(t_window);
@@ -104,42 +105,21 @@ void LevelList::render(sf::RenderWindow* t_window)
 
 void LevelList::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
-	//sf::Event newEvent = t_event;
-	//for (auto b : m_mainMenuButtons)
-	//{
-	//	if (b->getButtonLabel()->getText().getString() == "Exit")
-	//	{
-	//		if (b->isButtonClicked(t_event, &t_window))
-	//		{
-	//			std::cout << "Exit Clicked" << std::endl;
-	//			t_window.close();
-	//		}
-	//	}
-	//	else if (b->getButtonLabel()->getText().getString() == "Create Game")
-	//	{
-	//		if (b->isButtonClicked(t_event, &t_window))
-	//		{
-	//			std::cout << "Create Game Clicked" << std::endl;
-	//			m_currentGameState->setState(State::ROOM_BUILD);
-	//		}
-	//	}
-	//	else if (b->getButtonLabel()->getText().getString() == "Play Game")
-	//	{
-	//		if (b->isButtonClicked(t_event, &t_window))
-	//		{
-	//			std::cout << "Play Game Clicked" << std::endl;
-	//			m_currentGameState->setState(State::GAME_LIST);
-	//		}
-	//	}
-	//	else if (b->getButtonLabel()->getText().getString() == "Main Menu")
-	//	{
-	//		if (b->isButtonClicked(t_event, &t_window))
-	//		{
-	//			std::cout << "Main Menu Clicked" << std::endl;
-	//			m_currentGameState->setState(State::MENU);
-	//		}
-	//	}
-	//}
-
-
+	sf::Event newEvent = t_event;
+	for (auto& row : m_selectableGameButtons) 
+	{
+		for (auto& col : row)
+		{
+			if (col->getButtonLabel()->getText().getString() == "testsave")
+			{
+				if (col->isButtonClicked(t_event, &t_window))
+				{
+					m_currentGameState->setState(State::LOAD_GAME);
+					//std::cout << "Exit Clicked" << std::endl;
+					//t_window.close();
+				}
+			}
+		}
+	}
 }
+

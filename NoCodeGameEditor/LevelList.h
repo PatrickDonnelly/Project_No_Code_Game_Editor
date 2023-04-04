@@ -24,7 +24,6 @@ public:
 	void render(sf::RenderWindow* t_window);
 	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);
 
-	std::vector<Button*> m_mainMenuButtons;
 
 	GameState* m_currentGameState;
 	void setUpGameButtons();

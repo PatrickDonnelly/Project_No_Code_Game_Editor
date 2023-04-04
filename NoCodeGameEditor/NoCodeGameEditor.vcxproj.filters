@@ -123,6 +123,9 @@
     <ClInclude Include="LevelList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UUID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -230,5 +233,13 @@
     <ClCompile Include="LevelList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UUID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="output.yaml">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

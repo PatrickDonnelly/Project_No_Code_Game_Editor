@@ -60,7 +60,11 @@ void RoomCreation::GenerateRoomSprites()
 			sf::Vector2i up{ i, j - 1 };
 			if (m_grid->m_vectGrid.at(i).at(j)->cellType == "Wall")
 			{
+				
+				
 				m_grid->m_vectGrid.at(i).at(j)->setWallSprite();
+				
+				
 				if (right.x < m_grid->m_vectGrid.size())
 				{
 					if (m_grid->m_vectGrid.at(right.x).at(j)->cellType != "Wall" && firstFloorSet == false)

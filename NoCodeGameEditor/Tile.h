@@ -54,5 +54,6 @@ public:
 	sf::Color defaultColour;
 	sf::RectangleShape getTileBorder() { return m_tile; }
 	sf::Sprite getTile() { return m_cellSprite; }
+	std::string getPath() { return m_path; }
 };
 #endif // !TILE_HPP

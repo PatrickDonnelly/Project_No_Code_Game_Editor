@@ -210,8 +210,6 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
         for (auto iter = t_dialoguePaths.begin(); iter != t_dialoguePaths.end(); iter++)
         {
             std::cout << iter->first << " : in Inpspector " << iter->second << std::endl;
-
-
         }
     }
 

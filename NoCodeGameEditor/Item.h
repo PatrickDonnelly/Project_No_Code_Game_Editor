@@ -8,7 +8,8 @@
 
 class Item : public Object
 {
-
+private:
+	int64_t m_uuid;
 public:
 	Item();
 	Item(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager);
@@ -25,7 +26,7 @@ public:
 
 	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Item"; }
 	std::string getObjectCategory() { return m_objectCategory; }
-
+	int64_t getUUID() override { return m_uuid; }
 };
 #endif // !ITEM_HPP
 

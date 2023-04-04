@@ -67,16 +67,13 @@ void Grid::render(sf::RenderWindow* t_window)
 	}
 }
 
-
-
-
-void Grid::regenerateGrid()
+void Grid::clear()
 {
-
 	m_vectGrid.clear();
-	
-	m_playerSet = false;
+}
 
+void Grid::newGrid()
+{
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
 		std::vector<Tile*> row;
@@ -86,6 +83,17 @@ void Grid::regenerateGrid()
 		}
 		m_vectGrid.push_back(row);
 	}
+}
+
+void Grid::regenerateGrid()
+{
+
+	m_vectGrid.clear();
+	
+	m_playerSet = false;
+
+	newGrid();
+
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)

@@ -31,8 +31,9 @@ public:
 
 	GameState* m_gameState;
 
-
-
+	void clear();
+	void newGrid();
+	void setGridSize(int t_gridSize) { m_vectGridSize = t_gridSize; }
 
 
 	bool m_playerSet = false;

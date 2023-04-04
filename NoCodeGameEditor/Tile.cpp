@@ -15,6 +15,7 @@ Tile::~Tile()
 
 Tile::Tile(sf::Font& t_font, TextureManager* t_textureManager)
 {
+	m_path = "ASSETS\\IMAGES\\dirt_0";
 	m_textureManager = t_textureManager;
 	setUpText(t_font);
 	setUpSprites();
@@ -34,16 +35,19 @@ void Tile::setPosition(float t_x, float t_y)
 
 void Tile::setWallSprite()
 {
+	m_path = "ASSETS\\IMAGES\\rock_0";
 	m_cellSprite.setTexture(m_wallTexture);
 }
 
 void Tile::setFloorSprite()
 {
+	m_path = "ASSETS\\IMAGES\\dirt_0";
 	m_cellSprite.setTexture(m_floorTexture);
 }
 
 void Tile::setFloorSprite(std::string t_path)
 {
+	m_path = t_path;
 	m_floorTexture = m_textureManager->getTexture(t_path + ".png");
 	//if (!t_texture.loadFromFile(m_path + ".png"))
 	//{
@@ -54,7 +58,7 @@ void Tile::setFloorSprite(std::string t_path)
 
 void Tile::setUpSprites()
 {
-	if (!m_floorTexture.loadFromFile("ASSETS\\IMAGES\\dirt_0.png"))
+	if (!m_floorTexture.loadFromFile(m_path+ ".png"))
 	{
 		// error...
 	}

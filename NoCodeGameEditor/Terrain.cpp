@@ -10,7 +10,7 @@ Terrain::Terrain(std::string t_typeTag, std::string t_path, TextureManager* t_te
 {
 	m_textureManager = t_textureManager;
 	m_isCollidable = false;
-	m_tag = t_typeTag;
+	m_tag = "Terrain";
 	m_path = t_path;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;

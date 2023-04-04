@@ -8,6 +8,8 @@
 #include "DialogueBox.h"
 #include "Inspector.h"
 #include "Attributes.h"
+#include "UUID.h"
+
 
 struct ObjectData {
 	std::string m_tag;
@@ -51,6 +53,7 @@ public:
 	bool m_isSelected = false;
 	bool m_moving = false;
 	bool m_hasBeenSelected = false;
+	bool m_hasDialogue =false;
 
 	virtual void init() = 0;
 	virtual void setUpSprite() = 0;
@@ -62,6 +65,7 @@ public:
 	virtual void update(sf::Time deltaTime, sf::RenderWindow& window) = 0;
 	virtual void render(sf::RenderWindow& window) = 0;
 
+	virtual bool getHasDialogue() { return m_hasDialogue; }
 	void setRowColumn(int t_row, int t_col) { m_row = t_row; m_col = t_col; }
 	sf::RectangleShape* getBounds() { return &m_objectBounds; }
 	sf::Sprite* getSprite() { return &m_objectSprite; }
@@ -80,10 +84,12 @@ public:
 	DialogueBox* getDialogueBox() { return m_dialogue; }
 	std::map<std::string, std::string> m_dialoguePaths;
 	virtual bool getInRange() { return NULL; }
-	virtual std::map<std::string, std::string>* getDialoguePaths() { return& m_dialoguePaths; }
+	virtual std::map<std::string, std::string>* getDialoguePaths() { return &m_dialoguePaths; }
 	virtual void loadDialogue(std::string t_loadDialogue) { ; }
 	virtual sf::RectangleShape* getDetectionRadius() { return& m_detectionRadius; }
+	virtual int64_t getUUID() { return NULL;}
 	//std::map<std::string, std::string> getDialoguePaths() { return m_dialoguePaths; }
+
 };
 #endif // !OBJECT_HPP
 

@@ -6,11 +6,13 @@ Wall::Wall()
 {
 }
 
+
+
 Wall::Wall(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
 {
 	m_textureManager = t_textureManager;
 	m_isCollidable = false;
-	m_tag = t_typeTag;
+	m_tag = "Wall";
 	m_path = t_path;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;

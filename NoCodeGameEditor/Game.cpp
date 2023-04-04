@@ -1,5 +1,5 @@
 #include "Game.h"
-#include <iostream>
+
 
 Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
@@ -76,7 +76,7 @@ void Game::processEvents()
 		{
 			m_mainMenu.processEvents(newEvent, m_window);
 		}
-		if (m_gameState->getState() == State::GAME_LIST)
+		if (m_gameState->getState() == State::GAME_LIST || m_gameState->getState() == State::ROOM_BUILD)
 		{
 			m_levelList.processEvents(newEvent, m_window);
 		}
@@ -211,16 +211,127 @@ void Game::update(sf::Time t_deltaTime)
 			//	m_popUpButtonLabels.at(i)->setTextPosition(m_popUpButtons.at(i)->getButtonPosition());
 			//}
 		}
+
+		YAML::Emitter out;
+		out << YAML::BeginMap;
+
+
+		if (m_objectPlacement->m_enemies.size() != 0)
+		{
+			for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+			{
+				out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getTag();
+				out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getUUID();
+				out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getBounds()->getPosition().x;
+				out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getBounds()->getPosition().y;
+				out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getPath();
+				out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getHasDialogue();
+			}
+		}
+		if (m_objectPlacement->m_decorations.size() != 0)
+		{
+			for (int i = 0; i < m_objectPlacement->m_decorations.size(); i++)
+			{
+				out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getTag();
+				out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getUUID();
+				out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getBounds()->getPosition().x;
+				out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getBounds()->getPosition().y;
+				out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getPath();
+				out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getHasDialogue();
+			}
+		}
+		if (m_objectPlacement->m_items.size() != 0)
+		{
+			for (int i = 0; i < m_objectPlacement->m_items.size(); i++)
+			{
+				out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_items.at(i)->getTag();
+				out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_items.at(i)->getUUID();
+				out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_items.at(i)->getBounds()->getPosition().x;
+				out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_items.at(i)->getBounds()->getPosition().y;
+				out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_items.at(i)->getPath();
+				out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_items.at(i)->getHasDialogue();
+			}
+		}
+		if (m_objectPlacement->m_walls.size() != 0)
+		{
+			for (int i = 0; i < m_objectPlacement->m_walls.size(); i++)
+			{
+				out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_walls.at(i)->getTag();
+				out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_walls.at(i)->getUUID();
+				out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_walls.at(i)->getBounds()->getPosition().x;
+				out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_walls.at(i)->getBounds()->getPosition().y;
+				out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_walls.at(i)->getPath();
+				out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_walls.at(i)->getHasDialogue();
+			}
+		}
+		out << YAML::Key << "Size" << YAML::Value << m_grid->m_vectGrid.size();
+		for (int i = 0; i < m_grid->m_vectGrid.size(); i++)
+		{
+			for (int j = 0; j < m_grid->m_vectGrid.size(); ++j)
+			{
+				out << YAML::Key << "Cell Type" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->cellType;
+				out << YAML::Key << "Occupied" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->m_hasObject;
+				out << YAML::Key << "Xpos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->getPos().x;
+				out << YAML::Key << "Ypos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->getPos().y;
+				out << YAML::Key << "Texture" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->getPath();
+			}
+		}
+
+		// player save
+
+
+
+		//for (int i = 0; i < m_objectPlacement->m_items.size(); i++)
+		//{
+		//	out << YAML::BeginMap;
+		//	out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_.at(i)->getTag();
+		//	out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_items.at(i)->getUUID();
+		//	out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_items.at(i)->getSprite()->getPosition().x;
+		//	out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_items.at(i)->getSprite()->getPosition().y;
+		//	out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_items.at(i)->getPath();
+		//	out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_items.at(i)->getHasDialogue();
+		//	out << YAML::EndMap;
+		//}
+
+		out << YAML::EndMap;
+		std::ofstream fout("output.yaml");
+		fout << out.c_str();
+		fout.close();
 		//else
 		//{
 		//	// printing the error message
-		std::cout << "File does not exist" << std::endl;
-		std::ofstream out("Games/testsave.csv");
-		for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
-		{
-			out << m_objectPlacement->m_enemies.at(i)->getTag() << "," << m_objectPlacement->m_enemies.at(i)->getSprite()->getPosition().x << "," << m_objectPlacement->m_enemies.at(i)->getSprite()->getPosition().y << "\n";
-		}
-		out.close();
+		//std::cout << "File does not exist" << std::endl;
+		//std::ofstream out("Games/testsave.csv");
+		//out << "Enemy Objects" << "\n";
+		//out << "Type" << "," << "Unique ID" << "," << "X Position" << "," 
+		//	<< " Y Position" << "," << "Texture Type" << "," << "Dialogue" << "," 
+		//	<< "AI Behaviour" << "\n";
+		//for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+		//{
+		//	out << m_objectPlacement->m_enemies.at(i)->getTag() << ","
+		//		<< m_objectPlacement->m_enemies.at(i)->getUUID() << ","
+		//		<< m_objectPlacement->m_enemies.at(i)->getSprite()->getPosition().x << ","
+		//		<< m_objectPlacement->m_enemies.at(i)->getSprite()->getPosition().y << ","
+		//		<< m_objectPlacement->m_enemies.at(i)->getPath() << ","
+		//		<< m_objectPlacement->m_enemies.at(i)->getHasDialogue()
+		//		<< "\n";
+		//	if(m_objectPlacement->m_enemies.at(i)->getDialoguePaths()->size() >0)
+		//	{
+		//		std::ofstream out2("Games/dialogue.csv");
+		//		out2 << "UUID" << "Key" << "Value" << "\n";
+		//		out2 << m_objectPlacement->m_enemies.at(i)->getUUID() << ",";
+		//		for (auto iter = (*m_objectPlacement->m_enemies.at(i)->getDialoguePaths()).begin();
+		//			iter != (*m_objectPlacement->m_enemies.at(i)->getDialoguePaths()).end();
+		//			iter++)
+		//		{
+		//			out2 << iter->first << ","
+		//				<< iter->second << "\n";
+		//		}
+		//		out2.close();
+		//	}
+		//}
+		//out.close();
+
 		m_gameState->setState(m_gameState->getPreviousState());
 		//clearDialogue();
 		//	refreshDialogue();
@@ -240,8 +351,20 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		// load files
 		// switch to play game
-		m_gameState->setState(State::PLAY_GAME);
+
+		YAML::Node output = YAML::LoadFile("output.yaml");
+		int size = output["Size"].as<int>();
+		m_objectPlacement->clearObjects();
+		m_grid->clear();
+		m_grid->setGridSize(size);
+		m_grid->regenerateGrid();
+
+
+
+
+		m_gameState->setState(State::ROOM_BUILD);
 	}
+	std::cout << m_grid->m_vectGrid.size() << std::endl;
 	if (m_gameState->getState() != State::PAUSE_GAME)
 	{
 		if (m_roomCreation->firstFloorSet && m_grid->m_playerSet == false)
@@ -447,7 +570,8 @@ void Game::render()
 {
 	m_window.clear(sf::Color::Black);
 	if (m_gameState->getState() == State::ROOM_PLACE_OBJECTS || m_gameState->getState() == State::ROOM_BUILD 
-		|| m_gameState->getState() == State::ROOM_TEST || m_gameState->getState() == State::SAVING)
+		|| m_gameState->getState() == State::ROOM_TEST || m_gameState->getState() == State::SAVING
+		|| m_gameState->getState() == State::PAUSE_GAME)
 	{
 		m_grid->render(&m_window);
 		m_uiBuildMode.render(&m_window);
@@ -466,7 +590,7 @@ void Game::render()
 	}
 	//m_inspector->render(&m_window);
 	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS ||
-		m_gameState->getState() == State::SAVING)
+		m_gameState->getState() == State::SAVING || m_gameState->getState() == State::PAUSE_GAME)
 	{
 		m_roomCreation->render(&m_window);
 	}

@@ -1,6 +1,7 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
+
 #include <SFML/Graphics.hpp>
 #include <array>
 #include "Tile.h"
@@ -22,6 +23,12 @@
 #include "MainMenu.h"
 #include "LevelList.h"
 //#include "Inspector.h"
+#include "yaml-cpp\yaml.h"
+#include <iostream>
+#include <fstream>
+
+
+
 
 class Game
 {
@@ -31,7 +38,7 @@ public:
 	void run();
 
 private:
-
+	//YAML::Node config = YAML::LoadFile("config.yaml");
 	MainMenu m_mainMenu;
 	GameState* m_gameState;
 	Grid* m_grid{ nullptr };
