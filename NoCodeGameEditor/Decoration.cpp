@@ -6,6 +6,19 @@ Decoration::Decoration()
 {
 }
 
+Decoration::Decoration(std::string t_path)
+{
+	m_tag = "Decoration";
+	m_uuid = UUID();
+	m_textureManager = new TextureManager();
+	m_isCollidable = false;
+	m_path = t_path;
+	m_boundsHeight = 32;
+	m_boundsWidth = 32;
+	//m_inspector = new Inspector();
+	init();
+}
+
 Decoration::Decoration(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
 {
 	m_tag = "Decoration";

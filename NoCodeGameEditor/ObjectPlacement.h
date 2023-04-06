@@ -121,6 +121,7 @@ public:
 	std::vector <Object*> m_walls;
 	std::vector <Object*> m_items;
 	std::vector <Object*> m_decorations;
+
 	Object* m_currentlySelected{nullptr};
 	GameState* m_gameState;
 

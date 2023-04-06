@@ -16,6 +16,7 @@ private:
 	int64_t m_uuid;
 public:
 	Enemy();
+	Enemy(std::string t_path);
 	Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager);
 	~Enemy();
 	TextureManager* m_textureManager;

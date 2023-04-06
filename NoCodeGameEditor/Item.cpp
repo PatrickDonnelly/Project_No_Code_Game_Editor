@@ -6,12 +6,25 @@ Item::Item()
 {
 }
 
+Item::Item(std::string t_path)
+{
+	m_uuid = UUID();
+	m_textureManager = new TextureManager();
+	m_isCollidable = false;
+	m_tag = "Item";
+	m_path = t_path;
+	m_boundsHeight = 32;
+	m_boundsWidth = 32;
+	//m_inspector = new Inspector();
+	init();
+}
+
 Item::Item(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
 {
 	m_uuid = UUID();
 	m_textureManager = t_textureManager;
 	m_isCollidable = false;
-	m_tag = t_typeTag;
+	m_tag = "Item";
 	m_path = t_path;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;

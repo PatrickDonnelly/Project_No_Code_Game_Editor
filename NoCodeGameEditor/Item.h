@@ -12,6 +12,7 @@ private:
 	int64_t m_uuid;
 public:
 	Item();
+	Item(std::string t_path);
 	Item(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager);
 	~Item();
 	TextureManager* m_textureManager;
