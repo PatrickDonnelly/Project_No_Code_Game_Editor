@@ -26,9 +26,9 @@ void Grid::clearUnusedCells()
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)
 		{
-			if (m_vectGrid.at(i).at(j)->cellType == "Empty")
+			if (m_vectGrid.at(i).at(j).cellType == "Empty")
 			{
-				m_vectGrid.at(i).at(j)->setBorderColour(sf::Color(sf::Color(0, 0, 0, 0)));
+				m_vectGrid.at(i).at(j).setBorderColour(sf::Color(sf::Color(0, 0, 0, 0)));
 			}
 		}
 	}
@@ -60,9 +60,9 @@ void Grid::render(sf::RenderWindow* t_window)
 		{
 			if (m_gridEnabled)
 			{
-				t_window->draw(m_vectGrid.at(i).at(j)->getTileBorder());
+				t_window->draw(m_vectGrid.at(i).at(j).getTileBorder());
 			}
-			t_window->draw(m_vectGrid.at(i).at(j)->getTile());
+			t_window->draw(m_vectGrid.at(i).at(j).getTile());
 		}
 	}
 }
@@ -76,10 +76,10 @@ void Grid::newGrid()
 {
 	for (int i = 0; i < m_vectGridSize; ++i)
 	{
-		std::vector<Tile*> row;
+		std::vector<Tile> row;
 		for (int j = 0; j < m_vectGridSize; ++j)
 		{
-			row.push_back(new Tile(m_textFont, m_textureManager));
+			row.push_back(Tile(m_textFont, m_textureManager));
 		}
 		m_vectGrid.push_back(row);
 	}
@@ -98,12 +98,12 @@ void Grid::regenerateGrid()
 	{
 		for (int j = 0; j < m_vectGridSize; ++j)
 		{
-			m_vectGrid.at(i).at(j)->setPosition(m_vectGrid.at(i).at(j)->m_width * i + 960 - (m_vectGridSize * 16), m_vectGrid.at(i).at(j)->m_width * j + 540 - (m_vectGridSize * 16));
-			m_vectGrid.at(i).at(j)->rowColumn = sf::Vector2i{ i,j };
-			m_vectGrid.at(i).at(j)->setTileColour(sf::Color::Color(200, 200, 220,0));
-			m_vectGrid.at(i).at(j)->cellType = "Empty";
-			m_vectGrid.at(i).at(j)->m_checked = false;
-			m_vectGrid.at(i).at(j)->m_colliderCheck = false;
+			m_vectGrid.at(i).at(j).setPosition(m_vectGrid.at(i).at(j).m_width * i +16, m_vectGrid.at(i).at(j).m_width * j +16);
+			m_vectGrid.at(i).at(j).rowColumn = sf::Vector2i{ i,j };
+			m_vectGrid.at(i).at(j).setTileColour(sf::Color::Color(200, 200, 220,0));
+			m_vectGrid.at(i).at(j).cellType = "Empty";
+			m_vectGrid.at(i).at(j).m_checked = false;
+			m_vectGrid.at(i).at(j).m_colliderCheck = false;
 		}
 	}
 }

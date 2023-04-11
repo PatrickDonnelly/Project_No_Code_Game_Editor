@@ -26,7 +26,7 @@
 #include "yaml-cpp\yaml.h"
 #include <iostream>
 #include <fstream>
-
+#include "Globals.h"
 
 
 
@@ -65,6 +65,7 @@ private:
 	sf::Text m_text;
 
 	sf::RenderWindow m_window;
+
 	bool m_exitGame; // control exiting game
 
 };

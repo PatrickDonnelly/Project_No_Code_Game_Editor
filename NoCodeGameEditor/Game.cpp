@@ -5,9 +5,9 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 1920U, 1080U, 32U }, "No Code Game Editor" },
 	m_exitGame{ false } //when true game will exit
 {
-
+	m_window.setView(m_gameView);
 	m_textureManager = new TextureManager();
-	m_gameState = new GameState(State::MENU);
+	m_gameState = new GameState(State::ROOM_PLACE_OBJECTS);
 	m_mainMenu = MainMenu(m_gameState);
 	m_levelList = LevelList(m_gameState);
 
@@ -305,13 +305,15 @@ void Game::update(sf::Time t_deltaTime)
 		{
 			for (int j = 0; j < m_grid->m_vectGrid.size(); ++j)
 			{
-				out << YAML::BeginMap;
-				out << YAML::Key << "Cell Type" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->cellType;
-				out << YAML::Key << "Occupied" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->m_hasObject;
-				out << YAML::Key << "Xpos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->getPos().x;
-				out << YAML::Key << "Ypos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->getPos().y;
-				out << YAML::Key << "Texture" << YAML::Value << m_grid->m_vectGrid.at(i).at(j)->getPath();
-				out << YAML::EndMap;
+
+					out << YAML::BeginMap;
+					out << YAML::Key << "Cell Type" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).cellType;
+					out << YAML::Key << "Occupied" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).m_hasObject;
+					out << YAML::Key << "Xpos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPos().x;
+					out << YAML::Key << "Ypos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPos().y;
+					out << YAML::Key << "Texture" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPath();
+					out << YAML::EndMap;
+				
 			}
 		}
 		out << YAML::EndSeq;
@@ -374,9 +376,9 @@ void Game::update(sf::Time t_deltaTime)
 			{
 				if (cellType.at(k) != "Empty")
 				{
-					m_grid->m_vectGrid.at(i).at(j)->setFloorSprite(textures.at(k));
-					m_grid->m_vectGrid.at(i).at(j)->cellType = cellType.at(k);
-					m_grid->m_vectGrid.at(i).at(j)->m_hasObject = hasObject.at(k);
+					m_grid->m_vectGrid.at(i).at(j).setFloorSprite(textures.at(k));
+					m_grid->m_vectGrid.at(i).at(j).cellType = cellType.at(k);
+					m_grid->m_vectGrid.at(i).at(j).m_hasObject = hasObject.at(k);
 				}
 				k++;
 			}
@@ -435,11 +437,17 @@ void Game::update(sf::Time t_deltaTime)
 			m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->setPosition(
 				node["Xpos"].as<float>(), node["Ypos"].as<float>()
 			);
+
 			m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getSprite()->setPosition(
 				m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition());
 			//cellType.push_back(node["Cell Type"].as<std::string>());
 			//sf::Vector2f name = sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>());
 			//break;
+			//int r = m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition().x / 32;
+			//int c = m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition().y / 32;
+
+			//m_grid->m_vectGrid.at(r).at(c).cellType = node["CellType"].as<std::string>();
+
 			std::cout << node["Xpos"].as<float>() << std::endl;
 		}
 
@@ -646,51 +654,101 @@ void Game::update(sf::Time t_deltaTime)
 		}
 	}
 
+	if (m_gameState->getState() != State::MENU)
+	{
+		// get the current mouse position in the window
+		sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
 
-	sf::Vector2i mousePos = sf::Mouse::getPosition(m_window);
+		// convert it to world coordinates
+		sf::Vector2f worldPos = m_window.mapPixelToCoords(pixelPos);
+		//std::cout << " world x : " << worldPos.x << " world y : " << worldPos.y << std::endl;
 
-	sf::Vector2u windowSize = m_window.getSize();
 
-	int scrollDistance = 100;
 
-	if (mousePos.x < scrollDistance) {
-		float newCenterX = m_window.getView().getCenter().x - scrollDistance /10;
 
-		sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(windowSize.x, windowSize.y));
+		sf::Vector2i mousePos = sf::Mouse::getPosition(m_window);
 
-		m_window.setView(view);
+		sf::Vector2u windowSize = m_window.getSize();
+
+		int scrollDistance = 40;
+
+		// scroll left
+
+			if (mousePos.x < scrollDistance) {
+				float newCenterX = m_window.getView().getCenter().x - scrollDistance / 4;
+
+				sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				m_gameView = view;
+				//m_gameView.zoom(m_zoomRate);
+				m_window.setView(m_gameView);
+			}
+			
+
+			if (mousePos.x > windowSize.x - scrollDistance) {
+
+				float newCenterX = m_window.getView().getCenter().x + scrollDistance / 4;
+
+
+				sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				m_gameView = view;
+				//m_gameView.zoom(m_zoomRate);
+				m_window.setView(m_gameView);
+			}
+			if (mousePos.y < scrollDistance) 
+			{
+
+				float newCenterY = m_window.getView().getCenter().y - scrollDistance / 4;
+
+
+				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				m_gameView = view;
+				//m_gameView.zoom(m_zoomRate);
+				m_window.setView(m_gameView);
+			}
+
+			if (mousePos.y > windowSize.y - scrollDistance) {
+				float newCenterY = m_window.getView().getCenter().y + scrollDistance / 4;
+
+				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				m_gameView = view;
+				//m_gameView.zoom(m_zoomRate);
+				m_window.setView(m_gameView);
+			}
+
+
+			//std::cout << "centre x : " << m_view.getCenter().x << std::endl;
+			if (m_gameView.getCenter().x - (windowSize.x / 2) < -544)
+			{
+				sf::View view(sf::Vector2f((windowSize.x / 2)-544, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				m_gameView = view;
+				//m_gameView.zoom(m_zoomRate);
+				m_window.setView(m_gameView);
+			}
+			if (m_gameView.getCenter().x + (windowSize.x / 2) > 3680)
+			{
+				sf::View view(sf::Vector2f(3680 - (windowSize.x / 2), m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				m_gameView = view;
+				//m_gameView.zoom(m_zoomRate);
+				m_window.setView(m_gameView);
+			}
+			if (m_gameView.getCenter().y - (windowSize.y / 2) < -480)
+			{
+				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, (windowSize.y / 2) - 480), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				m_gameView = view;
+				//m_gameView.zoom(m_zoomRate);
+				m_window.setView(m_gameView);
+			}
+			if (m_gameView.getCenter().y + (windowSize.y / 2) > 3680)
+			{
+				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, 3680 - (windowSize.y / 2)), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				m_gameView = view;
+				//m_gameView.zoom(m_zoomRate);
+				m_window.setView(m_gameView);
+			}
+
+			std::cout << "zoom Rate Game : " << m_zoomRate << std::endl;
+
 	}
-
-	if (mousePos.x > windowSize.x - scrollDistance) {
-
-		float newCenterX = m_window.getView().getCenter().x + scrollDistance / 10;
-
-
-		sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(windowSize.x, windowSize.y));
-
-
-		m_window.setView(view);
-	}
-
-
-	if (mousePos.y < scrollDistance) {
-
-		float newCenterY = m_window.getView().getCenter().y - scrollDistance / 10;
-
-
-		sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(windowSize.x, windowSize.y));
-
-		m_window.setView(view);
-	}
-
-	if (mousePos.y > windowSize.y - scrollDistance) {
-		float newCenterY = m_window.getView().getCenter().y + scrollDistance / 10;
-
-		sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(windowSize.x, windowSize.y));
-
-		m_window.setView(view);
-	}
-
 
 
 }
@@ -698,41 +756,53 @@ void Game::update(sf::Time t_deltaTime)
 void Game::render()
 {
 	m_window.clear(sf::Color::Black);
-	if (m_gameState->getState() == State::ROOM_PLACE_OBJECTS || m_gameState->getState() == State::ROOM_BUILD 
-		|| m_gameState->getState() == State::ROOM_TEST || m_gameState->getState() == State::SAVING
-		|| m_gameState->getState() == State::PAUSE_GAME)
+	if (m_gameState->getState() == State::ROOM_PLACE_OBJECTS)
 	{
+		m_window.setView(m_gameView);
 		m_grid->render(&m_window);
-		m_uiBuildMode.render(&m_window);
 		m_objectPlacement->render(&m_window);
+
+		m_window.setView(m_uiView);
+		m_levelList.render(&m_window);
+		m_uiBuildMode.render(&m_window);
+
+		m_window.setView(m_gameView);
 	}
-	if (m_gameState->getState() == State::MENU)
+	else if (m_gameState->getState() == State::ROOM_TEST)
 	{
-		m_mainMenu.render(&m_window);
-		// load files
-		// switch to play game
-		//m_gameState->setState(State::PLAY_GAME);
+		m_window.setView(m_gameView);
+		m_grid->render(&m_window);
+		m_objectPlacement->render(&m_window);
+		m_spear->render(m_window);
+		m_player->render(m_window);
+
+		m_window.setView(m_uiView);
+		m_uiBuildMode.render(&m_window);
+		m_window.setView(m_gameView);
 	}
-	if (m_gameState->getState() == State::GAME_LIST || m_gameState->getState() == State::ROOM_BUILD)
+	else if (m_gameState->getState() == State::CREATE_DIALOGUE)
+	{
+		m_window.setView(m_uiView);
+		m_textEditor->render(&m_window);
+	}
+	else if (m_gameState->getState() == State::MENU)
+	{
+		m_window.setView(m_uiView);
+		m_mainMenu.render(&m_window);
+		m_window.setView(m_gameView);
+	}
+	else if (m_gameState->getState() == State::PLAY_GAME)
+	{
+
+	}
+	else if (m_gameState->getState() == State::PAUSE_GAME)
+	{
+
+	}
+	else if (m_gameState->getState() == State::ROOM_BUILD)
 	{
 		m_levelList.render(&m_window);
 	}
-	//m_inspector->render(&m_window);
-	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS ||
-		m_gameState->getState() == State::SAVING || m_gameState->getState() == State::PAUSE_GAME)
-	{
-		m_roomCreation->render(&m_window);
-	}
-	if (m_gameState->m_currentGameState == State::ROOM_TEST || m_gameState->m_currentGameState == State::PAUSE_GAME ||
-		m_gameState->getState() == State::SAVING)
-	{
-		m_spear->render(m_window);
-		m_player->render(m_window);
-	}
-	if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
-	{
-		//m_dialogueBox->render(&m_window);
-		m_textEditor->render(&m_window);
-	}
+
 	m_window.display();
 }
