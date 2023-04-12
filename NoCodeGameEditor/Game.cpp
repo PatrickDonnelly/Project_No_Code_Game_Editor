@@ -128,7 +128,7 @@ void Game::processEvents()
 			}
 			if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 			{
-				m_objectPlacement->placeRemove(newEvent, m_window);
+				m_objectPlacement->processEvents(newEvent, m_window);
 
 			}
 			if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS || m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
@@ -746,7 +746,7 @@ void Game::update(sf::Time t_deltaTime)
 				m_window.setView(m_gameView);
 			}
 
-			std::cout << "zoom Rate Game : " << m_zoomRate << std::endl;
+		
 
 	}
 

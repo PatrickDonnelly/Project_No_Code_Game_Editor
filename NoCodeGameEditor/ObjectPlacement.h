@@ -19,6 +19,7 @@
 #include "Decoration.h"
 #include "Grid.h"
 #include "TextureManager.h"
+#include "Globals.h"
 
 //template <typename T, typename Type>
 //void addObjectToGrid(std::vector<T*> t_vectorOfObjects, int t_i, int t_j, std::string t_tag, std::string t_selectedObject, std::vector<std::vector<Tile*>> t_grid)
@@ -110,9 +111,31 @@ private:
 	void setSelectedGridObject(std::vector<Object*>& t_enemies, sf::RenderWindow& m_window);
 	sf::Vector2i m_originalPosition{ 0,0 };
 	std::string m_storedObjectType = "";
-	void setObject(int t_row, int t_col, std::string t_label, std::vector<Object*> t_objects);
+	void setObject(int t_row, int t_col, std::string t_label, std::vector<Object*>& t_objects);
+	bool initialPress = false;
+	bool m_placingMultiple = false;
+	int startRow = 0;
+	int endRow = 0;
+	int startCol = 0;
+	int endCol = 0;
+	sf::RectangleShape m_area;
+	sf::Vector2i m_screenPos;
+	sf::Vector2f m_worldPos;
+	void createObject(int row, int col);
+	void swapInts(int& t_smallerNumber, int& t_biggerNumber);
+	void removeObject(sf::Event t_event, sf::RenderWindow& m_window);
+	void placeObject(sf::Event t_event, sf::RenderWindow& m_window);
+	void moveObject(sf::Event t_event, sf::RenderWindow& m_window);
+	void selectObject(sf::Event t_event, sf::RenderWindow& m_window);
+
+	void placeMultipleObjects(sf::Event t_event, sf::RenderWindow& m_window);
+	void setInitialPress(sf::RenderWindow& m_window);
+	void setEndOfPress(sf::RenderWindow& m_window);
+	void scaleArea(sf::RenderWindow& m_window);
+
 public:
 	Object* getSelectedGridObject();
+	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);
 	sf::Clock m_clock;
 	sf::Time m_doubleClickTime = sf::Time::Zero;
 	bool checkForDoubleClick(sf::Clock& t_clock, sf::Time& t_doubleClickTime);
@@ -139,7 +162,7 @@ public:
 
 	void render(sf::RenderWindow* t_window);
 	void update(sf::Time t_deltaTime, sf::RenderWindow& m_window);
-	void placeRemove(sf::Event t_event, sf::RenderWindow& m_window);
+
 
 
 	bool checkValidSelection();
@@ -150,8 +173,5 @@ public:
 	bool m_collidersEnabled = true;
 	std::string m_tempTag = "";
 	void setCollidersEnabled() { m_collidersEnabled = !m_collidersEnabled; }
-	//void setGridEnabled() { m_gridEnabled = !m_gridEnabled; }
-	//void setCollidersEnabled() { m_collidersEnabled = !m_collidersEnabled; }
-
 };
 #endif // !OBJECTPLACEMENT_HPP

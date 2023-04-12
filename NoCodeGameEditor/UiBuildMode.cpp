@@ -594,7 +594,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 			}
 		
 	}
-		std::cout << "zoom Rate Ui : " << m_zoomRate << std::endl;
+
 }
 
 void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow & t_window)
