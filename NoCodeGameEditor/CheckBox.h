@@ -4,6 +4,12 @@
 #include "Label.h"
 #include "FontManager.h"
 
+struct CheckBoxData {
+	std::string m_tag;
+	sf::Vector2f m_position;
+	bool m_enabled;
+};
+
 class CheckBox
 {
 public:

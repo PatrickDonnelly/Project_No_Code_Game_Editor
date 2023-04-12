@@ -3,7 +3,16 @@
 
 Button::Button()
 {
+	m_hasLabel = false;
 	m_selected = false;
+	initButton();
+}
+
+Button::Button(std::string t_labelText)
+{
+	m_hasLabel = true;
+	m_selected = false;
+	m_label = new Label(t_labelText);
 	initButton();
 }
 
@@ -86,6 +95,10 @@ void Button::setButtonPosition(sf::Vector2f t_position)
 void Button::render(sf::RenderWindow* t_window)
 {
 	t_window->draw(m_buttonSprite);
+	if (m_hasLabel == true)
+	{
+		m_label->render(t_window);
+	}
 }
 
 bool Button::isButtonClicked(sf::Event& t_event, sf::RenderWindow* t_window)

@@ -4,13 +4,32 @@
 
 Enemy::Enemy()
 {
+
+}
+
+Enemy::Enemy(std::string t_path)
+{
+	m_textureManager = new TextureManager();
+	m_isCollidable = false;
+	m_tag = "Enemy";
+	m_uuid = UUID();
+	std::cout << m_uuid << " UUID" << std::endl;
+	m_path = t_path;
+	m_boundsHeight = 32;
+	m_boundsWidth = 32;
+	m_inpectorData.m_allowedDialogue = true;
+	m_inspector = new Inspector("Enemy", m_inpectorData);
+	m_dialogue = new DialogueBox();
+	init();
 }
 
 Enemy::Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
 {
 	m_textureManager = t_textureManager;
 	m_isCollidable = false;
-	m_tag = t_typeTag;
+	m_tag = "Enemy";
+	m_uuid = UUID();
+	std::cout << m_uuid << " UUID" << std::endl;
 	m_path = t_path;
 	m_boundsHeight = 32;
 	m_boundsWidth = 32;

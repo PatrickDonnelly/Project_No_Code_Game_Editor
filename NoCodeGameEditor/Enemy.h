@@ -13,9 +13,10 @@ class Enemy : public Object
 {
 private:
 	sf::RectangleShape m_detectionRadius;
-
+	int64_t m_uuid;
 public:
 	Enemy();
+	Enemy(std::string t_path);
 	Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager);
 	~Enemy();
 	TextureManager* m_textureManager;
@@ -30,7 +31,7 @@ public:
 	int count = 0;
 
 	bool m_hasDialogue = false;
-
+	bool getHasDialogue() override { return m_hasDialogue; }
 
 	
 	void setObjectCategory(std::string t_objectCategory) { m_objectCategory = "Enemy"; }
@@ -44,6 +45,7 @@ public:
 	std::map<std::string, std::string>* getDialoguePaths() override { return &m_dialoguePaths; }
 	sf::RectangleShape* getDetectionRadius() override { return& m_detectionRadius; }
 	void setDetectionRadius(int t_noOfCells) { m_detectionRadius.setSize(sf::Vector2f(32.0f * t_noOfCells, 32.0f * t_noOfCells)); }
+	int64_t getUUID() override { return m_uuid; }
 };
 #endif // !ENEMY_HPP
 

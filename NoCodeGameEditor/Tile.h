@@ -44,6 +44,7 @@ public:
 
 	void setUpText(sf::Font& t_font);
 	Tile(sf::Font& t_font, TextureManager* t_textureManager);
+	Tile();
 	~Tile();
 	void setFloorSprite(std::string t_path);
 	float m_width = 32.0f;
@@ -54,5 +55,6 @@ public:
 	sf::Color defaultColour;
 	sf::RectangleShape getTileBorder() { return m_tile; }
 	sf::Sprite getTile() { return m_cellSprite; }
+	std::string getPath() { return m_path; }
 };
 #endif // !TILE_HPP

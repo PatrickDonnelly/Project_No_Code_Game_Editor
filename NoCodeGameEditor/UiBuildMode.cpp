@@ -84,30 +84,30 @@ void UiBuildMode::setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows,
 
 void UiBuildMode::setUpGridFunctionButtons(sf::Font& t_arialFont)
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 2; i++)
 	{
-		if (i == 2)
-		{
-			m_buildButtons.push_back(Button());
-			m_buildButtons.at(i).setButtonPosition(sf::Vector2f{820.0f, 1000.0f});
-		}
-		else if (i == 3)
-		{
-			m_buildButtons.push_back(Button());
-			m_buildButtons.at(i).setButtonPosition(sf::Vector2f{820.0f + 280.0f, 1000.0f});
-		}
-		else 
-		{
+		//if (i == 2)
+		//{
+		//	m_buildButtons.push_back(Button());
+		//	m_buildButtons.at(i).setButtonPosition(sf::Vector2f{820.0f, 1000.0f});
+		//}
+		//else if (i == 3)
+		//{
+		//	m_buildButtons.push_back(Button());
+		//	m_buildButtons.at(i).setButtonPosition(sf::Vector2f{820.0f + 280.0f, 1000.0f});
+		//}
+		//else 
+		//{
 			m_buildButtons.push_back(Button());
 			m_buildButtons.at(i).setButtonPosition(sf::Vector2f{ 820.0f + (i * 280), 900.0f });
-		}
+		//}
 		m_buildButtonLabels.push_back(new Label(t_arialFont));
 		m_buildButtonLabels.at(i)->setTextPosition(m_buildButtons.at(i).getButtonPosition());
 	}
 	m_buildButtonLabels.at(0)->setText("Clear Grid");
 	m_buildButtonLabels.at(1)->setText("Generate Room");
-	m_buildButtonLabels.at(2)->setText("-");
-	m_buildButtonLabels.at(3)->setText("+");
+	//m_buildButtonLabels.at(2)->setText("-");
+	//m_buildButtonLabels.at(3)->setText("+");
 }
 
 void UiBuildMode::setUpTestBuildButtons(sf::Font& t_arialFont)
@@ -122,7 +122,7 @@ void UiBuildMode::setUpTestBuildButtons(sf::Font& t_arialFont)
 			m_testingButtons.at(i).setButtonPosition(sf::Vector2f{820.0f, 1000.0f});
 		}
 		m_testingButtonLabels.push_back(new Label(t_arialFont));
-		m_testingButtonLabels.at(i)->setTextPosition(m_buildButtons.at(i).getButtonPosition());
+		m_testingButtonLabels.at(i)->setTextPosition(m_testingButtons.at(i).getButtonPosition());
 	}
 	m_testingButtonLabels.at(0)->setText("Place Objects");
 	m_testingButtonLabels.at(1)->setText("Save Room");
@@ -131,14 +131,14 @@ void UiBuildMode::setUpTestBuildButtons(sf::Font& t_arialFont)
 
 void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 {
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		m_placementOptions.push_back(Button());
-		m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 820.0f + (i * 280), 900.0f });
-		if (i == 2)
+		m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 650.0f + (i * 280), 900.0f });
+		if (i >= 3)
 		{
 			m_placementOptions.at(i) = Button();
-			m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 820.0f, 1000.0f });
+			m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 790.0f + ((i-3) * 280), 1000.0f });
 		}
 		m_placementOptionsLabels.push_back(new Label(t_arialFont));
 		m_placementOptionsLabels.at(i)->setTextPosition(m_placementOptions.at(i).getButtonPosition());
@@ -146,6 +146,8 @@ void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 	m_placementOptionsLabels.at(0)->setText("Rebuild Room");
 	m_placementOptionsLabels.at(1)->setText("Test Room");
 	m_placementOptionsLabels.at(2)->setText("Clear Room");
+	m_placementOptionsLabels.at(3)->setText("Zoom Out");
+	m_placementOptionsLabels.at(4)->setText("Zoom In");
 }
 
 void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
@@ -303,7 +305,6 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 	setUpCategoryButtons(m_arialFont);
 	setUpGridFunctionButtons(m_arialFont);
 	setUpTestBuildButtons(m_arialFont);
-	setUpDialogueButtons(m_arialFont);
 	//setUpTextureRoomButtons(m_arialFont);
 }
 
@@ -363,14 +364,14 @@ void UiBuildMode::processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindo
 					{
 						m_roomCreation->checkRoomValidity();
 					}
-					else if (m_buildButtonLabels.at(i)->getTextString() == "-")
-					{
-						m_grid->decreaseGridSize();
-					}
-					else if (m_buildButtonLabels.at(i)->getTextString() == "+")
-					{
-						m_grid->increaseGridSize();
-					}
+					//else if (m_buildButtonLabels.at(i)->getTextString() == "-")
+					//{
+					//	m_grid->decreaseGridSize();
+					//}
+					//else if (m_buildButtonLabels.at(i)->getTextString() == "+")
+					//{
+					//	m_grid->increaseGridSize();
+					//}
 				}
 			}
 		}
@@ -402,14 +403,17 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 	std::vector<Button>::iterator col;
 	int rowIndex = 0;
 	int colIndex = 0;
+	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
 
+	// convert it to world coordinates
+	//sf::Vector2f worldPos = t_window.mapPixelToCoords(pixelPos);
 	for (const auto& row : t_objectButtons)
 	{
 		
 		for (const auto& col : row)
 		{
 			
-			if (col->getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+			if (col->getButtonSprite().getGlobalBounds().contains(pixelPos))
 			{
 				col->highlighted();
 				if (t_event.type == sf::Event::MouseButtonReleased)
@@ -447,7 +451,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 	}
 	for (int i = 0; i < m_toggleGridButtons.size(); i++)
 	{
-		if (m_toggleGridButtons.at(i)->getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+		if (m_toggleGridButtons.at(i)->getButtonSprite().getGlobalBounds().contains(pixelPos))
 		{
 			m_toggleGridButtons.at(i)->highlighted();
 			if (t_event.type == sf::Event::MouseButtonReleased)
@@ -475,7 +479,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 
 	for (int i = 0; i < m_objectCategoryButtons.size(); i++)
 	{
-		if (m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+		if (m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().contains(pixelPos))
 		{
 			m_objectCategoryButtons.at(i)->highlighted();
 			if (t_event.type == sf::Event::MouseButtonReleased)
@@ -534,7 +538,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 
 		for (int i = 0; i < m_placementOptions.size(); i++)
 		{
-			if (m_placementOptions.at(i).getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+			if (m_placementOptions.at(i).getButtonSprite().getGlobalBounds().contains(pixelPos))
 			{
 				m_placementOptions.at(i).highlighted();
 				if (t_event.type == sf::Event::MouseButtonReleased)
@@ -561,6 +565,28 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 						{
 							m_objectPlacement->clearObjects();
 						}
+						else if (m_placementOptionsLabels.at(i)->getTextString() == "Zoom Out")
+						{
+							if (m_zoomRate < 1.5f)
+							{
+								m_gameView = sf::View(sf::FloatRect(t_window.getView().getCenter().x, t_window.getView().getCenter().y, 1920, 1080));
+								m_zoomRate = m_zoomRate + 0.1f;
+								m_gameView.zoom(m_zoomRate);
+								t_window.setView(m_gameView);
+							}
+						}
+						else if (m_placementOptionsLabels.at(i)->getTextString() == "Zoom In")
+						{
+							if (m_zoomRate > 0.5f)
+							{
+								m_gameView = sf::View(sf::FloatRect(t_window.getView().getCenter().x, t_window.getView().getCenter().y, 1920, 1080));
+								m_zoomRate = m_zoomRate - 0.1f;
+								m_gameView.zoom(m_zoomRate);
+								m_gameView = sf::View(sf::FloatRect(t_window.getView().getCenter().x, t_window.getView().getCenter().y, 1920, 1080));
+								t_window.setView(m_gameView);
+							}
+						}
+
 					}
 				}
 			}
@@ -570,13 +596,18 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 			}
 		
 	}
+		std::cout << "zoom Rate Ui : " << m_zoomRate << std::endl;
 }
 
 void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow & t_window)
 {
+	int rowIndex = 0;
+	int colIndex = 0;
+	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
+
 	for (int i = 0; i < m_testingButtons.size(); i++)
 	{
-		if (m_testingButtons.at(i).getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+		if (m_testingButtons.at(i).getButtonSprite().getGlobalBounds().contains(pixelPos))
 		{
 			m_testingButtons.at(i).highlighted();
 			if (t_event.type == sf::Event::MouseButtonReleased)
@@ -600,6 +631,7 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Save Room")
 					{
 						// save room here;
+						m_gameState->setState(State::SAVING);
 					}
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Start Over")
 					{
@@ -616,30 +648,17 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 	}
 }
 
-void UiBuildMode::setUpDialogueButtons(sf::Font& t_arialFont)
-{
-	for (int i = 0; i < 2; i++)
-	{
-		m_dialogueButtons.push_back(Button());
-		m_dialogueButtons.at(i).setButtonPosition(sf::Vector2f{ 700.0f + (i * 500.0f), 830.0f });
-		m_dialogueButtons.at(i).resize(1.0f, 0.5f);
 
-		m_dialogueLabels.push_back(new Label(t_arialFont));
-		m_dialogueLabels.at(i)->setTextColor(sf::Color::White);
-		m_dialogueLabels.at(i)->setTextOutlineColor(sf::Color::Black);
-		//m_labels.at(i)->setTextSize(11.0f);
-		m_dialogueLabels.at(i)->setTextOutlineThickness(2.0f);
-		m_dialogueLabels.at(i)->setTextPosition(m_dialogueButtons.at(i).getButtonPosition());
-	}
-	m_dialogueLabels.at(0)->setText("Exit");
-	m_dialogueLabels.at(1)->setText("Save");
-}
 
 void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons)
 {
+	int rowIndex = 0;
+	int colIndex = 0;
+	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
+
 	for (int i = 0; i < m_prevNextbuttons.size(); ++i)
 	{
-		if (m_prevNextbuttons.at(i)->getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
+		if (m_prevNextbuttons.at(i)->getButtonSprite().getGlobalBounds().contains(pixelPos))
 		{
 			m_prevNextbuttons.at(i)->highlighted();
 			if (t_event.type == sf::Event::MouseButtonReleased)
@@ -695,6 +714,17 @@ void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, i
 	}
 }
 
+void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, float zoom)
+{
+	const sf::Vector2f beforeZoom{ window.mapPixelToCoords(pixel) };
+
+	m_gameView.zoom(zoom);
+	window.setView(m_gameView);
+	const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
+	const sf::Vector2f offset{ beforeZoom - afterZoom };
+	m_gameView.move(offset);
+	window.setView(m_gameView);
+}
 
 void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
@@ -706,6 +736,17 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	}
 	else if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 	{
+		if (t_event.type == sf::Event::MouseWheelScrolled)
+		{
+			if (t_event.mouseWheelScroll.delta > 0)
+			{
+				zoomViewAtPoint({ t_event.mouseWheelScroll.x, t_event.mouseWheelScroll.y }, t_window, (1.f / m_zoomRate));
+			}
+			else if (t_event.mouseWheelScroll.delta < 0)
+			{
+				zoomViewAtPoint({ t_event.mouseWheelScroll.x, t_event.mouseWheelScroll.y }, t_window, m_zoomRate);
+			}
+		}
 		processDialogueButtons(t_event, t_window);
 		if (m_currentTab == TabState::TAB_TERRAIN)
 		{
@@ -759,6 +800,7 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 	}
 	if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 	{
+
 		t_window->draw(m_currentRowText);
 		t_window->draw(m_gridOnOffText);
 		t_window->draw(m_collidersOnOffText);
@@ -944,11 +986,7 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 
 		// temp remove later
 
-		for (int i = 0; i < m_dialogueButtons.size(); ++i)
-		{
-			m_dialogueButtons.at(i).render(t_window);
-			m_dialogueLabels.at(i)->render(t_window);
-		}
+
 
 		// -----------------------------------------------
 

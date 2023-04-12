@@ -8,6 +8,8 @@
 
 class Terrain : public Object
 {
+private:
+	int64_t m_uuid;
 
 public:
 	Terrain();
@@ -21,6 +23,6 @@ public:
 	void setUpBounds();
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
-
+	int64_t getUUID() override { return m_uuid; }
 };
 #endif // !TERRAIN_HPP

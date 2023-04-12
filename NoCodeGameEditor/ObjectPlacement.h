@@ -62,8 +62,8 @@ void deleteObject(std::vector<T*>& t_objects, Grid* t_grid, Object* t_currentlyS
 			if ((*iter)->getBounds()->getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
 			{
 				// resets the right tile even if the object was moved
-				t_grid->m_vectGrid.at((*iter)->getRow()).at((*iter)->getColumn())->m_hasObject = false;
-				t_grid->m_vectGrid.at((*iter)->getRow()).at((*iter)->getColumn())->m_objectType = "";
+				t_grid->m_vectGrid.at((*iter)->getRow()).at((*iter)->getColumn()).m_hasObject = false;
+				t_grid->m_vectGrid.at((*iter)->getRow()).at((*iter)->getColumn()).m_objectType = "";
 				iter = t_objects.erase(iter);
 			}
 			else
@@ -121,6 +121,7 @@ public:
 	std::vector <Object*> m_walls;
 	std::vector <Object*> m_items;
 	std::vector <Object*> m_decorations;
+
 	Object* m_currentlySelected{nullptr};
 	GameState* m_gameState;
 

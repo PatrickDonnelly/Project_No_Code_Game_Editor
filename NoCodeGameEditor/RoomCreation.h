@@ -18,6 +18,7 @@
 #include "Item.h"
 #include "Decoration.h"
 #include "Grid.h"
+#include "Globals.h"
 
 class RoomCreation
 {
@@ -44,7 +45,7 @@ public:
 
 	void CheckValidityOfWalls(int t_x, int t_y);
 	int counter = 0;
-	std::queue<Tile*> m_tileQueue{};
+	std::queue<Tile> m_tileQueue{};
 	RoomCreation();
 	RoomCreation(GameState* t_gameState, Grid* t_grid);
 	~RoomCreation();

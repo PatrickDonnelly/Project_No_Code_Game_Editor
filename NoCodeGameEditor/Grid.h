@@ -31,16 +31,20 @@ public:
 
 	GameState* m_gameState;
 
-
-
+	void clear();
+	void newGrid();
+	void setGridSize(int t_gridSize) { m_vectGridSize = t_gridSize; }
 
 
 	bool m_playerSet = false;
 
-
-
-	int m_vectGridSize = 5;
-	std::vector<std::vector<Tile*>> m_vectGrid;
+	//int rows = 160;
+	//int cols = 160;
+	//std::vector<Tile> m_tiles = std::vector<Tile>(10);
+	//std::vector<std::vector<Tile>> m_vectGrid = std::vector<std::vector<Tile>>(10, std::vector<Tile>(10));
+	//160
+	int m_vectGridSize = 100;
+	std::vector<std::vector<Tile>> m_vectGrid;
 	sf::Font m_textFont;
 	void setUpFont();
 	void regenerateGrid();

@@ -5,6 +5,12 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+struct ColliderData {
+	int m_width;
+	int m_height;
+	sf::Vector2f m_position;
+};
+
 class Colliders
 {
 	public:

@@ -144,12 +144,15 @@
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="InputField.h" />
     <ClInclude Include="Inspector.h" />
     <ClInclude Include="InspectorOptions.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Label.h" />
+    <ClInclude Include="LevelList.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectPlacement.h" />
@@ -162,6 +165,7 @@
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="UiBuildMode.h" />
+    <ClInclude Include="UUID.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
@@ -178,13 +182,16 @@
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="InputField.cpp" />
     <ClCompile Include="Inspector.cpp" />
     <ClCompile Include="InspectorOptions.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Label.cpp" />
+    <ClCompile Include="LevelList.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectPlacement.cpp" />
@@ -197,8 +204,12 @@
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="UiBuildMode.cpp" />
+    <ClCompile Include="UUID.cpp" />
     <ClCompile Include="Wall.cpp" />
     <ClCompile Include="Weapon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="output.yaml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
