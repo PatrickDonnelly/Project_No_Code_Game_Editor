@@ -1,5 +1,6 @@
-#ifndef TEXTEDITOR_HPP
-#define TEXTEDITOR_HPP
+#pragma once
+#ifndef SAVEGAME_HPP
+#define SAVEGAME_HPP
 #include <SFML/Graphics.hpp>
 #include <sstream>
 #include "Button.h"
@@ -13,21 +14,18 @@
 #include "CheckBox.h"
 #include "DialogueBox.h"
 
+
 namespace fs = std::filesystem;
 
-#define ENTER_KEY 13
-#define ESCAPE_KEY 27
-#define BACKSPACE_KEY 8
-
-class TextEditor
+class SaveGame
 {
 public:
 
-	TextEditor();
-	TextEditor(sf::Font& t_font, GameState* t_currentGameState);
-	~TextEditor();
+	SaveGame();
+	SaveGame(GameState* t_currentGameState);
+	~SaveGame();
 
-	void setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path);
+	/*void setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path);
 	std::vector<std::vector<Button*>> m_selectableDialogueButtons;
 	std::vector<std::vector<Label*>> m_selectableDialogueLabels;
 	std::vector<std::string> m_DialogueOptions;
@@ -36,25 +34,28 @@ public:
 	int m_currentRowIndex = 0;
 	std::vector<Button*> m_prevNextbuttons;
 	std::string fileName = "";
-	void initInputFields();
+
 	void setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons);
 
-	void render(sf::RenderWindow* t_window);
-	bool isEnabled();
-	void setEnabled(bool t_onOff) { m_enabled = t_onOff; }
-	void processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window, Label* t_label);
-	InputField* GetTitle() { return m_title; }
-	InputField* GetMainBody() { return m_mainBody; }
 
+	bool isEnabled();
+
+	void processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window, Label* t_label);
+*/
+	void initInputFields();
+	void render(sf::RenderWindow* t_window);
+	std::vector<Label*> m_labels;
+	std::vector<Button*> m_saveAndCancelButtons;
+	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);
+	void setEnabled(bool t_onOff) { m_enabled = t_onOff; }
+	Label* m_titleText;
+	Label* m_subTitleText;
 
 private:
 
-	DialogueBox* m_dialogueBox;
-	CheckBox* m_previewDialogueCheckBox;
-
-	InputField* m_mainBody;
-	InputField* m_title;
-
+	InputField* m_mainTitle;
+	InputField* m_subTitle;
+	FontManager m_fontManager;
 	bool saving = false;
 	void loadDialogue();
 	void refreshDialogue();
@@ -79,11 +80,12 @@ private:
 
 	void inputTextBox(int t_character);
 	void deletePreviousCharacter();
-	std::ostringstream m_text;
+	//std::ostringstream m_text;
 	sf::Text m_textBox;
 	sf::Font m_font;
 	void initText();
 	int m_characterLimit = 500;
+
 };
-#endif  // !TEXTEDITOR_HPP
+#endif // !SAVEGAME_HPP
 

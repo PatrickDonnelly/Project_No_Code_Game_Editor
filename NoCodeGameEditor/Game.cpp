@@ -10,7 +10,7 @@ Game::Game() :
 	m_gameState = new GameState(State::ROOM_PLACE_OBJECTS);
 	m_mainMenu = MainMenu(m_gameState);
 	m_levelList = LevelList(m_gameState);
-
+	m_saveGameScreen = SaveGame(m_gameState);
 	setUpFontAndText();
 	m_grid = new Grid(m_gameState, m_textureManager);
 	m_roomCreation = new RoomCreation(m_gameState, m_grid);
@@ -20,6 +20,7 @@ Game::Game() :
 	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState, m_roomCreation, m_objectPlacement);
 	m_dialogueBox = new DialogueBox(m_ArialFont);
 	m_textEditor = new TextEditor(m_ArialFont, m_gameState);
+
 	//m_inspector = new Inspector(m_objectPlacement);
 
 }
@@ -79,6 +80,10 @@ void Game::processEvents()
 		if (m_gameState->getState() == State::GAME_LIST || m_gameState->getState() == State::ROOM_BUILD)
 		{
 			m_levelList.processEvents(newEvent, m_window);
+		}
+		if (m_gameState->getState() == State::SAVING_SCREEN)
+		{
+			m_saveGameScreen.processEvents(newEvent, m_window);
 		}
 		if (m_gameState->getState() != State::PAUSE_GAME)
 		{
@@ -166,8 +171,22 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+	if (m_gameState->getState() == State::SAVING_SCREEN)
+	{
+		m_saveGameScreen.setEnabled(true);
+	}
 	if (m_gameState->getState() == State::SAVING)
 	{
+		// Prompt user to enter their games name - text editor, save button cancle button
+
+		// pop up if name taken - options overwrite, cancel
+
+		// if name not taken create folder directory with that name
+
+		// create a button with that projects name
+
+		// load data from that project if the button is clicked
+
 		std::cout << "Saving Game" << std::endl;
 
 		// creating an ifstream object named file
@@ -802,6 +821,15 @@ void Game::render()
 	else if (m_gameState->getState() == State::ROOM_BUILD)
 	{
 		m_levelList.render(&m_window);
+	}
+	else if (m_gameState->getState() == State::SAVING_SCREEN)
+	{
+		m_window.setView(m_gameView);
+		m_grid->render(&m_window);
+		m_objectPlacement->render(&m_window);
+		m_window.setView(m_uiView);
+		m_saveGameScreen.render(&m_window);
+		m_window.setView(m_gameView);
 	}
 
 	m_window.display();

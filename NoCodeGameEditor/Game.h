@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GAME_HPP
 #define GAME_HPP
 
@@ -5,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include <array>
 #include "Tile.h"
+#include "SaveGame.h"
 #include "Grid.h"
 #include "Button.h"
 #include "Label.h"
@@ -26,6 +28,7 @@
 #include "yaml-cpp\yaml.h"
 #include <iostream>
 #include <fstream>
+
 #include "Globals.h"
 
 
@@ -53,6 +56,7 @@ private:
 	TextureManager* m_textureManager{ nullptr };
 	FontManager m_fontManager;
 	LevelList m_levelList;
+	SaveGame m_saveGameScreen;
 	//Inspector* m_inspector{ nullptr };
 	void setUpFontAndText();
 	void processEvents();

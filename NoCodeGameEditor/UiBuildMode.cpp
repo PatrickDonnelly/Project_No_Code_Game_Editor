@@ -629,7 +629,7 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Save Room")
 					{
 						// save room here;
-						m_gameState->setState(State::SAVING);
+						m_gameState->setState(State::SAVING_SCREEN);
 					}
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Start Over")
 					{

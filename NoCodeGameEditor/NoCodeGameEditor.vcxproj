@@ -160,6 +160,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PopUp.h" />
     <ClInclude Include="RoomCreation.h" />
+    <ClInclude Include="SaveGame.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="TextEditor.h" />
     <ClInclude Include="TextureManager.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PopUp.cpp" />
     <ClCompile Include="RoomCreation.cpp" />
+    <ClCompile Include="SaveGame.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="TextEditor.cpp" />
     <ClCompile Include="TextureManager.cpp" />

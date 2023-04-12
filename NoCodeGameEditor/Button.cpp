@@ -90,6 +90,10 @@ sf::Vector2f Button::getButtonPosition()
 void Button::setButtonPosition(sf::Vector2f t_position)
 {
 	m_buttonSprite.setPosition(t_position);
+	if (m_hasLabel == true)
+	{
+		m_label->setTextPosition(t_position);
+	}
 }
 
 void Button::render(sf::RenderWindow* t_window)
