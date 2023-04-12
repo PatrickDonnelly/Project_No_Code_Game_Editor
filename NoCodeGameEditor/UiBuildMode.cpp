@@ -397,8 +397,6 @@ void UiBuildMode::deselectButtons(std::vector<std::vector<Button*>>& t_objectBut
 
 void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWindow& t_window, std::string& t_path, std::vector<std::vector<Label*>>& t_labels, std::vector<std::vector<Button*>>& t_objectButtons)
 {
-
-
 	std::vector<std::vector<Button>>::iterator row;
 	std::vector<Button>::iterator col;
 	int rowIndex = 0;
@@ -596,7 +594,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 			}
 		
 	}
-		std::cout << "zoom Rate Ui : " << m_zoomRate << std::endl;
+
 }
 
 void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow & t_window)
