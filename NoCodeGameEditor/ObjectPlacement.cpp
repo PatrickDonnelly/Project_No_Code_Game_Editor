@@ -55,9 +55,77 @@ bool ObjectPlacement::checkForDoubleClick(sf::Clock& t_clock, sf::Time& t_double
 
 void ObjectPlacement::placeRemove(sf::Event t_event, sf::RenderWindow& m_window)
 {
-	if (t_event.type == sf::Event::KeyReleased) 
+	bool initialPress = false;
+	int startRow = 0;
+	int endRow = 0;
+	int startCol = 0;
+	int endCol = 0;
+	// get position of initial click, get position of end click
+	if (t_event.type == sf::Event::MouseButtonPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
 	{
+		if (!initialPress)
+		{
+			initialPress = true;
+			sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
+			sf::Vector2f startPos = m_window.mapPixelToCoords(pixelPos);
+			startRow = startPos.x / 32;
+			startCol = startPos.y / 32;
+		}
+	}
+	else if (t_event.type == sf::Event::MouseButtonReleased && initialPress == true)
+	{
+		initialPress = false;
+		sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
+		sf::Vector2f endPos = m_window.mapPixelToCoords(pixelPos);
+		endRow = endPos.x / 32;
+		endCol = endPos.y / 32;
 
+		if (endRow < startRow)
+		{
+			int temp = startRow;
+			startRow = endRow;
+			endRow = temp;
+		}
+		if (endCol < startCol)
+		{
+			int temp = startCol;
+			startCol = endCol;
+			endCol = temp;
+		}
+		for (startRow <= endRow; startRow++;)
+		{
+			for (startCol <= endCol; startCol++;)
+			{
+				if (m_tempTag.find("Enemies") != std::string::npos)
+				{
+					m_enemies.push_back(new Enemy(m_tempTag, m_selectedObject, m_textureManager));
+					setObject(startRow, startCol, "Enemy", m_enemies);
+				}
+				else if (m_tempTag.find("Item") != std::string::npos)
+				{
+					m_items.push_back(new Item(m_tempTag, m_selectedObject, m_textureManager));
+					setObject(startRow, startCol, "Item", m_enemies);
+				}
+				else if (m_tempTag.find("Decoration") != std::string::npos)
+				{
+					m_decorations.push_back(new Decoration(m_tempTag, m_selectedObject, m_textureManager));
+					setObject(startRow, startCol, "Decoration", m_enemies);
+				}
+				else if (m_tempTag.find("Wall") != std::string::npos)
+				{
+					m_walls.push_back(new Wall(m_tempTag, m_selectedObject, m_textureManager));
+					setObject(startRow, startCol, "Wall", m_enemies);
+				}
+				else if (m_tempTag.find("Terrain") != std::string::npos)
+				{
+					m_grid->m_vectGrid.at(startRow).at(startCol).setFloorSprite(m_selectedObject);
+					m_grid->m_vectGrid.at(startRow).at(startCol).cellType = "Terrain";
+				}
+			}
+		}
+	}
+	else if (t_event.type == sf::Event::KeyReleased) 
+	{
 		if (t_event.key.code == sf::Keyboard::Space)
 		{
 			if (m_currentlySelected != nullptr)
@@ -320,7 +388,6 @@ void ObjectPlacement::setSelectedGridObject(std::vector<Object*>& t_objects, sf:
 		{
 			m_currentlySelected = t_objects.at(i);
 			m_currentlySelected->setSelected(true);
-
 		}
 	}
 }
@@ -337,3 +404,14 @@ Object* ObjectPlacement::getSelectedGridObject()
 	}
 }
 
+
+void ObjectPlacement::setObject(int t_row, int t_col, std::string t_label, std::vector<Object*> t_objects)
+{
+	m_grid->m_vectGrid.at(t_row).at(t_col).m_hasObject = true;
+	m_grid->m_vectGrid.at(t_row).at(t_col).m_objectType = t_label;
+	t_objects.at(t_objects.size() - 1)->getBounds()->setPosition(m_grid->m_vectGrid.at(t_row).at(t_col).getPos());
+	t_objects.at(t_objects.size() - 1)->getSprite()->setPosition(t_objects.at(t_objects.size() - 1)->getBounds()->getPosition());
+	t_objects.at(t_objects.size() - 1)->setRowColumn(t_row, t_col);
+}
+
+			

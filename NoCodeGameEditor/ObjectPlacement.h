@@ -110,7 +110,7 @@ private:
 	void setSelectedGridObject(std::vector<Object*>& t_enemies, sf::RenderWindow& m_window);
 	sf::Vector2i m_originalPosition{ 0,0 };
 	std::string m_storedObjectType = "";
-
+	void setObject(int t_row, int t_col, std::string t_label, std::vector<Object*> t_objects);
 public:
 	Object* getSelectedGridObject();
 	sf::Clock m_clock;
