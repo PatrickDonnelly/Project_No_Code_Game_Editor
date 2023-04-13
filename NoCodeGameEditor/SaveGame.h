@@ -10,9 +10,11 @@
 #include "InputField.h"
 #include <fstream>
 #include <iostream>
+#include <ostream>
 #include <filesystem>
 #include "CheckBox.h"
 #include "DialogueBox.h"
+#include "ColourPicker.h"
 
 
 namespace fs = std::filesystem;
@@ -25,23 +27,6 @@ public:
 	SaveGame(GameState* t_currentGameState);
 	~SaveGame();
 
-	/*void setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path);
-	std::vector<std::vector<Button*>> m_selectableDialogueButtons;
-	std::vector<std::vector<Label*>> m_selectableDialogueLabels;
-	std::vector<std::string> m_DialogueOptions;
-	std::string m_pathDialogue = "DialogueBoxes/";
-	int m_rowsDialogue = 0;
-	int m_currentRowIndex = 0;
-	std::vector<Button*> m_prevNextbuttons;
-	std::string fileName = "";
-
-	void setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons);
-
-
-	bool isEnabled();
-
-	void processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window, Label* t_label);
-*/
 	void initInputFields();
 	void render(sf::RenderWindow* t_window);
 	std::vector<Label*> m_labels;
@@ -51,22 +36,51 @@ public:
 	Label* m_titleText;
 	Label* m_subTitleText;
 
+	std::string getTitle(bool t_isMainTitle);
+	bool getItalics(bool t_isMainTitle);
+	bool getUnderlined(bool t_isMainTitle);
+	bool getBold(bool t_isMainTitle);
+	int getColorRedValue(bool t_isMainTitle);
+	int getColorGreenValue(bool t_isMainTitle);
+	int getColorBlueValue(bool t_isMainTitle);
+
+	void setMainTitle(std::string t_string) { m_titleText->getText().setString(t_string); }
+	void setMainTitleInputField(std::string t_string) { m_mainTitle->SetString(t_string); }
+	void setMainItalics(bool t_isItalics) { m_mainTitleOptions.at(0).setEnabled(t_isItalics); }
+	void setMainUnderlined(bool t_isUnderlined) { m_mainTitleOptions.at(1).setEnabled(t_isUnderlined); }
+	void setMainBold(bool t_isBold) { m_mainTitleOptions.at(2).setEnabled(t_isBold); }
+	void setMainRedValue(int t_redValue) {m_mainTitleColor.r = t_redValue; }
+	void setMainGreenValue(bool t_greenValue) { m_mainTitleColor.r = t_greenValue; }
+	void setMainBlueValue(bool t_blueValue) { m_mainTitleColor.r = t_blueValue; }
+
+	void setSubTitle(std::string t_string) { m_subTitleText->getText().setString(t_string); }
+	void setSubTitleInputField(std::string t_string) { m_subTitle->SetString(t_string); }
+	void setSubItalics(bool t_isItalics) { m_subTitleOptions.at(0).setEnabled(t_isItalics); }
+	void setSubUnderlined(bool t_isUnderlined) { m_subTitleOptions.at(1).setEnabled(t_isUnderlined); }
+	void setSubBold(bool t_isBold) { m_subTitleOptions.at(2).setEnabled(t_isBold); }
+	void setSubRedValue(int t_redValue) { m_subTitleColor.r = t_redValue; }
+	void setSubGreenValue(bool t_greenValue) { m_subTitleColor.r = t_greenValue; }
+	void setSubBlueValue(bool t_blueValue) { m_subTitleColor.r = t_blueValue; }
+
 private:
+	sf::Color m_mainTitleColor;
+	sf::Color m_subTitleColor;
+	ColourPicker m_colourPicker;
+	bool m_choosingColour = false;
+	std::vector<CheckBox> m_subTitleOptions;
+	std::vector<CheckBox> m_mainTitleOptions;
+	void setUpOptions(std::vector<CheckBox>& t_options, float t_offset);
 
 	InputField* m_mainTitle;
 	InputField* m_subTitle;
 	FontManager m_fontManager;
 	bool saving = false;
-	void loadDialogue();
-	void refreshDialogue();
-	void clearDialogue();
 
 	PopUp m_popUpBox;
-	std::vector<Button*> m_popUpButtons;
-	std::vector<Label*> m_popUpButtonLabels;
 
-	void setUpTextEditorButtons(sf::Font& t_arialFont);
-	void setPopUpButtons(sf::Font& t_arialFont);
+
+
+
 
 	std::vector<Button*> m_textEditorButtons;
 	std::vector<Label*> m_textEditorLabels;
@@ -78,13 +92,10 @@ private:
 	sf::RectangleShape m_backGround;
 
 
-	void inputTextBox(int t_character);
-	void deletePreviousCharacter();
-	//std::ostringstream m_text;
 	sf::Text m_textBox;
 	sf::Font m_font;
-	void initText();
-	int m_characterLimit = 500;
+
+	int m_characterLimit = 24;
 
 };
 #endif // !SAVEGAME_HPP

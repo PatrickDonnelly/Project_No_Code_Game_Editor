@@ -190,12 +190,12 @@ void Game::update(sf::Time t_deltaTime)
 		std::cout << "Saving Game" << std::endl;
 
 		// creating an ifstream object named file
-		std::ifstream file;
+		//std::ifstream file;
 
 		// opening the file
-		file.open("Dialogue/testSave.csv");
-		if (file)
-		{
+		//file.open("Dialogue/testSave.csv");
+		/*if (file)
+		{*/
 			//saving = true;
 			//std::cout << "File exists" << std::endl;
 			//m_popUpBox.setPopUpEnabled();
@@ -229,7 +229,7 @@ void Game::update(sf::Time t_deltaTime)
 			//						m_popUpBox.getPopUpBoxPosition().y + (m_popUpBox.getPopUpBoxBounds().y) - (m_popUpButtons.at(i)->getButtonSprite().getGlobalBounds().height) });
 			//	m_popUpButtonLabels.at(i)->setTextPosition(m_popUpButtons.at(i)->getButtonPosition());
 			//}
-		}
+		//}
 
 		YAML::Emitter out;
 		out << YAML::BeginDoc;
@@ -336,11 +336,42 @@ void Game::update(sf::Time t_deltaTime)
 			}
 		}
 		out << YAML::EndSeq;
+		out << YAML::Key << "GameName";
+		out << YAML::BeginSeq;
+	
+
+				out << YAML::BeginMap;
+				out << YAML::Key << "Name" << YAML::Value << m_saveGameScreen.getTitle(true);
+				out << YAML::Key << "Italics" << YAML::Value << m_saveGameScreen.getItalics(true);
+				out << YAML::Key << "Underlined" << YAML::Value << m_saveGameScreen.getUnderlined(true);
+				out << YAML::Key << "Bold" << YAML::Value << m_saveGameScreen.getBold(true);
+				out << YAML::Key << "Color Red Value" << YAML::Value << m_saveGameScreen.getColorRedValue(true);
+				out << YAML::Key << "Color Green Value" << YAML::Value << m_saveGameScreen.getColorGreenValue(true);
+				out << YAML::Key << "Color Blue Value" << YAML::Value << m_saveGameScreen.getColorBlueValue(true);
+
+				out << YAML::EndMap;
+				out << YAML::EndSeq;
+
+				out << YAML::Key << "GameSubTitle";
+				out << YAML::BeginSeq;
+				out << YAML::BeginMap;
+				out << YAML::Key << "Name" << YAML::Value << m_saveGameScreen.getTitle(false);
+				out << YAML::Key << "Italics" << YAML::Value << m_saveGameScreen.getItalics(false);
+				out << YAML::Key << "Underlined" << YAML::Value << m_saveGameScreen.getUnderlined(false);
+				out << YAML::Key << "Bold" << YAML::Value << m_saveGameScreen.getBold(false);
+				out << YAML::Key << "Color Red Value" << YAML::Value << m_saveGameScreen.getColorRedValue(false);
+				out << YAML::Key << "Color Green Value" << YAML::Value << m_saveGameScreen.getColorGreenValue(false);
+				out << YAML::Key << "Color Blue Value" << YAML::Value << m_saveGameScreen.getColorBlueValue(false);
+				out << YAML::EndMap;
+		
+		out << YAML::EndSeq;
+
+
 		out << YAML::EndMap;
 		out << YAML::EndDoc;
 		// player save
 
-		std::ofstream fout("output.yaml");
+		std::ofstream fout("output2.yaml");
 		fout << out.c_str();
 		fout.close();
 
@@ -469,6 +500,27 @@ void Game::update(sf::Time t_deltaTime)
 
 			std::cout << node["Xpos"].as<float>() << std::endl;
 		}
+
+		//for (const auto& node : output["GameName"]) {
+		//	m_walls.push_back(new Wall(node["Texture"].as<std::string>()));
+		//	m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->setRowColumn(
+		//		node["Row"].as<int>(), node["Column"].as<int>());
+		//	m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->setPosition(
+		//		node["Xpos"].as<float>(), node["Ypos"].as<float>()
+		//	);
+
+		//	m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getSprite()->setPosition(
+		//		m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition());
+		//	//cellType.push_back(node["Cell Type"].as<std::string>());
+		//	//sf::Vector2f name = sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>());
+		//	//break;
+		//	//int r = m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition().x / 32;
+		//	//int c = m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition().y / 32;
+
+		//	//m_grid->m_vectGrid.at(r).at(c).cellType = node["CellType"].as<std::string>();
+
+		//	std::cout << node["Xpos"].as<float>() << std::endl;
+		//}
 
 		m_gameState->setState(State::ROOM_PLACE_OBJECTS);
 	}

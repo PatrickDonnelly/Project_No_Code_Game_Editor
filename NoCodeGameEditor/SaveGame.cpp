@@ -13,7 +13,7 @@ SaveGame::SaveGame(GameState* t_currentGameState)
 	m_mainTitle = new InputField(m_font, false, 20);
 	m_subTitle = new InputField(m_font, false, 24);
 	std::string path = "Games/";
-	m_popUpBox = PopUp(&m_font);
+	m_popUpBox = PopUp(2);
 	m_gameState = t_currentGameState;
 	//m_font = t_font;
 
@@ -32,8 +32,11 @@ SaveGame::SaveGame(GameState* t_currentGameState)
 	m_subTitleText->setTextSize(30.0f);
 	m_titleText->setText(" ");
 	m_subTitleText->setText(" ");
+	m_mainTitleColor = sf::Color::White;
+	m_subTitleColor = sf::Color::White;
 
-	setPopUpButtons(m_font);
+	setUpOptions(m_mainTitleOptions, 0);
+	setUpOptions(m_subTitleOptions, 150.0f);
 
 	//initText();
 	//setUpTextEditorButtons(t_font);
@@ -106,75 +109,188 @@ void SaveGame::initInputFields()
 
 void SaveGame::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
-	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
-	for (int i = 0; i < m_saveAndCancelButtons.size(); i++)
+	if (!m_popUpBox.isEnabled())
 	{
-		if (m_saveAndCancelButtons.at(i)->getButtonSprite().getGlobalBounds().contains(pixelPos))
+		for (int i = 0; i < m_mainTitleOptions.size(); ++i)
 		{
-			m_saveAndCancelButtons.at(i)->highlighted();
-			if (t_event.type == sf::Event::MouseButtonReleased)
+
+			m_mainTitleOptions.at(i).isCheckBoxClicked(t_event, &t_window);
+			m_subTitleOptions.at(i).isCheckBoxClicked(t_event, &t_window);
+
+
+
+			if (m_mainTitleOptions.at(i).getTag() == "Colour")
 			{
-				if (t_event.mouseButton.button == sf::Mouse::Left)
+				if (m_mainTitleOptions.at(i).isEnabled())
 				{
-					if (m_saveAndCancelButtons.at(i)->getButtonLabel()->getTextString() == "Save")
+					// choose colour
+
+					m_colourPicker.setPopUpEnabled(true);
+					if (m_colourPicker.processEvents(t_event, t_window))
 					{
-						//m_gameState->setState(State::SAVING);
-						//if (saving)
-						//{
+						m_mainTitleOptions.at(i).setEnabled(false);
 
-							//saving = false;
+					}
+					m_mainTitleColor = m_colourPicker.getColor();
+					m_titleText->setTextColor(m_mainTitleColor);
+				}
 
-							std::string projectDirectory = fs::current_path().string() + "\\Games";
-							std::cout << projectDirectory << std::endl;
-							std::string folderName = m_mainTitle->GetText();
-							std::string folderPath = projectDirectory + "\\" + folderName;
+			}
+			if (m_subTitleOptions.at(i).getTag() == "Colour")
+			{
+				if (m_subTitleOptions.at(i).isEnabled())
+				{
+					// choose colour
+	
+					m_colourPicker.setPopUpEnabled(true);
+					if (m_colourPicker.processEvents(t_event, t_window))
+					{
+						m_subTitleOptions.at(i).setEnabled(false);
 
-							if (!fs::exists(folderPath))
+					}
+					m_subTitleColor = m_colourPicker.getColor();
+					m_subTitleText->setTextColor(m_subTitleColor);
+				}
+			}
+
+
+				if (m_mainTitleOptions.at(i).getTag() == "Italics")
+				{
+					if (m_mainTitleOptions.at(i).isEnabled())
+					{
+						m_titleText->setItalics(true);
+					}
+					else
+					{
+						m_titleText->setItalics(false);
+					}
+				}
+
+				else if (m_mainTitleOptions.at(i).getTag() == "Underline")
+				{
+					if (m_mainTitleOptions.at(i).isEnabled())
+					{
+						m_titleText->setUnderline(true);
+					}
+					else
+					{
+						m_titleText->setUnderline(false);
+					}
+				}
+
+				else if (m_mainTitleOptions.at(i).getTag() == "Bold")
+				{
+					if (m_mainTitleOptions.at(i).isEnabled())
+					{
+						m_titleText->setBold(true);
+					}
+					else
+					{
+						m_titleText->setBold(false);
+					}
+				}
+
+				m_titleText->setTextStyle();
+
+
+
+
+
+
+
+				if (m_subTitleOptions.at(i).getTag() == "Italics")
+				{
+					if (m_subTitleOptions.at(i).isEnabled())
+					{
+						m_subTitleText->setItalics(true);
+					}
+					else
+					{
+						m_subTitleText->setItalics(false);
+					}
+				}
+
+				else if (m_subTitleOptions.at(i).getTag() == "Underline")
+				{
+					if (m_subTitleOptions.at(i).isEnabled())
+					{
+						m_subTitleText->setUnderline(true);
+					}
+					else
+					{
+						m_subTitleText->setUnderline(false);
+					}
+				}
+
+				else if (m_subTitleOptions.at(i).getTag() == "Bold")
+				{
+					if (m_subTitleOptions.at(i).isEnabled())
+					{
+						m_subTitleText->setBold(true);
+					}
+					else
+					{
+						m_subTitleText->setBold(false);
+					}
+				}
+
+				m_subTitleText->setTextStyle();
+			
+		
+		}
+		sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
+		for (int i = 0; i < m_saveAndCancelButtons.size(); i++)
+		{
+			if (m_saveAndCancelButtons.at(i)->getButtonSprite().getGlobalBounds().contains(pixelPos))
+			{
+				m_saveAndCancelButtons.at(i)->highlighted();
+				if (t_event.type == sf::Event::MouseButtonReleased)
+				{
+					if (t_event.mouseButton.button == sf::Mouse::Left)
+					{
+						if (m_saveAndCancelButtons.at(i)->getButtonLabel()->getTextString() == "Save")
+						{
+							m_gameState->setState(State::SAVING);
+							//if (saving)
+							//{
+							std::string temp = m_mainTitle->GetText();
+							temp.erase(std::remove_if(temp.begin(), temp.end(), [](char c) { return std::isspace(c); }), temp.end());
+							if (temp == "")
 							{
-								fs::create_directory(folderPath);
-								// save file name here
-								//saving = false;
-								std::ofstream out((folderPath +"/") + "mainTitle.txt");
-								out << m_mainTitle->GetText();
-								out.close();
-								std::ofstream out2((folderPath + "/") + "subTitle.txt");
-								out2 << m_subTitle->GetText();
-								out2.close();
-								//m_popUpBox.setPopUpEnabled();
+								m_popUpBox.setPopUpEnabled();
+								m_popUpBox.readInFile("emptyInput");
+								m_popUpBox.setPopUpButtons(1);
 							}
 							else
 							{
-								m_popUpBox.setPopUpEnabled();
-								unsigned lines = 0;
-								std::string line_content;
-								std::string lineContentAppended;
-								std::ifstream my_file("PopUpMessages/fileExists.txt");
 
-								while (std::getline(my_file, line_content)) {
-									lines++;
+								std::string projectDirectory = fs::current_path().string() + "\\Games";
+								std::cout << projectDirectory << std::endl;
+								std::string folderName = m_mainTitle->GetText();
+								std::string folderPath = projectDirectory + "\\" + folderName;
 
-
-									lineContentAppended.append(line_content);
-									lineContentAppended.append("\n");
-
-
-									//std::cout << "Line: " << lines << " content: " << line_content << std::endl;
-								}
-
-								my_file.close();
-
-								//m_popUpBox.setPopUpBoxText(lineContentAppended);
-
-								for (int i = 0; i < 2; i++)
+								if (!fs::exists(folderPath))
 								{
-
-									m_popUpButtons.at(i)->setButtonPosition(
-										sf::Vector2f{ m_popUpBox.getPopUpBoxPosition().x + (m_popUpBox.getPopUpBoxBounds().x / 2) + (i * 200) - 100,
-														m_popUpBox.getPopUpBoxPosition().y + (m_popUpBox.getPopUpBoxBounds().y) - (m_popUpButtons.at(i)->getButtonSprite().getGlobalBounds().height) });
-									m_popUpButtonLabels.at(i)->setTextPosition(m_popUpButtons.at(i)->getButtonPosition());
+									fs::create_directory(folderPath);
+									// save file name here
+									//saving = false;
+									std::ofstream out((folderPath + "/") + "mainTitle.txt");
+									out << m_mainTitle->GetText();
+									out.close();
+									std::ofstream out2((folderPath + "/") + "subTitle.txt");
+									out2 << m_subTitle->GetText();
+									out2.close();
+									m_popUpBox.setPopUpEnabled();
+									m_popUpBox.readInFile("saveSuccessful");
+									m_popUpBox.setPopUpButtons(1);
+								}
+								else
+								{
+									m_popUpBox.setPopUpEnabled();
+									m_popUpBox.readInFile("fileExists");
+									m_popUpBox.setPopUpButtons(2);
 								}
 							}
-
 							//std::ofstream out("Games/" + m_mainTitle->GetText() + ".txt");
 							//out << m_subTitle->GetText();
 							//out.close();
@@ -182,44 +298,44 @@ void SaveGame::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 						//}
 						//clearDialogue();
 						//refreshDialogue();
-					}
-					else if (m_saveAndCancelButtons.at(i)->getButtonLabel()->getTextString() == "Cancel")
-					{
-						m_enabled = false;
-						m_gameState->setState(State::ROOM_TEST);
+						}
+						else if (m_saveAndCancelButtons.at(i)->getButtonLabel()->getTextString() == "Cancel")
+						{
+							m_enabled = false;
+							m_gameState->setState(State::ROOM_TEST);
+						}
 					}
 				}
 			}
-		}
-		else
-		{
-			m_saveAndCancelButtons.at(i)->setButtonTexture();
-		}
-	}
-
-
-	if (m_mainTitle->GetInputField().getGlobalBounds().contains(pixelPos))
-	{
-		if (t_event.type == sf::Event::MouseButtonReleased)
-		{
-			if (t_event.mouseButton.button == sf::Mouse::Left)
+			else
 			{
-				m_mainTitle->SetSelected(true);
-				m_subTitle->SetSelected(false);
+				m_saveAndCancelButtons.at(i)->setButtonTexture();
 			}
 		}
-	}
-	if (m_subTitle->GetInputField().getGlobalBounds().contains(pixelPos))
-	{
-		if (t_event.type == sf::Event::MouseButtonReleased)
+
+
+		if (m_mainTitle->GetInputField().getGlobalBounds().contains(pixelPos))
 		{
-			if (t_event.mouseButton.button == sf::Mouse::Left)
+			if (t_event.type == sf::Event::MouseButtonReleased)
 			{
-				m_subTitle->SetSelected(true);
-				m_mainTitle->SetSelected(false);
+				if (t_event.mouseButton.button == sf::Mouse::Left)
+				{
+					m_mainTitle->SetSelected(true);
+					m_subTitle->SetSelected(false);
+				}
 			}
 		}
-	}
+		if (m_subTitle->GetInputField().getGlobalBounds().contains(pixelPos))
+		{
+			if (t_event.type == sf::Event::MouseButtonReleased)
+			{
+				if (t_event.mouseButton.button == sf::Mouse::Left)
+				{
+					m_subTitle->SetSelected(true);
+					m_mainTitle->SetSelected(false);
+				}
+			}
+		}
 
 
 		if (sf::Event::TextEntered == t_event.type)
@@ -235,29 +351,143 @@ void SaveGame::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 				m_titleText->setText(m_mainTitle->GetText());
 			}
 		}
-	
+	}
+	else
+	{
+		if (m_popUpBox.processEvents(t_event, t_window))
+		{
+			std::cout << "Saving" << std::endl;
+			
+			m_popUpBox.setPopUpEnabled();
+
+			std::string projectDirectory = fs::current_path().string() + "\\Games";
+			std::cout << projectDirectory << std::endl;
+			std::string folderName = m_mainTitle->GetText();
+			std::string folderPath = projectDirectory + "\\" + folderName;
+
+
+
+				fs::create_directory(folderPath);
+				// save file name here
+				//saving = false;
+				std::ofstream out((folderPath + "/") + "mainTitle.txt");
+				out << m_mainTitle->GetText();
+				out.close();
+				std::ofstream out2((folderPath + "/") + "subTitle.txt");
+				out2 << m_subTitle->GetText();
+				out2.close();
+
+
+			m_popUpBox.readInFile("saveSuccessful");
+			m_popUpBox.setPopUpButtons(1);
+		}
+	}
 
 }
 
-void SaveGame::setPopUpButtons(sf::Font& t_arialFont)
+std::string SaveGame::getTitle(bool t_isMainTitle)
 {
-	for (int i = 0; i < 2; i++)
+	if (t_isMainTitle)
 	{
-		m_popUpButtons.push_back(new Button());
-		m_popUpButtons.at(i)->setButtonPosition(
-			sf::Vector2f{ m_popUpBox.getPopUpBoxPosition().x + (m_popUpBox.getPopUpBoxBounds().x / 2),
-							m_popUpBox.getPopUpBoxPosition().y });
-		m_popUpButtons.at(i)->resize(.5f, 0.5f);
-
-		m_popUpButtonLabels.push_back(new Label(t_arialFont));
-		m_popUpButtonLabels.at(i)->setTextColor(sf::Color::White);
-		m_popUpButtonLabels.at(i)->setTextOutlineColor(sf::Color::Black);
-		//m_labels.at(i)->setTextSize(11.0f);
-		m_popUpButtonLabels.at(i)->setTextOutlineThickness(2.0f);
-		m_popUpButtonLabels.at(i)->setTextPosition(m_popUpButtons.at(i)->getButtonPosition());
+		return m_titleText->getTextString();
 	}
-	m_popUpButtonLabels.at(0)->setText("Cancel");
-	m_popUpButtonLabels.at(1)->setText("Continue");
+	return m_subTitleText->getTextString();
+}
+
+bool SaveGame::getItalics(bool t_isMainTitle)
+{
+	if (t_isMainTitle)
+	{
+		if (m_mainTitleOptions.at(0).isEnabled() == true)
+		{
+			return true;
+		}
+		return false;
+	}
+	if (m_subTitleOptions.at(0).isEnabled() == true)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool SaveGame::getUnderlined(bool t_isMainTitle)
+{
+	if (t_isMainTitle)
+	{
+		if (m_mainTitleOptions.at(1).isEnabled() == true)
+		{
+			return true;
+		}
+		return false;
+	}
+	if (m_subTitleOptions.at(1).isEnabled() == true)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool SaveGame::getBold(bool t_isMainTitle)
+{
+	if (t_isMainTitle)
+	{
+		if (m_mainTitleOptions.at(2).isEnabled() == true)
+		{
+			return true;
+		}
+		return false;
+	}
+	if (m_subTitleOptions.at(2).isEnabled() == true)
+	{
+		return true;
+	}
+	return false;
+}
+
+int SaveGame::getColorRedValue(bool t_isMainTitle)
+{
+	if (t_isMainTitle)
+	{
+		return m_mainTitleColor.r;
+	}
+	return m_subTitleColor.r;
+}
+
+int SaveGame::getColorGreenValue(bool t_isMainTitle)
+{
+	if (t_isMainTitle)
+	{
+		return m_mainTitleColor.g;
+	}
+	return m_subTitleColor.g;
+}
+
+int SaveGame::getColorBlueValue(bool t_isMainTitle)
+{
+	if (t_isMainTitle)
+	{
+		return m_mainTitleColor.b;
+	}
+	return m_subTitleColor.b;
+}
+
+void SaveGame::setUpOptions(std::vector<CheckBox>& t_options, float t_offset)
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		if(i == 0)
+			t_options.push_back(CheckBox("Italics"));
+		if (i == 1)
+			t_options.push_back(CheckBox("Underline"));
+		if (i == 2)
+			t_options.push_back(CheckBox("Bold"));
+		if (i == 3)
+			t_options.push_back(CheckBox("Colour"));
+		t_options.at(i).setCheckBoxPosition(sf::Vector2f(600.0f + (i * 200.0f), 660.0f + t_offset));
+	}
+
+
 }
 
 void SaveGame::render(sf::RenderWindow* t_window)
@@ -275,16 +505,24 @@ void SaveGame::render(sf::RenderWindow* t_window)
 		}
 		m_titleText->render(t_window);
 		m_subTitleText->render(t_window);
+		for (int i = 0; i < m_subTitleOptions.size(); ++i)
+		{
+			m_subTitleOptions.at(i).render(t_window);
+		}
+		for (int i = 0; i < m_subTitleOptions.size(); ++i)
+		{
+			m_mainTitleOptions.at(i).render(t_window);
+		}
 	}
 
 	if (m_popUpBox.isEnabled())
 	{
 		m_popUpBox.render(t_window);
-		for (int i = 0; i < m_popUpButtons.size(); ++i)
-		{
-			m_popUpButtons.at(i)->render(t_window);
-			m_popUpButtonLabels.at(i)->render(t_window);
-		}
+	}
+
+	if (m_colourPicker.isEnabled())
+	{
+		m_colourPicker.render(t_window);
 	}
 	
 }

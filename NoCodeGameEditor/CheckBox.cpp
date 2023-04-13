@@ -87,7 +87,9 @@ void CheckBox::render(sf::RenderWindow* t_window)
 
 bool CheckBox::isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window)
 {
-	if (m_checkBox.getGlobalBounds().contains((*t_window).mapPixelToCoords(sf::Mouse::getPosition(*t_window))))
+	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(*t_window).x, sf::Mouse::getPosition(*t_window).y);
+
+	if (m_checkBox.getGlobalBounds().contains(pixelPos))
 	{
 		if (t_event.type == sf::Event::MouseButtonReleased)
 		{

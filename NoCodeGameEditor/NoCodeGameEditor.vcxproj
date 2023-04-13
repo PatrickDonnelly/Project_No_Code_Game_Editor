@@ -137,6 +137,7 @@
     <ClInclude Include="CheckBox.h" />
     <ClInclude Include="Colliders.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="ColourPicker.h" />
     <ClInclude Include="Decoration.h" />
     <ClInclude Include="DialogueBox.h" />
     <ClInclude Include="DropDownMenu.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="CheckBox.cpp" />
     <ClCompile Include="Colliders.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="ColourPicker.cpp" />
     <ClCompile Include="Decoration.cpp" />
     <ClCompile Include="DialogueBox.cpp" />
     <ClCompile Include="DropDownMenu.cpp" />

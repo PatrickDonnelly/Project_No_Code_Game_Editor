@@ -132,6 +132,9 @@
     <ClInclude Include="SaveGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ColourPicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -246,6 +249,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SaveGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColourPicker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

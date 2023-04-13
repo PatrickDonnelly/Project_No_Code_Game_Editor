@@ -101,6 +101,26 @@ sf::Text Label::getText()
 	return m_labelText;
 }
 
+void Label::setTextStyle()
+{
+	if(m_italics && m_underlined && m_bold)
+		m_labelText.setStyle(sf::Text::Italic | sf::Text::Underlined | sf::Text::Bold);
+	else if (m_italics && m_underlined)
+		m_labelText.setStyle(sf::Text::Italic | sf::Text::Underlined);
+	else if (m_italics && m_bold)
+		m_labelText.setStyle(sf::Text::Italic | sf::Text::Bold);
+	else if (m_underlined && m_bold)
+		m_labelText.setStyle( sf::Text::Underlined | sf::Text::Bold);
+	else if(m_italics)
+		m_labelText.setStyle(sf::Text::Italic);
+	else if (m_bold)
+		m_labelText.setStyle(sf::Text::Bold);
+	else if (m_underlined)
+		m_labelText.setStyle(sf::Text::Underlined);
+	else
+		m_labelText.setStyle(sf::Text::Regular);
+}
+
 std::string Label::getTextString()
 {
 	return m_labelText.getString();
