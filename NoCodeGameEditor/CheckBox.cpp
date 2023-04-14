@@ -14,23 +14,7 @@ CheckBox::CheckBox(std::string t_tag)
 	m_tag = t_tag;
 	m_checkBoxLabel->setText(m_tag);
 	initCheckBox();
-	initText();
-
-
 }
-
-void CheckBox::initText()
-{
-	//m_text.setFont(m_font);
-	//m_text.setCharacterSize(20.0f);
-	//m_text.setFillColor(sf::Color::Black);
-	//m_text.setOutlineColor(sf::Color::White);
-	//m_text.setOutlineThickness(2.0f);
-	//m_text.setPosition(10.0f, 10.0f);
-	//m_checkBoxLabel->setText(m_tag);
-	//m_checkBoxLabel->setTextPosition(sf::Vector2f(m_checkBox.getPosition().x + (m_checkBoxLabel->getText().getGlobalBounds().width /2) + m_checkBox.getGlobalBounds().width, m_checkBox.getPosition().y + (m_checkBoxLabel->getText().getGlobalBounds().height / 2)));
-}
-
 
 CheckBox::~CheckBox()
 {
@@ -39,7 +23,7 @@ CheckBox::~CheckBox()
 void CheckBox::setCheckBoxPosition(sf::Vector2f t_pos)
 {
 	m_checkBox.setPosition(t_pos);
-	m_checkBoxLabel->setTextPosition(sf::Vector2f(m_checkBox.getPosition().x + (m_checkBoxLabel->getText().getGlobalBounds().width / 2) + m_checkBox.getGlobalBounds().width, m_checkBox.getPosition().y + (m_checkBoxLabel->getText().getGlobalBounds().height / 2)));
+	m_checkBoxLabel->setTextPosition(sf::Vector2f(m_checkBox.getPosition().x + (m_checkBoxLabel->getText()->getGlobalBounds().width / 2) + m_checkBox.getGlobalBounds().width, m_checkBox.getPosition().y + (m_checkBoxLabel->getText()->getGlobalBounds().height / 2)));
 }
 
 void CheckBox::toggleColor()
@@ -66,28 +50,20 @@ void CheckBox::initCheckBox()
 	m_checkBox.setOutlineThickness(2.0f);
 	m_checkBox.setOutlineColor(sf::Color::Green);
 	m_checkBox.setFillColor(sf::Color::Black);
-
-	//if (!m_checkBoxTexture.loadFromFile("ASSETS\\IMAGES\\buttonGrey.png"))
-	//{
-	//	std::cout << "error" << std::endl;
-	//}
-
-	//m_checkBoxSprite.setTexture(m_checkBoxTexture);
-	//m_checkBoxSprite.setOrigin(m_checkBoxSprite.getGlobalBounds().width / 2, m_checkBoxSprite.getGlobalBounds().height / 2);
 }
 
 void CheckBox::render(sf::RenderWindow* t_window)
 {
 	//t_window->draw(m_checkBoxSprite);
-
 	t_window->draw(m_checkBox);
-	//t_window->draw(m_text);
 	m_checkBoxLabel->render(t_window);
 }
 
 bool CheckBox::isCheckBoxClicked(sf::Event& t_event, sf::RenderWindow* t_window)
 {
-	if (m_checkBox.getGlobalBounds().contains((*t_window).mapPixelToCoords(sf::Mouse::getPosition(*t_window))))
+	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(*t_window).x, sf::Mouse::getPosition(*t_window).y);
+
+	if (m_checkBox.getGlobalBounds().contains(pixelPos))
 	{
 		if (t_event.type == sf::Event::MouseButtonReleased)
 		{

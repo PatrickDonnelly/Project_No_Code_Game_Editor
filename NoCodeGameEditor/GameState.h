@@ -13,7 +13,8 @@ enum class State {
 	PLAY_GAME = 9,
 	GAME_LIST = 10,
 	SAVING = 11,
-	LEVEL_LIST = 12
+	LEVEL_LIST = 12,
+	SAVING_SCREEN =13
 };
 
 

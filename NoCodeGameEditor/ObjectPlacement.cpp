@@ -144,7 +144,7 @@ void ObjectPlacement::placeObject(sf::Event t_event, sf::RenderWindow& m_window)
 
 	if (row >= 0 && row < 100 && col >= 0 && col < 100)
 	{
-		if (m_grid->m_vectGrid.at(row).at(col).getTileBorder().getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
+		if (m_grid->m_vectGrid.at(row).at(col).getTileBorder().getGlobalBounds().contains(worldPos))
 		{
 
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && initialPress == false)
@@ -155,7 +155,7 @@ void ObjectPlacement::placeObject(sf::Event t_event, sf::RenderWindow& m_window)
 					{
 						m_currentlySelected->getBounds()->setPosition(m_grid->m_vectGrid.at(row).at(col).getPos());
 						m_currentlySelected->getSprite()->setPosition(m_currentlySelected->getBounds()->getPosition());
-						if (m_grid->m_vectGrid.at(row).at(col).cellType == "Floor" && m_grid->m_vectGrid.at(row).at(col).m_hasObject == false)
+						if (m_grid->m_vectGrid.at(row).at(col).m_hasObject == false)
 						{
 							m_currentlySelected->setSelected(false);
 							m_currentlySelected->setMoving(false);
@@ -294,7 +294,7 @@ void ObjectPlacement::clearObjects()
 	{
 		for (int j = 0; j < m_grid->m_vectGridSize; ++j)
 		{
-			if (m_grid->m_vectGrid.at(i).at(j).cellType == "Floor")
+			if (m_grid->m_vectGrid.at(i).at(j).cellType == "Floor" || m_grid->m_vectGrid.at(i).at(j).cellType == "Terrain" || m_grid->m_vectGrid.at(i).at(j).cellType == "Empty" )
 			{
 				m_grid->m_vectGrid.at(i).at(j).m_hasObject = false;
 			}
@@ -316,7 +316,10 @@ void ObjectPlacement::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 		m_currentlySelected->update(t_deltaTime, m_window);
 		if (m_currentlySelected->m_moving == true)
 		{
-			m_currentlySelected->getBounds()->setPosition(sf::Vector2f(sf::Mouse::getPosition(m_window)));
+			sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
+			sf::Vector2f worldPos = m_window.mapPixelToCoords(pixelPos);
+
+			m_currentlySelected->getBounds()->setPosition(worldPos);
 			m_currentlySelected->getSprite()->setPosition(m_currentlySelected->getBounds()->getPosition());
 		}
 	}

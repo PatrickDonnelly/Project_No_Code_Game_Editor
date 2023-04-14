@@ -2,7 +2,6 @@
 #define TEXTEDITOR_HPP
 #include <SFML/Graphics.hpp>
 #include <sstream>
-#include <fstream>
 #include "Button.h"
 #include "Label.h"
 #include "GameState.h"

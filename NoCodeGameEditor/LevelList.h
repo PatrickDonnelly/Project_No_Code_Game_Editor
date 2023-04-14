@@ -31,7 +31,8 @@ public:
 	std::vector<std::string> m_gameNames;
 	std::string m_pathGames = "Games/";
 	int m_rowsGames = 0;
-
+	std::string m_gameName;
+	std::string getGameToBeLoaded();
 };
 #endif  // !MAINMENU_HPP
 

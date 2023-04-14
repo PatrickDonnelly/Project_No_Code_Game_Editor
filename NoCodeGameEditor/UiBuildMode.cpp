@@ -131,23 +131,16 @@ void UiBuildMode::setUpTestBuildButtons(sf::Font& t_arialFont)
 
 void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		m_placementOptions.push_back(Button());
 		m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 650.0f + (i * 280), 900.0f });
-		if (i >= 3)
-		{
-			m_placementOptions.at(i) = Button();
-			m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 790.0f + ((i-3) * 280), 1000.0f });
-		}
 		m_placementOptionsLabels.push_back(new Label(t_arialFont));
 		m_placementOptionsLabels.at(i)->setTextPosition(m_placementOptions.at(i).getButtonPosition());
 	}
 	m_placementOptionsLabels.at(0)->setText("Rebuild Room");
 	m_placementOptionsLabels.at(1)->setText("Test Room");
 	m_placementOptionsLabels.at(2)->setText("Clear Room");
-	m_placementOptionsLabels.at(3)->setText("Zoom Out");
-	m_placementOptionsLabels.at(4)->setText("Zoom In");
 }
 
 void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
@@ -364,14 +357,6 @@ void UiBuildMode::processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindo
 					{
 						m_roomCreation->checkRoomValidity();
 					}
-					//else if (m_buildButtonLabels.at(i)->getTextString() == "-")
-					//{
-					//	m_grid->decreaseGridSize();
-					//}
-					//else if (m_buildButtonLabels.at(i)->getTextString() == "+")
-					//{
-					//	m_grid->increaseGridSize();
-					//}
 				}
 			}
 		}
@@ -427,7 +412,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 							{
 								col->setColor(sf::Color::Red);
 								// send selected object to grid
-								m_objectPlacement->setSelectedObject(t_path, t_labels.at(rowIndex).at(colIndex)->getText().getString());
+								m_objectPlacement->setSelectedObject(t_path, t_labels.at(rowIndex).at(colIndex)->getText()->getString());
 							}
 						}
 					}
@@ -563,27 +548,6 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 						{
 							m_objectPlacement->clearObjects();
 						}
-						else if (m_placementOptionsLabels.at(i)->getTextString() == "Zoom Out")
-						{
-							if (m_zoomRate < 1.5f)
-							{
-								m_gameView = sf::View(sf::FloatRect(t_window.getView().getCenter().x, t_window.getView().getCenter().y, 1920, 1080));
-								m_zoomRate = m_zoomRate + 0.1f;
-								m_gameView.zoom(m_zoomRate);
-								t_window.setView(m_gameView);
-							}
-						}
-						else if (m_placementOptionsLabels.at(i)->getTextString() == "Zoom In")
-						{
-							if (m_zoomRate > 0.5f)
-							{
-								m_gameView = sf::View(sf::FloatRect(t_window.getView().getCenter().x, t_window.getView().getCenter().y, 1920, 1080));
-								m_zoomRate = m_zoomRate - 0.1f;
-								m_gameView.zoom(m_zoomRate);
-								m_gameView = sf::View(sf::FloatRect(t_window.getView().getCenter().x, t_window.getView().getCenter().y, 1920, 1080));
-								t_window.setView(m_gameView);
-							}
-						}
 
 					}
 				}
@@ -629,7 +593,7 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Save Room")
 					{
 						// save room here;
-						m_gameState->setState(State::SAVING);
+						m_gameState->setState(State::SAVING_SCREEN);
 					}
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Start Over")
 					{

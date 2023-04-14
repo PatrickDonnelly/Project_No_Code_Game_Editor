@@ -11,10 +11,32 @@ LevelList::LevelList(GameState* t_gameState)
 	initButtons();
 	for (auto& entry : fs::directory_iterator(m_pathGames))
 	{
-		std::string temp = entry.path().filename().string();
-		temp.resize(temp.size() - 4);
-		m_gameNames.push_back(temp);
+		//std::string temp = entry.path().().string();
+		//temp.resize(temp.size() - 4);
+		//m_gameNames.push_back(temp);
 	}
+
+
+	fs::path folder_path = m_pathGames;
+	if (fs::exists(folder_path) && fs::is_directory(folder_path)) {
+		// Read the contents of the folder
+		for (const auto& entry : fs::directory_iterator(folder_path)) {
+			// Check if the entry is a directory
+			if (entry.is_directory()) {
+				// Store the name of the directory in the vector
+				m_gameNames.push_back(entry.path().filename().string());
+			}
+		}
+	}
+	else {
+		// Error opening directory
+		std::cerr << "Error opening directory." << std::endl;
+		}
+
+	for (const auto& folder_name : m_gameNames) {
+		std::cout << folder_name << std::endl;
+	}
+
 	setUpGameButtons();
 }
 
@@ -110,16 +132,19 @@ void LevelList::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	{
 		for (auto& col : row)
 		{
-			if (col->getButtonLabel()->getText().getString() == "testsave")
-			{
+
 				if (col->isButtonClicked(t_event, &t_window))
 				{
+					m_gameName = col->getButtonLabel()->getText()->getString();
 					m_currentGameState->setState(State::LOAD_GAME);
-					//std::cout << "Exit Clicked" << std::endl;
-					//t_window.close();
 				}
-			}
+			
 		}
 	}
+}
+
+std::string LevelList::getGameToBeLoaded()
+{
+	return m_gameName;
 }
 

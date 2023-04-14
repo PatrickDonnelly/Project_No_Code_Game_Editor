@@ -11,7 +11,7 @@ TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 {
 	m_dialogueBox = new DialogueBox(t_font);
 	m_previewDialogueCheckBox = new CheckBox("Preview Dialogue");
-	m_popUpBox = PopUp(&t_font);
+	m_popUpBox = PopUp();
 	m_mainBody = new InputField(t_font, true, 0);
 	m_title = new InputField(t_font, false, 25);
 	std::string path = "Dialogue/";
@@ -350,7 +350,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 										}
 									}
 								}
-								fileName = m_selectableDialogueLabels.at(rowIndex).at(colIndex)->getText().getString();
+								fileName = m_selectableDialogueLabels.at(rowIndex).at(colIndex)->getText()->getString();
 								col->setSelected(true);
 
 								if (col->getSelected())

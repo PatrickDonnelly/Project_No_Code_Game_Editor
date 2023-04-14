@@ -96,9 +96,29 @@ void Label::setLabelSprite(std::string t_spriteName, std::string t_path)
 	m_labelSprite.setOrigin(m_labelSprite.getGlobalBounds().width / 2, m_labelSprite.getGlobalBounds().height / 2);
 }
 
-sf::Text Label::getText()
+sf::Text* Label::getText()
 {
-	return m_labelText;
+	return& m_labelText;
+}
+
+void Label::setTextStyle()
+{
+	if(m_italics && m_underlined && m_bold)
+		m_labelText.setStyle(sf::Text::Italic | sf::Text::Underlined | sf::Text::Bold);
+	else if (m_italics && m_underlined)
+		m_labelText.setStyle(sf::Text::Italic | sf::Text::Underlined);
+	else if (m_italics && m_bold)
+		m_labelText.setStyle(sf::Text::Italic | sf::Text::Bold);
+	else if (m_underlined && m_bold)
+		m_labelText.setStyle( sf::Text::Underlined | sf::Text::Bold);
+	else if(m_italics)
+		m_labelText.setStyle(sf::Text::Italic);
+	else if (m_bold)
+		m_labelText.setStyle(sf::Text::Bold);
+	else if (m_underlined)
+		m_labelText.setStyle(sf::Text::Underlined);
+	else
+		m_labelText.setStyle(sf::Text::Regular);
 }
 
 std::string Label::getTextString()

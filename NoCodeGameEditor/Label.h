@@ -18,7 +18,16 @@ public:
 
 
 	sf::Vector2f getTextPosition();
-	sf::Text getText();
+	sf::Text* getText();
+
+	bool m_italics = false;
+	bool m_underlined = false;
+	bool m_bold = false;
+	void setItalics(bool t_onOff) { m_italics = t_onOff; }
+	void setUnderline(bool t_onOff) { m_underlined = t_onOff; }
+	void setBold(bool t_onOff) { m_bold = t_onOff; }
+
+	void setTextStyle();
 	std::string	getTextString();
 
 	void setText(std::string t_text);
