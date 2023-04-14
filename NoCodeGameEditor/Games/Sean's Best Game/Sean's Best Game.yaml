@@ -2,13 +2,961 @@
 Grid:
   - Size: 100
 Enemy:
-  []
+  - Tag: Enemy
+    ID: 7293441911831409338
+    Xpos: 1872
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Enemies/cyclops_new
+    Dialogue: false
+    Row: 58
+    Column: 18
+  - Tag: Enemy
+    ID: 379130379133789506
+    Xpos: 1936
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Enemies/cyclops_new
+    Dialogue: false
+    Row: 60
+    Column: 21
+  - Tag: Enemy
+    ID: 3916547082256463605
+    Xpos: 2224
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Enemies/cyclops_new
+    Dialogue: false
+    Row: 69
+    Column: 19
+  - Tag: Enemy
+    ID: 4380763807380829051
+    Xpos: 2224
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Enemies/cyclops_new
+    Dialogue: false
+    Row: 69
+    Column: 21
+  - Tag: Enemy
+    ID: 2642228181537786886
+    Xpos: 2000
+    Ypos: 656
+    Texture: ASSETS/IMAGES/Enemies/cyclops_new
+    Dialogue: false
+    Row: 62
+    Column: 20
+  - Tag: Enemy
+    ID: 7557149137050371104
+    Xpos: 1936
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Enemies/orc_sorcerer_old
+    Dialogue: false
+    Row: 60
+    Column: 18
+  - Tag: Enemy
+    ID: 1721959052766012032
+    Xpos: 1872
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Enemies/orc_sorcerer_old
+    Dialogue: false
+    Row: 58
+    Column: 21
 Decoration:
-  []
+  - Tag: Decoration
+    ID: -193933069671040082
+    Xpos: 1776
+    Ypos: 464
+    Texture: ASSETS/IMAGES/Decorations/blue_fountain
+    Dialogue: false
+    Row: 55
+    Column: 14
+  - Tag: Decoration
+    ID: -8933604128971755872
+    Xpos: 1744
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Decorations/blue_fountain
+    Dialogue: false
+    Row: 54
+    Column: 24
+  - Tag: Decoration
+    ID: 7455058146421431625
+    Xpos: 2224
+    Ypos: 464
+    Texture: ASSETS/IMAGES/Decorations/blue_fountain
+    Dialogue: false
+    Row: 69
+    Column: 14
+  - Tag: Decoration
+    ID: 1241425469071400092
+    Xpos: 1872
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Decorations/chest
+    Dialogue: false
+    Row: 58
+    Column: 17
+  - Tag: Decoration
+    ID: -5859879166828331857
+    Xpos: 1904
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Decorations/chest
+    Dialogue: false
+    Row: 59
+    Column: 17
+  - Tag: Decoration
+    ID: -3330715857258785485
+    Xpos: 1968
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Decorations/chest
+    Dialogue: false
+    Row: 61
+    Column: 17
+  - Tag: Decoration
+    ID: -4571985926318313537
+    Xpos: 1936
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Decorations/chest
+    Dialogue: false
+    Row: 60
+    Column: 17
 Item:
-  []
+  - Tag: Item
+    ID: 648306710395310027
+    Xpos: 2032
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 63
+    Column: 17
+  - Tag: Item
+    ID: 2845053332474074581
+    Xpos: 2032
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 63
+    Column: 18
+  - Tag: Item
+    ID: -2079542575051086729
+    Xpos: 2320
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 72
+    Column: 17
+  - Tag: Item
+    ID: -3234952569711966074
+    Xpos: 2320
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 72
+    Column: 18
+  - Tag: Item
+    ID: 766345233340322999
+    Xpos: 2320
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 72
+    Column: 22
+  - Tag: Item
+    ID: 692243461405767735
+    Xpos: 2320
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 72
+    Column: 23
+  - Tag: Item
+    ID: -7611478277847922949
+    Xpos: 2288
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 71
+    Column: 23
+  - Tag: Item
+    ID: 6607373097326773645
+    Xpos: 2256
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 70
+    Column: 23
+  - Tag: Item
+    ID: -6268222160374419718
+    Xpos: 2224
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 69
+    Column: 23
+  - Tag: Item
+    ID: 6938320414514770537
+    Xpos: 2192
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 68
+    Column: 23
+  - Tag: Item
+    ID: 6568765332126750547
+    Xpos: 2160
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 67
+    Column: 23
+  - Tag: Item
+    ID: -361659500060891520
+    Xpos: 2160
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 67
+    Column: 22
+  - Tag: Item
+    ID: 3963998851876799101
+    Xpos: 2160
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 67
+    Column: 21
+  - Tag: Item
+    ID: -3343067874005841396
+    Xpos: 2160
+    Ypos: 656
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 67
+    Column: 20
+  - Tag: Item
+    ID: -2978715666688288635
+    Xpos: 2160
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 67
+    Column: 19
+  - Tag: Item
+    ID: 2873596712106883484
+    Xpos: 2160
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 67
+    Column: 18
+  - Tag: Item
+    ID: 515324582292096224
+    Xpos: 2160
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 67
+    Column: 17
+  - Tag: Item
+    ID: 1951604016003801000
+    Xpos: 2192
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 68
+    Column: 17
+  - Tag: Item
+    ID: -3127861408739358609
+    Xpos: 2224
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 69
+    Column: 17
+  - Tag: Item
+    ID: -7130095255973242668
+    Xpos: 2256
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 70
+    Column: 17
+  - Tag: Item
+    ID: 3635369175421558848
+    Xpos: 2256
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 70
+    Column: 19
+  - Tag: Item
+    ID: 6170543310899375523
+    Xpos: 2288
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 71
+    Column: 19
+  - Tag: Item
+    ID: 1219879902769361167
+    Xpos: 2288
+    Ypos: 656
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 71
+    Column: 20
+  - Tag: Item
+    ID: -7281525405801119266
+    Xpos: 2288
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 71
+    Column: 21
+  - Tag: Item
+    ID: 2193655957601983943
+    Xpos: 2320
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 72
+    Column: 19
+  - Tag: Item
+    ID: 8999933286802062161
+    Xpos: 2320
+    Ypos: 656
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 72
+    Column: 20
+  - Tag: Item
+    ID: -3483997520117291167
+    Xpos: 2256
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 70
+    Column: 22
+  - Tag: Item
+    ID: 6008907045753239327
+    Xpos: 2224
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 69
+    Column: 22
+  - Tag: Item
+    ID: 6951592052733467048
+    Xpos: 2224
+    Ypos: 656
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 69
+    Column: 20
+  - Tag: Item
+    ID: 4628527213680423817
+    Xpos: 2256
+    Ypos: 656
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 70
+    Column: 20
+  - Tag: Item
+    ID: 7858852965801140886
+    Xpos: 2288
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Items/gold_pile_10
+    Dialogue: false
+    Row: 71
+    Column: 22
 Wall:
-  []
+  - Tag: Wall
+    ID: 0
+    Xpos: 1840
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 57
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 1808
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 56
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 1808
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 56
+    Column: 22
+  - Tag: Wall
+    ID: 0
+    Xpos: 1808
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 56
+    Column: 23
+  - Tag: Wall
+    ID: 0
+    Xpos: 1840
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 57
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 1808
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 56
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 1808
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 56
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 1808
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 56
+    Column: 18
+  - Tag: Wall
+    ID: 0
+    Xpos: 1808
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 56
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 1808
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 56
+    Column: 17
+  - Tag: Wall
+    ID: 0
+    Xpos: 1872
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 58
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 1872
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 58
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 1904
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 59
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 1904
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 59
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 1936
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 60
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 1936
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 60
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 1968
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 61
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 1968
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 61
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2000
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 62
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2000
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 62
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2032
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 63
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2032
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 63
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2064
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 64
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2064
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 64
+    Column: 17
+  - Tag: Wall
+    ID: 0
+    Xpos: 2064
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 64
+    Column: 18
+  - Tag: Wall
+    ID: 0
+    Xpos: 2064
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 64
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 2064
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 64
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 2064
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 64
+    Column: 22
+  - Tag: Wall
+    ID: 0
+    Xpos: 2064
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 64
+    Column: 23
+  - Tag: Wall
+    ID: 0
+    Xpos: 2064
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 64
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2128
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 66
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2128
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 66
+    Column: 17
+  - Tag: Wall
+    ID: 0
+    Xpos: 2128
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 66
+    Column: 18
+  - Tag: Wall
+    ID: 0
+    Xpos: 2128
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 66
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 2128
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 66
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 2128
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 66
+    Column: 22
+  - Tag: Wall
+    ID: 0
+    Xpos: 2128
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 66
+    Column: 23
+  - Tag: Wall
+    ID: 0
+    Xpos: 2128
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 66
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2160
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 67
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2160
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 67
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2192
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 68
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2192
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 68
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2096
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 65
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 2096
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 65
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 2576
+    Ypos: 1872
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 80
+    Column: 58
+  - Tag: Wall
+    ID: 0
+    Xpos: 2544
+    Ypos: 2448
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 79
+    Column: 76
+  - Tag: Wall
+    ID: 0
+    Xpos: 2800
+    Ypos: 3056
+    Texture: ASSETS/IMAGES/Walls/beehives_0
+    Dialogue: false
+    Row: 87
+    Column: 95
+  - Tag: Wall
+    ID: 0
+    Xpos: 1776
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 55
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 1744
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 54
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 1712
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 53
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 1680
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 52
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 1648
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 51
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 1648
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 51
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 1680
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 52
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 1712
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 53
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 1744
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 54
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 1776
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/beehives_2
+    Dialogue: false
+    Row: 55
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 2224
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 69
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2288
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 71
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2320
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 72
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2256
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 70
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 528
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 16
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 560
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 17
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 592
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 18
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 624
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 19
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 656
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 20
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 688
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 21
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 720
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 22
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 752
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 23
+  - Tag: Wall
+    ID: 0
+    Xpos: 2352
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 73
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2320
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 72
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2288
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 71
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2256
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 70
+    Column: 24
+  - Tag: Wall
+    ID: 0
+    Xpos: 2224
+    Ypos: 784
+    Texture: ASSETS/IMAGES/Walls/bars_red_6
+    Dialogue: false
+    Row: 69
+    Column: 24
 Tile:
   - Cell Type: Empty
     Occupied: false
@@ -22045,131 +22993,131 @@ Tile:
     Xpos: 1424
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1424
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1424
@@ -22545,131 +23493,131 @@ Tile:
     Xpos: 1456
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1456
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1456
@@ -23045,131 +23993,131 @@ Tile:
     Xpos: 1488
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1488
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1488
@@ -23545,131 +24493,131 @@ Tile:
     Xpos: 1520
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1520
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1520
@@ -24045,131 +24993,131 @@ Tile:
     Xpos: 1552
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1552
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1552
@@ -24545,131 +25493,131 @@ Tile:
     Xpos: 1584
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1584
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1584
@@ -25045,131 +25993,131 @@ Tile:
     Xpos: 1616
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1616
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1616
@@ -25545,131 +26493,131 @@ Tile:
     Xpos: 1648
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1648
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1648
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1648
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1648
@@ -26045,131 +26993,131 @@ Tile:
     Xpos: 1680
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1680
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1680
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1680
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1680
@@ -26545,131 +27493,131 @@ Tile:
     Xpos: 1712
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1712
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1712
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1712
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1712
@@ -27045,131 +27993,131 @@ Tile:
     Xpos: 1744
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1744
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1744
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1744
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1744
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1744
@@ -27545,131 +28493,131 @@ Tile:
     Xpos: 1776
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1776
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1776
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1776
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1776
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1776
@@ -28045,51 +28993,51 @@ Tile:
     Xpos: 1808
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1808
@@ -28110,11 +29058,11 @@ Tile:
     Xpos: 1808
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1808
@@ -28135,41 +29083,41 @@ Tile:
     Xpos: 1808
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1808
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1808
@@ -28545,131 +29493,131 @@ Tile:
     Xpos: 1840
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1840
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1840
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1840
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1840
@@ -29045,131 +29993,131 @@ Tile:
     Xpos: 1872
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1872
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1872
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1872
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1872
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1872
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1872
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1872
@@ -29545,131 +30493,131 @@ Tile:
     Xpos: 1904
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1904
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1904
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1904
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1904
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1904
@@ -30045,131 +30993,131 @@ Tile:
     Xpos: 1936
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1936
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1936
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1936
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1936
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1936
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1936
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1936
@@ -30545,131 +31493,131 @@ Tile:
     Xpos: 1968
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1968
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 1968
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1968
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 1968
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 1968
@@ -31045,131 +31993,131 @@ Tile:
     Xpos: 2000
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2000
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2000
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2000
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2000
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2000
@@ -31545,131 +32493,131 @@ Tile:
     Xpos: 2032
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2032
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2032
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2032
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2032
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2032
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2032
@@ -32045,51 +32993,51 @@ Tile:
     Xpos: 2064
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2064
@@ -32110,11 +33058,11 @@ Tile:
     Xpos: 2064
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2064
@@ -32135,41 +33083,41 @@ Tile:
     Xpos: 2064
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2064
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2064
@@ -32545,131 +33493,131 @@ Tile:
     Xpos: 2096
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2096
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2096
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2096
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2096
@@ -33045,51 +33993,51 @@ Tile:
     Xpos: 2128
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2128
@@ -33110,11 +34058,11 @@ Tile:
     Xpos: 2128
     Ypos: 624
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2128
@@ -33135,41 +34083,41 @@ Tile:
     Xpos: 2128
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2128
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2128
@@ -33545,131 +34493,131 @@ Tile:
     Xpos: 2160
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2160
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2160
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2160
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2160
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2160
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2160
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2160
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2160
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2160
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2160
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2160
@@ -34045,131 +34993,131 @@ Tile:
     Xpos: 2192
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2192
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2192
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2192
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2192
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2192
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2192
@@ -34545,131 +35493,131 @@ Tile:
     Xpos: 2224
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2224
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2224
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2224
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2224
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2224
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2224
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2224
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2224
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2224
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2224
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2224
@@ -35045,131 +35993,131 @@ Tile:
     Xpos: 2256
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2256
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2256
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2256
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2256
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2256
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2256
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2256
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2256
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2256
@@ -35545,131 +36493,131 @@ Tile:
     Xpos: 2288
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2288
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2288
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2288
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2288
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2288
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2288
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2288
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2288
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2288
@@ -36045,131 +36993,131 @@ Tile:
     Xpos: 2320
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2320
     Ypos: 528
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2320
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2320
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2320
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2320
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2320
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
-    Occupied: false
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
+    Occupied: true
     Xpos: 2320
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2320
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2320
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2320
@@ -36545,51 +37493,51 @@ Tile:
     Xpos: 2352
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2352
@@ -36635,41 +37583,41 @@ Tile:
     Xpos: 2352
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2352
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2352
@@ -37045,131 +37993,131 @@ Tile:
     Xpos: 2384
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2384
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2384
@@ -37545,131 +38493,131 @@ Tile:
     Xpos: 2416
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2416
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2416
@@ -38045,131 +38993,131 @@ Tile:
     Xpos: 2448
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2448
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2448
@@ -38545,131 +39493,131 @@ Tile:
     Xpos: 2480
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2480
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2480
@@ -39045,131 +39993,131 @@ Tile:
     Xpos: 2512
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 240
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 272
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 304
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 336
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 368
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 400
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 432
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 464
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 496
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 528
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 560
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 592
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 624
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 656
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 688
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 720
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 752
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 784
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 816
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 848
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 880
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 912
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 944
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 976
-    Texture: ASSETS\IMAGES\dirt_0
-  - Cell Type: Empty
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
+  - Cell Type: Terrain
     Occupied: false
     Xpos: 2512
     Ypos: 1008
-    Texture: ASSETS\IMAGES\dirt_0
+    Texture: ASSETS/IMAGES/Terrain/Grass/dirt
   - Cell Type: Empty
     Occupied: false
     Xpos: 2512
@@ -50011,18 +50959,19 @@ Tile:
     Ypos: 3184
     Texture: ASSETS\IMAGES\dirt_0
 GameName:
-  - Name: Game Name
-    Italics: true
-    Underlined: true
-    Bold: true
-    Color Red Value: 255
-    Color Green Value: 10
-    Color Blue Value: 3
-  - Name: Game Sub Title
+  - Name: Sean's Best Game
     Italics: false
     Underlined: false
     Bold: false
-    Color Red Value: 27
-    Color Green Value: 250
-    Color Blue Value: 255
+    Color Red Value: 56
+    Color Green Value: 214
+    Color Blue Value: 0
+GameSubTitle:
+  - Name: TO BE SAVED!!!
+    Italics: false
+    Underlined: false
+    Bold: false
+    Color Red Value: 56
+    Color Green Value: 214
+    Color Blue Value: 0
 ...

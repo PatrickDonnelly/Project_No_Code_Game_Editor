@@ -31,7 +31,7 @@ public:
 	sf::RectangleShape GetInputField() { return m_inputField; }
 	void ClearText();
 	std::string GetText() { return m_textBox.getString(); }
-	void SetString(std::string t_text) { m_text.str(t_text); m_textBox.setString(t_text); }
+	void SetString(std::string t_text) { m_text.str(t_text); m_textBox.setString(m_text.str()); }
 private:
 	bool isSelected = false;
 	bool m_enabled = false;

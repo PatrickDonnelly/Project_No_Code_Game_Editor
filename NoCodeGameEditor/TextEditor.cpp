@@ -350,7 +350,7 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 										}
 									}
 								}
-								fileName = m_selectableDialogueLabels.at(rowIndex).at(colIndex)->getText().getString();
+								fileName = m_selectableDialogueLabels.at(rowIndex).at(colIndex)->getText()->getString();
 								col->setSelected(true);
 
 								if (col->getSelected())

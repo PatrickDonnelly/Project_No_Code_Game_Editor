@@ -7,36 +7,24 @@ SaveGame::SaveGame()
 
 SaveGame::SaveGame(GameState* t_currentGameState)
 {
-
 	m_fontManager = FontManager();
 	m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
 	m_mainTitle = new InputField(m_font, false, 20);
 	m_subTitle = new InputField(m_font, false, 24);
-	std::string path = "Games/";
-	m_popUpBox = PopUp(2);
-	m_gameState = t_currentGameState;
-	//m_font = t_font;
-
 	m_saveAndCancelButtons.push_back(new Button("Cancel"));
 	m_saveAndCancelButtons.push_back(new Button("Save"));
 	m_labels.push_back(new Label("Enter Your Game Title Here"));
 	m_labels.push_back(new Label("Enter A Subtitle (Optional)"));
 	m_titleText = new Label();
 	m_subTitleText = new Label();
-	initInputFields();
-	m_titleText->setTextPosition(sf::Vector2f(m_backGround.getPosition().x + (m_backGround.getGlobalBounds().width/2),
-		m_backGround.getPosition().y+100));
-	m_subTitleText->setTextPosition(sf::Vector2f(m_backGround.getPosition().x+(m_backGround.getGlobalBounds().width/2), 
-		m_backGround.getPosition().y + 200));
-	m_titleText->setTextSize(40.0f);
-	m_subTitleText->setTextSize(30.0f);
-	m_titleText->setText(" ");
-	m_subTitleText->setText(" ");
-	m_mainTitleColor = sf::Color::White;
-	m_subTitleColor = sf::Color::White;
 
-	setUpOptions(m_mainTitleOptions, 0);
-	setUpOptions(m_subTitleOptions, 150.0f);
+	std::string path = "Games/";
+	m_popUpBox = PopUp(2);
+	m_gameState = t_currentGameState;
+
+	initInputFields();
+	setUpOptions(m_mainTitleOptions, 0, 100, 40.0f, m_titleText, m_mainTitleColor);
+	setUpOptions(m_subTitleOptions, 150.0f, 200, 30.0f, m_subTitleText, m_subTitleColor);
 }
 
 SaveGame::~SaveGame()
@@ -66,11 +54,14 @@ void SaveGame::initInputFields()
 
 void SaveGame::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
+	if (!m_mainTitleOptions.at(3).isEnabled() && !m_subTitleOptions.at(3).isEnabled())
+	{
+		m_colourPicker.setPopUpEnabled(false);
+	}
 	if (!m_popUpBox.isEnabled())
 	{
 		for (int i = 0; i < m_mainTitleOptions.size(); ++i)
 		{
-
 			m_mainTitleOptions.at(i).isCheckBoxClicked(t_event, &t_window);
 			m_subTitleOptions.at(i).isCheckBoxClicked(t_event, &t_window);
 			setTextStyle(m_mainTitleOptions, m_titleText, i, m_mainTitleColor, t_event, t_window);
@@ -85,27 +76,8 @@ void SaveGame::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	{
 		if (m_popUpBox.processEvents(t_event, t_window))
 		{
-			std::cout << "Saving" << std::endl;
-
-			m_popUpBox.setPopUpEnabled();
-
-			std::string projectDirectory = fs::current_path().string() + "\\Games";
-			std::cout << projectDirectory << std::endl;
-			std::string folderName = m_mainTitle->GetText();
-			std::string folderPath = projectDirectory + "\\" + folderName;
-
-			fs::create_directory(folderPath);
-			// save file name here
-			//saving = false;
-			std::ofstream out((folderPath + "/") + "mainTitle.txt");
-			out << m_mainTitle->GetText();
-			out.close();
-			std::ofstream out2((folderPath + "/") + "subTitle.txt");
-			out2 << m_subTitle->GetText();
-			out2.close();
-
-			m_popUpBox.readInFile("saveSuccessful");
-			m_popUpBox.setPopUpButtons(1);
+			m_gameState->setState(State::SAVING);
+			setUpPopUpBox("saveSuccessful", 1);
 		}
 	}
 }
@@ -122,49 +94,35 @@ void SaveGame::processButtons(sf::Event t_event, sf::RenderWindow& t_window)
 				&& t_event.mouseButton.button == sf::Mouse::Left
 				&& m_saveAndCancelButtons.at(i)->getButtonLabel()->getTextString() == "Save")
 			{
-				m_gameState->setState(State::SAVING);
-				//if (saving)
-				//{
 				std::string temp = m_mainTitle->GetText();
 				temp.erase(std::remove_if(temp.begin(), temp.end(), [](char c) { return std::isspace(c); }), temp.end());
 				if (temp == "")
 				{
-					m_popUpBox.setPopUpEnabled();
-					m_popUpBox.readInFile("emptyInput");
-					m_popUpBox.setPopUpButtons(1);
+					setUpPopUpBox("emptyInput", 1);
 				}
 				else
 				{
-
 					std::string projectDirectory = fs::current_path().string() + "\\Games";
 					std::cout << projectDirectory << std::endl;
 					std::string folderName = m_mainTitle->GetText();
-					std::string folderPath = projectDirectory + "\\" + folderName;
+					m_folderPath = " ";
+					m_folderPath = projectDirectory + "\\" + folderName;
 
-					if (!fs::exists(folderPath))
+					if (!fs::exists(m_folderPath))
 					{
-						fs::create_directory(folderPath);
-						// save file name here
-						//saving = false;
-						std::ofstream out((folderPath + "/") + "mainTitle.txt");
-						out << m_mainTitle->GetText();
-						out.close();
-						std::ofstream out2((folderPath + "/") + "subTitle.txt");
-						out2 << m_subTitle->GetText();
-						out2.close();
-						m_popUpBox.setPopUpEnabled();
-						m_popUpBox.readInFile("saveSuccessful");
-						m_popUpBox.setPopUpButtons(1);
+						fs::create_directory(m_folderPath);
+						setUpPopUpBox("saveSuccessful", 1);
+						m_gameState->setState(State::SAVING);
 					}
 					else
 					{
-						m_popUpBox.setPopUpEnabled();
-						m_popUpBox.readInFile("fileExists");
-						m_popUpBox.setPopUpButtons(2);
+						setUpPopUpBox("fileExists", 2);
 					}
 				}
 			}
-			else if (m_saveAndCancelButtons.at(i)->getButtonLabel()->getTextString() == "Cancel")
+			else if (t_event.type == sf::Event::MouseButtonReleased
+				&& t_event.mouseButton.button == sf::Mouse::Left
+				&& m_saveAndCancelButtons.at(i)->getButtonLabel()->getTextString() == "Cancel")
 			{
 				m_enabled = false;
 				m_gameState->setState(State::ROOM_TEST);
@@ -177,7 +135,7 @@ void SaveGame::processButtons(sf::Event t_event, sf::RenderWindow& t_window)
 	}
 }
 
-void SaveGame::setTextStyle(std::vector<CheckBox>& t_textOptions, Label* t_text , int t_index, sf::Color t_textColor, sf::Event t_event, sf::RenderWindow& t_window)
+void SaveGame::setTextStyle(std::vector<CheckBox>& t_textOptions, Label* t_text , int t_index, sf::Color& t_textColor, sf::Event t_event, sf::RenderWindow& t_window)
 {
 	if (t_textOptions.at(t_index).getTag() == "Colour")
 	{
@@ -187,7 +145,6 @@ void SaveGame::setTextStyle(std::vector<CheckBox>& t_textOptions, Label* t_text 
 			if (m_colourPicker.processEvents(t_event, t_window))
 			{
 				t_textOptions.at(t_index).setEnabled(false);
-
 			}
 			t_textColor = m_colourPicker.getColor();
 			t_text->setTextColor(t_textColor);
@@ -244,6 +201,7 @@ void SaveGame::typing(sf::Event t_event)
 			m_titleText->setText(m_mainTitle->GetText());
 		}
 	}
+
 }
 
 void SaveGame::setSelectedInputField(sf::Event t_event, sf::RenderWindow& t_window)
@@ -266,7 +224,7 @@ void SaveGame::setSelectedInputField(sf::Event t_event, sf::RenderWindow& t_wind
 	}
 }
 
-void SaveGame::setUpOptions(std::vector<CheckBox>& t_options, float t_offset)
+void SaveGame::setUpOptions(std::vector<CheckBox>& t_options, int t_yOffsetOne, int t_yOffsetTwo, float t_fontSize, Label* t_text, sf::Color& t_textColor)
 {
 	for (int i = 0; i < 4; ++i)
 	{
@@ -278,8 +236,22 @@ void SaveGame::setUpOptions(std::vector<CheckBox>& t_options, float t_offset)
 			t_options.push_back(CheckBox("Bold"));
 		if (i == 3)
 			t_options.push_back(CheckBox("Colour"));
-		t_options.at(i).setCheckBoxPosition(sf::Vector2f(600.0f + (i * 200.0f), 660.0f + t_offset));
+		t_options.at(i).setCheckBoxPosition(sf::Vector2f(600.0f + (i * 200.0f), 660.0f + t_yOffsetOne));
 	}
+
+	t_text->setTextPosition(sf::Vector2f(m_backGround.getPosition().x + (m_backGround.getGlobalBounds().width / 2),
+		m_backGround.getPosition().y + t_yOffsetTwo));
+
+	t_text->setTextSize(t_fontSize);
+	t_text->setText(" ");
+	t_textColor = sf::Color::White;
+}
+
+void SaveGame::setUpPopUpBox(std::string t_fileName, int t_noOfButtons)
+{
+	m_popUpBox.setPopUpEnabled();
+	m_popUpBox.readInFile(t_fileName);
+	m_popUpBox.setPopUpButtons(t_noOfButtons);
 }
 
 void SaveGame::render(sf::RenderWindow* t_window)
@@ -287,7 +259,6 @@ void SaveGame::render(sf::RenderWindow* t_window)
 	if (m_enabled)
 	{
 		t_window->draw(m_backGround);
-
 		m_mainTitle->render(t_window);
 		m_subTitle->render(t_window);
 		m_titleText->render(t_window);
@@ -300,24 +271,18 @@ void SaveGame::render(sf::RenderWindow* t_window)
 		}
 		for (int i = 0; i < m_subTitleOptions.size(); ++i)
 		{
+			m_mainTitleOptions.at(i).render(t_window);
 			m_subTitleOptions.at(i).render(t_window);
 		}
-		for (int i = 0; i < m_subTitleOptions.size(); ++i)
-		{
-			m_mainTitleOptions.at(i).render(t_window);
-		}
 	}
-
 	if (m_popUpBox.isEnabled())
 	{
 		m_popUpBox.render(t_window);
 	}
-
 	if (m_colourPicker.isEnabled())
 	{
 		m_colourPicker.render(t_window);
 	}
-	
 }
 
 std::string SaveGame::getTitle(bool t_isMainTitle)

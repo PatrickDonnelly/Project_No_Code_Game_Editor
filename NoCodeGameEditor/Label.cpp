@@ -96,9 +96,9 @@ void Label::setLabelSprite(std::string t_spriteName, std::string t_path)
 	m_labelSprite.setOrigin(m_labelSprite.getGlobalBounds().width / 2, m_labelSprite.getGlobalBounds().height / 2);
 }
 
-sf::Text Label::getText()
+sf::Text* Label::getText()
 {
-	return m_labelText;
+	return& m_labelText;
 }
 
 void Label::setTextStyle()

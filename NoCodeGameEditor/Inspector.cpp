@@ -193,7 +193,7 @@ void Inspector::saveChanges(std::map<std::string, std::string>& t_dialoguePaths)
     t_dialoguePaths.clear();
     for (int i = 0; i < m_dialogueDropDownMenu.size(); i++)
     {
-        m_dialogueDropDownMenu.at(i)->checkEnabledOptions(t_dialoguePaths, m_dialogueLabels.at(i)->getText().getString());
+        m_dialogueDropDownMenu.at(i)->checkEnabledOptions(t_dialoguePaths, m_dialogueLabels.at(i)->getText()->getString());
     }
 }
 
@@ -423,11 +423,11 @@ void Inspector::addDialogueTab()
     {
         m_addCategoryLabel = new Label();
         m_addCategoryLabel->setText("Dialogue : ");
-        m_addCategoryLabel->setTextPosition(sf::Vector2f(m_inspectorLabel->getTextPosition().x - (m_addCategoryLabel->getText().getGlobalBounds().width /2) + 16, m_addCategoryLabel->getTextPosition().y + 64));
+        m_addCategoryLabel->setTextPosition(sf::Vector2f(m_inspectorLabel->getTextPosition().x - (m_addCategoryLabel->getText()->getGlobalBounds().width /2) + 16, m_addCategoryLabel->getTextPosition().y + 64));
 
        // m_objects->getSelectedGridObject()->m_hasBeenSelected = true;
         m_addDialogueButton = new Button();
-        m_addDialogueButton->setButtonPosition(sf::Vector2f(m_addCategoryLabel->getTextPosition().x + m_addCategoryLabel->getText().getGlobalBounds().width, m_addCategoryLabel->getTextPosition().y));
+        m_addDialogueButton->setButtonPosition(sf::Vector2f(m_addCategoryLabel->getTextPosition().x + m_addCategoryLabel->getText()->getGlobalBounds().width, m_addCategoryLabel->getTextPosition().y));
         m_addDialogueButton->resize(0.125f, 0.4f);
         m_addDialogueLabel = new Label();
         m_addDialogueLabel->setText("+");
@@ -447,6 +447,6 @@ void Inspector::initText()
 {
     setUpFontAndText();
     m_inspectorLabel->setText("Inspector - " + m_title);
-    m_inspectorLabel->setTextPosition(sf::Vector2f(1522 + m_inspectorLabel->getText().getGlobalBounds().width / 2, (m_inspectorLabel->getText().getGlobalBounds().height / 2)));
+    m_inspectorLabel->setTextPosition(sf::Vector2f(1522 + m_inspectorLabel->getText()->getGlobalBounds().width / 2, (m_inspectorLabel->getText()->getGlobalBounds().height / 2)));
 }
 

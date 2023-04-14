@@ -20,6 +20,7 @@ void InputField::initText()
 	m_textBox.setCharacterSize(20.0f);
 	m_textBox.setFillColor(sf::Color::Black);
 	m_textBox.setPosition(170.0f, 210.0f);
+
 }
 
 InputField::~InputField()

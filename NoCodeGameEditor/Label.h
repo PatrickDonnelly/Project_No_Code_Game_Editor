@@ -18,7 +18,7 @@ public:
 
 
 	sf::Vector2f getTextPosition();
-	sf::Text getText();
+	sf::Text* getText();
 
 	bool m_italics = false;
 	bool m_underlined = false;

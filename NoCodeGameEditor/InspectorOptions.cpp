@@ -38,8 +38,8 @@ void InspectorOptions::initOptions()
                 m_options.push_back(new CheckBox("RadialVision"));
 
             m_options.at(i)->setCheckBoxPosition(sf::Vector2f(
-                (m_inspectorOptionsLabel->getText().getPosition().x),
-                (m_inspectorOptionsLabel->getText().getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
+                (m_inspectorOptionsLabel->getText()->getPosition().x),
+                (m_inspectorOptionsLabel->getText()->getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
         }
     }
     else if (m_tag == "Stats")
@@ -54,8 +54,8 @@ void InspectorOptions::initOptions()
                 m_options.push_back(new CheckBox("Speed"));
 
             m_options.at(i)->setCheckBoxPosition(sf::Vector2f(
-                (m_inspectorOptionsLabel->getText().getPosition().x),
-                (m_inspectorOptionsLabel->getText().getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
+                (m_inspectorOptionsLabel->getText()->getPosition().x),
+                (m_inspectorOptionsLabel->getText()->getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
         }
     }
     else if (m_tag == "Sound")
@@ -73,8 +73,8 @@ void InspectorOptions::initOptions()
 
 
             m_options.at(i)->setCheckBoxPosition(sf::Vector2f(
-                (m_inspectorOptionsLabel->getText().getPosition().x),
-                (m_inspectorOptionsLabel->getText().getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
+                (m_inspectorOptionsLabel->getText()->getPosition().x),
+                (m_inspectorOptionsLabel->getText()->getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
         }
     }
     else if (m_tag == "Dialogue")
@@ -86,8 +86,8 @@ void InspectorOptions::initOptions()
 
 
             m_options.at(i)->setCheckBoxPosition(sf::Vector2f(
-                (m_inspectorOptionsLabel->getText().getPosition().x),
-                (m_inspectorOptionsLabel->getText().getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
+                (m_inspectorOptionsLabel->getText()->getPosition().x),
+                (m_inspectorOptionsLabel->getText()->getPosition().y + 10 + (i * m_options.at(i)->getCheckBoxBounds().getGlobalBounds().height + 5))));
         }
     }
 }
@@ -152,5 +152,5 @@ void InspectorOptions::initText()
 {
 
     m_inspectorOptionsLabel->setText(m_tag);
-    m_inspectorOptionsLabel->setTextPosition(sf::Vector2f(m_inspectorOptionsBGShape.getPosition().x + m_inspectorOptionsLabel->getText().getGlobalBounds().width /2 + 5, m_inspectorOptionsBGShape.getPosition().y +10));
+    m_inspectorOptionsLabel->setTextPosition(sf::Vector2f(m_inspectorOptionsBGShape.getPosition().x + m_inspectorOptionsLabel->getText()->getGlobalBounds().width /2 + 5, m_inspectorOptionsBGShape.getPosition().y +10));
 }

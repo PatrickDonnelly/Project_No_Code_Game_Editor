@@ -23,7 +23,7 @@ CheckBox::~CheckBox()
 void CheckBox::setCheckBoxPosition(sf::Vector2f t_pos)
 {
 	m_checkBox.setPosition(t_pos);
-	m_checkBoxLabel->setTextPosition(sf::Vector2f(m_checkBox.getPosition().x + (m_checkBoxLabel->getText().getGlobalBounds().width / 2) + m_checkBox.getGlobalBounds().width, m_checkBox.getPosition().y + (m_checkBoxLabel->getText().getGlobalBounds().height / 2)));
+	m_checkBoxLabel->setTextPosition(sf::Vector2f(m_checkBox.getPosition().x + (m_checkBoxLabel->getText()->getGlobalBounds().width / 2) + m_checkBox.getGlobalBounds().width, m_checkBox.getPosition().y + (m_checkBoxLabel->getText()->getGlobalBounds().height / 2)));
 }
 
 void CheckBox::toggleColor()

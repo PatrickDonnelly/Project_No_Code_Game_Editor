@@ -3,8 +3,8 @@
 
 ColourPicker::ColourPicker()
 {
-	setUpCloseButton();
 	initColorPicker();
+	setUpCloseButton();
 }
 
 ColourPicker::~ColourPicker()
@@ -81,8 +81,8 @@ bool ColourPicker::checkIfCloseClicked(sf::Event t_event, sf::RenderWindow& t_wi
 	else
 	{
 		m_closeButton->setButtonTexture();
-		return false;
 	}
+	return false;
 }
 
 void ColourPicker::render(sf::RenderWindow* t_window)
@@ -90,7 +90,7 @@ void ColourPicker::render(sf::RenderWindow* t_window)
 	if (m_enabled)
 	{
 		t_window->draw(m_colorPickerBG);
-		m_closeButton->render(t_window);
 		t_window->draw(m_colorPickerSprite);
+		m_closeButton->render(t_window);
 	}
 }

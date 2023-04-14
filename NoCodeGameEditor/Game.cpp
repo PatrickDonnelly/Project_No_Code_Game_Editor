@@ -177,59 +177,8 @@ void Game::update(sf::Time t_deltaTime)
 	}
 	if (m_gameState->getState() == State::SAVING)
 	{
-		// Prompt user to enter their games name - text editor, save button cancle button
-
-		// pop up if name taken - options overwrite, cancel
-
-		// if name not taken create folder directory with that name
-
-		// create a button with that projects name
-
-		// load data from that project if the button is clicked
 
 		std::cout << "Saving Game" << std::endl;
-
-		// creating an ifstream object named file
-		//std::ifstream file;
-
-		// opening the file
-		//file.open("Dialogue/testSave.csv");
-		/*if (file)
-		{*/
-			//saving = true;
-			//std::cout << "File exists" << std::endl;
-			//m_popUpBox.setPopUpEnabled();
-
-			//unsigned lines = 0;
-			//std::string line_content;
-			//std::string lineContentAppended;
-			//std::ifstream my_file("PopUpMessages/fileExists.txt");
-
-
-			//while (std::getline(my_file, line_content)) {
-			//	lines++;
-
-
-			//	lineContentAppended.append(line_content);
-			//	lineContentAppended.append("\n");
-
-
-				//std::cout << "Line: " << lines << " content: " << line_content << std::endl;
-			//}
-
-			//my_file.close();
-
-			//m_popUpBox.setPopUpBoxText(lineContentAppended);
-
-			//for (int i = 0; i < 2; i++)
-			//{
-
-			//	m_popUpButtons.at(i)->setButtonPosition(
-			//		sf::Vector2f{ m_popUpBox.getPopUpBoxPosition().x + (m_popUpBox.getPopUpBoxBounds().x / 2) + (i * 200) - 100,
-			//						m_popUpBox.getPopUpBoxPosition().y + (m_popUpBox.getPopUpBoxBounds().y) - (m_popUpButtons.at(i)->getButtonSprite().getGlobalBounds().height) });
-			//	m_popUpButtonLabels.at(i)->setTextPosition(m_popUpButtons.at(i)->getButtonPosition());
-			//}
-		//}
 
 		YAML::Emitter out;
 		out << YAML::BeginDoc;
@@ -349,6 +298,7 @@ void Game::update(sf::Time t_deltaTime)
 				out << YAML::Key << "Color Green Value" << YAML::Value << m_saveGameScreen.getColorGreenValue(true);
 				out << YAML::Key << "Color Blue Value" << YAML::Value << m_saveGameScreen.getColorBlueValue(true);
 
+
 				out << YAML::EndMap;
 				out << YAML::EndSeq;
 
@@ -362,6 +312,7 @@ void Game::update(sf::Time t_deltaTime)
 				out << YAML::Key << "Color Red Value" << YAML::Value << m_saveGameScreen.getColorRedValue(false);
 				out << YAML::Key << "Color Green Value" << YAML::Value << m_saveGameScreen.getColorGreenValue(false);
 				out << YAML::Key << "Color Blue Value" << YAML::Value << m_saveGameScreen.getColorBlueValue(false);
+
 				out << YAML::EndMap;
 		
 		out << YAML::EndSeq;
@@ -370,8 +321,8 @@ void Game::update(sf::Time t_deltaTime)
 		out << YAML::EndMap;
 		out << YAML::EndDoc;
 		// player save
-
-		std::ofstream fout("output2.yaml");
+		std::string _filePath = m_saveGameScreen.getFolderPath();
+		std::ofstream fout(_filePath + "\\" + m_saveGameScreen.getTitle(true) + ".yaml");
 		fout << out.c_str();
 		fout.close();
 
@@ -389,10 +340,9 @@ void Game::update(sf::Time t_deltaTime)
 	}
 	if (m_gameState->getState() == State::LOAD_GAME)
 	{
-		// load files
-		// switch to play game
-
-		YAML::Node output = YAML::LoadFile("output.yaml");
+		std::string _fileName = m_levelList.getGameToBeLoaded();
+		std::cout << _fileName << std::endl;
+		YAML::Node output = YAML::LoadFile("Games\\" + _fileName + "\\" + _fileName + ".yaml");
 		int size = output["Grid"][0]["Size"].as<int>();
 		m_objectPlacement->clearObjects();
 		m_grid->clear();
@@ -405,18 +355,12 @@ void Game::update(sf::Time t_deltaTime)
 		std::vector<bool> hasObject;
 		std::vector<Object> object;
 
-		// m_grid->m_vectGrid
-
-
-				//std::vector<ObjectData> objects;
 		for (const auto& node : output["Tile"]) {
 			textures.push_back(node["Texture"].as<std::string>());
 			cellType.push_back(node["Cell Type"].as<std::string>());
 			hasObject.push_back(node["Occupied"].as<bool>());
 			positions.push_back(
 				sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>()));
-			//sf::Vector2f name = sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>());
-			//break;
 			std::cout << node["Xpos"].as<float>() << std::endl;
 		}
 		int k = 0;
@@ -444,9 +388,6 @@ void Game::update(sf::Time t_deltaTime)
 			);
 			m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->getSprite()->setPosition(
 				m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->getBounds()->getPosition());
-			//cellType.push_back(node["Cell Type"].as<std::string>());
-			//sf::Vector2f name = sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>());
-			//break;
 			std::cout << node["Xpos"].as<float>() << std::endl;
 		}
 
@@ -459,9 +400,6 @@ void Game::update(sf::Time t_deltaTime)
 			);
 			m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->getSprite()->setPosition(
 				m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->getBounds()->getPosition());
-			//cellType.push_back(node["Cell Type"].as<std::string>());
-			//sf::Vector2f name = sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>());
-			//break;
 			std::cout << node["Xpos"].as<float>() << std::endl;
 		}
 
@@ -474,9 +412,6 @@ void Game::update(sf::Time t_deltaTime)
 			);
 			m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->getSprite()->setPosition(
 				m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->getBounds()->getPosition());
-			//cellType.push_back(node["Cell Type"].as<std::string>());
-			//sf::Vector2f name = sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>());
-			//break;
 			std::cout << node["Xpos"].as<float>() << std::endl;
 		}
 
@@ -490,38 +425,29 @@ void Game::update(sf::Time t_deltaTime)
 
 			m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getSprite()->setPosition(
 				m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition());
-			//cellType.push_back(node["Cell Type"].as<std::string>());
-			//sf::Vector2f name = sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>());
-			//break;
-			//int r = m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition().x / 32;
-			//int c = m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition().y / 32;
-
-			//m_grid->m_vectGrid.at(r).at(c).cellType = node["CellType"].as<std::string>();
 
 			std::cout << node["Xpos"].as<float>() << std::endl;
 		}
 
-		//for (const auto& node : output["GameName"]) {
-		//	m_walls.push_back(new Wall(node["Texture"].as<std::string>()));
-		//	m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->setRowColumn(
-		//		node["Row"].as<int>(), node["Column"].as<int>());
-		//	m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->setPosition(
-		//		node["Xpos"].as<float>(), node["Ypos"].as<float>()
-		//	);
+		for (const auto& node : output["GameName"]) {
+			m_saveGameScreen.setMainTitle(node["Name"].as<std::string>());
+			m_saveGameScreen.setMainTitleInputField(node["Name"].as<std::string>());
+			m_saveGameScreen.setMainItalics(node["Italics"].as<bool>());
+			m_saveGameScreen.setMainUnderlined(node["Underlined"].as<bool>());
+			m_saveGameScreen.setMainBold(node["Bold"].as<bool>());
+			m_saveGameScreen.setMainColor(node["Color Red Value"].as<int>(), node["Color Green Value"].as<int>(), node["Color Blue Value"].as<int>());
 
-		//	m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getSprite()->setPosition(
-		//		m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition());
-		//	//cellType.push_back(node["Cell Type"].as<std::string>());
-		//	//sf::Vector2f name = sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>());
-		//	//break;
-		//	//int r = m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition().x / 32;
-		//	//int c = m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition().y / 32;
+		}
 
-		//	//m_grid->m_vectGrid.at(r).at(c).cellType = node["CellType"].as<std::string>();
+		for (const auto& node : output["GameSubTitle"]) {
+			m_saveGameScreen.setSubTitle(node["Name"].as<std::string>());
+			m_saveGameScreen.setSubTitleInputField(node["Name"].as<std::string>());
+			m_saveGameScreen.setSubItalics(node["Italics"].as<bool>());
+			m_saveGameScreen.setSubUnderlined(node["Underlined"].as<bool>());
+			m_saveGameScreen.setSubBold(node["Bold"].as<bool>());
+			m_saveGameScreen.setSubColor(node["Color Red Value"].as<int>(), node["Color Green Value"].as<int>(), node["Color Blue Value"].as<int>());
 
-		//	std::cout << node["Xpos"].as<float>() << std::endl;
-		//}
-
+		}
 		m_gameState->setState(State::ROOM_PLACE_OBJECTS);
 	}
 	//std::cout << m_grid->m_vectGrid.size() << std::endl;

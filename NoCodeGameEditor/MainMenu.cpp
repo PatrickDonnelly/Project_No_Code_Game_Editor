@@ -137,7 +137,7 @@ void MainMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
     sf::Event newEvent = t_event;
 	for (auto b : m_mainMenuButtons)
 	{
-		if (b->getButtonLabel()->getText().getString() == "Exit")
+		if (b->getButtonLabel()->getText()->getString() == "Exit")
 		{
 			if (b->isButtonClicked(t_event, &t_window))
 			{
@@ -145,7 +145,7 @@ void MainMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 				t_window.close();
 			}
 		}
-		else if (b->getButtonLabel()->getText().getString() == "Create Game")
+		else if (b->getButtonLabel()->getText()->getString() == "Create Game")
 		{
 			if (b->isButtonClicked(t_event, &t_window))
 			{
@@ -153,7 +153,7 @@ void MainMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 				m_currentGameState->setState(State::ROOM_BUILD);
 			}
 		}
-		else if (b->getButtonLabel()->getText().getString() == "Play Game")
+		else if (b->getButtonLabel()->getText()->getString() == "Play Game")
 		{
 			if (b->isButtonClicked(t_event, &t_window))
 			{
@@ -161,7 +161,7 @@ void MainMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 				m_currentGameState->setState(State::GAME_LIST);
 			}
 		}
-		else if (b->getButtonLabel()->getText().getString() == "Main Menu")
+		else if (b->getButtonLabel()->getText()->getString() == "Main Menu")
 		{
 			if (b->isButtonClicked(t_event, &t_window))
 			{
