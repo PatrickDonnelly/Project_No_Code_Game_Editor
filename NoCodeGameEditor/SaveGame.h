@@ -13,7 +13,6 @@
 #include <ostream>
 #include <filesystem>
 #include "CheckBox.h"
-#include "DialogueBox.h"
 #include "ColourPicker.h"
 
 
@@ -27,14 +26,8 @@ public:
 	SaveGame(GameState* t_currentGameState);
 	~SaveGame();
 
-	void initInputFields();
-	void render(sf::RenderWindow* t_window);
-	std::vector<Label*> m_labels;
-	std::vector<Button*> m_saveAndCancelButtons;
 	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);
 	void setEnabled(bool t_onOff) { m_enabled = t_onOff; }
-	Label* m_titleText;
-	Label* m_subTitleText;
 
 	std::string getTitle(bool t_isMainTitle);
 	bool getItalics(bool t_isMainTitle);
@@ -77,9 +70,17 @@ private:
 	bool saving = false;
 
 	PopUp m_popUpBox;
+	Label* m_titleText;
+	Label* m_subTitleText;
+	std::vector<Label*> m_labels;
+	std::vector<Button*> m_saveAndCancelButtons;
 
-
-
+	void initInputFields();
+	void render(sf::RenderWindow* t_window);
+	void setSelectedInputField(sf::Event t_event, sf::RenderWindow& t_window);
+	void typing(sf::Event t_event);
+	void setTextStyle(std::vector<CheckBox>& t_textOptions, Label* t_text, int t_index, sf::Color t_textColor, sf::Event t_event, sf::RenderWindow& t_window);
+	void processButtons(sf::Event t_event, sf::RenderWindow& t_window);
 
 
 	std::vector<Button*> m_textEditorButtons;
@@ -96,7 +97,6 @@ private:
 	sf::Font m_font;
 
 	int m_characterLimit = 24;
-
 };
 #endif // !SAVEGAME_HPP
 
