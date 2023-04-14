@@ -326,11 +326,8 @@ void Game::update(sf::Time t_deltaTime)
 		fout << out.c_str();
 		fout.close();
 
+		m_levelList.refreshLevelList();
 		m_gameState->setState(m_gameState->getPreviousState());
-
-
-
-
 	}
 	if (m_gameState->getState() == State::MENU)
 	{

@@ -138,7 +138,7 @@ void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 		m_placementOptionsLabels.push_back(new Label(t_arialFont));
 		m_placementOptionsLabels.at(i)->setTextPosition(m_placementOptions.at(i).getButtonPosition());
 	}
-	m_placementOptionsLabels.at(0)->setText("Rebuild Room");
+	m_placementOptionsLabels.at(0)->setText("Load Game");
 	m_placementOptionsLabels.at(1)->setText("Test Room");
 	m_placementOptionsLabels.at(2)->setText("Clear Room");
 }
@@ -528,7 +528,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 				{
 					if (t_event.mouseButton.button == sf::Mouse::Left)
 					{
-						if (m_placementOptionsLabels.at(i)->getTextString() == "Rebuild Room")
+						if (m_placementOptionsLabels.at(i)->getTextString() == "Load Game")
 						{
 							m_roomCreation->resetValues();
 							m_grid->regenerateGrid();
@@ -682,10 +682,18 @@ void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, 
 
 	m_gameView.zoom(zoom);
 	window.setView(m_gameView);
-	const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
-	const sf::Vector2f offset{ beforeZoom - afterZoom };
-	m_gameView.move(offset);
-	window.setView(m_gameView);
+	std::cout << "view size x : " << m_gameView.getSize().x << " view size y : " << m_gameView.getSize().y << std::endl;
+	if (m_gameView.getSize().x > 500)
+	{
+		const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
+		const sf::Vector2f offset{ beforeZoom - afterZoom };
+		m_gameView.move(offset);
+		window.setView(m_gameView);
+	}
+	else
+	{
+		std::cout << "zoom zoom";
+	}
 }
 
 void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)

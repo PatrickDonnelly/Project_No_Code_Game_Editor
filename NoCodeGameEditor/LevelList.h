@@ -14,12 +14,12 @@ namespace fs = std::filesystem;
 class LevelList
 {
 private:
-
+	void loadLevelList();
 public:
 	LevelList();
 	LevelList(GameState* t_gameState);
 	~LevelList();
-
+	void refreshLevelList();
 	void initButtons();
 	void render(sf::RenderWindow* t_window);
 	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);

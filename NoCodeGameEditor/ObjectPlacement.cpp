@@ -273,11 +273,11 @@ void ObjectPlacement::createObject(int row, int col)
 			m_walls.push_back(new Wall(m_tempTag, m_selectedObject, m_textureManager));
 			setObject(row, col, "Wall", m_walls);
 		}
-		else if (m_tempTag.find("Terrain") != std::string::npos)
-		{
+	}
+	if (m_tempTag.find("Terrain") != std::string::npos)
+	{
 			m_grid->m_vectGrid.at(row).at(col).setFloorSprite(m_selectedObject);
 			m_grid->m_vectGrid.at(row).at(col).cellType = "Terrain";
-		}
 	}
 }
 
