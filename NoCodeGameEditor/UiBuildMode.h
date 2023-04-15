@@ -53,7 +53,6 @@ private:
 
 	sf::Font m_arialFont;
 public:
-	bool m_buttonClicked = false;
 	UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState, RoomCreation* t_roomCreation, ObjectPlacement* t_objectPlacement);
 	UiBuildMode();
 	~UiBuildMode();
