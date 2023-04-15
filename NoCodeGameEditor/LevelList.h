@@ -8,6 +8,7 @@
 #include <fstream>
 #include <iostream>
 #include <filesystem>
+#include "PopUp.h"
 
 namespace fs = std::filesystem;
 
@@ -15,10 +16,16 @@ class LevelList
 {
 private:
 	void loadLevelList();
+	void setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window);
+	std::vector<Button*> m_prevNextbuttons;
+	int m_currentRowIndex = 0;
+	void setUpPopUpBox(std::string t_fileName, int t_noOfButtons);
+	PopUp m_popUpBox;
 public:
 	LevelList();
 	LevelList(GameState* t_gameState);
 	~LevelList();
+
 	void refreshLevelList();
 	void initButtons();
 	void render(sf::RenderWindow* t_window);
@@ -30,6 +37,7 @@ public:
 	std::vector<std::vector<Button*>> m_selectableGameButtons;
 	std::vector<std::string> m_gameNames;
 	std::string m_pathGames = "Games/";
+	int m_noOfGamesFound = 0;
 	int m_rowsGames = 0;
 	std::string m_gameName;
 	std::string getGameToBeLoaded();

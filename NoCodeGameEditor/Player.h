@@ -19,7 +19,7 @@ public:
 	bool m_canInteract = false;
 	void setInteract(bool tf) { m_canInteract = tf; }
 	bool getInteract() { return m_canInteract; }
-
+	sf::Vector2f getCenterPos() { return m_playerCentre.getPosition(); }
 	float m_defaultSpeed;
 	bool m_weaponEnabled = false;
 	sf::Sprite m_playerSprite;

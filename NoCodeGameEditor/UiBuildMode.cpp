@@ -112,26 +112,21 @@ void UiBuildMode::setUpGridFunctionButtons(sf::Font& t_arialFont)
 
 void UiBuildMode::setUpTestBuildButtons(sf::Font& t_arialFont)
 {
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 2; i++)
 	{
 		m_testingButtons.push_back(Button());
-		m_testingButtons.at(i).setButtonPosition(sf::Vector2f{820.0f + (i * 280), 900.0f});
-		if (i == 2)
-		{
-			m_testingButtons.at(i) = Button();
-			m_testingButtons.at(i).setButtonPosition(sf::Vector2f{820.0f, 1000.0f});
-		}
+		m_testingButtons.at(i).setButtonPosition(sf::Vector2f{ 16 + m_placementOptions.at(i).getButtonSprite().getGlobalBounds().width / 2,
+			304.0f + (i * 216) + (m_placementOptions.at(i).getButtonSprite().getGlobalBounds().height / 2) });
 		m_testingButtonLabels.push_back(new Label(t_arialFont));
 		m_testingButtonLabels.at(i)->setTextPosition(m_testingButtons.at(i).getButtonPosition());
 	}
-	m_testingButtonLabels.at(0)->setText("Place Objects");
+	m_testingButtonLabels.at(0)->setText("Stop Test");
 	m_testingButtonLabels.at(1)->setText("Save Room");
-	m_testingButtonLabels.at(2)->setText("Start Over");
 }
 
 void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 {
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		m_placementOptions.push_back(Button());
 		m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 16 + m_placementOptions.at(i).getButtonSprite().getGlobalBounds().width / 2, 
@@ -142,6 +137,7 @@ void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 	m_placementOptionsLabels.at(0)->setText("Load Game");
 	m_placementOptionsLabels.at(1)->setText("Test Room");
 	m_placementOptionsLabels.at(2)->setText("Clear Room");
+	m_placementOptionsLabels.at(3)->setText("Main Menu");
 }
 
 void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
@@ -150,7 +146,7 @@ void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
 	{
 		m_objectCategoryButtons.push_back(new Button());
 		m_objectCategoryButtons.at(i)->resize(1.0f, 0.5f);
-		m_objectCategoryButtons.at(i)->setButtonPosition(sf::Vector2f{ 512.0f + (i * m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().width), 824.0f + (m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().height /2) });
+		m_objectCategoryButtons.at(i)->setButtonPosition(sf::Vector2f{ 512.0f + (i * m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().width), 832.0f + (m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().height /2) });
 		
 
 		m_objectCategoryLabels.push_back(new Label(t_arialFont));
@@ -303,21 +299,21 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 
 	m_bgRight.setSize(sf::Vector2f(256.0f, 2160.0f));
 	m_bgRight.setPosition(1664.0f, 0.0f);
-	m_bgRight.setOutlineThickness(4.0f);
+	m_bgRight.setOutlineThickness(1.0f);
 	m_bgRight.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
-	m_bgRight.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+	m_bgRight.setFillColor(G_COLOR_UI_GREY);
 
 	m_bgLeft.setSize(sf::Vector2f(256.0f, 2160.0f));
 	m_bgLeft.setPosition(0.0f, 0.0f);
-	m_bgLeft.setOutlineThickness(4.0f);
+	m_bgLeft.setOutlineThickness(1.0f);
 	m_bgLeft.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
-	m_bgLeft.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+	m_bgLeft.setFillColor(G_COLOR_UI_GREY);
 
 	m_bgBottom.setSize(sf::Vector2f(1920.0f, 256.0f));
 	m_bgBottom.setPosition(0.0f, 824.0f);
-	m_bgBottom.setOutlineThickness(4.0f);
+	m_bgBottom.setOutlineThickness(1.0f);
 	m_bgBottom.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
-	m_bgBottom.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+	m_bgBottom.setFillColor(G_COLOR_UI_GREY);
 
 
 
@@ -558,7 +554,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 							m_roomCreation->resetValues();
 							m_grid->regenerateGrid();
 							m_objectPlacement->clearObjects();
-							m_gameState->m_currentGameState = State::ROOM_BUILD;
+							m_gameState->m_currentGameState = State::LEVEL_LIST;
 						}
 						else if (m_placementOptionsLabels.at(i)->getTextString() == "Test Room")
 						{
@@ -572,6 +568,10 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 						else if (m_placementOptionsLabels.at(i)->getTextString() == "Clear Room")
 						{
 							m_objectPlacement->clearObjects();
+						}
+						else if (m_placementOptionsLabels.at(i)->getTextString() == "Main Menu")
+						{
+							m_gameState->m_currentGameState = State::MENU;
 						}
 
 					}
@@ -601,7 +601,7 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
-					if (m_testingButtonLabels.at(i)->getTextString() == "Place Objects")
+					if (m_testingButtonLabels.at(i)->getTextString() == "Stop Test")
 					{
 						// Go back to placing objects
 						// reset the objects position
@@ -708,7 +708,7 @@ void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, 
 
 
 	std::cout << "view size x : " << m_gameView.getSize().x << " view size y : " << m_gameView.getSize().y << std::endl;
-	if (m_gameView.getSize().x > 512 && t_zoomIn)
+	if (m_gameView.getSize().x > 576 && t_zoomIn)
 	{
 		m_gameView.zoom(zoom);
 		window.setView(m_gameView);
@@ -717,9 +717,9 @@ void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, 
 		m_gameView.move(offset);
 		window.setView(m_gameView);
 	}
-	else if(m_gameView.getSize().x < 512 && t_zoomIn)
+	else if(m_gameView.getSize().x < 576 && t_zoomIn)
 	{
-		m_gameView.setSize(512, m_gameView.getSize().y);
+		m_gameView.setSize(576, 324);
 		window.setView(m_gameView);
 		const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
 		const sf::Vector2f offset{ beforeZoom - afterZoom };
@@ -727,7 +727,7 @@ void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, 
 		window.setView(m_gameView);
 		std::cout << "zoom zoom";
 	}
-	else if (m_gameView.getSize().x < 1920 && !t_zoomIn)
+	else if (m_gameView.getSize().x < 2880 && !t_zoomIn)
 	{
 		m_gameView.zoom(zoom);
 		window.setView(m_gameView);
@@ -736,9 +736,9 @@ void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, 
 		m_gameView.move(offset);
 		window.setView(m_gameView);
 	}
-	else if (m_gameView.getSize().x > 1920 && !t_zoomIn)
+	else if (m_gameView.getSize().x > 2880 && !t_zoomIn)
 	{
-		m_gameView.setSize(1920, m_gameView.getSize().y);
+		m_gameView.setSize(2880, 1620);
 		window.setView(m_gameView);
 		const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
 		const sf::Vector2f offset{ beforeZoom - afterZoom };
@@ -808,17 +808,7 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 	t_window->draw(m_bgLeft);
 	t_window->draw(m_bgRight);
 
-
-
-	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
-	{
-		for (int i = 0; i < m_buildButtons.size(); i++)
-		{
-			m_buildButtons.at(i).render(t_window);
-			m_buildButtonLabels.at(i)->render(t_window);
-		}
-	}
-	if (m_gameState->m_currentGameState == State::ROOM_TEXTURE)
+	if (m_gameState->m_currentGameState == State::ROOM_TEXTURE || m_gameState->m_currentGameState == State::LEVEL_LIST)
 	{
 		for (int i = 0; i < m_textureRoomButtons.size(); i++)
 		{
@@ -826,7 +816,7 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 			m_textureRoomLabels.at(i)->render(t_window);
 		}
 	}
-	if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
+	if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS || m_gameState->m_currentGameState == State::LEVEL_LIST)
 	{
 
 		t_window->draw(m_currentRowText);

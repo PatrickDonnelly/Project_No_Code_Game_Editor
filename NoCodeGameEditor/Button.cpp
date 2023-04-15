@@ -107,8 +107,10 @@ void Button::render(sf::RenderWindow* t_window)
 
 bool Button::isButtonClicked(sf::Event& t_event, sf::RenderWindow* t_window)
 {
-	if (m_buttonSprite.getGlobalBounds().contains((*t_window).mapPixelToCoords(sf::Mouse::getPosition(*t_window))))
+	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(*t_window).x, sf::Mouse::getPosition(*t_window).y);
+	if (m_buttonSprite.getGlobalBounds().contains(pixelPos))
 	{
+		highlighted();
 		if (t_event.type == sf::Event::MouseButtonReleased)
 		{
 			if (t_event.mouseButton.button == sf::Mouse::Left)
@@ -116,6 +118,10 @@ bool Button::isButtonClicked(sf::Event& t_event, sf::RenderWindow* t_window)
 					return true;
 			}
 		}
+	}
+	else
+	{
+		setButtonTexture();
 	}
 	return false;
 }

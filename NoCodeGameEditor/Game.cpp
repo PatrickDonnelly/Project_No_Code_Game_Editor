@@ -77,10 +77,9 @@ void Game::processEvents()
 		{
 			m_mainMenu.processEvents(newEvent, m_window);
 		}
-		if (m_gameState->getState() == State::ROOM_BUILD)
+		if (m_gameState->getState() == State::LEVEL_LIST)
 		{
 			m_levelList.processEvents(newEvent, m_window);
-			m_mainMenu.processEvents(newEvent, m_window);
 		}
 		if (m_gameState->getState() == State::GAME_LIST)
 		{
@@ -490,7 +489,7 @@ void Game::update(sf::Time t_deltaTime)
 		if (m_gameState->m_currentGameState == State::ROOM_TEST)
 		{
 			m_player->update(t_deltaTime, m_window);
-			m_gameView.setCenter(m_player->getSprite()->getPosition());
+			m_gameView.setCenter(sf::Vector2f(m_player->getCenterPos().x, m_player->getCenterPos().y +32));
 			m_window.setView(m_gameView);
 			m_spear->update(t_deltaTime, m_window);
 		}
@@ -669,7 +668,7 @@ void Game::update(sf::Time t_deltaTime)
 		}
 	}
 
-	if (m_gameState->getState() != State::MENU)
+	if (m_gameState->getState() == State::ROOM_PLACE_OBJECTS)
 	{
 		// get the current mouse position in the window
 		sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
@@ -692,8 +691,9 @@ void Game::update(sf::Time t_deltaTime)
 
 		// scroll left
 
-			if (mousePos.x < scrollDistanceSides && mousePos.x >= 256) {
-				float newCenterX = m_window.getView().getCenter().x - 40 / 10;
+			if (mousePos.x < scrollDistanceSides && mousePos.x >= 256 && mousePos.y < windowSize.y - 256) 
+			{
+				float newCenterX = m_window.getView().getCenter().x - 6;
 
 				sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
@@ -702,9 +702,11 @@ void Game::update(sf::Time t_deltaTime)
 			}
 			
 
-			if (mousePos.x > windowSize.x - scrollDistanceSides && mousePos.x < windowSize.x - 256) {
+			if (mousePos.x > windowSize.x - scrollDistanceSides && mousePos.x < windowSize.x - 256
+				&& mousePos.y < windowSize.y - 256) 
+			{
 
-				float newCenterX = m_window.getView().getCenter().x + 40 / 10;
+				float newCenterX = m_window.getView().getCenter().x + 6;
 
 
 				sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
@@ -712,10 +714,10 @@ void Game::update(sf::Time t_deltaTime)
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
 			}
-			if (mousePos.y < 96) 
+			if (mousePos.y < 96 && mousePos.x > 256 && mousePos.x < windowSize.x - 256)
 			{
 
-				float newCenterY = m_window.getView().getCenter().y - 40 / 10;
+				float newCenterY = m_window.getView().getCenter().y - 6;
 
 
 				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
@@ -724,8 +726,10 @@ void Game::update(sf::Time t_deltaTime)
 				m_window.setView(m_gameView);
 			}
 
-			if (mousePos.y > windowSize.y - scrollDistanceSides && mousePos.y < windowSize.y - 256) {
-				float newCenterY = m_window.getView().getCenter().y + 40 / 10;
+			if (mousePos.y > windowSize.y - scrollDistanceSides && mousePos.y < windowSize.y - 256
+				&& mousePos.x > 256 && mousePos.x < windowSize.x - 256)
+			{
+				float newCenterY = m_window.getView().getCenter().y + 6;
 
 				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
@@ -829,7 +833,20 @@ void Game::render()
 		m_grid->render(&m_window);
 		m_objectPlacement->render(&m_window);
 		m_window.setView(m_uiView);
+		m_uiBuildMode.render(&m_window);
 		m_saveGameScreen.render(&m_window);
+		m_window.setView(m_gameView);
+	}
+	else if (m_gameState->getState() == State::LEVEL_LIST)
+	{
+		m_window.setView(m_gameView);
+		m_grid->render(&m_window);
+		m_objectPlacement->render(&m_window);
+
+		m_window.setView(m_uiView);
+		m_levelList.render(&m_window);
+		m_uiBuildMode.render(&m_window);
+
 		m_window.setView(m_gameView);
 	}
 

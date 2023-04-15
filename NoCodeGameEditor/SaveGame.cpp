@@ -23,8 +23,8 @@ SaveGame::SaveGame(GameState* t_currentGameState)
 	m_gameState = t_currentGameState;
 
 	initInputFields();
-	setUpOptions(m_mainTitleOptions, 0, 100, 40.0f, m_titleText, m_mainTitleColor);
-	setUpOptions(m_subTitleOptions, 150.0f, 200, 30.0f, m_subTitleText, m_subTitleColor);
+	setUpOptions(m_mainTitleOptions, 8, 100, 40.0f, m_titleText, m_mainTitleColor);
+	setUpOptions(m_subTitleOptions, 172.0f, 200, 30.0f, m_subTitleText, m_subTitleColor);
 }
 
 SaveGame::~SaveGame()
@@ -34,22 +34,22 @@ SaveGame::~SaveGame()
 
 void SaveGame::initInputFields()
 {
-	m_mainTitle->SetInputFieldSize(sf::Vector2f(800.0f, 50.0f), sf::Vector2f(560.0f, 600.0f));
-	m_subTitle->SetInputFieldSize(sf::Vector2f(800.0f, 50.0f), sf::Vector2f(560.0f, 750.0f));
+	m_mainTitle->SetInputFieldSize(sf::Vector2f(800.0f, 50.0f), sf::Vector2f(560.0f, 376.0f));
+	m_subTitle->SetInputFieldSize(sf::Vector2f(800.0f, 50.0f), sf::Vector2f(560.0f, 544.0f));
 
 	m_backGround.setSize(sf::Vector2f(840.0f, 800.0f));
-	m_backGround.setPosition(540.0f, 200.0f);
-	m_backGround.setOutlineThickness(4.0f);
+	m_backGround.setPosition(540.0f, 8.0f);
+	m_backGround.setOutlineThickness(1.0f);
 	m_backGround.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
-	m_backGround.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+	m_backGround.setFillColor(G_COLOR_UI_GREY);
 	sf::Vector2f pos = m_mainTitle->GetInputField().getPosition();
 
 	m_labels.at(0)->setTextPosition(sf::Vector2f(m_mainTitle->GetInputField().getPosition().x + 180,
 		m_mainTitle->GetInputField().getPosition().y - 30));
 	m_labels.at(1)->setTextPosition(sf::Vector2f(m_subTitle->GetInputField().getPosition().x + 180,
 		m_subTitle->GetInputField().getPosition().y - 30));
-	m_saveAndCancelButtons.at(0)->setButtonPosition(sf::Vector2f(740.0f, 900.0f));
-	m_saveAndCancelButtons.at(1)->setButtonPosition(sf::Vector2f(1180.0f, 900.0f));
+	m_saveAndCancelButtons.at(0)->setButtonPosition(sf::Vector2f(740.0f, 716.0f));
+	m_saveAndCancelButtons.at(1)->setButtonPosition(sf::Vector2f(1180.0f, 716.0f));
 }
 
 void SaveGame::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
@@ -236,7 +236,7 @@ void SaveGame::setUpOptions(std::vector<CheckBox>& t_options, int t_yOffsetOne, 
 			t_options.push_back(CheckBox("Bold"));
 		if (i == 3)
 			t_options.push_back(CheckBox("Colour"));
-		t_options.at(i).setCheckBoxPosition(sf::Vector2f(600.0f + (i * 200.0f), 660.0f + t_yOffsetOne));
+		t_options.at(i).setCheckBoxPosition(sf::Vector2f(600.0f + (i * 200.0f), 440.0f + t_yOffsetOne));
 	}
 
 	t_text->setTextPosition(sf::Vector2f(m_backGround.getPosition().x + (m_backGround.getGlobalBounds().width / 2),

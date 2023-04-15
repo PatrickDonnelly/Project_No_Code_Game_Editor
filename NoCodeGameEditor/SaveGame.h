@@ -14,6 +14,7 @@
 #include <filesystem>
 #include "CheckBox.h"
 #include "ColourPicker.h"
+#include "Globals.h"
 
 
 namespace fs = std::filesystem;
