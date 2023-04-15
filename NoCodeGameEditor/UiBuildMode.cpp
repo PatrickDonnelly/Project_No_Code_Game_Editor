@@ -372,7 +372,7 @@ void UiBuildMode::processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindo
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
-					m_buttonClicked = true;
+
 					if (m_buildButtonLabels.at(i)->getTextString() == "Clear Grid")
 					{
 						m_grid->regenerateGrid();
@@ -427,7 +427,6 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 				{
 					if (t_event.mouseButton.button == sf::Mouse::Left)
 					{
-						m_buttonClicked = true;
 						if(col->isEnabled())
 						{
 							deselectButtons(t_objectButtons);
@@ -466,10 +465,10 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
-					m_buttonClicked = true;
 					if (i == 0)
 					{
 						m_grid->setGridEnabled();
+						std::cout << "grid on off" << std::endl;
 					}
 					else
 					{
@@ -495,7 +494,6 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
-					m_buttonClicked = true;
 					if (m_objectCategoryLabels.at(i)->getTextString() == "Walls")
 					{
 						m_currentTab = TabState::TAB_WALLS;
@@ -555,7 +553,6 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 				{
 					if (t_event.mouseButton.button == sf::Mouse::Left)
 					{
-						m_buttonClicked = true;
 						if (m_placementOptionsLabels.at(i)->getTextString() == "Load Game")
 						{
 							m_roomCreation->resetValues();
@@ -604,7 +601,6 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
-					m_buttonClicked = true;
 					if (m_testingButtonLabels.at(i)->getTextString() == "Place Objects")
 					{
 						// Go back to placing objects
@@ -626,8 +622,9 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 					}
 					else if (m_testingButtonLabels.at(i)->getTextString() == "Start Over")
 					{
+						m_objectPlacement->clearObjects();
 						m_grid->regenerateGrid();
-						m_gameState->m_currentGameState = State::ROOM_BUILD;
+						m_gameState->m_currentGameState = State::ROOM_PLACE_OBJECTS;
 					}
 				}
 			}
@@ -656,7 +653,6 @@ void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, i
 			{
 				if (t_event.key.code == sf::Mouse::Left)
 				{
-					m_buttonClicked = true;
 					if (i == 0)
 					{
 						m_currentRowIndex -= 1;
@@ -755,7 +751,6 @@ void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, 
 void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Event newEvent = t_event;
-	m_buttonClicked = false;
 
 	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 	{
@@ -805,7 +800,6 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	{
 		processTestRoomButtonInput(t_event, t_window);
 	}	
-	//std::cout << "Returning : " << m_buttonClicked << std::endl;
 }
 
 void UiBuildMode::render(sf::RenderWindow* t_window)

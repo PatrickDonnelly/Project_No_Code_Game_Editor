@@ -93,32 +93,28 @@ void Game::processEvents()
 		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 		{
 			m_uiBuildMode.processEvents(newEvent, m_window);
-			if (m_uiBuildMode.m_buttonClicked == false)
+			m_objectPlacement->processEvents(newEvent, m_window);
+			if (m_objectPlacement->m_currentlySelected != nullptr)
 			{
-				m_objectPlacement->processEvents(newEvent, m_window);
-				if (m_objectPlacement->m_currentlySelected != nullptr)
-				{
-					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
-					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
-				}
+				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
+				m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
 			}
-			else
-			{
-				std::cout << "true" << std::endl;
-			}
-
 		}
 		if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
 		{
 			m_uiBuildMode.processEvents(newEvent, m_window);
-			if (m_uiBuildMode.m_buttonClicked == false)
-			{
+
 				if (m_objectPlacement->m_currentlySelected != nullptr)
 				{
 					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
 					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
 				}
-			}
+			
+		}
+		if (m_gameState->m_currentGameState == State::ROOM_TEST)
+		{
+			m_uiBuildMode.processEvents(newEvent, m_window);
+
 		}
 		if (m_gameState->getState() != State::PAUSE_GAME)
 		{
@@ -494,6 +490,8 @@ void Game::update(sf::Time t_deltaTime)
 		if (m_gameState->m_currentGameState == State::ROOM_TEST)
 		{
 			m_player->update(t_deltaTime, m_window);
+			m_gameView.setCenter(m_player->getSprite()->getPosition());
+			m_window.setView(m_gameView);
 			m_spear->update(t_deltaTime, m_window);
 		}
 
@@ -765,8 +763,8 @@ void Game::update(sf::Time t_deltaTime)
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
 			}
-			std::cout << m_gameView.getSize().x << " : " << m_gameView.getSize().y << std::endl;
-			std::cout << m_gameView.getCenter().x << " centre " << m_gameView.getCenter().y << std::endl;
+			//std::cout << m_gameView.getSize().x << " : " << m_gameView.getSize().y << std::endl;
+			//std::cout << m_gameView.getCenter().x << " centre " << m_gameView.getCenter().y << std::endl;
 
 			//m_squareBounds = sf::FloatRect(m_gameView.getCenter().x - (m_gameView.getSize().x / 2) + 256, m_gameView.getCenter().y - m_gameView.getSize().y /2, m_gameView.getSize().x -512, m_gameView.getSize().y -256);
 
