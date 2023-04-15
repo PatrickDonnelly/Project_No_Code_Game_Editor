@@ -9,14 +9,16 @@ LevelList::LevelList(GameState* t_gameState)
 {
 	m_currentGameState = t_gameState;
 	initButtons();
-	for (auto& entry : fs::directory_iterator(m_pathGames))
-	{
-		//std::string temp = entry.path().().string();
-		//temp.resize(temp.size() - 4);
-		//m_gameNames.push_back(temp);
-	}
+	loadLevelList();
+	setUpGameButtons();
+}
 
+LevelList::~LevelList()
+{
+}
 
+void LevelList::loadLevelList()
+{
 	fs::path folder_path = m_pathGames;
 	if (fs::exists(folder_path) && fs::is_directory(folder_path)) {
 		// Read the contents of the folder
@@ -31,17 +33,11 @@ LevelList::LevelList(GameState* t_gameState)
 	else {
 		// Error opening directory
 		std::cerr << "Error opening directory." << std::endl;
-		}
+	}
 
 	for (const auto& folder_name : m_gameNames) {
 		std::cout << folder_name << std::endl;
 	}
-
-	setUpGameButtons();
-}
-
-LevelList::~LevelList()
-{
 }
 
 void LevelList::setUpGameButtons()
@@ -103,6 +99,13 @@ void LevelList::setUpGameButtons()
 	}
 }
 
+void LevelList::refreshLevelList()
+{
+	m_gameNames.clear();
+	m_selectableGameButtons.clear();
+	loadLevelList();
+	setUpGameButtons();
+}
 
 void LevelList::initButtons()
 {

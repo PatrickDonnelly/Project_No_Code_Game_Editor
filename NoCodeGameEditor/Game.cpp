@@ -73,17 +73,52 @@ void Game::processEvents()
 	sf::Event newEvent;
 	while (m_window.pollEvent(newEvent))
 	{
-		if (m_gameState->getState() == State::MENU || m_gameState->getState() == State::ROOM_BUILD)
+		if (m_gameState->getState() == State::MENU)
 		{
 			m_mainMenu.processEvents(newEvent, m_window);
 		}
-		if (m_gameState->getState() == State::GAME_LIST || m_gameState->getState() == State::ROOM_BUILD)
+		if (m_gameState->getState() == State::ROOM_BUILD)
+		{
+			m_levelList.processEvents(newEvent, m_window);
+			m_mainMenu.processEvents(newEvent, m_window);
+		}
+		if (m_gameState->getState() == State::GAME_LIST)
 		{
 			m_levelList.processEvents(newEvent, m_window);
 		}
 		if (m_gameState->getState() == State::SAVING_SCREEN)
 		{
 			m_saveGameScreen.processEvents(newEvent, m_window);
+		}
+		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
+		{
+			m_uiBuildMode.processEvents(newEvent, m_window);
+			if (m_uiBuildMode.m_buttonClicked == false)
+			{
+				m_objectPlacement->processEvents(newEvent, m_window);
+				if (m_objectPlacement->m_currentlySelected != nullptr)
+				{
+					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
+					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
+				}
+			}
+			else
+			{
+				std::cout << "true" << std::endl;
+			}
+
+		}
+		if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
+		{
+			m_uiBuildMode.processEvents(newEvent, m_window);
+			if (m_uiBuildMode.m_buttonClicked == false)
+			{
+				if (m_objectPlacement->m_currentlySelected != nullptr)
+				{
+					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
+					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
+				}
+			}
 		}
 		if (m_gameState->getState() != State::PAUSE_GAME)
 		{
@@ -100,9 +135,10 @@ void Game::processEvents()
 				}
 			}
 			m_spear->processEvents(newEvent);
+			//m_uiBuildMode.processEvents(newEvent, m_window);
 			//if (m_gameState->getState()==State::ROOM_PLACE_OBJECTS)
 			//{
-				m_uiBuildMode.processEvents(newEvent, m_window);
+				
 		//	}
 
 			//m_inspector->processEvents(newEvent, m_window);
@@ -129,19 +165,6 @@ void Game::processEvents()
 					{
 						m_textEditor->GetTitle()->typing(newEvent);
 					}
-				}
-			}
-			if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
-			{
-				m_objectPlacement->processEvents(newEvent, m_window);
-
-			}
-			if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS || m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
-			{
-				if (m_objectPlacement->m_currentlySelected != nullptr)
-				{
-					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
-					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
 				}
 			}
 		}
@@ -326,11 +349,8 @@ void Game::update(sf::Time t_deltaTime)
 		fout << out.c_str();
 		fout.close();
 
+		m_levelList.refreshLevelList();
 		m_gameState->setState(m_gameState->getPreviousState());
-
-
-
-
 	}
 	if (m_gameState->getState() == State::MENU)
 	{
@@ -462,7 +482,7 @@ void Game::update(sf::Time t_deltaTime)
 
 		//m_textureManager->getNumberOfTextures();
 		//m_fontManager.getNumberOfFonts();
-		m_objectPlacement->update(t_deltaTime, m_window);
+		//m_objectPlacement->update(t_deltaTime, m_window);
 
 		if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 		{
@@ -667,12 +687,15 @@ void Game::update(sf::Time t_deltaTime)
 
 		sf::Vector2u windowSize = m_window.getSize();
 
-		int scrollDistance = 40;
+		int scrollDistanceSides= 320;
+
+		int scrollDistanceBottom = 40;
+
 
 		// scroll left
 
-			if (mousePos.x < scrollDistance) {
-				float newCenterX = m_window.getView().getCenter().x - scrollDistance / 4;
+			if (mousePos.x < scrollDistanceSides && mousePos.x >= 256) {
+				float newCenterX = m_window.getView().getCenter().x - 40 / 10;
 
 				sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
@@ -681,9 +704,9 @@ void Game::update(sf::Time t_deltaTime)
 			}
 			
 
-			if (mousePos.x > windowSize.x - scrollDistance) {
+			if (mousePos.x > windowSize.x - scrollDistanceSides && mousePos.x < windowSize.x - 256) {
 
-				float newCenterX = m_window.getView().getCenter().x + scrollDistance / 4;
+				float newCenterX = m_window.getView().getCenter().x + 40 / 10;
 
 
 				sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
@@ -691,10 +714,10 @@ void Game::update(sf::Time t_deltaTime)
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
 			}
-			if (mousePos.y < scrollDistance) 
+			if (mousePos.y < 96) 
 			{
 
-				float newCenterY = m_window.getView().getCenter().y - scrollDistance / 4;
+				float newCenterY = m_window.getView().getCenter().y - 40 / 10;
 
 
 				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
@@ -703,8 +726,8 @@ void Game::update(sf::Time t_deltaTime)
 				m_window.setView(m_gameView);
 			}
 
-			if (mousePos.y > windowSize.y - scrollDistance) {
-				float newCenterY = m_window.getView().getCenter().y + scrollDistance / 4;
+			if (mousePos.y > windowSize.y - scrollDistanceSides && mousePos.y < windowSize.y - 256) {
+				float newCenterY = m_window.getView().getCenter().y + 40 / 10;
 
 				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
@@ -714,16 +737,16 @@ void Game::update(sf::Time t_deltaTime)
 
 
 			//std::cout << "centre x : " << m_view.getCenter().x << std::endl;
-			if (m_gameView.getCenter().x - (windowSize.x / 2) < -544)
+			if (m_gameView.getCenter().x - (windowSize.x / 2) < -800)
 			{
-				sf::View view(sf::Vector2f((windowSize.x / 2)-544, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				sf::View view(sf::Vector2f((windowSize.x / 2)- 800, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
 			}
-			if (m_gameView.getCenter().x + (windowSize.x / 2) > 3680)
+			if (m_gameView.getCenter().x + (windowSize.x / 2) > 4000)
 			{
-				sf::View view(sf::Vector2f(3680 - (windowSize.x / 2), m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				sf::View view(sf::Vector2f(4000 - (windowSize.x / 2), m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
@@ -742,8 +765,10 @@ void Game::update(sf::Time t_deltaTime)
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
 			}
+			std::cout << m_gameView.getSize().x << " : " << m_gameView.getSize().y << std::endl;
+			std::cout << m_gameView.getCenter().x << " centre " << m_gameView.getCenter().y << std::endl;
 
-		
+			//m_squareBounds = sf::FloatRect(m_gameView.getCenter().x - (m_gameView.getSize().x / 2) + 256, m_gameView.getCenter().y - m_gameView.getSize().y /2, m_gameView.getSize().x -512, m_gameView.getSize().y -256);
 
 	}
 

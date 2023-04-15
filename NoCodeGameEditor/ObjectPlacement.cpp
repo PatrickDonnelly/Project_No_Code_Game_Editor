@@ -138,6 +138,7 @@ void ObjectPlacement::moveObject(sf::Event t_event, sf::RenderWindow& m_window)
 void ObjectPlacement::placeObject(sf::Event t_event, sf::RenderWindow& m_window)
 {
 	sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
+
 	sf::Vector2f worldPos = m_window.mapPixelToCoords(pixelPos);
 	int row = worldPos.x / 32;
 	int col = worldPos.y / 32;
@@ -146,37 +147,39 @@ void ObjectPlacement::placeObject(sf::Event t_event, sf::RenderWindow& m_window)
 	{
 		if (m_grid->m_vectGrid.at(row).at(col).getTileBorder().getGlobalBounds().contains(worldPos))
 		{
-
-			if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && initialPress == false)
+			if (m_squareBounds.contains(sf::Vector2f(pixelPos)))
 			{
-				if (m_currentlySelected != nullptr)
+				if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && initialPress == false)
 				{
-					if (m_currentlySelected->m_moving == true && m_grid->m_vectGrid.at(row).at(col).m_hasObject == false)
+					if (m_currentlySelected != nullptr)
 					{
-						m_currentlySelected->getBounds()->setPosition(m_grid->m_vectGrid.at(row).at(col).getPos());
-						m_currentlySelected->getSprite()->setPosition(m_currentlySelected->getBounds()->getPosition());
-						if (m_grid->m_vectGrid.at(row).at(col).m_hasObject == false)
+						if (m_currentlySelected->m_moving == true && m_grid->m_vectGrid.at(row).at(col).m_hasObject == false)
+						{
+							m_currentlySelected->getBounds()->setPosition(m_grid->m_vectGrid.at(row).at(col).getPos());
+							m_currentlySelected->getSprite()->setPosition(m_currentlySelected->getBounds()->getPosition());
+							if (m_grid->m_vectGrid.at(row).at(col).m_hasObject == false)
+							{
+								m_currentlySelected->setSelected(false);
+								m_currentlySelected->setMoving(false);
+								m_currentlySelected = nullptr;
+								m_grid->m_vectGrid.at(row).at(col).m_hasObject = true;
+								m_grid->m_vectGrid.at(row).at(col).m_objectType = m_storedObjectType;
+
+
+								m_originalPosition = sf::Vector2i{ 0,0 };
+							}
+						}
+						else if (m_currentlySelected->m_moving == false)
 						{
 							m_currentlySelected->setSelected(false);
-							m_currentlySelected->setMoving(false);
 							m_currentlySelected = nullptr;
-							m_grid->m_vectGrid.at(row).at(col).m_hasObject = true;
-							m_grid->m_vectGrid.at(row).at(col).m_objectType = m_storedObjectType;
-
-
-							m_originalPosition = sf::Vector2i{ 0,0 };
 						}
-					}
-					else if (m_currentlySelected->m_moving == false)
-					{
-						m_currentlySelected->setSelected(false);
-						m_currentlySelected = nullptr;
-					}
 
-				}
-				else if (checkValidSelection())
-				{
+					}
+					else if (checkValidSelection())
+					{
 						createObject(row, col);
+					}
 				}
 			}
 		}
@@ -193,44 +196,47 @@ void ObjectPlacement::selectObject(sf::Event t_event, sf::RenderWindow& m_window
 	{
 		if (t_event.type == sf::Event::MouseButtonPressed && t_event.mouseButton.button == sf::Mouse::Left)
 		{
-			if (checkForDoubleClick(m_clock, m_doubleClickTime))
+			if (m_squareBounds.contains(sf::Vector2f(pixelPos)))
 			{
-				std::cout << "Double Click" << std::endl;
-
-				std::cout << "hasObject : " << m_grid->m_vectGrid.at(row).at(col).m_hasObject << std::endl;
-				if (m_grid->m_vectGrid.at(row).at(col).m_hasObject == true)
+				if (checkForDoubleClick(m_clock, m_doubleClickTime))
 				{
-					std::cout << "hasObject" << std::endl;
-					if (m_currentlySelected != nullptr)
+					std::cout << "Double Click" << std::endl;
+
+					std::cout << "hasObject : " << m_grid->m_vectGrid.at(row).at(col).m_hasObject << std::endl;
+					if (m_grid->m_vectGrid.at(row).at(col).m_hasObject == true)
 					{
-						m_currentlySelected->setSelected(false);
-						m_currentlySelected = nullptr;
+						std::cout << "hasObject" << std::endl;
+						if (m_currentlySelected != nullptr)
+						{
+							m_currentlySelected->setSelected(false);
+							m_currentlySelected = nullptr;
+						}
+
+						if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Enemy")
+						{
+							m_storedObjectType = "Enemy";
+							setSelectedGridObject(m_enemies, m_window);
+						}
+						else if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Item")
+						{
+							m_storedObjectType = "Item";
+							setSelectedGridObject(m_items, m_window);
+						}
+						else if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Decoration")
+						{
+							m_storedObjectType = "Decoration";
+							setSelectedGridObject(m_decorations, m_window);
+						}
+						else if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Wall")
+						{
+							m_storedObjectType = "Wall";
+							setSelectedGridObject(m_walls, m_window);
+						}
+						m_originalPosition = sf::Vector2i{ row,col };
+						std::cout << "x : " << m_originalPosition.x << " y : " << m_originalPosition.y << std::endl;
 					}
 
-					if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Enemy")
-					{
-						m_storedObjectType = "Enemy";
-						setSelectedGridObject(m_enemies, m_window);
-					}
-					else if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Item")
-					{
-						m_storedObjectType = "Item";
-						setSelectedGridObject(m_items, m_window);
-					}
-					else if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Decoration")
-					{
-						m_storedObjectType = "Decoration";
-						setSelectedGridObject(m_decorations, m_window);
-					}
-					else if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Wall")
-					{
-						m_storedObjectType = "Wall";
-						setSelectedGridObject(m_walls, m_window);
-					}
-					m_originalPosition = sf::Vector2i{ row,col };
-					std::cout << "x : " << m_originalPosition.x << " y : " << m_originalPosition.y << std::endl;
 				}
-
 			}
 		}
 	}
@@ -273,11 +279,11 @@ void ObjectPlacement::createObject(int row, int col)
 			m_walls.push_back(new Wall(m_tempTag, m_selectedObject, m_textureManager));
 			setObject(row, col, "Wall", m_walls);
 		}
-		else if (m_tempTag.find("Terrain") != std::string::npos)
-		{
+	}
+	if (m_tempTag.find("Terrain") != std::string::npos)
+	{
 			m_grid->m_vectGrid.at(row).at(col).setFloorSprite(m_selectedObject);
 			m_grid->m_vectGrid.at(row).at(col).cellType = "Terrain";
-		}
 	}
 }
 
