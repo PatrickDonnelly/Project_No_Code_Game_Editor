@@ -687,12 +687,15 @@ void Game::update(sf::Time t_deltaTime)
 
 		sf::Vector2u windowSize = m_window.getSize();
 
-		int scrollDistance = 40;
+		int scrollDistanceSides= 320;
+
+		int scrollDistanceBottom = 40;
+
 
 		// scroll left
 
-			if (mousePos.x < scrollDistance) {
-				float newCenterX = m_window.getView().getCenter().x - scrollDistance / 4;
+			if (mousePos.x < scrollDistanceSides && mousePos.x >= 256) {
+				float newCenterX = m_window.getView().getCenter().x - 40 / 10;
 
 				sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
@@ -701,9 +704,9 @@ void Game::update(sf::Time t_deltaTime)
 			}
 			
 
-			if (mousePos.x > windowSize.x - scrollDistance) {
+			if (mousePos.x > windowSize.x - scrollDistanceSides && mousePos.x < windowSize.x - 256) {
 
-				float newCenterX = m_window.getView().getCenter().x + scrollDistance / 4;
+				float newCenterX = m_window.getView().getCenter().x + 40 / 10;
 
 
 				sf::View view(sf::Vector2f(newCenterX, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
@@ -711,10 +714,10 @@ void Game::update(sf::Time t_deltaTime)
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
 			}
-			if (mousePos.y < scrollDistance) 
+			if (mousePos.y < 96) 
 			{
 
-				float newCenterY = m_window.getView().getCenter().y - scrollDistance / 4;
+				float newCenterY = m_window.getView().getCenter().y - 40 / 10;
 
 
 				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
@@ -723,8 +726,8 @@ void Game::update(sf::Time t_deltaTime)
 				m_window.setView(m_gameView);
 			}
 
-			if (mousePos.y > windowSize.y - scrollDistance) {
-				float newCenterY = m_window.getView().getCenter().y + scrollDistance / 4;
+			if (mousePos.y > windowSize.y - scrollDistanceSides && mousePos.y < windowSize.y - 256) {
+				float newCenterY = m_window.getView().getCenter().y + 40 / 10;
 
 				sf::View view(sf::Vector2f(m_window.getView().getCenter().x, newCenterY), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
