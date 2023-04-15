@@ -762,8 +762,10 @@ void Game::update(sf::Time t_deltaTime)
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
 			}
+			std::cout << m_gameView.getSize().x << " : " << m_gameView.getSize().y << std::endl;
+			std::cout << m_gameView.getCenter().x << " centre " << m_gameView.getCenter().y << std::endl;
 
-		
+			//m_squareBounds = sf::FloatRect(m_gameView.getCenter().x - (m_gameView.getSize().x / 2) + 256, m_gameView.getCenter().y - m_gameView.getSize().y /2, m_gameView.getSize().x -512, m_gameView.getSize().y -256);
 
 	}
 

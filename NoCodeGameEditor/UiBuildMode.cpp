@@ -805,7 +805,7 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	{
 		processTestRoomButtonInput(t_event, t_window);
 	}	
-	std::cout << "Returning : " << m_buttonClicked << std::endl;
+	//std::cout << "Returning : " << m_buttonClicked << std::endl;
 }
 
 void UiBuildMode::render(sf::RenderWindow* t_window)
