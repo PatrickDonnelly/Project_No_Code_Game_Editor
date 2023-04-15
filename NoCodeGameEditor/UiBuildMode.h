@@ -46,9 +46,14 @@ private:
 
 	void zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, float zoom, bool t_zoomIn);
 
+	sf::RectangleShape m_bgBottom;
+	sf::RectangleShape m_bgLeft;
+	sf::RectangleShape m_bgRight;
+
+
 	sf::Font m_arialFont;
 public:
-
+	bool m_buttonClicked = false;
 	UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState, RoomCreation* t_roomCreation, ObjectPlacement* t_objectPlacement);
 	UiBuildMode();
 	~UiBuildMode();

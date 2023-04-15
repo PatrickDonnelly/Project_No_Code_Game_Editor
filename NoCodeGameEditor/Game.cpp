@@ -73,17 +73,52 @@ void Game::processEvents()
 	sf::Event newEvent;
 	while (m_window.pollEvent(newEvent))
 	{
-		if (m_gameState->getState() == State::MENU || m_gameState->getState() == State::ROOM_BUILD)
+		if (m_gameState->getState() == State::MENU)
 		{
 			m_mainMenu.processEvents(newEvent, m_window);
 		}
-		if (m_gameState->getState() == State::GAME_LIST || m_gameState->getState() == State::ROOM_BUILD)
+		if (m_gameState->getState() == State::ROOM_BUILD)
+		{
+			m_levelList.processEvents(newEvent, m_window);
+			m_mainMenu.processEvents(newEvent, m_window);
+		}
+		if (m_gameState->getState() == State::GAME_LIST)
 		{
 			m_levelList.processEvents(newEvent, m_window);
 		}
 		if (m_gameState->getState() == State::SAVING_SCREEN)
 		{
 			m_saveGameScreen.processEvents(newEvent, m_window);
+		}
+		if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
+		{
+			m_uiBuildMode.processEvents(newEvent, m_window);
+			if (m_uiBuildMode.m_buttonClicked == false)
+			{
+				m_objectPlacement->processEvents(newEvent, m_window);
+				if (m_objectPlacement->m_currentlySelected != nullptr)
+				{
+					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
+					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
+				}
+			}
+			else
+			{
+				std::cout << "true" << std::endl;
+			}
+
+		}
+		if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
+		{
+			m_uiBuildMode.processEvents(newEvent, m_window);
+			if (m_uiBuildMode.m_buttonClicked == false)
+			{
+				if (m_objectPlacement->m_currentlySelected != nullptr)
+				{
+					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
+					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
+				}
+			}
 		}
 		if (m_gameState->getState() != State::PAUSE_GAME)
 		{
@@ -100,9 +135,10 @@ void Game::processEvents()
 				}
 			}
 			m_spear->processEvents(newEvent);
+			//m_uiBuildMode.processEvents(newEvent, m_window);
 			//if (m_gameState->getState()==State::ROOM_PLACE_OBJECTS)
 			//{
-				m_uiBuildMode.processEvents(newEvent, m_window);
+				
 		//	}
 
 			//m_inspector->processEvents(newEvent, m_window);
@@ -129,19 +165,6 @@ void Game::processEvents()
 					{
 						m_textEditor->GetTitle()->typing(newEvent);
 					}
-				}
-			}
-			if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
-			{
-				m_objectPlacement->processEvents(newEvent, m_window);
-
-			}
-			if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS || m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
-			{
-				if (m_objectPlacement->m_currentlySelected != nullptr)
-				{
-					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
-					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
 				}
 			}
 		}
@@ -459,7 +482,7 @@ void Game::update(sf::Time t_deltaTime)
 
 		//m_textureManager->getNumberOfTextures();
 		//m_fontManager.getNumberOfFonts();
-		m_objectPlacement->update(t_deltaTime, m_window);
+		//m_objectPlacement->update(t_deltaTime, m_window);
 
 		if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 		{

@@ -49,7 +49,7 @@ void UiBuildMode::setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows,
 			{
 				col->setEnabled(true);
 			}
-			col->setButtonPosition(sf::Vector2f(444.0f + (colIndex * 64), 200.0f));
+			col->setButtonPosition(sf::Vector2f(490.0f + (colIndex * 64), 960.0f));
 			col->resize(0.25, 1.0f);
 			colIndex++;
 		}
@@ -134,7 +134,8 @@ void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 	for (int i = 0; i < 3; i++)
 	{
 		m_placementOptions.push_back(Button());
-		m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 650.0f + (i * 280), 900.0f });
+		m_placementOptions.at(i).setButtonPosition(sf::Vector2f{ 16 + m_placementOptions.at(i).getButtonSprite().getGlobalBounds().width / 2, 
+			216.0f + (i * 216) + (m_placementOptions.at(i).getButtonSprite().getGlobalBounds().height / 2)});
 		m_placementOptionsLabels.push_back(new Label(t_arialFont));
 		m_placementOptionsLabels.at(i)->setTextPosition(m_placementOptions.at(i).getButtonPosition());
 	}
@@ -148,8 +149,9 @@ void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
 	for (int i = 0; i < 5; i++)
 	{
 		m_objectCategoryButtons.push_back(new Button());
-		m_objectCategoryButtons.at(i)->setButtonPosition(sf::Vector2f{ 490.0f + (i * m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().width), 100.0f});
 		m_objectCategoryButtons.at(i)->resize(1.0f, 0.5f);
+		m_objectCategoryButtons.at(i)->setButtonPosition(sf::Vector2f{ 512.0f + (i * m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().width), 824.0f + (m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().height /2) });
+		
 
 		m_objectCategoryLabels.push_back(new Label(t_arialFont));
 		m_objectCategoryLabels.at(i)->setTextColor(sf::Color::White);
@@ -212,23 +214,23 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 	m_currentRowText.setOutlineColor(sf::Color::White);
 	m_currentRowText.setCharacterSize(16.0f);
 	m_currentRowText.setOutlineThickness(1.0f);
-	m_currentRowText.setPosition(1390.0f,240.0f);
+	m_currentRowText.setPosition(1440.0f,1008.0f);
 
 	m_gridOnOffText.setString("Grid On");
 	m_gridOnOffText.setFont(t_arialFont);
-	m_gridOnOffText.setFillColor(sf::Color::Black);
-	m_gridOnOffText.setOutlineColor(sf::Color::White);
-	m_gridOnOffText.setCharacterSize(16.0f);
+	m_gridOnOffText.setFillColor(sf::Color::White);
+	m_gridOnOffText.setOutlineColor(sf::Color::Black);
+	m_gridOnOffText.setCharacterSize(24.0f);
 	m_gridOnOffText.setOutlineThickness(1.0f);
-	m_gridOnOffText.setPosition(1260.0f, 466.0f);
+	m_gridOnOffText.setPosition(48.0f, 64.0f);
 
 	m_collidersOnOffText.setString("Colliders On");
 	m_collidersOnOffText.setFont(t_arialFont);
-	m_collidersOnOffText.setFillColor(sf::Color::Black);
-	m_collidersOnOffText.setOutlineColor(sf::Color::White);
-	m_collidersOnOffText.setCharacterSize(16.0f);
+	m_collidersOnOffText.setFillColor(sf::Color::White);
+	m_collidersOnOffText.setOutlineColor(sf::Color::Black);
+	m_collidersOnOffText.setCharacterSize(24.0f);
 	m_collidersOnOffText.setOutlineThickness(1.0f);
-	m_collidersOnOffText.setPosition(1260.0f, 530.0f);
+	m_collidersOnOffText.setPosition(48.0f, 128.0f);
 
 	std::string path = "ASSETS/IMAGES/Terrain/Grass/";
 	for (auto& entry : fs::directory_iterator(path))
@@ -282,14 +284,14 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 	for (int i = 0 ; i < 2; ++i)
 	{
 		m_prevNextbuttons.push_back(new Button());
-		m_prevNextbuttons.at(i)->setButtonPosition(sf::Vector2f(390.0f + (i * 1070), 200.0f ));
+		m_prevNextbuttons.at(i)->setButtonPosition(sf::Vector2f(432.0f + (i * 1072), 960.0f ));
 		m_prevNextbuttons.at(i)->resize(0.1f, 0.4f);
 	}
 
 	for (int i = 0; i < 2; ++i)
 	{
 		m_toggleGridButtons.push_back(new Button());
-		m_toggleGridButtons.at(i)->setButtonPosition(sf::Vector2f(1240.0f, 476.0f + (i*64)));
+		m_toggleGridButtons.at(i)->setButtonPosition(sf::Vector2f(32.0f, 80.0f + (i * 64)));
 		m_toggleGridButtons.at(i)->resize(0.1f, 0.4f);
 	}
 
@@ -298,6 +300,27 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 	setUpCategoryButtons(m_arialFont);
 	setUpGridFunctionButtons(m_arialFont);
 	setUpTestBuildButtons(m_arialFont);
+
+	m_bgRight.setSize(sf::Vector2f(256.0f, 2160.0f));
+	m_bgRight.setPosition(1664.0f, 0.0f);
+	m_bgRight.setOutlineThickness(4.0f);
+	m_bgRight.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
+	m_bgRight.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+
+	m_bgLeft.setSize(sf::Vector2f(256.0f, 2160.0f));
+	m_bgLeft.setPosition(0.0f, 0.0f);
+	m_bgLeft.setOutlineThickness(4.0f);
+	m_bgLeft.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
+	m_bgLeft.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+
+	m_bgBottom.setSize(sf::Vector2f(1920.0f, 256.0f));
+	m_bgBottom.setPosition(0.0f, 824.0f);
+	m_bgBottom.setOutlineThickness(4.0f);
+	m_bgBottom.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
+	m_bgBottom.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+
+
+
 	//setUpTextureRoomButtons(m_arialFont);
 }
 
@@ -349,6 +372,7 @@ void UiBuildMode::processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindo
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
+					m_buttonClicked = true;
 					if (m_buildButtonLabels.at(i)->getTextString() == "Clear Grid")
 					{
 						m_grid->regenerateGrid();
@@ -403,6 +427,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 				{
 					if (t_event.mouseButton.button == sf::Mouse::Left)
 					{
+						m_buttonClicked = true;
 						if(col->isEnabled())
 						{
 							deselectButtons(t_objectButtons);
@@ -441,6 +466,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
+					m_buttonClicked = true;
 					if (i == 0)
 					{
 						m_grid->setGridEnabled();
@@ -469,6 +495,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
+					m_buttonClicked = true;
 					if (m_objectCategoryLabels.at(i)->getTextString() == "Walls")
 					{
 						m_currentTab = TabState::TAB_WALLS;
@@ -528,6 +555,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 				{
 					if (t_event.mouseButton.button == sf::Mouse::Left)
 					{
+						m_buttonClicked = true;
 						if (m_placementOptionsLabels.at(i)->getTextString() == "Load Game")
 						{
 							m_roomCreation->resetValues();
@@ -576,6 +604,7 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 			{
 				if (t_event.mouseButton.button == sf::Mouse::Left)
 				{
+					m_buttonClicked = true;
 					if (m_testingButtonLabels.at(i)->getTextString() == "Place Objects")
 					{
 						// Go back to placing objects
@@ -627,6 +656,7 @@ void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, i
 			{
 				if (t_event.key.code == sf::Mouse::Left)
 				{
+					m_buttonClicked = true;
 					if (i == 0)
 					{
 						m_currentRowIndex -= 1;
@@ -725,10 +755,11 @@ void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, 
 void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Event newEvent = t_event;
+	m_buttonClicked = false;
 
 	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 	{
-		processBuildRoomButtonInput(t_event,t_window);
+		processBuildRoomButtonInput(t_event, t_window);
 	}
 	else if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 	{
@@ -774,10 +805,17 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	{
 		processTestRoomButtonInput(t_event, t_window);
 	}	
+	std::cout << "Returning : " << m_buttonClicked << std::endl;
 }
 
 void UiBuildMode::render(sf::RenderWindow* t_window)
 {
+	t_window->draw(m_bgBottom);
+	t_window->draw(m_bgLeft);
+	t_window->draw(m_bgRight);
+
+
+
 	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 	{
 		for (int i = 0; i < m_buildButtons.size(); i++)
