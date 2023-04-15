@@ -44,7 +44,7 @@ private:
 	void processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWindow& t_window, std::string& t_path, std::vector<std::vector<Label*>>& t_labels, std::vector<std::vector<Button*>>& t_objectButtons);
 	void processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow& t_window);
 
-	void zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, float zoom);
+	void zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, float zoom, bool t_zoomIn);
 
 	sf::Font m_arialFont;
 public:

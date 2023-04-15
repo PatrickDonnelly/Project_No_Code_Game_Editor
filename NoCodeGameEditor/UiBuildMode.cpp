@@ -676,22 +676,48 @@ void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, i
 	}
 }
 
-void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, float zoom)
+void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, float zoom, bool t_zoomIn)
 {
 	const sf::Vector2f beforeZoom{ window.mapPixelToCoords(pixel) };
 
-	m_gameView.zoom(zoom);
-	window.setView(m_gameView);
+
 	std::cout << "view size x : " << m_gameView.getSize().x << " view size y : " << m_gameView.getSize().y << std::endl;
-	if (m_gameView.getSize().x > 500)
+	if (m_gameView.getSize().x > 512 && t_zoomIn)
 	{
+		m_gameView.zoom(zoom);
+		window.setView(m_gameView);
 		const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
 		const sf::Vector2f offset{ beforeZoom - afterZoom };
 		m_gameView.move(offset);
 		window.setView(m_gameView);
 	}
-	else
+	else if(m_gameView.getSize().x < 512 && t_zoomIn)
 	{
+		m_gameView.setSize(512, m_gameView.getSize().y);
+		window.setView(m_gameView);
+		const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
+		const sf::Vector2f offset{ beforeZoom - afterZoom };
+		m_gameView.move(offset);
+		window.setView(m_gameView);
+		std::cout << "zoom zoom";
+	}
+	else if (m_gameView.getSize().x < 1920 && !t_zoomIn)
+	{
+		m_gameView.zoom(zoom);
+		window.setView(m_gameView);
+		const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
+		const sf::Vector2f offset{ beforeZoom - afterZoom };
+		m_gameView.move(offset);
+		window.setView(m_gameView);
+	}
+	else if (m_gameView.getSize().x > 1920 && !t_zoomIn)
+	{
+		m_gameView.setSize(1920, m_gameView.getSize().y);
+		window.setView(m_gameView);
+		const sf::Vector2f afterZoom{ window.mapPixelToCoords(pixel) };
+		const sf::Vector2f offset{ beforeZoom - afterZoom };
+		m_gameView.move(offset);
+		window.setView(m_gameView);
 		std::cout << "zoom zoom";
 	}
 }
@@ -710,11 +736,11 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 		{
 			if (t_event.mouseWheelScroll.delta > 0)
 			{
-				zoomViewAtPoint({ t_event.mouseWheelScroll.x, t_event.mouseWheelScroll.y }, t_window, (1.f / m_zoomRate));
+				zoomViewAtPoint({ t_event.mouseWheelScroll.x, t_event.mouseWheelScroll.y }, t_window, (1.f / m_zoomRate), true);
 			}
 			else if (t_event.mouseWheelScroll.delta < 0)
 			{
-				zoomViewAtPoint({ t_event.mouseWheelScroll.x, t_event.mouseWheelScroll.y }, t_window, m_zoomRate);
+				zoomViewAtPoint({ t_event.mouseWheelScroll.x, t_event.mouseWheelScroll.y }, t_window, m_zoomRate, false);
 			}
 		}
 		processDialogueButtons(t_event, t_window);

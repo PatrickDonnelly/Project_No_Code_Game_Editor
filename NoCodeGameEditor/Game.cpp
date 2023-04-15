@@ -711,16 +711,16 @@ void Game::update(sf::Time t_deltaTime)
 
 
 			//std::cout << "centre x : " << m_view.getCenter().x << std::endl;
-			if (m_gameView.getCenter().x - (windowSize.x / 2) < -544)
+			if (m_gameView.getCenter().x - (windowSize.x / 2) < -800)
 			{
-				sf::View view(sf::Vector2f((windowSize.x / 2)-544, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				sf::View view(sf::Vector2f((windowSize.x / 2)- 800, m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
 			}
-			if (m_gameView.getCenter().x + (windowSize.x / 2) > 3680)
+			if (m_gameView.getCenter().x + (windowSize.x / 2) > 4000)
 			{
-				sf::View view(sf::Vector2f(3680 - (windowSize.x / 2), m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
+				sf::View view(sf::Vector2f(4000 - (windowSize.x / 2), m_window.getView().getCenter().y), sf::Vector2f(m_gameView.getSize().x, m_gameView.getSize().y));
 				m_gameView = view;
 				//m_gameView.zoom(m_zoomRate);
 				m_window.setView(m_gameView);
