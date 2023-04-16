@@ -7,8 +7,9 @@ LevelList::LevelList()
 
 LevelList::LevelList(GameState* t_gameState)
 {
+	m_fontManager = FontManager();
+	m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
 	m_currentGameState = t_gameState;
-	initButtons();
 	loadLevelList();
 	setUpGameButtons();
 	for (int i = 0; i < 2; ++i)
@@ -17,10 +18,31 @@ LevelList::LevelList(GameState* t_gameState)
 		m_prevNextbuttons.at(i)->resize(0.1f, 0.4f);
 		m_prevNextbuttons.at(i)->setButtonPosition(sf::Vector2f(672.0f + (i * 608), 448.0f));
 	}
+	m_closeButton = new Button();
+	m_closeButton->resize(0.1f, 0.3f);
+	m_closeButton->setButtonPosition(sf::Vector2f(592, 16));
+	m_bg.setSize(sf::Vector2f(766.0f, 800.0f));
+	m_bg.setPosition(592.0f, 12.0f);
+	m_bg.setOutlineThickness(1.0f);
+	m_bg.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
+	m_bg.setFillColor(G_COLOR_UI_GREY);
+	initText();
 }
 
 LevelList::~LevelList()
 {
+}
+
+void LevelList::initText()
+{
+	m_text.setFont(m_font);
+	m_text.setCharacterSize(48.0f);
+	m_text.setFillColor(sf::Color::White);
+	m_text.setOutlineColor(sf::Color::Black);
+	m_text.setOutlineThickness(2.0f);
+	m_text.setString("Games");
+	m_text.setPosition(m_bg.getPosition().x + (m_bg.getGlobalBounds().width /2) - (m_text.getGlobalBounds().width /2),
+		m_bg.getPosition().y + m_text.getGlobalBounds().height / 2);
 }
 
 void LevelList::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window)
@@ -182,17 +204,15 @@ void LevelList::refreshLevelList()
 	setUpGameButtons();
 }
 
-void LevelList::initButtons()
-{
-
-
-}
-
 void LevelList::render(sf::RenderWindow* t_window)
 {
 
 	if (m_currentGameState->getState() == State::GAME_LIST || m_currentGameState->getState() == State::LEVEL_LIST)
 	{
+		t_window->draw(m_bg);
+		m_closeButton->render(t_window);
+		m_text.setFont(m_font);
+		t_window->draw(m_text);
 		//for (auto& row : m_selectableGameButtons)
 		//{
 		//	for (auto& col : row)
@@ -230,10 +250,15 @@ void LevelList::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 				if (col->isButtonClicked(t_event, &t_window))
 				{
 					m_gameName = col->getButtonLabel()->getText()->getString();
+					
 					m_currentGameState->setState(State::LOAD_GAME);
 				}
 			
 		}
+	}
+	if (m_closeButton->isButtonClicked(t_event, &t_window))
+	{
+		m_currentGameState->setState(m_currentGameState->getPreviousState());
 	}
 	setVisibleRow(t_event, t_window);
 }
