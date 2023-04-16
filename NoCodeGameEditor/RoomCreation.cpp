@@ -70,7 +70,7 @@ void RoomCreation::GenerateRoomSprites()
 			{
 				
 				
-				m_grid->m_vectGrid.at(i).at(j).setWallSprite();
+				//m_grid->m_vectGrid.at(i).at(j).setWallSprite();
 				
 				
 				if (right.x < m_grid->m_vectGrid.size())
@@ -79,7 +79,7 @@ void RoomCreation::GenerateRoomSprites()
 					{
 						m_firstTilePosition = m_grid->m_vectGrid.at(right.x).at(j).getPos();
 						m_grid->m_vectGrid.at(right.x).at(j).cellType = "Floor";
-						m_grid->m_vectGrid.at(right.x).at(j).setFloorSprite();
+						//m_grid->m_vectGrid.at(right.x).at(j).setFloorSprite();
 						m_grid->m_vectGrid.at(right.x).at(j).m_checked = true;
 						firstFloorSet = true;
 						m_tileQueue.push(m_grid->m_vectGrid.at(right.x).at(j));
@@ -110,7 +110,7 @@ void RoomCreation::GenerateRoomSprites()
 				}
 				m_grid->m_vectGrid.at(l_row).at(l_col).m_checked = true;
 				m_grid->m_vectGrid.at(l_row).at(l_col).cellType = "Floor";
-				m_grid->m_vectGrid.at(l_row).at(l_col).setFloorSprite();
+				//m_grid->m_vectGrid.at(l_row).at(l_col).setFloorSprite();
 				m_tileQueue.push(m_grid->m_vectGrid.at(l_row).at(l_col));
 			}
 		}

@@ -25,7 +25,7 @@ class Grid
 {
 private:
 	TextureManager* m_textureManager;
-
+	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);
 public:
 
 

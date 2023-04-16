@@ -95,20 +95,40 @@ void ObjectPlacement::placeMultipleObjects(sf::Event t_event, sf::RenderWindow& 
 {
 	if (t_event.type == sf::Event::MouseButtonPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
 	{
-		setInitialPress(m_window);
+			setInitialPress(m_window);
 	}
 	else if (t_event.type == sf::Event::MouseButtonReleased && initialPress == true)
 	{
 		setEndOfPress(m_window);
 		swapInts(startCol, endCol);
 		swapInts(startRow, endRow);
-
-		if (startRow >= 0 && startRow < 100 && startCol >= 0 && startCol < 100 
-			&& endCol >= 0 && endCol < 100 && endRow >= 0 && endRow < 100)
+		if (t_event.mouseButton.button == sf::Mouse::Left)
 		{
-			for (int row = startRow; row <= endRow; row++){
-				for (int col = startCol; col <= endCol; col++){
-					createObject(row, col);
+			if (startRow >= 0 && startRow < 100 && startCol >= 0 && startCol < 100
+				&& endCol >= 0 && endCol < 100 && endRow >= 0 && endRow < 100)
+			{
+				for (int row = startRow; row <= endRow; row++) {
+					for (int col = startCol; col <= endCol; col++) {
+						createObject(row, col);
+					}
+				}
+			}
+		}
+		else if (t_event.mouseButton.button == sf::Mouse::Right)
+		{
+			if (startRow >= 0 && startRow < 100 && startCol >= 0 && startCol < 100
+				&& endCol >= 0 && endCol < 100 && endRow >= 0 && endRow < 100)
+			{
+				for (int row = startRow; row <= endRow; row++) {
+					for (int col = startCol; col <= endCol; col++) {
+						m_grid->m_vectGrid.at(row).at(col).removeTexture();
+						m_grid->m_vectGrid.at(row).at(col).m_hasObject = false;
+						m_grid->m_vectGrid.at(row).at(col).cellType = "Empty";
+						deleteMultipleObjects(m_walls, row, col);
+						deleteMultipleObjects(m_items, row, col);
+						deleteMultipleObjects(m_decorations, row, col);
+						deleteMultipleObjects(m_enemies, row, col);
+					}
 				}
 			}
 		}
@@ -116,6 +136,22 @@ void ObjectPlacement::placeMultipleObjects(sf::Event t_event, sf::RenderWindow& 
 	else if (initialPress == true)
 	{
 		scaleArea(m_window);
+	}
+}
+
+void ObjectPlacement::deleteMultipleObjects(std::vector<Object*>& t_objects, int t_row, int t_col)
+{
+	for (std::vector<Object*>::iterator iter = t_objects.begin(); iter != t_objects.end();)
+	{
+		if ((*iter)->getRow() == t_row
+			&& (*iter)->getColumn() == t_col)
+		{
+			iter = t_objects.erase(iter);
+		}
+		else
+		{
+			iter++;
+		}
 	}
 }
 
@@ -244,14 +280,31 @@ void ObjectPlacement::selectObject(sf::Event t_event, sf::RenderWindow& m_window
 
 void ObjectPlacement::removeObject(sf::Event t_event, sf::RenderWindow& m_window)
 {
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right) && initialPress == false)
 	{
-		deleteObject(m_decorations, m_grid, m_currentlySelected, m_window);
-		deleteObject(m_terrain, m_grid, m_currentlySelected, m_window);
-		deleteObject(m_walls, m_grid, m_currentlySelected, m_window);
-		deleteObject(m_enemies, m_grid, m_currentlySelected, m_window);
-		deleteObject(m_items, m_grid, m_currentlySelected, m_window);
+		deleteObject(m_decorations, m_grid, m_window);
+		deleteObject(m_terrain, m_grid, m_window);
+		deleteObject(m_walls, m_grid, m_window);
+		deleteObject(m_enemies, m_grid, m_window);
+		deleteObject(m_items, m_grid, m_window);
 		m_currentlySelected = nullptr;
+	}
+	sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
+	sf::Vector2f worldPos = m_window.mapPixelToCoords(pixelPos);
+	int row = worldPos.x / 32;
+	int col = worldPos.y / 32;
+	if (row >= 0 && row < 100 && col >= 0 && col < 100)
+	{
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		{
+			if (m_grid->m_vectGrid.at(row).at(col).getTileBorder().getGlobalBounds().contains(worldPos))
+			{
+				if (m_squareBounds.contains(sf::Vector2f(pixelPos)))
+				{
+					m_grid->m_vectGrid.at(row).at(col).removeTexture();
+				}
+			}
+		}
 	}
 }
 

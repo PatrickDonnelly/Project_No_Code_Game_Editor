@@ -52,7 +52,7 @@ void setSpriteAndBounds(std::vector<T*>& t_objects)
 }
 
 template <typename T>
-void deleteObject(std::vector<T*>& t_objects, Grid* t_grid, Object* t_currentlySelected, sf::RenderWindow& m_window)
+void deleteObject(std::vector<T*>& t_objects, Grid* t_grid, sf::RenderWindow& m_window)
 {
 	if (t_objects.size() > 0)
 	{
@@ -132,7 +132,7 @@ private:
 	void setInitialPress(sf::RenderWindow& m_window);
 	void setEndOfPress(sf::RenderWindow& m_window);
 	void scaleArea(sf::RenderWindow& m_window);
-
+	void deleteMultipleObjects(std::vector<Object*>& t_objects, int t_row, int t_col);
 public:
 	Object* getSelectedGridObject();
 	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);

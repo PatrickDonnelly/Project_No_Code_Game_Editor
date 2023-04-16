@@ -17,7 +17,6 @@ Tile::Tile(sf::Font& t_font, TextureManager* t_textureManager)
 {
 	m_path = "ASSETS\\IMAGES\\dirt_0";
 	m_textureManager = t_textureManager;
-	setUpText(t_font);
 	//setUpSprites();
 	m_tile.setSize(sf::Vector2f(m_width, m_width));
 	m_tile.setOrigin(sf::Vector2f(m_width/2.0f, m_width/2.0f));
@@ -37,16 +36,9 @@ void Tile::setPosition(float t_x, float t_y)
 	m_cellSprite.setPosition(t_x, t_y);
 }
 
-void Tile::setWallSprite()
+void Tile::removeTexture()
 {
-	m_path = "ASSETS\\IMAGES\\rock_0";
-	m_cellSprite.setTexture(m_wallTexture);
-}
-
-void Tile::setFloorSprite()
-{
-	m_path = "ASSETS\\IMAGES\\dirt_0";
-	m_cellSprite.setTexture(m_floorTexture);
+	m_cellSprite.setColor(sf::Color(0,0,0,0));
 }
 
 void Tile::setFloorSprite(std::string t_path)
@@ -57,19 +49,8 @@ void Tile::setFloorSprite(std::string t_path)
 	//{
 	//	std::cout << "Can't load main menu bgt" << std::endl;
 	//}
+	m_cellSprite.setColor(sf::Color::White);
 	m_cellSprite.setTexture(m_floorTexture);
-}
-
-void Tile::setUpSprites()
-{
-	if (!m_floorTexture.loadFromFile(m_path+ ".png"))
-	{
-		// error...
-	}
-	if (!m_wallTexture.loadFromFile("ASSETS\\IMAGES\\rock_0.png"))
-	{
-		// error...
-	}
 }
 
 sf::Vector2f Tile::getPos()
