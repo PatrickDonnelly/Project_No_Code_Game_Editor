@@ -36,6 +36,7 @@ public:
 	void setPopUpButtons(int t_noOfbuttons);
 	std::vector<Button*> getButtons() { return m_popUpButtons; }
 	bool processEvents(sf::Event t_event, sf::RenderWindow& t_window);
+	void setPopUpEnabled(bool t_onOff) { m_enabled = t_onOff; }
 private:
 	FontManager m_fontManager;
 	std::string fileName = "";

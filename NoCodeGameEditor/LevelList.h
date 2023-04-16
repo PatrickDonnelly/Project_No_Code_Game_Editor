@@ -9,6 +9,8 @@
 #include <iostream>
 #include <filesystem>
 #include "PopUp.h"
+#include "Globals.h"
+#include "FontManager.h"
 
 namespace fs = std::filesystem;
 
@@ -19,15 +21,18 @@ private:
 	void setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window);
 	std::vector<Button*> m_prevNextbuttons;
 	int m_currentRowIndex = 0;
-	void setUpPopUpBox(std::string t_fileName, int t_noOfButtons);
-	PopUp m_popUpBox;
+	sf::RectangleShape m_bg;
+	Button* m_closeButton;
+	void initText();
+	sf::Font m_font;
+	FontManager m_fontManager;
+	sf::Text m_text;
 public:
 	LevelList();
 	LevelList(GameState* t_gameState);
 	~LevelList();
 
 	void refreshLevelList();
-	void initButtons();
 	void render(sf::RenderWindow* t_window);
 	void processEvents(sf::Event t_event, sf::RenderWindow& t_window);
 

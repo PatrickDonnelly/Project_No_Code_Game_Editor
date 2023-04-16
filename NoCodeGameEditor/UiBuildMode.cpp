@@ -551,10 +551,10 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 					{
 						if (m_placementOptionsLabels.at(i)->getTextString() == "Load Game")
 						{
-							m_roomCreation->resetValues();
-							m_grid->regenerateGrid();
-							m_objectPlacement->clearObjects();
-							m_gameState->m_currentGameState = State::LEVEL_LIST;
+							//m_roomCreation->resetValues();
+							//m_grid->regenerateGrid();
+							//m_objectPlacement->clearObjects();
+							m_gameState->setState(State::LEVEL_LIST);
 						}
 						else if (m_placementOptionsLabels.at(i)->getTextString() == "Test Room")
 						{

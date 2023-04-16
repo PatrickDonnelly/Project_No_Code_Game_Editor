@@ -850,5 +850,18 @@ void Game::render()
 		m_window.setView(m_gameView);
 	}
 
+	else if (m_gameState->getState() == State::GAME_LIST)
+	{
+		m_window.setView(m_gameView);
+		// m_grid->render(&m_window);
+		m_objectPlacement->render(&m_window);
+
+		m_window.setView(m_uiView);
+		m_levelList.render(&m_window);
+		//m_uiBuildMode.render(&m_window);
+
+		m_window.setView(m_gameView);
+	}
+
 	m_window.display();
 }
