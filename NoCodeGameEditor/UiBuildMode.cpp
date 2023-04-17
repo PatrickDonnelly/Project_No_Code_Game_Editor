@@ -142,11 +142,11 @@ void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 
 void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 6; i++)
 	{
 		m_objectCategoryButtons.push_back(new Button());
 		m_objectCategoryButtons.at(i)->resize(1.0f, 0.5f);
-		m_objectCategoryButtons.at(i)->setButtonPosition(sf::Vector2f{ 512.0f + (i * m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().width), 832.0f + (m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().height /2) });
+		m_objectCategoryButtons.at(i)->setButtonPosition(sf::Vector2f{ 416.0f + (i * m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().width), 832.0f + (m_objectCategoryButtons.at(i)->getButtonSprite().getGlobalBounds().height /2) });
 		
 
 		m_objectCategoryLabels.push_back(new Label(t_arialFont));
@@ -161,7 +161,7 @@ void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
 	m_objectCategoryLabels.at(2)->setText("Enemies");
 	m_objectCategoryLabels.at(3)->setText("Items");
 	m_objectCategoryLabels.at(4)->setText("Decorations");
-
+	m_objectCategoryLabels.at(5)->setText("Misc");
 }
 
 void UiBuildMode::setUpTextureRoomButtons(sf::Font& t_arialFont)
@@ -275,6 +275,16 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 		m_walls.push_back(temp);
 	}
 	setUpPlaceableItemsButtons(m_arialFont, m_rowsWalls, m_selectableWallButtons, m_selectableWallLabels, m_walls, path);
+
+	path = "ASSETS/IMAGES/Misc/";
+
+	for (auto& entry : fs::directory_iterator(path))
+	{
+		std::string temp = entry.path().filename().string();
+		temp.resize(temp.size() - 4);
+		m_miscObjects.push_back(temp);
+	}
+	setUpPlaceableItemsButtons(m_arialFont, m_rowsMisc, m_selectableMiscButtons, m_selectableMiscLabels, m_miscObjects, path);
 
 
 	for (int i = 0 ; i < 2; ++i)
@@ -522,6 +532,13 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 						m_currentTab = TabState::TAB_DECORATIONS;
 						m_currentRowIndex = 0;
 						m_currentRowText.setString(std::to_string(m_currentRowIndex +1) + " / " + std::to_string(m_rowsDecorations));
+					}
+					else if (m_objectCategoryLabels.at(i)->getTextString() == "Misc")
+					{
+						m_currentTab = TabState::TAB_MISC;
+						m_currentRowIndex = 0;
+						m_currentRowText.setString(std::to_string(m_currentRowIndex + 1) + " / " + std::to_string(m_rowsMisc));
+
 					}
 				}
 			}
@@ -795,6 +812,11 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 			setVisibleRow(t_event, t_window, m_rowsItems, m_selectableItemButtons);
 			processPlaceObjectsButtonInput(t_event, t_window, m_pathItems, m_selectableItemLabels, m_selectableItemButtons);
 		}
+		else if (m_currentTab == TabState::TAB_MISC)
+		{
+			setVisibleRow(t_event, t_window, m_rowsMisc, m_selectableMiscButtons);
+			processPlaceObjectsButtonInput(t_event, t_window, m_pathMiscObjects, m_selectableMiscLabels, m_selectableMiscButtons);
+		}
 	}
 	else if (m_gameState->m_currentGameState == State::ROOM_TEST)
 	{
@@ -999,6 +1021,36 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 				}
 				rowIndex++;
 			}
+		}
+		else if (m_currentTab == TabState::TAB_MISC)
+		{
+		int rowIndex = 0;
+
+		for (const auto& row : m_selectableMiscButtons)
+		{
+			for (const auto& col : row)
+			{
+				if (rowIndex == m_currentRowIndex)
+				{
+					//t_window->draw(col->getButtonSprite());
+					col->render(t_window);
+				}
+			}
+			rowIndex++;
+		}
+		rowIndex = 0;
+		for (const auto& rowLabel : m_selectableMiscLabels)
+		{
+			for (const auto& colLabel : rowLabel)
+			{
+				if (rowIndex == m_currentRowIndex)
+				{
+					//t_window->draw(col->getButtonSprite());
+					colLabel->render(t_window);
+				}
+			}
+			rowIndex++;
+		}
 		}
 
 

@@ -20,6 +20,7 @@ Enemy::Enemy(std::string t_path)
 	m_inspector = new Inspector("Enemy", m_inpectorData);
 	m_dialogue = new DialogueBox();
 	init();
+	m_hasAttributes = true;
 }
 
 Enemy::Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
@@ -36,6 +37,7 @@ Enemy::Enemy(std::string t_typeTag, std::string t_path, TextureManager* t_textur
 	m_inspector = new Inspector("Enemy", m_inpectorData);
 	m_dialogue = new DialogueBox();
 	init();
+	m_hasAttributes = true;
 }
 
 Enemy::~Enemy()

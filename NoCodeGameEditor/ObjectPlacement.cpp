@@ -59,6 +59,31 @@ void ObjectPlacement::processEvents(sf::Event t_event, sf::RenderWindow& t_windo
 	removeObject(t_event, t_window);
 	moveObject(t_event, t_window);
 	selectObject(t_event, t_window);
+	sf::Vector2i pixelPos = sf::Mouse::getPosition(t_window);
+
+	sf::Vector2f worldPos = t_window.mapPixelToCoords(pixelPos);
+	int row = worldPos.x / 32;
+	int col = worldPos.y / 32;
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::C) && initialPress == false)
+	{
+		if (m_currentlySelected != nullptr)
+		{
+
+			m_currentlySelected->setSelected(false);
+
+		}
+		m_tempTag = "";
+		m_currentlySelected = nullptr;
+		m_selectedObject = "";
+		if (m_grid->m_vectGrid.at(row).at(col).m_hasObject == false)
+		{
+			m_colliders.push_back(Colliders());
+			m_grid->m_vectGrid.at(row).at(col).m_hasObject = true;
+			m_grid->m_vectGrid.at(row).at(col).m_objectType = "Collider";
+			m_colliders.at(m_colliders.size() - 1).getBounds()->setPosition(m_grid->m_vectGrid.at(row).at(col).getPos());
+			m_colliders.at(m_colliders.size() - 1).setRowColumn(row, col);
+		}
+	}
 }
 
 void ObjectPlacement::setInitialPress(sf::RenderWindow& m_window)
@@ -102,7 +127,24 @@ void ObjectPlacement::placeMultipleObjects(sf::Event t_event, sf::RenderWindow& 
 		setEndOfPress(m_window);
 		swapInts(startCol, endCol);
 		swapInts(startRow, endRow);
-		if (t_event.mouseButton.button == sf::Mouse::Left)
+		if (t_event.mouseButton.button == sf::Mouse::Left && sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+		{
+			if (startRow >= 0 && startRow < 100 && startCol >= 0 && startCol < 100
+				&& endCol >= 0 && endCol < 100 && endRow >= 0 && endRow < 100)
+			{
+				for (int row = startRow; row <= endRow; row++) {
+					for (int col = startCol; col <= endCol; col++) {
+						m_currentlySelected = nullptr;
+						m_colliders.push_back(Colliders());
+						m_grid->m_vectGrid.at(row).at(col).m_hasObject = true;
+						m_grid->m_vectGrid.at(row).at(col).m_objectType = "Collider";
+						m_colliders.at(m_colliders.size() - 1).getBounds()->setPosition(m_grid->m_vectGrid.at(row).at(col).getPos());
+						m_colliders.at(m_colliders.size() - 1).setRowColumn(row, col);
+					}
+				}
+			}
+		}
+		else if (t_event.mouseButton.button == sf::Mouse::Left)
 		{
 			if (startRow >= 0 && startRow < 100 && startCol >= 0 && startCol < 100
 				&& endCol >= 0 && endCol < 100 && endRow >= 0 && endRow < 100)
@@ -128,6 +170,23 @@ void ObjectPlacement::placeMultipleObjects(sf::Event t_event, sf::RenderWindow& 
 						deleteMultipleObjects(m_items, row, col);
 						deleteMultipleObjects(m_decorations, row, col);
 						deleteMultipleObjects(m_enemies, row, col);
+
+						for (std::vector<Colliders>::iterator iter = m_colliders.begin(); iter != m_colliders.end();)
+						{
+							if ((iter)->getRow() == row
+								&& (iter)->getColumn() == col)
+							{
+								iter = m_colliders.erase(iter);
+								m_grid->m_vectGrid.at(row).at(col).m_hasObject = false;
+								m_grid->m_vectGrid.at(row).at(col).cellType = "Empty";
+
+							}
+							else
+							{
+								iter++;
+							}
+
+						}
 					}
 				}
 			}
@@ -268,6 +327,18 @@ void ObjectPlacement::selectObject(sf::Event t_event, sf::RenderWindow& m_window
 							m_storedObjectType = "Wall";
 							setSelectedGridObject(m_walls, m_window);
 						}
+						else if (m_grid->m_vectGrid.at(row).at(col).m_objectType == "Collider")
+						{
+							m_storedObjectType = "Collider";
+							for (int i = 0; i < m_colliders.size(); ++i)
+							{
+								if (m_colliders.at(i).getBounds()->getGlobalBounds().contains(m_window.mapPixelToCoords(sf::Mouse::getPosition(m_window))))
+								{
+									m_currentlySelected = &m_colliders.at(i);
+									m_currentlySelected->setSelected(true);
+								}
+							}
+						}
 						m_originalPosition = sf::Vector2i{ row,col };
 						std::cout << "x : " << m_originalPosition.x << " y : " << m_originalPosition.y << std::endl;
 					}
@@ -280,6 +351,10 @@ void ObjectPlacement::selectObject(sf::Event t_event, sf::RenderWindow& m_window
 
 void ObjectPlacement::removeObject(sf::Event t_event, sf::RenderWindow& m_window)
 {
+	sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
+	sf::Vector2f worldPos = m_window.mapPixelToCoords(pixelPos);
+	int row = worldPos.x / 32;
+	int col = worldPos.y / 32;
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right) && initialPress == false)
 	{
 		deleteObject(m_decorations, m_grid, m_window);
@@ -287,12 +362,30 @@ void ObjectPlacement::removeObject(sf::Event t_event, sf::RenderWindow& m_window
 		deleteObject(m_walls, m_grid, m_window);
 		deleteObject(m_enemies, m_grid, m_window);
 		deleteObject(m_items, m_grid, m_window);
+		if (m_grid->m_vectGrid.at(row).at(col).getTileBorder().getGlobalBounds().contains(worldPos))
+		{
+			if (m_squareBounds.contains(sf::Vector2f(pixelPos)))
+			{
+				for (std::vector<Colliders>::iterator iter = m_colliders.begin(); iter != m_colliders.end();)
+				{
+					if ((iter)->getRow() == row
+						&& (iter)->getColumn() == col)
+					{
+						iter = m_colliders.erase(iter);
+						m_grid->m_vectGrid.at(row).at(col).m_hasObject = false;
+						m_grid->m_vectGrid.at(row).at(col).cellType = "Empty";
+
+					}
+					else
+					{
+						iter++;
+					}
+				}
+			}
+		}
 		m_currentlySelected = nullptr;
 	}
-	sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
-	sf::Vector2f worldPos = m_window.mapPixelToCoords(pixelPos);
-	int row = worldPos.x / 32;
-	int col = worldPos.y / 32;
+
 	if (row >= 0 && row < 100 && col >= 0 && col < 100)
 	{
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
@@ -304,6 +397,7 @@ void ObjectPlacement::removeObject(sf::Event t_event, sf::RenderWindow& m_window
 					m_grid->m_vectGrid.at(row).at(col).removeTexture();
 				}
 			}
+			
 		}
 	}
 }
@@ -332,11 +426,6 @@ void ObjectPlacement::createObject(int row, int col)
 			m_walls.push_back(new Wall(m_tempTag, m_selectedObject, m_textureManager));
 			setObject(row, col, "Wall", m_walls);
 		}
-		m_colliders.push_back(Colliders());
-		
-
-		m_colliders.at(m_colliders.size() - 1).getBounds()->setPosition(m_grid->m_vectGrid.at(row).at(col).getPos());
-		m_colliders.at(m_colliders.size() - 1).setRowColumn(row, col);
 	}
 	if (m_tempTag.find("Terrain") != std::string::npos)
 	{
@@ -352,6 +441,7 @@ void ObjectPlacement::clearObjects()
 	m_walls.clear();
 	m_items.clear();
 	m_decorations.clear();
+	m_colliders.clear();
 	noOfObstacles = m_enemies.size();
 
 	for (int i = 0; i < m_grid->m_vectGridSize; ++i)
@@ -375,23 +465,35 @@ void ObjectPlacement::setSelectedObject(std::string t_path, std::string t_object
 
 void ObjectPlacement::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		for (auto collider : m_colliders)
+		for (int i = 0; i < m_colliders.size(); i++)
 		{
-			collider.increaseHeight();
-			collider.increaseWidth();
+			m_colliders.at(i).increaseWidth();
 		}
 	}
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::O))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		for (auto collider : m_colliders)
+		for (int i = 0; i < m_colliders.size(); i++)
 		{
-			collider.decreaseHeight();
-			collider.decreaseWidth();
-			std::cout << collider.getBounds()->getSize().x << std::endl;
+			m_colliders.at(i).decreaseWidth();
 		}
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		for (int i = 0; i < m_colliders.size(); i++)
+		{
+			m_colliders.at(i).increaseHeight();
+		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		for (int i = 0; i < m_colliders.size(); i++)
+		{
+			m_colliders.at(i).decreaseHeight();
+		}
+	}
+
 	if (m_currentlySelected != nullptr)
 	{
 		m_currentlySelected->update(t_deltaTime, m_window);
@@ -420,7 +522,7 @@ void ObjectPlacement::render(sf::RenderWindow* t_window)
 	{
 		for (auto collider : m_colliders)
 		{
-			collider.render(t_window);
+			collider.render(*t_window);
 		}
 	}
 }
