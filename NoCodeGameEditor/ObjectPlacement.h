@@ -144,6 +144,8 @@ public:
 	std::vector <Object*> m_walls;
 	std::vector <Object*> m_items;
 	std::vector <Object*> m_decorations;
+	std::vector <Colliders> m_colliders;
+
 
 	Object* m_currentlySelected{nullptr};
 	GameState* m_gameState;

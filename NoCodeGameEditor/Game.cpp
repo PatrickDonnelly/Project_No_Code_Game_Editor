@@ -477,7 +477,7 @@ void Game::update(sf::Time t_deltaTime)
 
 		//m_textureManager->getNumberOfTextures();
 		//m_fontManager.getNumberOfFonts();
-		//m_objectPlacement->update(t_deltaTime, m_window);
+		m_objectPlacement->update(t_deltaTime, m_window);
 
 		if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 		{

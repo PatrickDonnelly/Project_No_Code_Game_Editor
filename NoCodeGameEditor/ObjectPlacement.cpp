@@ -332,6 +332,11 @@ void ObjectPlacement::createObject(int row, int col)
 			m_walls.push_back(new Wall(m_tempTag, m_selectedObject, m_textureManager));
 			setObject(row, col, "Wall", m_walls);
 		}
+		m_colliders.push_back(Colliders());
+		
+
+		m_colliders.at(m_colliders.size() - 1).getBounds()->setPosition(m_grid->m_vectGrid.at(row).at(col).getPos());
+		m_colliders.at(m_colliders.size() - 1).setRowColumn(row, col);
 	}
 	if (m_tempTag.find("Terrain") != std::string::npos)
 	{
@@ -370,6 +375,23 @@ void ObjectPlacement::setSelectedObject(std::string t_path, std::string t_object
 
 void ObjectPlacement::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+	{
+		for (auto collider : m_colliders)
+		{
+			collider.increaseHeight();
+			collider.increaseWidth();
+		}
+	}
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::O))
+	{
+		for (auto collider : m_colliders)
+		{
+			collider.decreaseHeight();
+			collider.decreaseWidth();
+			std::cout << collider.getBounds()->getSize().x << std::endl;
+		}
+	}
 	if (m_currentlySelected != nullptr)
 	{
 		m_currentlySelected->update(t_deltaTime, m_window);
@@ -393,6 +415,13 @@ void ObjectPlacement::render(sf::RenderWindow* t_window)
 	if (initialPress)
 	{
 		t_window->draw(m_area);
+	}
+	if (m_collidersEnabled)
+	{
+		for (auto collider : m_colliders)
+		{
+			collider.render(t_window);
+		}
 	}
 }
 
