@@ -31,23 +31,23 @@ section{
     padding: 100px 0;
 }
 .max-width{
-    max-width: 1300px;
+    max-width: 1920px;
     padding: 0 80px;
     margin: auto;
 }
+
 .about, .media, .skills, .projects, .contact, footer, .overview,
 .motivation, .researchQuestion, .progress, .furtherDev, .demonstration{
     font-family: 'Poppins', sans-serif;
 }
 .about .aboutme-content, 
 .media .media-content,
-.skills .myskills-content,
 .contact .contactme-content
 .overview, .overview-content,
 .motivation, .motivation-content,
 .researchQuestion, .researchQuestion-content,
 .progress, .progress-content,
-.furtherDev, .furtherDev-content
+.furtherDev, .furtherDev-content,
 .demonstration, .demonstration-content{
     display: flex;
     flex-wrap: wrap;
@@ -160,7 +160,7 @@ section .title::after{
 
 .menu-btn .img{
     position:absolute;
-    width:auto;
+    width:fit-content;
     height:auto;
 
     cursor: pointer;
@@ -238,94 +238,118 @@ section .title::after{
     background: none;
 }
 
+.motivation .title::after{
+    content: "& Background";
+}
 
+.researchQuestion .title::after{
+    content: " ? ? ? ";
+}
+
+.progress .title::after{
+    content: "To Date";
+}
+
+.furtherDev .title::after{
+    content: "Where to next?";
+}
 
 /* about section styling */
 .overview .title::after{
     content: "Overview";
 }
-.overview .overview-content .left{
-    width: 45%;
-}
-.overview .overview-content .left img{
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-.overview .overview-content .right{
-    width: 55%;
-}
-.overview .overview-content .right .text{
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.overview .overview-content .right .text span{
-    color: rgb(63, 254, 98);;
-}
-.overview .overview-content .right p{
-    text-align: justify;
-}
-.overview .overview-content .right a{
-    display: inline-block;
-    background: rgb(63, 254, 98);
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 10px 30px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid rgb(63, 254, 98);
-    transition: all 0.3s ease;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000, 1px 1px 0 #000;
-}
-.overview .overview-content .right a:hover{
-    color: rgb(63, 254, 98);
-    background: none;
-}
-
-.overview .overview-content img{
-    height: 150px;
-    width: 150px;
-    object-fit:cover;
-    border-radius: 50%;
-    border: 5px solid rgb(63, 254, 98);
-    transition: all 0.3s ease;
-}
-
-
-
 
 /* about section styling */
 .about .title::after{
-    content: "Introduction";
+    content: "About Me";
 }
-.about .aboutme-content .left{
+
+.demonstration .title::after{
+    content: "Walkthrough";
+}
+
+.media .title::after{
+    content: "Find Me On";
+}
+
+.about .aboutme-content .left,
+.overview .overview-content .left,
+.motivation .motivation-content .left,
+.researchQuestion .researchQuestion-content .left,
+.progress .progress-content .left,
+.furtherDev .furtherDev-content .left,
+.demonstration .demonstration-content .left{
     width: 45%;
 }
-.about .aboutme-content .left img{
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
+
+
+.overview .overview-content .left img,
+.motivation .motivation-content .left img,
+.researchQuestion .researchQuestion-content .left img,
+.progress .progress-content .left img,
+.furtherDev .furtherDev-content .left img,
+.demonstration .demonstration-content .left img{
+    height: 384px;
+    width: 672px;
+    position: relative;
+    left: 0px;
+    object-fit:cover;
     border-radius: 6px;
 }
-.about .aboutme-content .right{
+
+
+.about .aboutme-content .right,
+.overview .overview-content .right,
+.motivation .motivation-content .right,
+.researchQuestion .researchQuestion-content .right,
+.progress .progress-content .right,
+.furtherDev .furtherDev-content .right,
+.demonstration .demonstration-content .right{
     width: 55%;
 }
-.about .aboutme-content .right .text{
+
+.about .aboutme-content .right .text,
+.overview .overview-content .right .text,
+.motivation .motivation-content .right .text,
+.researchQuestion .researchQuestion-content .right .text,
+.progress .progress-content .right .text,
+.furtherDev .furtherDev-content .right .text,
+.demonstration .demonstration-content .right .text{
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-.about .aboutme-content .right .text span{
+
+.about .aboutme-content .right .text span,
+.overview .overview-content .right .text span,
+.motivation .motivation-content .right .text span,
+.researchQuestion .researchQuestion-content .right .text span,
+.progress .progress-content .right .text span,
+.furtherDev .furtherDev-content .right .text span,
+.demonstration .demonstration-content .right .text span{
     color: rgb(63, 254, 98);;
 }
-.about .aboutme-content .right p{
+
+.about .aboutme-content .right p,
+.overview .overview-content .right p,
+.motivation .motivation-content .right p,
+.researchQuestion .researchQuestion-content .right p,
+.progress .progress-content p,
+.furtherDev .furtherDev-content p,
+.demonstration .demonstration-content .right p
+{
+    font-size: 20px;
+    font-weight: 500;
     text-align: justify;
 }
-.about .aboutme-content .right a{
+
+.about .aboutme-content .right a,
+.overview .overview-content .right a,
+.motivation .motivation-content .right a,
+.researchQuestion .researchQuestion-content .right a,
+.progress .progress-content .right a,
+.furtherDev .furtherDev-content .right a,
+.demonstration .demonstration-content .right a{
     display: inline-block;
     background: rgb(63, 254, 98);
     color: #fff;
@@ -339,23 +363,25 @@ section .title::after{
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000, 1px 1px 0 #000;
 }
-.about .aboutme-content .right a:hover{
-    color: rgb(63, 254, 98);
-    background: none;
-}
 
-.about .aboutme-content img{
+.about .aboutme-content .img,
+.overview .overview-content img,
+.motivation .motivation-content img,
+.researchQuestion .researchQuestion-content img,
+.progress .progress-content img,
+.furtherDev .furtherDev-content img,
+.demonstration .demonstration-content img{
     height: 150px;
     width: 150px;
+    position: relative;
     object-fit:cover;
     border-radius: 50%;
     border: 5px solid rgb(63, 254, 98);
     transition: all 0.3s ease;
 }
 
-
 /* media section styling */
-.media, .projects{
+.media, .projects, .motivation, .progress, .demonstration{
     color:#fff;
     background: #111;
 }
@@ -364,10 +390,12 @@ section .title::after{
     background: rgb(63, 254, 98);
 }
 .media .title::after,
-.projects .title::after{
+.projects .title::after,
+.motivation .title::after,
+.progress .title::after,
+.demonstration .title::after{
     color: white;
     background: #111;
-    content: "Find Me On";
 }
 .media .media-content .card{
     width: calc(33% - 20px);
@@ -418,162 +446,6 @@ section .title::after{
     border-color: #fff;
 }
 
-/* skills section styling */
-
-.skills .title::after{
-    content: "Experience";
-}
-.skills .myskills-content .column{
-    width: calc(50% - 30px);
-}
-.skills .myskills-content .left .text{
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.skills .myskills-content .left p{
-    text-align: justify;
-}
-.skills .myskills-content .left a{
-    display: inline-block;
-    background: rgb(63, 254, 98);
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 16px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid rgb(63, 254, 98);
-    transition: all 0.3s ease;
-}
-.skills .myskills-content .left a:hover{
-    color: rgb(63, 254, 98);
-    background: none;
-}
-.skills .myskills-content .bars{
-    margin-bottom: 15px;
-}
-.skills .myskills-content .info{
-    display: flex;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: space-between;
-}
-.skills .myskills-content span{
-    font-weight: 500;
-    font-size: 18px;
-}
-.skills .myskills-content .line{
-    height: 5px;
-    width: 100%;
-    background: lightgrey;
-    position: relative;
-}
-.skills .myskills-content .line::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgb(63, 254, 98);
-}
-
-.myskills-content .left .cplusplus::before{
-    width: 100%;
-}
-.myskills-content .left .csharp::before{
-    width: 100%;
-}
-.myskills-content .right .js::before{
-    width: 100%;
-}
-.myskills-content .right .html::before{
-    width: 100%;
-}
-.myskills-content .right .css::before{
-    width: 100%;
-}
-.myskills-content .left .python::before{
-    width: 100%;
-}
-
-/* projects section styling */
-.projects .title::after{
-    content: "Sample Work";
-}
-.projects .carousel .card{
-    display: flex;
-    background: #222;
-    border-radius: 6px;
-    padding: 25px 35px;
-    text-align: center;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-.projects .carousel .card:hover{
-    background: rgb(63, 254, 98);
-}
-.projects .carousel .card .box{
-    text-decoration:none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-.projects .carousel .card:hover .box{
-    transform: scale(1.05);
-}
-.projects .carousel .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
-}
-.projects .carousel .card img{
-    height: 150px;
-    width: 218px;
-    object-fit: cover;
-    border-radius: 5%;
-    border: 5px solid rgb(63, 254, 98);
-    transition: all 0.3s ease;
-}
-.projects .carousel .card iframe{
-    height: 150px;
-    width: 218px;
-    object-fit: cover;
-    border-radius: 5%;
-    border: 5px solid rgb(63, 254, 98);
-    transition: all 0.3s ease;
-}
-.projects .carousel .card:hover iframe{
-    border-color: #fff;
-}
-.projects .carousel .card:hover img{
-    border-color: #fff;
-}
-.owl-dots{
-    text-align: center;
-    margin-top: 20px;
-}
-.owl-dot{
-    height: 13px;
-    width: 13px;
-    margin: 0 5px;
-    outline: none!important;
-    border-radius: 50%;
-    border: 2px solid rgb(63, 254, 98)!important;
-    transition: all 0.3s ease;
-}
-.owl-dot.active{
-    width: 35px;
-    border-radius: 14px;
-}
-.owl-dot.active,
-.owl-dot:hover{
-    background: rgb(63, 254, 98)!important;
-}
-
 /* contact section styling */
 .contact .title::after{
     content: "Get In Touch";
@@ -611,13 +483,14 @@ section .title::after{
     color: #333;
 }
 .contact .right form .fields{
-    display: flex;
+    display:flex;
 }
 .contact .right form .field,
 .contact .right form .fields .field{
     height: 45px;
     width: 100%;
     margin-bottom: 15px;
+
 }
 .contact .right form .textarea{
     height: 80px;
@@ -726,32 +599,25 @@ footer span a:hover{
 
 
 
-@media (max-width: 1104px) {
-    .overview .overview-content .left img{
-        height: 350px;
-        width: 350px;
+@media (max-width: 1000px) {
+    .about .overview-content .left .img
+    .overview .overview-content .left .img,
+    .motivation .motivation-content .left .img,
+    .researchQuestion .researchQuestion-content .left .img,
+    .progress .progress-content .left .img,
+    .furtherDev .furtherDev-content .left .img,
+    .demonstration .demonstration-content .left .img{
+        height: 300px;
+        width: 300px;
     }
 }
 
-
-
-@media (max-width: 1104px) {
-    .about .overview-content .left img{
-        height: 350px;
-        width: 350px;
-    }
-}
-
-
-
-
-
-@media (max-width: 991px) {
+@media (max-width: 1000px) {
     .max-width{
         padding: 0 50px;
     }
 }
-@media (max-width: 947px){
+@media (max-width: 1700px){
     .menu-btn{
         display: block;
         z-index: 999;
@@ -794,28 +660,37 @@ footer span a:hover{
     .max-width{
         max-width: 930px;
     }
-    .about .aboutme-content .column{
+    .about .aboutme-content .column,
+    .overview .overview-content .column,
+    .motivation .motivation-content .column,
+    .researchQuestion .researchQuestion-content .column,
+    .progress .progress-content .column,
+    .furtherDev .furtherDev-content .column,
+    .demonstration .demonstration-content .column{
         width: 100%;
     }
-    .about .aboutme-content .left{
+    .about .aboutme-content .left,
+    .overview .overview-content .left,
+    .motivation .motivation-content .left,
+    .researchQuestion .researchQuestion-content .left,
+    .progress .progress-content .left,
+    .furtherDev .furtherDev-content .left,
+    .demonstration .demonstration-content .left
+    {
         display: flex;
         justify-content: center;
         margin: 0 auto 60px;
     }
-    .about .aboutme-content .right{
+    .about .aboutme-content .right,
+    .overview .overview-content .right,
+    .motivation .motivation-content .right,
+    .researchQuestion .researchQuestion-content .right,
+    .progress .progress-content .right,
+    .furtherDev .furtherDev-content .right,
+    .demonstration .demonstration-content .right{
         flex: 100%;
     }
-    .overview .overview-content .column{
-        width: 100%;
-    }
-    .overview .overview-content .left{
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 60px;
-    }
-    .overview .overview-content .right{
-        flex: 100%;
-    }
+
     .media .media-content .card{
         width: calc(50% - 10px);
         margin-bottom: 20px;
@@ -853,7 +728,12 @@ footer span a:hover{
         font-size: 27px;
     }
     .about .aboutme-content .right .text,
-    .skills .myskills-content .left .text{
+    .overview .overview-content .right .text,
+    .motivation .motivation-content .right .text,
+    .researchQuestion .researchQuestion-content .right .text,
+    .progress .progress-content .right .text,
+    .furtherDev .furtherDev-content .right .text,
+    .demonstration .demonstration-content .right .text{
         font-size: 19px;
     }
     .contact .right form .fields{
