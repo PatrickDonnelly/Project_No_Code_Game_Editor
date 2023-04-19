@@ -9,6 +9,7 @@ Player::Player()
 	m_playerBoundsHeight = 8;
 	m_playerBoundsWidth = 16;
 	m_spriteSheetName = "MyDude.png";
+	m_defaultPos = sf::Vector2f(352.0f, 960.0f);
 	loadAssets();
 	init();
 	setUpPlayerBounds();
@@ -75,7 +76,7 @@ void Player::setUpSprite()
 	m_playerSprite.setOrigin(m_frameSize / 2, m_frameSize / 2);
 	m_playerSprite.setScale(sf::Vector2f(2.0f,2.0f));
 	m_playerSprite.setColor(sf::Color::White);
-	m_playerSprite.setPosition(100,100);
+	m_playerSprite.setPosition(m_defaultPos);
 }
 
 bool Player::movement(sf::Time deltaTime)
@@ -144,9 +145,12 @@ void Player::update(sf::Time deltaTime, sf::RenderWindow& window)
 void Player::render(sf::RenderWindow& window)
 {
 	window.draw(m_playerSprite);
-	window.draw(m_playerBounds);
-	window.draw(m_playerCentre);
-	window.draw(m_playerInteractionRadius);
+	if (m_collidersEnabled)
+	{
+		window.draw(m_playerBounds);
+		window.draw(m_playerCentre);
+		window.draw(m_playerInteractionRadius);
+	}
 }
 
 sf::Sprite* Player::getSprite()

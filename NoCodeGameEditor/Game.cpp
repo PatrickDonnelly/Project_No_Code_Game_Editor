@@ -792,6 +792,7 @@ void Game::render()
 		m_window.setView(m_uiView);
 		m_levelList.render(&m_window);
 		m_uiBuildMode.render(&m_window);
+		m_player->render(m_window);
 
 		m_window.setView(m_gameView);
 	}

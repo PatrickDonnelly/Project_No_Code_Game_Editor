@@ -39,7 +39,7 @@ private:
 	void setUpCategoryButtons(sf::Font& t_arialFont);
 	void setUpLabels(std::vector<Button>::iterator t_col, std::vector<Label*>& t_labels, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::string>t_objects);
 	void setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons);
-
+	void toggleGridAndColliders(sf::Event t_event, sf::RenderWindow& t_window);
 	void processDialogueButtons(sf::Event t_event, sf::RenderWindow& t_window);
 	void processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindow& t_window);
 	void processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWindow& t_window, std::string& t_path, std::vector<std::vector<Label*>>& t_labels, std::vector<std::vector<Button*>>& t_objectButtons);

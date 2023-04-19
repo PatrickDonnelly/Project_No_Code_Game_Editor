@@ -21,6 +21,10 @@ public:
 	bool getInteract() { return m_canInteract; }
 	sf::Vector2f getCenterPos() { return m_playerCentre.getPosition(); }
 	float m_defaultSpeed;
+	sf::Vector2f m_defaultPos{};
+	bool m_collidersEnabled = true;
+	void setCollidersEnabled(bool t_onOff) { m_collidersEnabled = t_onOff; }
+	void setDefaultPos(sf::Vector2f t_startPos) { m_playerSprite.setPosition(t_startPos); }
 	bool m_weaponEnabled = false;
 	sf::Sprite m_playerSprite;
 	sf::Texture m_playerTexture;

@@ -410,6 +410,40 @@ void UiBuildMode::deselectButtons(std::vector<std::vector<Button*>>& t_objectBut
 	}
 }
 
+void UiBuildMode::toggleGridAndColliders(sf::Event t_event, sf::RenderWindow& t_window)
+{
+	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
+
+	for (int i = 0; i < m_toggleGridButtons.size(); i++)
+{
+		if (m_toggleGridButtons.at(i)->getButtonSprite().getGlobalBounds().contains(pixelPos))
+		{
+			m_toggleGridButtons.at(i)->highlighted();
+			if (t_event.type == sf::Event::MouseButtonReleased)
+			{
+				if (t_event.mouseButton.button == sf::Mouse::Left)
+				{
+					if (i == 0)
+					{
+						m_grid->setGridEnabled();
+						std::cout << "grid on off" << std::endl;
+					}
+					else
+					{
+						m_grid->setCollidersEnabled();
+						m_roomCreation->setCollidersEnabled();
+						m_objectPlacement->setCollidersEnabled();
+					}
+				}
+			}
+		}
+	else
+	{
+		m_toggleGridButtons.at(i)->setButtonTexture();
+	}
+}
+}
+
 void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWindow& t_window, std::string& t_path, std::vector<std::vector<Label*>>& t_labels, std::vector<std::vector<Button*>>& t_objectButtons)
 {
 	std::vector<std::vector<Button>>::iterator row;
@@ -462,34 +496,7 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 		colIndex = 0;
 		rowIndex += 1;
 	}
-	for (int i = 0; i < m_toggleGridButtons.size(); i++)
-	{
-		if (m_toggleGridButtons.at(i)->getButtonSprite().getGlobalBounds().contains(pixelPos))
-		{
-			m_toggleGridButtons.at(i)->highlighted();
-			if (t_event.type == sf::Event::MouseButtonReleased)
-			{
-				if (t_event.mouseButton.button == sf::Mouse::Left)
-				{
-					if (i == 0)
-					{
-						m_grid->setGridEnabled();
-						std::cout << "grid on off" << std::endl;
-					}
-					else
-					{
-						m_grid->setCollidersEnabled();
-						m_roomCreation->setCollidersEnabled();
-						m_objectPlacement->setCollidersEnabled();
-					}
-				}
-			}
-		}
-		else
-		{
-			m_toggleGridButtons.at(i)->setButtonTexture();
-		}
-	}
+
 
 	for (int i = 0; i < m_objectCategoryButtons.size(); i++)
 	{
@@ -769,12 +776,9 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Event newEvent = t_event;
 
-	if (m_gameState->m_currentGameState == State::ROOM_BUILD)
+	if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
 	{
-		processBuildRoomButtonInput(t_event, t_window);
-	}
-	else if (m_gameState->m_currentGameState == State::ROOM_PLACE_OBJECTS)
-	{
+		toggleGridAndColliders(t_event, t_window);
 		if (t_event.type == sf::Event::MouseWheelScrolled)
 		{
 			if (t_event.mouseWheelScroll.delta > 0)
@@ -821,6 +825,7 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	else if (m_gameState->m_currentGameState == State::ROOM_TEST)
 	{
 		processTestRoomButtonInput(t_event, t_window);
+		toggleGridAndColliders(t_event, t_window);//process
 	}	
 }
 
@@ -842,17 +847,13 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 	{
 
 		t_window->draw(m_currentRowText);
-		t_window->draw(m_gridOnOffText);
-		t_window->draw(m_collidersOnOffText);
+
 
 		for (int i = 0; i < 2; ++i)
 		{
 			m_prevNextbuttons.at(i)->render(t_window);
 		}
-		for (int i = 0; i < 2; ++i)
-		{
-			m_toggleGridButtons.at(i)->render(t_window);
-		}
+
 		for (int i = 0; i < m_objectCategoryButtons.size(); i++)
 		{
 			m_objectCategoryButtons.at(i)->render(t_window);
@@ -1072,6 +1073,12 @@ void UiBuildMode::render(sf::RenderWindow* t_window)
 			m_testingButtonLabels.at(i)->render(t_window);
 		}
 	}
+	for (int i = 0; i < 2; ++i)
+	{
+		m_toggleGridButtons.at(i)->render(t_window);
+	}
+	t_window->draw(m_gridOnOffText);
+	t_window->draw(m_collidersOnOffText);
 	//m_inspector->render(t_window);
 
 }
