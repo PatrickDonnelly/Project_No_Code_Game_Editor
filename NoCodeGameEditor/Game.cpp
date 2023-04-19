@@ -95,8 +95,11 @@ void Game::processEvents()
 			m_objectPlacement->processEvents(newEvent, m_window);
 			if (m_objectPlacement->m_currentlySelected != nullptr)
 			{
-				m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
-				m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
+				if (m_objectPlacement->m_currentlySelected->m_hasAttributes)
+				{
+					m_objectPlacement->m_currentlySelected->getInspector()->processEvents(newEvent, m_window, m_gameState, m_textEditor->GetTitle()->GetText(), (*m_objectPlacement->m_currentlySelected->getDialoguePaths()));
+					m_textEditor->processTextEditorButtons(newEvent, m_window, m_objectPlacement->m_currentlySelected->getInspector()->m_currentLabel);
+				}
 			}
 		}
 		if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
@@ -477,7 +480,7 @@ void Game::update(sf::Time t_deltaTime)
 
 		//m_textureManager->getNumberOfTextures();
 		//m_fontManager.getNumberOfFonts();
-		//m_objectPlacement->update(t_deltaTime, m_window);
+		m_objectPlacement->update(t_deltaTime, m_window);
 
 		if (m_gameState->m_currentGameState == State::ROOM_BUILD)
 		{

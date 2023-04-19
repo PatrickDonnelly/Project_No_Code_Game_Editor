@@ -23,6 +23,7 @@ struct ObjectData {
 	int m_boundsWidth;
 	int m_boundsHeight;
 	int m_detectionRadius;
+	bool m_hasInspector;
 };
 
 class Object
@@ -54,6 +55,7 @@ public:
 	bool m_moving = false;
 	bool m_hasBeenSelected = false;
 	bool m_hasDialogue =false;
+	bool m_hasAttributes = false;
 
 	virtual void init() = 0;
 	virtual void setUpSprite() = 0;
@@ -67,7 +69,7 @@ public:
 
 	virtual bool getHasDialogue() { return m_hasDialogue; }
 	void setRowColumn(int t_row, int t_col) { m_row = t_row; m_col = t_col; }
-	sf::RectangleShape* getBounds() { return &m_objectBounds; }
+	virtual sf::RectangleShape* getBounds() { return &m_objectBounds; }
 	sf::Sprite* getSprite() { return &m_objectSprite; }
 	void toggleBounds() { m_boundsOn = !m_boundsOn; }
 	bool isCollidable() { return m_isCollidable; }

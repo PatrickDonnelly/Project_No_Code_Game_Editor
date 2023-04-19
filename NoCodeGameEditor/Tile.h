@@ -12,7 +12,6 @@ private:
 	sf::RectangleShape m_tile;
 	TextureManager* m_textureManager;
 
-
 public:
 	bool m_top = false;
 	bool m_bottom = false;
@@ -30,6 +29,7 @@ public:
 	void setWallSprite();
 	void setFloorSprite();
 	void setUpSprites();
+	void removeTexture();
 
 	std::string cellType = "Empty";
 	std::string cornerwall = "CornerWall";

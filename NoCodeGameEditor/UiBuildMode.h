@@ -21,7 +21,8 @@ enum class TabState {
 	TAB_TERRAIN = 1,
 	TAB_ENEMIES = 2,
 	TAB_ITEMS = 3,
-	TAB_DECORATIONS = 4
+	TAB_DECORATIONS = 4,
+	TAB_MISC = 5
 };
 
 class UiBuildMode
@@ -115,6 +116,13 @@ public:
 	std::vector<std::string> m_enemies;
 	std::string m_pathEnemies = "ASSETS/IMAGES/Enemies/";
 	int m_rowsEnemies = 0;
+
+	std::vector<std::vector<Button*>> m_selectableMiscButtons;
+	std::vector<std::vector<Label*>> m_selectableMiscLabels;
+	std::vector<std::string> m_miscObjects;
+	std::string m_pathMiscObjects = "ASSETS/IMAGES/Misc/";
+	int m_rowsMisc = 0;
+
 
 	std::vector<Button*> m_prevNextbuttons;
 	std::vector<Button*> m_toggleGridButtons;

@@ -1,0 +1,754 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1920px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.about, .media, .skills, .projects, .contact, footer, .overview,
+.motivation, .researchQuestion, .progress, .furtherDev, .demonstration{
+    font-family: 'Poppins', sans-serif;
+}
+.about .aboutme-content, 
+.media .media-content,
+.contact .contactme-content
+.overview, .overview-content,
+.motivation, .motivation-content,
+.researchQuestion, .researchQuestion-content,
+.progress, .progress-content,
+.furtherDev, .furtherDev-content,
+.demonstration, .demonstration-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+/*
+    sub titles and lines
+*/
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background:rgb(63, 254, 98);
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: black;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    border-bottom: 2px solid black;
+    padding: 15px 0;
+    background: rgb(63, 254, 98);
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+/*portfolio lio part*/
+.navbar .logo a span{
+    
+    color:rgb(63, 254, 98);
+    transition: all 0.3s ease;
+}
+/*portfolio lio part when scrolling*/
+.navbar.sticky .logo a span{
+    color: black;
+    text-shadow: -0px -0px 0 #000, 0px -0px 0 #000,
+    -0px 0px 0 #000, 0px 0px 0 #000;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+/*menu items*/
+.navbar .menu li a{
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+    
+}
+/*menu items when hovered*/
+.navbar .menu li a:hover{
+    color: rgb(63, 254, 98);
+}
+/*menu items when hovered on scroll*/
+.navbar.sticky .menu li a:hover{
+    color: rgb(200, 200, 200);
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-btn .img{
+    position:absolute;
+    width:fit-content;
+    height:auto;
+
+    cursor: pointer;
+    display: none;
+}
+
+.scroll-up-btn{
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    z-index: 9999;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    display:block;
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(50%);
+}
+
+  
+/* home section styling */
+.home{
+    display: flex;
+    background: url("images/bg.png") no-repeat center;
+    height: 100vh;
+    color:white;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.home .max-width{
+    margin: auto 0 auto 30px;
+}
+.home .home-content .text-1{
+    font-size: 48px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-2 span{
+    color: rgb(63, 254, 98);;
+
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: rgb(63, 254, 98);
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid rgb(63, 254, 98);
+    transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+    color: rgb(63, 254, 98);
+    background: none;
+}
+
+.motivation .title::after{
+    content: "& Background";
+}
+
+.researchQuestion .title::after{
+    content: " ? ? ? ";
+}
+
+.progress .title::after{
+    content: "To Date";
+}
+
+.furtherDev .title::after{
+    content: "Where to next?";
+}
+
+/* about section styling */
+.overview .title::after{
+    content: "Overview";
+}
+
+/* about section styling */
+.about .title::after{
+    content: "About Me";
+}
+
+.demonstration .title::after{
+    content: "Walkthrough";
+}
+
+.media .title::after{
+    content: "Find Me On";
+}
+
+.about .aboutme-content .left,
+.overview .overview-content .left,
+.motivation .motivation-content .left,
+.researchQuestion .researchQuestion-content .left,
+.progress .progress-content .left,
+.furtherDev .furtherDev-content .left,
+.demonstration .demonstration-content .left{
+    width: 45%;
+}
+
+
+.overview .overview-content .left img,
+.motivation .motivation-content .left img,
+.researchQuestion .researchQuestion-content .left img,
+.progress .progress-content .left img,
+.furtherDev .furtherDev-content .left img,
+.demonstration .demonstration-content .left img{
+    height: 384px;
+    width: 672px;
+    position: relative;
+    left: 0px;
+    object-fit:cover;
+    border-radius: 6px;
+}
+
+
+.about .aboutme-content .right,
+.overview .overview-content .right,
+.motivation .motivation-content .right,
+.researchQuestion .researchQuestion-content .right,
+.progress .progress-content .right,
+.furtherDev .furtherDev-content .right,
+.demonstration .demonstration-content .right{
+    width: 55%;
+}
+
+.about .aboutme-content .right .text,
+.overview .overview-content .right .text,
+.motivation .motivation-content .right .text,
+.researchQuestion .researchQuestion-content .right .text,
+.progress .progress-content .right .text,
+.furtherDev .furtherDev-content .right .text,
+.demonstration .demonstration-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about .aboutme-content .right .text span,
+.overview .overview-content .right .text span,
+.motivation .motivation-content .right .text span,
+.researchQuestion .researchQuestion-content .right .text span,
+.progress .progress-content .right .text span,
+.furtherDev .furtherDev-content .right .text span,
+.demonstration .demonstration-content .right .text span{
+    color: rgb(63, 254, 98);;
+}
+
+.about .aboutme-content .right p,
+.overview .overview-content .right p,
+.motivation .motivation-content .right p,
+.researchQuestion .researchQuestion-content .right p,
+.progress .progress-content p,
+.furtherDev .furtherDev-content p,
+.demonstration .demonstration-content .right p
+{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.about .aboutme-content .right a,
+.overview .overview-content .right a,
+.motivation .motivation-content .right a,
+.researchQuestion .researchQuestion-content .right a,
+.progress .progress-content .right a,
+.furtherDev .furtherDev-content .right a,
+.demonstration .demonstration-content .right a{
+    display: inline-block;
+    background: rgb(63, 254, 98);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid rgb(63, 254, 98);
+    transition: all 0.3s ease;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.about .aboutme-content .img,
+.overview .overview-content img,
+.motivation .motivation-content img,
+.researchQuestion .researchQuestion-content img,
+.progress .progress-content img,
+.furtherDev .furtherDev-content img,
+.demonstration .demonstration-content img{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    object-fit:cover;
+    border-radius: 50%;
+    border: 5px solid rgb(63, 254, 98);
+    transition: all 0.3s ease;
+}
+
+/* media section styling */
+.media, .projects, .motivation, .progress, .demonstration{
+    color:#fff;
+    background: #111;
+}
+.media .title::before,
+.projects .title::before{
+    background: rgb(63, 254, 98);
+}
+.media .title::after,
+.projects .title::after,
+.motivation .title::after,
+.progress .title::after,
+.demonstration .title::after{
+    color: white;
+    background: #111;
+}
+.media .media-content .card{
+    width: calc(33% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;  
+}
+.media .media-content .card .box{
+    text-decoration:none;
+    color:white;
+}
+
+.media .media-content .card:hover{
+    background: rgb(63, 254, 98);
+}
+.media .media-content .card .box{
+    transition: all 0.3s ease;
+}
+.media .media-content .card:hover .box{
+    transform: scale(1.05);
+}
+.media .media-content .card i{
+    font-size: 50px;
+    color: rgb(63, 254, 98);
+    transition: color 0.3s ease;
+}
+.media .media-content .card:hover i{
+    color: #fff;
+}
+.media .media-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.media .media-content .card img{
+    height: 150px;
+    width: 150px;
+    object-fit:cover;
+    border-radius: 50%;
+    border: 5px solid rgb(63, 254, 98);
+    transition: all 0.3s ease;
+}
+.media .media-content .card:hover img{
+    border-color: #fff;
+}
+
+/* contact section styling */
+.contact .title::after{
+    content: "Get In Touch";
+}
+.contact .contactme-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contactme-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contactme-content .left p{
+    text-align: justify;
+}
+.contact .contactme-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contactme-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contactme-content .row .info{
+    margin-left: 30px;
+}
+.contact .contactme-content .row i{
+    font-size: 25px;
+    color: rgb(63, 254, 98);
+}
+.contact .contactme-content .info .head{
+    font-weight: 500;
+}
+.contact .contactme-content .info .sub-title{
+    color: #333;
+}
+.contact .right form .fields{
+    display:flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .email{
+    margin-left: 10px;  
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact .right form .button{
+    height: 47px;
+    width: 170px;
+}
+.contact .right form .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(63, 254, 98);;
+    background: rgb(63, 254, 98);;
+    color: #fff;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.contact .right form .button button:hover{
+    color: rgb(63, 254, 98);
+    background: none;
+}
+
+.alert-success{
+    z-index:9999;
+    background: #D4EDDA;
+    font-size:18px;
+    padding: 20px 40px;
+    min-width: 420px;
+    position:fixed;
+    right:0;
+    top:10px;
+    border-left:8px solid #3AD66E;
+    border-radius: 4px;
+}
+
+.alert-error{
+    z-index:9999;
+    background:#FFF3CD;
+    font-size:18px;
+    padding: 20px 40px;
+    min-width: 420px;
+    position:fixed;
+    right:0;
+    top:10px;
+    border-left:8px solid #FFA502;
+    border-radius: 4px;
+}
+
+
+
+/* footer section styling */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span{
+    color: rgb(63, 254, 98);;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1300px) {
+    .home .max-width{
+        margin-left: 0px;
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+    .about .overview-content .left .img
+    .overview .overview-content .left .img,
+    .motivation .motivation-content .left .img,
+    .researchQuestion .researchQuestion-content .left .img,
+    .progress .progress-content .left .img,
+    .furtherDev .furtherDev-content .left .img,
+    .demonstration .demonstration-content .left .img{
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 1700px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .aboutme-content .column,
+    .overview .overview-content .column,
+    .motivation .motivation-content .column,
+    .researchQuestion .researchQuestion-content .column,
+    .progress .progress-content .column,
+    .furtherDev .furtherDev-content .column,
+    .demonstration .demonstration-content .column{
+        width: 100%;
+    }
+    .about .aboutme-content .left,
+    .overview .overview-content .left,
+    .motivation .motivation-content .left,
+    .researchQuestion .researchQuestion-content .left,
+    .progress .progress-content .left,
+    .furtherDev .furtherDev-content .left,
+    .demonstration .demonstration-content .left
+    {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .aboutme-content .right,
+    .overview .overview-content .right,
+    .motivation .motivation-content .right,
+    .researchQuestion .researchQuestion-content .right,
+    .progress .progress-content .right,
+    .furtherDev .furtherDev-content .right,
+    .demonstration .demonstration-content .right{
+        flex: 100%;
+    }
+
+    .media .media-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .myskills-content .column,
+    .contact .contactme-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .media .media-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .aboutme-content .right .text,
+    .overview .overview-content .right .text,
+    .motivation .motivation-content .right .text,
+    .researchQuestion .researchQuestion-content .right .text,
+    .progress .progress-content .right .text,
+    .furtherDev .furtherDev-content .right .text,
+    .demonstration .demonstration-content .right .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 48px;
+        width: 48px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}

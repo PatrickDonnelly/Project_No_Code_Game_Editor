@@ -7,7 +7,7 @@ Decoration:
   []
 Item:
   - Tag: Item
-    ID: -3193391437090114340
+    ID: -2152195271174052004
     Xpos: 48
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -15,7 +15,7 @@ Item:
     Row: 1
     Column: 20
   - Tag: Item
-    ID: -7575923799259921351
+    ID: 1733627717919052832
     Xpos: 48
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -23,7 +23,7 @@ Item:
     Row: 1
     Column: 21
   - Tag: Item
-    ID: 2978654398296334762
+    ID: -3471829191638147072
     Xpos: 48
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -31,7 +31,7 @@ Item:
     Row: 1
     Column: 22
   - Tag: Item
-    ID: 6013049803977797472
+    ID: 4979962848417838348
     Xpos: 48
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -39,7 +39,7 @@ Item:
     Row: 1
     Column: 23
   - Tag: Item
-    ID: 710353794850695610
+    ID: -8932624572163308503
     Xpos: 48
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -47,7 +47,7 @@ Item:
     Row: 1
     Column: 24
   - Tag: Item
-    ID: -703131766620960205
+    ID: -5849776182372532641
     Xpos: 48
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -55,7 +55,7 @@ Item:
     Row: 1
     Column: 25
   - Tag: Item
-    ID: -4170823721634773724
+    ID: -4801414749264522992
     Xpos: 48
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -63,7 +63,7 @@ Item:
     Row: 1
     Column: 26
   - Tag: Item
-    ID: 5757916831701510517
+    ID: 3305519509835809622
     Xpos: 48
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -71,7 +71,7 @@ Item:
     Row: 1
     Column: 27
   - Tag: Item
-    ID: 6682578109093724175
+    ID: 3822904969893037578
     Xpos: 48
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -79,7 +79,7 @@ Item:
     Row: 1
     Column: 28
   - Tag: Item
-    ID: 6863791320424248429
+    ID: -7107493073764612515
     Xpos: 48
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -87,7 +87,7 @@ Item:
     Row: 1
     Column: 29
   - Tag: Item
-    ID: -3674232124502577946
+    ID: 6111371870549369457
     Xpos: 80
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -95,7 +95,7 @@ Item:
     Row: 2
     Column: 20
   - Tag: Item
-    ID: -4599820115370460796
+    ID: -8275685302807296059
     Xpos: 80
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -103,7 +103,7 @@ Item:
     Row: 2
     Column: 21
   - Tag: Item
-    ID: -6380458211326661608
+    ID: -5376305352331461118
     Xpos: 80
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -111,7 +111,7 @@ Item:
     Row: 2
     Column: 22
   - Tag: Item
-    ID: -2605950335849615980
+    ID: 163991428820020609
     Xpos: 80
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -119,7 +119,7 @@ Item:
     Row: 2
     Column: 23
   - Tag: Item
-    ID: 6158125441812405307
+    ID: -7729376030081840741
     Xpos: 80
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -127,7 +127,7 @@ Item:
     Row: 2
     Column: 24
   - Tag: Item
-    ID: 1001369372257461895
+    ID: 5853437313976507688
     Xpos: 80
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -135,7 +135,7 @@ Item:
     Row: 2
     Column: 25
   - Tag: Item
-    ID: 6711628924927574228
+    ID: -4436397461626962141
     Xpos: 80
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -143,7 +143,7 @@ Item:
     Row: 2
     Column: 26
   - Tag: Item
-    ID: -8904592482554950119
+    ID: 5531178123165293189
     Xpos: 80
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -151,7 +151,7 @@ Item:
     Row: 2
     Column: 27
   - Tag: Item
-    ID: -1277927835086521612
+    ID: -7160110061873586162
     Xpos: 80
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -159,7 +159,7 @@ Item:
     Row: 2
     Column: 28
   - Tag: Item
-    ID: -4157509727280615974
+    ID: 8001600248091490546
     Xpos: 80
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -167,7 +167,7 @@ Item:
     Row: 2
     Column: 29
   - Tag: Item
-    ID: -3211390801914259665
+    ID: 5610755633397377197
     Xpos: 112
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -175,7 +175,7 @@ Item:
     Row: 3
     Column: 20
   - Tag: Item
-    ID: -1737949655994287114
+    ID: -4633478028128302692
     Xpos: 112
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -183,7 +183,7 @@ Item:
     Row: 3
     Column: 21
   - Tag: Item
-    ID: 4230350591077600996
+    ID: -7434338637644660255
     Xpos: 112
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -191,7 +191,7 @@ Item:
     Row: 3
     Column: 22
   - Tag: Item
-    ID: 3665499254157161295
+    ID: -5894316003172608822
     Xpos: 112
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -199,7 +199,7 @@ Item:
     Row: 3
     Column: 23
   - Tag: Item
-    ID: 8932455830629203722
+    ID: -1160307424319237898
     Xpos: 112
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -207,7 +207,7 @@ Item:
     Row: 3
     Column: 24
   - Tag: Item
-    ID: 6160449854120458447
+    ID: 6823975534979694259
     Xpos: 112
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -215,7 +215,7 @@ Item:
     Row: 3
     Column: 25
   - Tag: Item
-    ID: 6634952662656053403
+    ID: -932403951005306148
     Xpos: 112
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -223,7 +223,7 @@ Item:
     Row: 3
     Column: 26
   - Tag: Item
-    ID: -7241298883256255043
+    ID: 4245749400760468968
     Xpos: 112
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -231,7 +231,7 @@ Item:
     Row: 3
     Column: 27
   - Tag: Item
-    ID: -3570278005554173144
+    ID: 496970506424197251
     Xpos: 112
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -239,7 +239,7 @@ Item:
     Row: 3
     Column: 28
   - Tag: Item
-    ID: 5557295114223657352
+    ID: -305749680318181740
     Xpos: 112
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -247,7 +247,7 @@ Item:
     Row: 3
     Column: 29
   - Tag: Item
-    ID: 8688694182947431200
+    ID: 1676633003278686772
     Xpos: 144
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -255,7 +255,7 @@ Item:
     Row: 4
     Column: 20
   - Tag: Item
-    ID: 8828341760437250561
+    ID: -5939548781797750275
     Xpos: 144
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -263,7 +263,7 @@ Item:
     Row: 4
     Column: 21
   - Tag: Item
-    ID: 3253126540286485108
+    ID: 7621297867668834240
     Xpos: 144
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -271,7 +271,7 @@ Item:
     Row: 4
     Column: 22
   - Tag: Item
-    ID: -4671416987774499366
+    ID: -2633761966892105206
     Xpos: 144
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -279,7 +279,7 @@ Item:
     Row: 4
     Column: 23
   - Tag: Item
-    ID: 3944886634438493463
+    ID: 3738915096559326669
     Xpos: 144
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -287,7 +287,7 @@ Item:
     Row: 4
     Column: 24
   - Tag: Item
-    ID: 6712355648774750015
+    ID: 1771219581503439433
     Xpos: 144
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -295,7 +295,7 @@ Item:
     Row: 4
     Column: 25
   - Tag: Item
-    ID: -3855284459276522465
+    ID: 6918019210798173168
     Xpos: 144
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -303,7 +303,7 @@ Item:
     Row: 4
     Column: 26
   - Tag: Item
-    ID: 4316731572969465613
+    ID: -7699096200936317964
     Xpos: 144
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -311,7 +311,7 @@ Item:
     Row: 4
     Column: 27
   - Tag: Item
-    ID: 997813187139522874
+    ID: -6734061941961821150
     Xpos: 144
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -319,7 +319,7 @@ Item:
     Row: 4
     Column: 28
   - Tag: Item
-    ID: -1964415687107697832
+    ID: -2891506099942310495
     Xpos: 144
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -327,7 +327,7 @@ Item:
     Row: 4
     Column: 29
   - Tag: Item
-    ID: 6837278105297251557
+    ID: 4708801602765730320
     Xpos: 176
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -335,7 +335,7 @@ Item:
     Row: 5
     Column: 20
   - Tag: Item
-    ID: -6085508613030613919
+    ID: -2486019597853270628
     Xpos: 176
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -343,7 +343,7 @@ Item:
     Row: 5
     Column: 21
   - Tag: Item
-    ID: -9089036088025448743
+    ID: 4724018605517901456
     Xpos: 176
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -351,7 +351,7 @@ Item:
     Row: 5
     Column: 22
   - Tag: Item
-    ID: 5742703777609898204
+    ID: -5245192752910260908
     Xpos: 176
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -359,7 +359,7 @@ Item:
     Row: 5
     Column: 23
   - Tag: Item
-    ID: 3046866969426010251
+    ID: 4563615969260717347
     Xpos: 176
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -367,7 +367,7 @@ Item:
     Row: 5
     Column: 24
   - Tag: Item
-    ID: 2316753458155887483
+    ID: -5098782386378876760
     Xpos: 176
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -375,7 +375,7 @@ Item:
     Row: 5
     Column: 25
   - Tag: Item
-    ID: -868341904661816975
+    ID: -6021987564770202094
     Xpos: 176
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -383,7 +383,7 @@ Item:
     Row: 5
     Column: 26
   - Tag: Item
-    ID: -1530671516649517046
+    ID: -5096275198677770616
     Xpos: 176
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -391,7 +391,7 @@ Item:
     Row: 5
     Column: 27
   - Tag: Item
-    ID: -2484184831859270834
+    ID: 8989834007612166271
     Xpos: 176
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -399,7 +399,7 @@ Item:
     Row: 5
     Column: 28
   - Tag: Item
-    ID: -3079624963381065580
+    ID: 15909978352178358
     Xpos: 176
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -407,7 +407,7 @@ Item:
     Row: 5
     Column: 29
   - Tag: Item
-    ID: 7159875110059252945
+    ID: -331232541921590388
     Xpos: 208
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -415,7 +415,7 @@ Item:
     Row: 6
     Column: 20
   - Tag: Item
-    ID: -7605130132913039598
+    ID: 3227141282890419154
     Xpos: 208
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -423,7 +423,7 @@ Item:
     Row: 6
     Column: 21
   - Tag: Item
-    ID: 1320840489307935581
+    ID: 2695702911958727721
     Xpos: 208
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -431,7 +431,7 @@ Item:
     Row: 6
     Column: 22
   - Tag: Item
-    ID: -3622264971164187058
+    ID: -3849269655402789399
     Xpos: 208
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -439,7 +439,7 @@ Item:
     Row: 6
     Column: 23
   - Tag: Item
-    ID: 3787428689970333488
+    ID: 9006768830469582075
     Xpos: 208
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -447,7 +447,7 @@ Item:
     Row: 6
     Column: 24
   - Tag: Item
-    ID: -5976024594282464423
+    ID: -566069710311573290
     Xpos: 208
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -455,7 +455,7 @@ Item:
     Row: 6
     Column: 25
   - Tag: Item
-    ID: -6868674075312569726
+    ID: -2344538379496312072
     Xpos: 208
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -463,7 +463,7 @@ Item:
     Row: 6
     Column: 26
   - Tag: Item
-    ID: 4430095835731450756
+    ID: -1680564354081304305
     Xpos: 208
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -471,7 +471,7 @@ Item:
     Row: 6
     Column: 27
   - Tag: Item
-    ID: 5568879609577354816
+    ID: 8267666932582545977
     Xpos: 208
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -479,7 +479,7 @@ Item:
     Row: 6
     Column: 28
   - Tag: Item
-    ID: 1545910177980692154
+    ID: 646393089745315772
     Xpos: 208
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -487,7 +487,7 @@ Item:
     Row: 6
     Column: 29
   - Tag: Item
-    ID: 7235838277306829621
+    ID: 6409348232174522432
     Xpos: 240
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -495,7 +495,7 @@ Item:
     Row: 7
     Column: 20
   - Tag: Item
-    ID: 1993154511050514076
+    ID: -7385524391085138206
     Xpos: 240
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -503,7 +503,7 @@ Item:
     Row: 7
     Column: 21
   - Tag: Item
-    ID: -6338453533936728569
+    ID: -55528510795933919
     Xpos: 240
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -511,7 +511,7 @@ Item:
     Row: 7
     Column: 22
   - Tag: Item
-    ID: -8158493046693911942
+    ID: 1951167712622610445
     Xpos: 240
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -519,7 +519,7 @@ Item:
     Row: 7
     Column: 23
   - Tag: Item
-    ID: -4245650902578628646
+    ID: 1632939870637133651
     Xpos: 240
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -527,7 +527,7 @@ Item:
     Row: 7
     Column: 24
   - Tag: Item
-    ID: 6005615578546811907
+    ID: -955968799224121500
     Xpos: 240
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -535,7 +535,7 @@ Item:
     Row: 7
     Column: 25
   - Tag: Item
-    ID: 3541808593336417172
+    ID: -4694725795036798941
     Xpos: 240
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -543,7 +543,7 @@ Item:
     Row: 7
     Column: 26
   - Tag: Item
-    ID: 6432333801695235891
+    ID: -8215244663545341882
     Xpos: 240
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -551,7 +551,7 @@ Item:
     Row: 7
     Column: 27
   - Tag: Item
-    ID: 871619218613775493
+    ID: -7814893821394887131
     Xpos: 240
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -559,7 +559,7 @@ Item:
     Row: 7
     Column: 28
   - Tag: Item
-    ID: 2476039225553415630
+    ID: -7740662950789292136
     Xpos: 240
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -567,7 +567,7 @@ Item:
     Row: 7
     Column: 29
   - Tag: Item
-    ID: -1959619163102385566
+    ID: -1848911077591666501
     Xpos: 272
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -575,7 +575,7 @@ Item:
     Row: 8
     Column: 20
   - Tag: Item
-    ID: -2694612106092141463
+    ID: -5821994691836499082
     Xpos: 272
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -583,7 +583,7 @@ Item:
     Row: 8
     Column: 21
   - Tag: Item
-    ID: 6424963385335185310
+    ID: 6695513759683326416
     Xpos: 272
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -591,7 +591,7 @@ Item:
     Row: 8
     Column: 22
   - Tag: Item
-    ID: 2841046568318007172
+    ID: 1995205981331242414
     Xpos: 272
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -599,7 +599,7 @@ Item:
     Row: 8
     Column: 23
   - Tag: Item
-    ID: -8359758076914955608
+    ID: 3791200324646230881
     Xpos: 272
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -607,7 +607,7 @@ Item:
     Row: 8
     Column: 24
   - Tag: Item
-    ID: 835830705983176158
+    ID: 9012084698311843221
     Xpos: 272
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -615,7 +615,7 @@ Item:
     Row: 8
     Column: 25
   - Tag: Item
-    ID: 7666312152395252576
+    ID: 2108599038828992954
     Xpos: 272
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -623,7 +623,7 @@ Item:
     Row: 8
     Column: 26
   - Tag: Item
-    ID: 5574857156858426265
+    ID: -4398481678095665191
     Xpos: 272
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -631,7 +631,7 @@ Item:
     Row: 8
     Column: 27
   - Tag: Item
-    ID: 7049121444458801240
+    ID: 2655593413741359190
     Xpos: 272
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -639,7 +639,7 @@ Item:
     Row: 8
     Column: 28
   - Tag: Item
-    ID: 8912864242346378045
+    ID: 4182353824072566689
     Xpos: 272
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -647,7 +647,7 @@ Item:
     Row: 8
     Column: 29
   - Tag: Item
-    ID: 5691667216162199583
+    ID: -5838053474409118923
     Xpos: 304
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -655,7 +655,7 @@ Item:
     Row: 9
     Column: 20
   - Tag: Item
-    ID: 3745378422570477695
+    ID: -4876132240283031659
     Xpos: 304
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -663,7 +663,7 @@ Item:
     Row: 9
     Column: 21
   - Tag: Item
-    ID: 61000816184645941
+    ID: 4888178125039670196
     Xpos: 304
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -671,7 +671,7 @@ Item:
     Row: 9
     Column: 22
   - Tag: Item
-    ID: -6560382712592949775
+    ID: -2881353435188925888
     Xpos: 304
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -679,7 +679,7 @@ Item:
     Row: 9
     Column: 23
   - Tag: Item
-    ID: 5873764160703028999
+    ID: 317877869988557074
     Xpos: 304
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -687,7 +687,7 @@ Item:
     Row: 9
     Column: 24
   - Tag: Item
-    ID: -5212184368172884271
+    ID: -5502218300605544431
     Xpos: 304
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -695,7 +695,7 @@ Item:
     Row: 9
     Column: 25
   - Tag: Item
-    ID: 4478306412493315787
+    ID: -8411936141535928810
     Xpos: 304
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -703,7 +703,7 @@ Item:
     Row: 9
     Column: 26
   - Tag: Item
-    ID: -519113616151976786
+    ID: 6029672873824449617
     Xpos: 304
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -711,7 +711,7 @@ Item:
     Row: 9
     Column: 27
   - Tag: Item
-    ID: -6111719367270798025
+    ID: 6324930134781452229
     Xpos: 304
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -719,7 +719,7 @@ Item:
     Row: 9
     Column: 28
   - Tag: Item
-    ID: -3843235323388589021
+    ID: 3176723689560659088
     Xpos: 304
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -727,7 +727,7 @@ Item:
     Row: 9
     Column: 29
   - Tag: Item
-    ID: 1745414500319808946
+    ID: -7667907366297502441
     Xpos: 336
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -735,7 +735,7 @@ Item:
     Row: 10
     Column: 20
   - Tag: Item
-    ID: -6347563784186415799
+    ID: 2840900239694309520
     Xpos: 336
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -743,7 +743,7 @@ Item:
     Row: 10
     Column: 21
   - Tag: Item
-    ID: 6180201877227990193
+    ID: -4251262674636652606
     Xpos: 336
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -751,7 +751,7 @@ Item:
     Row: 10
     Column: 22
   - Tag: Item
-    ID: 3528057057621670475
+    ID: -7700438952312301380
     Xpos: 336
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -759,7 +759,7 @@ Item:
     Row: 10
     Column: 23
   - Tag: Item
-    ID: -8530458641338465078
+    ID: -6597460197774837641
     Xpos: 336
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -767,7 +767,7 @@ Item:
     Row: 10
     Column: 24
   - Tag: Item
-    ID: -3277565551013370489
+    ID: -3336901822850787601
     Xpos: 336
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -775,7 +775,7 @@ Item:
     Row: 10
     Column: 25
   - Tag: Item
-    ID: 8067875998744052259
+    ID: -6065040527091258427
     Xpos: 336
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -783,7 +783,7 @@ Item:
     Row: 10
     Column: 26
   - Tag: Item
-    ID: 441884834762781713
+    ID: 8147444036390907491
     Xpos: 336
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -791,7 +791,7 @@ Item:
     Row: 10
     Column: 27
   - Tag: Item
-    ID: 7084985815534671553
+    ID: -5158216397671349808
     Xpos: 336
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -799,7 +799,7 @@ Item:
     Row: 10
     Column: 28
   - Tag: Item
-    ID: -3189528180592251855
+    ID: 2879054661316211768
     Xpos: 336
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -807,7 +807,7 @@ Item:
     Row: 10
     Column: 29
   - Tag: Item
-    ID: 6889970015816286262
+    ID: 3894205851312781905
     Xpos: 368
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -815,7 +815,7 @@ Item:
     Row: 11
     Column: 20
   - Tag: Item
-    ID: -7824861241983075984
+    ID: -7235298459565112889
     Xpos: 368
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -823,7 +823,7 @@ Item:
     Row: 11
     Column: 21
   - Tag: Item
-    ID: -3060223599847144949
+    ID: 839782559922559732
     Xpos: 368
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -831,7 +831,7 @@ Item:
     Row: 11
     Column: 22
   - Tag: Item
-    ID: 5053248144214253416
+    ID: -8277288483664838756
     Xpos: 368
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -839,7 +839,7 @@ Item:
     Row: 11
     Column: 23
   - Tag: Item
-    ID: -7670625604814929945
+    ID: 6619256343905289564
     Xpos: 368
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -847,7 +847,7 @@ Item:
     Row: 11
     Column: 24
   - Tag: Item
-    ID: -6241051270050636748
+    ID: -6399992202512922723
     Xpos: 368
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -855,7 +855,7 @@ Item:
     Row: 11
     Column: 25
   - Tag: Item
-    ID: 4674158550560448818
+    ID: -61300196122811265
     Xpos: 368
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -863,7 +863,7 @@ Item:
     Row: 11
     Column: 26
   - Tag: Item
-    ID: 524917885495386842
+    ID: -7414427253540379289
     Xpos: 368
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -871,7 +871,7 @@ Item:
     Row: 11
     Column: 27
   - Tag: Item
-    ID: -293225454265802276
+    ID: 2713162068184896256
     Xpos: 368
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -879,7 +879,7 @@ Item:
     Row: 11
     Column: 28
   - Tag: Item
-    ID: -3913459368964940224
+    ID: 7061473153509784631
     Xpos: 368
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -887,7 +887,7 @@ Item:
     Row: 11
     Column: 29
   - Tag: Item
-    ID: -5553174428701417189
+    ID: 3833662098340107474
     Xpos: 400
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -895,7 +895,7 @@ Item:
     Row: 12
     Column: 20
   - Tag: Item
-    ID: 1598257867914718027
+    ID: 4441545011468912449
     Xpos: 400
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -903,7 +903,7 @@ Item:
     Row: 12
     Column: 21
   - Tag: Item
-    ID: -1257552998369562816
+    ID: 2326226770682356418
     Xpos: 400
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -911,7 +911,7 @@ Item:
     Row: 12
     Column: 22
   - Tag: Item
-    ID: -6705943013669262065
+    ID: -458737068187248929
     Xpos: 400
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -919,7 +919,7 @@ Item:
     Row: 12
     Column: 23
   - Tag: Item
-    ID: -969665130086358252
+    ID: 6294739068239614680
     Xpos: 400
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -927,7 +927,7 @@ Item:
     Row: 12
     Column: 24
   - Tag: Item
-    ID: 6516389954684114624
+    ID: -6721736016344204857
     Xpos: 400
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -935,7 +935,7 @@ Item:
     Row: 12
     Column: 25
   - Tag: Item
-    ID: -491217206442379540
+    ID: 4742948416098462593
     Xpos: 400
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -943,7 +943,7 @@ Item:
     Row: 12
     Column: 26
   - Tag: Item
-    ID: 8657490656732723857
+    ID: -8064896342354556522
     Xpos: 400
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -951,7 +951,7 @@ Item:
     Row: 12
     Column: 27
   - Tag: Item
-    ID: 8660817077813644621
+    ID: 6545742993642118455
     Xpos: 400
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -959,7 +959,7 @@ Item:
     Row: 12
     Column: 28
   - Tag: Item
-    ID: 963238298561026185
+    ID: -6275060894703342371
     Xpos: 400
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -967,7 +967,7 @@ Item:
     Row: 12
     Column: 29
   - Tag: Item
-    ID: 6354500568021674516
+    ID: -8465951988037803365
     Xpos: 496
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -975,7 +975,7 @@ Item:
     Row: 15
     Column: 20
   - Tag: Item
-    ID: -7998843539125225247
+    ID: -4102879353826623877
     Xpos: 496
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -983,7 +983,7 @@ Item:
     Row: 15
     Column: 21
   - Tag: Item
-    ID: 185031587585587764
+    ID: -5031103339379674297
     Xpos: 496
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -991,7 +991,7 @@ Item:
     Row: 15
     Column: 22
   - Tag: Item
-    ID: -545122238930699018
+    ID: 8488323702758379134
     Xpos: 496
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -999,7 +999,7 @@ Item:
     Row: 15
     Column: 23
   - Tag: Item
-    ID: 368584308076971743
+    ID: -3950493816245423149
     Xpos: 496
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1007,7 +1007,7 @@ Item:
     Row: 15
     Column: 24
   - Tag: Item
-    ID: 471903802977443529
+    ID: 2240597090964349197
     Xpos: 496
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1015,7 +1015,7 @@ Item:
     Row: 15
     Column: 25
   - Tag: Item
-    ID: 5595174291253187029
+    ID: 5204190628816800333
     Xpos: 496
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1023,7 +1023,7 @@ Item:
     Row: 15
     Column: 26
   - Tag: Item
-    ID: -5258262626997749718
+    ID: 8590862760365294884
     Xpos: 496
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1031,7 +1031,7 @@ Item:
     Row: 15
     Column: 27
   - Tag: Item
-    ID: 5814548956521987401
+    ID: -1783518980693098573
     Xpos: 496
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1039,7 +1039,7 @@ Item:
     Row: 15
     Column: 28
   - Tag: Item
-    ID: -3117240038947102403
+    ID: -5627218667178737154
     Xpos: 496
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1047,7 +1047,7 @@ Item:
     Row: 15
     Column: 29
   - Tag: Item
-    ID: -5987389775428230045
+    ID: 7592290473422452680
     Xpos: 528
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1055,7 +1055,7 @@ Item:
     Row: 16
     Column: 20
   - Tag: Item
-    ID: -9030186132187724111
+    ID: 1287600504328467164
     Xpos: 528
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1063,7 +1063,7 @@ Item:
     Row: 16
     Column: 21
   - Tag: Item
-    ID: -2569425132253409454
+    ID: 6858582309997737623
     Xpos: 528
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1071,7 +1071,7 @@ Item:
     Row: 16
     Column: 22
   - Tag: Item
-    ID: -1127956498467035554
+    ID: -6925300001524419252
     Xpos: 528
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1079,7 +1079,7 @@ Item:
     Row: 16
     Column: 23
   - Tag: Item
-    ID: 4899987024603015444
+    ID: -9025597438442253583
     Xpos: 528
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1087,7 +1087,7 @@ Item:
     Row: 16
     Column: 24
   - Tag: Item
-    ID: -5296666269251945325
+    ID: 408446929755336011
     Xpos: 528
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1095,7 +1095,7 @@ Item:
     Row: 16
     Column: 25
   - Tag: Item
-    ID: 4679013215501127493
+    ID: 663329284133123825
     Xpos: 528
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1103,7 +1103,7 @@ Item:
     Row: 16
     Column: 26
   - Tag: Item
-    ID: 4577338411355138119
+    ID: 1436289233586179714
     Xpos: 528
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1111,7 +1111,7 @@ Item:
     Row: 16
     Column: 27
   - Tag: Item
-    ID: -7060530271045723060
+    ID: 1986230777585712011
     Xpos: 528
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1119,7 +1119,7 @@ Item:
     Row: 16
     Column: 28
   - Tag: Item
-    ID: 4294717295730301151
+    ID: 2214732902672884274
     Xpos: 528
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1127,7 +1127,7 @@ Item:
     Row: 16
     Column: 29
   - Tag: Item
-    ID: -399552311432659216
+    ID: -2773325244953331403
     Xpos: 560
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1135,7 +1135,7 @@ Item:
     Row: 17
     Column: 20
   - Tag: Item
-    ID: 4174404075503600212
+    ID: -1021075686684076898
     Xpos: 560
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1143,7 +1143,7 @@ Item:
     Row: 17
     Column: 21
   - Tag: Item
-    ID: 3428698054533622537
+    ID: 4809507241516189570
     Xpos: 560
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1151,7 +1151,7 @@ Item:
     Row: 17
     Column: 22
   - Tag: Item
-    ID: 703494879553441096
+    ID: 2804243604209237075
     Xpos: 560
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1159,7 +1159,7 @@ Item:
     Row: 17
     Column: 23
   - Tag: Item
-    ID: -6630629037975559947
+    ID: -7286977527121337392
     Xpos: 560
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1167,7 +1167,7 @@ Item:
     Row: 17
     Column: 24
   - Tag: Item
-    ID: 1834503372575018602
+    ID: 6424750441219202313
     Xpos: 560
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1175,7 +1175,7 @@ Item:
     Row: 17
     Column: 25
   - Tag: Item
-    ID: -8771015346539194843
+    ID: -8951972394613506274
     Xpos: 560
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1183,7 +1183,7 @@ Item:
     Row: 17
     Column: 26
   - Tag: Item
-    ID: -8369315492960876722
+    ID: -4208511165191295087
     Xpos: 560
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1191,7 +1191,7 @@ Item:
     Row: 17
     Column: 27
   - Tag: Item
-    ID: 5234510019864379311
+    ID: 9132055247619134788
     Xpos: 560
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1199,7 +1199,7 @@ Item:
     Row: 17
     Column: 28
   - Tag: Item
-    ID: 7379654010329504147
+    ID: 4586964391128137966
     Xpos: 560
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1207,7 +1207,7 @@ Item:
     Row: 17
     Column: 29
   - Tag: Item
-    ID: -2457278042498267028
+    ID: -2015395302381013041
     Xpos: 592
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1215,7 +1215,7 @@ Item:
     Row: 18
     Column: 20
   - Tag: Item
-    ID: 3517588872918130340
+    ID: -3592693107261596695
     Xpos: 592
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1223,7 +1223,7 @@ Item:
     Row: 18
     Column: 21
   - Tag: Item
-    ID: -7125347175642259716
+    ID: -6136979183269625622
     Xpos: 592
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1231,7 +1231,7 @@ Item:
     Row: 18
     Column: 22
   - Tag: Item
-    ID: 7032259783664705833
+    ID: -1182508790421169861
     Xpos: 592
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1239,7 +1239,7 @@ Item:
     Row: 18
     Column: 23
   - Tag: Item
-    ID: -4054351399737285855
+    ID: 8383880505619839189
     Xpos: 592
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1247,7 +1247,7 @@ Item:
     Row: 18
     Column: 24
   - Tag: Item
-    ID: -8870427004215193452
+    ID: -572304398475195771
     Xpos: 592
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1255,7 +1255,7 @@ Item:
     Row: 18
     Column: 25
   - Tag: Item
-    ID: 4951249266822994580
+    ID: 3684030495289455977
     Xpos: 592
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1263,7 +1263,7 @@ Item:
     Row: 18
     Column: 26
   - Tag: Item
-    ID: -7563204607551185177
+    ID: -8573453680812064844
     Xpos: 592
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1271,7 +1271,7 @@ Item:
     Row: 18
     Column: 27
   - Tag: Item
-    ID: -952649091835746465
+    ID: -4299705186672749960
     Xpos: 592
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1279,7 +1279,7 @@ Item:
     Row: 18
     Column: 28
   - Tag: Item
-    ID: 324026367757094416
+    ID: 7210457185320092381
     Xpos: 592
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1287,7 +1287,7 @@ Item:
     Row: 18
     Column: 29
   - Tag: Item
-    ID: -2093073089703358874
+    ID: 4529307944498174731
     Xpos: 624
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1295,7 +1295,7 @@ Item:
     Row: 19
     Column: 20
   - Tag: Item
-    ID: 6359741968118288857
+    ID: -2251034541788279681
     Xpos: 624
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1303,7 +1303,7 @@ Item:
     Row: 19
     Column: 21
   - Tag: Item
-    ID: 8608330157703512778
+    ID: -5318626542002801533
     Xpos: 624
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1311,7 +1311,7 @@ Item:
     Row: 19
     Column: 22
   - Tag: Item
-    ID: -94417880282643374
+    ID: 8470585507610451427
     Xpos: 624
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1319,7 +1319,7 @@ Item:
     Row: 19
     Column: 23
   - Tag: Item
-    ID: 1621983299448748961
+    ID: 89755414574473449
     Xpos: 624
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1327,7 +1327,7 @@ Item:
     Row: 19
     Column: 24
   - Tag: Item
-    ID: -6094161147132262701
+    ID: 960537240882331222
     Xpos: 624
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1335,7 +1335,7 @@ Item:
     Row: 19
     Column: 25
   - Tag: Item
-    ID: -5928221247099433552
+    ID: 879243216490631329
     Xpos: 624
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1343,7 +1343,7 @@ Item:
     Row: 19
     Column: 26
   - Tag: Item
-    ID: 3786206637060921447
+    ID: -5014135435034500790
     Xpos: 624
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1351,7 +1351,7 @@ Item:
     Row: 19
     Column: 27
   - Tag: Item
-    ID: -4679784835960123733
+    ID: -4627514456257627072
     Xpos: 624
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1359,7 +1359,7 @@ Item:
     Row: 19
     Column: 28
   - Tag: Item
-    ID: -8225794254902979497
+    ID: -5075247990574694599
     Xpos: 624
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1367,7 +1367,7 @@ Item:
     Row: 19
     Column: 29
   - Tag: Item
-    ID: -2038096859343137554
+    ID: 3154052699222751427
     Xpos: 656
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1375,7 +1375,7 @@ Item:
     Row: 20
     Column: 20
   - Tag: Item
-    ID: -6385071146401564632
+    ID: -5592012679256592732
     Xpos: 656
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1383,7 +1383,7 @@ Item:
     Row: 20
     Column: 21
   - Tag: Item
-    ID: 7780802250171092838
+    ID: 6265233312653281128
     Xpos: 656
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1391,7 +1391,7 @@ Item:
     Row: 20
     Column: 22
   - Tag: Item
-    ID: -2019229337359687367
+    ID: -5279392735327748041
     Xpos: 656
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1399,7 +1399,7 @@ Item:
     Row: 20
     Column: 23
   - Tag: Item
-    ID: -5869508068160353155
+    ID: -3067336717965504995
     Xpos: 656
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1407,7 +1407,7 @@ Item:
     Row: 20
     Column: 24
   - Tag: Item
-    ID: -1570318360432390716
+    ID: -1583432920191136223
     Xpos: 656
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1415,7 +1415,7 @@ Item:
     Row: 20
     Column: 25
   - Tag: Item
-    ID: 5628970954328730955
+    ID: 3801089886299453698
     Xpos: 656
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1423,7 +1423,7 @@ Item:
     Row: 20
     Column: 26
   - Tag: Item
-    ID: -7723117252576146966
+    ID: 8735840662552843007
     Xpos: 656
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1431,7 +1431,7 @@ Item:
     Row: 20
     Column: 27
   - Tag: Item
-    ID: 2329695037533640799
+    ID: -5321818763161905520
     Xpos: 656
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1439,7 +1439,7 @@ Item:
     Row: 20
     Column: 28
   - Tag: Item
-    ID: 5891808192658966569
+    ID: -5036093150437133077
     Xpos: 656
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1447,7 +1447,7 @@ Item:
     Row: 20
     Column: 29
   - Tag: Item
-    ID: -3118574673473958980
+    ID: 983299692194154883
     Xpos: 688
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1455,7 +1455,7 @@ Item:
     Row: 21
     Column: 20
   - Tag: Item
-    ID: 7818745236232265173
+    ID: -4980606092021443175
     Xpos: 688
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1463,7 +1463,7 @@ Item:
     Row: 21
     Column: 21
   - Tag: Item
-    ID: -1060450667017778025
+    ID: 1025967160373599607
     Xpos: 688
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1471,7 +1471,7 @@ Item:
     Row: 21
     Column: 22
   - Tag: Item
-    ID: -7916350620270940372
+    ID: 2098184204725701323
     Xpos: 688
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1479,7 +1479,7 @@ Item:
     Row: 21
     Column: 23
   - Tag: Item
-    ID: -8437116373458209543
+    ID: -4959417652535409096
     Xpos: 688
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1487,7 +1487,7 @@ Item:
     Row: 21
     Column: 24
   - Tag: Item
-    ID: -6239860254810426264
+    ID: 9030018439207468997
     Xpos: 688
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1495,7 +1495,7 @@ Item:
     Row: 21
     Column: 25
   - Tag: Item
-    ID: 1360804906637186836
+    ID: 2674945796353725638
     Xpos: 688
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1503,7 +1503,7 @@ Item:
     Row: 21
     Column: 26
   - Tag: Item
-    ID: 2235956380034693975
+    ID: -4921119324751474122
     Xpos: 688
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1511,7 +1511,7 @@ Item:
     Row: 21
     Column: 27
   - Tag: Item
-    ID: -4910889406603542886
+    ID: 2828035711358132505
     Xpos: 688
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1519,7 +1519,7 @@ Item:
     Row: 21
     Column: 28
   - Tag: Item
-    ID: -7082231736429827919
+    ID: 5401921144489519893
     Xpos: 688
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1527,7 +1527,7 @@ Item:
     Row: 21
     Column: 29
   - Tag: Item
-    ID: -4705922939711741642
+    ID: 5534460436729704376
     Xpos: 720
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1535,7 +1535,7 @@ Item:
     Row: 22
     Column: 20
   - Tag: Item
-    ID: 1669639476740362174
+    ID: -8625316869170675768
     Xpos: 720
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1543,7 +1543,7 @@ Item:
     Row: 22
     Column: 21
   - Tag: Item
-    ID: 4958276523823423938
+    ID: -364802222143644470
     Xpos: 720
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1551,7 +1551,7 @@ Item:
     Row: 22
     Column: 22
   - Tag: Item
-    ID: -7487425326443477488
+    ID: 3023964983653983753
     Xpos: 720
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1559,7 +1559,7 @@ Item:
     Row: 22
     Column: 23
   - Tag: Item
-    ID: 2503621241280579153
+    ID: 8381929832077785557
     Xpos: 720
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1567,7 +1567,7 @@ Item:
     Row: 22
     Column: 24
   - Tag: Item
-    ID: 7466460622131890170
+    ID: -1724174593184105463
     Xpos: 720
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1575,7 +1575,7 @@ Item:
     Row: 22
     Column: 25
   - Tag: Item
-    ID: -2172357263377780157
+    ID: 5430001070441736209
     Xpos: 720
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1583,7 +1583,7 @@ Item:
     Row: 22
     Column: 26
   - Tag: Item
-    ID: 4223425679425547778
+    ID: 7876217342548463401
     Xpos: 720
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1591,7 +1591,7 @@ Item:
     Row: 22
     Column: 27
   - Tag: Item
-    ID: -8481311209867849827
+    ID: 2861059618984344398
     Xpos: 720
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1599,7 +1599,7 @@ Item:
     Row: 22
     Column: 28
   - Tag: Item
-    ID: -5611930786204734283
+    ID: 4269861194876912219
     Xpos: 720
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1607,7 +1607,7 @@ Item:
     Row: 22
     Column: 29
   - Tag: Item
-    ID: 3649689630190598442
+    ID: -1864018347372274816
     Xpos: 752
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1615,7 +1615,7 @@ Item:
     Row: 23
     Column: 20
   - Tag: Item
-    ID: 1472126831274092420
+    ID: -5723438857459591809
     Xpos: 752
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1623,7 +1623,7 @@ Item:
     Row: 23
     Column: 21
   - Tag: Item
-    ID: -5228067955948666894
+    ID: -860463357692444060
     Xpos: 752
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1631,7 +1631,7 @@ Item:
     Row: 23
     Column: 22
   - Tag: Item
-    ID: 3600063736048971638
+    ID: 5960058654548733924
     Xpos: 752
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1639,7 +1639,7 @@ Item:
     Row: 23
     Column: 23
   - Tag: Item
-    ID: -2148341842497964011
+    ID: 6188568020478255426
     Xpos: 752
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1647,7 +1647,7 @@ Item:
     Row: 23
     Column: 24
   - Tag: Item
-    ID: 4385826918220554136
+    ID: -5997092707922368538
     Xpos: 752
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1655,7 +1655,7 @@ Item:
     Row: 23
     Column: 25
   - Tag: Item
-    ID: -8638928875296881502
+    ID: -1636948417720843282
     Xpos: 752
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1663,7 +1663,7 @@ Item:
     Row: 23
     Column: 26
   - Tag: Item
-    ID: 6911301494786630166
+    ID: 2624533680007873236
     Xpos: 752
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1671,7 +1671,7 @@ Item:
     Row: 23
     Column: 27
   - Tag: Item
-    ID: -6586419825704115887
+    ID: -7415670745851452643
     Xpos: 752
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1679,7 +1679,7 @@ Item:
     Row: 23
     Column: 28
   - Tag: Item
-    ID: 3225285291760889674
+    ID: -6966648918008305713
     Xpos: 752
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1687,7 +1687,7 @@ Item:
     Row: 23
     Column: 29
   - Tag: Item
-    ID: -3109506754778808012
+    ID: 9154196306592881794
     Xpos: 784
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1695,7 +1695,7 @@ Item:
     Row: 24
     Column: 20
   - Tag: Item
-    ID: 6223651524702511458
+    ID: -7183991483221279617
     Xpos: 784
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1703,7 +1703,7 @@ Item:
     Row: 24
     Column: 21
   - Tag: Item
-    ID: 8986566995477290687
+    ID: -1397757585869331282
     Xpos: 784
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1711,7 +1711,7 @@ Item:
     Row: 24
     Column: 22
   - Tag: Item
-    ID: 7087703111755436044
+    ID: 4511413046530717868
     Xpos: 784
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1719,7 +1719,7 @@ Item:
     Row: 24
     Column: 23
   - Tag: Item
-    ID: 390847061830101586
+    ID: 6737147663364673157
     Xpos: 784
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1727,7 +1727,7 @@ Item:
     Row: 24
     Column: 24
   - Tag: Item
-    ID: 686281819489671285
+    ID: 1846126812313672367
     Xpos: 784
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1735,7 +1735,7 @@ Item:
     Row: 24
     Column: 25
   - Tag: Item
-    ID: 67666252226840737
+    ID: -2386093657942489381
     Xpos: 784
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1743,7 +1743,7 @@ Item:
     Row: 24
     Column: 26
   - Tag: Item
-    ID: -1844192887386982588
+    ID: -659241463991819754
     Xpos: 784
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1751,7 +1751,7 @@ Item:
     Row: 24
     Column: 27
   - Tag: Item
-    ID: 2791290851487577811
+    ID: 6233577431461345178
     Xpos: 784
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1759,7 +1759,7 @@ Item:
     Row: 24
     Column: 28
   - Tag: Item
-    ID: -4239433120766518541
+    ID: 4565535283848391335
     Xpos: 784
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1767,7 +1767,7 @@ Item:
     Row: 24
     Column: 29
   - Tag: Item
-    ID: -5770787839998879373
+    ID: 1100877947191896908
     Xpos: 816
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1775,7 +1775,7 @@ Item:
     Row: 25
     Column: 20
   - Tag: Item
-    ID: -4150345080678024004
+    ID: -7121213668862115761
     Xpos: 816
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1783,7 +1783,7 @@ Item:
     Row: 25
     Column: 21
   - Tag: Item
-    ID: 3101478807095623763
+    ID: 7562535612457507670
     Xpos: 816
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1791,7 +1791,7 @@ Item:
     Row: 25
     Column: 22
   - Tag: Item
-    ID: -5174508289836423840
+    ID: 7085816176982586516
     Xpos: 816
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1799,7 +1799,7 @@ Item:
     Row: 25
     Column: 23
   - Tag: Item
-    ID: 1607128078051952964
+    ID: 2344167191450404719
     Xpos: 816
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1807,7 +1807,7 @@ Item:
     Row: 25
     Column: 24
   - Tag: Item
-    ID: -3487490476352765587
+    ID: 4841092035535509089
     Xpos: 816
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1815,7 +1815,7 @@ Item:
     Row: 25
     Column: 25
   - Tag: Item
-    ID: 8776501592289362698
+    ID: 4369687223197757403
     Xpos: 816
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1823,7 +1823,7 @@ Item:
     Row: 25
     Column: 26
   - Tag: Item
-    ID: -4924378954333410275
+    ID: 8201573747108456745
     Xpos: 816
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1831,7 +1831,7 @@ Item:
     Row: 25
     Column: 27
   - Tag: Item
-    ID: -4996685044646110246
+    ID: -2502314589149639016
     Xpos: 816
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1839,7 +1839,7 @@ Item:
     Row: 25
     Column: 28
   - Tag: Item
-    ID: 4892168479120369482
+    ID: 8272129914236407764
     Xpos: 816
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1847,7 +1847,7 @@ Item:
     Row: 25
     Column: 29
   - Tag: Item
-    ID: -6690329303971906478
+    ID: -1520338382794286956
     Xpos: 848
     Ypos: 656
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1855,7 +1855,7 @@ Item:
     Row: 26
     Column: 20
   - Tag: Item
-    ID: -5052078335654164348
+    ID: 2260373580727287125
     Xpos: 848
     Ypos: 688
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1863,7 +1863,7 @@ Item:
     Row: 26
     Column: 21
   - Tag: Item
-    ID: -3791678853722304718
+    ID: 6328175163804460917
     Xpos: 848
     Ypos: 720
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1871,7 +1871,7 @@ Item:
     Row: 26
     Column: 22
   - Tag: Item
-    ID: 4666722145464864788
+    ID: 405070112380534534
     Xpos: 848
     Ypos: 752
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1879,7 +1879,7 @@ Item:
     Row: 26
     Column: 23
   - Tag: Item
-    ID: 395232276659062552
+    ID: -6000893918380586584
     Xpos: 848
     Ypos: 784
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1887,7 +1887,7 @@ Item:
     Row: 26
     Column: 24
   - Tag: Item
-    ID: -6112573221917543612
+    ID: 7581585808861620583
     Xpos: 848
     Ypos: 816
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1895,7 +1895,7 @@ Item:
     Row: 26
     Column: 25
   - Tag: Item
-    ID: -6381442706410180336
+    ID: -6925918563363347272
     Xpos: 848
     Ypos: 848
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1903,7 +1903,7 @@ Item:
     Row: 26
     Column: 26
   - Tag: Item
-    ID: 7352948655674965262
+    ID: -5880539388935902560
     Xpos: 848
     Ypos: 880
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1911,7 +1911,7 @@ Item:
     Row: 26
     Column: 27
   - Tag: Item
-    ID: 6920239735948962416
+    ID: -101826826958631886
     Xpos: 848
     Ypos: 912
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1919,7 +1919,7 @@ Item:
     Row: 26
     Column: 28
   - Tag: Item
-    ID: -6030288907882397054
+    ID: 4004950312656914994
     Xpos: 848
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1927,7 +1927,7 @@ Item:
     Row: 26
     Column: 29
   - Tag: Item
-    ID: -6576258814424993756
+    ID: 6103449291050751525
     Xpos: 464
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1935,7 +1935,7 @@ Item:
     Row: 14
     Column: 29
   - Tag: Item
-    ID: 780239990836764897
+    ID: -9146850466576078038
     Xpos: 432
     Ypos: 944
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1943,7 +1943,7 @@ Item:
     Row: 13
     Column: 29
   - Tag: Item
-    ID: -1522006544573593499
+    ID: -7517228314985944890
     Xpos: 208
     Ypos: 624
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1951,7 +1951,7 @@ Item:
     Row: 6
     Column: 19
   - Tag: Item
-    ID: -8581568504070007364
+    ID: 6820755189340028750
     Xpos: 208
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1959,7 +1959,7 @@ Item:
     Row: 6
     Column: 8
   - Tag: Item
-    ID: -5198730674777194916
+    ID: -1849003667349198440
     Xpos: 208
     Ypos: 304
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1967,7 +1967,7 @@ Item:
     Row: 6
     Column: 9
   - Tag: Item
-    ID: -1680447116425925607
+    ID: -2946767112358616082
     Xpos: 208
     Ypos: 336
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1975,7 +1975,7 @@ Item:
     Row: 6
     Column: 10
   - Tag: Item
-    ID: 5578112342784081864
+    ID: -4156310145119443277
     Xpos: 208
     Ypos: 368
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1983,7 +1983,7 @@ Item:
     Row: 6
     Column: 11
   - Tag: Item
-    ID: 5022425839598330035
+    ID: -8191091385137958059
     Xpos: 208
     Ypos: 400
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1991,7 +1991,7 @@ Item:
     Row: 6
     Column: 12
   - Tag: Item
-    ID: -2499660659815498432
+    ID: -2474439861533640004
     Xpos: 208
     Ypos: 432
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -1999,7 +1999,7 @@ Item:
     Row: 6
     Column: 13
   - Tag: Item
-    ID: 6216595198736528511
+    ID: 8077387681897768522
     Xpos: 208
     Ypos: 464
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2007,7 +2007,7 @@ Item:
     Row: 6
     Column: 14
   - Tag: Item
-    ID: 4461721986054632298
+    ID: -2027541004807630459
     Xpos: 208
     Ypos: 496
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2015,7 +2015,7 @@ Item:
     Row: 6
     Column: 15
   - Tag: Item
-    ID: -5597511054031482996
+    ID: -5209472659198981407
     Xpos: 208
     Ypos: 528
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2023,7 +2023,7 @@ Item:
     Row: 6
     Column: 16
   - Tag: Item
-    ID: 1673982808130386111
+    ID: -5901820712434180294
     Xpos: 208
     Ypos: 560
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2031,7 +2031,7 @@ Item:
     Row: 6
     Column: 17
   - Tag: Item
-    ID: 4227604486777395741
+    ID: -488923610375141887
     Xpos: 208
     Ypos: 592
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2039,7 +2039,7 @@ Item:
     Row: 6
     Column: 18
   - Tag: Item
-    ID: -289360268812653451
+    ID: 9129525170808893989
     Xpos: 48
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2047,7 +2047,7 @@ Item:
     Row: 1
     Column: 1
   - Tag: Item
-    ID: 9136261863768682578
+    ID: -9044382262319997343
     Xpos: 48
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2055,7 +2055,7 @@ Item:
     Row: 1
     Column: 2
   - Tag: Item
-    ID: -1950028159146656015
+    ID: 7846063066666710342
     Xpos: 48
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2063,7 +2063,7 @@ Item:
     Row: 1
     Column: 3
   - Tag: Item
-    ID: 8207514044746007773
+    ID: -51003304780146177
     Xpos: 48
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2071,7 +2071,7 @@ Item:
     Row: 1
     Column: 4
   - Tag: Item
-    ID: 1510255716032716856
+    ID: -3117105184947843474
     Xpos: 48
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2079,7 +2079,7 @@ Item:
     Row: 1
     Column: 5
   - Tag: Item
-    ID: -5402141881977930804
+    ID: -1897868321356133017
     Xpos: 48
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2087,7 +2087,7 @@ Item:
     Row: 1
     Column: 6
   - Tag: Item
-    ID: -8706813525595929563
+    ID: 7368243041641486990
     Xpos: 48
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2095,7 +2095,7 @@ Item:
     Row: 1
     Column: 7
   - Tag: Item
-    ID: 2163673940871677044
+    ID: 6188475205697334463
     Xpos: 48
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2103,7 +2103,7 @@ Item:
     Row: 1
     Column: 8
   - Tag: Item
-    ID: -181912193590991277
+    ID: 5811135622883074820
     Xpos: 80
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2111,7 +2111,7 @@ Item:
     Row: 2
     Column: 1
   - Tag: Item
-    ID: 4074513095176520729
+    ID: 6557926343224439454
     Xpos: 80
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2119,7 +2119,7 @@ Item:
     Row: 2
     Column: 2
   - Tag: Item
-    ID: -8642284690435823796
+    ID: 3334594460478177639
     Xpos: 80
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2127,7 +2127,7 @@ Item:
     Row: 2
     Column: 3
   - Tag: Item
-    ID: 2392476688759069271
+    ID: 4364654567919238176
     Xpos: 80
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2135,7 +2135,7 @@ Item:
     Row: 2
     Column: 4
   - Tag: Item
-    ID: 8214624146500602016
+    ID: 3503325559637332872
     Xpos: 80
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2143,7 +2143,7 @@ Item:
     Row: 2
     Column: 5
   - Tag: Item
-    ID: 5546878595247546573
+    ID: -7692111108638816940
     Xpos: 80
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2151,7 +2151,7 @@ Item:
     Row: 2
     Column: 6
   - Tag: Item
-    ID: -3568148578244206086
+    ID: -1003468308359740347
     Xpos: 80
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2159,7 +2159,7 @@ Item:
     Row: 2
     Column: 7
   - Tag: Item
-    ID: 2572538512532868526
+    ID: 6586233859611660531
     Xpos: 80
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2167,7 +2167,7 @@ Item:
     Row: 2
     Column: 8
   - Tag: Item
-    ID: 1122305694846914460
+    ID: -8122044228953436345
     Xpos: 112
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2175,7 +2175,7 @@ Item:
     Row: 3
     Column: 1
   - Tag: Item
-    ID: -1661216916731158315
+    ID: -9102637860040676293
     Xpos: 112
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2183,7 +2183,7 @@ Item:
     Row: 3
     Column: 2
   - Tag: Item
-    ID: -3979435345716172146
+    ID: 6109169529979745960
     Xpos: 112
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2191,7 +2191,7 @@ Item:
     Row: 3
     Column: 4
   - Tag: Item
-    ID: -811878572310596466
+    ID: 7411030092706722061
     Xpos: 112
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2199,7 +2199,7 @@ Item:
     Row: 3
     Column: 5
   - Tag: Item
-    ID: -228291281946513110
+    ID: -157705586510731096
     Xpos: 112
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2207,7 +2207,7 @@ Item:
     Row: 3
     Column: 6
   - Tag: Item
-    ID: 4738189198769346467
+    ID: -7712555522045537433
     Xpos: 112
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2215,7 +2215,7 @@ Item:
     Row: 3
     Column: 7
   - Tag: Item
-    ID: 8044882025191024433
+    ID: -7669294153384244977
     Xpos: 112
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2223,7 +2223,7 @@ Item:
     Row: 3
     Column: 8
   - Tag: Item
-    ID: 1550734186435713407
+    ID: -5205859895380721219
     Xpos: 144
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2231,7 +2231,7 @@ Item:
     Row: 4
     Column: 1
   - Tag: Item
-    ID: -4190397555938142522
+    ID: 8148230712328439499
     Xpos: 144
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2239,7 +2239,7 @@ Item:
     Row: 4
     Column: 2
   - Tag: Item
-    ID: -2043343623724553678
+    ID: -2931406527115821263
     Xpos: 144
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2247,7 +2247,7 @@ Item:
     Row: 4
     Column: 4
   - Tag: Item
-    ID: 6982518039481867257
+    ID: -5738314477512371166
     Xpos: 144
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2255,7 +2255,7 @@ Item:
     Row: 4
     Column: 5
   - Tag: Item
-    ID: 5693053409527007428
+    ID: -8815940711361273557
     Xpos: 144
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2263,7 +2263,7 @@ Item:
     Row: 4
     Column: 6
   - Tag: Item
-    ID: 8755800094644916951
+    ID: 7007235364301151467
     Xpos: 144
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2271,7 +2271,7 @@ Item:
     Row: 4
     Column: 7
   - Tag: Item
-    ID: 641182676893347218
+    ID: -1491568087166751491
     Xpos: 144
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2279,7 +2279,7 @@ Item:
     Row: 4
     Column: 8
   - Tag: Item
-    ID: 4744834005478910818
+    ID: 1385026994443851858
     Xpos: 176
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2287,7 +2287,7 @@ Item:
     Row: 5
     Column: 1
   - Tag: Item
-    ID: -4514717308929151108
+    ID: 7334809137591184797
     Xpos: 176
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2295,7 +2295,7 @@ Item:
     Row: 5
     Column: 2
   - Tag: Item
-    ID: -5227971649386024150
+    ID: -1896755293172790272
     Xpos: 176
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2303,7 +2303,7 @@ Item:
     Row: 5
     Column: 3
   - Tag: Item
-    ID: -4609322721310160089
+    ID: -2925509951568098413
     Xpos: 176
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2311,7 +2311,7 @@ Item:
     Row: 5
     Column: 4
   - Tag: Item
-    ID: -2010347227763457239
+    ID: -1064655742113273649
     Xpos: 176
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2319,7 +2319,7 @@ Item:
     Row: 5
     Column: 5
   - Tag: Item
-    ID: 8124888544928577302
+    ID: -8593689117589070912
     Xpos: 176
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2327,7 +2327,7 @@ Item:
     Row: 5
     Column: 6
   - Tag: Item
-    ID: -5636827995495742034
+    ID: -3337745860154700284
     Xpos: 176
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2335,7 +2335,7 @@ Item:
     Row: 5
     Column: 7
   - Tag: Item
-    ID: 5893464217385158447
+    ID: 8532027383684567885
     Xpos: 176
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2343,7 +2343,7 @@ Item:
     Row: 5
     Column: 8
   - Tag: Item
-    ID: -2956892203628092977
+    ID: -652888146860405669
     Xpos: 208
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2351,7 +2351,7 @@ Item:
     Row: 6
     Column: 1
   - Tag: Item
-    ID: 1792282630260938146
+    ID: 264517853936544899
     Xpos: 208
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2359,7 +2359,7 @@ Item:
     Row: 6
     Column: 2
   - Tag: Item
-    ID: -3158534239644559813
+    ID: 4058086370472889952
     Xpos: 208
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2367,7 +2367,7 @@ Item:
     Row: 6
     Column: 3
   - Tag: Item
-    ID: 7655424082594210119
+    ID: -4373653305693402317
     Xpos: 208
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2375,7 +2375,7 @@ Item:
     Row: 6
     Column: 4
   - Tag: Item
-    ID: -3249368911300374479
+    ID: 2786418735309654394
     Xpos: 208
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2383,7 +2383,7 @@ Item:
     Row: 6
     Column: 5
   - Tag: Item
-    ID: -454965720611990789
+    ID: 9019605938591280279
     Xpos: 208
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2391,7 +2391,7 @@ Item:
     Row: 6
     Column: 6
   - Tag: Item
-    ID: -7399429746461036087
+    ID: 8310498301462892528
     Xpos: 208
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2399,7 +2399,7 @@ Item:
     Row: 6
     Column: 7
   - Tag: Item
-    ID: -7921396157804126893
+    ID: -2601411859584862735
     Xpos: 240
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2407,7 +2407,7 @@ Item:
     Row: 7
     Column: 1
   - Tag: Item
-    ID: -1051390176513731818
+    ID: 1506002919695373399
     Xpos: 240
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2415,7 +2415,7 @@ Item:
     Row: 7
     Column: 2
   - Tag: Item
-    ID: 5158758051352936771
+    ID: -6031813322200899544
     Xpos: 240
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2423,7 +2423,7 @@ Item:
     Row: 7
     Column: 3
   - Tag: Item
-    ID: -6333270697150868291
+    ID: -361367789631370464
     Xpos: 240
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2431,7 +2431,7 @@ Item:
     Row: 7
     Column: 4
   - Tag: Item
-    ID: -6583076282741214660
+    ID: 501516815058532732
     Xpos: 240
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2439,7 +2439,7 @@ Item:
     Row: 7
     Column: 5
   - Tag: Item
-    ID: -6873859333727108386
+    ID: 6023460196828982439
     Xpos: 272
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2447,7 +2447,7 @@ Item:
     Row: 8
     Column: 1
   - Tag: Item
-    ID: 6813807110150960891
+    ID: 2645129900418539566
     Xpos: 272
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2455,7 +2455,7 @@ Item:
     Row: 8
     Column: 2
   - Tag: Item
-    ID: -6882314524032325562
+    ID: -1362624410205522832
     Xpos: 272
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2463,7 +2463,7 @@ Item:
     Row: 8
     Column: 4
   - Tag: Item
-    ID: -1888679811000107968
+    ID: 72950587776813888
     Xpos: 272
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2471,7 +2471,7 @@ Item:
     Row: 8
     Column: 5
   - Tag: Item
-    ID: -6950730178823576208
+    ID: 2659785292646643987
     Xpos: 304
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2479,7 +2479,7 @@ Item:
     Row: 9
     Column: 1
   - Tag: Item
-    ID: 6469722684419138861
+    ID: 6411201635009986561
     Xpos: 304
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2487,7 +2487,7 @@ Item:
     Row: 9
     Column: 2
   - Tag: Item
-    ID: 5882735174848355483
+    ID: 3286782458050978099
     Xpos: 304
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2495,7 +2495,7 @@ Item:
     Row: 9
     Column: 4
   - Tag: Item
-    ID: -8467465511485140049
+    ID: -6478918585150129622
     Xpos: 304
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2503,7 +2503,7 @@ Item:
     Row: 9
     Column: 5
   - Tag: Item
-    ID: 2097053866655346755
+    ID: 9031124422368543351
     Xpos: 336
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2511,7 +2511,7 @@ Item:
     Row: 10
     Column: 1
   - Tag: Item
-    ID: -2344981701370678986
+    ID: -40901204232250327
     Xpos: 336
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2519,7 +2519,7 @@ Item:
     Row: 10
     Column: 2
   - Tag: Item
-    ID: -9012894308054880857
+    ID: -3310580574643494547
     Xpos: 336
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2527,7 +2527,7 @@ Item:
     Row: 10
     Column: 4
   - Tag: Item
-    ID: -8914963326831469630
+    ID: -4733983197193962658
     Xpos: 336
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2535,7 +2535,7 @@ Item:
     Row: 10
     Column: 5
   - Tag: Item
-    ID: 4509708007899151833
+    ID: -1537483702516508324
     Xpos: 368
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2543,7 +2543,7 @@ Item:
     Row: 11
     Column: 1
   - Tag: Item
-    ID: -6820545031903022048
+    ID: 2479707101740189511
     Xpos: 368
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2551,7 +2551,7 @@ Item:
     Row: 11
     Column: 2
   - Tag: Item
-    ID: 4342702493164346697
+    ID: 5707565876582736901
     Xpos: 368
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2559,7 +2559,7 @@ Item:
     Row: 11
     Column: 3
   - Tag: Item
-    ID: -2205256397325141011
+    ID: 7164968230990481204
     Xpos: 368
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2567,7 +2567,7 @@ Item:
     Row: 11
     Column: 4
   - Tag: Item
-    ID: 5713713724144677695
+    ID: -1819217322325153717
     Xpos: 368
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2575,7 +2575,7 @@ Item:
     Row: 11
     Column: 5
   - Tag: Item
-    ID: -5479798223667908251
+    ID: -4993850822632648945
     Xpos: 400
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2583,7 +2583,7 @@ Item:
     Row: 12
     Column: 1
   - Tag: Item
-    ID: 1143015392521193259
+    ID: 2418427513871226719
     Xpos: 400
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2591,7 +2591,7 @@ Item:
     Row: 12
     Column: 2
   - Tag: Item
-    ID: -1053594487928808283
+    ID: -1864960383487787131
     Xpos: 400
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2599,7 +2599,7 @@ Item:
     Row: 12
     Column: 3
   - Tag: Item
-    ID: -7210919650135396378
+    ID: 3871954954664984019
     Xpos: 400
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2607,7 +2607,7 @@ Item:
     Row: 12
     Column: 4
   - Tag: Item
-    ID: -31153527989118337
+    ID: 2533516272078388664
     Xpos: 400
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2615,7 +2615,7 @@ Item:
     Row: 12
     Column: 5
   - Tag: Item
-    ID: 7233513068497454766
+    ID: 5468301865581073437
     Xpos: 432
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2623,7 +2623,7 @@ Item:
     Row: 13
     Column: 1
   - Tag: Item
-    ID: -7426075816672574085
+    ID: 2486002531985097069
     Xpos: 432
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2631,7 +2631,7 @@ Item:
     Row: 13
     Column: 2
   - Tag: Item
-    ID: 3962090712482682216
+    ID: -3377946636167076271
     Xpos: 432
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2639,7 +2639,7 @@ Item:
     Row: 13
     Column: 3
   - Tag: Item
-    ID: 369001402397647614
+    ID: -6742155273950837550
     Xpos: 432
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2647,7 +2647,7 @@ Item:
     Row: 13
     Column: 4
   - Tag: Item
-    ID: 7307097113376391004
+    ID: -7900304625278255294
     Xpos: 432
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2655,7 +2655,7 @@ Item:
     Row: 13
     Column: 5
   - Tag: Item
-    ID: -7582835840236430981
+    ID: -1869487637346973659
     Xpos: 464
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2663,7 +2663,7 @@ Item:
     Row: 14
     Column: 1
   - Tag: Item
-    ID: 8828084196623662431
+    ID: 2814319199413882755
     Xpos: 464
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2671,7 +2671,7 @@ Item:
     Row: 14
     Column: 2
   - Tag: Item
-    ID: -1527519951346336846
+    ID: 3456125516261590442
     Xpos: 464
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2679,7 +2679,7 @@ Item:
     Row: 14
     Column: 3
   - Tag: Item
-    ID: -8458627972176105906
+    ID: 6936705682718986250
     Xpos: 464
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2687,7 +2687,7 @@ Item:
     Row: 14
     Column: 4
   - Tag: Item
-    ID: 3405043068417057845
+    ID: 1878775540597016086
     Xpos: 464
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2695,7 +2695,7 @@ Item:
     Row: 14
     Column: 5
   - Tag: Item
-    ID: 2148460538186757370
+    ID: 120854012178541464
     Xpos: 496
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2703,7 +2703,7 @@ Item:
     Row: 15
     Column: 1
   - Tag: Item
-    ID: 7857740833867810304
+    ID: 1616014679291469435
     Xpos: 496
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2711,7 +2711,7 @@ Item:
     Row: 15
     Column: 2
   - Tag: Item
-    ID: -1746348076078877300
+    ID: 7867365504820934650
     Xpos: 496
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2719,7 +2719,7 @@ Item:
     Row: 15
     Column: 3
   - Tag: Item
-    ID: -2803259394956836897
+    ID: -2002664619576465458
     Xpos: 496
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2727,7 +2727,7 @@ Item:
     Row: 15
     Column: 4
   - Tag: Item
-    ID: 4988240626484413879
+    ID: 8710139113295029750
     Xpos: 496
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2735,7 +2735,7 @@ Item:
     Row: 15
     Column: 5
   - Tag: Item
-    ID: -4121366420407915380
+    ID: 4527432643574060669
     Xpos: 528
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2743,7 +2743,7 @@ Item:
     Row: 16
     Column: 1
   - Tag: Item
-    ID: -4647784470595375424
+    ID: 5900244518350935934
     Xpos: 528
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2751,7 +2751,7 @@ Item:
     Row: 16
     Column: 2
   - Tag: Item
-    ID: 5023468136002971034
+    ID: -3967459543266138516
     Xpos: 528
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2759,7 +2759,7 @@ Item:
     Row: 16
     Column: 3
   - Tag: Item
-    ID: -5302723375384854286
+    ID: 8402670957146122881
     Xpos: 528
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2767,7 +2767,7 @@ Item:
     Row: 16
     Column: 4
   - Tag: Item
-    ID: 8445440621071066744
+    ID: 6363647235390495497
     Xpos: 528
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2775,7 +2775,7 @@ Item:
     Row: 16
     Column: 5
   - Tag: Item
-    ID: -9178606741087421196
+    ID: 3032928150997711892
     Xpos: 560
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2783,7 +2783,7 @@ Item:
     Row: 17
     Column: 1
   - Tag: Item
-    ID: 7528370565303512853
+    ID: 5420753312739291091
     Xpos: 560
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2791,7 +2791,7 @@ Item:
     Row: 17
     Column: 2
   - Tag: Item
-    ID: -268550286789304579
+    ID: 4041369387974863251
     Xpos: 560
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2799,7 +2799,7 @@ Item:
     Row: 17
     Column: 4
   - Tag: Item
-    ID: 7319425221035067101
+    ID: 3508768931968393855
     Xpos: 560
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2807,7 +2807,7 @@ Item:
     Row: 17
     Column: 5
   - Tag: Item
-    ID: -3220798462872805136
+    ID: -5114957805341842830
     Xpos: 592
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2815,7 +2815,7 @@ Item:
     Row: 18
     Column: 1
   - Tag: Item
-    ID: 3103312068826776920
+    ID: -4151386632239844528
     Xpos: 592
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2823,7 +2823,7 @@ Item:
     Row: 18
     Column: 2
   - Tag: Item
-    ID: -1113778017034048338
+    ID: -4521093269354879795
     Xpos: 592
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2831,7 +2831,7 @@ Item:
     Row: 18
     Column: 4
   - Tag: Item
-    ID: -3266968239227836354
+    ID: -461512143044100879
     Xpos: 592
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2839,7 +2839,7 @@ Item:
     Row: 18
     Column: 5
   - Tag: Item
-    ID: 4993323791205102660
+    ID: -2776320040898621009
     Xpos: 624
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2847,7 +2847,7 @@ Item:
     Row: 19
     Column: 1
   - Tag: Item
-    ID: -6559746558567220399
+    ID: 948688131951729929
     Xpos: 624
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2855,7 +2855,7 @@ Item:
     Row: 19
     Column: 2
   - Tag: Item
-    ID: 1088679620299897638
+    ID: -6240212003500419753
     Xpos: 624
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2863,7 +2863,7 @@ Item:
     Row: 19
     Column: 4
   - Tag: Item
-    ID: -2856265065411224649
+    ID: 3237679914648666092
     Xpos: 624
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2871,7 +2871,7 @@ Item:
     Row: 19
     Column: 5
   - Tag: Item
-    ID: 2076997894010352759
+    ID: -2786905769767885998
     Xpos: 656
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2879,7 +2879,7 @@ Item:
     Row: 20
     Column: 1
   - Tag: Item
-    ID: -8541206654693721587
+    ID: 111287602287300933
     Xpos: 656
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2887,7 +2887,7 @@ Item:
     Row: 20
     Column: 2
   - Tag: Item
-    ID: 1325640677278464952
+    ID: -5161468285255691137
     Xpos: 656
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2895,7 +2895,7 @@ Item:
     Row: 20
     Column: 3
   - Tag: Item
-    ID: 6227411123828121713
+    ID: 7954417557306068722
     Xpos: 656
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2903,7 +2903,7 @@ Item:
     Row: 20
     Column: 4
   - Tag: Item
-    ID: -8082087988328893676
+    ID: 8550812392215341449
     Xpos: 656
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2911,7 +2911,7 @@ Item:
     Row: 20
     Column: 5
   - Tag: Item
-    ID: 7185276231754471843
+    ID: -5273870712976780567
     Xpos: 688
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2919,7 +2919,7 @@ Item:
     Row: 21
     Column: 1
   - Tag: Item
-    ID: -9203359688126653195
+    ID: 239032196659029165
     Xpos: 688
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2927,7 +2927,7 @@ Item:
     Row: 21
     Column: 2
   - Tag: Item
-    ID: -8136537787149333993
+    ID: 7849311503546714573
     Xpos: 688
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2935,7 +2935,7 @@ Item:
     Row: 21
     Column: 3
   - Tag: Item
-    ID: -4199929305793752914
+    ID: -1595188455303939706
     Xpos: 688
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2943,7 +2943,7 @@ Item:
     Row: 21
     Column: 4
   - Tag: Item
-    ID: 4174966519710962951
+    ID: -5496016327599287244
     Xpos: 688
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2951,7 +2951,7 @@ Item:
     Row: 21
     Column: 5
   - Tag: Item
-    ID: 1522266810808086892
+    ID: 1206534002394127965
     Xpos: 720
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2959,7 +2959,7 @@ Item:
     Row: 22
     Column: 1
   - Tag: Item
-    ID: -2092471645292027306
+    ID: -8839294758384533777
     Xpos: 720
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2967,7 +2967,7 @@ Item:
     Row: 22
     Column: 2
   - Tag: Item
-    ID: 3555924182203778578
+    ID: -8260967226458507485
     Xpos: 720
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2975,7 +2975,7 @@ Item:
     Row: 22
     Column: 3
   - Tag: Item
-    ID: 2776049044381908170
+    ID: 5357479076312665466
     Xpos: 720
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2983,7 +2983,7 @@ Item:
     Row: 22
     Column: 4
   - Tag: Item
-    ID: -3335072298668597447
+    ID: -8128988395331012670
     Xpos: 720
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2991,7 +2991,7 @@ Item:
     Row: 22
     Column: 5
   - Tag: Item
-    ID: -3568473440811007071
+    ID: 957390055569590013
     Xpos: 752
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -2999,7 +2999,7 @@ Item:
     Row: 23
     Column: 1
   - Tag: Item
-    ID: 7902427457658160374
+    ID: 2571508166944386501
     Xpos: 752
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3007,7 +3007,7 @@ Item:
     Row: 23
     Column: 2
   - Tag: Item
-    ID: -1500155113775112427
+    ID: -6978817419402609135
     Xpos: 752
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3015,7 +3015,7 @@ Item:
     Row: 23
     Column: 4
   - Tag: Item
-    ID: 6061842679827076947
+    ID: 6703729149907964185
     Xpos: 752
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3023,7 +3023,7 @@ Item:
     Row: 23
     Column: 5
   - Tag: Item
-    ID: -7052661031546161739
+    ID: 8984502967157233173
     Xpos: 784
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3031,7 +3031,7 @@ Item:
     Row: 24
     Column: 1
   - Tag: Item
-    ID: 7318514040859695285
+    ID: -334655622065819863
     Xpos: 784
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3039,7 +3039,7 @@ Item:
     Row: 24
     Column: 2
   - Tag: Item
-    ID: -3839010097359718253
+    ID: -1318644264744509222
     Xpos: 784
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3047,7 +3047,7 @@ Item:
     Row: 24
     Column: 4
   - Tag: Item
-    ID: -4807488889411535768
+    ID: -8034185302510093818
     Xpos: 784
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3055,7 +3055,7 @@ Item:
     Row: 24
     Column: 5
   - Tag: Item
-    ID: 5688557111669624874
+    ID: 984975053712569383
     Xpos: 816
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3063,7 +3063,7 @@ Item:
     Row: 25
     Column: 1
   - Tag: Item
-    ID: 5343807989975596529
+    ID: 5001300879515502224
     Xpos: 816
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3071,7 +3071,7 @@ Item:
     Row: 25
     Column: 2
   - Tag: Item
-    ID: -4684716148433802756
+    ID: 7377695214150167083
     Xpos: 816
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3079,7 +3079,7 @@ Item:
     Row: 25
     Column: 3
   - Tag: Item
-    ID: 2219086938074554933
+    ID: 2656722724068304529
     Xpos: 816
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3087,7 +3087,7 @@ Item:
     Row: 25
     Column: 4
   - Tag: Item
-    ID: 4510143425637376822
+    ID: 5071786031376828207
     Xpos: 816
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3095,7 +3095,7 @@ Item:
     Row: 25
     Column: 5
   - Tag: Item
-    ID: -2704423242135554377
+    ID: -7115580677894645685
     Xpos: 848
     Ypos: 48
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3103,7 +3103,7 @@ Item:
     Row: 26
     Column: 1
   - Tag: Item
-    ID: 5073664099058640776
+    ID: 6555659104736045466
     Xpos: 848
     Ypos: 80
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3111,7 +3111,7 @@ Item:
     Row: 26
     Column: 2
   - Tag: Item
-    ID: -2554037043519073019
+    ID: 7940246599563955369
     Xpos: 848
     Ypos: 112
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3119,7 +3119,7 @@ Item:
     Row: 26
     Column: 3
   - Tag: Item
-    ID: -2929249587395024582
+    ID: 8516118647449174122
     Xpos: 848
     Ypos: 144
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3127,7 +3127,7 @@ Item:
     Row: 26
     Column: 4
   - Tag: Item
-    ID: -3716358773060431014
+    ID: -7264942171082172884
     Xpos: 848
     Ypos: 176
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3135,7 +3135,7 @@ Item:
     Row: 26
     Column: 5
   - Tag: Item
-    ID: 5702636145893816374
+    ID: -2929674832386522664
     Xpos: 848
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3143,7 +3143,7 @@ Item:
     Row: 26
     Column: 8
   - Tag: Item
-    ID: 3420361558775381111
+    ID: -5757949479989160384
     Xpos: 656
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3151,7 +3151,7 @@ Item:
     Row: 20
     Column: 6
   - Tag: Item
-    ID: 6354649611290080711
+    ID: -4559898432192532473
     Xpos: 656
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3159,7 +3159,7 @@ Item:
     Row: 20
     Column: 7
   - Tag: Item
-    ID: 1301627159360343283
+    ID: 7536065381719798390
     Xpos: 656
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3167,7 +3167,7 @@ Item:
     Row: 20
     Column: 8
   - Tag: Item
-    ID: 83597965243663345
+    ID: -2942549754422050173
     Xpos: 688
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3175,7 +3175,7 @@ Item:
     Row: 21
     Column: 6
   - Tag: Item
-    ID: -1277880648948245736
+    ID: 5017213055783826554
     Xpos: 688
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3183,7 +3183,7 @@ Item:
     Row: 21
     Column: 7
   - Tag: Item
-    ID: 138315512961610336
+    ID: -285065916509650203
     Xpos: 688
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3191,7 +3191,7 @@ Item:
     Row: 21
     Column: 8
   - Tag: Item
-    ID: -8423093045715330691
+    ID: -8208716356374291601
     Xpos: 720
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3199,7 +3199,7 @@ Item:
     Row: 22
     Column: 6
   - Tag: Item
-    ID: 3378292602311489318
+    ID: -8817331405319709152
     Xpos: 720
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3207,7 +3207,7 @@ Item:
     Row: 22
     Column: 7
   - Tag: Item
-    ID: -9113420724293577019
+    ID: 5875679085708834167
     Xpos: 720
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3215,7 +3215,7 @@ Item:
     Row: 22
     Column: 8
   - Tag: Item
-    ID: 851061098137693
+    ID: -5534381926588692423
     Xpos: 752
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3223,7 +3223,7 @@ Item:
     Row: 23
     Column: 6
   - Tag: Item
-    ID: -8344895993599186366
+    ID: -7975975072844787667
     Xpos: 752
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3231,7 +3231,7 @@ Item:
     Row: 23
     Column: 7
   - Tag: Item
-    ID: -6266029160302042180
+    ID: -8845785847203852944
     Xpos: 752
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3239,7 +3239,7 @@ Item:
     Row: 23
     Column: 8
   - Tag: Item
-    ID: -24554221701462315
+    ID: 2102665487896799154
     Xpos: 784
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3247,7 +3247,7 @@ Item:
     Row: 24
     Column: 6
   - Tag: Item
-    ID: -8590653718198622781
+    ID: -288063871662929700
     Xpos: 784
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3255,7 +3255,7 @@ Item:
     Row: 24
     Column: 7
   - Tag: Item
-    ID: -6845782539931289635
+    ID: 4879220332372395503
     Xpos: 784
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3263,7 +3263,7 @@ Item:
     Row: 24
     Column: 8
   - Tag: Item
-    ID: 4595560163245845051
+    ID: 3041244297433775996
     Xpos: 816
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3271,7 +3271,7 @@ Item:
     Row: 25
     Column: 6
   - Tag: Item
-    ID: -6726640624760763867
+    ID: 1843102470386125344
     Xpos: 816
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3279,7 +3279,7 @@ Item:
     Row: 25
     Column: 7
   - Tag: Item
-    ID: -3307013278539383633
+    ID: -7377720513550281122
     Xpos: 816
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3287,7 +3287,7 @@ Item:
     Row: 25
     Column: 8
   - Tag: Item
-    ID: 8626805113609826459
+    ID: -4572219371618837319
     Xpos: 848
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3295,7 +3295,7 @@ Item:
     Row: 26
     Column: 6
   - Tag: Item
-    ID: 4953426563431782877
+    ID: -6525591037402061254
     Xpos: 848
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3303,7 +3303,7 @@ Item:
     Row: 26
     Column: 7
   - Tag: Item
-    ID: 7602267961458168979
+    ID: 1146553409192222485
     Xpos: 624
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3311,7 +3311,7 @@ Item:
     Row: 19
     Column: 6
   - Tag: Item
-    ID: 6803598861156718155
+    ID: -8952475336083967619
     Xpos: 304
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3319,7 +3319,7 @@ Item:
     Row: 9
     Column: 6
   - Tag: Item
-    ID: -8605334594310343416
+    ID: -473056269801981088
     Xpos: 304
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3327,7 +3327,7 @@ Item:
     Row: 9
     Column: 7
   - Tag: Item
-    ID: 4045485562565409492
+    ID: 2882500043596713767
     Xpos: 304
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3335,7 +3335,7 @@ Item:
     Row: 9
     Column: 8
   - Tag: Item
-    ID: 4858148904580907900
+    ID: -6792061126519001256
     Xpos: 336
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3343,7 +3343,7 @@ Item:
     Row: 10
     Column: 6
   - Tag: Item
-    ID: 4456611939552570147
+    ID: 7545876227314971216
     Xpos: 336
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3351,7 +3351,7 @@ Item:
     Row: 10
     Column: 7
   - Tag: Item
-    ID: -6385782708664945472
+    ID: 7466831984879274892
     Xpos: 336
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3359,7 +3359,7 @@ Item:
     Row: 10
     Column: 8
   - Tag: Item
-    ID: 8908290349678185109
+    ID: 8905350476677044380
     Xpos: 368
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3367,7 +3367,7 @@ Item:
     Row: 11
     Column: 6
   - Tag: Item
-    ID: 2402162130226194136
+    ID: -6484953887339223519
     Xpos: 368
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3375,7 +3375,7 @@ Item:
     Row: 11
     Column: 7
   - Tag: Item
-    ID: 6636924014573688799
+    ID: -8903132820487444037
     Xpos: 368
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3383,7 +3383,7 @@ Item:
     Row: 11
     Column: 8
   - Tag: Item
-    ID: 1870489518613189050
+    ID: -6347781153501912433
     Xpos: 400
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3391,7 +3391,7 @@ Item:
     Row: 12
     Column: 6
   - Tag: Item
-    ID: -7352311633810451085
+    ID: -7960576563718600508
     Xpos: 400
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3399,7 +3399,7 @@ Item:
     Row: 12
     Column: 7
   - Tag: Item
-    ID: -7190123815757571201
+    ID: -5035172261942872187
     Xpos: 400
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3407,7 +3407,7 @@ Item:
     Row: 12
     Column: 8
   - Tag: Item
-    ID: 8639891645754479458
+    ID: -58196914806908290
     Xpos: 432
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3415,7 +3415,7 @@ Item:
     Row: 13
     Column: 6
   - Tag: Item
-    ID: -4402570725552633604
+    ID: 5066512555562860437
     Xpos: 432
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3423,7 +3423,7 @@ Item:
     Row: 13
     Column: 7
   - Tag: Item
-    ID: 8181921991266129794
+    ID: 6658096355746091150
     Xpos: 432
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3431,7 +3431,7 @@ Item:
     Row: 13
     Column: 8
   - Tag: Item
-    ID: -7484300441643111207
+    ID: 1088709070307310201
     Xpos: 464
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3439,7 +3439,7 @@ Item:
     Row: 14
     Column: 6
   - Tag: Item
-    ID: 7075752816108072203
+    ID: -6892287720523971575
     Xpos: 464
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3447,7 +3447,7 @@ Item:
     Row: 14
     Column: 7
   - Tag: Item
-    ID: -7581183702919356577
+    ID: 1543318287574133048
     Xpos: 464
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3455,7 +3455,7 @@ Item:
     Row: 14
     Column: 8
   - Tag: Item
-    ID: -7639779028655229148
+    ID: 5121144083545720999
     Xpos: 496
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3463,7 +3463,7 @@ Item:
     Row: 15
     Column: 6
   - Tag: Item
-    ID: -4136396070463423773
+    ID: -1546783822647212378
     Xpos: 496
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3471,7 +3471,7 @@ Item:
     Row: 15
     Column: 7
   - Tag: Item
-    ID: -7299066336885880505
+    ID: -3709024785974561351
     Xpos: 496
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3479,7 +3479,7 @@ Item:
     Row: 15
     Column: 8
   - Tag: Item
-    ID: -836249881004192928
+    ID: -5804336565797107455
     Xpos: 528
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3487,7 +3487,7 @@ Item:
     Row: 16
     Column: 6
   - Tag: Item
-    ID: 9126704034729517026
+    ID: -204676183663504416
     Xpos: 528
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3495,7 +3495,7 @@ Item:
     Row: 16
     Column: 7
   - Tag: Item
-    ID: 4247523707002654490
+    ID: -5275633257458312221
     Xpos: 528
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3503,7 +3503,7 @@ Item:
     Row: 16
     Column: 8
   - Tag: Item
-    ID: -2719400756391853065
+    ID: 8894282654047218863
     Xpos: 560
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3511,7 +3511,7 @@ Item:
     Row: 17
     Column: 6
   - Tag: Item
-    ID: -873390221341517524
+    ID: 183624516428708501
     Xpos: 560
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3519,7 +3519,7 @@ Item:
     Row: 17
     Column: 7
   - Tag: Item
-    ID: 3953823479207187671
+    ID: 4334956357923475770
     Xpos: 560
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3527,7 +3527,7 @@ Item:
     Row: 17
     Column: 8
   - Tag: Item
-    ID: -1784206300326182126
+    ID: -4200448904183308777
     Xpos: 592
     Ypos: 208
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3535,7 +3535,7 @@ Item:
     Row: 18
     Column: 6
   - Tag: Item
-    ID: 7815718779586093819
+    ID: -1765234202905864899
     Xpos: 592
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3543,7 +3543,7 @@ Item:
     Row: 18
     Column: 7
   - Tag: Item
-    ID: 3463484240145113130
+    ID: 3156874394600432517
     Xpos: 592
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3551,7 +3551,7 @@ Item:
     Row: 18
     Column: 8
   - Tag: Item
-    ID: -2567379774086000517
+    ID: 2033372643690426120
     Xpos: 624
     Ypos: 240
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3559,7 +3559,7 @@ Item:
     Row: 19
     Column: 7
   - Tag: Item
-    ID: 3232314628911356454
+    ID: -5411738128016616852
     Xpos: 624
     Ypos: 272
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3567,7 +3567,7 @@ Item:
     Row: 19
     Column: 8
   - Tag: Item
-    ID: 3948446865917127500
+    ID: 4252904463861293298
     Xpos: 688
     Ypos: 304
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3575,7 +3575,7 @@ Item:
     Row: 21
     Column: 9
   - Tag: Item
-    ID: 3031190056325513675
+    ID: -4561899128331516914
     Xpos: 688
     Ypos: 336
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3583,7 +3583,7 @@ Item:
     Row: 21
     Column: 10
   - Tag: Item
-    ID: 4367780598158980333
+    ID: 6271301095212458157
     Xpos: 688
     Ypos: 368
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3591,7 +3591,7 @@ Item:
     Row: 21
     Column: 11
   - Tag: Item
-    ID: 8582602059994593198
+    ID: -8142488205452261145
     Xpos: 688
     Ypos: 400
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3599,7 +3599,7 @@ Item:
     Row: 21
     Column: 12
   - Tag: Item
-    ID: -3483032165479797856
+    ID: 4185412798720780703
     Xpos: 688
     Ypos: 432
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3607,7 +3607,7 @@ Item:
     Row: 21
     Column: 13
   - Tag: Item
-    ID: -2016323833644580037
+    ID: -1301522547538649535
     Xpos: 688
     Ypos: 464
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3615,7 +3615,7 @@ Item:
     Row: 21
     Column: 14
   - Tag: Item
-    ID: -8628888357427141703
+    ID: -8694305554986710205
     Xpos: 688
     Ypos: 496
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3623,7 +3623,7 @@ Item:
     Row: 21
     Column: 15
   - Tag: Item
-    ID: 4311787415867001169
+    ID: -7419011330337770148
     Xpos: 688
     Ypos: 528
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3631,7 +3631,7 @@ Item:
     Row: 21
     Column: 16
   - Tag: Item
-    ID: 581827300937028394
+    ID: -2107565306203863573
     Xpos: 688
     Ypos: 560
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3639,7 +3639,7 @@ Item:
     Row: 21
     Column: 17
   - Tag: Item
-    ID: -7614920374613577326
+    ID: 8227944824497877224
     Xpos: 688
     Ypos: 592
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -3647,7 +3647,7 @@ Item:
     Row: 21
     Column: 18
   - Tag: Item
-    ID: 4660789646055800817
+    ID: -8019611320223662134
     Xpos: 688
     Ypos: 624
     Texture: ASSETS/IMAGES/Items/gold_pile_1
@@ -8181,12 +8181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_curve_north_east
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 48
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 48
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -8571,17 +8571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -8591,12 +8591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -8666,12 +8666,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -8681,12 +8681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -8696,12 +8696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 80
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -9071,17 +9071,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -9091,12 +9091,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -9166,12 +9166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -9196,12 +9196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_rhombus
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 112
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -9571,17 +9571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -9591,12 +9591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -9666,12 +9666,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -9681,12 +9681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -9696,12 +9696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 144
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -10071,17 +10071,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -10091,12 +10091,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -10166,12 +10166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -10181,12 +10181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -10196,12 +10196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 176
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -10696,12 +10696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_curve_north_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 208
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 208
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -11071,17 +11071,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -11166,12 +11166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -11181,12 +11181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -11196,12 +11196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 240
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -11571,17 +11571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -11666,12 +11666,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -11681,12 +11681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -11696,12 +11696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 272
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -12071,17 +12071,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 304
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 304
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 304
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -12166,12 +12166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_rhombus
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 304
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 304
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -12196,12 +12196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_curve_north_east
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 304
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 304
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -12571,17 +12571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -12591,12 +12591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -12666,12 +12666,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -12681,12 +12681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -12696,12 +12696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 336
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -13071,17 +13071,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -13091,12 +13091,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -13166,12 +13166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -13181,12 +13181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -13196,12 +13196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 368
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -13591,12 +13591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_rhombus
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 400
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 400
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -13681,12 +13681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_rhombus
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 400
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 400
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -14071,17 +14071,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 432
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 432
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 432
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -14091,12 +14091,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 432
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 432
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -14571,17 +14571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 464
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 464
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 464
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -14591,12 +14591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 464
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 464
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -15091,12 +15091,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_rhombus
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 496
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 496
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -15181,12 +15181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_rhombus
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 496
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 496
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -15571,17 +15571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -15591,12 +15591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -15671,7 +15671,7 @@ Tile:
     Ypos: 688
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_north_south
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -15681,12 +15681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -15696,12 +15696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 528
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -16071,12 +16071,12 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
@@ -16096,7 +16096,7 @@ Tile:
     Ypos: 208
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_rhombus
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -16166,12 +16166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -16181,12 +16181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -16196,12 +16196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 560
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -16571,17 +16571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 592
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 592
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 592
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -16671,7 +16671,7 @@ Tile:
     Ypos: 688
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_north_south
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 592
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -16696,12 +16696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_curve_north_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 592
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 592
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -17071,17 +17071,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -17091,12 +17091,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -17166,12 +17166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -17181,12 +17181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -17196,12 +17196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 624
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -17571,17 +17571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -17591,12 +17591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -17666,12 +17666,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -17681,12 +17681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -17696,12 +17696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 656
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -18196,12 +18196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_curve_north_east
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 688
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 688
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -18571,17 +18571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -18591,12 +18591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -18666,12 +18666,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -18681,12 +18681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -18696,12 +18696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 720
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -19071,17 +19071,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -19091,12 +19091,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -19166,12 +19166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -19181,12 +19181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -19196,12 +19196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 752
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -19571,17 +19571,17 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 144
     Texture: ASSETS\IMAGES\dirt_0
@@ -19591,12 +19591,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -19666,12 +19666,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -19696,12 +19696,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_rhombus
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 784
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -20071,12 +20071,12 @@ Tile:
     Ypos: 48
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 80
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 112
     Texture: ASSETS\IMAGES\dirt_0
@@ -20091,12 +20091,12 @@ Tile:
     Ypos: 176
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 208
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 240
     Texture: ASSETS\IMAGES\dirt_0
@@ -20166,12 +20166,12 @@ Tile:
     Ypos: 656
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 688
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 720
     Texture: ASSETS\IMAGES\dirt_0
@@ -20181,12 +20181,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0
@@ -20196,12 +20196,12 @@ Tile:
     Ypos: 848
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_straight_east_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 880
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 816
     Ypos: 912
     Texture: ASSETS\IMAGES\dirt_0
@@ -20681,12 +20681,12 @@ Tile:
     Ypos: 752
     Texture: ASSETS/IMAGES/Terrain/Grass/sigil_curve_north_west
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 848
     Ypos: 784
     Texture: ASSETS\IMAGES\dirt_0
   - Cell Type: Empty
-    Occupied: true
+    Occupied: false
     Xpos: 848
     Ypos: 816
     Texture: ASSETS\IMAGES\dirt_0

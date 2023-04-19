@@ -70,7 +70,7 @@ void RoomCreation::GenerateRoomSprites()
 			{
 				
 				
-				m_grid->m_vectGrid.at(i).at(j).setWallSprite();
+				//m_grid->m_vectGrid.at(i).at(j).setWallSprite();
 				
 				
 				if (right.x < m_grid->m_vectGrid.size())
@@ -79,7 +79,7 @@ void RoomCreation::GenerateRoomSprites()
 					{
 						m_firstTilePosition = m_grid->m_vectGrid.at(right.x).at(j).getPos();
 						m_grid->m_vectGrid.at(right.x).at(j).cellType = "Floor";
-						m_grid->m_vectGrid.at(right.x).at(j).setFloorSprite();
+						//m_grid->m_vectGrid.at(right.x).at(j).setFloorSprite();
 						m_grid->m_vectGrid.at(right.x).at(j).m_checked = true;
 						firstFloorSet = true;
 						m_tileQueue.push(m_grid->m_vectGrid.at(right.x).at(j));
@@ -110,7 +110,7 @@ void RoomCreation::GenerateRoomSprites()
 				}
 				m_grid->m_vectGrid.at(l_row).at(l_col).m_checked = true;
 				m_grid->m_vectGrid.at(l_row).at(l_col).cellType = "Floor";
-				m_grid->m_vectGrid.at(l_row).at(l_col).setFloorSprite();
+				//m_grid->m_vectGrid.at(l_row).at(l_col).setFloorSprite();
 				m_tileQueue.push(m_grid->m_vectGrid.at(l_row).at(l_col));
 			}
 		}
@@ -148,8 +148,8 @@ void RoomCreation::setUpWallColliders()
 
 
 						m_vectColliders.push_back(new Colliders());
-						m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.setPosition(m_colStartPos);
-						m_vectColliders.at(noOfWallColliders)->setUpHorizontalWallBounds(m_colStartPos.x, m_colEndPos.x);
+						//m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.setPosition(m_colStartPos);
+						//m_vectColliders.at(noOfWallColliders)->setUpHorizontalWallBounds(m_colStartPos.x, m_colEndPos.x);
 
 						noOfWallColliders++;
 						continue;
@@ -185,8 +185,8 @@ void RoomCreation::setUpWallColliders()
 						int loc = m_colEndPos.y - m_colStartPos.y;
 
 						m_vectColliders.push_back(new Colliders());
-						m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.setPosition(m_colStartPos);
-						m_vectColliders.at(noOfWallColliders)->setUpVerticalWallBounds(m_colStartPos.y, m_colEndPos.y);
+						//m_vectColliders.at(noOfWallColliders)->m_wallColliderBounds.setPosition(m_colStartPos);
+						//m_vectColliders.at(noOfWallColliders)->setUpVerticalWallBounds(m_colStartPos.y, m_colEndPos.y);
 
 						noOfWallColliders++;
 

@@ -2,6 +2,12 @@
 
 Colliders::Colliders()
 {
+	m_data = ColliderData();
+	m_data.m_height = 32;
+	m_data.m_width = 32;
+	m_width = 32;
+	m_data.m_tag = "Collider";
+	m_isVisible = true;
 	init();
 }
 
@@ -12,45 +18,79 @@ Colliders::~Colliders()
 
 void Colliders::init()
 {
-	m_wallColliderBounds.setSize(sf::Vector2f(32.0f,32.0f));
-	m_wallColliderBounds.setFillColor(sf::Color(sf::Color(255, 0, 0, 50)));
-	m_wallColliderBounds.setOutlineColor(sf::Color::Red);
-	m_wallColliderBounds.setOutlineThickness(2.0f);
-	m_wallColliderBounds.setPosition(704,285);
-	m_wallCentre.setSize(sf::Vector2f(2.0f, 2.0f));
-	m_wallCentre.setFillColor(sf::Color::Cyan);
-	m_wallCentre.setOrigin(1.0f,1.0f);
-	m_wallCentre.setPosition(400.0f,200.0f);
-	m_wallBoundsWidth = 32;
-	m_wallBoundsHeight = 32;
-
+	m_colliderBounds.setSize(sf::Vector2f(m_data.m_width, m_data.m_height));
+	m_colliderBounds.setOrigin(sf::Vector2f(m_data.m_width/2, m_data.m_height/2));
+	m_colliderBounds.setFillColor(sf::Color(sf::Color(0, 0, 0, 0)));
+	m_colliderBounds.setOutlineColor(sf::Color::Green);
+	m_colliderBounds.setOutlineThickness(2.0f);
 }
 
-void Colliders::setUpHorizontalWallBounds(float m_startPos, float m_endPos)
+void Colliders::setUpSprite()
 {
-	// horizontal
-	float l_size = m_endPos - m_startPos;
-	m_wallColliderBounds.setSize(sf::Vector2f(l_size, 32.0f));
-	m_wallColliderBounds.setOrigin(l_size / 2.0f, 16.0f);
-	m_wallColliderBounds.setPosition(m_wallColliderBounds.getPosition().x + (l_size / 2.0f) -16.0f, m_wallColliderBounds.getPosition().y);
 }
 
-void Colliders::setUpVerticalWallBounds(float m_startPos, float m_endPos)
+void Colliders::setObjectCategory(std::string t_ObjectCategory)
 {
-	// horizontal
-	float l_size = m_endPos - m_startPos;
-	m_wallColliderBounds.setSize(sf::Vector2f(32.0f, l_size));
-	m_wallColliderBounds.setOrigin(16.0f, l_size / 2.0f);
-	m_wallColliderBounds.setPosition(m_wallColliderBounds.getPosition().x, m_wallColliderBounds.getPosition().y + (l_size/2.0f) -16.0f);
 }
 
-void Colliders::render(sf::RenderWindow* t_window)
+std::string Colliders::getObjectCategory()
 {
-	t_window->draw(m_wallColliderBounds);
-	t_window->draw(m_wallCentre);
+	return std::string();
 }
 
-sf::RectangleShape* Colliders::getBounds()
+void Colliders::setTexture(sf::Texture& t_texture)
 {
-	return &m_wallColliderBounds;
+}
+
+void Colliders::setPathToTexture(std::string t_path)
+{
+}
+
+void Colliders::setUpBounds()
+{
+}
+
+void Colliders::update(sf::Time deltaTime, sf::RenderWindow& window)
+{
+}
+
+void Colliders::render(sf::RenderWindow& t_window)
+{
+	t_window.draw(m_colliderBounds);
+}
+
+
+void Colliders::increaseHeight()
+{
+
+	m_data.m_height += 1.0f;
+	m_colliderBounds.setSize(sf::Vector2f(m_data.m_width, m_data.m_height));
+	m_colliderBounds.setOrigin(sf::Vector2f(m_data.m_width / 2, m_data.m_height / 2));
+}
+
+void Colliders::increaseWidth()
+{
+	std::cout << "Before : " << m_width << std::endl;
+	m_width += m_width;
+	std::cout << m_width << std::endl;
+
+	m_data.m_width += 1.0f;
+	m_colliderBounds.setSize(sf::Vector2f(m_data.m_width, m_data.m_height));
+	m_colliderBounds.setOrigin(sf::Vector2f(m_data.m_width / 2, m_data.m_height / 2));
+}
+
+void Colliders::decreaseHeight()
+{
+	m_data.m_height -= 1.0f;
+	m_colliderBounds.setSize(sf::Vector2f(m_data.m_width, m_data.m_height));
+	m_colliderBounds.setOrigin(sf::Vector2f(m_data.m_width / 2, m_data.m_height / 2));
+}
+
+void Colliders::decreaseWidth()
+{
+	m_width -= m_width;
+	std::cout << m_width << std::endl;
+	m_data.m_width -= 1.0f;
+	m_colliderBounds.setSize(sf::Vector2f(m_data.m_width, m_data.m_height));
+	m_colliderBounds.setOrigin(sf::Vector2f(m_data.m_width / 2, m_data.m_height / 2));
 }
