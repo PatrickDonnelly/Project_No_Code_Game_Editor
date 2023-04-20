@@ -607,17 +607,17 @@ void Game::update(sf::Time t_deltaTime)
 				//			m_currentObject = m_objectPlacement->m_enemies.at(i);
 				//			m_gameState->setState(State::PAUSE_GAME);
 				//		}
-				//		//m_currentObject = m_objectPlacement->m_enemies.at(i);
-				//		//m_currentObject->getDialogueBox()->setEnabled();
-				//		//m_currentObject->loadDialogue();
+				//		m_currentObject = m_objectPlacement->m_enemies.at(i);
+				//		m_currentObject->getDialogueBox()->setEnabled();
+				//		m_currentObject->loadDialogue("Interacted");
 				//		//std::cout << "Within Range Of Enemy" << std::endl;
 				//		break;
 				//	}
 				//	else
 				//	{
-				//		//m_currentObject->getDialogueBox()->setEnabled();
-				//		//m_currentObject->loadDialogue();
-				//		//std::cout << "Out of Range Safe" << std::endl;
+				//		m_currentObject->getDialogueBox()->setEnabled();
+				//		m_currentObject->loadDialogue("Interacted");
+				//		std::cout << "Out of Range Safe" << std::endl;
 
 				//	}
 				//}
@@ -824,6 +824,10 @@ void Game::render()
 		m_levelList.render(&m_window);
 		m_uiBuildMode.render(&m_window);
 		m_player->render(m_window);
+		for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+		{
+			m_objectPlacement->m_enemies.at(i)->renderInspector(m_window);
+		}
 
 		m_window.setView(m_gameView);
 	}

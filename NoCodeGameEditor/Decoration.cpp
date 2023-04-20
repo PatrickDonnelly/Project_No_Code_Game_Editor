@@ -90,3 +90,12 @@ void Decoration::render(sf::RenderWindow& window)
 		//m_inspector->render(&window);
 	}
 }
+
+void Decoration::renderInspector(sf::RenderWindow& window)
+{
+	if (m_isSelected)
+	{
+		//m_inspector->setTextString("Enemy");
+		m_inspector->render(&window);
+	}
+}

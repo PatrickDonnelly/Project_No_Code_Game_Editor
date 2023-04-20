@@ -44,6 +44,7 @@ public:
 		void decreaseHeight();
 		void decreaseWidth();
 		void render(sf::RenderWindow& window);
+		void renderInspector(sf::RenderWindow& window);
 		sf::RectangleShape* getBounds() override { return&m_colliderBounds; }
 		void setRowColumn(int t_row, int t_col) { m_data.m_row = t_row, m_data.m_col = t_col; }
 		int getRow() { return m_data.m_row; }

@@ -66,6 +66,8 @@ public:
 	virtual void setUpBounds() = 0;
 	virtual void update(sf::Time deltaTime, sf::RenderWindow& window) = 0;
 	virtual void render(sf::RenderWindow& window) = 0;
+	virtual void renderInspector(sf::RenderWindow& window) = 0;
+
 
 	virtual bool getHasDialogue() { return m_hasDialogue; }
 	void setRowColumn(int t_row, int t_col) { m_row = t_row; m_col = t_col; }

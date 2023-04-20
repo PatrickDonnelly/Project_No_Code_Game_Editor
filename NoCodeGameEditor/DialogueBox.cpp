@@ -25,7 +25,7 @@ void DialogueBox::initText()
 	m_textBox.setFillColor(sf::Color::White);
 	m_textBox.setOutlineColor(sf::Color::Black);
 	m_textBox.setOutlineThickness(2.0f);
-	m_textBox.setPosition(170.0f, 850.0f);
+	m_textBox.setPosition(300.0f, 624.0f);
 }
 
 DialogueBox::~DialogueBox()
@@ -45,8 +45,8 @@ sf::Vector2f DialogueBox::getDialogueBoxPosition()
 
 void DialogueBox::initDialogueBox()
 {
-	m_dialogueBox.setSize(sf::Vector2f(1600.0f, 200.0f));
-	m_dialogueBox.setPosition(160.0f, 840.0f);
+	m_dialogueBox.setSize(sf::Vector2f(1376.0f, 200.0f));
+	m_dialogueBox.setPosition(272.0f, 608.0f);
 	m_dialogueBox.setOutlineThickness(2.0f);
 	m_dialogueBox.setOutlineColor(sf::Color::Green);
 	m_dialogueBox.setFillColor(sf::Color::Black);

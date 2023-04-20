@@ -15,6 +15,7 @@
 //#include "ObjectPlacement.h"
 //#include "TextEditor.h"
 #include "DropDownMenu.h"
+#include "Globals.h"
 
 
 

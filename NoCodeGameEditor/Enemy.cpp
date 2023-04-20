@@ -109,14 +109,19 @@ void Enemy::render(sf::RenderWindow& window)
 		window.draw(m_detectionRadius);
 	}
 	window.draw(m_objectSprite);
-	if(m_isSelected)
-	{
-		//m_inspector->setTextString("Enemy");
-		m_inspector->render(&window);
-	}
+
 	if (m_dialogue->isEnabled())
 	{
 		m_dialogue->render(&window);
+	}
+}
+
+void Enemy::renderInspector(sf::RenderWindow& window)
+{
+	if (m_isSelected)
+	{
+		//m_inspector->setTextString("Enemy");
+		m_inspector->render(&window);
 	}
 }
 

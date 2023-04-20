@@ -129,7 +129,7 @@ void InspectorOptions::update(sf::Time deltaTime, sf::RenderWindow& window)
 void InspectorOptions::render(sf::RenderWindow* t_window)
 {
     t_window->draw(m_inspectorOptionsBGShape);
-    m_inspectorOptionsLabel->render(t_window);
+   // m_inspectorOptionsLabel->render(t_window);
 
     for (int i = 0; i < m_noOfOptions; ++i)
     {
@@ -151,6 +151,6 @@ void InspectorOptions::splitString(std::string t_dialogueText)
 void InspectorOptions::initText()
 {
 
-    m_inspectorOptionsLabel->setText(m_tag);
-    m_inspectorOptionsLabel->setTextPosition(sf::Vector2f(m_inspectorOptionsBGShape.getPosition().x + m_inspectorOptionsLabel->getText()->getGlobalBounds().width /2 + 5, m_inspectorOptionsBGShape.getPosition().y +10));
+   // m_inspectorOptionsLabel->setText(m_tag);
+   // m_inspectorOptionsLabel->setTextPosition(sf::Vector2f(m_inspectorOptionsBGShape.getPosition().x + m_inspectorOptionsLabel->getText()->getGlobalBounds().width /2 + 5, m_inspectorOptionsBGShape.getPosition().y +10));
 }

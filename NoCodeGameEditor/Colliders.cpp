@@ -59,6 +59,15 @@ void Colliders::render(sf::RenderWindow& t_window)
 	t_window.draw(m_colliderBounds);
 }
 
+void Colliders::renderInspector(sf::RenderWindow& window)
+{
+	if (m_isSelected)
+	{
+		//m_inspector->setTextString("Enemy");
+		m_inspector->render(&window);
+	}
+}
+
 
 void Colliders::increaseHeight()
 {

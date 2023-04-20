@@ -119,11 +119,11 @@ sf::Vector2f Inspector::getInspectorPosition()
 
 void Inspector::initInspector()
 {
-    m_inspectorBGShape.setSize(sf::Vector2f(400.0f, 2160.0f));
-    m_inspectorBGShape.setPosition(1520.0f, 0.0f);
-    m_inspectorBGShape.setOutlineThickness(4.0f);
+    m_inspectorBGShape.setSize(sf::Vector2f(256.0f, 2160.0f));
+    m_inspectorBGShape.setPosition(1664.0f, 0.0f);
+    m_inspectorBGShape.setOutlineThickness(1.0f);
     m_inspectorBGShape.setOutlineColor(sf::Color(sf::Color(140, 140, 140)));
-    m_inspectorBGShape.setFillColor(sf::Color(sf::Color(204, 204, 204)));
+    m_inspectorBGShape.setFillColor(sf::Color(G_COLOR_UI_GREY));
 
     m_applyButton = new Button();
     m_applyButton->resize(0.125f, 0.4f);
@@ -144,8 +144,8 @@ void Inspector::render(sf::RenderWindow* t_window)
         {
             m_inspectorOptions.at(0)->render(t_window);
         }*/
-        m_inspectorLabel->render(t_window);
-        t_window->draw(m_text);
+       // m_inspectorLabel->render(t_window);
+       t_window->draw(m_text);
         if (m_objectData.m_allowedDialogue)
         {
                 m_addCategoryLabel->render(t_window);
@@ -220,21 +220,24 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
         if (m_dialogueButtons.size() == 0)
         {
             m_dialogueButtons.push_back(new Button());
+            m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(0.6f, 0.4f);
             m_dialogueButtons.at(m_dialogueButtons.size() - 1)->setButtonPosition(
                 sf::Vector2f(
-                    m_addCategoryLabel->getTextPosition().x + 100,
+                    m_addCategoryLabel->getTextPosition().x + 64,
                     m_addCategoryLabel->getTextPosition().y + 32));
-            m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(1.0f, 0.4f);
+            
         }
         else
         {
             m_dialogueButtons.push_back(new Button());
+            m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(0.6f, 0.4f);
             m_dialogueButtons.at(m_dialogueButtons.size() - 1)->setButtonPosition(
                 sf::Vector2f(m_dialogueButtons.at(m_dialogueButtons.size() - 2)->getButtonPosition().x,
                     m_dialogueButtons.at(m_dialogueButtons.size() - 2)->getButtonPosition().y + 32));
-            m_dialogueButtons.at(m_dialogueButtons.size() - 2)->resize(1.0f, 0.4f);
+            
         }
         m_dialogueLabels.push_back(new Label());
+        m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setTextSize(16);
         m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setText("Add Dialogue");
         m_dialogueLabels.at(m_dialogueLabels.size() - 1)->setTextPosition(sf::Vector2f(m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x, m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
 
@@ -243,7 +246,7 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
             sf::Vector2f(
                 m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x + (m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonSprite().getGlobalBounds().width / 2) + 32,
                 m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
-        m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(1.0f, 0.4f);
+        //m_dialogueButtons.at(m_dialogueButtons.size() - 1)->resize(1.0f, 0.4f);
         m_deleteButtons.at(m_deleteButtons.size() - 1)->resize(0.125f, 0.4f);
 
         m_dialogueDropDownMenu.push_back(new DropDownMenu("IsDialogue"));
@@ -368,7 +371,7 @@ void Inspector::repositionDialogueButtons()
 
             m_dialogueButtons.at(i)->setButtonPosition(
                 sf::Vector2f(
-                    m_addCategoryLabel->getTextPosition().x + 100,
+                    m_addCategoryLabel->getTextPosition().x + 64,
                     m_addCategoryLabel->getTextPosition().y + 32));
 
         }
@@ -447,6 +450,6 @@ void Inspector::initText()
 {
     setUpFontAndText();
     m_inspectorLabel->setText("Inspector - " + m_title);
-    m_inspectorLabel->setTextPosition(sf::Vector2f(1522 + m_inspectorLabel->getText()->getGlobalBounds().width / 2, (m_inspectorLabel->getText()->getGlobalBounds().height / 2)));
+    m_inspectorLabel->setTextPosition(sf::Vector2f(1665 + m_inspectorLabel->getText()->getGlobalBounds().width / 2, (m_inspectorLabel->getText()->getGlobalBounds().height / 2)));
 }
 

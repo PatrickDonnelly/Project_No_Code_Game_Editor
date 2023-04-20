@@ -28,6 +28,8 @@ public:
 	void setUpBounds();
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
+	void renderInspector(sf::RenderWindow& window);
+
 	int count = 0;
 
 	bool m_hasDialogue = false;
