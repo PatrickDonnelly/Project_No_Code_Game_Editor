@@ -846,6 +846,13 @@ void Game::render()
 	else if (m_gameState->getState() == State::CREATE_DIALOGUE)
 	{
 		m_window.setView(m_uiView);
+		m_grid->render(&m_window);
+		m_objectPlacement->render(&m_window);
+		m_spear->render(m_window);
+		m_player->render(m_window);
+
+		m_window.setView(m_uiView);
+		m_uiBuildMode.render(&m_window);
 		m_textEditor->render(&m_window);
 	}
 	else if (m_gameState->getState() == State::MENU)

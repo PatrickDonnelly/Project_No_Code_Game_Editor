@@ -110,6 +110,7 @@ void LevelList::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window)
 
 void LevelList::loadLevelList()
 {
+	m_noOfGamesFound = 0;
 	fs::path folder_path = m_pathGames;
 	if (fs::exists(folder_path) && fs::is_directory(folder_path)) {
 		// Read the contents of the folder
