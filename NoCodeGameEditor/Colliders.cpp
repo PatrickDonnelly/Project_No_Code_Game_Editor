@@ -1,5 +1,8 @@
 #include "Colliders.h"
 
+/// <summary>
+/// Default constructor
+/// </summary>
 Colliders::Colliders()
 {
 	m_data = ColliderData();
@@ -11,11 +14,17 @@ Colliders::Colliders()
 	init();
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 Colliders::~Colliders()
 {
 
 }
 
+/// <summary>
+/// inits colliders size, position and origin
+/// </summary>
 void Colliders::init()
 {
 	m_colliderBounds.setSize(sf::Vector2f(m_data.m_width, m_data.m_height));
@@ -33,6 +42,10 @@ void Colliders::setObjectCategory(std::string t_ObjectCategory)
 {
 }
 
+/// <summary>
+/// returns the category the collider is associated with
+/// </summary>
+/// <returns></returns>
 std::string Colliders::getObjectCategory()
 {
 	return std::string();
@@ -54,6 +67,10 @@ void Colliders::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 }
 
+/// <summary>
+/// renders the collider bounds
+/// </summary>
+/// <param name="t_window"></param>
 void Colliders::render(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_colliderBounds);
@@ -68,7 +85,9 @@ void Colliders::renderInspector(sf::RenderWindow& window)
 	}
 }
 
-
+/// <summary>
+/// increases the height of a collider
+/// </summary>
 void Colliders::increaseHeight()
 {
 
@@ -77,6 +96,9 @@ void Colliders::increaseHeight()
 	m_colliderBounds.setOrigin(sf::Vector2f(m_data.m_width / 2, m_data.m_height / 2));
 }
 
+/// <summary>
+/// increases the width of a collider
+/// </summary>
 void Colliders::increaseWidth()
 {
 	std::cout << "Before : " << m_width << std::endl;
@@ -88,6 +110,9 @@ void Colliders::increaseWidth()
 	m_colliderBounds.setOrigin(sf::Vector2f(m_data.m_width / 2, m_data.m_height / 2));
 }
 
+/// <summary>
+/// decreases the height of a collider
+/// </summary>
 void Colliders::decreaseHeight()
 {
 	m_data.m_height -= 1.0f;
@@ -95,6 +120,9 @@ void Colliders::decreaseHeight()
 	m_colliderBounds.setOrigin(sf::Vector2f(m_data.m_width / 2, m_data.m_height / 2));
 }
 
+/// <summary>
+/// Decreases the width of a collider
+/// </summary>
 void Colliders::decreaseWidth()
 {
 	m_width -= m_width;

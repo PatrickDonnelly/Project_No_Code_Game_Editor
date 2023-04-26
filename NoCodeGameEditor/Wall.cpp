@@ -1,11 +1,17 @@
 #include "Wall.h"
-
 #include <iostream>
 
+/// <summary>
+/// Default constructor
+/// </summary>
 Wall::Wall()
 {
 }
 
+/// <summary>
+/// Overloaded constructor
+/// </summary>
+/// <param name="t_path"></param>
 Wall::Wall(std::string t_path)
 {
 	m_textureManager = new TextureManager();
@@ -18,6 +24,12 @@ Wall::Wall(std::string t_path)
 	init();
 }
 
+/// <summary>
+/// Overloaded constructor
+/// </summary>
+/// <param name="t_typeTag"></param>
+/// <param name="t_path"></param>
+/// <param name="t_textureManager"></param>
 Wall::Wall(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
 {
 	m_textureManager = t_textureManager;
@@ -30,16 +42,25 @@ Wall::Wall(std::string t_typeTag, std::string t_path, TextureManager* t_textureM
 	init();
 }
 
+/// <summary>
+/// Default constructor
+/// </summary>
 Wall::~Wall()
 {
 }
 
+/// <summary>
+/// Initialise object
+/// </summary>
 void Wall::init()
 {
 	setUpSprite();
 	setUpBounds();
 }
 
+/// <summary>
+/// Sets up the walls sprite
+/// </summary>
 void Wall::setUpSprite()
 {
 	setTexture(m_objectTexture);
@@ -48,6 +69,10 @@ void Wall::setUpSprite()
 	m_objectSprite.setPosition(100, 100);
 }
 
+/// <summary>
+/// Sets the walls texture
+/// </summary>
+/// <param name="t_texture"></param>
 void Wall::setTexture(sf::Texture& t_texture)
 {
 	m_objectTexture = m_textureManager->getTexture(m_path + ".png");
@@ -58,11 +83,18 @@ void Wall::setTexture(sf::Texture& t_texture)
 	m_objectSprite.setTexture(m_objectTexture);
 }
 
+/// <summary>
+/// Sets the directory path to the texture
+/// </summary>
+/// <param name="t_path"></param>
 void Wall::setPathToTexture(std::string t_path)
 {
 	m_path = t_path;
 }
 
+/// <summary>
+/// Sets up the collidable bounds of the wall object
+/// </summary>
 void Wall::setUpBounds()
 {
 	m_objectBounds.setSize(sf::Vector2f(m_boundsWidth, m_boundsHeight));
@@ -73,12 +105,21 @@ void Wall::setUpBounds()
 	m_objectBounds.setPosition(m_objectSprite.getPosition());
 }
 
+/// <summary>
+/// Updates the wall object
+/// </summary>
+/// <param name="deltaTime"></param>
+/// <param name="window"></param>
 void Wall::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 	m_objectSprite.setPosition(m_objectBounds.getPosition());
 
 }
 
+/// <summary>
+/// Renders the wall object
+/// </summary>
+/// <param name="window"></param>
 void Wall::render(sf::RenderWindow& window)
 {
 	window.draw(m_objectSprite);
@@ -88,6 +129,11 @@ void Wall::render(sf::RenderWindow& window)
 		//m_inspector->render(&window);
 	}
 }
+
+/// <summary>
+/// Renders the wall objects inspector if it is selected
+/// </summary>
+/// <param name="window"></param>
 void Wall::renderInspector(sf::RenderWindow& window)
 {
 	if (m_isSelected)

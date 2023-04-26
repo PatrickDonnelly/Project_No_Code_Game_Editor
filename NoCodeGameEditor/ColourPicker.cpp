@@ -1,17 +1,26 @@
 #include "ColourPicker.h"
 #include <iostream>
 
+/// <summary>
+/// Default Constructor
+/// </summary>
 ColourPicker::ColourPicker()
 {
 	initColorPicker();
 	setUpCloseButton();
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 ColourPicker::~ColourPicker()
 {
 
 }
 
+/// <summary>
+/// Set up the close button used to close the colour picker
+/// </summary>
 void ColourPicker::setUpCloseButton()
 {
 	m_closeButton = new Button("Close");
@@ -21,6 +30,9 @@ void ColourPicker::setUpCloseButton()
 	m_closeButton->resize(.75f, .75f);
 }
 
+/// <summary>
+/// Initialise the colour ppicker, the image, texture, position etc.
+/// </summary>
 void ColourPicker::initColorPicker()
 {
 	m_colorPickerBG.setSize(sf::Vector2f(380.0f, 460.0f));
@@ -39,6 +51,12 @@ void ColourPicker::initColorPicker()
 	m_selectedColor = sf::Color::White;
 }
 
+/// <summary>
+/// Processes mouse events
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
+/// <returns></returns>
 bool ColourPicker::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	if (checkIfCloseClicked(t_event, t_window))
@@ -49,6 +67,12 @@ bool ColourPicker::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	return false;
 }
 
+/// <summary>
+/// Checks if an area inside the colour picker was clicked.
+/// If so it sets the selected colour to the colour of the pixel where the click occured
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void ColourPicker::checkIfColorPicked(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
@@ -65,6 +89,12 @@ void ColourPicker::checkIfColorPicked(sf::Event t_event, sf::RenderWindow& t_win
 	}
 }
 
+/// <summary>
+/// Checks if the close button on the colour picker was clicked
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
+/// <returns></returns>
 bool ColourPicker::checkIfCloseClicked(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
@@ -85,6 +115,10 @@ bool ColourPicker::checkIfCloseClicked(sf::Event t_event, sf::RenderWindow& t_wi
 	return false;
 }
 
+/// <summary>
+/// renders the colour picker
+/// </summary>
+/// <param name="t_window"></param>
 void ColourPicker::render(sf::RenderWindow* t_window)
 {
 	if (m_enabled)

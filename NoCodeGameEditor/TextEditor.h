@@ -27,7 +27,7 @@ public:
 	TextEditor(sf::Font& t_font, GameState* t_currentGameState);
 	~TextEditor();
 
-	void setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path);
+	void setUpDialogueButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path);
 	std::vector<std::vector<Button*>> m_selectableDialogueButtons;
 	std::vector<std::vector<Label*>> m_selectableDialogueLabels;
 	std::vector<std::string> m_DialogueOptions;

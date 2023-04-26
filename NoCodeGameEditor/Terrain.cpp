@@ -1,11 +1,19 @@
 #include "Terrain.h"
 #include <iostream>
 
-
+/// <summary>
+/// Default constructor
+/// </summary>
 Terrain::Terrain()
 {
 }
 
+/// <summary>
+/// Overloaded constructor
+/// </summary>
+/// <param name="t_typeTag"></param>
+/// <param name="t_path"></param>
+/// <param name="t_textureManager"></param>
 Terrain::Terrain(std::string t_typeTag, std::string t_path, TextureManager* t_textureManager)
 {
 	m_textureManager = t_textureManager;
@@ -18,16 +26,25 @@ Terrain::Terrain(std::string t_typeTag, std::string t_path, TextureManager* t_te
 	init();
 }
 
+/// <summary>
+/// Default constructor
+/// </summary>
 Terrain::~Terrain()
 {
 }
 
+/// <summary>
+/// Initialise the terrain object
+/// </summary>
 void Terrain::init()
 {
 	setUpSprite();
 	setUpBounds();
 }
 
+/// <summary>
+/// Set up the terrain objects sprite
+/// </summary>
 void Terrain::setUpSprite()
 {
 	setTexture(m_objectTexture);
@@ -36,6 +53,10 @@ void Terrain::setUpSprite()
 	m_objectSprite.setPosition(100, 100);
 }
 
+/// <summary>
+/// Sets the texture of the terrain object
+/// </summary>
+/// <param name="t_texture"></param>
 void Terrain::setTexture(sf::Texture& t_texture)
 {
 	m_objectTexture = m_textureManager->getTexture(m_path + ".png");
@@ -46,11 +67,18 @@ void Terrain::setTexture(sf::Texture& t_texture)
 	m_objectSprite.setTexture(m_objectTexture);
 }
 
+/// <summary>
+/// Sets the path to the terrain objects texture in the directory
+/// </summary>
+/// <param name="t_path"></param>
 void Terrain::setPathToTexture(std::string t_path)
 {
 	m_path = t_path;
 }
 
+/// <summary>
+/// Sets up the bounds of the terrain object
+/// </summary>
 void Terrain::setUpBounds()
 {
 	m_objectBounds.setSize(sf::Vector2f(m_boundsWidth, m_boundsHeight));
@@ -61,11 +89,20 @@ void Terrain::setUpBounds()
 	m_objectBounds.setPosition(m_objectSprite.getPosition());
 }
 
+/// <summary>
+/// Updates the terrain object
+/// </summary>
+/// <param name="deltaTime"></param>
+/// <param name="window"></param>
 void Terrain::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 	m_objectSprite.setPosition(m_objectBounds.getPosition());
 }
 
+/// <summary>
+/// Renders the terrain object
+/// </summary>
+/// <param name="window"></param>
 void Terrain::render(sf::RenderWindow& window)
 {
 	window.draw(m_objectSprite);

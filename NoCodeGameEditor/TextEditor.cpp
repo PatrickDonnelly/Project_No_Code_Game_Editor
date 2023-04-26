@@ -2,11 +2,17 @@
 #include <iostream>
 #include <fstream>
 
+/// <summary>
+/// Default constructor
+/// </summary>
 TextEditor::TextEditor()
 {
 
 }
 
+/// <summary>
+/// Overloaded constructor
+/// </summary>
 TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 {
 	m_dialogueBox = new DialogueBox(t_font);
@@ -23,7 +29,7 @@ TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 	setUpTextEditorButtons(t_font);
 	setPopUpButtons(t_font);
 	loadDialogue();
-	setUpPlaceableItemsButtons(m_font, m_rowsDialogue, m_selectableDialogueButtons, m_selectableDialogueLabels, m_DialogueOptions, path);
+	setUpDialogueButtons(m_font, m_rowsDialogue, m_selectableDialogueButtons, m_selectableDialogueLabels, m_DialogueOptions, path);
 	for (int i = 0; i < 2; ++i)
 	{
 		m_prevNextbuttons.push_back(new Button());
@@ -32,6 +38,10 @@ TextEditor::TextEditor(sf::Font& t_font, GameState* t_currentGameState)
 	}
 }
 
+/// <summary>
+/// Reads in text files from the directory using the paths to that directory.
+/// Stores all the names of the text files in a vector
+/// </summary>
 void TextEditor::loadDialogue()
 {
 	std::string path = "Dialogue/";
@@ -43,13 +53,19 @@ void TextEditor::loadDialogue()
 	}
 }
 
+/// <summary>
+/// refreshes the dialogue list and updates it
+/// </summary>
 void TextEditor::refreshDialogue()
 {
 	std::string path = "Dialogue/";
 	loadDialogue();
-	setUpPlaceableItemsButtons(m_font, m_rowsDialogue, m_selectableDialogueButtons, m_selectableDialogueLabels, m_DialogueOptions, path);
+	setUpDialogueButtons(m_font, m_rowsDialogue, m_selectableDialogueButtons, m_selectableDialogueLabels, m_DialogueOptions, path);
 }
 
+/// <summary>
+/// Clears the text from the ditor
+/// </summary>
 void TextEditor::clearDialogue()
 {
 	m_DialogueOptions.clear();
@@ -57,6 +73,14 @@ void TextEditor::clearDialogue()
 	m_selectableDialogueButtons.clear();
 }
 
+/// <summary>
+/// Sets the row of dialogue buttons that can currently be seen in the game.
+/// Can be swapped to the next or previous row using respective buttons
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
+/// <param name="t_rows"></param>
+/// <param name="t_objectButtons"></param>
 void TextEditor::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons)
 {
 	for (int i = 0; i < m_prevNextbuttons.size(); ++i)
@@ -117,8 +141,16 @@ void TextEditor::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, in
 	}
 	//std::cout << m_currentRowIndex << std::endl;
 }
-
-void TextEditor::setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
+/// <summary>
+/// Sets up the rows of text file buttons that can be selected
+/// </summary>
+/// <param name="t_arialFont"></param>
+/// <param name="t_rows"></param>
+/// <param name="t_objectButtons"></param>
+/// <param name="t_labels"></param>
+/// <param name="t_objects"></param>
+/// <param name="t_path"></param>
+void TextEditor::setUpDialogueButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
 {
 	int buttonsMade = 0;
 	int maxButtons = t_objects.size();
@@ -199,6 +231,9 @@ void TextEditor::setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, 
 	}
 }
 
+/// <summary>
+/// Initialise the text
+/// </summary>
 void TextEditor::initText()
 {
 	m_textBox.setFont(m_font);
@@ -207,11 +242,17 @@ void TextEditor::initText()
 	m_textBox.setPosition(450.0f, 100.0f);
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 TextEditor::~TextEditor()
 {
 
 }
 
+/// <summary>
+/// Initialise the input felds
+/// </summary>
 void TextEditor::initInputFields()
 {
 	m_mainBody->SetInputFieldSize(sf::Vector2f(1600.0f, 600.0f), sf::Vector2f(160.0f, 200.0f));
@@ -224,6 +265,10 @@ void TextEditor::initInputFields()
 	m_backGround.setFillColor(sf::Color(sf::Color(204, 204, 204)));
 }
 
+/// <summary>
+/// Render the text editor
+/// </summary>
+/// <param name="t_window"></param>
 void TextEditor::render(sf::RenderWindow* t_window)
 {
 	//t_window->draw(m_dialogueBoxSprite);
@@ -292,6 +337,12 @@ void TextEditor::render(sf::RenderWindow* t_window)
 	m_dialogueBox->render(t_window);
 }
 
+/// <summary>
+/// Process text editor buttons to load, save clear text etc.
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
+/// <param name="t_dialogueLabel"></param>
 void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t_window, Label* t_dialogueLabel)
 {
 	if (m_gameState->m_currentGameState == State::CREATE_DIALOGUE)
@@ -601,6 +652,10 @@ void TextEditor::processTextEditorButtons(sf::Event t_event, sf::RenderWindow& t
 	}
 }
 
+/// <summary>
+/// sets up buttons in the text editor
+/// </summary>
+/// <param name="t_arialFont"></param>
 void TextEditor::setUpTextEditorButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 5; i++)
@@ -624,6 +679,10 @@ void TextEditor::setUpTextEditorButtons(sf::Font& t_arialFont)
 
 }
 
+/// <summary>
+/// Sets pop up buttons for when a file is going to be overwritten
+/// </summary>
+/// <param name="t_arialFont"></param>
 void TextEditor::setPopUpButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 2; i++)
@@ -645,6 +704,10 @@ void TextEditor::setPopUpButtons(sf::Font& t_arialFont)
 	m_popUpButtonLabels.at(1)->setText("Continue");
 }
 
+/// <summary>
+/// Checks if text editor is enabled
+/// </summary>
+/// <returns></returns>
 bool TextEditor::isEnabled()
 {
 	return m_enabled;

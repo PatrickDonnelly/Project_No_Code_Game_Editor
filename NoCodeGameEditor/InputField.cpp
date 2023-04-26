@@ -2,11 +2,22 @@
 #include <iostream>
 #include <fstream>
 
+/// <summary>
+/// Default constructor for the input field
+/// </summary>
 InputField::InputField()
 {
 
 }
 
+/// <summary>
+/// Overloaded constructor for the input field.
+/// Sets a character limit
+/// and whether or not the input field is multiline or not
+/// </summary>
+/// <param name="t_font"></param>
+/// <param name="t_multiline"></param>
+/// <param name="t_characterLimit"></param>
 InputField::InputField(sf::Font& t_font, bool t_multiline, int t_characterLimit) :
 	m_font(t_font), m_multiline(t_multiline), m_characterLimit(t_characterLimit)
 {
@@ -14,6 +25,9 @@ InputField::InputField(sf::Font& t_font, bool t_multiline, int t_characterLimit)
 	initInputField();
 }
 
+/// <summary>
+/// Initialise the input fields text object
+/// </summary>
 void InputField::initText()
 {
 	m_textBox.setFont(m_font);
@@ -23,11 +37,17 @@ void InputField::initText()
 
 }
 
+/// <summary>
+/// Deconstructor for the input field
+/// </summary>
 InputField::~InputField()
 {
 
 }
 
+/// <summary>
+/// Initialises the input field
+/// </summary>
 void InputField::initInputField()
 {
 	m_inputField.setSize(sf::Vector2f(1600.0f, 600.0f));
@@ -37,6 +57,11 @@ void InputField::initInputField()
 	m_inputField.setFillColor(sf::Color::White);
 }
 
+/// <summary>
+/// Sets the size of the input field
+/// </summary>
+/// <param name="t_fieldSize"></param>
+/// <param name="t_pos"></param>
 void InputField::SetInputFieldSize(sf::Vector2f t_fieldSize, sf::Vector2f t_pos)
 {
 	m_inputField.setSize(sf::Vector2f(t_fieldSize.x, t_fieldSize.y));
@@ -45,24 +70,41 @@ void InputField::SetInputFieldSize(sf::Vector2f t_fieldSize, sf::Vector2f t_pos)
 
 }
 
-
+/// <summary>
+/// Renders the input fields
+/// </summary>
+/// <param name="t_window"></param>
 void InputField::render(sf::RenderWindow* t_window)
 {
 	t_window->draw(m_inputField);
 	t_window->draw(m_textBox);
 }
 
+/// <summary>
+/// Checks if the input field is enabled
+/// </summary>
+/// <returns></returns>
 bool InputField::isEnabled()
 {
 	return m_enabled;
 }
 
+/// <summary>
+/// Clears all text from the input field
+/// </summary>
 void InputField::ClearText()
 {
 	m_text.str("");
 	m_textBox.setString(m_text.str());
 }
 
+/// <summary>
+/// Checks what key is pressed and acts accordingly.
+/// If back space or delete it calls for the previous character to be deleted from the string
+/// If enter is pressed a new line is inserted
+/// If a character or number is pressed it is added to the text objects string field
+/// </summary>
+/// <param name="t_character"></param>
 void InputField::inputTextBox(int t_character)
 {
 	if (t_character != BACKSPACE_KEY && t_character != ENTER_KEY && t_character != ESCAPE_KEY)
@@ -150,6 +192,9 @@ void InputField::inputTextBox(int t_character)
 	}
 }
 
+/// <summary>
+/// Deletes the previous character of the text objects string
+/// </summary>
 void InputField::deletePreviousCharacter()
 {
 	std::string temp = m_text.str();
@@ -164,6 +209,12 @@ void InputField::deletePreviousCharacter()
 	m_textBox.setString(m_text.str());
 }
 
+/// <summary>
+/// Checks if a letter key or number key was pressed
+/// Deletes the input character if the string is at its character limit
+/// If not it calls for the input character to be added to the string
+/// </summary>
+/// <param name="t_event"></param>
 void InputField::typing(sf::Event t_event)
 {
 	int currentCharacter = t_event.text.unicode;

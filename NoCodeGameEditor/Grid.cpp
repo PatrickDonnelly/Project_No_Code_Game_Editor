@@ -1,9 +1,17 @@
 #include "Grid.h"
 
+/// <summary>
+/// Default constructor Grid
+/// </summary>
 Grid::Grid()
 {
 }
 
+/// <summary>
+/// Overloaded constructor for the Grid
+/// </summary>
+/// <param name="t_gameState"></param>
+/// <param name="t_textureManager"></param>
 Grid::Grid(GameState* t_gameState, TextureManager* t_textureManager)
 {
 	m_textureManager = t_textureManager;
@@ -12,6 +20,9 @@ Grid::Grid(GameState* t_gameState, TextureManager* t_textureManager)
 	regenerateGrid();
 }
 
+/// <summary>
+/// Loads in a font
+/// </summary>
 void Grid::setUpFont()
 {
 	if (!m_textFont.loadFromFile("ASSETS\\FONTS\\Arial.ttf"))
@@ -20,6 +31,9 @@ void Grid::setUpFont()
 	}
 }
 
+/// <summary>
+/// Visually clears unoccupied cells in the grid by changing the outline colour to black
+/// </summary>
 void Grid::clearUnusedCells()
 {
 	for (int i = 0; i < m_vectGridSize; ++i)
@@ -34,6 +48,9 @@ void Grid::clearUnusedCells()
 	}
 }
 
+/// <summary>
+/// Increases the size of the grid
+/// </summary>
 void Grid::increaseGridSize()
 {
 	if (m_vectGridSize < 16)
@@ -43,6 +60,9 @@ void Grid::increaseGridSize()
 	}
 }
 
+/// <summary>
+/// Decreases the size of the grid
+/// </summary>
 void Grid::decreaseGridSize()
 {
 	if (m_vectGridSize > 5)
@@ -52,6 +72,10 @@ void Grid::decreaseGridSize()
 	}
 }
 
+/// <summary>
+/// Renders the grid to the window
+/// </summary>
+/// <param name="t_window"></param>
 void Grid::render(sf::RenderWindow* t_window)
 {
 	for (int i = 0; i < m_vectGridSize; i++)
@@ -67,11 +91,17 @@ void Grid::render(sf::RenderWindow* t_window)
 	}
 }
 
+/// <summary>
+/// Clears the grid
+/// </summary>
 void Grid::clear()
 {
 	m_vectGrid.clear();
 }
 
+/// <summary>
+/// Creates a new grid
+/// </summary>
 void Grid::newGrid()
 {
 	for (int i = 0; i < m_vectGridSize; ++i)
@@ -85,6 +115,9 @@ void Grid::newGrid()
 	}
 }
 
+/// <summary>
+/// Regenerates the current grid to make a new one
+/// </summary>
 void Grid::regenerateGrid()
 {
 

@@ -50,6 +50,9 @@ void Game::run()
 	}
 }
 
+/// <summary>
+/// Set up font and text
+/// </summary>
 void Game::setUpFontAndText()
 {
 	m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
@@ -68,6 +71,9 @@ void Game::setUpFontAndText()
 	m_text.setOutlineThickness(1.0f);
 }
 
+/// <summary>
+/// Process mouse events, text event etc.
+/// </summary>
 void Game::processEvents()
 {
 	sf::Event newEvent;
@@ -177,6 +183,10 @@ void Game::processEvents()
 	}
 }
 
+/// <summary>
+/// exits the game if the escape key is pressed.
+/// </summary>
+/// <param name="t_event"></param>
 void Game::processKeys(sf::Event t_event)
 {
 	if (sf::Keyboard::Escape == t_event.key.code)
@@ -186,6 +196,13 @@ void Game::processKeys(sf::Event t_event)
 
 }
 
+/// <summary>
+/// Updates game objects.
+/// Checks and updates collision
+/// Handles level loading
+/// Handles level saving
+/// </summary>
+/// <param name="t_deltaTime"></param>
 void Game::update(sf::Time t_deltaTime)
 {
 	if (m_exitGame)
@@ -811,6 +828,9 @@ void Game::update(sf::Time t_deltaTime)
 
 }
 
+/// <summary>
+/// Renders game objects depending in the active state
+/// </summary>
 void Game::render()
 {
 	m_window.clear(sf::Color::Black);

@@ -1,14 +1,28 @@
 #include "Collision.h"
 
+/// <summary>
+/// Default Constructor
+/// </summary>
 Collision::Collision()
 {
 
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 Collision::~Collision()
 {
 }
 
+/// <summary>
+/// Checks collision between two objects and uses a weight to determine how the force is split
+/// between objects. Acts like a weight.
+/// </summary>
+/// <param name="t_objectOne"></param>
+/// <param name="t_objectTwo"></param>
+/// <param name="t_push"></param>
+/// <returns></returns>
 bool Collision::checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleShape* t_objectTwo, float t_push)
 {
 	sf::Vector2f l_objectTwoPosition = t_objectTwo->getPosition();
@@ -57,6 +71,12 @@ bool Collision::checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleSha
 	return false;
 }
 
+/// <summary>
+/// Checks collision between two objects
+/// </summary>
+/// <param name="t_objectOne"></param>
+/// <param name="t_objectTwo"></param>
+/// <returns></returns>
 bool Collision::checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleShape* t_objectTwo)
 {
 	sf::Vector2f l_objectTwoPosition = t_objectTwo->getPosition();
@@ -78,6 +98,12 @@ bool Collision::checkCollision(sf::RectangleShape* t_objectOne, sf::RectangleSha
 	return false;
 }
 
+/// <summary>
+/// Moves the object
+/// </summary>
+/// <param name="t_deltaX"></param>
+/// <param name="t_deltaY"></param>
+/// <param name="t_object"></param>
 void Collision::move(float t_deltaX, float t_deltaY, sf::RectangleShape* t_object)
 {
 	t_object->move(t_deltaX, t_deltaY);

@@ -1,10 +1,17 @@
 #include "SaveGame.h"
 
+/// <summary>
+/// Default constructor for the save game class
+/// </summary>
 SaveGame::SaveGame()
 {
 
 }
 
+/// <summary>
+/// Overloaded constructor for the save game class that takes in the game state
+/// </summary>
+/// <param name="t_currentGameState"></param>
 SaveGame::SaveGame(GameState* t_currentGameState)
 {
 	m_fontManager = FontManager();
@@ -27,11 +34,19 @@ SaveGame::SaveGame(GameState* t_currentGameState)
 	setUpOptions(m_subTitleOptions, 172.0f, 200, 30.0f, m_subTitleText, m_subTitleColor);
 }
 
+/// <summary>
+/// Deconstructor for the save game class
+/// </summary>
 SaveGame::~SaveGame()
 {
 
 }
 
+/// <summary>
+/// Initialises the nput fields for the save game screen.
+/// Initialises a game title inout field
+/// and a sub title input field
+/// </summary>
 void SaveGame::initInputFields()
 {
 	m_mainTitle->SetInputFieldSize(sf::Vector2f(800.0f, 50.0f), sf::Vector2f(560.0f, 376.0f));
@@ -52,6 +67,13 @@ void SaveGame::initInputFields()
 	m_saveAndCancelButtons.at(1)->setButtonPosition(sf::Vector2f(1180.0f, 716.0f));
 }
 
+/// <summary>
+/// Checks if the colour picker is enabled and processes any clicks made at its location.
+/// Checks if any input fields were interacted with.
+/// Checks if any formatting styles were interacted with
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void SaveGame::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	if (!m_mainTitleOptions.at(3).isEnabled() && !m_subTitleOptions.at(3).isEnabled())
@@ -82,6 +104,13 @@ void SaveGame::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	}
 }
 
+/// <summary>
+/// Allows the save and cancel buttons to be pressed.
+/// Enables pop ups depending on whether a game was saved successfully
+/// or an existing game is about to be overwritten
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void SaveGame::processButtons(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
@@ -135,6 +164,16 @@ void SaveGame::processButtons(sf::Event t_event, sf::RenderWindow& t_window)
 	}
 }
 
+/// <summary>
+/// Sets the style of the game title and subtitle text depending 
+/// on what options were enabled from the formatting choices
+/// </summary>
+/// <param name="t_textOptions"></param>
+/// <param name="t_text"></param>
+/// <param name="t_index"></param>
+/// <param name="t_textColor"></param>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void SaveGame::setTextStyle(std::vector<CheckBox>& t_textOptions, Label* t_text , int t_index, sf::Color& t_textColor, sf::Event t_event, sf::RenderWindow& t_window)
 {
 	if (t_textOptions.at(t_index).getTag() == "Colour")
@@ -186,6 +225,10 @@ void SaveGame::setTextStyle(std::vector<CheckBox>& t_textOptions, Label* t_text 
 	t_text->setTextStyle();
 }
 
+/// <summary>
+/// Checks if text is being entered in the input fields
+/// </summary>
+/// <param name="t_event"></param>
 void SaveGame::typing(sf::Event t_event)
 {
 	if (sf::Event::TextEntered == t_event.type)
@@ -204,6 +247,12 @@ void SaveGame::typing(sf::Event t_event)
 
 }
 
+/// <summary>
+/// Sets the selected input field if an input field was clicked.
+/// Disables the other input field
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void SaveGame::setSelectedInputField(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
@@ -224,6 +273,15 @@ void SaveGame::setSelectedInputField(sf::Event t_event, sf::RenderWindow& t_wind
 	}
 }
 
+/// <summary>
+/// Sets up formatting options for the game title and sub title text
+/// </summary>
+/// <param name="t_options"></param>
+/// <param name="t_yOffsetOne"></param>
+/// <param name="t_yOffsetTwo"></param>
+/// <param name="t_fontSize"></param>
+/// <param name="t_text"></param>
+/// <param name="t_textColor"></param>
 void SaveGame::setUpOptions(std::vector<CheckBox>& t_options, int t_yOffsetOne, int t_yOffsetTwo, float t_fontSize, Label* t_text, sf::Color& t_textColor)
 {
 	for (int i = 0; i < 4; ++i)
@@ -247,6 +305,11 @@ void SaveGame::setUpOptions(std::vector<CheckBox>& t_options, int t_yOffsetOne, 
 	t_textColor = sf::Color::White;
 }
 
+/// <summary>
+/// Enables a pop up and calls a function that reads in a text file
+/// </summary>
+/// <param name="t_fileName"></param>
+/// <param name="t_noOfButtons"></param>
 void SaveGame::setUpPopUpBox(std::string t_fileName, int t_noOfButtons)
 {
 	m_popUpBox.setPopUpEnabled();
@@ -254,6 +317,10 @@ void SaveGame::setUpPopUpBox(std::string t_fileName, int t_noOfButtons)
 	m_popUpBox.setPopUpButtons(t_noOfButtons);
 }
 
+/// <summary>
+/// Draws the save game screen and text
+/// </summary>
+/// <param name="t_window"></param>
 void SaveGame::render(sf::RenderWindow* t_window)
 {
 	if (m_enabled)
@@ -285,6 +352,12 @@ void SaveGame::render(sf::RenderWindow* t_window)
 	}
 }
 
+/// <summary>
+/// Gets the text of the main title or the subtitle 
+/// depending on whether the parametre passed in is true or false
+/// </summary>
+/// <param name="t_isMainTitle"></param>
+/// <returns></returns>
 std::string SaveGame::getTitle(bool t_isMainTitle)
 {
 	if (t_isMainTitle)
@@ -294,6 +367,12 @@ std::string SaveGame::getTitle(bool t_isMainTitle)
 	return m_subTitleText->getTextString();
 }
 
+/// <summary>
+/// Gets whether or not italics is enabled on the main title or the subtitle 
+/// depending on whether the parametre passed in is true or false
+/// </summary>
+/// <param name="t_isMainTitle"></param>
+/// <returns></returns>
 bool SaveGame::getItalics(bool t_isMainTitle)
 {
 	if (t_isMainTitle)
@@ -311,6 +390,12 @@ bool SaveGame::getItalics(bool t_isMainTitle)
 	return false;
 }
 
+/// <summary>
+/// Gets whether or not underline is enabled on the main title or the subtitle 
+/// depending on whether the parametre passed in is true or false
+/// </summary>
+/// <param name="t_isMainTitle"></param>
+/// <returns></returns>
 bool SaveGame::getUnderlined(bool t_isMainTitle)
 {
 	if (t_isMainTitle)
@@ -328,6 +413,12 @@ bool SaveGame::getUnderlined(bool t_isMainTitle)
 	return false;
 }
 
+/// <summary>
+/// Gets whether or not bold is enabled on the main title or the subtitle 
+/// depending on whether the parametre passed in is true or false
+/// </summary>
+/// <param name="t_isMainTitle"></param>
+/// <returns></returns>
 bool SaveGame::getBold(bool t_isMainTitle)
 {
 	if (t_isMainTitle)
@@ -345,6 +436,12 @@ bool SaveGame::getBold(bool t_isMainTitle)
 	return false;
 }
 
+/// <summary>
+/// Gets red colour value on the main title or the subtitle 
+/// depending on whether the parametre passed in is true or false
+/// </summary>
+/// <param name="t_isMainTitle"></param>
+/// <returns></returns>
 int SaveGame::getColorRedValue(bool t_isMainTitle)
 {
 	if (t_isMainTitle)
@@ -354,6 +451,12 @@ int SaveGame::getColorRedValue(bool t_isMainTitle)
 	return m_subTitleColor.r;
 }
 
+/// <summary>
+/// Gets green colour value on the main title or the subtitle 
+/// depending on whether the parametre passed in is true or false
+/// </summary>
+/// <param name="t_isMainTitle"></param>
+/// <returns></returns>
 int SaveGame::getColorGreenValue(bool t_isMainTitle)
 {
 	if (t_isMainTitle)
@@ -363,6 +466,12 @@ int SaveGame::getColorGreenValue(bool t_isMainTitle)
 	return m_subTitleColor.g;
 }
 
+/// <summary>
+/// Gets blue colour value on the main title or the subtitle 
+/// depending on whether the parametre passed in is true or false
+/// </summary>
+/// <param name="t_isMainTitle"></param>
+/// <returns></returns>
 int SaveGame::getColorBlueValue(bool t_isMainTitle)
 {
 	if (t_isMainTitle)

@@ -1,10 +1,18 @@
 #include "InspectorOptions.h"
 
-
+/// <summary>
+/// Default constructor for the inspector options class
+/// </summary>
 InspectorOptions::InspectorOptions()
 {
 }
 
+/// <summary>
+/// Overloaded constructor for the Inspector options class
+/// </summary>
+/// <param name="t_font"></param>
+/// <param name="t_noOfOptions"></param>
+/// <param name="t_tag"></param>
 InspectorOptions::InspectorOptions(sf::Font& t_font, int t_noOfOptions, std::string t_tag)
 {
     m_tag = t_tag;
@@ -16,6 +24,9 @@ InspectorOptions::InspectorOptions(sf::Font& t_font, int t_noOfOptions, std::str
     initOptions();
 }
 
+/// <summary>
+/// initialise Options you can find in the inspector
+/// </summary>
 void InspectorOptions::initOptions()
 {
     if (m_tag == "Behaviour")
@@ -92,20 +103,34 @@ void InspectorOptions::initOptions()
     }
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 InspectorOptions::~InspectorOptions()
 {
 }
 
+/// <summary>
+/// returns the sprite of the inspector options
+/// </summary>
+/// <returns></returns>
 sf::Sprite InspectorOptions::getInspectorOptionsSprite()
 {
     return sf::Sprite();
 }
 
+/// <summary>
+/// gets the position of the background
+/// </summary>
+/// <returns></returns>
 sf::Vector2f InspectorOptions::getInspectorOptionsPosition()
 {
     return m_inspectorOptionsBGShape.getPosition();
 }
 
+/// <summary>
+/// initialises Inspector options Background
+/// </summary>
 void InspectorOptions::initInspectorOptions()
 {
     m_inspectorOptionsBGShape.setSize(sf::Vector2f(400.0f, 200.0f));
@@ -115,17 +140,20 @@ void InspectorOptions::initInspectorOptions()
     m_inspectorOptionsBGShape.setFillColor(sf::Color(sf::Color(204, 204, 204)));
 }
 
+/// <summary>
+/// Sets the position of the inspectors options background
+/// </summary>
+/// <param name="t_pos"></param>
 void InspectorOptions::setInspectorOptionsPosition(sf::Vector2f t_pos)
 {
     m_inspectorOptionsBGShape.setPosition(t_pos);
 }
 
-void InspectorOptions::update(sf::Time deltaTime, sf::RenderWindow& window)
-{
-}
 
-
-
+/// <summary>
+/// Renders the inpector options class
+/// </summary>
+/// <param name="t_window"></param>
 void InspectorOptions::render(sf::RenderWindow* t_window)
 {
     t_window->draw(m_inspectorOptionsBGShape);
@@ -139,15 +167,10 @@ void InspectorOptions::render(sf::RenderWindow* t_window)
     //t_window->draw(m_text);
 }
 
-bool InspectorOptions::isEnabled()
-{
-    return false;
-}
 
-void InspectorOptions::splitString(std::string t_dialogueText)
-{
-}
-
+/// <summary>
+/// Init the label text
+/// </summary>
 void InspectorOptions::initText()
 {
 

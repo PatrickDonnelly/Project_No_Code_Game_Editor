@@ -1,10 +1,18 @@
 #include "Obstacle.h"
 #include <iostream>
 
+/// <summary>
+/// Default constructer for an obstacle
+/// </summary>
 Obstacle::Obstacle()
 {
 }
 
+/// <summary>
+/// Overloaded constructor for an obstacle
+/// </summary>
+/// <param name="t_typeTag"></param>
+/// <param name="t_path"></param>
 Obstacle::Obstacle(std::string t_typeTag, std::string t_path)
 {
 	m_isCollidable = false;
@@ -22,10 +30,17 @@ Obstacle::Obstacle(std::string t_typeTag, std::string t_path)
 
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 Obstacle::~Obstacle()
 {
 }
 
+/// <summary>
+/// Returns if object is collidable or not
+/// </summary>
+/// <returns></returns>
 bool Obstacle::isCollidable()
 {
 	return m_isCollidable;

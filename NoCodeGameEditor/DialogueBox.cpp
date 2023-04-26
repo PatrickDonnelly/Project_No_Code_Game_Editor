@@ -1,6 +1,9 @@
 #include "DialogueBox.h"
 #include <iostream>
 
+/// <summary>
+/// Default constructor for the dialogue box
+/// </summary>
 DialogueBox::DialogueBox()
 {
 	m_font = m_fontManager.getFont("ASSETS\\FONTS\\Arial.ttf");
@@ -9,6 +12,11 @@ DialogueBox::DialogueBox()
 
 }
 
+/// <summary>
+/// Overloaded constructor for the dialogue box that takes in a font
+/// </summary>
+/// <param name="t_font"></param>
+/// <returns></returns>
 DialogueBox::DialogueBox(sf::Font& t_font)
 {
 	m_font = t_font;
@@ -18,6 +26,9 @@ DialogueBox::DialogueBox(sf::Font& t_font)
 
 }
 
+/// <summary>
+/// Initialises the text of a dialogue box
+/// </summary>
 void DialogueBox::initText()
 {
 	m_textBox.setFont(m_font);
@@ -28,21 +39,35 @@ void DialogueBox::initText()
 	m_textBox.setPosition(300.0f, 624.0f);
 }
 
+/// <summary>
+/// Deconstructor for the dialogue box
+/// </summary>
 DialogueBox::~DialogueBox()
 {
 
 }
 
+/// <summary>
+/// Gets the dialogue box sprite
+/// </summary>
+/// <returns></returns>
 sf::Sprite DialogueBox::getDialogueBoxSprite()
 {
 	return sf::Sprite();
 }
 
+/// <summary>
+/// Gets the dialogue box position
+/// </summary>
+/// <returns></returns>
 sf::Vector2f DialogueBox::getDialogueBoxPosition()
 {
 	return m_dialogueBoxSprite.getPosition();
 }
 
+/// <summary>
+/// Initialises the dialogue box
+/// </summary>
 void DialogueBox::initDialogueBox()
 {
 	m_dialogueBox.setSize(sf::Vector2f(1376.0f, 200.0f));
@@ -60,11 +85,19 @@ void DialogueBox::initDialogueBox()
 	m_dialogueBoxSprite.setOrigin(m_dialogueBoxSprite.getGlobalBounds().width / 2, m_dialogueBoxSprite.getGlobalBounds().height / 2);
 }
 
+/// <summary>
+/// Sets the dialogue box sprite
+/// </summary>
+/// <param name="t_dialogueSprite"></param>
 void DialogueBox::setDialogueBoxSprite(sf::Sprite t_dialogueSprite)
 {
 	m_dialogueBoxSprite = t_dialogueSprite;
 }
 
+/// <summary>
+/// renders the dialogue box
+/// </summary>
+/// <param name="t_window"></param>
 void DialogueBox::render(sf::RenderWindow* t_window)
 {
 	//t_window->draw(m_dialogueBoxSprite);
@@ -75,11 +108,19 @@ void DialogueBox::render(sf::RenderWindow* t_window)
 	}
 }
 
+/// <summary>
+/// Checks if the dialogue box is enabled
+/// </summary>
+/// <returns></returns>
 bool DialogueBox::isEnabled()
 {
 	return m_enabled;
 }
 
+/// <summary>
+/// Splits the string into multiple lines for display
+/// </summary>
+/// <param name="t_dialogueText"></param>
 void DialogueBox::splitString(std::string t_dialogueText)
 {
 
@@ -98,6 +139,10 @@ void DialogueBox::splitString(std::string t_dialogueText)
 	}
 }
 
+/// <summary>
+/// Loads text from a txt file to be displayed inside the dialogue box
+/// </summary>
+/// <param name="t_fileName"></param>
 void DialogueBox::loadText(std::string t_fileName)
 {
 

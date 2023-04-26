@@ -1,12 +1,10 @@
 #include "Inspector.h"
 
-Inspector::Inspector(sf::Font & t_font)
+Inspector::Inspector(sf::Font& t_font)
 {
 }
 
-Inspector::Inspector(std::string t_title)
-{
-}
+
 
 //Inspector::Inspector(ObjectPlacement* t_objects)
 //{
@@ -33,6 +31,11 @@ Inspector::Inspector(std::string t_title)
 //    return false;
 //}
 
+/// <summary>
+/// Overloaded constructor for the inspector that takes in a title string and object attributes
+/// </summary>
+/// <param name="t_title"></param>
+/// <param name="t_object"></param>
 Inspector::Inspector(std::string t_title, Attributes& t_object)
 {
     m_objectData = t_object;
@@ -49,6 +52,9 @@ Inspector::Inspector(std::string t_title, Attributes& t_object)
     addDialogueTab();
 }
 
+/// <summary>
+/// Default constructor for the inspector
+/// </summary>
 Inspector::Inspector()
 {
     m_fontManager = FontManager();
@@ -59,6 +65,9 @@ Inspector::Inspector()
     initText();
 }
 
+/// <summary>
+/// Set up font and text for the inspector
+/// </summary>
 void Inspector::setUpFontAndText()
 {
     m_text.setFont(m_font);
@@ -70,10 +79,16 @@ void Inspector::setUpFontAndText()
     m_text.setPosition(sf::Vector2f((m_inspectorBGShape.getPosition().x + m_inspectorBGShape.getGlobalBounds().width / 2) - m_text.getGlobalBounds().width / 2, 5));
 }
 
+/// <summary>
+/// Deconstructor for the inspector class
+/// </summary>
 Inspector::~Inspector()
 {
 }
 
+/// <summary>
+/// initialise options to display in the inspector
+/// </summary>
 void Inspector::initInspectorOptions()
 {
     for (int i = 0; i < m_noOfOptions; ++i)
@@ -107,16 +122,11 @@ void Inspector::initInspectorOptions()
     }
 }
 
-sf::Sprite Inspector::getInspectorSprite()
-{
-    return sf::Sprite();
-}
 
-sf::Vector2f Inspector::getInspectorPosition()
-{
-    return sf::Vector2f();
-}
 
+/// <summary>
+/// initialise the inspector
+/// </summary>
 void Inspector::initInspector()
 {
     m_inspectorBGShape.setSize(sf::Vector2f(256.0f, 2160.0f));
@@ -130,10 +140,10 @@ void Inspector::initInspector()
     m_applyButton->setButtonPosition(sf::Vector2f(1880.0f, 32.0f));
 }
 
-void Inspector::setInspectorSprite(sf::Sprite t_dialogueSprite)
-{
-}
-
+/// <summary>
+/// Render the inspector to the window
+/// </summary>
+/// <param name="t_window"></param>
 void Inspector::render(sf::RenderWindow* t_window)
 {
     // m_fontManager.getNumberOfFonts();
@@ -174,20 +184,10 @@ void Inspector::render(sf::RenderWindow* t_window)
    // }
 }
 
-bool Inspector::isEnabled()
-{
-    return false;
-}
-
-void Inspector::update(sf::Time deltaTime, sf::RenderWindow& window)
-{
-
-}
-
-void Inspector::splitString(std::string t_dialogueText)
-{
-}
-
+/// <summary>
+/// Save changes made to the dialogue o[ptions in the inspector
+/// </summary>
+/// <param name="t_dialoguePaths"></param>
 void Inspector::saveChanges(std::map<std::string, std::string>& t_dialoguePaths)
 {
     t_dialoguePaths.clear();
@@ -197,6 +197,14 @@ void Inspector::saveChanges(std::map<std::string, std::string>& t_dialoguePaths)
     }
 }
 
+/// <summary>
+/// process mouse events for the inspector
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
+/// <param name="t_gameState"></param>
+/// <param name="t_fileName"></param>
+/// <param name="t_dialoguePaths"></param>
 void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, GameState* t_gameState, std::string t_fileName, std::map<std::string, std::string>& t_dialoguePaths)
 {
     m_gameState = t_gameState;
@@ -351,6 +359,9 @@ void Inspector::processEvents(sf::Event t_event, sf::RenderWindow& t_window, Gam
 
 }
 
+/// <summary>
+/// Reposition the buttons that allow you to attach dialogue
+/// </summary>
 void Inspector::repositionDialogueButtons()
 {
     for (int i = 0; i < m_dialogueDropDownMenu.size(); i++)
@@ -398,6 +409,14 @@ void Inspector::repositionDialogueButtons()
     }
 }
 
+/// <summary>
+/// reposition the drop down menu after a option has been deleted from it
+/// </summary>
+/// <param name="t_iter1"></param>
+/// <param name="t_iter2"></param>
+/// <param name="t_iter3"></param>
+/// <param name="t_iter4"></param>
+/// <param name="t_offset"></param>
 void Inspector::repositionDropDown(std::vector<Button*>::iterator t_iter1, std::vector<Button*>::iterator t_iter2, std::vector<Label*>::iterator t_iter3, std::vector<DropDownMenu*>::iterator t_iter4, int t_offset)
 {
     auto iterCopy2 = t_iter2;
@@ -420,6 +439,9 @@ void Inspector::repositionDropDown(std::vector<Button*>::iterator t_iter1, std::
     }
 }
 
+/// <summary>
+/// add dialogue to an object
+/// </summary>
 void Inspector::addDialogueTab()
 {
     if (m_objectData.m_allowedDialogue)
@@ -446,6 +468,9 @@ void Inspector::updateDialogueTab()
     //}
 }
 
+/// <summary>
+/// Initialise labels
+/// </summary>
 void Inspector::initText()
 {
     setUpFontAndText();

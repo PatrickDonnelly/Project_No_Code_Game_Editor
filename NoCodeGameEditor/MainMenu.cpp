@@ -1,21 +1,31 @@
 #include "MainMenu.h"
 
+/// <summary>
+/// Main menu constructor
+/// </summary>
 MainMenu::MainMenu()
 {
 
 }
 
+/// <summary>
+/// Overloaded constructor
+/// </summary>
+/// <param name="t_gameState"></param>
 MainMenu::MainMenu(GameState* t_gameState)
 {
 	m_currentGameState = t_gameState;
 	initButtons();
 }
 
+// Deconstructor
 MainMenu::~MainMenu()
 {
 }
 
-
+/// <summary>
+/// Initialie the buttons for the main menu.
+/// </summary>
 void MainMenu::initButtons()
 {
 	for (int i = 0; i < 3; i++)
@@ -40,6 +50,10 @@ void MainMenu::initButtons()
 
 }
 
+/// <summary>
+/// renders the main menu.
+/// </summary>
+/// <param name="t_window"></param>
 void MainMenu::render(sf::RenderWindow* t_window)
 {
 	if (m_currentGameState->getState() == State::MENU)
@@ -61,6 +75,11 @@ void MainMenu::render(sf::RenderWindow* t_window)
 	}
 }
 
+/// <summary>
+/// processes events for Checking which option is picked forn the main menu.
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void MainMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
     sf::Event newEvent = t_event;

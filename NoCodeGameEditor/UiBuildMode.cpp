@@ -1,5 +1,14 @@
 #include "UiBuildMode.h"
 
+/// <summary>
+/// Sets up buttons and labels for any placeable item objects
+/// </summary>
+/// <param name="t_arialFont"></param>
+/// <param name="t_rows"></param>
+/// <param name="t_objectButtons"></param>
+/// <param name="t_labels"></param>
+/// <param name="t_objects"></param>
+/// <param name="t_path"></param>
 void UiBuildMode::setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows, std::vector<std::vector<Button*>>& t_objectButtons, std::vector<std::vector<Label*>>& t_labels, std::vector<std::string> t_objects, std::string t_path)
 {
 	int buttonsMade = 0;
@@ -82,6 +91,10 @@ void UiBuildMode::setUpPlaceableItemsButtons(sf::Font& t_arialFont, int& t_rows,
 	}
 }
 
+/// <summary>
+/// Sets up buttons to clear the grid and to generate a room
+/// </summary>
+/// <param name="t_arialFont"></param>
 void UiBuildMode::setUpGridFunctionButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 2; i++)
@@ -110,6 +123,10 @@ void UiBuildMode::setUpGridFunctionButtons(sf::Font& t_arialFont)
 	//m_buildButtonLabels.at(3)->setText("+");
 }
 
+/// <summary>
+/// Sets up the buttons and labels that are use in the test phase 
+/// </summary>
+/// <param name="t_arialFont"></param>
 void UiBuildMode::setUpTestBuildButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 2; i++)
@@ -124,6 +141,10 @@ void UiBuildMode::setUpTestBuildButtons(sf::Font& t_arialFont)
 	m_testingButtonLabels.at(1)->setText("Save Room");
 }
 
+/// <summary>
+/// sets up buttons that are used in the edit mode.
+/// </summary>
+/// <param name="t_arialFont"></param>
 void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 4; i++)
@@ -140,6 +161,10 @@ void UiBuildMode::setUpPlacementModeButtons(sf::Font& t_arialFont)
 	m_placementOptionsLabels.at(3)->setText("Main Menu");
 }
 
+/// <summary>
+/// Sets up the tab buttons that show each object category
+/// </summary>
+/// <param name="t_arialFont"></param>
 void UiBuildMode::setUpCategoryButtons(sf::Font& t_arialFont)
 {
 	for (int i = 0; i < 6; i++)
@@ -194,6 +219,13 @@ void UiBuildMode::setUpTextureRoomButtons(sf::Font& t_arialFont)
 	//m_textureRoomLabels.at(5)->setLabelSprite(m_texturedLabels.at(5)->getText().getString());
 }
 
+/// <summary>
+/// Overloaded constructor
+/// Sets up User Interface for the editor.
+/// Sets up previous and next buttons for navigating through rows of objects
+/// Reads in the names of all object types and stores them so buttons can be created for them
+/// Sets up the toggle buttons for grid and colliders on / off
+/// </summary>
 UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState, RoomCreation* t_roomCreation, ObjectPlacement* t_objectPlacement)
 {
 	m_gameState = t_currentGameState;
@@ -330,10 +362,16 @@ UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_curre
 	//setUpTextureRoomButtons(m_arialFont);
 }
 
+/// <summary>
+/// Default constructor
+/// </summary>
 UiBuildMode::UiBuildMode()
 {
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 UiBuildMode::~UiBuildMode()
 {
 }
@@ -397,6 +435,10 @@ void UiBuildMode::processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindo
 	}
 }
 
+/// <summary>
+/// deselects the currently selected button
+/// </summary>
+/// <param name="t_objectButtons"></param>
 void UiBuildMode::deselectButtons(std::vector<std::vector<Button*>>& t_objectButtons)
 {
 	std::vector<std::vector<Button>>::iterator row;
@@ -410,6 +452,11 @@ void UiBuildMode::deselectButtons(std::vector<std::vector<Button*>>& t_objectBut
 	}
 }
 
+/// <summary>
+/// Toggles the grid and colliders on and off
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void UiBuildMode::toggleGridAndColliders(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
@@ -444,6 +491,17 @@ void UiBuildMode::toggleGridAndColliders(sf::Event t_event, sf::RenderWindow& t_
 }
 }
 
+/// <summary>
+/// processes the buttons of objects that can be placed in the game world.
+/// Allows an object button to be selected and for that object type to be placed
+/// handles the button inputs for loading the game and moving to the test phase as well as clearing the grid
+/// and returning to the main menu
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
+/// <param name="t_path"></param>
+/// <param name="t_labels"></param>
+/// <param name="t_objectButtons"></param>
 void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWindow& t_window, std::string& t_path, std::vector<std::vector<Label*>>& t_labels, std::vector<std::vector<Button*>>& t_objectButtons)
 {
 	std::vector<std::vector<Button>>::iterator row;
@@ -610,6 +668,14 @@ void UiBuildMode::processPlaceObjectsButtonInput(sf::Event t_event, sf::RenderWi
 
 }
 
+/// <summary>
+/// handles input for the buttons that are interactable during the test phase.
+/// Allows the user to move back to the edit phase.
+/// Onto the save game phase 
+/// And to start their build over again
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow & t_window)
 {
 	int rowIndex = 0;
@@ -661,7 +727,14 @@ void UiBuildMode::processTestRoomButtonInput(sf::Event t_event, sf::RenderWindow
 }
 
 
-
+/// <summary>
+/// Sets the currenlty visible row for object categories that have multiple rows of objects
+/// that can be placed
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
+/// <param name="t_rows"></param>
+/// <param name="t_objectButtons"></param>
 void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, int t_rows, std::vector<std::vector<Button*>>& t_objectButtons)
 {
 	int rowIndex = 0;
@@ -726,6 +799,14 @@ void UiBuildMode::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window, i
 	}
 }
 
+/// <summary>
+/// Sets a min and max zoom.
+/// Allows the user to zoom in and out on the game world.
+/// </summary>
+/// <param name="pixel"></param>
+/// <param name="window"></param>
+/// <param name="zoom"></param>
+/// <param name="t_zoomIn"></param>
 void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, float zoom, bool t_zoomIn)
 {
 	const sf::Vector2f beforeZoom{ window.mapPixelToCoords(pixel) };
@@ -772,6 +853,11 @@ void UiBuildMode::zoomViewAtPoint(sf::Vector2i pixel, sf::RenderWindow& window, 
 	}
 }
 
+/// <summary>
+/// Processes mouse input
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Event newEvent = t_event;
@@ -829,6 +915,10 @@ void UiBuildMode::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	}	
 }
 
+/// <summary>
+/// renders UI Elements and GUI
+/// </summary>
+/// <param name="t_window"></param>
 void UiBuildMode::render(sf::RenderWindow* t_window)
 {
 	t_window->draw(m_bgBottom);

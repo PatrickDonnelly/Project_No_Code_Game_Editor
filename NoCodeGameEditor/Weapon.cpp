@@ -1,6 +1,10 @@
 #include "Weapon.h"
 #include <iostream>
 
+/// <summary>
+/// Overloaded cinstructor
+/// </summary>
+/// <param name="t_player"></param>
 Weapon::Weapon(Player* t_player) : m_player(t_player)
 {
 	m_frameSize = 16;
@@ -12,20 +16,32 @@ Weapon::Weapon(Player* t_player) : m_player(t_player)
 	setUpBoundsColour();
 }
 
+/// <summary>
+/// Deafult constructor
+/// </summary>
 Weapon::Weapon()
 {
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 Weapon::~Weapon()
 {
 }
 
+/// <summary>
+/// Initialise the weapon
+/// </summary>
 void Weapon::init()
 {
 	m_colliding = false;
 	setUpSprite();
 }
 
+/// <summary>
+/// Loads the texture for the weapon
+/// </summary>
 void Weapon::loadAssets()
 {
 	if (!m_weaponTexture.loadFromFile("ASSETS\\IMAGES\\spear_2.png"))
@@ -34,6 +50,9 @@ void Weapon::loadAssets()
 	}
 }
 
+/// <summary>
+/// Sets up sprite
+/// </summary>
 void Weapon::setUpSprite()
 {
 	m_weaponSprite.setTexture(m_weaponTexture);
@@ -41,6 +60,13 @@ void Weapon::setUpSprite()
 	m_weaponSprite.setScale(1.5f, 1.0f);
 }
 
+/// <summary>
+/// Sets up the collidable bounds of the weapon
+/// </summary>
+/// <param name="t_width"></param>
+/// <param name="t_height"></param>
+/// <param name="t_offsetX"></param>
+/// <param name="t_offsetY"></param>
 void Weapon::setUpWeaponBounds(float t_width, float t_height, float t_offsetX, float t_offsetY)
 {
 	m_weaponBounds.setSize(sf::Vector2f(t_width, t_height));
@@ -49,6 +75,9 @@ void Weapon::setUpWeaponBounds(float t_width, float t_height, float t_offsetX, f
 								m_player->m_playerSprite.getPosition().y + t_offsetY);
 }
 
+/// <summary>
+/// sets the colour of the bounding box
+/// </summary>
 void Weapon::setUpBoundsColour()
 {
 	m_weaponBounds.setFillColor(sf::Color(sf::Color(255, 0, 0, 50)));
@@ -56,6 +85,11 @@ void Weapon::setUpBoundsColour()
 	m_weaponBounds.setOutlineThickness(1.0f);
 }
 
+
+/// <summary>
+/// Processes key presses
+/// </summary>
+/// <param name="t_event"></param>
 void Weapon::processEvents(sf::Event t_event)
 {
 	if (sf::Event::KeyPressed == t_event.type)
@@ -77,6 +111,11 @@ void Weapon::processEvents(sf::Event t_event)
 	}
 }
 
+/// <summary>
+/// Updates weapon
+/// </summary>
+/// <param name="deltaTime"></param>
+/// <param name="window"></param>
 void Weapon::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 	if (m_weaponUsed)
@@ -118,6 +157,10 @@ void Weapon::update(sf::Time deltaTime, sf::RenderWindow& window)
 	m_weaponSprite.setPosition(m_weaponBounds.getPosition());
 }
 
+/// <summary>
+/// renders weapon
+/// </summary>
+/// <param name="window"></param>
 void Weapon::render(sf::RenderWindow& window)
 {
 	if (m_weaponUsed && weaponCoolDown < 0.30)
@@ -127,11 +170,19 @@ void Weapon::render(sf::RenderWindow& window)
 	}
 }
 
+/// <summary>
+/// Gets the weapon sprite
+/// </summary>
+/// <returns></returns>
 sf::Sprite* Weapon::getSprite()
 {
 	return &m_weaponSprite;
 }
 
+/// <summary>
+/// Get the weapons bounds
+/// </summary>
+/// <returns></returns>
 sf::RectangleShape* Weapon::getWeaponBounds()
 {
 	return &m_weaponBounds;

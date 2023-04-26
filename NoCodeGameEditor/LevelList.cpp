@@ -1,10 +1,17 @@
 #include "LevelList.h"
 
+/// <summary>
+/// Default constructor for the level list
+/// </summary>
 LevelList::LevelList()
 {
 
 }
 
+/// <summary>
+/// overloaded constructor for the level list that takes in the current game state
+/// </summary>
+/// <param name="t_gameState"></param>
 LevelList::LevelList(GameState* t_gameState)
 {
 	m_fontManager = FontManager();
@@ -29,10 +36,16 @@ LevelList::LevelList(GameState* t_gameState)
 	initText();
 }
 
+/// <summary>
+/// Deconstructor for the level list class
+/// </summary>
 LevelList::~LevelList()
 {
 }
 
+/// <summary>
+/// Initialises the text object of the level list class
+/// </summary>
 void LevelList::initText()
 {
 	m_text.setFont(m_font);
@@ -45,6 +58,11 @@ void LevelList::initText()
 		m_bg.getPosition().y + m_text.getGlobalBounds().height / 2);
 }
 
+/// <summary>
+/// Sets the visible row of levels from the entire list of levels
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void LevelList::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Vector2f pixelPos = sf::Vector2f(sf::Mouse::getPosition(t_window).x, sf::Mouse::getPosition(t_window).y);
@@ -108,6 +126,9 @@ void LevelList::setVisibleRow(sf::Event t_event, sf::RenderWindow& t_window)
 	//std::cout << m_currentRowIndex << std::endl;
 }
 
+/// <summary>
+/// Loads in the names of levels and stores them by reading folder names from the games folder directory
+/// </summary>
 void LevelList::loadLevelList()
 {
 	m_noOfGamesFound = 0;
@@ -138,6 +159,9 @@ void LevelList::loadLevelList()
 	//}
 }
 
+/// <summary>
+/// Sets up the buttons for the list of levels
+/// </summary>
 void LevelList::setUpGameButtons()
 {
 	int buttonsMade = 0;
@@ -197,6 +221,9 @@ void LevelList::setUpGameButtons()
 	}
 }
 
+/// <summary>
+/// refreshes the level list and updates it everytime a new game is made
+/// </summary>
 void LevelList::refreshLevelList()
 {
 	m_gameNames.clear();
@@ -205,6 +232,10 @@ void LevelList::refreshLevelList()
 	setUpGameButtons();
 }
 
+/// <summary>
+/// Draws the level list to the window
+/// </summary>
+/// <param name="t_window"></param>
 void LevelList::render(sf::RenderWindow* t_window)
 {
 
@@ -240,6 +271,11 @@ void LevelList::render(sf::RenderWindow* t_window)
 	}
 }
 
+/// <summary>
+/// Processes mouse input when the level list is active
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void LevelList::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	sf::Event newEvent = t_event;
@@ -264,6 +300,10 @@ void LevelList::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	setVisibleRow(t_event, t_window);
 }
 
+/// <summary>
+/// gets the name of the game to be loaded
+/// </summary>
+/// <returns></returns>
 std::string LevelList::getGameToBeLoaded()
 {
 	return m_gameName;

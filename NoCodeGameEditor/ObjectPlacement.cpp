@@ -1,9 +1,19 @@
 #include "ObjectPlacement.h"
 
+/// <summary>
+/// Default constructor for object placement
+/// </summary>
 ObjectPlacement::ObjectPlacement()
 {
 }
 
+/// <summary>
+/// Overloaded constructor for object placement that takes
+/// in a pointer to the game state, grid and to the texture manager
+/// </summary>
+/// <param name="t_gameState"></param>
+/// <param name="t_grid"></param>
+/// <param name="t_textureManager"></param>
 ObjectPlacement::ObjectPlacement(GameState* t_gameState, Grid* t_grid, TextureManager* t_textureManager)
 {
 	m_currentlySelected = nullptr;
@@ -16,10 +26,17 @@ ObjectPlacement::ObjectPlacement(GameState* t_gameState, Grid* t_grid, TextureMa
 	m_area.setOutlineColor(sf::Color(255, 0, 0));
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 ObjectPlacement::~ObjectPlacement()
 {
 }
 
+/// <summary>
+/// Check if a valid object was selected was made
+/// </summary>
+/// <returns></returns>
 bool ObjectPlacement::checkValidSelection()
 {
 	if (!m_selectedObject.empty())
@@ -29,6 +46,12 @@ bool ObjectPlacement::checkValidSelection()
 	return false;
 }
 
+/// <summary>
+/// Check for a double click on the mouse
+/// </summary>
+/// <param name="t_clock"></param>
+/// <param name="t_doubleClickTime"></param>
+/// <returns></returns>
 bool ObjectPlacement::checkForDoubleClick(sf::Clock& t_clock, sf::Time& t_doubleClickTime)
 {
 	std::cout << "Checking for Double Click" << std::endl;
@@ -42,6 +65,11 @@ bool ObjectPlacement::checkForDoubleClick(sf::Clock& t_clock, sf::Time& t_double
 	return false;
 }
 
+/// <summary>
+/// swaps two values
+/// </summary>
+/// <param name="t_smallerNumber"></param>
+/// <param name="t_biggerNumber"></param>
 void ObjectPlacement::swapInts(int& t_smallerNumber, int& t_biggerNumber)
 {
 	if (t_biggerNumber < t_smallerNumber)
@@ -52,6 +80,11 @@ void ObjectPlacement::swapInts(int& t_smallerNumber, int& t_biggerNumber)
 	}
 }
 
+/// <summary>
+/// processes mouse events
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void ObjectPlacement::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 	placeMultipleObjects(t_event, t_window);
@@ -86,6 +119,10 @@ void ObjectPlacement::processEvents(sf::Event t_event, sf::RenderWindow& t_windo
 	}
 }
 
+/// <summary>
+/// Sets the initial position of where a mouse clicked occured
+/// </summary>
+/// <param name="m_window"></param>
 void ObjectPlacement::setInitialPress(sf::RenderWindow& m_window)
 {
 	if (!initialPress)
@@ -100,6 +137,10 @@ void ObjectPlacement::setInitialPress(sf::RenderWindow& m_window)
 	}
 }
 
+/// <summary>
+/// set the end of a mouse press
+/// </summary>
+/// <param name="m_window"></param>
 void ObjectPlacement::setEndOfPress(sf::RenderWindow& m_window)
 {
 	initialPress = false;
@@ -109,6 +150,10 @@ void ObjectPlacement::setEndOfPress(sf::RenderWindow& m_window)
 	endCol = m_worldPos.y / 32;
 }
 
+/// <summary>
+/// Set the area of where multiple objects are going to be placed.
+/// </summary>
+/// <param name="m_window"></param>
 void ObjectPlacement::scaleArea(sf::RenderWindow& m_window)
 {
 	sf::Vector2i mousePosition = sf::Mouse::getPosition(m_window);
@@ -116,6 +161,12 @@ void ObjectPlacement::scaleArea(sf::RenderWindow& m_window)
 	m_area.setSize(sf::Vector2f(currentMousePosition.x - m_worldPos.x, currentMousePosition.y - m_worldPos.y));
 }
 
+/// <summary>
+/// Allows you place multiple objects
+///  as well as deleting them
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="m_window"></param>
 void ObjectPlacement::placeMultipleObjects(sf::Event t_event, sf::RenderWindow& m_window)
 {
 	if (t_event.type == sf::Event::MouseButtonPressed && sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
@@ -198,6 +249,13 @@ void ObjectPlacement::placeMultipleObjects(sf::Event t_event, sf::RenderWindow& 
 	}
 }
 
+/// <summary>
+/// iterate through a vector of objects and delete any that fall
+/// within the highlighted area
+/// </summary>
+/// <param name="t_objects"></param>
+/// <param name="t_row"></param>
+/// <param name="t_col"></param>
 void ObjectPlacement::deleteMultipleObjects(std::vector<Object*>& t_objects, int t_row, int t_col)
 {
 	for (std::vector<Object*>::iterator iter = t_objects.begin(); iter != t_objects.end();)
@@ -214,6 +272,11 @@ void ObjectPlacement::deleteMultipleObjects(std::vector<Object*>& t_objects, int
 	}
 }
 
+/// <summary>
+/// Move a selected object to a new location on the grid
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="m_window"></param>
 void ObjectPlacement::moveObject(sf::Event t_event, sf::RenderWindow& m_window)
 {
 	if (t_event.type == sf::Event::KeyReleased)
@@ -230,6 +293,11 @@ void ObjectPlacement::moveObject(sf::Event t_event, sf::RenderWindow& m_window)
 	}
 }
 
+/// <summary>
+/// Place a selected object on the grid
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="m_window"></param>
 void ObjectPlacement::placeObject(sf::Event t_event, sf::RenderWindow& m_window)
 {
 	sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
@@ -281,6 +349,11 @@ void ObjectPlacement::placeObject(sf::Event t_event, sf::RenderWindow& m_window)
 	}
 }
 
+/// <summary>
+/// Select an object already on the grid
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="m_window"></param>
 void ObjectPlacement::selectObject(sf::Event t_event, sf::RenderWindow& m_window)
 {
 	sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
@@ -349,6 +422,11 @@ void ObjectPlacement::selectObject(sf::Event t_event, sf::RenderWindow& m_window
 	}
 }
 
+/// <summary>
+/// Delete an object
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="m_window"></param>
 void ObjectPlacement::removeObject(sf::Event t_event, sf::RenderWindow& m_window)
 {
 	sf::Vector2i pixelPos = sf::Mouse::getPosition(m_window);
@@ -402,6 +480,11 @@ void ObjectPlacement::removeObject(sf::Event t_event, sf::RenderWindow& m_window
 	}
 }
 
+/// <summary>
+/// create an object and set ithe type of object to be placed on the grid.
+/// </summary>
+/// <param name="row"></param>
+/// <param name="col"></param>
 void ObjectPlacement::createObject(int row, int col)
 {
 	if (m_grid->m_vectGrid.at(row).at(col).m_hasObject == false)
@@ -434,6 +517,9 @@ void ObjectPlacement::createObject(int row, int col)
 	}
 }
 
+/// <summary>
+/// Clear the grid and reset its tiles values to have no object
+/// </summary>
 void ObjectPlacement::clearObjects()
 {
 	m_enemies.clear();
@@ -462,7 +548,11 @@ void ObjectPlacement::setSelectedObject(std::string t_path, std::string t_object
 	m_selectedObject = t_path + t_objectName;
 }
 
-
+/// <summary>
+/// Update collider sizes and the currently selected object
+/// </summary>
+/// <param name="t_deltaTime"></param>
+/// <param name="m_window"></param>
 void ObjectPlacement::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 {
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
@@ -508,6 +598,10 @@ void ObjectPlacement::update(sf::Time t_deltaTime, sf::RenderWindow& m_window)
 	}
 }
 
+/// <summary>
+/// Renders placed objects, independent colliders and the highlighted areas
+/// </summary>
+/// <param name="t_window"></param>
 void ObjectPlacement::render(sf::RenderWindow* t_window)
 {
 	renderPlacedObjects(m_decorations, t_window, m_collidersEnabled);

@@ -1,19 +1,32 @@
 #include "DropDownMenu.h"
 
+/// <summary>
+/// Default constructor for the drop down menu
+/// </summary>
 DropDownMenu::DropDownMenu()
 {
 }
 
+/// <summary>
+/// Drop down menu overloaded constructor
+/// </summary>
+/// <param name="t_type"></param>
 DropDownMenu::DropDownMenu(std::string t_type)
 {
 	m_type = t_type;
 	setUpDropDownMenu();
 }
 
+/// <summary>
+/// Deconstructor
+/// </summary>
 DropDownMenu::~DropDownMenu()
 {
 }
 
+/// <summary>
+/// Set up the drop down menu for dialogue
+/// </summary>
 void DropDownMenu::setUpDropDownMenu()
 {
 	if (m_type == "IsDialogue")
@@ -39,6 +52,11 @@ void DropDownMenu::setUpDropDownMenu()
 	}
 }
 
+/// <summary>
+/// Check what options are enabled in the drop down menu for dialogue
+/// </summary>
+/// <param name="t_dialoguePaths"></param>
+/// <param name="t_fileName"></param>
 void DropDownMenu::checkEnabledOptions(std::map<std::string, std::string>& t_dialoguePaths, std::string t_fileName)
 {
 	if (m_type == "IsDialogue")
@@ -71,6 +89,13 @@ void DropDownMenu::checkEnabledOptions(std::map<std::string, std::string>& t_dia
 
 }
 
+/// <summary>
+/// Checks if a button in the drop down menu is clicked for the dialogue.
+/// If it is set that option to enabled.
+/// Set the rest of the options to disabled
+/// </summary>
+/// <param name="t_event"></param>
+/// <param name="t_window"></param>
 void DropDownMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 {
 
@@ -136,6 +161,10 @@ void DropDownMenu::processEvents(sf::Event t_event, sf::RenderWindow& t_window)
 	}
 }
 
+/// <summary>
+/// Rebder the drop down menu
+/// </summary>
+/// <param name="t_window"></param>
 void DropDownMenu::render(sf::RenderWindow* t_window)
 {
 	if (m_type == "IsDialogue")
@@ -151,6 +180,11 @@ void DropDownMenu::render(sf::RenderWindow* t_window)
 	}
 }
 
+/// <summary>
+/// Set the position of the drop down menu
+/// </summary>
+/// <param name="t_position"></param>
+/// <param name="t_width"></param>
 void DropDownMenu::setDropDownMenuPosition(sf::Vector2f t_position, float t_width)
 {
 	m_dropDownMenuButton->setButtonPosition(sf::Vector2f(t_position.x - (t_width/2) -32, t_position.y));
@@ -163,8 +197,5 @@ void DropDownMenu::setDropDownMenuPosition(sf::Vector2f t_position, float t_widt
 	//	sf::Vector2f(
 	//		m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().x + (m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonSprite().getGlobalBounds().width / 2) + 32,
 	//		m_dialogueButtons.at(m_dialogueButtons.size() - 1)->getButtonPosition().y));
-
-
-
 
 }

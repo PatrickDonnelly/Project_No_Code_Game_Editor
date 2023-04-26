@@ -1,6 +1,9 @@
 #include "Player.h"
 #include <iostream>
 
+/// <summary>
+/// Default constructor for the player object
+/// </summary>
 Player::Player()
 {
 	m_frameSize = 16;
@@ -16,15 +19,25 @@ Player::Player()
 	setUpAnimation();
 }
 
+/// <summary>
+/// Deconstructor for the player object
+/// </summary>
 Player::~Player()
 {
 }
 
+/// <summary>
+/// Initialise the player object
+/// </summary>
 void Player::init()
 {
 	m_colliding = false;
 	setUpSprite();
 }
+
+/// <summary>
+/// load the player objects texture
+/// </summary>
 void Player::loadAssets()
 {
 	if (!m_playerTexture.loadFromFile("ASSETS\\IMAGES\\" + m_spriteSheetName))
@@ -33,7 +46,11 @@ void Player::loadAssets()
 	}
 }
 
-
+/// <summary>
+/// Set up the colliding bounds
+/// interaction bounds
+/// and centre point of the player
+/// </summary>
 void Player::setUpPlayerBounds()
 {
 	int offset = 0;
@@ -57,6 +74,9 @@ void Player::setUpPlayerBounds()
 	m_playerInteractionRadius.setPosition(m_playerSprite.getPosition().x - 16.0f, m_playerSprite.getPosition().y);
 }
 
+/// <summary>
+/// Set up the players animation
+/// </summary>
 void Player::setUpAnimation()
 {
 	animations[int(AnimationState::IdleDown)] = Animator(0, 0, m_frameSize, m_frameSize, m_spriteSheetName,1);
@@ -69,6 +89,9 @@ void Player::setUpAnimation()
 	animations[int(AnimationState::WalkingRight)] = Animator(32, 0, m_frameSize, m_frameSize, m_spriteSheetName, 3);
 }
 
+/// <summary>
+/// Set up the players sprite
+/// </summary>
 void Player::setUpSprite()
 {
 	m_playerSprite.setTexture(m_playerTexture);
@@ -79,6 +102,11 @@ void Player::setUpSprite()
 	m_playerSprite.setPosition(m_defaultPos);
 }
 
+/// <summary>
+/// Process player movement
+/// </summary>
+/// <param name="deltaTime"></param>
+/// <returns></returns>
 bool Player::movement(sf::Time deltaTime)
 {
 	moving = false;
@@ -115,6 +143,11 @@ bool Player::movement(sf::Time deltaTime)
 }
 
 
+/// <summary>
+/// Update player
+/// </summary>
+/// <param name="deltaTime"></param>
+/// <param name="window"></param>
 void Player::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 	if (!movement(deltaTime))
@@ -142,6 +175,10 @@ void Player::update(sf::Time deltaTime, sf::RenderWindow& window)
 	
 }
 
+/// <summary>
+/// render player and bounds if enabled
+/// </summary>
+/// <param name="window"></param>
 void Player::render(sf::RenderWindow& window)
 {
 	window.draw(m_playerSprite);
@@ -153,21 +190,38 @@ void Player::render(sf::RenderWindow& window)
 	}
 }
 
+/// <summary>
+/// gets the player sprite
+/// </summary>
+/// <returns></returns>
 sf::Sprite* Player::getSprite()
 {
 	return &m_playerSprite;
 }
 
+/// <summary>
+/// Gets the player bounds
+/// </summary>
+/// <returns></returns>
 sf::RectangleShape* Player::getBounds()
 {
 	return &m_playerBounds;
 }
 
+/// <summary>
+/// Gets the animation state of the player
+/// </summary>
+/// <returns></returns>
 AnimationState Player::getAnimationState()
 {
 	return currentAnimationState;
 }
 
+/// <summary>
+/// Sets the animation state of the player
+/// </summary>
+/// <param name="t_current"></param>
+/// <param name="t_new"></param>
 void Player::setAnimationState(AnimationState& t_current, AnimationState t_new)
 {
 	if (t_current != t_new)
@@ -176,12 +230,21 @@ void Player::setAnimationState(AnimationState& t_current, AnimationState t_new)
 	}
 }
 
+/// <summary>
+/// Animates the player
+/// </summary>
+/// <param name="deltaTime"></param>
 void Player::animate(sf::Time deltaTime)
 {
 	animations[int(currentAnimationState)].Update(deltaTime.asSeconds());
 	animations[int(currentAnimationState)].ApplyChangesToSprite(m_playerSprite);
 }
 
+/// <summary>
+/// Checks if the player is interacting with an object or not
+/// </summary>
+/// <param name="t_event"></param>
+/// <returns></returns>
 bool Player::isInteracting(sf::Event t_event)
 {
 
@@ -195,6 +258,11 @@ bool Player::isInteracting(sf::Event t_event)
 	
 	return false;
 }
+
+/// <summary>
+/// Returns the players interaction bounds
+/// </summary>
+/// <returns></returns>
 sf::RectangleShape* Player::getInteractionBounds()
 {
 	return &m_playerInteractionRadius;
