@@ -1,0 +1,5 @@
+<map id="Animator::Update" name="Animator::Update">
+<area shape="rect" id="node1" title="Updates the animation." alt="" coords="321,5,444,31"/>
+<area shape="rect" id="node2" href="$class_player.html#af2d90a8a99b4d4f3efdb9b14b682bc3f" title="Animates the player." alt="" coords="160,5,273,31"/>
+<area shape="rect" id="node3" href="$class_player.html#a9a05f2ffa498b33cce9237d1da00f9d7" title="Update player." alt="" coords="5,5,112,31"/>
+</map>

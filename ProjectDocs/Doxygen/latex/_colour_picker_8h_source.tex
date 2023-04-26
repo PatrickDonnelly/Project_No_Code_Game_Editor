@@ -1,0 +1,47 @@
+\doxysection{Colour\+Picker.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLOURPICKER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLOURPICKER\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}TextureManager.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }ColourPicker}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ ColourPicker();}
+\DoxyCodeLine{00012\ \ \ \ \ \string~ColourPicker();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ setPopUpEnabled(\textcolor{keywordtype}{bool}\ t\_onOff)\ \{\ m\_enabled\ =\ t\_onOff;\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled()\ \{\ \textcolor{keywordflow}{return}\ m\_enabled;\ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ processEvents(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ Button*\ getButtons()\ \{\ \textcolor{keywordflow}{return}\ m\_closeButton;\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ sf::Color\ getColor()\ \{\ \textcolor{keywordflow}{return}\ m\_selectedColor;\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ initColorPicker();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpCloseButton();}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkIfCloseClicked(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ checkIfColorPicked(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ TextureManager*\ m\_textureManager;}
+\DoxyCodeLine{00032\ \ \ \ \ sf::Texture\ m\_colorPickerTexture;}
+\DoxyCodeLine{00033\ \ \ \ \ sf::Image\ m\_colorPicker;}
+\DoxyCodeLine{00034\ \ \ \ \ sf::Sprite\ m\_colorPickerSprite;}
+\DoxyCodeLine{00035\ \ \ \ \ sf::Color\ m\_selectedColor;}
+\DoxyCodeLine{00036\ \ \ \ \ Button*\ m\_closeButton;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00039\ \ \ \ \ sf::RectangleShape\ m\_colorPickerBG;}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !COLOURPICKER\_HPP}}
+\DoxyCodeLine{00042\ }
+
+\end{DoxyCode}

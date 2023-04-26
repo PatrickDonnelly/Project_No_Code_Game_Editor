@@ -1,0 +1,308 @@
+\doxysection{Save\+Game Class Reference}
+\label{class_save_game}\index{SaveGame@{SaveGame}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_save_game_adac90ae8c83a5e7fd166d464e147bcf7}} 
+{\bfseries Save\+Game} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the save game class. \end{DoxyCompactList}\item 
+\textbf{ Save\+Game} (\textbf{ Game\+State} $\ast$t\+\_\+current\+Game\+State)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the save game class that takes in the game state. \end{DoxyCompactList}\item 
+\mbox{\label{class_save_game_a0f8fea2d436f5c3cbc22618817b272c8}} 
+{\bfseries $\sim$\+Save\+Game} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor for the save game class. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the save game screen and text. \end{DoxyCompactList}\item 
+void \textbf{ process\+Events} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Checks if the colour picker is enabled and processes any clicks made at its location. Checks if any input fields were interacted with. Checks if any formatting styles were interacted with. \end{DoxyCompactList}\item 
+\mbox{\label{class_save_game_a656d53ac2edc3b0fd0895d02b3b5d179}} 
+void {\bfseries set\+Enabled} (bool t\+\_\+on\+Off)
+\item 
+std\+::string \textbf{ get\+Title} (bool t\+\_\+is\+Main\+Title)
+\begin{DoxyCompactList}\small\item\em Gets the text of the main title or the subtitle depending on whether the parametre passed in is true or false. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Italics} (bool t\+\_\+is\+Main\+Title)
+\begin{DoxyCompactList}\small\item\em Gets whether or not italics is enabled on the main title or the subtitle depending on whether the parametre passed in is true or false. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Underlined} (bool t\+\_\+is\+Main\+Title)
+\begin{DoxyCompactList}\small\item\em Gets whether or not underline is enabled on the main title or the subtitle depending on whether the parametre passed in is true or false. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Bold} (bool t\+\_\+is\+Main\+Title)
+\begin{DoxyCompactList}\small\item\em Gets whether or not bold is enabled on the main title or the subtitle depending on whether the parametre passed in is true or false. \end{DoxyCompactList}\item 
+int \textbf{ get\+Color\+Red\+Value} (bool t\+\_\+is\+Main\+Title)
+\begin{DoxyCompactList}\small\item\em Gets red colour value on the main title or the subtitle depending on whether the parametre passed in is true or false. \end{DoxyCompactList}\item 
+int \textbf{ get\+Color\+Green\+Value} (bool t\+\_\+is\+Main\+Title)
+\begin{DoxyCompactList}\small\item\em Gets green colour value on the main title or the subtitle depending on whether the parametre passed in is true or false. \end{DoxyCompactList}\item 
+int \textbf{ get\+Color\+Blue\+Value} (bool t\+\_\+is\+Main\+Title)
+\begin{DoxyCompactList}\small\item\em Gets blue colour value on the main title or the subtitle depending on whether the parametre passed in is true or false. \end{DoxyCompactList}\item 
+\mbox{\label{class_save_game_a5430f704ca6cb8de32d6e26ed00c1c90}} 
+std\+::string {\bfseries get\+Folder\+Path} ()
+\item 
+\mbox{\label{class_save_game_abc5abfc7303525b115bc1db1bd0b140d}} 
+void {\bfseries set\+Main\+Title} (std\+::string t\+\_\+string)
+\item 
+\mbox{\label{class_save_game_ad38b3d43984e0a2c6a19b2b2228ed88d}} 
+void {\bfseries set\+Main\+Title\+Input\+Field} (std\+::string t\+\_\+string)
+\item 
+\mbox{\label{class_save_game_a80f368e955a9678a6bb5e39b15a2e895}} 
+void {\bfseries set\+Main\+Italics} (bool t\+\_\+is\+Italics)
+\item 
+\mbox{\label{class_save_game_a7a6bfa834ca0aed08b173f74f34a7c47}} 
+void {\bfseries set\+Main\+Underlined} (bool t\+\_\+is\+Underlined)
+\item 
+\mbox{\label{class_save_game_a007b2bd3b0a539d8690f950c66629b5a}} 
+void {\bfseries set\+Main\+Bold} (bool t\+\_\+is\+Bold)
+\item 
+\mbox{\label{class_save_game_a35a7bfcf419d7216b0758f4082ef114e}} 
+void {\bfseries set\+Main\+Red\+Value} (int t\+\_\+red\+Value)
+\item 
+\mbox{\label{class_save_game_a22a6dbdbb99bb70ac8d88f1c785ad878}} 
+void {\bfseries set\+Main\+Green\+Value} (int t\+\_\+green\+Value)
+\item 
+\mbox{\label{class_save_game_ade98b673d10b6de24492099f5fd9a1df}} 
+void {\bfseries set\+Main\+Blue\+Value} (int t\+\_\+blue\+Value)
+\item 
+\mbox{\label{class_save_game_abe604290269f1038283da01346daf41f}} 
+void {\bfseries set\+Main\+Color} (int t\+\_\+red, int t\+\_\+green, int t\+\_\+blue)
+\item 
+\mbox{\label{class_save_game_a4f7a41491548e4aba898c896df2c9878}} 
+void {\bfseries set\+Sub\+Title} (std\+::string t\+\_\+string)
+\item 
+\mbox{\label{class_save_game_a7688ec0e94315d86394fccff2094ee5e}} 
+void {\bfseries set\+Sub\+Title\+Input\+Field} (std\+::string t\+\_\+string)
+\item 
+\mbox{\label{class_save_game_a1d3b4164cd981720fbacf7df7f87f8d0}} 
+void {\bfseries set\+Sub\+Italics} (bool t\+\_\+is\+Italics)
+\item 
+\mbox{\label{class_save_game_a34a4c80aceb7c059104ff6e246ede718}} 
+void {\bfseries set\+Sub\+Underlined} (bool t\+\_\+is\+Underlined)
+\item 
+\mbox{\label{class_save_game_a6b7e993135a76e8e2fee67366d43e275}} 
+void {\bfseries set\+Sub\+Bold} (bool t\+\_\+is\+Bold)
+\item 
+\mbox{\label{class_save_game_a93ff0f9d65439b0fb0c0455252f3b05d}} 
+void {\bfseries set\+Sub\+Red\+Value} (int t\+\_\+red\+Value)
+\item 
+\mbox{\label{class_save_game_ab32c06c66d0ab89b4a4c26000554d439}} 
+void {\bfseries set\+Sub\+Green\+Value} (int t\+\_\+green\+Value)
+\item 
+\mbox{\label{class_save_game_adcaa9a91304065474ea41429ed87e83e}} 
+void {\bfseries set\+Sub\+Blue\+Value} (int t\+\_\+blue\+Value)
+\item 
+\mbox{\label{class_save_game_a36a64f285b7d50ece836ca25677bb589}} 
+void {\bfseries set\+Sub\+Color} (int t\+\_\+red, int t\+\_\+green, int t\+\_\+blue)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_save_game_ad1000cd72c7681d730428b69848b5489}} 
+\index{SaveGame@{SaveGame}!SaveGame@{SaveGame}}
+\index{SaveGame@{SaveGame}!SaveGame@{SaveGame}}
+\doxysubsubsection{SaveGame()}
+{\footnotesize\ttfamily Save\+Game\+::\+Save\+Game (\begin{DoxyParamCaption}\item[{\textbf{ Game\+State} $\ast$}]{t\+\_\+current\+Game\+State }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the save game class that takes in the game state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+current\+Game\+State} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_save_game_ad1000cd72c7681d730428b69848b5489_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_save_game_a0cbf05c08f6ee578888d44db82f6c481}} 
+\index{SaveGame@{SaveGame}!getBold@{getBold}}
+\index{getBold@{getBold}!SaveGame@{SaveGame}}
+\doxysubsubsection{getBold()}
+{\footnotesize\ttfamily bool Save\+Game\+::get\+Bold (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+is\+Main\+Title }\end{DoxyParamCaption})}
+
+
+
+Gets whether or not bold is enabled on the main title or the subtitle depending on whether the parametre passed in is true or false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+is\+Main\+Title} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_save_game_a303f76a18a16c1fe297a824bd429d2f7}} 
+\index{SaveGame@{SaveGame}!getColorBlueValue@{getColorBlueValue}}
+\index{getColorBlueValue@{getColorBlueValue}!SaveGame@{SaveGame}}
+\doxysubsubsection{getColorBlueValue()}
+{\footnotesize\ttfamily int Save\+Game\+::get\+Color\+Blue\+Value (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+is\+Main\+Title }\end{DoxyParamCaption})}
+
+
+
+Gets blue colour value on the main title or the subtitle depending on whether the parametre passed in is true or false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+is\+Main\+Title} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_save_game_a8a08ae7790f56fb538310d5de24c1339}} 
+\index{SaveGame@{SaveGame}!getColorGreenValue@{getColorGreenValue}}
+\index{getColorGreenValue@{getColorGreenValue}!SaveGame@{SaveGame}}
+\doxysubsubsection{getColorGreenValue()}
+{\footnotesize\ttfamily int Save\+Game\+::get\+Color\+Green\+Value (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+is\+Main\+Title }\end{DoxyParamCaption})}
+
+
+
+Gets green colour value on the main title or the subtitle depending on whether the parametre passed in is true or false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+is\+Main\+Title} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_save_game_a99d4c4432dd687c80641e0b873cadede}} 
+\index{SaveGame@{SaveGame}!getColorRedValue@{getColorRedValue}}
+\index{getColorRedValue@{getColorRedValue}!SaveGame@{SaveGame}}
+\doxysubsubsection{getColorRedValue()}
+{\footnotesize\ttfamily int Save\+Game\+::get\+Color\+Red\+Value (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+is\+Main\+Title }\end{DoxyParamCaption})}
+
+
+
+Gets red colour value on the main title or the subtitle depending on whether the parametre passed in is true or false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+is\+Main\+Title} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_save_game_aab543b7b832d334c689a6f856433f2ba}} 
+\index{SaveGame@{SaveGame}!getItalics@{getItalics}}
+\index{getItalics@{getItalics}!SaveGame@{SaveGame}}
+\doxysubsubsection{getItalics()}
+{\footnotesize\ttfamily bool Save\+Game\+::get\+Italics (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+is\+Main\+Title }\end{DoxyParamCaption})}
+
+
+
+Gets whether or not italics is enabled on the main title or the subtitle depending on whether the parametre passed in is true or false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+is\+Main\+Title} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_save_game_a27ee53d895c21b2160318daa9538b16f}} 
+\index{SaveGame@{SaveGame}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!SaveGame@{SaveGame}}
+\doxysubsubsection{getTitle()}
+{\footnotesize\ttfamily std\+::string Save\+Game\+::get\+Title (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+is\+Main\+Title }\end{DoxyParamCaption})}
+
+
+
+Gets the text of the main title or the subtitle depending on whether the parametre passed in is true or false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+is\+Main\+Title} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_save_game_a27ee53d895c21b2160318daa9538b16f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_save_game_a2e21308f0407446c8156693b4c552da6}} 
+\index{SaveGame@{SaveGame}!getUnderlined@{getUnderlined}}
+\index{getUnderlined@{getUnderlined}!SaveGame@{SaveGame}}
+\doxysubsubsection{getUnderlined()}
+{\footnotesize\ttfamily bool Save\+Game\+::get\+Underlined (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+is\+Main\+Title }\end{DoxyParamCaption})}
+
+
+
+Gets whether or not underline is enabled on the main title or the subtitle depending on whether the parametre passed in is true or false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+is\+Main\+Title} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_save_game_a624d58d0bfac9f0cf9a392faf384621f}} 
+\index{SaveGame@{SaveGame}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!SaveGame@{SaveGame}}
+\doxysubsubsection{processEvents()}
+{\footnotesize\ttfamily void Save\+Game\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Checks if the colour picker is enabled and processes any clicks made at its location. Checks if any input fields were interacted with. Checks if any formatting styles were interacted with. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_save_game_a624d58d0bfac9f0cf9a392faf384621f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_save_game_aa581f0ec1ff95133867a8546a9d9e8c5}} 
+\index{SaveGame@{SaveGame}!render@{render}}
+\index{render@{render}!SaveGame@{SaveGame}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Save\+Game\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws the save game screen and text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_save_game_aa581f0ec1ff95133867a8546a9d9e8c5_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Save\+Game.\+h\item 
+Save\+Game.\+cpp\end{DoxyCompactItemize}

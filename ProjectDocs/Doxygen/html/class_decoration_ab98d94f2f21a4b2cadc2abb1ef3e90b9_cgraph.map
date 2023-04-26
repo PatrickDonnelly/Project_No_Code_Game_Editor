@@ -1,0 +1,7 @@
+<map id="Decoration::init" name="Decoration::init">
+<area shape="rect" id="node1" title="initialise object" alt="" coords="5,31,115,56"/>
+<area shape="rect" id="node2" href="$class_decoration.html#aa16e1dce7065eefa08246f702eae60e9" title="Sets up the bounds of the object." alt="" coords="163,5,333,31"/>
+<area shape="rect" id="node3" href="$class_decoration.html#aca447471c1245d8e19240a738ca34eab" title="Sets up the texture and sprite." alt="" coords="168,55,328,80"/>
+<area shape="rect" id="node4" href="$class_decoration.html#a63defb1c77417c5598684760609fb1b2" title="Retrieves the texture and sets the sprites texture to it." alt="" coords="381,55,535,80"/>
+<area shape="rect" id="node5" href="$class_texture_manager.html#aabc3af4e63581ca3ba6ab964016b254f" title="Checks if a texture is loaded in memory and returns it." alt="" coords="583,55,767,80"/>
+</map>

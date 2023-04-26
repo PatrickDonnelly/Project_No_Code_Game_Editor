@@ -1,0 +1,5 @@
+<map id="DialogueBox::render" name="DialogueBox::render">
+<area shape="rect" id="node1" title="renders the dialogue box" alt="" coords="179,31,317,56"/>
+<area shape="rect" id="node2" href="$class_enemy.html#adce121a5d559e9d666d7f88c7a26dc1f" title="renders the enmy objects" alt="" coords="15,5,121,31"/>
+<area shape="rect" id="node3" href="$class_text_editor.html#a0f3d3b5043a07393a12d95b82c2ec091" title="Render the text editor." alt="" coords="5,55,131,80"/>
+</map>

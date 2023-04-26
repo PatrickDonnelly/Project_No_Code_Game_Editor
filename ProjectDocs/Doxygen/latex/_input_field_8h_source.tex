@@ -1,0 +1,59 @@
+\doxysection{Input\+Field.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INPUTFIELD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INPUTFIELD\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ ENTER\_KEY\ 13}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ESCAPE\_KEY\ 27}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ BACKSPACE\_KEY\ 8}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }InputField}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ InputField();}
+\DoxyCodeLine{00017\ \ \ \ \ InputField(sf::Font\&\ t\_font,\ \textcolor{keywordtype}{bool}\ t\_multiline,\ \textcolor{keywordtype}{int}\ t\_chatacterLimit);}
+\DoxyCodeLine{00018\ \ \ \ \ \string~InputField();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ initInputField();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ t\_onOff)\ \{\ m\_enabled\ =\ t\_onOff;\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ typing(sf::Event\ t\_event);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//void\ SetInputFieldBackGroundSize(float\ t\_extraHeight,\ float\ t\_extraWidth);}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ SetInputFieldSize(sf::Vector2f\ t\_fieldSize,\ sf::Vector2f\ t\_pos);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ GetSelected()\ \{\ \textcolor{keywordflow}{return}\ isSelected;\ \};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ SetSelected(\textcolor{keywordtype}{bool}\ t\_toggle)\ \{\ isSelected\ =\ t\_toggle;\ \};}
+\DoxyCodeLine{00031\ \ \ \ \ sf::RectangleShape\ GetInputField()\ \{\ \textcolor{keywordflow}{return}\ m\_inputField;\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ ClearText();}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ GetText()\ \{\ \textcolor{keywordflow}{return}\ m\_textBox.getString();\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ SetString(std::string\ t\_text)\ \{\ m\_text.str(t\_text);\ m\_textBox.setString(m\_text.str());\ \}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSelected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ \ \ \ \ sf::Sprite\ m\_dialogueBoxSprite;}
+\DoxyCodeLine{00039\ \ \ \ \ sf::Texture\ m\_dialogueBoxTexture;}
+\DoxyCodeLine{00040\ \ \ \ \ sf::RectangleShape\ m\_inputField;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//sf::RectangleShape\ m\_backGround;}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//bool\ m\_hasBackGround\ =\ false;}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ inputTextBox(\textcolor{keywordtype}{int}\ t\_character);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ deletePreviousCharacter();}
+\DoxyCodeLine{00046\ \ \ \ \ std::ostringstream\ m\_text;}
+\DoxyCodeLine{00047\ \ \ \ \ sf::Text\ m\_textBox;}
+\DoxyCodeLine{00048\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ initText();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_characterLimit\ =\ 500;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_multiline;}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !INPUTFIELD\_HPP}}
+\DoxyCodeLine{00054\ }
+
+\end{DoxyCode}

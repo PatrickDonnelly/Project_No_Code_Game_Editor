@@ -1,0 +1,5 @@
+<map id="SaveGame::processEvents" name="SaveGame::processEvents">
+<area shape="rect" id="node1" title="Checks if the colour picker is enabled and processes any clicks made at its location...." alt="" coords="5,31,184,56"/>
+<area shape="rect" id="node2" href="$class_pop_up.html#a59121a7e7749bac68163efeeba3a10cf" title="Checks if the pop up box is enabled." alt="" coords="246,5,373,31"/>
+<area shape="rect" id="node3" href="$class_pop_up.html#a7c2e3dcf16e6af8528301faf7950c3a9" title="Processes whether or not a button was clicked on a button. Disables the pop up if a button was clicke..." alt="" coords="232,55,387,80"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Button::resize" name="Button::resize">
+<area shape="rect" id="node1" title="Resizes the button based on a given scale parametres." alt="" coords="560,55,663,80"/>
+<area shape="rect" id="node2" href="$class_inspector.html#a730db9387d175fdf03fa7e531c1df3fe" title="initialise the inspector" alt="" coords="312,5,465,31"/>
+<area shape="rect" id="node4" href="$class_level_list.html#a15becb21dd185fa6bef27b25bf3bdc78" title="overloaded constructor for the level list that takes in the current game state" alt="" coords="323,55,454,80"/>
+<area shape="rect" id="node5" href="$class_drop_down_menu.html#ad3de3a2d9da70e29f3dc8f37272a1945" title="Set up the drop down menu for dialogue." alt="" coords="265,104,512,129"/>
+<area shape="rect" id="node3" href="$class_inspector.html#a8c80a48aa9f358c0ac6a9dda0fbe17e2" title="Overloaded constructor for the inspector that takes in a title string and object attributes." alt="" coords="43,5,179,31"/>
+<area shape="rect" id="node6" href="$class_drop_down_menu.html#a0ec88bd67cef5a2e2b5f874ff3d671ad" title="Drop down menu overloaded constructor." alt="" coords="5,104,217,129"/>
+</map>

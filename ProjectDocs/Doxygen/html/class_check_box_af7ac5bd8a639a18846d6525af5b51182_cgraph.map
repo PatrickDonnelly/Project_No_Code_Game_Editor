@@ -1,0 +1,5 @@
+<map id="CheckBox::setCheckBoxPosition" name="CheckBox::setCheckBoxPosition">
+<area shape="rect" id="node1" title="set the position of the checkbox" alt="" coords="5,31,220,56"/>
+<area shape="rect" id="node2" href="$class_label.html#ae30a93bd6576d33e08c933af23650a87" title="Get the label text." alt="" coords="291,5,395,31"/>
+<area shape="rect" id="node3" href="$class_label.html#aa3440b7327728c0f0a9848da23b82777" title="set the position of the label text" alt="" coords="268,55,419,80"/>
+</map>

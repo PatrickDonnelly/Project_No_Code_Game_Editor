@@ -1,0 +1,319 @@
+\doxysection{Button Class Reference}
+\label{class_button}\index{Button@{Button}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_button_a3b36df1ae23c58aedb9e15a713159459}} 
+{\bfseries Button} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\textbf{ Button} (std\+::string t\+\_\+label\+Text)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor. button with label. \end{DoxyCompactList}\item 
+\mbox{\label{class_button_a2a001eb9c3cc8ae54768a850dd345002}} 
+{\bfseries $\sim$\+Button} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \textbf{ get\+Button\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Returns the button sprite. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \textbf{ get\+Button\+Position} ()
+\begin{DoxyCompactList}\small\item\em Returns the \doxyref{Button}{p.}{class_button} Position. \end{DoxyCompactList}\item 
+\mbox{\label{class_button_a766b0db985b4bf91e747c29115332393}} 
+void {\bfseries init\+Button} ()
+\begin{DoxyCompactList}\small\item\em Sets up button texture and origin. \end{DoxyCompactList}\item 
+void \textbf{ set\+Button\+Position} (sf\+::\+Vector2f t\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Sets the \doxyref{Button}{p.}{class_button} Position. \end{DoxyCompactList}\item 
+void \textbf{ set\+Button\+Sprite} (sf\+::\+Sprite t\+\_\+button\+Sprite)
+\begin{DoxyCompactList}\small\item\em Sets the sprite of the button. \end{DoxyCompactList}\item 
+\mbox{\label{class_button_a070aa8cd060101164d22e96303c4fff0}} 
+void {\bfseries highlighted} ()
+\begin{DoxyCompactList}\small\item\em Changes the texture of the button if it is highlighted. \end{DoxyCompactList}\item 
+void \textbf{ set\+Color} (sf\+::\+Color t\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Sets the colour of a button. \end{DoxyCompactList}\item 
+\mbox{\label{class_button_a6e34e02438491419267dc6bf9c352fd9}} 
+void {\bfseries set\+Button\+Texture} ()
+\begin{DoxyCompactList}\small\item\em Sets the button texture. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders the button and a label if it has one. \end{DoxyCompactList}\item 
+void \textbf{ resize} (float m\+\_\+x\+Scale, float m\+\_\+y\+Scale)
+\begin{DoxyCompactList}\small\item\em Resizes the button based on a given scale parametres. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Selected} ()
+\begin{DoxyCompactList}\small\item\em Checks if a button is selected. \end{DoxyCompactList}\item 
+void \textbf{ set\+Selected} (bool t\+\_\+tf)
+\begin{DoxyCompactList}\small\item\em toggle selected between true or false \end{DoxyCompactList}\item 
+bool \textbf{ is\+Enabled} ()
+\begin{DoxyCompactList}\small\item\em returns true if button is enabled \end{DoxyCompactList}\item 
+\mbox{\label{class_button_a723417c8dd65c3961ce1a420e4ff7286}} 
+void {\bfseries set\+Enabled} (bool t\+\_\+on\+Off)
+\item 
+bool \textbf{ is\+Button\+Clicked} (sf\+::\+Event \&t\+\_\+event, sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Checks if a button has been clicked. \end{DoxyCompactList}\item 
+\mbox{\label{class_button_ad5b87d9ab49971328ddda04d0817c69e}} 
+\textbf{ Label} $\ast$ {\bfseries get\+Button\+Label} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_button_afc74ef0c0d846e8c7a217b0fbab453dc}} 
+int {\bfseries m\+\_\+button\+Index}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_button_a5271e507ed8485ae252451d25448fa72}} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{Button()}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+label\+Text }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor. button with label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+label\+Text} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_button_a5271e507ed8485ae252451d25448fa72_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_button_a9f04c580c7307bfb39ca790ae362c7f1}} 
+\index{Button@{Button}!getButtonPosition@{getButtonPosition}}
+\index{getButtonPosition@{getButtonPosition}!Button@{Button}}
+\doxysubsubsection{getButtonPosition()}
+{\footnotesize\ttfamily sf\+::\+Vector2f Button\+::get\+Button\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the \doxyref{Button}{p.}{class_button} Position. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_a9f04c580c7307bfb39ca790ae362c7f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_button_a1fde12cbeb3cf3bbe9a4bc90169a8398}} 
+\index{Button@{Button}!getButtonSprite@{getButtonSprite}}
+\index{getButtonSprite@{getButtonSprite}!Button@{Button}}
+\doxysubsubsection{getButtonSprite()}
+{\footnotesize\ttfamily sf\+::\+Sprite Button\+::get\+Button\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the button sprite. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_button_a942410068a449714c3b0909e4869d4fb}} 
+\index{Button@{Button}!getSelected@{getSelected}}
+\index{getSelected@{getSelected}!Button@{Button}}
+\doxysubsubsection{getSelected()}
+{\footnotesize\ttfamily bool Button\+::get\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if a button is selected. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_button_ab18fbb0897cb72c04b56eff221758a49}} 
+\index{Button@{Button}!isButtonClicked@{isButtonClicked}}
+\index{isButtonClicked@{isButtonClicked}!Button@{Button}}
+\doxysubsubsection{isButtonClicked()}
+{\footnotesize\ttfamily bool Button\+::is\+Button\+Clicked (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Checks if a button has been clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_ab18fbb0897cb72c04b56eff221758a49_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_ab18fbb0897cb72c04b56eff221758a49_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_button_a04ea03c9c88c9eb5ce453b157c50437f}} 
+\index{Button@{Button}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!Button@{Button}}
+\doxysubsubsection{isEnabled()}
+{\footnotesize\ttfamily bool Button\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns true if button is enabled 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_button_a11a8a512ffe9f82c54a8a1f25f2578f3}} 
+\index{Button@{Button}!render@{render}}
+\index{render@{render}!Button@{Button}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Button\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders the button and a label if it has one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_button_a11a8a512ffe9f82c54a8a1f25f2578f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_a11a8a512ffe9f82c54a8a1f25f2578f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_button_a7c2c8d6f748d5d49053383b735a32137}} 
+\index{Button@{Button}!resize@{resize}}
+\index{resize@{resize}!Button@{Button}}
+\doxysubsubsection{resize()}
+{\footnotesize\ttfamily void Button\+::resize (\begin{DoxyParamCaption}\item[{float}]{m\+\_\+x\+Scale,  }\item[{float}]{m\+\_\+y\+Scale }\end{DoxyParamCaption})}
+
+
+
+Resizes the button based on a given scale parametres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+x\+Scale} & \\
+\hline
+{\em m\+\_\+y\+Scale} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_a7c2c8d6f748d5d49053383b735a32137_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_button_a16f1004c83345ce88d96e5fe8a37fdd7}} 
+\index{Button@{Button}!setButtonPosition@{setButtonPosition}}
+\index{setButtonPosition@{setButtonPosition}!Button@{Button}}
+\doxysubsubsection{setButtonPosition()}
+{\footnotesize\ttfamily void Button\+::set\+Button\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{t\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Sets the \doxyref{Button}{p.}{class_button} Position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+position} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_a16f1004c83345ce88d96e5fe8a37fdd7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_button_a16f1004c83345ce88d96e5fe8a37fdd7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_button_aab65bc0e209966b3b57f1a050660449e}} 
+\index{Button@{Button}!setButtonSprite@{setButtonSprite}}
+\index{setButtonSprite@{setButtonSprite}!Button@{Button}}
+\doxysubsubsection{setButtonSprite()}
+{\footnotesize\ttfamily void Button\+::set\+Button\+Sprite (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite}]{t\+\_\+button\+Sprite }\end{DoxyParamCaption})}
+
+
+
+Sets the sprite of the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+button\+Sprite} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_button_a965206649c46c4bfd93a5348c8062cef}} 
+\index{Button@{Button}!setColor@{setColor}}
+\index{setColor@{setColor}!Button@{Button}}
+\doxysubsubsection{setColor()}
+{\footnotesize\ttfamily void Button\+::set\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{t\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Sets the colour of a button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+color} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_button_aa3a4240aa5518765a6a36143a4747dd8}} 
+\index{Button@{Button}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!Button@{Button}}
+\doxysubsubsection{setSelected()}
+{\footnotesize\ttfamily void Button\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+tf }\end{DoxyParamCaption})}
+
+
+
+toggle selected between true or false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+tf} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Button.\+h\item 
+Button.\+cpp\end{DoxyCompactItemize}

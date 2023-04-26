@@ -1,0 +1,8 @@
+<map id="Player::update" name="Player::update">
+<area shape="rect" id="node1" title="Update player." alt="" coords="5,106,112,131"/>
+<area shape="rect" id="node2" href="$class_player.html#af2d90a8a99b4d4f3efdb9b14b682bc3f" title="Animates the player." alt="" coords="167,57,280,82"/>
+<area shape="rect" id="node5" href="$class_player.html#a9426df1249e3c2669999a76a7de16e8f" title="Process player movement." alt="" coords="160,106,287,131"/>
+<area shape="rect" id="node6" href="$class_player.html#a15ccefcb30b7e259663d4698e488c76e" title="Sets the animation state of the player." alt="" coords="337,131,512,157"/>
+<area shape="rect" id="node3" href="$class_animator.html#a45654b363ac24e08f6b552f38630e994" title="Applies Texture changes to the sprite." alt="" coords="335,5,515,45"/>
+<area shape="rect" id="node4" href="$class_animator.html#aa0652884fb0ce07a0d443a997bce5cad" title="Updates the animation." alt="" coords="363,70,486,95"/>
+</map>

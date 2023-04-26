@@ -1,0 +1,160 @@
+\doxysection{Input\+Field Class Reference}
+\label{class_input_field}\index{InputField@{InputField}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_input_field_a4b269cbb141820d37aa55f61c5c6efbb}} 
+{\bfseries Input\+Field} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the input field. \end{DoxyCompactList}\item 
+\textbf{ Input\+Field} (sf\+::\+Font \&t\+\_\+font, bool t\+\_\+multiline, int t\+\_\+chatacter\+Limit)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the input field. Sets a character limit and whether or not the input field is multiline or not. \end{DoxyCompactList}\item 
+\mbox{\label{class_input_field_af795b9d063209b6ce4ddf314dc265c93}} 
+{\bfseries $\sim$\+Input\+Field} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor for the input field. \end{DoxyCompactList}\item 
+\mbox{\label{class_input_field_ab3f44be25cfedfeb726825fa1e2cf40b}} 
+void {\bfseries init\+Input\+Field} ()
+\begin{DoxyCompactList}\small\item\em Initialises the input field. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders the input fields. \end{DoxyCompactList}\item 
+bool \textbf{ is\+Enabled} ()
+\begin{DoxyCompactList}\small\item\em Checks if the input field is enabled. \end{DoxyCompactList}\item 
+\mbox{\label{class_input_field_a1b46a36fb40fa55ea6f0a39cffb4f510}} 
+void {\bfseries set\+Enabled} (bool t\+\_\+on\+Off)
+\item 
+void \textbf{ typing} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Checks if a letter key or number key was pressed Deletes the input character if the string is at its character limit If not it calls for the input character to be added to the string. \end{DoxyCompactList}\item 
+void \textbf{ Set\+Input\+Field\+Size} (sf\+::\+Vector2f t\+\_\+field\+Size, sf\+::\+Vector2f t\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Sets the size of the input field. \end{DoxyCompactList}\item 
+\mbox{\label{class_input_field_a55117c46e3d87684a8f090ed46f209d0}} 
+bool {\bfseries Get\+Selected} ()
+\item 
+\mbox{\label{class_input_field_a56a2d161dd1ba04e504f5f622bbf1020}} 
+void {\bfseries Set\+Selected} (bool t\+\_\+toggle)
+\item 
+\mbox{\label{class_input_field_acba84ef026d300456fcd2edb4ba2345a}} 
+sf\+::\+Rectangle\+Shape {\bfseries Get\+Input\+Field} ()
+\item 
+\mbox{\label{class_input_field_ad5edf22bb0392ba7f6d6ba1e941f3585}} 
+void {\bfseries Clear\+Text} ()
+\begin{DoxyCompactList}\small\item\em Clears all text from the input field. \end{DoxyCompactList}\item 
+\mbox{\label{class_input_field_a3bcb18ac05e3a72d6ae59648d5a35978}} 
+std\+::string {\bfseries Get\+Text} ()
+\item 
+\mbox{\label{class_input_field_aa8242a791320e3a84021a6c41b1ef37e}} 
+void {\bfseries Set\+String} (std\+::string t\+\_\+text)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_input_field_a7f6f426f43ea6b38178d625b92bc2eb9}} 
+\index{InputField@{InputField}!InputField@{InputField}}
+\index{InputField@{InputField}!InputField@{InputField}}
+\doxysubsubsection{InputField()}
+{\footnotesize\ttfamily Input\+Field\+::\+Input\+Field (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{t\+\_\+font,  }\item[{bool}]{t\+\_\+multiline,  }\item[{int}]{t\+\_\+character\+Limit }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the input field. Sets a character limit and whether or not the input field is multiline or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+font} & \\
+\hline
+{\em t\+\_\+multiline} & \\
+\hline
+{\em t\+\_\+character\+Limit} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_input_field_a7f6f426f43ea6b38178d625b92bc2eb9_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_input_field_a59d012a2a263bb3474cbcdc5f81b2a11}} 
+\index{InputField@{InputField}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!InputField@{InputField}}
+\doxysubsubsection{isEnabled()}
+{\footnotesize\ttfamily bool Input\+Field\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the input field is enabled. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_input_field_a74e73ed4810f6f781b76b2c868a1b983}} 
+\index{InputField@{InputField}!render@{render}}
+\index{render@{render}!InputField@{InputField}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Input\+Field\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders the input fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_input_field_a74e73ed4810f6f781b76b2c868a1b983_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_input_field_a2e9debe2bf53ac3115bfae54561b6590}} 
+\index{InputField@{InputField}!SetInputFieldSize@{SetInputFieldSize}}
+\index{SetInputFieldSize@{SetInputFieldSize}!InputField@{InputField}}
+\doxysubsubsection{SetInputFieldSize()}
+{\footnotesize\ttfamily void Input\+Field\+::\+Set\+Input\+Field\+Size (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{t\+\_\+field\+Size,  }\item[{sf\+::\+Vector2f}]{t\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Sets the size of the input field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+field\+Size} & \\
+\hline
+{\em t\+\_\+pos} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_field_a2e9debe2bf53ac3115bfae54561b6590_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_input_field_a63dc44647a74004798478a9a1cf93ac9}} 
+\index{InputField@{InputField}!typing@{typing}}
+\index{typing@{typing}!InputField@{InputField}}
+\doxysubsubsection{typing()}
+{\footnotesize\ttfamily void Input\+Field\+::typing (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+Checks if a letter key or number key was pressed Deletes the input character if the string is at its character limit If not it calls for the input character to be added to the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Input\+Field.\+h\item 
+Input\+Field.\+cpp\end{DoxyCompactItemize}

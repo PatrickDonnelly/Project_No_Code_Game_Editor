@@ -1,0 +1,103 @@
+\doxysection{Collision Class Reference}
+\label{class_collision}\index{Collision@{Collision}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_collision_aea8004fbf48b79b5db7b784688b23788}} 
+{\bfseries Collision} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_collision_a19ae49bcb3b16f4622443a34a171590c}} 
+{\bfseries $\sim$\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+bool \textbf{ check\+Collision} (sf\+::\+Rectangle\+Shape $\ast$t\+\_\+object\+One, sf\+::\+Rectangle\+Shape $\ast$t\+\_\+object\+Two, float t\+\_\+push)
+\begin{DoxyCompactList}\small\item\em Checks collision between two objects and uses a weight to determine how the force is split between objects. Acts like a weight. \end{DoxyCompactList}\item 
+bool \textbf{ check\+Collision} (sf\+::\+Rectangle\+Shape $\ast$t\+\_\+object\+One, sf\+::\+Rectangle\+Shape $\ast$t\+\_\+object\+Two)
+\begin{DoxyCompactList}\small\item\em Checks collision between two objects. \end{DoxyCompactList}\item 
+void \textbf{ move} (float t\+\_\+deltaX, float t\+\_\+deltaY, sf\+::\+Rectangle\+Shape $\ast$t\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Moves the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_collision_aeee8c80c7dbf8793c1d8986e3605491d}} 
+\index{Collision@{Collision}!checkCollision@{checkCollision}}
+\index{checkCollision@{checkCollision}!Collision@{Collision}}
+\doxysubsubsection{checkCollision()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Collision\+::check\+Collision (\begin{DoxyParamCaption}\item[{sf\+::\+Rectangle\+Shape $\ast$}]{t\+\_\+object\+One,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{t\+\_\+object\+Two }\end{DoxyParamCaption})}
+
+
+
+Checks collision between two objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+object\+One} & \\
+\hline
+{\em t\+\_\+object\+Two} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_collision_a2ae32caf390b9e8fabf2914d5a1ee7cb}} 
+\index{Collision@{Collision}!checkCollision@{checkCollision}}
+\index{checkCollision@{checkCollision}!Collision@{Collision}}
+\doxysubsubsection{checkCollision()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Collision\+::check\+Collision (\begin{DoxyParamCaption}\item[{sf\+::\+Rectangle\+Shape $\ast$}]{t\+\_\+object\+One,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{t\+\_\+object\+Two,  }\item[{float}]{t\+\_\+push }\end{DoxyParamCaption})}
+
+
+
+Checks collision between two objects and uses a weight to determine how the force is split between objects. Acts like a weight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+object\+One} & \\
+\hline
+{\em t\+\_\+object\+Two} & \\
+\hline
+{\em t\+\_\+push} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_collision_a2ae32caf390b9e8fabf2914d5a1ee7cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_collision_af8f7cd4473c646c416edaad6f927c172}} 
+\index{Collision@{Collision}!move@{move}}
+\index{move@{move}!Collision@{Collision}}
+\doxysubsubsection{move()}
+{\footnotesize\ttfamily void Collision\+::move (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+deltaX,  }\item[{float}]{t\+\_\+deltaY,  }\item[{sf\+::\+Rectangle\+Shape $\ast$}]{t\+\_\+object }\end{DoxyParamCaption})}
+
+
+
+Moves the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+deltaX} & \\
+\hline
+{\em t\+\_\+deltaY} & \\
+\hline
+{\em t\+\_\+object} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_collision_af8f7cd4473c646c416edaad6f927c172_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Collision.\+h\item 
+Collision.\+cpp\end{DoxyCompactItemize}

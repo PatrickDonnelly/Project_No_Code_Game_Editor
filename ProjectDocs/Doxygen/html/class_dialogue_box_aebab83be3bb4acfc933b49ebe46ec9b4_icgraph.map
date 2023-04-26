@@ -1,0 +1,6 @@
+<map id="DialogueBox::isEnabled" name="DialogueBox::isEnabled">
+<area shape="rect" id="node1" title="Checks if the dialogue box is enabled." alt="" coords="365,29,525,55"/>
+<area shape="rect" id="node2" href="$class_enemy.html#adce121a5d559e9d666d7f88c7a26dc1f" title="renders the enmy objects" alt="" coords="15,5,121,31"/>
+<area shape="rect" id="node3" href="$class_dialogue_box.html#a87dcb579163d1965bccbe2a9dc166779" title="renders the dialogue box" alt="" coords="179,55,317,80"/>
+<area shape="rect" id="node4" href="$class_text_editor.html#a0f3d3b5043a07393a12d95b82c2ec091" title="Render the text editor." alt="" coords="5,55,131,80"/>
+</map>

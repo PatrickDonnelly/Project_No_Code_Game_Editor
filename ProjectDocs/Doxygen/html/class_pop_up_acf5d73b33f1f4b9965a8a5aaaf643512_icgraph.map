@@ -1,0 +1,4 @@
+<map id="PopUp::setPopUpBoxText" name="PopUp::setPopUpBoxText">
+<area shape="rect" id="node1" title="Sets the pop up box text to a string thats passed in." alt="" coords="248,13,423,38"/>
+<area shape="rect" id="node2" href="$class_text_editor.html#ad6950feed4bbbd37470905e67cfb8734" title="Process text editor buttons to load, save clear text etc." alt="" coords="5,5,200,45"/>
+</map>

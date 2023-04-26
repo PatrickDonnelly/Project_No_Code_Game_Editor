@@ -1,0 +1,11 @@
+<map id="Label::setTextPosition" name="Label::setTextPosition">
+<area shape="rect" id="node1" title="set the position of the label text" alt="" coords="823,109,973,135"/>
+<area shape="rect" id="node2" href="$class_button.html#a16f1004c83345ce88d96e5fe8a37fdd7" title="Sets the Button Position." alt="" coords="582,84,753,109"/>
+<area shape="rect" id="node9" href="$class_check_box.html#af7ac5bd8a639a18846d6525af5b51182" title="set the position of the checkbox" alt="" coords="560,133,775,159"/>
+<area shape="rect" id="node3" href="$class_inspector.html#a730db9387d175fdf03fa7e531c1df3fe" title="initialise the inspector" alt="" coords="312,5,465,31"/>
+<area shape="rect" id="node5" href="$class_level_list.html#a15becb21dd185fa6bef27b25bf3bdc78" title="overloaded constructor for the level list that takes in the current game state" alt="" coords="323,55,454,80"/>
+<area shape="rect" id="node6" href="$class_drop_down_menu.html#af4797c1ed9c499c0d0da952f72b6daaa" title="Set the position of the drop down menu." alt="" coords="289,105,488,145"/>
+<area shape="rect" id="node7" href="$class_drop_down_menu.html#ad3de3a2d9da70e29f3dc8f37272a1945" title="Set up the drop down menu for dialogue." alt="" coords="265,169,512,195"/>
+<area shape="rect" id="node4" href="$class_inspector.html#a8c80a48aa9f358c0ac6a9dda0fbe17e2" title="Overloaded constructor for the inspector that takes in a title string and object attributes." alt="" coords="43,5,179,31"/>
+<area shape="rect" id="node8" href="$class_drop_down_menu.html#a0ec88bd67cef5a2e2b5f874ff3d671ad" title="Drop down menu overloaded constructor." alt="" coords="5,169,217,195"/>
+</map>

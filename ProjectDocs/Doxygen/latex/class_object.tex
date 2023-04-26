@@ -1,0 +1,298 @@
+\doxysection{Object Class Reference}
+\label{class_object}\index{Object@{Object}}
+
+
+Inheritance diagram for Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_a40860402e64d8008fb42329df7097cdb}} 
+{\bfseries Object} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_object_ae8f5483f459e46687bd01e6f9977afd3}} 
+{\bfseries $\sim$\+Object} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+virtual void \textbf{ init} ()=0
+\item 
+virtual void \textbf{ set\+Up\+Sprite} ()=0
+\item 
+\mbox{\label{class_object_a7d89bd060773d6b1dea859dbf325ec68}} 
+virtual void {\bfseries set\+Object\+Category} (std\+::string t\+\_\+\+Object\+Category)=0
+\item 
+virtual std\+::string \textbf{ get\+Object\+Category} ()=0
+\item 
+virtual void \textbf{ set\+Texture} (sf\+::\+Texture \&t\+\_\+texture)=0
+\item 
+virtual void \textbf{ set\+Path\+To\+Texture} (std\+::string t\+\_\+path)=0
+\item 
+virtual void \textbf{ set\+Up\+Bounds} ()=0
+\item 
+virtual void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)=0
+\item 
+virtual void \textbf{ render} (sf\+::\+Render\+Window \&window)=0
+\item 
+virtual void \textbf{ render\+Inspector} (sf\+::\+Render\+Window \&window)=0
+\item 
+\mbox{\label{class_object_a5c114a884bd8b2e403f0a9ab039287dd}} 
+virtual bool {\bfseries get\+Has\+Dialogue} ()
+\item 
+\mbox{\label{class_object_a63e401373ddf1421a688267db165c452}} 
+void {\bfseries set\+Row\+Column} (int t\+\_\+row, int t\+\_\+col)
+\item 
+\mbox{\label{class_object_a07d20326b3da66d531639ffee3c0bf0d}} 
+virtual sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Bounds} ()
+\item 
+\mbox{\label{class_object_a1c65a5cb9714327112c6eb62a7e2a814}} 
+sf\+::\+Sprite $\ast$ {\bfseries get\+Sprite} ()
+\item 
+\mbox{\label{class_object_a188fbf8d50f34c82b9eff22a29f2896e}} 
+void {\bfseries toggle\+Bounds} ()
+\item 
+\mbox{\label{class_object_a0d2e685ed20b49ec1b7feeba4c0f1cc9}} 
+bool {\bfseries is\+Collidable} ()
+\item 
+\mbox{\label{class_object_ab7ea4592b344857538ec6e9204a4b7da}} 
+int {\bfseries get\+Row} ()
+\item 
+\mbox{\label{class_object_a659906224ab5101d741409c7bf308258}} 
+int {\bfseries get\+Column} ()
+\item 
+\mbox{\label{class_object_a76638f714a77bdde109d04030c350bd7}} 
+void {\bfseries set\+Collidable} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_a5f6009ea1d51463088552c839e8c6482}} 
+bool {\bfseries get\+Selected} ()
+\item 
+\mbox{\label{class_object_a44e7dcf8d8a607f084455328c25001be}} 
+void {\bfseries set\+Selected} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_ab17d42cdb53019d43a52b3fdd051a802}} 
+void {\bfseries set\+Moving} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_abf357fcc5c94a8d783ae83cfd7aed945}} 
+void {\bfseries set\+Tag} (std\+::string t\+\_\+tag)
+\item 
+\mbox{\label{class_object_a7047e90b20c56f87e2611dc8f6122bb8}} 
+\textbf{ Inspector} $\ast$ {\bfseries get\+Inspector} ()
+\item 
+\mbox{\label{class_object_aa54fd65f9b35486bc4187e81bc2ee2d8}} 
+std\+::string {\bfseries get\+Tag} ()
+\item 
+\mbox{\label{class_object_a1a962bda9a6985b534f1070afdd108d0}} 
+std\+::string {\bfseries get\+Path} ()
+\item 
+\mbox{\label{class_object_a23bfb0a75209c99e72b33f5447c8c504}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries get\+Dialogue\+Box} ()
+\item 
+\mbox{\label{class_object_a45342e6097e3ca9ab0917021fc71bbb6}} 
+virtual bool {\bfseries get\+In\+Range} ()
+\item 
+\mbox{\label{class_object_a873a644c2d5aa8aaf141e7fb1a674fe0}} 
+virtual std\+::map$<$ std\+::string, std\+::string $>$ $\ast$ {\bfseries get\+Dialogue\+Paths} ()
+\item 
+virtual void \textbf{ load\+Dialogue} (std\+::string t\+\_\+load\+Dialogue)
+\item 
+\mbox{\label{class_object_a28376066193d54be1f5fe43efb9ab741}} 
+virtual sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Detection\+Radius} ()
+\item 
+\mbox{\label{class_object_aa990df6d103551a658d0c85b8c7b0847}} 
+virtual int64\+\_\+t {\bfseries get\+UUID} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_a7e6ad48a865edde3f00b4c99e7cae007}} 
+\textbf{ Attributes} {\bfseries m\+\_\+inpector\+Data}
+\item 
+\mbox{\label{class_object_aa4d3720a4d923e80cf2f723b3e5029fb}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries m\+\_\+dialogue}
+\item 
+\mbox{\label{class_object_ad9204ea0812c7cd630eb45e2ddf720b4}} 
+bool {\bfseries m\+\_\+is\+Selected} = false
+\item 
+\mbox{\label{class_object_ab3a7652b129625dfc1b86580b6cd8b25}} 
+bool {\bfseries m\+\_\+moving} = false
+\item 
+\mbox{\label{class_object_acc2d78a19f930413701f597c24150a40}} 
+bool {\bfseries m\+\_\+has\+Been\+Selected} = false
+\item 
+\mbox{\label{class_object_ae8a784b17d2a5f62bf65b748107cdbb3}} 
+bool {\bfseries m\+\_\+has\+Dialogue} =false
+\item 
+\mbox{\label{class_object_a21c425f20aa4c0960528a1fd690ce120}} 
+bool {\bfseries m\+\_\+has\+Attributes} = false
+\item 
+\mbox{\label{class_object_a0a7dae69de1e50680776b2d88da93768}} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries m\+\_\+dialogue\+Paths}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_aec8458ef6816eeaef4f3111782584395}} 
+\textbf{ Inspector} $\ast$ {\bfseries m\+\_\+inspector}
+\item 
+\mbox{\label{class_object_a765f1496154b476b0601bf41d9f1db13}} 
+sf\+::\+Texture {\bfseries m\+\_\+object\+Texture}
+\item 
+\mbox{\label{class_object_a0a1d9501063d1b6dfefaa4d855bbbf6a}} 
+sf\+::\+Sprite {\bfseries m\+\_\+object\+Sprite}
+\item 
+\mbox{\label{class_object_abaee800d9f4e54110aa6060b5877e20d}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+object\+Bounds}
+\item 
+\mbox{\label{class_object_a32ccf7600204a33dff5b4aa1d8c7654d}} 
+int {\bfseries m\+\_\+bounds\+Width}
+\item 
+\mbox{\label{class_object_a6158d885d5a315b77be982de7b3cd473}} 
+int {\bfseries m\+\_\+bounds\+Height}
+\item 
+\mbox{\label{class_object_ac5d4d4fb959b7f1133ef61a89e0958de}} 
+bool {\bfseries m\+\_\+bounds\+On} = true
+\item 
+\mbox{\label{class_object_a39a36b44d894d3dfed0879c1e9451acd}} 
+int {\bfseries m\+\_\+row}
+\item 
+\mbox{\label{class_object_a1d79bc5a74490ade5bac9822882d3c6b}} 
+int {\bfseries m\+\_\+col}
+\item 
+\mbox{\label{class_object_af86077686f757f6a386a67384277237f}} 
+std\+::string {\bfseries m\+\_\+path} = \char`\"{}\char`\"{}
+\item 
+\mbox{\label{class_object_a847306181fed1dcd015a8ca92a8fe9fa}} 
+std\+::string {\bfseries m\+\_\+tag}
+\item 
+\mbox{\label{class_object_a7262057dfebf09f0de4e1e203a6704f7}} 
+bool {\bfseries m\+\_\+is\+Collidable} = false
+\item 
+\mbox{\label{class_object_aaa07175cf64bb19b27e985165ec353fe}} 
+std\+::string {\bfseries m\+\_\+object\+Category}
+\item 
+\mbox{\label{class_object_a85c9b3e93cc07175a3ce5fdfa5ed81d6}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+detection\+Radius}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_object_a512714e539377912619039d20c56d9f4}} 
+\index{Object@{Object}!getObjectCategory@{getObjectCategory}}
+\index{getObjectCategory@{getObjectCategory}!Object@{Object}}
+\doxysubsubsection{getObjectCategory()}
+{\footnotesize\ttfamily virtual std\+::string Object\+::get\+Object\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Colliders} \doxyref{}{p.}{class_colliders_a08ab96005631e5d55adb3fd4f30eb98e}.
+
+\mbox{\label{class_object_ad831d006007057fbcb6622010ab9b6ef}} 
+\index{Object@{Object}!init@{init}}
+\index{init@{init}!Object@{Object}}
+\doxysubsubsection{init()}
+{\footnotesize\ttfamily virtual void Object\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Colliders} \doxyref{}{p.}{class_colliders_a247ad7e865f5b2ff09224a9089e7cfe0}, \textbf{ Decoration} \doxyref{}{p.}{class_decoration_ab98d94f2f21a4b2cadc2abb1ef3e90b9}, \textbf{ Enemy} \doxyref{}{p.}{class_enemy_a7e78ac384d1eaefefc3b614aec4589fb}, \textbf{ Item} \doxyref{}{p.}{class_item_a2c2e77758f5db3aaf3f50d38f4d651fc}, \textbf{ Terrain} \doxyref{}{p.}{class_terrain_a358d5ffc528fd5c97ad9503160cdae5b}, and \textbf{ Wall} \doxyref{}{p.}{class_wall_a66375124438a8e33b6b5561f2924f40a}.
+
+\mbox{\label{class_object_a5ac183da5e07fcb050f5612b1e4fee0e}} 
+\index{Object@{Object}!loadDialogue@{loadDialogue}}
+\index{loadDialogue@{loadDialogue}!Object@{Object}}
+\doxysubsubsection{loadDialogue()}
+{\footnotesize\ttfamily virtual void Object\+::load\+Dialogue (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+load\+Dialogue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ Enemy} \doxyref{}{p.}{class_enemy_aa63aaf18c88fa48337cbf907d16db0aa}.
+
+\mbox{\label{class_object_a26edf5e5f9d9743bf547a13581e08724}} 
+\index{Object@{Object}!render@{render}}
+\index{render@{render}!Object@{Object}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily virtual void Object\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Colliders} \doxyref{}{p.}{class_colliders_a1ab25b6c7440f499ba60df0bd64649a4}, \textbf{ Decoration} \doxyref{}{p.}{class_decoration_a83fb21f641ac5bd2f01580626128d830}, \textbf{ Enemy} \doxyref{}{p.}{class_enemy_adce121a5d559e9d666d7f88c7a26dc1f}, \textbf{ Item} \doxyref{}{p.}{class_item_a0bada6beb73ea8716706d92d20678d17}, \textbf{ Terrain} \doxyref{}{p.}{class_terrain_a8ad8a0ab194a9cfac1d54b795f87affe}, and \textbf{ Wall} \doxyref{}{p.}{class_wall_a39a14e128bddc9247321b2a7a1df5685}.
+
+\mbox{\label{class_object_aa66dc86c1fa93c46c66d503410d41620}} 
+\index{Object@{Object}!renderInspector@{renderInspector}}
+\index{renderInspector@{renderInspector}!Object@{Object}}
+\doxysubsubsection{renderInspector()}
+{\footnotesize\ttfamily virtual void Object\+::render\+Inspector (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Decoration} \doxyref{}{p.}{class_decoration_a8e15fe2187167558044e459df7dabe87}, \textbf{ Enemy} \doxyref{}{p.}{class_enemy_aa16ef3809d5dc2b999db926eeadf6517}, \textbf{ Item} \doxyref{}{p.}{class_item_a88b96b0b08253fa8ea2aa6b5c31eb2ea}, and \textbf{ Wall} \doxyref{}{p.}{class_wall_a9c3abd2deb7895c097543097b61ac7e5}.
+
+\mbox{\label{class_object_a4cdefc21ad9d35b4a09f0d2c55189552}} 
+\index{Object@{Object}!setPathToTexture@{setPathToTexture}}
+\index{setPathToTexture@{setPathToTexture}!Object@{Object}}
+\doxysubsubsection{setPathToTexture()}
+{\footnotesize\ttfamily virtual void Object\+::set\+Path\+To\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Decoration} \doxyref{}{p.}{class_decoration_ae299e979082c331d34087cb130a75bba}, \textbf{ Enemy} \doxyref{}{p.}{class_enemy_a3bb115d9824c0525f901eaf185eccd32}, \textbf{ Item} \doxyref{}{p.}{class_item_a71d20656761d9f5363c1f8a72a58fd64}, \textbf{ Terrain} \doxyref{}{p.}{class_terrain_ac16c9d40a4458ce15c29a44bfe25a373}, and \textbf{ Wall} \doxyref{}{p.}{class_wall_abc50ec75497a1f283dec6432c0d7b81e}.
+
+\mbox{\label{class_object_aa98b01dadd9bad1b109497db4e208548}} 
+\index{Object@{Object}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Object@{Object}}
+\doxysubsubsection{setTexture()}
+{\footnotesize\ttfamily virtual void Object\+::set\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{t\+\_\+texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Decoration} \doxyref{}{p.}{class_decoration_a63defb1c77417c5598684760609fb1b2}, \textbf{ Enemy} \doxyref{}{p.}{class_enemy_a76341cd720464e111a2c1d9051184060}, \textbf{ Item} \doxyref{}{p.}{class_item_a46abb4db25385deb25989d1f78768341}, \textbf{ Terrain} \doxyref{}{p.}{class_terrain_acdbb70b743e808b1aa043d863399e766}, and \textbf{ Wall} \doxyref{}{p.}{class_wall_aef6916497b9679e03536f8a43c739769}.
+
+\mbox{\label{class_object_a466174883931fb7116fe22337e83b2d6}} 
+\index{Object@{Object}!setUpBounds@{setUpBounds}}
+\index{setUpBounds@{setUpBounds}!Object@{Object}}
+\doxysubsubsection{setUpBounds()}
+{\footnotesize\ttfamily virtual void Object\+::set\+Up\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Decoration} \doxyref{}{p.}{class_decoration_aa16e1dce7065eefa08246f702eae60e9}, \textbf{ Enemy} \doxyref{}{p.}{class_enemy_a1d7da935802db616c648ee42c95f323f}, \textbf{ Item} \doxyref{}{p.}{class_item_a89e7f1b75fbe77aeef0211608d3a1e4c}, \textbf{ Terrain} \doxyref{}{p.}{class_terrain_a1c724175c03f0d2af0ea03620800eeed}, and \textbf{ Wall} \doxyref{}{p.}{class_wall_ade8242b0714f9562e5e89afc79db663b}.
+
+\mbox{\label{class_object_ae33a542d9c02dd4ea50fbf0bae84c7c6}} 
+\index{Object@{Object}!setUpSprite@{setUpSprite}}
+\index{setUpSprite@{setUpSprite}!Object@{Object}}
+\doxysubsubsection{setUpSprite()}
+{\footnotesize\ttfamily virtual void Object\+::set\+Up\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Decoration} \doxyref{}{p.}{class_decoration_aca447471c1245d8e19240a738ca34eab}, \textbf{ Enemy} \doxyref{}{p.}{class_enemy_a7e08700f5fb4cce72fdce7a89ea56b5b}, \textbf{ Item} \doxyref{}{p.}{class_item_ae3d5085f8bbc6346db65ee937d037ff0}, \textbf{ Terrain} \doxyref{}{p.}{class_terrain_aff18581fef2de67bef03eeb2584e94ef}, and \textbf{ Wall} \doxyref{}{p.}{class_wall_a0c8cded4c7665306427d17c245442618}.
+
+\mbox{\label{class_object_aa2f9dd96ceaa29ae11716bbc7dda0f29}} 
+\index{Object@{Object}!update@{update}}
+\index{update@{update}!Object@{Object}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily virtual void Object\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Decoration} \doxyref{}{p.}{class_decoration_ac7c21badfc5d69093ee1571ade9245a9}, \textbf{ Enemy} \doxyref{}{p.}{class_enemy_a059f3b9c0fe1ff4df85b2b42e9e8222b}, \textbf{ Item} \doxyref{}{p.}{class_item_acf4c033b777abfd1dfdaf1244320f0f0}, \textbf{ Terrain} \doxyref{}{p.}{class_terrain_a925985fc88d39e5bf112db00bc1912fa}, and \textbf{ Wall} \doxyref{}{p.}{class_wall_a33fcc9378f39b2d380bef320bf7be260}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Object.\+h\item 
+Object.\+cpp\end{DoxyCompactItemize}

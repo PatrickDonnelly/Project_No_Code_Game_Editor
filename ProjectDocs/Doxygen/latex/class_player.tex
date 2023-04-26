@@ -1,0 +1,353 @@
+\doxysection{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}} 
+{\bfseries Player} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the player object. \end{DoxyCompactList}\item 
+\mbox{\label{class_player_a749d2c00e1fe0f5c2746f7505a58c062}} 
+{\bfseries $\sim$\+Player} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor for the player object. \end{DoxyCompactList}\item 
+bool \textbf{ is\+Interacting} (sf\+::\+Event new\+Event)
+\begin{DoxyCompactList}\small\item\em Checks if the player is interacting with an object or not. \end{DoxyCompactList}\item 
+\mbox{\label{class_player_a6ada1436e1efa1fa3217b67b873e0600}} 
+void {\bfseries set\+Interact} (bool tf)
+\item 
+\mbox{\label{class_player_a3cf5855a9c975f98e6544f92d61eb008}} 
+bool {\bfseries get\+Interact} ()
+\item 
+\mbox{\label{class_player_af1d06be5f8abdb552e3cfa618579fa08}} 
+sf\+::\+Vector2f {\bfseries get\+Center\+Pos} ()
+\item 
+\mbox{\label{class_player_a40ad73b9b0c42df9ac27bdca6baaf87e}} 
+void {\bfseries set\+Colliders\+Enabled} (bool t\+\_\+on\+Off)
+\item 
+\mbox{\label{class_player_a8fe83985039b98ad7a02b39928cd5bfc}} 
+void {\bfseries set\+Default\+Pos} (sf\+::\+Vector2f t\+\_\+start\+Pos)
+\item 
+\mbox{\label{class_player_a585988daecc8adc9d3ece7ad47652d0e}} 
+void {\bfseries set\+Up\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Set up the players sprite. \end{DoxyCompactList}\item 
+\mbox{\label{class_player_a150c8a534b9222b266acb71b3d39ed64}} 
+void {\bfseries set\+Up\+Player\+Bounds} ()
+\begin{DoxyCompactList}\small\item\em Set up the colliding bounds interaction bounds and centre point of the player. \end{DoxyCompactList}\item 
+\mbox{\label{class_player_a488af0b026e503b5477ed7fd0b40e8ee}} 
+void {\bfseries set\+Up\+Animation} ()
+\begin{DoxyCompactList}\small\item\em Set up the players animation. \end{DoxyCompactList}\item 
+bool \textbf{ movement} (sf\+::\+Time delta\+Time)
+\begin{DoxyCompactList}\small\item\em Process player movement. \end{DoxyCompactList}\item 
+void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Update player. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em render player and bounds if enabled \end{DoxyCompactList}\item 
+sf\+::\+Sprite $\ast$ \textbf{ get\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em gets the player sprite \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape $\ast$ \textbf{ get\+Bounds} ()
+\begin{DoxyCompactList}\small\item\em Gets the player bounds. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape $\ast$ \textbf{ get\+Interaction\+Bounds} ()
+\begin{DoxyCompactList}\small\item\em Returns the players interaction bounds. \end{DoxyCompactList}\item 
+\mbox{\label{class_player_af8b1933cdbc26bedef71f9cdb89cc402}} 
+sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Weapon\+Bounds} ()
+\item 
+Animation\+State \textbf{ get\+Animation\+State} ()
+\begin{DoxyCompactList}\small\item\em Gets the animation state of the player. \end{DoxyCompactList}\item 
+void \textbf{ set\+Animation\+State} (Animation\+State \&t\+\_\+current, Animation\+State t\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Sets the animation state of the player. \end{DoxyCompactList}\item 
+void \textbf{ animate} (sf\+::\+Time delta\+Time)
+\begin{DoxyCompactList}\small\item\em Animates the player. \end{DoxyCompactList}\item 
+\mbox{\label{class_player_a015ea21fa1e7273e47d48cb20d9b12e3}} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Initialise the player object. \end{DoxyCompactList}\item 
+\mbox{\label{class_player_a6325bfd34ee4100f22b536cc2ab76017}} 
+void {\bfseries load\+Assets} ()
+\begin{DoxyCompactList}\small\item\em load the player objects texture \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_player_a3c1d29ed5c484a7430950c248bb7e598}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+player\+Interaction\+Radius}
+\item 
+\mbox{\label{class_player_a63875e5141ab75e1ab99e03f6a07a968}} 
+bool {\bfseries m\+\_\+can\+Interact} = false
+\item 
+\mbox{\label{class_player_a661b60d4e25bccf460ebd97b6393741f}} 
+float {\bfseries m\+\_\+default\+Speed}
+\item 
+\mbox{\label{class_player_aef89676f6891f7b43408352c22dc4701}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+default\+Pos} \{\}
+\item 
+\mbox{\label{class_player_afb499517a4aa51ac1fb533e81b52c574}} 
+bool {\bfseries m\+\_\+colliders\+Enabled} = true
+\item 
+\mbox{\label{class_player_ada47f24cc5b5bb448be6e31db9356172}} 
+bool {\bfseries m\+\_\+weapon\+Enabled} = false
+\item 
+\mbox{\label{class_player_aa520787c7016c5daa868d7fd24250782}} 
+sf\+::\+Sprite {\bfseries m\+\_\+player\+Sprite}
+\item 
+\mbox{\label{class_player_aa22806d70c578f30939e6d02a37999f9}} 
+sf\+::\+Texture {\bfseries m\+\_\+player\+Texture}
+\item 
+\mbox{\label{class_player_ad0e360b345d3a35c6a600f67a115b328}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+player\+Centre}
+\item 
+\mbox{\label{class_player_ad5ed6744064d129a044f2646da34bf28}} 
+sf\+::\+Sprite {\bfseries m\+\_\+weapon\+Sprite}
+\item 
+\mbox{\label{class_player_a5b3f63b7ba3ff43ab837f06254fd01e8}} 
+sf\+::\+Texture {\bfseries m\+\_\+weapon\+Texture}
+\item 
+\mbox{\label{class_player_a941dd4f188cfe7c20095c772cb1e3864}} 
+int {\bfseries m\+\_\+weapon\+Bounds\+Width}
+\item 
+\mbox{\label{class_player_a7d22cba8213d409e10d98e6d2434edd0}} 
+int {\bfseries m\+\_\+weapon\+Bounds\+Height}
+\item 
+\mbox{\label{class_player_ac75ce5110af368cfc73188aa0a23dbfd}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+weapon\+Bounds}
+\item 
+\mbox{\label{class_player_a0c3bb2885ea274582792e4e91dffd89a}} 
+bool {\bfseries m\+\_\+colliding}
+\item 
+\mbox{\label{class_player_aaf48c4184bee665e1f7f625dedc25adf}} 
+bool {\bfseries moving} = false
+\item 
+\mbox{\label{class_player_aab83d8cb69eea7ba2b8d781f8a9cbeb6}} 
+int {\bfseries m\+\_\+frame\+Size}
+\item 
+\mbox{\label{class_player_ac872b310930295033b218f1551a27e34}} 
+float {\bfseries m\+\_\+speed}
+\item 
+\mbox{\label{class_player_a455ce9c08b756181a2913f59c4d05f8b}} 
+int {\bfseries m\+\_\+velocity}
+\item 
+\mbox{\label{class_player_a4527650edc661d3608e46ab7ee509414}} 
+int {\bfseries m\+\_\+player\+Bounds\+Width}
+\item 
+\mbox{\label{class_player_a0d2d5255403b8b4cfd7ca1fd471e889d}} 
+int {\bfseries m\+\_\+player\+Bounds\+Height}
+\item 
+\mbox{\label{class_player_ae42d22f2d92d987c1fd0a11fdcda8b7d}} 
+std\+::string {\bfseries m\+\_\+sprite\+Sheet\+Name}
+\item 
+\mbox{\label{class_player_a55d96a20da4f9a331b45df8090c15f06}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+player\+Bounds}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_player_af2d90a8a99b4d4f3efdb9b14b682bc3f}} 
+\index{Player@{Player}!animate@{animate}}
+\index{animate@{animate}!Player@{Player}}
+\doxysubsubsection{animate()}
+{\footnotesize\ttfamily void Player\+::animate (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Animates the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_player_af2d90a8a99b4d4f3efdb9b14b682bc3f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{class_player_af2d90a8a99b4d4f3efdb9b14b682bc3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_player_a0e01e4f5ee09a94228d4d50ce61ea141}} 
+\index{Player@{Player}!getAnimationState@{getAnimationState}}
+\index{getAnimationState@{getAnimationState}!Player@{Player}}
+\doxysubsubsection{getAnimationState()}
+{\footnotesize\ttfamily Animation\+State Player\+::get\+Animation\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the animation state of the player. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_player_a0e01e4f5ee09a94228d4d50ce61ea141_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_player_a62cc9be7b7a0ac49d6781aaad0e64efb}} 
+\index{Player@{Player}!getBounds@{getBounds}}
+\index{getBounds@{getBounds}!Player@{Player}}
+\doxysubsubsection{getBounds()}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape $\ast$ Player\+::get\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the player bounds. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_player_a1e2e92f49f4c52214f85abbc0cb59ed9}} 
+\index{Player@{Player}!getInteractionBounds@{getInteractionBounds}}
+\index{getInteractionBounds@{getInteractionBounds}!Player@{Player}}
+\doxysubsubsection{getInteractionBounds()}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape $\ast$ Player\+::get\+Interaction\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the players interaction bounds. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_player_ae4bb9750ded3b5123bc5fc52f408fc88}} 
+\index{Player@{Player}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!Player@{Player}}
+\doxysubsubsection{getSprite()}
+{\footnotesize\ttfamily sf\+::\+Sprite $\ast$ Player\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the player sprite 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_player_afacc3ddf6790f08a6e65626715fbb143}} 
+\index{Player@{Player}!isInteracting@{isInteracting}}
+\index{isInteracting@{isInteracting}!Player@{Player}}
+\doxysubsubsection{isInteracting()}
+{\footnotesize\ttfamily bool Player\+::is\+Interacting (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+Checks if the player is interacting with an object or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_player_a9426df1249e3c2669999a76a7de16e8f}} 
+\index{Player@{Player}!movement@{movement}}
+\index{movement@{movement}!Player@{Player}}
+\doxysubsubsection{movement()}
+{\footnotesize\ttfamily bool Player\+::movement (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Process player movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_player_a9426df1249e3c2669999a76a7de16e8f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_player_a9426df1249e3c2669999a76a7de16e8f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_player_a53938857e80374e79726309e78d1c15c}} 
+\index{Player@{Player}!render@{render}}
+\index{render@{render}!Player@{Player}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Player\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+render player and bounds if enabled 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_player_a15ccefcb30b7e259663d4698e488c76e}} 
+\index{Player@{Player}!setAnimationState@{setAnimationState}}
+\index{setAnimationState@{setAnimationState}!Player@{Player}}
+\doxysubsubsection{setAnimationState()}
+{\footnotesize\ttfamily void Player\+::set\+Animation\+State (\begin{DoxyParamCaption}\item[{Animation\+State \&}]{t\+\_\+current,  }\item[{Animation\+State}]{t\+\_\+new }\end{DoxyParamCaption})}
+
+
+
+Sets the animation state of the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+current} & \\
+\hline
+{\em t\+\_\+new} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a15ccefcb30b7e259663d4698e488c76e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_player_a9a05f2ffa498b33cce9237d1da00f9d7}} 
+\index{Player@{Player}!update@{update}}
+\index{update@{update}!Player@{Player}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void Player\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Update player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a9a05f2ffa498b33cce9237d1da00f9d7_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Player.\+h\item 
+Player.\+cpp\end{DoxyCompactItemize}

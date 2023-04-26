@@ -1,0 +1,7 @@
+<map id="Wall::init" name="Wall::init">
+<area shape="rect" id="node1" title="Initialise object." alt="" coords="5,31,79,56"/>
+<area shape="rect" id="node2" href="$class_wall.html#ade8242b0714f9562e5e89afc79db663b" title="Sets up the collidable bounds of the wall object." alt="" coords="127,5,261,31"/>
+<area shape="rect" id="node3" href="$class_wall.html#a0c8cded4c7665306427d17c245442618" title="Sets up the walls sprite." alt="" coords="132,55,256,80"/>
+<area shape="rect" id="node4" href="$class_wall.html#aef6916497b9679e03536f8a43c739769" title="Sets the walls texture." alt="" coords="309,55,427,80"/>
+<area shape="rect" id="node5" href="$class_texture_manager.html#aabc3af4e63581ca3ba6ab964016b254f" title="Checks if a texture is loaded in memory and returns it." alt="" coords="475,55,659,80"/>
+</map>

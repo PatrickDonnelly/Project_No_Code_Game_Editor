@@ -1,0 +1,7 @@
+<map id="PopUp::isEnabled" name="PopUp::isEnabled">
+<area shape="rect" id="node1" title="Checks if the pop up box is enabled." alt="" coords="248,92,375,117"/>
+<area shape="rect" id="node2" href="$class_save_game.html#a624d58d0bfac9f0cf9a392faf384621f" title="Checks if the colour picker is enabled and processes any clicks made at its location...." alt="" coords="13,5,192,31"/>
+<area shape="rect" id="node3" href="$class_text_editor.html#ad6950feed4bbbd37470905e67cfb8734" title="Process text editor buttons to load, save clear text etc." alt="" coords="5,55,200,95"/>
+<area shape="rect" id="node4" href="$class_save_game.html#aa581f0ec1ff95133867a8546a9d9e8c5" title="Draws the save game screen and text." alt="" coords="38,120,167,145"/>
+<area shape="rect" id="node5" href="$class_text_editor.html#a0f3d3b5043a07393a12d95b82c2ec091" title="Render the text editor." alt="" coords="40,169,165,195"/>
+</map>

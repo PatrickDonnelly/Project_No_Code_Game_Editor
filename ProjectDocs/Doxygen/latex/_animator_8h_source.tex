@@ -1,0 +1,50 @@
+\doxysection{Animator.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ANIMATOR\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ANIMATOR\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Animator}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//default\ constructor}}
+\DoxyCodeLine{00012\ \ \ \ \ Animator();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ overloaded\ constructor}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ starting\ points\ of\ texture\ and\ width\ and\ height\ of\ each\ frame}}
+\DoxyCodeLine{00015\ \ \ \ \ Animator(\textcolor{keywordtype}{int}\ t\_x,\ \textcolor{keywordtype}{int}\ t\_y,\ \textcolor{keywordtype}{int}\ t\_width,\ \textcolor{keywordtype}{int}\ t\_height,\ std::string\ t\_fileName,\ \textcolor{keywordtype}{int}\ t\_noOfFrames);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ Animator(\textcolor{keywordtype}{int}\ t\_x,\ \textcolor{keywordtype}{int}\ t\_y,\ \textcolor{keywordtype}{int}\ t\_width,\ \textcolor{keywordtype}{int}\ t\_height,\ std::string\ t\_fileName,\ \textcolor{keywordtype}{int}\ t\_noOfFrames,\ \textcolor{keywordtype}{bool}\ m\_reverse);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ applies\ texture\ and\ rectangles\ to\ set\ frame\ of\ animation}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyChangesToSprite(sf::Sprite\&\ t\_sprite);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_x;\ \textcolor{keywordtype}{int}\ m\_y;\ \textcolor{keywordtype}{int}\ m\_width;\ \textcolor{keywordtype}{int}\ m\_height;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ Advance();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//number\ of\ frames\ per\ animation}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ noOfFrames\ =\ 3;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFrames\ =\ 3;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ amount\ of\ time\ frame\ is\ on\ screen\ before\ cycling\ to\ the\ next\ frame\ in\ the\ animation}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ change\ this\ to\ slow\ or\ speed\ up\ animations}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ timeBetweenFrames\ =\ 0.1f;}
+\DoxyCodeLine{00035\ \ \ \ \ sf::Texture\ m\_texture;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ stores\ rectangles\ of\ frames}}
+\DoxyCodeLine{00037\ \ \ \ \ sf::IntRect\ frames[noOfFrames];}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ stores\ index\ of\ current\ frame\ in\ animation}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ indexOfFrame\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{float}\ elapsedTime\ =\ 0.0f;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

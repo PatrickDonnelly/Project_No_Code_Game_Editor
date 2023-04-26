@@ -1,0 +1,10 @@
+<map id="TextEditor::render" name="TextEditor::render">
+<area shape="rect" id="node1" title="Render the text editor." alt="" coords="5,104,131,129"/>
+<area shape="rect" id="node2" href="$class_pop_up.html#a59121a7e7749bac68163efeeba3a10cf" title="Checks if the pop up box is enabled." alt="" coords="185,5,311,31"/>
+<area shape="rect" id="node3" href="$class_check_box.html#a8299e5a3b5787fa4264b86289214a36b" title="Render checkbox." alt="" coords="185,55,311,80"/>
+<area shape="rect" id="node5" href="$class_dialogue_box.html#a87dcb579163d1965bccbe2a9dc166779" title="renders the dialogue box" alt="" coords="179,104,317,129"/>
+<area shape="rect" id="node7" href="$class_input_field.html#a74e73ed4810f6f781b76b2c868a1b983" title="Renders the input fields." alt="" coords="187,153,309,179"/>
+<area shape="rect" id="node8" href="$class_pop_up.html#a6ec0d5df96ee4999bed7de7bf6184537" title="Renders the pop up box and its buttons / labels." alt="" coords="195,203,301,228"/>
+<area shape="rect" id="node4" href="$class_label.html#a25a975c12c7e8cfc9521227a2b705994" title="Renders the label." alt="" coords="397,55,494,80"/>
+<area shape="rect" id="node6" href="$class_dialogue_box.html#aebab83be3bb4acfc933b49ebe46ec9b4" title="Checks if the dialogue box is enabled." alt="" coords="365,104,525,129"/>
+</map>

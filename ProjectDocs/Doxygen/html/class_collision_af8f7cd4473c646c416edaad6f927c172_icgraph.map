@@ -1,0 +1,4 @@
+<map id="Collision::move" name="Collision::move">
+<area shape="rect" id="node1" title="Moves the object." alt="" coords="216,5,325,31"/>
+<area shape="rect" id="node2" href="$class_collision.html#a2ae32caf390b9e8fabf2914d5a1ee7cb" title="Checks collision between two objects and uses a weight to determine how the force is split between ob..." alt="" coords="5,5,168,31"/>
+</map>

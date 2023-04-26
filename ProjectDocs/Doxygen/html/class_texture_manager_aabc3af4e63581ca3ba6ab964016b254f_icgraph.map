@@ -1,0 +1,24 @@
+<map id="TextureManager::getTexture" name="TextureManager::getTexture">
+<area shape="rect" id="node1" title="Checks if a texture is loaded in memory and returns it." alt="" coords="775,129,959,155"/>
+<area shape="rect" id="node2" href="$class_tile.html#a24acc26d9064fedae5e0f0f116dc9f62" title="Sets the texture of the tile." alt="" coords="585,5,715,31"/>
+<area shape="rect" id="node3" href="$class_decoration.html#a63defb1c77417c5598684760609fb1b2" title="Retrieves the texture and sets the sprites texture to it." alt="" coords="573,55,727,80"/>
+<area shape="rect" id="node7" href="$class_enemy.html#a76341cd720464e111a2c1d9051184060" title="Sets the texture of the enemy object." alt="" coords="584,104,716,129"/>
+<area shape="rect" id="node11" href="$class_item.html#a46abb4db25385deb25989d1f78768341" title="Set the texture of the item object." alt="" coords="592,153,708,179"/>
+<area shape="rect" id="node15" href="$class_terrain.html#acdbb70b743e808b1aa043d863399e766" title="Sets the texture of the terrain object." alt="" coords="585,203,715,228"/>
+<area shape="rect" id="node19" href="$class_wall.html#aef6916497b9679e03536f8a43c739769" title="Sets the walls texture." alt="" coords="591,252,709,277"/>
+<area shape="rect" id="node4" href="$class_decoration.html#aca447471c1245d8e19240a738ca34eab" title="Sets up the texture and sprite." alt="" coords="365,55,525,80"/>
+<area shape="rect" id="node5" href="$class_decoration.html#ab98d94f2f21a4b2cadc2abb1ef3e90b9" title="initialise object" alt="" coords="208,55,317,80"/>
+<area shape="rect" id="node6" href="$class_decoration.html#ab7c5d963f476681b1656fb8f9892fdd7" title="Overloaded constructer." alt="" coords="5,55,160,80"/>
+<area shape="rect" id="node8" href="$class_enemy.html#a7e08700f5fb4cce72fdce7a89ea56b5b" title="Sets up the enemy objects sprite." alt="" coords="376,104,515,129"/>
+<area shape="rect" id="node9" href="$class_enemy.html#a7e78ac384d1eaefefc3b614aec4589fb" title="initialises the enemy object" alt="" coords="219,104,307,129"/>
+<area shape="rect" id="node10" href="$class_enemy.html#a22955368fa6903e9c9b5d012298f790d" title="Overloaded constructor for the enemy." alt="" coords="27,104,139,129"/>
+<area shape="rect" id="node12" href="$class_item.html#ae3d5085f8bbc6346db65ee937d037ff0" title="Set up the sprite of the item object." alt="" coords="384,153,507,179"/>
+<area shape="rect" id="node13" href="$class_item.html#a2c2e77758f5db3aaf3f50d38f4d651fc" title="Initialise the item object." alt="" coords="227,153,299,179"/>
+<area shape="rect" id="node14" href="$class_item.html#a1a423f580e01d007ff3e2061df215e03" title="Overloaded constructor." alt="" coords="43,153,123,179"/>
+<area shape="rect" id="node16" href="$class_terrain.html#aff18581fef2de67bef03eeb2584e94ef" title="Set up the terrain objects sprite." alt="" coords="377,203,514,228"/>
+<area shape="rect" id="node17" href="$class_terrain.html#a358d5ffc528fd5c97ad9503160cdae5b" title="Initialise the terrain object." alt="" coords="219,203,306,228"/>
+<area shape="rect" id="node18" href="$class_terrain.html#a06ee558a14b6350abc07d7ee68821e65" title="Overloaded constructor." alt="" coords="29,203,137,228"/>
+<area shape="rect" id="node20" href="$class_wall.html#a0c8cded4c7665306427d17c245442618" title="Sets up the walls sprite." alt="" coords="383,252,507,277"/>
+<area shape="rect" id="node21" href="$class_wall.html#a66375124438a8e33b6b5561f2924f40a" title="Initialise object." alt="" coords="226,252,299,277"/>
+<area shape="rect" id="node22" href="$class_wall.html#a74e7b38bdbd36a487c9fa0d2858a3a1e" title="Overloaded constructor." alt="" coords="41,252,124,277"/>
+</map>

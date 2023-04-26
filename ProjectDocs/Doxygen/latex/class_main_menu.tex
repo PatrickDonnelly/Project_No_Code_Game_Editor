@@ -1,0 +1,118 @@
+\doxysection{Main\+Menu Class Reference}
+\label{class_main_menu}\index{MainMenu@{MainMenu}}
+
+
+Collaboration diagram for Main\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_main_menu__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}} 
+{\bfseries Main\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Main menu constructor. \end{DoxyCompactList}\item 
+\textbf{ Main\+Menu} (\textbf{ Game\+State} $\ast$t\+\_\+game\+State)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_main_menu_a8a34aa9b064157f970374a3ad7e3c42e}} 
+void {\bfseries init\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Initialie the buttons for the main menu. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em renders the main menu. \end{DoxyCompactList}\item 
+void \textbf{ process\+Events} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em processes events for Checking which option is picked forn the main menu. \end{DoxyCompactList}\item 
+\mbox{\label{class_main_menu_a3c63940a6c30a2e4a587e4d2905c9786}} 
+void {\bfseries set\+Up\+Game\+Buttons} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_main_menu_a6e0417cce22bf9be252a59b35cb651d6}} 
+std\+::vector$<$ \textbf{ Button} $\ast$ $>$ {\bfseries m\+\_\+main\+Menu\+Buttons}
+\item 
+\mbox{\label{class_main_menu_af3db8aaa7135821868005213641c20bb}} 
+\textbf{ Game\+State} $\ast$ {\bfseries m\+\_\+current\+Game\+State}
+\item 
+\mbox{\label{class_main_menu_a1160a5a01dd4fe0ae571cbb284141079}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Game\+Buttons}
+\item 
+\mbox{\label{class_main_menu_a28d62c36332223e783bf43c94d173d07}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+game\+Names}
+\item 
+\mbox{\label{class_main_menu_af63f2f9d64487202a140d61a33ece224}} 
+std\+::string {\bfseries m\+\_\+path\+Games} = \char`\"{}Games/\char`\"{}
+\item 
+\mbox{\label{class_main_menu_ac6d69db7ec306ff54e0145f3af6a91e5}} 
+int {\bfseries m\+\_\+rows\+Games} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_main_menu_abb9e43537bdb1ffed49254d2cade4b11}} 
+\index{MainMenu@{MainMenu}!MainMenu@{MainMenu}}
+\index{MainMenu@{MainMenu}!MainMenu@{MainMenu}}
+\doxysubsubsection{MainMenu()}
+{\footnotesize\ttfamily Main\+Menu\+::\+Main\+Menu (\begin{DoxyParamCaption}\item[{\textbf{ Game\+State} $\ast$}]{t\+\_\+game\+State }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+game\+State} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_main_menu_abb9e43537bdb1ffed49254d2cade4b11_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_main_menu_a84194be320fec7368abaf451c8e684ed}} 
+\index{MainMenu@{MainMenu}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!MainMenu@{MainMenu}}
+\doxysubsubsection{processEvents()}
+{\footnotesize\ttfamily void Main\+Menu\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+processes events for Checking which option is picked forn the main menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_main_menu_ae7c80c679c3af88ab6743cfc536de2ef}} 
+\index{MainMenu@{MainMenu}!render@{render}}
+\index{render@{render}!MainMenu@{MainMenu}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Main\+Menu\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+renders the main menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Main\+Menu.\+h\item 
+Main\+Menu.\+cpp\end{DoxyCompactItemize}

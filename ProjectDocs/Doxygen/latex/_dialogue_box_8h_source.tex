@@ -1,0 +1,59 @@
+\doxysection{Dialogue\+Box.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIALOGUEBOX\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIALOGUEBOX\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}FontManager.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ENTER\_KEY\ 13}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ ESCAPE\_KEY\ 27}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ BACKSPACE\_KEY\ 8}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }DialogueBox}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ DialogueBox();}
+\DoxyCodeLine{00019\ \ \ \ \ DialogueBox(sf::Font\&\ t\_font);}
+\DoxyCodeLine{00020\ \ \ \ \ \string~DialogueBox();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ sf::Sprite\ getDialogueBoxSprite();}
+\DoxyCodeLine{00023\ \ \ \ \ sf::Vector2f\ getDialogueBoxPosition();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ initDialogueBox();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setDialogueBoxSprite(sf::Sprite\ t\_dialogueSprite);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled()\ \{\ m\_enabled\ =\ !m\_enabled;\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ typing(sf::Event\ t\_event);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setDialogueText(std::string\ t\_dialogue)\ \{\ m\_textBox.setString(t\_dialogue);\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ splitString(std::string\ t\_dialogueText);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ loadText(std::string\ t\_filenName);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<std::string>\ m\_dialogue;}
+\DoxyCodeLine{00039\ \ \ \ \ GameState*\ m\_gameState;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00041\ \ \ \ \ sf::Sprite\ m\_dialogueBoxSprite;}
+\DoxyCodeLine{00042\ \ \ \ \ sf::Texture\ m\_dialogueBoxTexture;}
+\DoxyCodeLine{00043\ \ \ \ \ sf::RectangleShape\ m\_dialogueBox;}
+\DoxyCodeLine{00044\ \ \ \ \ FontManager\ m\_fontManager;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ inputTextBox(\textcolor{keywordtype}{int}\ t\_character);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ deletePreviousCharacter();}
+\DoxyCodeLine{00048\ \ \ \ \ std::ostringstream\ m\_text;}
+\DoxyCodeLine{00049\ \ \ \ \ sf::Text\ m\_textBox;}
+\DoxyCodeLine{00050\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ initText();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_characterLimit\ =\ 500;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !DIALOGUEBOX\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,8 @@
+<map id="Enemy::Enemy" name="Enemy::Enemy">
+<area shape="rect" id="node1" title="Overloaded constructor for the enemy." alt="" coords="5,31,117,56"/>
+<area shape="rect" id="node2" href="$class_enemy.html#a7e78ac384d1eaefefc3b614aec4589fb" title="initialises the enemy object" alt="" coords="165,31,253,56"/>
+<area shape="rect" id="node3" href="$class_enemy.html#a1d7da935802db616c648ee42c95f323f" title="Sets up the enemy bounds and detection radius." alt="" coords="301,5,451,31"/>
+<area shape="rect" id="node4" href="$class_enemy.html#a7e08700f5fb4cce72fdce7a89ea56b5b" title="Sets up the enemy objects sprite." alt="" coords="307,55,445,80"/>
+<area shape="rect" id="node5" href="$class_enemy.html#a76341cd720464e111a2c1d9051184060" title="Sets the texture of the enemy object." alt="" coords="499,55,631,80"/>
+<area shape="rect" id="node6" href="$class_texture_manager.html#aabc3af4e63581ca3ba6ab964016b254f" title="Checks if a texture is loaded in memory and returns it." alt="" coords="679,55,863,80"/>
+</map>

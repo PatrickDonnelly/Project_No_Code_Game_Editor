@@ -1,0 +1,224 @@
+\doxysection{Dialogue\+Box Class Reference}
+\label{class_dialogue_box}\index{DialogueBox@{DialogueBox}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_dialogue_box_a5cac4f8dcff57d038873007023c24d86}} 
+{\bfseries Dialogue\+Box} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the dialogue box. \end{DoxyCompactList}\item 
+\textbf{ Dialogue\+Box} (sf\+::\+Font \&t\+\_\+font)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the dialogue box that takes in a font. \end{DoxyCompactList}\item 
+\mbox{\label{class_dialogue_box_a98e7e98af1d8657519a2e6e0c82df4ea}} 
+{\bfseries $\sim$\+Dialogue\+Box} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor for the dialogue box. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \textbf{ get\+Dialogue\+Box\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Gets the dialogue box sprite. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \textbf{ get\+Dialogue\+Box\+Position} ()
+\begin{DoxyCompactList}\small\item\em Gets the dialogue box position. \end{DoxyCompactList}\item 
+\mbox{\label{class_dialogue_box_a90168fc017d1b61077734b2f89a67522}} 
+void {\bfseries init\+Dialogue\+Box} ()
+\begin{DoxyCompactList}\small\item\em Initialises the dialogue box. \end{DoxyCompactList}\item 
+void \textbf{ set\+Dialogue\+Box\+Sprite} (sf\+::\+Sprite t\+\_\+dialogue\+Sprite)
+\begin{DoxyCompactList}\small\item\em Sets the dialogue box sprite. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em renders the dialogue box \end{DoxyCompactList}\item 
+bool \textbf{ is\+Enabled} ()
+\begin{DoxyCompactList}\small\item\em Checks if the dialogue box is enabled. \end{DoxyCompactList}\item 
+\mbox{\label{class_dialogue_box_a18e9a6e44ccbf7912e8bafd7adcf1487}} 
+void {\bfseries set\+Enabled} ()
+\item 
+\mbox{\label{class_dialogue_box_a3762f41815621de0bf325d63d8338c33}} 
+void {\bfseries typing} (sf\+::\+Event t\+\_\+event)
+\item 
+\mbox{\label{class_dialogue_box_aeba409dbcffb4069eff69685922ed53e}} 
+void {\bfseries set\+Dialogue\+Text} (std\+::string t\+\_\+dialogue)
+\item 
+void \textbf{ split\+String} (std\+::string t\+\_\+dialogue\+Text)
+\begin{DoxyCompactList}\small\item\em Splits the string into multiple lines for display. \end{DoxyCompactList}\item 
+void \textbf{ load\+Text} (std\+::string t\+\_\+filen\+Name)
+\begin{DoxyCompactList}\small\item\em Loads text from a txt file to be displayed inside the dialogue box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_dialogue_box_adbdc293c724b69c53ff373e2e83bd5aa}} 
+\index{DialogueBox@{DialogueBox}!DialogueBox@{DialogueBox}}
+\index{DialogueBox@{DialogueBox}!DialogueBox@{DialogueBox}}
+\doxysubsubsection{DialogueBox()}
+{\footnotesize\ttfamily Dialogue\+Box\+::\+Dialogue\+Box (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{t\+\_\+font }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the dialogue box that takes in a font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+font} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dialogue_box_adbdc293c724b69c53ff373e2e83bd5aa_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_dialogue_box_abdaf41dce74a46187f951a28ff51ca34}} 
+\index{DialogueBox@{DialogueBox}!getDialogueBoxPosition@{getDialogueBoxPosition}}
+\index{getDialogueBoxPosition@{getDialogueBoxPosition}!DialogueBox@{DialogueBox}}
+\doxysubsubsection{getDialogueBoxPosition()}
+{\footnotesize\ttfamily sf\+::\+Vector2f Dialogue\+Box\+::get\+Dialogue\+Box\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the dialogue box position. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_dialogue_box_a6c287f74a76ad37f2b04fbf5b016bea8}} 
+\index{DialogueBox@{DialogueBox}!getDialogueBoxSprite@{getDialogueBoxSprite}}
+\index{getDialogueBoxSprite@{getDialogueBoxSprite}!DialogueBox@{DialogueBox}}
+\doxysubsubsection{getDialogueBoxSprite()}
+{\footnotesize\ttfamily sf\+::\+Sprite Dialogue\+Box\+::get\+Dialogue\+Box\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the dialogue box sprite. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_dialogue_box_aebab83be3bb4acfc933b49ebe46ec9b4}} 
+\index{DialogueBox@{DialogueBox}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!DialogueBox@{DialogueBox}}
+\doxysubsubsection{isEnabled()}
+{\footnotesize\ttfamily bool Dialogue\+Box\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the dialogue box is enabled. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dialogue_box_aebab83be3bb4acfc933b49ebe46ec9b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_dialogue_box_a41cdb1ffade6518db0acd4b974eb85da}} 
+\index{DialogueBox@{DialogueBox}!loadText@{loadText}}
+\index{loadText@{loadText}!DialogueBox@{DialogueBox}}
+\doxysubsubsection{loadText()}
+{\footnotesize\ttfamily void Dialogue\+Box\+::load\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+file\+Name }\end{DoxyParamCaption})}
+
+
+
+Loads text from a txt file to be displayed inside the dialogue box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+file\+Name} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dialogue_box_a41cdb1ffade6518db0acd4b974eb85da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_dialogue_box_a41cdb1ffade6518db0acd4b974eb85da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_dialogue_box_a87dcb579163d1965bccbe2a9dc166779}} 
+\index{DialogueBox@{DialogueBox}!render@{render}}
+\index{render@{render}!DialogueBox@{DialogueBox}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Dialogue\+Box\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+renders the dialogue box 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_dialogue_box_a87dcb579163d1965bccbe2a9dc166779_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_dialogue_box_a87dcb579163d1965bccbe2a9dc166779_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_dialogue_box_abeea89536a3da86773acf268db654c76}} 
+\index{DialogueBox@{DialogueBox}!setDialogueBoxSprite@{setDialogueBoxSprite}}
+\index{setDialogueBoxSprite@{setDialogueBoxSprite}!DialogueBox@{DialogueBox}}
+\doxysubsubsection{setDialogueBoxSprite()}
+{\footnotesize\ttfamily void Dialogue\+Box\+::set\+Dialogue\+Box\+Sprite (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite}]{t\+\_\+dialogue\+Sprite }\end{DoxyParamCaption})}
+
+
+
+Sets the dialogue box sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dialogue\+Sprite} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_dialogue_box_a7024900b7d024c41c6dcef6e7c1f0dae}} 
+\index{DialogueBox@{DialogueBox}!splitString@{splitString}}
+\index{splitString@{splitString}!DialogueBox@{DialogueBox}}
+\doxysubsubsection{splitString()}
+{\footnotesize\ttfamily void Dialogue\+Box\+::split\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+dialogue\+Text }\end{DoxyParamCaption})}
+
+
+
+Splits the string into multiple lines for display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dialogue\+Text} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dialogue_box_a7024900b7d024c41c6dcef6e7c1f0dae_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Dialogue\+Box.\+h\item 
+Dialogue\+Box.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="PopUp::PopUp" name="PopUp::PopUp">
+<area shape="rect" id="node1" title="Overloaded constructor for the pop up class that takes in a number of buttons to display on the pop u..." alt="" coords="5,55,113,80"/>
+<area shape="rect" id="node2" href="$class_font_manager.html#ac10adb2985dcb3ea471ab92e710ba5d9" title="Checks if a font has already been loaded into memory. If it has it returns a pointer to the font If n..." alt="" coords="171,5,322,31"/>
+<area shape="rect" id="node3" href="$class_pop_up.html#ac2d4bcae3afc0b91d76a9d287ccc441c" title="Initialises the pop up box." alt="" coords="173,55,321,80"/>
+<area shape="rect" id="node4" href="$class_pop_up.html#a66913b9555847db0e51a0c33737f66b6" title="Sets up the buttons to be displayed on the pop up. Close and / or continue." alt="" coords="161,104,332,129"/>
+</map>

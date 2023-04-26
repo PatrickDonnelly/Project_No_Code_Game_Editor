@@ -1,0 +1,5 @@
+<map id="Button::isButtonClicked" name="Button::isButtonClicked">
+<area shape="rect" id="node1" title="Checks if a button has been clicked." alt="" coords="5,31,164,56"/>
+<area shape="rect" id="node2" href="$class_button.html#a070aa8cd060101164d22e96303c4fff0" title="Changes the texture of the button if it is highlighted." alt="" coords="230,5,361,31"/>
+<area shape="rect" id="node3" href="$class_button.html#a6e34e02438491419267dc6bf9c352fd9" title="Sets the button texture." alt="" coords="212,55,379,80"/>
+</map>

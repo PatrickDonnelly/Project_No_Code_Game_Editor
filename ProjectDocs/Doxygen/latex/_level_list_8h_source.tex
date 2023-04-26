@@ -1,0 +1,56 @@
+\doxysection{Level\+List.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ LEVELLIST\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ LEVELLIST\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}PopUp.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Globals.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}FontManager.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }LevelList}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ loadLevelList();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ setVisibleRow(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<Button*>\ m\_prevNextbuttons;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_currentRowIndex\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ sf::RectangleShape\ m\_bg;}
+\DoxyCodeLine{00025\ \ \ \ \ Button*\ m\_closeButton;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ initText();}
+\DoxyCodeLine{00027\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{00028\ \ \ \ \ FontManager\ m\_fontManager;}
+\DoxyCodeLine{00029\ \ \ \ \ sf::Text\ m\_text;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ LevelList();}
+\DoxyCodeLine{00032\ \ \ \ \ LevelList(GameState*\ t\_gameState);}
+\DoxyCodeLine{00033\ \ \ \ \ \string~LevelList();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ refreshLevelList();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ processEvents(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ GameState*\ m\_currentGameState;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpGameButtons();}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<std::vector<Button*>>\ m\_selectableGameButtons;}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<std::string>\ m\_gameNames;}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ m\_pathGames\ =\ \textcolor{stringliteral}{"{}Games/"{}};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_noOfGamesFound\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_rowsGames\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ m\_gameName;}
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ getGameToBeLoaded();}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !MAINMENU\_HPP}}
+\DoxyCodeLine{00051\ }
+
+\end{DoxyCode}

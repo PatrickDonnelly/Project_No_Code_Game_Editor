@@ -1,0 +1,104 @@
+\doxysection{Object.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ OBJECT\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ OBJECT\_HPP}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CheckBox.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}DialogueBox.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Inspector.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Attributes.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}UUID.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }ObjectData\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ m\_tag;}
+\DoxyCodeLine{00016\ \ \ \ \ sf::Vector2f\ m\_position;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isCollidable;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_row;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_col;}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ m\_path;}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ m\_objectCategory;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_boundsWidth;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_boundsHeight;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_detectionRadius;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasInspector;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }Object}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ Inspector*\ m\_inspector;}
+\DoxyCodeLine{00034\ \ \ \ \ sf::Texture\ m\_objectTexture;}
+\DoxyCodeLine{00035\ \ \ \ \ sf::Sprite\ m\_objectSprite;}
+\DoxyCodeLine{00036\ \ \ \ \ sf::RectangleShape\ m\_objectBounds;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_boundsWidth;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_boundsHeight;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_boundsOn\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_row;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_col;}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ m\_path\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ m\_tag;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isCollidable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ m\_objectCategory;}
+\DoxyCodeLine{00046\ \ \ \ \ sf::RectangleShape\ m\_detectionRadius;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ Object();}
+\DoxyCodeLine{00051\ \ \ \ \ \string~Object();}
+\DoxyCodeLine{00052\ \ \ \ \ Attributes\ m\_inpectorData;}
+\DoxyCodeLine{00053\ \ \ \ \ DialogueBox*\ m\_dialogue;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isSelected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_moving\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasBeenSelected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasDialogue\ =\textcolor{keyword}{false};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasAttributes\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ init()\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setUpSprite()\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setObjectCategory(std::string\ t\_ObjectCategory)\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getObjectCategory()\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setTexture(sf::Texture\&\ t\_texture)\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setPathToTexture(std::string\ t\_path)\ =\ 0;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setUpBounds()\ =\ 0;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ update(sf::Time\ deltaTime,\ sf::RenderWindow\&\ window)\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ render(sf::RenderWindow\&\ window)\ =\ 0;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ renderInspector(sf::RenderWindow\&\ window)\ =\ 0;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ getHasDialogue()\ \{\ \textcolor{keywordflow}{return}\ m\_hasDialogue;\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ setRowColumn(\textcolor{keywordtype}{int}\ t\_row,\ \textcolor{keywordtype}{int}\ t\_col)\ \{\ m\_row\ =\ t\_row;\ m\_col\ =\ t\_col;\ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ sf::RectangleShape*\ getBounds()\ \{\ \textcolor{keywordflow}{return}\ \&m\_objectBounds;\ \}}
+\DoxyCodeLine{00075\ \ \ \ \ sf::Sprite*\ getSprite()\ \{\ \textcolor{keywordflow}{return}\ \&m\_objectSprite;\ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ toggleBounds()\ \{\ m\_boundsOn\ =\ !m\_boundsOn;\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ isCollidable()\ \{\ \textcolor{keywordflow}{return}\ m\_isCollidable;\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ getRow()\ \{\ \textcolor{keywordflow}{return}\ m\_row;\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ getColumn()\ \{\ \textcolor{keywordflow}{return}\ m\_col;\ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ setCollidable(\textcolor{keywordtype}{bool}\ t\_state)\ \{\ m\_isCollidable\ =\ t\_state;\ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ getSelected()\ \{\ \textcolor{keywordflow}{return}\ m\_isSelected;\ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ setSelected(\textcolor{keywordtype}{bool}\ t\_state)\ \{\ m\_isSelected\ =\ t\_state;\ \textcolor{keywordflow}{if}(m\_isSelected)m\_objectSprite.setColor(sf::Color::Red);\ \textcolor{keywordflow}{if}\ (!m\_isSelected)m\_objectSprite.setColor(sf::Color::White);\ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ setMoving(\textcolor{keywordtype}{bool}\ t\_state)\ \{\ m\_moving\ =\ t\_state;\ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ setTag(std::string\ t\_tag)\ \{\ m\_tag\ =\ t\_tag;\ \}}
+\DoxyCodeLine{00085\ \ \ \ \ Inspector*\ getInspector()\ \{\ \textcolor{keywordflow}{return}\ m\_inspector;\ \}}
+\DoxyCodeLine{00086\ \ \ \ \ std::string\ getTag()\ \{\ \textcolor{keywordflow}{return}\ m\_tag;\ \}}
+\DoxyCodeLine{00087\ \ \ \ \ std::string\ getPath()\ \{\ \textcolor{keywordflow}{return}\ m\_path;\ \}}
+\DoxyCodeLine{00088\ \ \ \ \ DialogueBox*\ getDialogueBox()\ \{\ \textcolor{keywordflow}{return}\ m\_dialogue;\ \}}
+\DoxyCodeLine{00089\ \ \ \ \ std::map<std::string,\ std::string>\ m\_dialoguePaths;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ getInRange()\ \{\ \textcolor{keywordflow}{return}\ NULL;\ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ std::map<std::string,\ std::string>*\ getDialoguePaths()\ \{\ \textcolor{keywordflow}{return}\ \&m\_dialoguePaths;\ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ loadDialogue(std::string\ t\_loadDialogue)\ \{\ ;\ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ sf::RectangleShape*\ getDetectionRadius()\ \{\ \textcolor{keywordflow}{return}\&\ m\_detectionRadius;\ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ int64\_t\ getUUID()\ \{\ \textcolor{keywordflow}{return}\ NULL;\}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//std::map<std::string,\ std::string>\ getDialoguePaths()\ \{\ return\ m\_dialoguePaths;\ \}}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !OBJECT\_HPP}}
+\DoxyCodeLine{00099\ }
+
+\end{DoxyCode}

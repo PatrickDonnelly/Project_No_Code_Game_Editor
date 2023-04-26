@@ -1,0 +1,103 @@
+\doxysection{Inspector.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ INSPECTOR\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ INSPECTOR\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}InspectorOptions.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}FontManager.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\#include\ "{}Object.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\#include\ "{}Enemy.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Attributes.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\#include\ "{}ObjectPlacement.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\#include\ "{}TextEditor.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}DropDownMenu.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Globals.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }Inspector}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ Inspector();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//Inspector(ObjectPlacement*\ t\_objects);}}
+\DoxyCodeLine{00029\ \ \ \ \ Inspector(sf::Font\&\ t\_font);}
+\DoxyCodeLine{00030\ \ \ \ \ Inspector(std::string\ t\_title,\ Attributes\&\ t\_object);}
+\DoxyCodeLine{00031\ \ \ \ \ Inspector(std::string\ t\_title);}
+\DoxyCodeLine{00032\ \ \ \ \ \string~Inspector();}
+\DoxyCodeLine{00033\ \ \ \ \ FontManager\ m\_fontManager;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ sf::Sprite\ getInspectorSprite();}
+\DoxyCodeLine{00036\ \ \ \ \ sf::Vector2f\ getInspectorPosition();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ initInspector();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ setInspectorSprite(sf::Sprite\ t\_dialogueSprite);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled()\ \{\ m\_enabled\ =\ !m\_enabled;\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::Time\ deltaTime,\ sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ processEvents(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window,\ GameState*\ t\_gameState,\ std::string\ t\_fileName,\ std::map<std::string,\ std::string>\&\ t\_dialoguePaths);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//void\ setInspectorText(std::string\ t\_dialogue)\ \{\ m\_textBox.setString(t\_dialogue);\ \}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ splitString(std::string\ t\_dialogueText);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ setTextString(std::string\ t\_text)\ \{\ m\_text.setString(t\_text);\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ Label*\ m\_currentLabel;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ isNull();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ addDialogueTab();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ updateDialogueTab();}
+\DoxyCodeLine{00057\ \ \ \ \ Button*\ m\_addDialogueButton;}
+\DoxyCodeLine{00058\ \ \ \ \ Button*\ m\_applyButton;}
+\DoxyCodeLine{00059\ \ \ \ \ Label*\ m\_addDialogueLabel;}
+\DoxyCodeLine{00060\ \ \ \ \ Label*\ m\_addCategoryLabel;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ repositionDropDown(std::vector<Button*>::iterator\ t\_iter1,\ std::vector<Button*>::iterator\ t\_iter2,\ std::vector<Label*>::iterator\ t\_iter3,\ std::vector<DropDownMenu*>::iterator\ t\_iter4,\ \textcolor{keywordtype}{int}\ t\_offset);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ repositionDialogueButtons();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//TextEditor\ m\_textEditor;}}
+\DoxyCodeLine{00065\ \ \ \ \ GameState*\ m\_gameState;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ saveChanges(std::map<std::string,\ std::string>\&\ t\_dialoguePaths);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::vector<std::string>\ m\_dialogueFileNames;}
+\DoxyCodeLine{00071\ \ \ \ \ std::vector<Label>\ m\_labels;}
+\DoxyCodeLine{00072\ \ \ \ \ Attributes\ m\_objectData;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//ObjectPlacement*\ m\_objects;}}
+\DoxyCodeLine{00074\ \ \ \ \ std::vector<Button*>\ m\_deleteButtons;}
+\DoxyCodeLine{00075\ \ \ \ \ std::vector<Button*>\ m\_dialogueButtons;}
+\DoxyCodeLine{00076\ \ \ \ \ std::vector<Label*>\ m\_dialogueLabels;}
+\DoxyCodeLine{00077\ \ \ \ \ std::vector<DropDownMenu*>\ m\_dialogueDropDownMenu;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_noOfOptions;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpFontAndText();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ initInspectorOptions();}
+\DoxyCodeLine{00084\ \ \ \ \ std::vector<InspectorOptions*>\ m\_inspectorOptions;}
+\DoxyCodeLine{00085\ \ \ \ \ Label*\ m\_inspectorLabel;}
+\DoxyCodeLine{00086\ \ \ \ \ std::vector<std::string>\ m\_dialogue;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \ \ sf::Sprite\ m\_inspectorSprite;}
+\DoxyCodeLine{00089\ \ \ \ \ sf::Texture\ m\_inspectorTexture;}
+\DoxyCodeLine{00090\ \ \ \ \ sf::RectangleShape\ m\_inspectorBGShape;}
+\DoxyCodeLine{00091\ \ \ \ \ std::string\ m\_title;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//std::string\ m\_text;}}
+\DoxyCodeLine{00093\ \ \ \ \ sf::Text\ m\_text;}
+\DoxyCodeLine{00094\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ initText();}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !INSPECTOR\_HPP}}
+\DoxyCodeLine{00098\ }
+
+\end{DoxyCode}

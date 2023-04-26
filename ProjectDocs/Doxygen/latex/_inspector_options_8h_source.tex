@@ -1,0 +1,63 @@
+\doxysection{Inspector\+Options.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INSPECTOROPTIONS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INSPECTOROPTIONS\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}CheckBox.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }InspectorOptions}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ InspectorOptions();}
+\DoxyCodeLine{00018\ \ \ \ \ InspectorOptions(sf::Font\&\ t\_font,\ \textcolor{keywordtype}{int}\ noOfOptions,\ std::string\ t\_tag);}
+\DoxyCodeLine{00019\ \ \ \ \ \string~InspectorOptions();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ sf::Sprite\ getInspectorOptionsSprite();}
+\DoxyCodeLine{00023\ \ \ \ \ sf::Vector2f\ getInspectorOptionsPosition();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ initInspectorOptions();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setInspectorOptionsPosition(sf::Vector2f\ t\_pos);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::Time\ deltaTime,\ sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled()\ \{\ m\_enabled\ =\ !m\_enabled;\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ setInspectorOptionsText(std::string\ t\_dialogue)\ \{\ m\_text.setString(t\_dialogue);\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ splitString(std::string\ t\_dialogueText);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ initOptions();}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ m\_tag;}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<CheckBox*>\ m\_options;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_noOfOptions;}
+\DoxyCodeLine{00044\ \ \ \ \ Label*\ m\_inspectorOptionsLabel;}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<std::string>\ m\_dialogue;}
+\DoxyCodeLine{00046\ \ \ \ \ GameState*\ m\_gameState;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ sf::Sprite\ m\_inspectorOptionsSprite;}
+\DoxyCodeLine{00049\ \ \ \ \ sf::Texture\ m\_inspectorOptionsTexture;}
+\DoxyCodeLine{00050\ \ \ \ \ sf::RectangleShape\ m\_inspectorOptionsBGShape;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//std::ostringstream\ m\_text;}}
+\DoxyCodeLine{00053\ \ \ \ \ sf::Text\ m\_text;}
+\DoxyCodeLine{00054\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ initText();}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !INSPECTOROPTIONS\_HPP}}
+\DoxyCodeLine{00058\ }
+
+\end{DoxyCode}

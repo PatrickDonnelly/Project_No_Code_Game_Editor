@@ -1,0 +1,5 @@
+<map id="Weapon::update" name="Weapon::update">
+<area shape="rect" id="node1" title="Updates weapon." alt="" coords="5,31,123,56"/>
+<area shape="rect" id="node2" href="$class_player.html#a0e01e4f5ee09a94228d4d50ce61ea141" title="Gets the animation state of the player." alt="" coords="185,5,360,31"/>
+<area shape="rect" id="node3" href="$class_weapon.html#acad46d87286f0182459ed16a989ea981" title="Sets up the collidable bounds of the weapon." alt="" coords="171,55,375,80"/>
+</map>

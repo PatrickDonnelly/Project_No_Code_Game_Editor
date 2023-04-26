@@ -1,0 +1,215 @@
+\doxysection{Object\+Placement Class Reference}
+\label{class_object_placement}\index{ObjectPlacement@{ObjectPlacement}}
+
+
+Collaboration diagram for Object\+Placement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_placement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_placement_ad296aa00d98d6fddf6a80f5a20d4a341}} 
+\textbf{ Object} $\ast$ {\bfseries get\+Selected\+Grid\+Object} ()
+\item 
+void \textbf{ process\+Events} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em processes mouse events \end{DoxyCompactList}\item 
+bool \textbf{ check\+For\+Double\+Click} (sf\+::\+Clock \&t\+\_\+clock, sf\+::\+Time \&t\+\_\+double\+Click\+Time)
+\begin{DoxyCompactList}\small\item\em Check for a double click on the mouse. \end{DoxyCompactList}\item 
+\mbox{\label{class_object_placement_aef7cf34715d8b24997281ce342578399}} 
+{\bfseries Object\+Placement} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for object placement. \end{DoxyCompactList}\item 
+\textbf{ Object\+Placement} (\textbf{ Game\+State} $\ast$t\+\_\+game\+State, \textbf{ Grid} $\ast$t\+\_\+grid, \textbf{ Texture\+Manager} $\ast$t\+\_\+texturemanager)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for object placement that takes in a pointer to the game state, grid and to the texture manager. \end{DoxyCompactList}\item 
+\mbox{\label{class_object_placement_ae1f259610e34f07d3359d2841b30714a}} 
+{\bfseries $\sim$\+Object\+Placement} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_object_placement_a85eed617347fd254a4d0ede233b968c2}} 
+void {\bfseries clear\+Objects} ()
+\begin{DoxyCompactList}\small\item\em Clear the grid and reset its tiles values to have no object. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders placed objects, independent colliders and the highlighted areas. \end{DoxyCompactList}\item 
+void \textbf{ update} (sf\+::\+Time t\+\_\+delta\+Time, sf\+::\+Render\+Window \&m\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Update collider sizes and the currently selected object. \end{DoxyCompactList}\item 
+bool \textbf{ check\+Valid\+Selection} ()
+\begin{DoxyCompactList}\small\item\em Check if a valid object was selected was made. \end{DoxyCompactList}\item 
+\mbox{\label{class_object_placement_af8d627d1a47051ae4d3a510720b9b3d1}} 
+void {\bfseries set\+Selected\+Object} (std\+::string t\+\_\+path, std\+::string t\+\_\+object\+Name)
+\item 
+\mbox{\label{class_object_placement_aa1183d0450671e0464abc342cb01c647}} 
+void {\bfseries set\+Colliders\+Enabled} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_placement_a5ebe656dda6440a4bd1b1ec303d72014}} 
+sf\+::\+Clock {\bfseries m\+\_\+clock}
+\item 
+\mbox{\label{class_object_placement_a2cf0718281ef9c19ecb6991bea886419}} 
+sf\+::\+Time {\bfseries m\+\_\+double\+Click\+Time} = sf\+::\+Time\+::\+Zero
+\item 
+\mbox{\label{class_object_placement_a44aecc8beaf9f022865d0e2d420b0ac4}} 
+std\+::vector$<$ \textbf{ Object} $\ast$ $>$ {\bfseries m\+\_\+enemies}
+\item 
+\mbox{\label{class_object_placement_a6fd486af065667b8acaf8159565d688b}} 
+std\+::vector$<$ \textbf{ Object} $\ast$ $>$ {\bfseries m\+\_\+terrain}
+\item 
+\mbox{\label{class_object_placement_a9f4b3b7486cdbee2208a0599d058144c}} 
+std\+::vector$<$ \textbf{ Object} $\ast$ $>$ {\bfseries m\+\_\+walls}
+\item 
+\mbox{\label{class_object_placement_a31e5227b004bde87df1997e65e92a51a}} 
+std\+::vector$<$ \textbf{ Object} $\ast$ $>$ {\bfseries m\+\_\+items}
+\item 
+\mbox{\label{class_object_placement_a346f0845f43f5954e3ec3427f95311e7}} 
+std\+::vector$<$ \textbf{ Object} $\ast$ $>$ {\bfseries m\+\_\+decorations}
+\item 
+\mbox{\label{class_object_placement_a41090572dd72b1447ba8be59b2193a73}} 
+std\+::vector$<$ \textbf{ Colliders} $>$ {\bfseries m\+\_\+colliders}
+\item 
+\mbox{\label{class_object_placement_aea055766b24969acd5cb2870dab1b514}} 
+\textbf{ Object} $\ast$ {\bfseries m\+\_\+currently\+Selected} \{nullptr\}
+\item 
+\mbox{\label{class_object_placement_a4a17f0bf5d8f6bee68ab259216c797d2}} 
+\textbf{ Game\+State} $\ast$ {\bfseries m\+\_\+game\+State}
+\item 
+\mbox{\label{class_object_placement_af54bacf45c178d240a2b42f1b42b8ba9}} 
+\textbf{ Grid} $\ast$ {\bfseries m\+\_\+grid}
+\item 
+\mbox{\label{class_object_placement_a3eab32abc8d880f627832e4693c19732}} 
+\textbf{ Texture\+Manager} $\ast$ {\bfseries m\+\_\+texture\+Manager}
+\item 
+\mbox{\label{class_object_placement_a5a299ea25ae03181e7bc0cb121fa9bbf}} 
+int {\bfseries no\+Of\+Obstacles} = 0
+\item 
+\mbox{\label{class_object_placement_aa6339ef7f9ca079323d62e399fe4c5c9}} 
+int {\bfseries max\+Obstacles} = 190
+\item 
+\mbox{\label{class_object_placement_a3dbfcb3ba6379250fa1e94ce386047a8}} 
+std\+::string {\bfseries m\+\_\+selected\+Object}
+\item 
+\mbox{\label{class_object_placement_a2022fdd682ac1064271cf12dce60cca0}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+selectable\+Objects}
+\item 
+\mbox{\label{class_object_placement_a57933f7724c7105492327a843d5fa76a}} 
+bool {\bfseries m\+\_\+colliders\+Enabled} = true
+\item 
+\mbox{\label{class_object_placement_ab3e948418626a73443606c129fdca8c9}} 
+std\+::string {\bfseries m\+\_\+temp\+Tag} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_object_placement_a794814136fc47ce43dcb2945fd6b26eb}} 
+\index{ObjectPlacement@{ObjectPlacement}!ObjectPlacement@{ObjectPlacement}}
+\index{ObjectPlacement@{ObjectPlacement}!ObjectPlacement@{ObjectPlacement}}
+\doxysubsubsection{ObjectPlacement()}
+{\footnotesize\ttfamily Object\+Placement\+::\+Object\+Placement (\begin{DoxyParamCaption}\item[{\textbf{ Game\+State} $\ast$}]{t\+\_\+game\+State,  }\item[{\textbf{ Grid} $\ast$}]{t\+\_\+grid,  }\item[{\textbf{ Texture\+Manager} $\ast$}]{t\+\_\+texture\+Manager }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for object placement that takes in a pointer to the game state, grid and to the texture manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+game\+State} & \\
+\hline
+{\em t\+\_\+grid} & \\
+\hline
+{\em t\+\_\+texture\+Manager} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_object_placement_a33a99c1168781b3be57b34871abad166}} 
+\index{ObjectPlacement@{ObjectPlacement}!checkForDoubleClick@{checkForDoubleClick}}
+\index{checkForDoubleClick@{checkForDoubleClick}!ObjectPlacement@{ObjectPlacement}}
+\doxysubsubsection{checkForDoubleClick()}
+{\footnotesize\ttfamily bool Object\+Placement\+::check\+For\+Double\+Click (\begin{DoxyParamCaption}\item[{sf\+::\+Clock \&}]{t\+\_\+clock,  }\item[{sf\+::\+Time \&}]{t\+\_\+double\+Click\+Time }\end{DoxyParamCaption})}
+
+
+
+Check for a double click on the mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+clock} & \\
+\hline
+{\em t\+\_\+double\+Click\+Time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_object_placement_ac95709c2d52f590bb1dfbc14c450834d}} 
+\index{ObjectPlacement@{ObjectPlacement}!checkValidSelection@{checkValidSelection}}
+\index{checkValidSelection@{checkValidSelection}!ObjectPlacement@{ObjectPlacement}}
+\doxysubsubsection{checkValidSelection()}
+{\footnotesize\ttfamily bool Object\+Placement\+::check\+Valid\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if a valid object was selected was made. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_object_placement_ad21f7ad7638030074faf5dcc369a1db3}} 
+\index{ObjectPlacement@{ObjectPlacement}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!ObjectPlacement@{ObjectPlacement}}
+\doxysubsubsection{processEvents()}
+{\footnotesize\ttfamily void Object\+Placement\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+processes mouse events 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_object_placement_a9ea5c46ea059f11757018f4f26a85c1f}} 
+\index{ObjectPlacement@{ObjectPlacement}!render@{render}}
+\index{render@{render}!ObjectPlacement@{ObjectPlacement}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Object\+Placement\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders placed objects, independent colliders and the highlighted areas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_object_placement_a05dd751b48018a88d00c5bfe2eabb4c7}} 
+\index{ObjectPlacement@{ObjectPlacement}!update@{update}}
+\index{update@{update}!ObjectPlacement@{ObjectPlacement}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void Object\+Placement\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{m\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Update collider sizes and the currently selected object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & \\
+\hline
+{\em m\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Object\+Placement.\+h\item 
+Object\+Placement.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,8 @@
+<map id="Wall::Wall" name="Wall::Wall">
+<area shape="rect" id="node1" title="Overloaded constructor." alt="" coords="5,31,88,56"/>
+<area shape="rect" id="node2" href="$class_wall.html#a66375124438a8e33b6b5561f2924f40a" title="Initialise object." alt="" coords="136,31,209,56"/>
+<area shape="rect" id="node3" href="$class_wall.html#ade8242b0714f9562e5e89afc79db663b" title="Sets up the collidable bounds of the wall object." alt="" coords="257,5,392,31"/>
+<area shape="rect" id="node4" href="$class_wall.html#a0c8cded4c7665306427d17c245442618" title="Sets up the walls sprite." alt="" coords="263,55,387,80"/>
+<area shape="rect" id="node5" href="$class_wall.html#aef6916497b9679e03536f8a43c739769" title="Sets the walls texture." alt="" coords="440,55,557,80"/>
+<area shape="rect" id="node6" href="$class_texture_manager.html#aabc3af4e63581ca3ba6ab964016b254f" title="Checks if a texture is loaded in memory and returns it." alt="" coords="605,55,789,80"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="DialogueBox::render" name="DialogueBox::render">
+<area shape="rect" id="node1" title="renders the dialogue box" alt="" coords="5,5,144,31"/>
+<area shape="rect" id="node2" href="$class_dialogue_box.html#aebab83be3bb4acfc933b49ebe46ec9b4" title="Checks if the dialogue box is enabled." alt="" coords="192,5,352,31"/>
+</map>

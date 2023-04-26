@@ -1,0 +1,183 @@
+\doxysection{Object\+Placement.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ OBJECTPLACEMENT\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ OBJECTPLACEMENT\_HPP}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Tile.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Colliders.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Enemy.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Terrain.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Wall.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Item.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Decoration.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Grid.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}TextureManager.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}Globals.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//template\ <typename\ T,\ typename\ Type>}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//void\ addObjectToGrid(std::vector<T*>\ t\_vectorOfObjects,\ int\ t\_i,\ int\ t\_j,\ std::string\ t\_tag,\ std::string\ t\_selectedObject,\ std::vector<std::vector<Tile*>>\ t\_grid)}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ \ t\_vectorOfObjects.push\_back(new\ Type(t\_tag,\ t\_selectedObject));}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ \ t\_vectorOfObjects.at(t\_vectorOfObjects.size()\ -\/\ 1)-\/>getEnemyBounds()-\/>setPosition(m\_vectGrid.at(t\_i).at(t\_j)-\/>getPos());}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ \ t\_vectorOfObjects.at(t\_vectorOfObjects.size()\ -\/\ 1)-\/>setRowColumn(t\_i,\ t\_j);}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ renderPlacedObjects(std::vector<T*>\&\ t\_objects,\ sf::RenderWindow*\ t\_window,\ \textcolor{keywordtype}{bool}\ t\_collidersEnabled)}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ t\_objects.size();\ i++)}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ t\_objects.at(i)-\/>render(*t\_window);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_collidersEnabled)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ t\_window-\/>draw(*t\_objects.at(i)-\/>getBounds());}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ setSpriteAndBounds(std::vector<T*>\&\ t\_objects)}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ t\_objects.size();\ i++)}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ t\_objects.at(i)-\/>getSprite()-\/>setPosition(t\_objects.at(i)-\/>getBounds()-\/>getPosition());}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ deleteObject(std::vector<T*>\&\ t\_objects,\ Grid*\ t\_grid,\ sf::RenderWindow\&\ m\_window)}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_objects.size()\ >\ 0)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{typename}\ std::vector<T*>::iterator\ iter\ =\ t\_objects.begin();\ iter\ !=\ t\_objects.end();)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ (*iter)-\/>setSelected(\textcolor{keyword}{false});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(*iter)-\/>getBounds()-\/>getGlobalBounds();}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*iter)-\/>getBounds()-\/>getGlobalBounds().contains(m\_window.mapPixelToCoords(sf::Mouse::getPosition(m\_window))))}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ resets\ the\ right\ tile\ even\ if\ the\ object\ was\ moved}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t\_grid-\/>m\_vectGrid.at((*iter)-\/>getRow()).at((*iter)-\/>getColumn()).m\_hasObject\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t\_grid-\/>m\_vectGrid.at((*iter)-\/>getRow()).at((*iter)-\/>getColumn()).m\_objectType\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iter\ =\ t\_objects.erase(iter);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iter++;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ setSelected(std::vector<T*>\&\ t\_objects,\ sf::RenderWindow*\ t\_window,\ Object*\ t\_currentlySelected)}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ t\_objects.size();\ ++i)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_objects.at(i)-\/>getBounds()-\/>getGlobalBounds().contains(t\_window-\/>mapPixelToCoords(sf::Mouse::getPosition(*t\_window))))}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ t\_currentlySelected\ =\ t\_objects.at(i);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ t\_currentlySelected-\/>setSelected(\textcolor{keyword}{true});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{//template\ <typename\ T>}}
+\DoxyCodeLine{00092\ \textcolor{comment}{//void\ setSelectedGridObjectt(std::vector<T*>\&\ t\_objects,\ sf::RenderWindow*\ t\_window,\ Object*\ t\_currentlySelected)}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ \ for\ (int\ i\ =\ 0;\ i\ <\ t\_objects.size();\ ++i)}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ \ \{}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ \ \ \ \ \ if\ (t\_objects.at(i)-\/>getBounds()-\/>getGlobalBounds().contains(t\_window-\/>mapPixelToCoords(sf::Mouse::getPosition(*t\_window))))}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ \ \ \ \ \ \{}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ t\_currentlySelected\ =\ t\_objects.at(i);}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ t\_currentlySelected-\/>setSelected(true);}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ break;}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ \ \}}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{class\ }ObjectPlacement}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ setSelectedGridObject(std::vector<Object*>\&\ t\_enemies,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00111\ \ \ \ \ sf::Vector2i\ m\_originalPosition\{\ 0,0\ \};}
+\DoxyCodeLine{00112\ \ \ \ \ std::string\ m\_storedObjectType\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ setObject(\textcolor{keywordtype}{int}\ t\_row,\ \textcolor{keywordtype}{int}\ t\_col,\ std::string\ t\_label,\ std::vector<Object*>\&\ t\_objects);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{bool}\ initialPress\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_placingMultiple\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ startRow\ =\ 0;}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ endRow\ =\ 0;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ startCol\ =\ 0;}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ endCol\ =\ 0;}
+\DoxyCodeLine{00120\ \ \ \ \ sf::RectangleShape\ m\_area;}
+\DoxyCodeLine{00121\ \ \ \ \ sf::Vector2i\ m\_screenPos;}
+\DoxyCodeLine{00122\ \ \ \ \ sf::Vector2f\ m\_worldPos;}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ createObject(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ swapInts(\textcolor{keywordtype}{int}\&\ t\_smallerNumber,\ \textcolor{keywordtype}{int}\&\ t\_biggerNumber);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ removeObject(sf::Event\ t\_event,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ placeObject(sf::Event\ t\_event,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ moveObject(sf::Event\ t\_event,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ selectObject(sf::Event\ t\_event,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ placeMultipleObjects(sf::Event\ t\_event,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ setInitialPress(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ setEndOfPress(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ scaleArea(sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ deleteMultipleObjects(std::vector<Object*>\&\ t\_objects,\ \textcolor{keywordtype}{int}\ t\_row,\ \textcolor{keywordtype}{int}\ t\_col);}
+\DoxyCodeLine{00135\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00136\ \ \ \ \ Object*\ getSelectedGridObject();}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ processEvents(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00138\ \ \ \ \ sf::Clock\ m\_clock;}
+\DoxyCodeLine{00139\ \ \ \ \ sf::Time\ m\_doubleClickTime\ =\ sf::Time::Zero;}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkForDoubleClick(sf::Clock\&\ t\_clock,\ sf::Time\&\ t\_doubleClickTime);}
+\DoxyCodeLine{00141\ \ \ \ \ std::vector\ <Object*>\ m\_enemies;}
+\DoxyCodeLine{00142\ \ \ \ \ std::vector\ <Object*>\ m\_terrain;}
+\DoxyCodeLine{00143\ \ \ \ \ std::vector\ <Object*>\ m\_walls;}
+\DoxyCodeLine{00144\ \ \ \ \ std::vector\ <Object*>\ m\_items;}
+\DoxyCodeLine{00145\ \ \ \ \ std::vector\ <Object*>\ m\_decorations;}
+\DoxyCodeLine{00146\ \ \ \ \ std::vector\ <Colliders>\ m\_colliders;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ Object*\ m\_currentlySelected\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00150\ \ \ \ \ GameState*\ m\_gameState;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ ObjectPlacement();}
+\DoxyCodeLine{00153\ \ \ \ \ ObjectPlacement(GameState*\ t\_gameState,\ Grid*\ t\_grid,\ TextureManager*\ t\_texturemanager);}
+\DoxyCodeLine{00154\ \ \ \ \ \string~ObjectPlacement();}
+\DoxyCodeLine{00155\ \ \ \ \ Grid*\ m\_grid;}
+\DoxyCodeLine{00156\ \ \ \ \ TextureManager*\ m\_textureManager;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ noOfObstacles\ =\ 0;}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ maxObstacles\ =\ 190;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ clearObjects();}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::Time\ t\_deltaTime,\ sf::RenderWindow\&\ m\_window);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkValidSelection();}
+\DoxyCodeLine{00170\ \ \ \ \ std::string\ m\_selectedObject;}
+\DoxyCodeLine{00171\ \ \ \ \ std::vector<std::string>\ m\_selectableObjects;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ setSelectedObject(std::string\ t\_path,\ std::string\ t\_objectName);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_collidersEnabled\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00175\ \ \ \ \ std::string\ m\_tempTag\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ setCollidersEnabled()\ \{\ m\_collidersEnabled\ =\ !m\_collidersEnabled;\ \}}
+\DoxyCodeLine{00177\ \};}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !OBJECTPLACEMENT\_HPP}}
+
+\end{DoxyCode}

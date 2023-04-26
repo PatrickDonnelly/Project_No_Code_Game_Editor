@@ -1,0 +1,283 @@
+\doxysection{Pop\+Up Class Reference}
+\label{class_pop_up}\index{PopUp@{PopUp}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_pop_up_ab933515a7758f74090f8cd043e06971e}} 
+{\bfseries Pop\+Up} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the pop up class. \end{DoxyCompactList}\item 
+\textbf{ Pop\+Up} (int t\+\_\+no\+Ofbuttons)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the pop up class that takes in a number of buttons to display on the pop up. \end{DoxyCompactList}\item 
+\mbox{\label{class_pop_up_ada3d161b16888bf832d4d7f711db8d52}} 
+{\bfseries $\sim$\+Pop\+Up} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor for the pop up class. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \textbf{ get\+Pop\+Up\+Box\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em gets the sprite of the pop up box \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \textbf{ get\+Pop\+Up\+Box\+Position} ()
+\begin{DoxyCompactList}\small\item\em Gets the position of the pop up box. \end{DoxyCompactList}\item 
+\mbox{\label{class_pop_up_ac2d4bcae3afc0b91d76a9d287ccc441c}} 
+void {\bfseries init\+Pop\+Up\+Box} ()
+\begin{DoxyCompactList}\small\item\em Initialises the pop up box. \end{DoxyCompactList}\item 
+void \textbf{ set\+Pop\+Up\+Box\+Sprite} (sf\+::\+Sprite t\+\_\+dialogue\+Sprite)
+\begin{DoxyCompactList}\small\item\em sets the pop up box sprite \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders the pop up box and its buttons / labels. \end{DoxyCompactList}\item 
+bool \textbf{ is\+Enabled} ()
+\begin{DoxyCompactList}\small\item\em Checks if the pop up box is enabled. \end{DoxyCompactList}\item 
+void \textbf{ set\+Pop\+Up\+Box\+Text} (std\+::string t\+\_\+text)
+\begin{DoxyCompactList}\small\item\em Sets the pop up box text to a string thats passed in. \end{DoxyCompactList}\item 
+\mbox{\label{class_pop_up_a093b7d25107f5a7bbff28487018a7d6e}} 
+void {\bfseries set\+Pop\+Up\+Enabled} ()
+\item 
+sf\+::\+Vector2f \textbf{ get\+Pop\+Up\+Box\+Bounds} ()
+\begin{DoxyCompactList}\small\item\em gets the bounds of the pop up box \end{DoxyCompactList}\item 
+void \textbf{ read\+In\+File} (std\+::string t\+\_\+file\+Name)
+\begin{DoxyCompactList}\small\item\em Reads in a text file to display a message in the pop up box window. \end{DoxyCompactList}\item 
+void \textbf{ set\+Pop\+Up\+Buttons} (int t\+\_\+no\+Ofbuttons)
+\begin{DoxyCompactList}\small\item\em Sets up the buttons to be displayed on the pop up. Close and / or continue. \end{DoxyCompactList}\item 
+\mbox{\label{class_pop_up_ae34c137b8f023b1e820f9d5c405499ac}} 
+std\+::vector$<$ \textbf{ Button} $\ast$ $>$ {\bfseries get\+Buttons} ()
+\item 
+bool \textbf{ process\+Events} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Processes whether or not a button was clicked on a button. Disables the pop up if a button was clicked returns true if continue was cliked otherwise false is returned. \end{DoxyCompactList}\item 
+\mbox{\label{class_pop_up_a8fb87222655604b5a203c43023728e89}} 
+void {\bfseries set\+Pop\+Up\+Enabled} (bool t\+\_\+on\+Off)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_pop_up_a9f9c8be773d349fd5a57d4a4cf46d310}} 
+\index{PopUp@{PopUp}!PopUp@{PopUp}}
+\index{PopUp@{PopUp}!PopUp@{PopUp}}
+\doxysubsubsection{PopUp()}
+{\footnotesize\ttfamily Pop\+Up\+::\+Pop\+Up (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+no\+Ofbuttons }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the pop up class that takes in a number of buttons to display on the pop up. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+no\+Ofbuttons} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_pop_up_a9f9c8be773d349fd5a57d4a4cf46d310_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_pop_up_aa2103e6ed364f5a35a0c830ec84e7bf8}} 
+\index{PopUp@{PopUp}!getPopUpBoxBounds@{getPopUpBoxBounds}}
+\index{getPopUpBoxBounds@{getPopUpBoxBounds}!PopUp@{PopUp}}
+\doxysubsubsection{getPopUpBoxBounds()}
+{\footnotesize\ttfamily sf\+::\+Vector2f Pop\+Up\+::get\+Pop\+Up\+Box\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the bounds of the pop up box 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pop_up_aa2103e6ed364f5a35a0c830ec84e7bf8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_pop_up_ad00c483e80e5cdf2bb36476dad2aa8b6}} 
+\index{PopUp@{PopUp}!getPopUpBoxPosition@{getPopUpBoxPosition}}
+\index{getPopUpBoxPosition@{getPopUpBoxPosition}!PopUp@{PopUp}}
+\doxysubsubsection{getPopUpBoxPosition()}
+{\footnotesize\ttfamily sf\+::\+Vector2f Pop\+Up\+::get\+Pop\+Up\+Box\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the position of the pop up box. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pop_up_ad00c483e80e5cdf2bb36476dad2aa8b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_pop_up_aaff07a9b4df27a1f6367550205e43174}} 
+\index{PopUp@{PopUp}!getPopUpBoxSprite@{getPopUpBoxSprite}}
+\index{getPopUpBoxSprite@{getPopUpBoxSprite}!PopUp@{PopUp}}
+\doxysubsubsection{getPopUpBoxSprite()}
+{\footnotesize\ttfamily sf\+::\+Sprite Pop\+Up\+::get\+Pop\+Up\+Box\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the sprite of the pop up box 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_pop_up_a59121a7e7749bac68163efeeba3a10cf}} 
+\index{PopUp@{PopUp}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!PopUp@{PopUp}}
+\doxysubsubsection{isEnabled()}
+{\footnotesize\ttfamily bool Pop\+Up\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the pop up box is enabled. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pop_up_a59121a7e7749bac68163efeeba3a10cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_pop_up_a7c2e3dcf16e6af8528301faf7950c3a9}} 
+\index{PopUp@{PopUp}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!PopUp@{PopUp}}
+\doxysubsubsection{processEvents()}
+{\footnotesize\ttfamily bool Pop\+Up\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Processes whether or not a button was clicked on a button. Disables the pop up if a button was clicked returns true if continue was cliked otherwise false is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pop_up_a7c2e3dcf16e6af8528301faf7950c3a9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_pop_up_a8384482b737588123284d075dbba8745}} 
+\index{PopUp@{PopUp}!readInFile@{readInFile}}
+\index{readInFile@{readInFile}!PopUp@{PopUp}}
+\doxysubsubsection{readInFile()}
+{\footnotesize\ttfamily void Pop\+Up\+::read\+In\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+file\+Name }\end{DoxyParamCaption})}
+
+
+
+Reads in a text file to display a message in the pop up box window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+file\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_pop_up_a6ec0d5df96ee4999bed7de7bf6184537}} 
+\index{PopUp@{PopUp}!render@{render}}
+\index{render@{render}!PopUp@{PopUp}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Pop\+Up\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders the pop up box and its buttons / labels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_pop_up_a6ec0d5df96ee4999bed7de7bf6184537_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_pop_up_aec73b81edfdcea6f3c15936fc3aa2837}} 
+\index{PopUp@{PopUp}!setPopUpBoxSprite@{setPopUpBoxSprite}}
+\index{setPopUpBoxSprite@{setPopUpBoxSprite}!PopUp@{PopUp}}
+\doxysubsubsection{setPopUpBoxSprite()}
+{\footnotesize\ttfamily void Pop\+Up\+::set\+Pop\+Up\+Box\+Sprite (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite}]{t\+\_\+dialogue\+Sprite }\end{DoxyParamCaption})}
+
+
+
+sets the pop up box sprite 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dialogue\+Sprite} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_pop_up_acf5d73b33f1f4b9965a8a5aaaf643512}} 
+\index{PopUp@{PopUp}!setPopUpBoxText@{setPopUpBoxText}}
+\index{setPopUpBoxText@{setPopUpBoxText}!PopUp@{PopUp}}
+\doxysubsubsection{setPopUpBoxText()}
+{\footnotesize\ttfamily void Pop\+Up\+::set\+Pop\+Up\+Box\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Sets the pop up box text to a string thats passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+text} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pop_up_acf5d73b33f1f4b9965a8a5aaaf643512_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_pop_up_a66913b9555847db0e51a0c33737f66b6}} 
+\index{PopUp@{PopUp}!setPopUpButtons@{setPopUpButtons}}
+\index{setPopUpButtons@{setPopUpButtons}!PopUp@{PopUp}}
+\doxysubsubsection{setPopUpButtons()}
+{\footnotesize\ttfamily void Pop\+Up\+::set\+Pop\+Up\+Buttons (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+no\+Ofbuttons }\end{DoxyParamCaption})}
+
+
+
+Sets up the buttons to be displayed on the pop up. Close and / or continue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+no\+Ofbuttons} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_pop_up_a66913b9555847db0e51a0c33737f66b6_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Pop\+Up.\+h\item 
+Pop\+Up.\+cpp\end{DoxyCompactItemize}

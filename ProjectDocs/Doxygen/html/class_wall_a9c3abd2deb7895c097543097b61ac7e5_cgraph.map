@@ -1,0 +1,6 @@
+<map id="Wall::renderInspector" name="Wall::renderInspector">
+<area shape="rect" id="node1" title="Renders the wall objects inspector if it is selected." alt="" coords="5,31,151,56"/>
+<area shape="rect" id="node2" href="$class_inspector.html#ab951d0ded758b28b76f73168c6f220b0" title="Render the inspector to the window." alt="" coords="199,31,317,56"/>
+<area shape="rect" id="node3" href="$class_button.html#a11a8a512ffe9f82c54a8a1f25f2578f3" title="Renders the button and a label if it has one." alt="" coords="365,5,469,31"/>
+<area shape="rect" id="node4" href="$class_label.html#a25a975c12c7e8cfc9521227a2b705994" title="Renders the label." alt="" coords="517,31,615,56"/>
+</map>

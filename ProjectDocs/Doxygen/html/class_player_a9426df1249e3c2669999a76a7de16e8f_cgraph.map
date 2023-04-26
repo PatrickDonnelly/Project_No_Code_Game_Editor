@@ -1,0 +1,4 @@
+<map id="Player::movement" name="Player::movement">
+<area shape="rect" id="node1" title="Process player movement." alt="" coords="5,5,132,31"/>
+<area shape="rect" id="node2" href="$class_player.html#a15ccefcb30b7e259663d4698e488c76e" title="Sets the animation state of the player." alt="" coords="180,5,355,31"/>
+</map>

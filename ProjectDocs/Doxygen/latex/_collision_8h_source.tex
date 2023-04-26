@@ -1,0 +1,29 @@
+\doxysection{Collision.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ COLLISION\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ COLLISION\_HPP}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Grid.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Colliders.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }Collision}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ Collision();}
+\DoxyCodeLine{00015\ \ \ \ \ \string~Collision();}
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//sf::RectangleShape\&\ m\_body;}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkCollision(sf::RectangleShape*\ t\_objectOne,\ sf::RectangleShape*\ t\_objectTwo,\ \textcolor{keywordtype}{float}\ t\_push);\ \textcolor{comment}{//\ 0\ player\ to\ wall\ wont\ move,\ 1\ push\ other\ object\ crate}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkCollision(sf::RectangleShape*\ t\_objectOne,\ sf::RectangleShape*\ t\_objectTwo);\ \textcolor{comment}{//\ 0\ player\ to\ wall\ wont\ move,\ 1\ push\ other\ object\ crate}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keywordtype}{float}\ t\_deltaX,\ \textcolor{keywordtype}{float}\ t\_deltaY,\ sf::RectangleShape*\ t\_object);\ \ \textcolor{comment}{//\ do\ not\ have\ to\ make\ body\ public\ now}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \};\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !COLLISION\_HPP}}
+\DoxyCodeLine{00024\ }
+
+\end{DoxyCode}

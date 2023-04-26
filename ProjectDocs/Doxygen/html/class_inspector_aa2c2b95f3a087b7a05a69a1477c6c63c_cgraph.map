@@ -1,0 +1,7 @@
+<map id="Inspector::processEvents" name="Inspector::processEvents">
+<area shape="rect" id="node1" title="process mouse events for the inspector" alt="" coords="5,31,173,56"/>
+<area shape="rect" id="node2" href="$class_label.html#ad0ebcda244aab0f66713a57f8424c726" title="get the position of the label text" alt="" coords="225,5,376,31"/>
+<area shape="rect" id="node3" href="$class_button.html#ab18fbb0897cb72c04b56eff221758a49" title="Checks if a button has been clicked." alt="" coords="221,55,380,80"/>
+<area shape="rect" id="node4" href="$class_button.html#a070aa8cd060101164d22e96303c4fff0" title="Changes the texture of the button if it is highlighted." alt="" coords="446,29,577,55"/>
+<area shape="rect" id="node5" href="$class_button.html#a6e34e02438491419267dc6bf9c352fd9" title="Sets the button texture." alt="" coords="428,79,595,104"/>
+</map>

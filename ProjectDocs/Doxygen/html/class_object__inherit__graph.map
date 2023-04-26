@@ -1,0 +1,9 @@
+<map id="Object" name="Object">
+<area shape="rect" id="node1" title=" " alt="" coords="250,5,310,31"/>
+<area shape="rect" id="node2" href="$class_colliders.html" title=" " alt="" coords="5,79,77,104"/>
+<area shape="rect" id="node3" href="$class_decoration.html" title=" " alt="" coords="102,79,186,104"/>
+<area shape="rect" id="node4" href="$class_enemy.html" title=" " alt="" coords="210,79,273,104"/>
+<area shape="rect" id="node5" href="$class_item.html" title=" " alt="" coords="297,79,343,104"/>
+<area shape="rect" id="node6" href="$class_terrain.html" title=" " alt="" coords="368,79,429,104"/>
+<area shape="rect" id="node7" href="$class_wall.html" title=" " alt="" coords="453,79,501,104"/>
+</map>

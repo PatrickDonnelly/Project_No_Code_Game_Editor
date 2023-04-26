@@ -1,0 +1,6 @@
+<map id="Label::getText" name="Label::getText">
+<area shape="rect" id="node1" title="Get the label text." alt="" coords="497,38,601,63"/>
+<area shape="rect" id="node2" href="$class_inspector_options.html#a2722dfe65b9a6c8058a42865f2588c61" title="initialise Options you can find in the inspector" alt="" coords="247,13,437,38"/>
+<area shape="rect" id="node4" href="$class_check_box.html#af7ac5bd8a639a18846d6525af5b51182" title="set the position of the checkbox" alt="" coords="235,62,449,87"/>
+<area shape="rect" id="node3" href="$class_inspector_options.html#a0ab9984af4fa6fc004f37f244c596950" title="Overloaded constructor for the Inspector options class." alt="" coords="5,5,187,45"/>
+</map>

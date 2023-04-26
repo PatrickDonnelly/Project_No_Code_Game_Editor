@@ -1,0 +1,6 @@
+<map id="CheckBox::CheckBox" name="CheckBox::CheckBox">
+<area shape="rect" id="node1" title="Overloaded constructor." alt="" coords="5,55,156,80"/>
+<area shape="rect" id="node2" href="$class_font_manager.html#ac10adb2985dcb3ea471ab92e710ba5d9" title="Checks if a font has already been loaded into memory. If it has it returns a pointer to the font If n..." alt="" coords="212,5,363,31"/>
+<area shape="rect" id="node3" href="$class_check_box.html#a2f92b5b0a24f14d5e74a986a97ca71b7" title="Initialise checkbox size, colour, position." alt="" coords="204,55,371,80"/>
+<area shape="rect" id="node4" href="$class_label.html#a0bb2cf2f12f82b2b88391c37f0165f85" title="Set Text." alt="" coords="235,104,339,129"/>
+</map>

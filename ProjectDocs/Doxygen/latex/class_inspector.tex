@@ -1,0 +1,168 @@
+\doxysection{Inspector Class Reference}
+\label{class_inspector}\index{Inspector@{Inspector}}
+
+
+Collaboration diagram for Inspector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{class_inspector__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_inspector_a36466402c0343b3aecd96eebbb09f905}} 
+{\bfseries Inspector} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the inspector. \end{DoxyCompactList}\item 
+\mbox{\label{class_inspector_a300f9b89e72d9483a932e97bda526661}} 
+{\bfseries Inspector} (sf\+::\+Font \&t\+\_\+font)
+\item 
+\textbf{ Inspector} (std\+::string t\+\_\+title, \textbf{ Attributes} \&t\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the inspector that takes in a title string and object attributes. \end{DoxyCompactList}\item 
+\mbox{\label{class_inspector_aa0baedbc43ec4925a76369b5552dccae}} 
+{\bfseries Inspector} (std\+::string t\+\_\+title)
+\item 
+\mbox{\label{class_inspector_a41439d88f3afc00d5737cdc3043f6ae2}} 
+{\bfseries $\sim$\+Inspector} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor for the inspector class. \end{DoxyCompactList}\item 
+\mbox{\label{class_inspector_a94c413fb315960f029b1e72f6df408dc}} 
+sf\+::\+Sprite {\bfseries get\+Inspector\+Sprite} ()
+\item 
+\mbox{\label{class_inspector_ae8d9b2c7422c408f2c2d17ddc8dca5a7}} 
+sf\+::\+Vector2f {\bfseries get\+Inspector\+Position} ()
+\item 
+\mbox{\label{class_inspector_a730db9387d175fdf03fa7e531c1df3fe}} 
+void {\bfseries init\+Inspector} ()
+\begin{DoxyCompactList}\small\item\em initialise the inspector \end{DoxyCompactList}\item 
+\mbox{\label{class_inspector_a0961e60232eb41e99d68105c02044781}} 
+void {\bfseries set\+Inspector\+Sprite} (sf\+::\+Sprite t\+\_\+dialogue\+Sprite)
+\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Render the inspector to the window. \end{DoxyCompactList}\item 
+\mbox{\label{class_inspector_a4b8fd37e78f8191cc722980351639845}} 
+bool {\bfseries is\+Enabled} ()
+\item 
+\mbox{\label{class_inspector_a957460e7cdd0cdba6f04e95d91ff1775}} 
+void {\bfseries set\+Enabled} ()
+\item 
+\mbox{\label{class_inspector_a7b8492996cf000388e3215152b3eea22}} 
+void {\bfseries update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)
+\item 
+void \textbf{ process\+Events} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window, \textbf{ Game\+State} $\ast$t\+\_\+game\+State, std\+::string t\+\_\+file\+Name, std\+::map$<$ std\+::string, std\+::string $>$ \&t\+\_\+dialogue\+Paths)
+\begin{DoxyCompactList}\small\item\em process mouse events for the inspector \end{DoxyCompactList}\item 
+\mbox{\label{class_inspector_aeb48bfb70e7aff6b693b4dadefdbd25c}} 
+void {\bfseries split\+String} (std\+::string t\+\_\+dialogue\+Text)
+\item 
+\mbox{\label{class_inspector_a050d049e59362236a699456616a14539}} 
+void {\bfseries set\+Text\+String} (std\+::string t\+\_\+text)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_inspector_aa35e428c6644fd37c87eed683c489498}} 
+\textbf{ Font\+Manager} {\bfseries m\+\_\+font\+Manager}
+\item 
+\mbox{\label{class_inspector_aa3bafb592492c2c5a21806853f5029d7}} 
+\textbf{ Label} $\ast$ {\bfseries m\+\_\+current\+Label}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_inspector_a8c80a48aa9f358c0ac6a9dda0fbe17e2}} 
+\index{Inspector@{Inspector}!Inspector@{Inspector}}
+\index{Inspector@{Inspector}!Inspector@{Inspector}}
+\doxysubsubsection{Inspector()}
+{\footnotesize\ttfamily Inspector\+::\+Inspector (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+title,  }\item[{\textbf{ Attributes} \&}]{t\+\_\+object }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the inspector that takes in a title string and object attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+title} & \\
+\hline
+{\em t\+\_\+object} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inspector_a8c80a48aa9f358c0ac6a9dda0fbe17e2_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_inspector_aa2c2b95f3a087b7a05a69a1477c6c63c}} 
+\index{Inspector@{Inspector}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!Inspector@{Inspector}}
+\doxysubsubsection{processEvents()}
+{\footnotesize\ttfamily void Inspector\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{\textbf{ Game\+State} $\ast$}]{t\+\_\+game\+State,  }\item[{std\+::string}]{t\+\_\+file\+Name,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{t\+\_\+dialogue\+Paths }\end{DoxyParamCaption})}
+
+
+
+process mouse events for the inspector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+{\em t\+\_\+game\+State} & \\
+\hline
+{\em t\+\_\+file\+Name} & \\
+\hline
+{\em t\+\_\+dialogue\+Paths} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inspector_aa2c2b95f3a087b7a05a69a1477c6c63c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_inspector_ab951d0ded758b28b76f73168c6f220b0}} 
+\index{Inspector@{Inspector}!render@{render}}
+\index{render@{render}!Inspector@{Inspector}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Inspector\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Render the inspector to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inspector_ab951d0ded758b28b76f73168c6f220b0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_inspector_ab951d0ded758b28b76f73168c6f220b0_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Inspector.\+h\item 
+Inspector.\+cpp\end{DoxyCompactItemize}

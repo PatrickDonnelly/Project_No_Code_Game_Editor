@@ -1,0 +1,41 @@
+\doxysection{Game\+State.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{enum\ class}\ State\ \{}
+\DoxyCodeLine{00004\ \ \ \ \ MENU\ =\ 0,}
+\DoxyCodeLine{00005\ \ \ \ \ ROOM\_BUILD\ =\ 1,}
+\DoxyCodeLine{00006\ \ \ \ \ ROOM\_TEXTURE\ =\ 2,}
+\DoxyCodeLine{00007\ \ \ \ \ ROOM\_PLACE\_OBJECTS\ =\ 3,}
+\DoxyCodeLine{00008\ \ \ \ \ ROOM\_TEST\ =\ 4,}
+\DoxyCodeLine{00009\ \ \ \ \ ROOM\_SAVE\ =\ 5,}
+\DoxyCodeLine{00010\ \ \ \ \ CREATE\_DIALOGUE\ =\ 6,}
+\DoxyCodeLine{00011\ \ \ \ \ PAUSE\_GAME\ =7,\ }
+\DoxyCodeLine{00012\ \ \ \ \ LOAD\_GAME\ =\ 8,}
+\DoxyCodeLine{00013\ \ \ \ \ PLAY\_GAME\ =\ 9,}
+\DoxyCodeLine{00014\ \ \ \ \ GAME\_LIST\ =\ 10,}
+\DoxyCodeLine{00015\ \ \ \ \ SAVING\ =\ 11,}
+\DoxyCodeLine{00016\ \ \ \ \ LEVEL\_LIST\ =\ 12,}
+\DoxyCodeLine{00017\ \ \ \ \ SAVING\_SCREEN\ =13}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }GameState}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ GameState(State\ t\_state);}
+\DoxyCodeLine{00027\ \ \ \ \ \string~GameState();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ State\ m\_currentGameState;}
+\DoxyCodeLine{00030\ \ \ \ \ State\ m\_previousGameState;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setState(State\ t\_state)\ \{\ m\_previousGameState\ =\ m\_currentGameState;\ m\_currentGameState\ =\ t\_state;\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ State\ getState()\ \{\ \textcolor{keywordflow}{return}\ m\_currentGameState;\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ State\ getPreviousState()\ \{\ \textcolor{keywordflow}{return}\ m\_previousGameState;\ \}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+
+\end{DoxyCode}

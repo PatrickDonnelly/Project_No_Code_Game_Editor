@@ -1,0 +1,7 @@
+<map id="Item::init" name="Item::init">
+<area shape="rect" id="node1" title="Initialise the item object." alt="" coords="5,31,77,56"/>
+<area shape="rect" id="node2" href="$class_item.html#a89e7f1b75fbe77aeef0211608d3a1e4c" title="Sets up the collidable bounds of the item object." alt="" coords="125,5,259,31"/>
+<area shape="rect" id="node3" href="$class_item.html#ae3d5085f8bbc6346db65ee937d037ff0" title="Set up the sprite of the item object." alt="" coords="131,55,253,80"/>
+<area shape="rect" id="node4" href="$class_item.html#a46abb4db25385deb25989d1f78768341" title="Set the texture of the item object." alt="" coords="307,55,423,80"/>
+<area shape="rect" id="node5" href="$class_texture_manager.html#aabc3af4e63581ca3ba6ab964016b254f" title="Checks if a texture is loaded in memory and returns it." alt="" coords="471,55,655,80"/>
+</map>

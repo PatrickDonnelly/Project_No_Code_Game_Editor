@@ -1,0 +1,58 @@
+\doxysection{Enemy.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ ENEMY\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ ENEMY\_HPP}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Object.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}TextureManager.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Attributes.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }Enemy\ :\ \textcolor{keyword}{public}\ Object}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ sf::RectangleShape\ m\_detectionRadius;}
+\DoxyCodeLine{00016\ \ \ \ \ int64\_t\ m\_uuid;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ Enemy();}
+\DoxyCodeLine{00019\ \ \ \ \ Enemy(std::string\ t\_path);}
+\DoxyCodeLine{00020\ \ \ \ \ Enemy(std::string\ t\_typeTag,\ std::string\ t\_path,\ TextureManager*\ t\_textureManager);}
+\DoxyCodeLine{00021\ \ \ \ \ \string~Enemy();}
+\DoxyCodeLine{00022\ \ \ \ \ TextureManager*\ m\_textureManager;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//Attributes*\ m\_enemyAttributes;}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ init();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpSprite();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setTexture(sf::Texture\&\ t\_texture);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setPathToTexture(std::string\ t\_path);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpBounds();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::Time\ deltaTime,\ sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ renderInspector(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasDialogue\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHasDialogue()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ m\_hasDialogue;\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ setObjectCategory(std::string\ t\_objectCategory)\ \{\ m\_objectCategory\ =\ \textcolor{stringliteral}{"{}Enemy"{}};\ \}}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ getObjectCategory()\ \{\ \textcolor{keywordflow}{return}\ m\_objectCategory;\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ DialogueBox*\ getDialogueBox()\ \{\ \textcolor{keywordflow}{return}\ m\_dialogue;\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ loadDialogue(std::string\ t\_dialogueType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ inRangePlayed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ getInRange()\textcolor{keyword}{\ override}\{\ \textcolor{keywordflow}{return}\ inRangePlayed;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ std::map<std::string,\ std::string>*\ getDialoguePaths()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \&m\_dialoguePaths;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ sf::RectangleShape*\ getDetectionRadius()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\&\ m\_detectionRadius;\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ setDetectionRadius(\textcolor{keywordtype}{int}\ t\_noOfCells)\ \{\ m\_detectionRadius.setSize(sf::Vector2f(32.0f\ *\ t\_noOfCells,\ 32.0f\ *\ t\_noOfCells));\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ int64\_t\ getUUID()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ m\_uuid;\ \}}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !ENEMY\_HPP}}
+\DoxyCodeLine{00053\ }
+
+\end{DoxyCode}

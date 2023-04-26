@@ -1,0 +1,4 @@
+<map id="DialogueBox::loadText" name="DialogueBox::loadText">
+<area shape="rect" id="node1" title="Loads text from a txt file to be displayed inside the dialogue box." alt="" coords="5,5,157,31"/>
+<area shape="rect" id="node2" href="$class_dialogue_box.html#a7024900b7d024c41c6dcef6e7c1f0dae" title="Splits the string into multiple lines for display." alt="" coords="205,5,367,31"/>
+</map>

@@ -1,0 +1,237 @@
+\doxysection{Weapon Class Reference}
+\label{class_weapon}\index{Weapon@{Weapon}}
+
+
+Collaboration diagram for Weapon\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_weapon__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Weapon} (\textbf{ Player} $\ast$t\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Overloaded cinstructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_weapon_a42dbc46dd70319a24763992c4ebbd396}} 
+{\bfseries Weapon} ()
+\begin{DoxyCompactList}\small\item\em Deafult constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_weapon_a420e7ba3d2017e6de3e93eb579cfd3fa}} 
+{\bfseries $\sim$\+Weapon} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_weapon_ae12708c5705a435d6968feb441bff7d8}} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Initialise the weapon. \end{DoxyCompactList}\item 
+\mbox{\label{class_weapon_ae8dd62a0b750837a0e7895c1f6d639c9}} 
+void {\bfseries load\+Assets} ()
+\begin{DoxyCompactList}\small\item\em Loads the texture for the weapon. \end{DoxyCompactList}\item 
+\mbox{\label{class_weapon_afaa7a82dd229ea9d39a5a162c3e1b3cd}} 
+void {\bfseries set\+Up\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Sets up sprite. \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Weapon\+Bounds} (float t\+\_\+width, float t\+\_\+height, float t\+\_\+offsetX, float t\+\_\+offsetY)
+\begin{DoxyCompactList}\small\item\em Sets up the collidable bounds of the weapon. \end{DoxyCompactList}\item 
+\mbox{\label{class_weapon_ace2b793d4859b7f966fb74c3f8f5aed2}} 
+void {\bfseries set\+Up\+Bounds\+Colour} ()
+\begin{DoxyCompactList}\small\item\em sets the colour of the bounding box \end{DoxyCompactList}\item 
+void \textbf{ process\+Events} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Processes key presses. \end{DoxyCompactList}\item 
+\mbox{\label{class_weapon_afce2e1c9bd5b22f2f4a90b4e13fe736e}} 
+void {\bfseries process\+Keys} (sf\+::\+Event t\+\_\+event)
+\item 
+void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Updates weapon. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em renders weapon \end{DoxyCompactList}\item 
+sf\+::\+Sprite $\ast$ \textbf{ get\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Gets the weapon sprite. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape $\ast$ \textbf{ get\+Weapon\+Bounds} ()
+\begin{DoxyCompactList}\small\item\em Get the weapons bounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_weapon_a092a98355a3da7b4bbb2afe30c87ca07}} 
+\textbf{ Player} $\ast$ {\bfseries m\+\_\+player}
+\item 
+\mbox{\label{class_weapon_a062373bca05f674a712f2f1e2cf96489}} 
+bool {\bfseries m\+\_\+weapon\+Enabled} = false
+\item 
+\mbox{\label{class_weapon_a7e10abe4cd2345d55420f867f6a8db0c}} 
+bool {\bfseries m\+\_\+weapon\+Used} = false
+\item 
+\mbox{\label{class_weapon_ae9de730da2fe7b22293231ffe09f246e}} 
+bool {\bfseries m\+\_\+weapon\+Can\+Use} = true
+\item 
+\mbox{\label{class_weapon_a960e3368a777a0b09ed237162173f871}} 
+float {\bfseries weapon\+Cool\+Down} = 0.\+0f
+\item 
+\mbox{\label{class_weapon_a76ab920004a8b00168578f91e4bb25d9}} 
+sf\+::\+Clock {\bfseries m\+\_\+timer}
+\item 
+\mbox{\label{class_weapon_a86e4ba9cee6161da1dd16e99b2de49e9}} 
+sf\+::\+Sprite {\bfseries m\+\_\+weapon\+Sprite}
+\item 
+\mbox{\label{class_weapon_a7d15771d3f7d5c5319746a47e041764a}} 
+sf\+::\+Texture {\bfseries m\+\_\+weapon\+Texture}
+\item 
+\mbox{\label{class_weapon_aa5a98b4b07d2a54418226fc142e0bf04}} 
+float {\bfseries m\+\_\+weapon\+Bounds\+Width}
+\item 
+\mbox{\label{class_weapon_a3d0a21604a73f91233292b72fecfe5cf}} 
+float {\bfseries m\+\_\+weapon\+Bounds\+Height}
+\item 
+\mbox{\label{class_weapon_a017028e8ce7a02374ff6a5f863514ce7}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+weapon\+Bounds}
+\item 
+\mbox{\label{class_weapon_a2609bbecce557d8057a7a1816c98f444}} 
+int {\bfseries m\+\_\+frame\+Size}
+\item 
+\mbox{\label{class_weapon_a711a84ff25ae8a034210490a635d9893}} 
+bool {\bfseries m\+\_\+colliding}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_weapon_a2abecc9f9c8778959db32b7653552ef1}} 
+\index{Weapon@{Weapon}!Weapon@{Weapon}}
+\index{Weapon@{Weapon}!Weapon@{Weapon}}
+\doxysubsubsection{Weapon()}
+{\footnotesize\ttfamily Weapon\+::\+Weapon (\begin{DoxyParamCaption}\item[{\textbf{ Player} $\ast$}]{t\+\_\+player }\end{DoxyParamCaption})}
+
+
+
+Overloaded cinstructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_weapon_a2abecc9f9c8778959db32b7653552ef1_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_weapon_a81d43b4102cff0a1e1fc984e9635864e}} 
+\index{Weapon@{Weapon}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!Weapon@{Weapon}}
+\doxysubsubsection{getSprite()}
+{\footnotesize\ttfamily sf\+::\+Sprite $\ast$ Weapon\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the weapon sprite. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_weapon_a6aad02a8d2b4528d47f0ba2fd101b69c}} 
+\index{Weapon@{Weapon}!getWeaponBounds@{getWeaponBounds}}
+\index{getWeaponBounds@{getWeaponBounds}!Weapon@{Weapon}}
+\doxysubsubsection{getWeaponBounds()}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape $\ast$ Weapon\+::get\+Weapon\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the weapons bounds. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_weapon_a66fd9a69a2f22793a88a81611df7eab5}} 
+\index{Weapon@{Weapon}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!Weapon@{Weapon}}
+\doxysubsubsection{processEvents()}
+{\footnotesize\ttfamily void Weapon\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+Processes key presses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_weapon_a4925418b22f0707061d844e3c017c37b}} 
+\index{Weapon@{Weapon}!render@{render}}
+\index{render@{render}!Weapon@{Weapon}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Weapon\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+renders weapon 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_weapon_acad46d87286f0182459ed16a989ea981}} 
+\index{Weapon@{Weapon}!setUpWeaponBounds@{setUpWeaponBounds}}
+\index{setUpWeaponBounds@{setUpWeaponBounds}!Weapon@{Weapon}}
+\doxysubsubsection{setUpWeaponBounds()}
+{\footnotesize\ttfamily void Weapon\+::set\+Up\+Weapon\+Bounds (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+width,  }\item[{float}]{t\+\_\+height,  }\item[{float}]{t\+\_\+offsetX,  }\item[{float}]{t\+\_\+offsetY }\end{DoxyParamCaption})}
+
+
+
+Sets up the collidable bounds of the weapon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+width} & \\
+\hline
+{\em t\+\_\+height} & \\
+\hline
+{\em t\+\_\+offsetX} & \\
+\hline
+{\em t\+\_\+offsetY} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_weapon_acad46d87286f0182459ed16a989ea981_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_weapon_aa5a56a28fa3b540ed68499457a39a11e}} 
+\index{Weapon@{Weapon}!update@{update}}
+\index{update@{update}!Weapon@{Weapon}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void Weapon\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Updates weapon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_weapon_aa5a56a28fa3b540ed68499457a39a11e_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Weapon.\+h\item 
+Weapon.\+cpp\end{DoxyCompactItemize}

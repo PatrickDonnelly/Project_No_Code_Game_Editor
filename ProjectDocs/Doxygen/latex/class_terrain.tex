@@ -1,0 +1,448 @@
+\doxysection{Terrain Class Reference}
+\label{class_terrain}\index{Terrain@{Terrain}}
+
+
+Inheritance diagram for Terrain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{class_terrain__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Terrain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_terrain_a7160a06ab07a86ed97d23374405e8ef6}} 
+{\bfseries Terrain} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\textbf{ Terrain} (std\+::string t\+\_\+type\+Tag, std\+::string t\+\_\+path, \textbf{ Texture\+Manager} $\ast$t\+\_\+texture\+Manager)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_terrain_a2f7f0a2aee54886324ccf48a6f321de0}} 
+{\bfseries $\sim$\+Terrain} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \textbf{ init} ()
+\begin{DoxyCompactList}\small\item\em Initialise the terrain object. \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Set up the terrain objects sprite. \end{DoxyCompactList}\item 
+void \textbf{ set\+Texture} (sf\+::\+Texture \&t\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em Sets the texture of the terrain object. \end{DoxyCompactList}\item 
+void \textbf{ set\+Path\+To\+Texture} (std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Sets the path to the terrain objects texture in the directory. \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Bounds} ()
+\begin{DoxyCompactList}\small\item\em Sets up the bounds of the terrain object. \end{DoxyCompactList}\item 
+void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Updates the terrain object. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the terrain object. \end{DoxyCompactList}\item 
+int64\+\_\+t \textbf{ get\+UUID} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_a40860402e64d8008fb42329df7097cdb}} 
+{\bfseries Object} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_object_ae8f5483f459e46687bd01e6f9977afd3}} 
+{\bfseries $\sim$\+Object} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+virtual void \textbf{ init} ()=0
+\item 
+virtual void \textbf{ set\+Up\+Sprite} ()=0
+\item 
+\mbox{\label{class_object_a7d89bd060773d6b1dea859dbf325ec68}} 
+virtual void {\bfseries set\+Object\+Category} (std\+::string t\+\_\+\+Object\+Category)=0
+\item 
+virtual std\+::string \textbf{ get\+Object\+Category} ()=0
+\item 
+virtual void \textbf{ set\+Texture} (sf\+::\+Texture \&t\+\_\+texture)=0
+\item 
+virtual void \textbf{ set\+Path\+To\+Texture} (std\+::string t\+\_\+path)=0
+\item 
+virtual void \textbf{ set\+Up\+Bounds} ()=0
+\item 
+virtual void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)=0
+\item 
+virtual void \textbf{ render} (sf\+::\+Render\+Window \&window)=0
+\item 
+virtual void \textbf{ render\+Inspector} (sf\+::\+Render\+Window \&window)=0
+\item 
+\mbox{\label{class_object_a5c114a884bd8b2e403f0a9ab039287dd}} 
+virtual bool {\bfseries get\+Has\+Dialogue} ()
+\item 
+\mbox{\label{class_object_a63e401373ddf1421a688267db165c452}} 
+void {\bfseries set\+Row\+Column} (int t\+\_\+row, int t\+\_\+col)
+\item 
+\mbox{\label{class_object_a07d20326b3da66d531639ffee3c0bf0d}} 
+virtual sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Bounds} ()
+\item 
+\mbox{\label{class_object_a1c65a5cb9714327112c6eb62a7e2a814}} 
+sf\+::\+Sprite $\ast$ {\bfseries get\+Sprite} ()
+\item 
+\mbox{\label{class_object_a188fbf8d50f34c82b9eff22a29f2896e}} 
+void {\bfseries toggle\+Bounds} ()
+\item 
+\mbox{\label{class_object_a0d2e685ed20b49ec1b7feeba4c0f1cc9}} 
+bool {\bfseries is\+Collidable} ()
+\item 
+\mbox{\label{class_object_ab7ea4592b344857538ec6e9204a4b7da}} 
+int {\bfseries get\+Row} ()
+\item 
+\mbox{\label{class_object_a659906224ab5101d741409c7bf308258}} 
+int {\bfseries get\+Column} ()
+\item 
+\mbox{\label{class_object_a76638f714a77bdde109d04030c350bd7}} 
+void {\bfseries set\+Collidable} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_a5f6009ea1d51463088552c839e8c6482}} 
+bool {\bfseries get\+Selected} ()
+\item 
+\mbox{\label{class_object_a44e7dcf8d8a607f084455328c25001be}} 
+void {\bfseries set\+Selected} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_ab17d42cdb53019d43a52b3fdd051a802}} 
+void {\bfseries set\+Moving} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_abf357fcc5c94a8d783ae83cfd7aed945}} 
+void {\bfseries set\+Tag} (std\+::string t\+\_\+tag)
+\item 
+\mbox{\label{class_object_a7047e90b20c56f87e2611dc8f6122bb8}} 
+\textbf{ Inspector} $\ast$ {\bfseries get\+Inspector} ()
+\item 
+\mbox{\label{class_object_aa54fd65f9b35486bc4187e81bc2ee2d8}} 
+std\+::string {\bfseries get\+Tag} ()
+\item 
+\mbox{\label{class_object_a1a962bda9a6985b534f1070afdd108d0}} 
+std\+::string {\bfseries get\+Path} ()
+\item 
+\mbox{\label{class_object_a23bfb0a75209c99e72b33f5447c8c504}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries get\+Dialogue\+Box} ()
+\item 
+\mbox{\label{class_object_a45342e6097e3ca9ab0917021fc71bbb6}} 
+virtual bool {\bfseries get\+In\+Range} ()
+\item 
+\mbox{\label{class_object_a873a644c2d5aa8aaf141e7fb1a674fe0}} 
+virtual std\+::map$<$ std\+::string, std\+::string $>$ $\ast$ {\bfseries get\+Dialogue\+Paths} ()
+\item 
+virtual void \textbf{ load\+Dialogue} (std\+::string t\+\_\+load\+Dialogue)
+\item 
+\mbox{\label{class_object_a28376066193d54be1f5fe43efb9ab741}} 
+virtual sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Detection\+Radius} ()
+\item 
+\mbox{\label{class_object_aa990df6d103551a658d0c85b8c7b0847}} 
+virtual int64\+\_\+t {\bfseries get\+UUID} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_terrain_ad9e208362b45595edc8e588ec0591c74}} 
+\textbf{ Texture\+Manager} $\ast$ {\bfseries m\+\_\+texture\+Manager}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_a7e6ad48a865edde3f00b4c99e7cae007}} 
+\textbf{ Attributes} {\bfseries m\+\_\+inpector\+Data}
+\item 
+\mbox{\label{class_object_aa4d3720a4d923e80cf2f723b3e5029fb}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries m\+\_\+dialogue}
+\item 
+\mbox{\label{class_object_ad9204ea0812c7cd630eb45e2ddf720b4}} 
+bool {\bfseries m\+\_\+is\+Selected} = false
+\item 
+\mbox{\label{class_object_ab3a7652b129625dfc1b86580b6cd8b25}} 
+bool {\bfseries m\+\_\+moving} = false
+\item 
+\mbox{\label{class_object_acc2d78a19f930413701f597c24150a40}} 
+bool {\bfseries m\+\_\+has\+Been\+Selected} = false
+\item 
+\mbox{\label{class_object_ae8a784b17d2a5f62bf65b748107cdbb3}} 
+bool {\bfseries m\+\_\+has\+Dialogue} =false
+\item 
+\mbox{\label{class_object_a21c425f20aa4c0960528a1fd690ce120}} 
+bool {\bfseries m\+\_\+has\+Attributes} = false
+\item 
+\mbox{\label{class_object_a0a7dae69de1e50680776b2d88da93768}} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries m\+\_\+dialogue\+Paths}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_aec8458ef6816eeaef4f3111782584395}} 
+\textbf{ Inspector} $\ast$ {\bfseries m\+\_\+inspector}
+\item 
+\mbox{\label{class_object_a765f1496154b476b0601bf41d9f1db13}} 
+sf\+::\+Texture {\bfseries m\+\_\+object\+Texture}
+\item 
+\mbox{\label{class_object_a0a1d9501063d1b6dfefaa4d855bbbf6a}} 
+sf\+::\+Sprite {\bfseries m\+\_\+object\+Sprite}
+\item 
+\mbox{\label{class_object_abaee800d9f4e54110aa6060b5877e20d}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+object\+Bounds}
+\item 
+\mbox{\label{class_object_a32ccf7600204a33dff5b4aa1d8c7654d}} 
+int {\bfseries m\+\_\+bounds\+Width}
+\item 
+\mbox{\label{class_object_a6158d885d5a315b77be982de7b3cd473}} 
+int {\bfseries m\+\_\+bounds\+Height}
+\item 
+\mbox{\label{class_object_ac5d4d4fb959b7f1133ef61a89e0958de}} 
+bool {\bfseries m\+\_\+bounds\+On} = true
+\item 
+\mbox{\label{class_object_a39a36b44d894d3dfed0879c1e9451acd}} 
+int {\bfseries m\+\_\+row}
+\item 
+\mbox{\label{class_object_a1d79bc5a74490ade5bac9822882d3c6b}} 
+int {\bfseries m\+\_\+col}
+\item 
+\mbox{\label{class_object_af86077686f757f6a386a67384277237f}} 
+std\+::string {\bfseries m\+\_\+path} = \char`\"{}\char`\"{}
+\item 
+\mbox{\label{class_object_a847306181fed1dcd015a8ca92a8fe9fa}} 
+std\+::string {\bfseries m\+\_\+tag}
+\item 
+\mbox{\label{class_object_a7262057dfebf09f0de4e1e203a6704f7}} 
+bool {\bfseries m\+\_\+is\+Collidable} = false
+\item 
+\mbox{\label{class_object_aaa07175cf64bb19b27e985165ec353fe}} 
+std\+::string {\bfseries m\+\_\+object\+Category}
+\item 
+\mbox{\label{class_object_a85c9b3e93cc07175a3ce5fdfa5ed81d6}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+detection\+Radius}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_terrain_a06ee558a14b6350abc07d7ee68821e65}} 
+\index{Terrain@{Terrain}!Terrain@{Terrain}}
+\index{Terrain@{Terrain}!Terrain@{Terrain}}
+\doxysubsubsection{Terrain()}
+{\footnotesize\ttfamily Terrain\+::\+Terrain (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+type\+Tag,  }\item[{std\+::string}]{t\+\_\+path,  }\item[{\textbf{ Texture\+Manager} $\ast$}]{t\+\_\+texture\+Manager }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+type\+Tag} & \\
+\hline
+{\em t\+\_\+path} & \\
+\hline
+{\em t\+\_\+texture\+Manager} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_a06ee558a14b6350abc07d7ee68821e65_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_terrain_aa693d217a36a2a3dea35fd05b1c54bd0}} 
+\index{Terrain@{Terrain}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!Terrain@{Terrain}}
+\doxysubsubsection{getUUID()}
+{\footnotesize\ttfamily int64\+\_\+t Terrain\+::get\+UUID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_terrain_a358d5ffc528fd5c97ad9503160cdae5b}} 
+\index{Terrain@{Terrain}!init@{init}}
+\index{init@{init}!Terrain@{Terrain}}
+\doxysubsubsection{init()}
+{\footnotesize\ttfamily void Terrain\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialise the terrain object. 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_a358d5ffc528fd5c97ad9503160cdae5b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{class_terrain_a358d5ffc528fd5c97ad9503160cdae5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_terrain_a8ad8a0ab194a9cfac1d54b795f87affe}} 
+\index{Terrain@{Terrain}!render@{render}}
+\index{render@{render}!Terrain@{Terrain}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Terrain\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Renders the terrain object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_terrain_ac16c9d40a4458ce15c29a44bfe25a373}} 
+\index{Terrain@{Terrain}!setPathToTexture@{setPathToTexture}}
+\index{setPathToTexture@{setPathToTexture}!Terrain@{Terrain}}
+\doxysubsubsection{setPathToTexture()}
+{\footnotesize\ttfamily void Terrain\+::set\+Path\+To\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the path to the terrain objects texture in the directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_terrain_acdbb70b743e808b1aa043d863399e766}} 
+\index{Terrain@{Terrain}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Terrain@{Terrain}}
+\doxysubsubsection{setTexture()}
+{\footnotesize\ttfamily void Terrain\+::set\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{t\+\_\+texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the texture of the terrain object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+texture} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_acdbb70b743e808b1aa043d863399e766_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_acdbb70b743e808b1aa043d863399e766_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_terrain_a1c724175c03f0d2af0ea03620800eeed}} 
+\index{Terrain@{Terrain}!setUpBounds@{setUpBounds}}
+\index{setUpBounds@{setUpBounds}!Terrain@{Terrain}}
+\doxysubsubsection{setUpBounds()}
+{\footnotesize\ttfamily void Terrain\+::set\+Up\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets up the bounds of the terrain object. 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_a1c724175c03f0d2af0ea03620800eeed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_terrain_aff18581fef2de67bef03eeb2584e94ef}} 
+\index{Terrain@{Terrain}!setUpSprite@{setUpSprite}}
+\index{setUpSprite@{setUpSprite}!Terrain@{Terrain}}
+\doxysubsubsection{setUpSprite()}
+{\footnotesize\ttfamily void Terrain\+::set\+Up\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set up the terrain objects sprite. 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_aff18581fef2de67bef03eeb2584e94ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_aff18581fef2de67bef03eeb2584e94ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_terrain_a925985fc88d39e5bf112db00bc1912fa}} 
+\index{Terrain@{Terrain}!update@{update}}
+\index{update@{update}!Terrain@{Terrain}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void Terrain\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the terrain object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Terrain.\+h\item 
+Terrain.\+cpp\end{DoxyCompactItemize}

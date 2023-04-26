@@ -1,0 +1,5 @@
+<map id="Enemy::loadDialogue" name="Enemy::loadDialogue">
+<area shape="rect" id="node1" title="loads the enmy objects dialogue iif they have dialogue attached" alt="" coords="5,5,151,31"/>
+<area shape="rect" id="node2" href="$class_dialogue_box.html#a41cdb1ffade6518db0acd4b974eb85da" title="Loads text from a txt file to be displayed inside the dialogue box." alt="" coords="199,5,351,31"/>
+<area shape="rect" id="node3" href="$class_dialogue_box.html#a7024900b7d024c41c6dcef6e7c1f0dae" title="Splits the string into multiple lines for display." alt="" coords="399,5,560,31"/>
+</map>

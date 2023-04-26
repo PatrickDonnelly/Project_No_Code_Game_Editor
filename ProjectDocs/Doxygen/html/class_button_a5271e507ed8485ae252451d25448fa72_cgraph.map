@@ -1,0 +1,4 @@
+<map id="Button::Button" name="Button::Button">
+<area shape="rect" id="node1" title="Overloaded constructor. button with label." alt="" coords="5,5,112,31"/>
+<area shape="rect" id="node2" href="$class_button.html#a766b0db985b4bf91e747c29115332393" title="Sets up button texture and origin." alt="" coords="160,5,283,31"/>
+</map>

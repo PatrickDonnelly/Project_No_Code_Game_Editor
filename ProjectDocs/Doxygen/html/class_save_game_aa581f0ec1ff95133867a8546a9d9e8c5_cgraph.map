@@ -1,0 +1,9 @@
+<map id="SaveGame::render" name="SaveGame::render">
+<area shape="rect" id="node1" title="Draws the save game screen and text." alt="" coords="5,105,135,131"/>
+<area shape="rect" id="node2" href="$class_pop_up.html#a59121a7e7749bac68163efeeba3a10cf" title="Checks if the pop up box is enabled." alt="" coords="189,5,316,31"/>
+<area shape="rect" id="node3" href="$class_colour_picker.html#aa7d0610bb8e13b4b61b2511f63c277f5" title="renders the colour picker" alt="" coords="183,55,323,80"/>
+<area shape="rect" id="node5" href="$class_label.html#a25a975c12c7e8cfc9521227a2b705994" title="Renders the label." alt="" coords="523,80,620,105"/>
+<area shape="rect" id="node6" href="$class_input_field.html#a74e73ed4810f6f781b76b2c868a1b983" title="Renders the input fields." alt="" coords="191,156,314,181"/>
+<area shape="rect" id="node7" href="$class_pop_up.html#a6ec0d5df96ee4999bed7de7bf6184537" title="Renders the pop up box and its buttons / labels." alt="" coords="200,205,305,231"/>
+<area shape="rect" id="node4" href="$class_button.html#a11a8a512ffe9f82c54a8a1f25f2578f3" title="Renders the button and a label if it has one." alt="" coords="371,55,475,80"/>
+</map>

@@ -1,0 +1,381 @@
+\doxysection{Label Class Reference}
+\label{class_label}\index{Label@{Label}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_label_af8f2bccf9faadcb2ca964bd2347dde24}} 
+{\bfseries Label} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the label class. \end{DoxyCompactList}\item 
+\textbf{ Label} (sf\+::\+Font \&t\+\_\+font)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the label class that takes in a font. \end{DoxyCompactList}\item 
+\textbf{ Label} (sf\+::\+Font \&t\+\_\+font, bool t\+\_\+is\+On)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the label class that takes in a font and a bool to check if the label has a background or not. \end{DoxyCompactList}\item 
+\textbf{ Label} (std\+::string t\+\_\+label\+Text)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the label class that takes in a string. \end{DoxyCompactList}\item 
+\mbox{\label{class_label_a39e1167a9b5827afd888780973d88894}} 
+{\bfseries $\sim$\+Label} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor for the label class. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \textbf{ get\+Text\+Position} ()
+\begin{DoxyCompactList}\small\item\em get the position of the label text \end{DoxyCompactList}\item 
+sf\+::\+Text $\ast$ \textbf{ get\+Text} ()
+\begin{DoxyCompactList}\small\item\em Get the label text. \end{DoxyCompactList}\item 
+\mbox{\label{class_label_a7e610e8e4e5e71bf9c2c4271bfb256fa}} 
+void {\bfseries set\+Italics} (bool t\+\_\+on\+Off)
+\item 
+\mbox{\label{class_label_aaebb77a3b1b3d11d5ba8bae0b62c3f35}} 
+void {\bfseries set\+Underline} (bool t\+\_\+on\+Off)
+\item 
+\mbox{\label{class_label_abe88624b13148c77e7cd11cc7a4156d4}} 
+void {\bfseries set\+Bold} (bool t\+\_\+on\+Off)
+\item 
+\mbox{\label{class_label_a29204eebf30b058e1fba1e64ad39e976}} 
+void {\bfseries set\+Text\+Style} ()
+\begin{DoxyCompactList}\small\item\em Format text styles. \end{DoxyCompactList}\item 
+std\+::string \textbf{ get\+Text\+String} ()
+\begin{DoxyCompactList}\small\item\em Get the text string. \end{DoxyCompactList}\item 
+void \textbf{ set\+Text} (std\+::string t\+\_\+text)
+\begin{DoxyCompactList}\small\item\em Set Text. \end{DoxyCompactList}\item 
+\mbox{\label{class_label_a1f2321dc80061ce7420d9c12ca80455a}} 
+void {\bfseries init\+Text} ()
+\begin{DoxyCompactList}\small\item\em Initialise Text string. \end{DoxyCompactList}\item 
+void \textbf{ set\+Text\+Position} (sf\+::\+Vector2f t\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em set the position of the label text \end{DoxyCompactList}\item 
+\mbox{\label{class_label_a4d84eb04f4f9ad588ac5df49de7f7a06}} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em clears the label string \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders the label. \end{DoxyCompactList}\item 
+void \textbf{ set\+Label\+Sprite} (std\+::string t\+\_\+sprite\+Name, std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Set \doxyref{Label}{p.}{class_label} Sprite. \end{DoxyCompactList}\item 
+void \textbf{ set\+Texture\+Position} (sf\+::\+Vector2f t\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Set the labels background sprites position. \end{DoxyCompactList}\item 
+void \textbf{ set\+Text\+Color} (sf\+::\+Color t\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Set the colour of the label. \end{DoxyCompactList}\item 
+void \textbf{ set\+Text\+Outline\+Color} (sf\+::\+Color t\+\_\+color)
+\begin{DoxyCompactList}\small\item\em set the outline colour of a label \end{DoxyCompactList}\item 
+void \textbf{ set\+Text\+Outline\+Thickness} (float t\+\_\+thickness)
+\begin{DoxyCompactList}\small\item\em Set the outline thickness of the label text. \end{DoxyCompactList}\item 
+void \textbf{ set\+Text\+Size} (float t\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Set the character size of the label text. \end{DoxyCompactList}\item 
+\mbox{\label{class_label_a41e04d0d79496bf3873a3e618355ca5d}} 
+void {\bfseries update\+Label\+BG} ()
+\begin{DoxyCompactList}\small\item\em Update label backgrounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_label_a9770d1e4c588d69f0ed688d55dd14b4b}} 
+bool {\bfseries m\+\_\+italics} = false
+\item 
+\mbox{\label{class_label_ac33252c4f75a53f86c6962e01cf644d9}} 
+bool {\bfseries m\+\_\+underlined} = false
+\item 
+\mbox{\label{class_label_a565b327d0e6ba68d69b5d05a73315ca7}} 
+bool {\bfseries m\+\_\+bold} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_label_a08320ea66072dcc1b237644a482f3a70}} 
+\index{Label@{Label}!Label@{Label}}
+\index{Label@{Label}!Label@{Label}}
+\doxysubsubsection{Label()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Label\+::\+Label (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{t\+\_\+font }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the label class that takes in a font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+font} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_label_a08320ea66072dcc1b237644a482f3a70_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_label_a1135a70eb09175cd420f62aa94ead296}} 
+\index{Label@{Label}!Label@{Label}}
+\index{Label@{Label}!Label@{Label}}
+\doxysubsubsection{Label()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Label\+::\+Label (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{t\+\_\+font,  }\item[{bool}]{t\+\_\+is\+On }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the label class that takes in a font and a bool to check if the label has a background or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+font} & \\
+\hline
+{\em t\+\_\+is\+On} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_label_a1135a70eb09175cd420f62aa94ead296_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_label_a2866c0054c5e713f682deb56cb66be7d}} 
+\index{Label@{Label}!Label@{Label}}
+\index{Label@{Label}!Label@{Label}}
+\doxysubsubsection{Label()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Label\+::\+Label (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+label\+Text }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the label class that takes in a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+label\+Text} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_label_a2866c0054c5e713f682deb56cb66be7d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_label_ae30a93bd6576d33e08c933af23650a87}} 
+\index{Label@{Label}!getText@{getText}}
+\index{getText@{getText}!Label@{Label}}
+\doxysubsubsection{getText()}
+{\footnotesize\ttfamily sf\+::\+Text $\ast$ Label\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the label text. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_label_ae30a93bd6576d33e08c933af23650a87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_label_ad0ebcda244aab0f66713a57f8424c726}} 
+\index{Label@{Label}!getTextPosition@{getTextPosition}}
+\index{getTextPosition@{getTextPosition}!Label@{Label}}
+\doxysubsubsection{getTextPosition()}
+{\footnotesize\ttfamily sf\+::\+Vector2f Label\+::get\+Text\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get the position of the label text 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_label_ad0ebcda244aab0f66713a57f8424c726_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_label_a51a09d2b8554c8f83661540f00650e26}} 
+\index{Label@{Label}!getTextString@{getTextString}}
+\index{getTextString@{getTextString}!Label@{Label}}
+\doxysubsubsection{getTextString()}
+{\footnotesize\ttfamily std\+::string Label\+::get\+Text\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the text string. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_label_a51a09d2b8554c8f83661540f00650e26_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_label_a25a975c12c7e8cfc9521227a2b705994}} 
+\index{Label@{Label}!render@{render}}
+\index{render@{render}!Label@{Label}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Label\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders the label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_label_a25a975c12c7e8cfc9521227a2b705994_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_label_afe0b9c1dd675d5c950d38bd5978774fe}} 
+\index{Label@{Label}!setLabelSprite@{setLabelSprite}}
+\index{setLabelSprite@{setLabelSprite}!Label@{Label}}
+\doxysubsubsection{setLabelSprite()}
+{\footnotesize\ttfamily void Label\+::set\+Label\+Sprite (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+sprite\+Name,  }\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Set \doxyref{Label}{p.}{class_label} Sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sprite\+Name} & \\
+\hline
+{\em t\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_label_a0bb2cf2f12f82b2b88391c37f0165f85}} 
+\index{Label@{Label}!setText@{setText}}
+\index{setText@{setText}!Label@{Label}}
+\doxysubsubsection{setText()}
+{\footnotesize\ttfamily void Label\+::set\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Set Text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+text} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_label_a0bb2cf2f12f82b2b88391c37f0165f85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_label_ad21fb10c3183c40c4a1d9f6a291f1907}} 
+\index{Label@{Label}!setTextColor@{setTextColor}}
+\index{setTextColor@{setTextColor}!Label@{Label}}
+\doxysubsubsection{setTextColor()}
+{\footnotesize\ttfamily void Label\+::set\+Text\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{t\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Set the colour of the label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+color} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_label_ac6564b88c004224a92b78ce3956abcbd}} 
+\index{Label@{Label}!setTextOutlineColor@{setTextOutlineColor}}
+\index{setTextOutlineColor@{setTextOutlineColor}!Label@{Label}}
+\doxysubsubsection{setTextOutlineColor()}
+{\footnotesize\ttfamily void Label\+::set\+Text\+Outline\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{t\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+set the outline colour of a label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+color} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_label_aa68edfdc788993528828e69ab9e56fc8}} 
+\index{Label@{Label}!setTextOutlineThickness@{setTextOutlineThickness}}
+\index{setTextOutlineThickness@{setTextOutlineThickness}!Label@{Label}}
+\doxysubsubsection{setTextOutlineThickness()}
+{\footnotesize\ttfamily void Label\+::set\+Text\+Outline\+Thickness (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+thickness }\end{DoxyParamCaption})}
+
+
+
+Set the outline thickness of the label text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+thickness} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_label_aa3440b7327728c0f0a9848da23b82777}} 
+\index{Label@{Label}!setTextPosition@{setTextPosition}}
+\index{setTextPosition@{setTextPosition}!Label@{Label}}
+\doxysubsubsection{setTextPosition()}
+{\footnotesize\ttfamily void Label\+::set\+Text\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{t\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+set the position of the label text 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+pos} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_label_aa3440b7327728c0f0a9848da23b82777_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_label_a3e13b6cab9d291c2af76dfabf3eb6726}} 
+\index{Label@{Label}!setTextSize@{setTextSize}}
+\index{setTextSize@{setTextSize}!Label@{Label}}
+\doxysubsubsection{setTextSize()}
+{\footnotesize\ttfamily void Label\+::set\+Text\+Size (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Set the character size of the label text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_label_a8c6c240801d849b035cd626ae918985f}} 
+\index{Label@{Label}!setTexturePosition@{setTexturePosition}}
+\index{setTexturePosition@{setTexturePosition}!Label@{Label}}
+\doxysubsubsection{setTexturePosition()}
+{\footnotesize\ttfamily void Label\+::set\+Texture\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{t\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Set the labels background sprites position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+pos} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Label.\+h\item 
+Label.\+cpp\end{DoxyCompactItemize}

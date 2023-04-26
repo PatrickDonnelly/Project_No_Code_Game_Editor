@@ -1,0 +1,6 @@
+<map id="Enemy::setTexture" name="Enemy::setTexture">
+<area shape="rect" id="node1" title="Sets the texture of the enemy object." alt="" coords="488,5,620,31"/>
+<area shape="rect" id="node2" href="$class_enemy.html#a7e08700f5fb4cce72fdce7a89ea56b5b" title="Sets up the enemy objects sprite." alt="" coords="301,5,440,31"/>
+<area shape="rect" id="node3" href="$class_enemy.html#a7e78ac384d1eaefefc3b614aec4589fb" title="initialises the enemy object" alt="" coords="165,5,253,31"/>
+<area shape="rect" id="node4" href="$class_enemy.html#a22955368fa6903e9c9b5d012298f790d" title="Overloaded constructor for the enemy." alt="" coords="5,5,117,31"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="Button::render" name="Button::render">
+<area shape="rect" id="node1" title="Renders the button and a label if it has one." alt="" coords="440,80,544,105"/>
+<area shape="rect" id="node2" href="$class_colour_picker.html#aa7d0610bb8e13b4b61b2511f63c277f5" title="renders the colour picker" alt="" coords="243,5,383,31"/>
+<area shape="rect" id="node4" href="$class_drop_down_menu.html#a3961b4425c359680071e24b665d981d1" title="Rebder the drop down menu." alt="" coords="235,55,392,80"/>
+<area shape="rect" id="node5" href="$class_inspector.html#ab951d0ded758b28b76f73168c6f220b0" title="Render the inspector to the window." alt="" coords="254,104,373,129"/>
+<area shape="rect" id="node10" href="$class_level_list.html#a8b95ca6468075b67c1fa266cdd845cad" title="Draws the level list to the window." alt="" coords="255,153,371,179"/>
+<area shape="rect" id="node3" href="$class_save_game.html#aa581f0ec1ff95133867a8546a9d9e8c5" title="Draws the save game screen and text." alt="" coords="31,5,161,31"/>
+<area shape="rect" id="node6" href="$class_decoration.html#a8e15fe2187167558044e459df7dabe87" title="renders the inspector when the object is selected." alt="" coords="5,55,187,80"/>
+<area shape="rect" id="node7" href="$class_enemy.html#aa16ef3809d5dc2b999db926eeadf6517" title="Renders the enemy inspector if selected." alt="" coords="16,104,176,129"/>
+<area shape="rect" id="node8" href="$class_item.html#a88b96b0b08253fa8ea2aa6b5c31eb2ea" title="Renders the inspector of the item object if it is selected." alt="" coords="24,153,168,179"/>
+<area shape="rect" id="node9" href="$class_wall.html#a9c3abd2deb7895c097543097b61ac7e5" title="Renders the wall objects inspector if it is selected." alt="" coords="23,203,169,228"/>
+</map>

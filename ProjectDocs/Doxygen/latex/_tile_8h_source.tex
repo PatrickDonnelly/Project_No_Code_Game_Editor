@@ -1,0 +1,65 @@
+\doxysection{Tile.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TILE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TILE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}TextureManager.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }Tile}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ sf::RectangleShape\ m\_tile;}
+\DoxyCodeLine{00013\ \ \ \ \ TextureManager*\ m\_textureManager;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_top\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_bottom\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_left\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_right\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_checked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_colliderCheck\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasObject\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ m\_objectType\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ sf::Sprite\ m\_cellSprite;}
+\DoxyCodeLine{00026\ \ \ \ \ sf::Texture\ m\_floorTexture;}
+\DoxyCodeLine{00027\ \ \ \ \ sf::Texture\ m\_wallTexture;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setWallSprite();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setFloorSprite();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpSprites();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ removeTexture();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ cellType\ =\ \textcolor{stringliteral}{"{}Empty"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ cornerwall\ =\ \textcolor{stringliteral}{"{}CornerWall"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ sidewall\ =\ \textcolor{stringliteral}{"{}SideWall"{}};}
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ validInvalid\ =\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ sf::Text\ m\_text;}
+\DoxyCodeLine{00040\ \ \ \ \ sf::Vector2i\ rowColumn\{\};}
+\DoxyCodeLine{00041\ \ \ \ \ sf::Vector2f\ m\_vector\{\};}
+\DoxyCodeLine{00042\ \ \ \ \ sf::Vector2f\ getPos();}
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ m\_path\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpText(sf::Font\&\ t\_font);}
+\DoxyCodeLine{00046\ \ \ \ \ Tile(sf::Font\&\ t\_font,\ TextureManager*\ t\_textureManager);}
+\DoxyCodeLine{00047\ \ \ \ \ Tile();}
+\DoxyCodeLine{00048\ \ \ \ \ \string~Tile();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ setFloorSprite(std::string\ t\_path);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_width\ =\ 32.0f;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ setPosition(\textcolor{keywordtype}{float}\ m\_x,\ \textcolor{keywordtype}{float}\ m\_y);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ setTileColour(sf::Color\ t\_color);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ setBorderColour(sf::Color\ t\_color);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ resetBorderColour();}
+\DoxyCodeLine{00055\ \ \ \ \ sf::Color\ defaultColour;}
+\DoxyCodeLine{00056\ \ \ \ \ sf::RectangleShape\ getTileBorder()\ \{\ \textcolor{keywordflow}{return}\ m\_tile;\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ sf::Sprite\ getTile()\ \{\ \textcolor{keywordflow}{return}\ m\_cellSprite;\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ std::string\ getPath()\ \{\ \textcolor{keywordflow}{return}\ m\_path;\ \}}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !TILE\_HPP}}
+
+\end{DoxyCode}

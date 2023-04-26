@@ -1,0 +1,6 @@
+<map id="DialogueBox::splitString" name="DialogueBox::splitString">
+<area shape="rect" id="node1" title="Splits the string into multiple lines for display." alt="" coords="441,35,603,60"/>
+<area shape="rect" id="node2" href="$class_dialogue_box.html#a41cdb1ffade6518db0acd4b974eb85da" title="Loads text from a txt file to be displayed inside the dialogue box." alt="" coords="220,5,372,31"/>
+<area shape="rect" id="node4" href="$class_text_editor.html#ad6950feed4bbbd37470905e67cfb8734" title="Process text editor buttons to load, save clear text etc." alt="" coords="199,55,393,95"/>
+<area shape="rect" id="node3" href="$class_enemy.html#aa63aaf18c88fa48337cbf907d16db0aa" title="loads the enmy objects dialogue iif they have dialogue attached" alt="" coords="5,5,151,31"/>
+</map>

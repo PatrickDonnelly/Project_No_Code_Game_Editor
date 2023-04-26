@@ -1,0 +1,5 @@
+<map id="InputField::render" name="InputField::render">
+<area shape="rect" id="node1" title="Renders the input fields." alt="" coords="183,31,305,56"/>
+<area shape="rect" id="node2" href="$class_save_game.html#aa581f0ec1ff95133867a8546a9d9e8c5" title="Draws the save game screen and text." alt="" coords="5,5,135,31"/>
+<area shape="rect" id="node3" href="$class_text_editor.html#a0f3d3b5043a07393a12d95b82c2ec091" title="Render the text editor." alt="" coords="7,55,133,80"/>
+</map>

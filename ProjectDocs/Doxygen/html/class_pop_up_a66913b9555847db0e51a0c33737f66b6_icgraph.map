@@ -1,0 +1,4 @@
+<map id="PopUp::setPopUpButtons" name="PopUp::setPopUpButtons">
+<area shape="rect" id="node1" title="Sets up the buttons to be displayed on the pop up. Close and / or continue." alt="" coords="161,5,332,31"/>
+<area shape="rect" id="node2" href="$class_pop_up.html#a9f9c8be773d349fd5a57d4a4cf46d310" title="Overloaded constructor for the pop up class that takes in a number of buttons to display on the pop u..." alt="" coords="5,5,113,31"/>
+</map>

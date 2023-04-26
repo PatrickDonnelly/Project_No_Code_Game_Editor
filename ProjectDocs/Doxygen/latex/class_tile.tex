@@ -1,0 +1,242 @@
+\doxysection{Tile Class Reference}
+\label{class_tile}\index{Tile@{Tile}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_tile_a7456ba94c9bf8a1f7abf445f3292381f}} 
+void {\bfseries set\+Wall\+Sprite} ()
+\item 
+\mbox{\label{class_tile_ad5f31ac3fb13f6ab6794edd431584f60}} 
+void {\bfseries set\+Floor\+Sprite} ()
+\item 
+\mbox{\label{class_tile_ad69ae3b70115053df40050d256938c2f}} 
+void {\bfseries set\+Up\+Sprites} ()
+\item 
+\mbox{\label{class_tile_a7ad8bd9f6adc6f490d2c1f922cb02fd5}} 
+void {\bfseries remove\+Texture} ()
+\begin{DoxyCompactList}\small\item\em Removes the tile objects texture (sets it to black, to appear empty) \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \textbf{ get\+Pos} ()
+\begin{DoxyCompactList}\small\item\em Gets the position of the tile. \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Text} (sf\+::\+Font \&t\+\_\+font)
+\begin{DoxyCompactList}\small\item\em Sets up text object. \end{DoxyCompactList}\item 
+\textbf{ Tile} (sf\+::\+Font \&t\+\_\+font, \textbf{ Texture\+Manager} $\ast$t\+\_\+texture\+Manager)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}} 
+{\bfseries Tile} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_tile_a98634abbd93fa13d0578d7103202d03d}} 
+{\bfseries $\sim$\+Tile} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Floor\+Sprite} (std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Sets the texture of the tile. \end{DoxyCompactList}\item 
+void \textbf{ set\+Position} (float m\+\_\+x, float m\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Sets the position of the tile object. \end{DoxyCompactList}\item 
+void \textbf{ set\+Tile\+Colour} (sf\+::\+Color t\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Sets the colour of the tile. \end{DoxyCompactList}\item 
+void \textbf{ set\+Border\+Colour} (sf\+::\+Color t\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Sets the outline colour of the tile, used to form a grid. \end{DoxyCompactList}\item 
+\mbox{\label{class_tile_a51686c8c69706d116d68099d596f3e4d}} 
+void {\bfseries reset\+Border\+Colour} ()
+\begin{DoxyCompactList}\small\item\em Resets the colour of the tile to its default colour. \end{DoxyCompactList}\item 
+\mbox{\label{class_tile_ad723f2994c72f7108a821cac7c302f79}} 
+sf\+::\+Rectangle\+Shape {\bfseries get\+Tile\+Border} ()
+\item 
+\mbox{\label{class_tile_a99d3b973b6cc24c0e90e80d8296297a6}} 
+sf\+::\+Sprite {\bfseries get\+Tile} ()
+\item 
+\mbox{\label{class_tile_a2e16c00790a8a2c826d2edd568804dc7}} 
+std\+::string {\bfseries get\+Path} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_tile_a3b2305a810cdd9444bd5fe98a32c4a71}} 
+bool {\bfseries m\+\_\+top} = false
+\item 
+\mbox{\label{class_tile_afc6f86cb4be743781768a000d3a1d99a}} 
+bool {\bfseries m\+\_\+bottom} = false
+\item 
+\mbox{\label{class_tile_aac95f0745c2c1f452bd8ded5c3e8f38e}} 
+bool {\bfseries m\+\_\+left} = false
+\item 
+\mbox{\label{class_tile_a6cab4599bc3b007de58774f4690a6e63}} 
+bool {\bfseries m\+\_\+right} = false
+\item 
+\mbox{\label{class_tile_a90ec01aa85ee4e28f6a95f591cc8e719}} 
+bool {\bfseries m\+\_\+checked} = false
+\item 
+\mbox{\label{class_tile_abc2e33da0598c1709a98e6407e734ac8}} 
+bool {\bfseries m\+\_\+collider\+Check} = false
+\item 
+\mbox{\label{class_tile_a1a20f801f1e885cb477efddde6862faf}} 
+bool {\bfseries m\+\_\+has\+Object} = false
+\item 
+\mbox{\label{class_tile_a34a28f0e9d34cae09458b0899c78d12a}} 
+std\+::string {\bfseries m\+\_\+object\+Type} = \char`\"{}\char`\"{}
+\item 
+\mbox{\label{class_tile_a8083e6c355764a7335153c18ef80190e}} 
+sf\+::\+Sprite {\bfseries m\+\_\+cell\+Sprite}
+\item 
+\mbox{\label{class_tile_aeecb570ce7bda95ef4bcca8fa781c321}} 
+sf\+::\+Texture {\bfseries m\+\_\+floor\+Texture}
+\item 
+\mbox{\label{class_tile_a46722e19a0fc0c268cba8152ffecb86f}} 
+sf\+::\+Texture {\bfseries m\+\_\+wall\+Texture}
+\item 
+\mbox{\label{class_tile_a22392bacb12db8466ea2d0c84e37d779}} 
+std\+::string {\bfseries cell\+Type} = \char`\"{}Empty\char`\"{}
+\item 
+\mbox{\label{class_tile_a6c71273767120ab59df6ff465c3bb714}} 
+std\+::string {\bfseries cornerwall} = \char`\"{}Corner\+Wall\char`\"{}
+\item 
+\mbox{\label{class_tile_aaa6e74c3041ceac4bc4b3958b1ff2165}} 
+std\+::string {\bfseries sidewall} = \char`\"{}Side\+Wall\char`\"{}
+\item 
+\mbox{\label{class_tile_a5a119f3230e89d02d46e612bc7b0f50c}} 
+std\+::string {\bfseries valid\+Invalid} = \char`\"{} \char`\"{}
+\item 
+\mbox{\label{class_tile_abaca9943c8cce6ff93d1cb58dfe73eab}} 
+sf\+::\+Text {\bfseries m\+\_\+text}
+\item 
+\mbox{\label{class_tile_a4f23b1025db4e8850fb6e439acf04e82}} 
+sf\+::\+Vector2i {\bfseries row\+Column} \{\}
+\item 
+\mbox{\label{class_tile_a7446d03786316b0128aaed7e6e599a13}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+vector} \{\}
+\item 
+\mbox{\label{class_tile_a879e0171ab58daca7ce0c501e24bd1e7}} 
+std\+::string {\bfseries m\+\_\+path} = \char`\"{}\char`\"{}
+\item 
+\mbox{\label{class_tile_a783a3dfd7111cb3d01542605bfa0d48d}} 
+float {\bfseries m\+\_\+width} = 32.\+0f
+\item 
+\mbox{\label{class_tile_a0c7e072a167ff2542eaa70fcd424a285}} 
+sf\+::\+Color {\bfseries default\+Colour}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_tile_a1ae19793d74057c0bdf7fcd976d98c78}} 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\doxysubsubsection{Tile()}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{t\+\_\+font,  }\item[{\textbf{ Texture\+Manager} $\ast$}]{t\+\_\+texture\+Manager }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+font} & \\
+\hline
+{\em t\+\_\+texture\+Manager} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_tile_ae2e177d16e7d6268c0858d660b5784f4}} 
+\index{Tile@{Tile}!getPos@{getPos}}
+\index{getPos@{getPos}!Tile@{Tile}}
+\doxysubsubsection{getPos()}
+{\footnotesize\ttfamily sf\+::\+Vector2f Tile\+::get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the position of the tile. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_tile_aca4247610489a9a299873a64172c2382}} 
+\index{Tile@{Tile}!setBorderColour@{setBorderColour}}
+\index{setBorderColour@{setBorderColour}!Tile@{Tile}}
+\doxysubsubsection{setBorderColour()}
+{\footnotesize\ttfamily void Tile\+::set\+Border\+Colour (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{t\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Sets the outline colour of the tile, used to form a grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+color} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_tile_a24acc26d9064fedae5e0f0f116dc9f62}} 
+\index{Tile@{Tile}!setFloorSprite@{setFloorSprite}}
+\index{setFloorSprite@{setFloorSprite}!Tile@{Tile}}
+\doxysubsubsection{setFloorSprite()}
+{\footnotesize\ttfamily void Tile\+::set\+Floor\+Sprite (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Sets the texture of the tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tile_a24acc26d9064fedae5e0f0f116dc9f62_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_tile_aced8b29dd4e3be009163667d3ddf62f2}} 
+\index{Tile@{Tile}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Tile@{Tile}}
+\doxysubsubsection{setPosition()}
+{\footnotesize\ttfamily void Tile\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+x,  }\item[{float}]{t\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Sets the position of the tile object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+x} & \\
+\hline
+{\em t\+\_\+y} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_tile_a199c4491ed9f62cfb18483cc5cadd3fa}} 
+\index{Tile@{Tile}!setTileColour@{setTileColour}}
+\index{setTileColour@{setTileColour}!Tile@{Tile}}
+\doxysubsubsection{setTileColour()}
+{\footnotesize\ttfamily void Tile\+::set\+Tile\+Colour (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{t\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Sets the colour of the tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+color} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_tile_a57a899c8434284426f30340d2af25d8f}} 
+\index{Tile@{Tile}!setUpText@{setUpText}}
+\index{setUpText@{setUpText}!Tile@{Tile}}
+\doxysubsubsection{setUpText()}
+{\footnotesize\ttfamily void Tile\+::set\+Up\+Text (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{t\+\_\+font }\end{DoxyParamCaption})}
+
+
+
+Sets up text object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+font} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tile.\+h\item 
+Tile.\+cpp\end{DoxyCompactItemize}

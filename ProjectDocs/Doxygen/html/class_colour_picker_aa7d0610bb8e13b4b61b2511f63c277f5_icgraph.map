@@ -1,0 +1,4 @@
+<map id="ColourPicker::render" name="ColourPicker::render">
+<area shape="rect" id="node1" title="renders the colour picker" alt="" coords="183,5,323,31"/>
+<area shape="rect" id="node2" href="$class_save_game.html#aa581f0ec1ff95133867a8546a9d9e8c5" title="Draws the save game screen and text." alt="" coords="5,5,135,31"/>
+</map>

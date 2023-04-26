@@ -1,0 +1,5 @@
+<map id="Weapon::setUpWeaponBounds" name="Weapon::setUpWeaponBounds">
+<area shape="rect" id="node1" title="Sets up the collidable bounds of the weapon." alt="" coords="180,31,384,56"/>
+<area shape="rect" id="node2" href="$class_weapon.html#aa5a56a28fa3b540ed68499457a39a11e" title="Updates weapon." alt="" coords="10,5,127,31"/>
+<area shape="rect" id="node3" href="$class_weapon.html#a2abecc9f9c8778959db32b7653552ef1" title="Overloaded cinstructor." alt="" coords="5,55,132,80"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Item::setTexture" name="Item::setTexture">
+<area shape="rect" id="node1" title="Set the texture of the item object." alt="" coords="424,5,540,31"/>
+<area shape="rect" id="node2" href="$class_item.html#ae3d5085f8bbc6346db65ee937d037ff0" title="Set up the sprite of the item object." alt="" coords="253,5,376,31"/>
+<area shape="rect" id="node3" href="$class_item.html#a2c2e77758f5db3aaf3f50d38f4d651fc" title="Initialise the item object." alt="" coords="133,5,205,31"/>
+<area shape="rect" id="node4" href="$class_item.html#a1a423f580e01d007ff3e2061df215e03" title="Overloaded constructor." alt="" coords="5,5,85,31"/>
+</map>

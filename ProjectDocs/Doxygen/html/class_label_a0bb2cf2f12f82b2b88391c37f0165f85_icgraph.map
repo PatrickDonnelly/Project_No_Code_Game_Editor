@@ -1,0 +1,6 @@
+<map id="Label::setText" name="Label::setText">
+<area shape="rect" id="node1" title="Set Text." alt="" coords="248,55,352,80"/>
+<area shape="rect" id="node2" href="$class_check_box.html#abe1f0b1b2fedae20af4fff21b78167bc" title="Overloaded constructor." alt="" coords="27,5,178,31"/>
+<area shape="rect" id="node3" href="$class_label.html#a2866c0054c5e713f682deb56cb66be7d" title="Overloaded constructor for the label class that takes in a string." alt="" coords="57,55,149,80"/>
+<area shape="rect" id="node4" href="$class_text_editor.html#ad6950feed4bbbd37470905e67cfb8734" title="Process text editor buttons to load, save clear text etc." alt="" coords="5,105,200,145"/>
+</map>

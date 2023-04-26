@@ -1,0 +1,6 @@
+<map id="Decoration::setTexture" name="Decoration::setTexture">
+<area shape="rect" id="node1" title="Retrieves the texture and sets the sprites texture to it." alt="" coords="573,5,727,31"/>
+<area shape="rect" id="node2" href="$class_decoration.html#aca447471c1245d8e19240a738ca34eab" title="Sets up the texture and sprite." alt="" coords="365,5,525,31"/>
+<area shape="rect" id="node3" href="$class_decoration.html#ab98d94f2f21a4b2cadc2abb1ef3e90b9" title="initialise object" alt="" coords="208,5,317,31"/>
+<area shape="rect" id="node4" href="$class_decoration.html#ab7c5d963f476681b1656fb8f9892fdd7" title="Overloaded constructer." alt="" coords="5,5,160,31"/>
+</map>

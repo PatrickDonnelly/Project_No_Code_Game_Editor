@@ -1,0 +1,62 @@
+\doxysection{Pop\+Up.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POPUP\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POPUP\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}FontManager.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }PopUp}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ PopUp();}
+\DoxyCodeLine{00020\ \ \ \ \ PopUp(\textcolor{keywordtype}{int}\ t\_noOfbuttons);}
+\DoxyCodeLine{00021\ \ \ \ \ \string~PopUp();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ sf::Sprite\ getPopUpBoxSprite();}
+\DoxyCodeLine{00024\ \ \ \ \ sf::Vector2f\ getPopUpBoxPosition();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ initPopUpBox();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setPopUpBoxSprite(sf::Sprite\ t\_dialogueSprite);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//void\ setEnabled(bool\ t\_onOff)\ \{\ m\_enabled\ =\ t\_onOff;\ \}}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setPopUpBoxText(std::string\ t\_text);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setPopUpEnabled()\ \{\ m\_enabled\ =\ !m\_enabled;\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ sf::Vector2f\ getPopUpBoxBounds();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ readInFile(std::string\ t\_fileName);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ setPopUpButtons(\textcolor{keywordtype}{int}\ t\_noOfbuttons);}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<Button*>\ getButtons()\ \{\ \textcolor{keywordflow}{return}\ m\_popUpButtons;\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ processEvents(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ setPopUpEnabled(\textcolor{keywordtype}{bool}\ t\_onOff)\ \{\ m\_enabled\ =\ t\_onOff;\ \}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ FontManager\ m\_fontManager;}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ fileName\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<Button*>\ m\_popUpButtons;}
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<Label*>\ m\_popUpButtonLabels;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00049\ \ \ \ \ sf::Sprite\ m\_popUpBoxSprite;}
+\DoxyCodeLine{00050\ \ \ \ \ sf::Texture\ m\_popUpBoxTexture;}
+\DoxyCodeLine{00051\ \ \ \ \ sf::RectangleShape\ m\_popUpBox;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ sf::Text\ m\_text;}
+\DoxyCodeLine{00054\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ initText();}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !POPUP\_HPP}}
+
+\end{DoxyCode}

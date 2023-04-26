@@ -1,0 +1,61 @@
+\doxysection{Check\+Box.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CHECKBOX\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CHECKBOX\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}FontManager.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }CheckBoxData\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ std::string\ m\_tag;}
+\DoxyCodeLine{00009\ \ \ \ \ sf::Vector2f\ m\_position;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled;}
+\DoxyCodeLine{00011\ \};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }CheckBox}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ CheckBox();}
+\DoxyCodeLine{00018\ \ \ \ \ CheckBox(std::string\ t\_tag);}
+\DoxyCodeLine{00019\ \ \ \ \ \string~CheckBox();}
+\DoxyCodeLine{00020\ \ \ \ \ FontManager\ m\_fontManager;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ getTag()\ \{\ \textcolor{keywordflow}{return}\ m\_tag;\ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ isCheckBoxClicked(sf::Event\&\ t\_event,\ sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ initCheckBox();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled()\ \{\ \textcolor{keywordflow}{return}\ m\_enabled;\ \};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled()\ \{\ m\_enabled\ =\ !m\_enabled;\ toggleColor();\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ t\_onOff)\ \{\ m\_enabled\ =\ t\_onOff;\ toggleColor();\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ sf::Sprite\ getCheckBoxSprite()\ \{\ \textcolor{keywordflow}{return}\ sf::Sprite();\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ sf::RectangleShape\ getCheckBoxBounds()\ \{\ \textcolor{keywordflow}{return}\ m\_checkBox;\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setCheckBoxPosition(sf::Vector2f\ t\_pos);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ sf::Vector2f\ getCheckBoxPosition()\ \{\ \textcolor{keywordflow}{return}\ m\_checkBoxSprite.getPosition();\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ getText()\ \{\ \textcolor{keywordflow}{return}\ m\_text.getString();\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ setCheckBoxSprite(sf::Sprite\ t\_dialogueSprite)\ \{\ m\_checkBoxSprite\ =\ t\_dialogueSprite;\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ toggleColor();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::Time\ deltaTime,\ sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ Label*\ m\_checkBoxLabel;}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ m\_tag;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00044\ \ \ \ \ sf::Sprite\ m\_checkBoxSprite;}
+\DoxyCodeLine{00045\ \ \ \ \ sf::Texture\ m\_checkBoxTexture;}
+\DoxyCodeLine{00046\ \ \ \ \ sf::RectangleShape\ m\_checkBox;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ sf::Text\ m\_text;}
+\DoxyCodeLine{00050\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ initText();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !CHECKBOX\_HPP}}
+\DoxyCodeLine{00056\ }
+
+\end{DoxyCode}

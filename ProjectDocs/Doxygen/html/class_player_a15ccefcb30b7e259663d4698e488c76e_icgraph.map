@@ -1,0 +1,5 @@
+<map id="Player::setAnimationState" name="Player::setAnimationState">
+<area shape="rect" id="node1" title="Sets the animation state of the player." alt="" coords="335,31,509,56"/>
+<area shape="rect" id="node2" href="$class_player.html#a9426df1249e3c2669999a76a7de16e8f" title="Process player movement." alt="" coords="160,5,287,31"/>
+<area shape="rect" id="node3" href="$class_player.html#a9a05f2ffa498b33cce9237d1da00f9d7" title="Update player." alt="" coords="5,31,112,56"/>
+</map>

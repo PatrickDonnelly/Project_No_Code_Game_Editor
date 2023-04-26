@@ -1,0 +1,155 @@
+\doxysection{Level\+List Class Reference}
+\label{class_level_list}\index{LevelList@{LevelList}}
+
+
+Collaboration diagram for Level\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_level_list__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_level_list_a0c6293aab017e7643740ffc0a3394ee4}} 
+{\bfseries Level\+List} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the level list. \end{DoxyCompactList}\item 
+\textbf{ Level\+List} (\textbf{ Game\+State} $\ast$t\+\_\+game\+State)
+\begin{DoxyCompactList}\small\item\em overloaded constructor for the level list that takes in the current game state \end{DoxyCompactList}\item 
+\mbox{\label{class_level_list_a2b46a04071da265bfda851d63cae199f}} 
+{\bfseries $\sim$\+Level\+List} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor for the level list class. \end{DoxyCompactList}\item 
+\mbox{\label{class_level_list_a94145a0b1af91c931baf3f1ef7f01baa}} 
+void {\bfseries refresh\+Level\+List} ()
+\begin{DoxyCompactList}\small\item\em refreshes the level list and updates it everytime a new game is made \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the level list to the window. \end{DoxyCompactList}\item 
+void \textbf{ process\+Events} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Processes mouse input when the level list is active. \end{DoxyCompactList}\item 
+\mbox{\label{class_level_list_aedf024371e6694f78e0ca8c2b81532dc}} 
+void {\bfseries set\+Up\+Game\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Sets up the buttons for the list of levels. \end{DoxyCompactList}\item 
+std\+::string \textbf{ get\+Game\+To\+Be\+Loaded} ()
+\begin{DoxyCompactList}\small\item\em gets the name of the game to be loaded \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_level_list_a67756b6db430b722c23f492770ec39d9}} 
+\textbf{ Game\+State} $\ast$ {\bfseries m\+\_\+current\+Game\+State}
+\item 
+\mbox{\label{class_level_list_a632dfaf72bb9c567a58830d3cec65788}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Game\+Buttons}
+\item 
+\mbox{\label{class_level_list_a879db63fa230cf47e6fb1060075c5488}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+game\+Names}
+\item 
+\mbox{\label{class_level_list_ac68950b8213484c921ddaaa973d258f2}} 
+std\+::string {\bfseries m\+\_\+path\+Games} = \char`\"{}Games/\char`\"{}
+\item 
+\mbox{\label{class_level_list_a6336877a57198f943f72e05297b283a8}} 
+int {\bfseries m\+\_\+no\+Of\+Games\+Found} = 0
+\item 
+\mbox{\label{class_level_list_ace2edc6db14c0efff61ef8936e60f8ed}} 
+int {\bfseries m\+\_\+rows\+Games} = 0
+\item 
+\mbox{\label{class_level_list_a7a7776370c9520aec98b13aec4eae187}} 
+std\+::string {\bfseries m\+\_\+game\+Name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_level_list_a15becb21dd185fa6bef27b25bf3bdc78}} 
+\index{LevelList@{LevelList}!LevelList@{LevelList}}
+\index{LevelList@{LevelList}!LevelList@{LevelList}}
+\doxysubsubsection{LevelList()}
+{\footnotesize\ttfamily Level\+List\+::\+Level\+List (\begin{DoxyParamCaption}\item[{\textbf{ Game\+State} $\ast$}]{t\+\_\+game\+State }\end{DoxyParamCaption})}
+
+
+
+overloaded constructor for the level list that takes in the current game state 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+game\+State} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_list_a15becb21dd185fa6bef27b25bf3bdc78_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_level_list_a058271fb4e74465fdbbffe3b9ced7ce1}} 
+\index{LevelList@{LevelList}!getGameToBeLoaded@{getGameToBeLoaded}}
+\index{getGameToBeLoaded@{getGameToBeLoaded}!LevelList@{LevelList}}
+\doxysubsubsection{getGameToBeLoaded()}
+{\footnotesize\ttfamily std\+::string Level\+List\+::get\+Game\+To\+Be\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the name of the game to be loaded 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_level_list_a7899c3df3a0e46d226cb53d49c54ca10}} 
+\index{LevelList@{LevelList}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!LevelList@{LevelList}}
+\doxysubsubsection{processEvents()}
+{\footnotesize\ttfamily void Level\+List\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Processes mouse input when the level list is active. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_list_a7899c3df3a0e46d226cb53d49c54ca10_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_level_list_a8b95ca6468075b67c1fa266cdd845cad}} 
+\index{LevelList@{LevelList}!render@{render}}
+\index{render@{render}!LevelList@{LevelList}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Level\+List\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws the level list to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_list_a8b95ca6468075b67c1fa266cdd845cad_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Level\+List.\+h\item 
+Level\+List.\+cpp\end{DoxyCompactItemize}

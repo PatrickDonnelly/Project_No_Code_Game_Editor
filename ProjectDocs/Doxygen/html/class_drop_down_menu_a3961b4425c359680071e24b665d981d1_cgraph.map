@@ -1,0 +1,5 @@
+<map id="DropDownMenu::render" name="DropDownMenu::render">
+<area shape="rect" id="node1" title="Rebder the drop down menu." alt="" coords="5,5,163,31"/>
+<area shape="rect" id="node2" href="$class_button.html#a11a8a512ffe9f82c54a8a1f25f2578f3" title="Renders the button and a label if it has one." alt="" coords="211,5,315,31"/>
+<area shape="rect" id="node3" href="$class_label.html#a25a975c12c7e8cfc9521227a2b705994" title="Renders the label." alt="" coords="363,5,460,31"/>
+</map>

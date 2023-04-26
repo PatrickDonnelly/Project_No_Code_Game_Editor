@@ -1,0 +1,15 @@
+<map id="Label::render" name="Label::render">
+<area shape="rect" id="node1" title="Renders the label." alt="" coords="615,151,712,177"/>
+<area shape="rect" id="node2" href="$class_button.html#a11a8a512ffe9f82c54a8a1f25f2578f3" title="Renders the button and a label if it has one." alt="" coords="451,126,555,151"/>
+<area shape="rect" id="node4" href="$class_save_game.html#aa581f0ec1ff95133867a8546a9d9e8c5" title="Draws the save game screen and text." alt="" coords="31,17,161,42"/>
+<area shape="rect" id="node6" href="$class_inspector.html#ab951d0ded758b28b76f73168c6f220b0" title="Render the inspector to the window." alt="" coords="254,178,373,203"/>
+<area shape="rect" id="node12" href="$class_check_box.html#a8299e5a3b5787fa4264b86289214a36b" title="Render checkbox." alt="" coords="440,227,567,253"/>
+<area shape="rect" id="node3" href="$class_colour_picker.html#aa7d0610bb8e13b4b61b2511f63c277f5" title="renders the colour picker" alt="" coords="243,30,383,55"/>
+<area shape="rect" id="node5" href="$class_drop_down_menu.html#a3961b4425c359680071e24b665d981d1" title="Rebder the drop down menu." alt="" coords="235,79,392,105"/>
+<area shape="rect" id="node11" href="$class_level_list.html#a8b95ca6468075b67c1fa266cdd845cad" title="Draws the level list to the window." alt="" coords="255,129,371,154"/>
+<area shape="rect" id="node7" href="$class_decoration.html#a8e15fe2187167558044e459df7dabe87" title="renders the inspector when the object is selected." alt="" coords="5,91,187,117"/>
+<area shape="rect" id="node8" href="$class_enemy.html#aa16ef3809d5dc2b999db926eeadf6517" title="Renders the enemy inspector if selected." alt="" coords="16,141,176,166"/>
+<area shape="rect" id="node9" href="$class_item.html#a88b96b0b08253fa8ea2aa6b5c31eb2ea" title="Renders the inspector of the item object if it is selected." alt="" coords="24,190,168,215"/>
+<area shape="rect" id="node10" href="$class_wall.html#a9c3abd2deb7895c097543097b61ac7e5" title="Renders the wall objects inspector if it is selected." alt="" coords="23,239,169,265"/>
+<area shape="rect" id="node13" href="$class_text_editor.html#a0f3d3b5043a07393a12d95b82c2ec091" title="Render the text editor." alt="" coords="251,227,376,253"/>
+</map>

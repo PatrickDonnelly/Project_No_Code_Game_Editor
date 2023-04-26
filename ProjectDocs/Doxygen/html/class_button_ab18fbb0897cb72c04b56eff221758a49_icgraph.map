@@ -1,0 +1,6 @@
+<map id="Button::isButtonClicked" name="Button::isButtonClicked">
+<area shape="rect" id="node1" title="Checks if a button has been clicked." alt="" coords="260,55,419,80"/>
+<area shape="rect" id="node2" href="$class_drop_down_menu.html#a3a9d8d25adb570bc52f06fe03ebbaaea" title="Checks if a button in the drop down menu is clicked for the dialogue. If it is set that option to ena..." alt="" coords="5,5,212,31"/>
+<area shape="rect" id="node3" href="$class_level_list.html#a7899c3df3a0e46d226cb53d49c54ca10" title="Processes mouse input when the level list is active." alt="" coords="26,55,191,80"/>
+<area shape="rect" id="node4" href="$class_inspector.html#aa2c2b95f3a087b7a05a69a1477c6c63c" title="process mouse events for the inspector" alt="" coords="25,104,193,129"/>
+</map>

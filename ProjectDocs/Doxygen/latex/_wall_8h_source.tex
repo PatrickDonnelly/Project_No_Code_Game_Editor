@@ -1,0 +1,41 @@
+\doxysection{Wall.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ WALL\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ WALL\_HPP}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Object.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}TextureManager.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }Wall\ :\ \textcolor{keyword}{public}\ Object}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ int64\_t\ m\_uuid;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ Wall();}
+\DoxyCodeLine{00016\ \ \ \ \ Wall(std::string\ t\_path);}
+\DoxyCodeLine{00017\ \ \ \ \ Wall(std::string\ t\_typeTag,\ std::string\ t\_path,\ TextureManager*\ t\_textureManager);}
+\DoxyCodeLine{00018\ \ \ \ \ \string~Wall();}
+\DoxyCodeLine{00019\ \ \ \ \ TextureManager*\ m\_textureManager;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ init();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpSprite();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ setTexture(sf::Texture\&\ t\_texture);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ setPathToTexture(std::string\ t\_path);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpBounds();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::Time\ deltaTime,\ sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ renderInspector(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setObjectCategory(std::string\ t\_objectCategory)\ \{\ m\_objectCategory\ =\ \textcolor{stringliteral}{"{}Wall"{}};\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ getObjectCategory()\ \{\ \textcolor{keywordflow}{return}\ m\_objectCategory;\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ int64\_t\ getUUID()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ m\_uuid;\ \}}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !WALL\_HPP}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+
+\end{DoxyCode}

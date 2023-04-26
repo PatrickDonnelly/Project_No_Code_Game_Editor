@@ -1,0 +1,4 @@
+<map id="TextEditor::setUpDialogueButtons" name="TextEditor::setUpDialogueButtons">
+<area shape="rect" id="node1" title="Sets up the rows of text file buttons that can be selected." alt="" coords="201,5,375,45"/>
+<area shape="rect" id="node2" href="$class_text_editor.html#ad4b29fd53a8976527cb5f3874ae9d90c" title="Overloaded constructor." alt="" coords="5,13,153,38"/>
+</map>

@@ -1,0 +1,245 @@
+\doxysection{Ui\+Build\+Mode Class Reference}
+\label{class_ui_build_mode}\index{UiBuildMode@{UiBuildMode}}
+
+
+Collaboration diagram for Ui\+Build\+Mode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ui_build_mode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_ui_build_mode_ada3c414278c33b41e083446f17efc320}} 
+{\bfseries Ui\+Build\+Mode} (sf\+::\+Font \&t\+\_\+arial\+Font, \textbf{ Grid} $\ast$t\+\_\+grid, \textbf{ Game\+State} $\ast$t\+\_\+current\+Game\+State, \textbf{ Object\+Placement} $\ast$t\+\_\+object\+Placement)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor Sets up User Interface for the editor. Sets up previous and next buttons for navigating through rows of objects Reads in the names of all object types and stores them so buttons can be created for them Sets up the toggle buttons for grid and colliders on / off. \end{DoxyCompactList}\item 
+\mbox{\label{class_ui_build_mode_a9591ecfeabf622a97216b06f0496b9c0}} 
+{\bfseries Ui\+Build\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_ui_build_mode_af08e52281cb5bef411d706d0de2fb54b}} 
+{\bfseries $\sim$\+Ui\+Build\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em renders UI Elements and GUI \end{DoxyCompactList}\item 
+void \textbf{ process\+Events} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Processes mouse input. \end{DoxyCompactList}\item 
+void \textbf{ deselect\+Buttons} (std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ \&t\+\_\+object\+Buttons)
+\begin{DoxyCompactList}\small\item\em deselects the currently selected button \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_ui_build_mode_a485b799e60160bddd227a450c0860520}} 
+\textbf{ Game\+State} $\ast$ {\bfseries m\+\_\+game\+State}
+\item 
+\mbox{\label{class_ui_build_mode_a5428e8d6aeadc9b67849be72512551d3}} 
+std\+::vector$<$ \textbf{ Button} $>$ {\bfseries m\+\_\+build\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_a5fde9b9f581b4729355bc5ebca5f4f21}} 
+std\+::vector$<$ \textbf{ Label} $\ast$ $>$ {\bfseries m\+\_\+build\+Button\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a8fe0419dc00773cdc81b530d8df811d0}} 
+std\+::vector$<$ \textbf{ Button} $>$ {\bfseries m\+\_\+texture\+Room\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_a688f945d892750b71ffbc042be948864}} 
+std\+::vector$<$ \textbf{ Label} $\ast$ $>$ {\bfseries m\+\_\+texture\+Room\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a38c29ccf09625ad3ee7d7743d5e847fb}} 
+std\+::vector$<$ \textbf{ Button} $\ast$ $>$ {\bfseries m\+\_\+object\+Category\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_ae47f4a6283ec356a56173f038c518d82}} 
+std\+::vector$<$ \textbf{ Label} $\ast$ $>$ {\bfseries m\+\_\+object\+Category\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a1e8d865a811b1f35afffd52d6b8e4d92}} 
+std\+::vector$<$ \textbf{ Button} $>$ {\bfseries m\+\_\+selectable\+Objects}
+\item 
+\mbox{\label{class_ui_build_mode_a0bb1ff2a54cc78b4a1f0c43decbb94b5}} 
+std\+::vector$<$ \textbf{ Label} $\ast$ $>$ {\bfseries m\+\_\+textured\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a63b8e88da8e96a451002c1150eec20d4}} 
+std\+::vector$<$ \textbf{ Button} $>$ {\bfseries m\+\_\+placement\+Options}
+\item 
+\mbox{\label{class_ui_build_mode_ae4ebc1735c513ff9938cc569fa87dac0}} 
+std\+::vector$<$ \textbf{ Label} $\ast$ $>$ {\bfseries m\+\_\+placement\+Options\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a31ca70427dc82acb40df1e4cc7f69c73}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Wall\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_aac01b0e40507013da7487552c681756c}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Wall\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_abe4cf132a9900821d37fc13c15775493}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+walls}
+\item 
+\mbox{\label{class_ui_build_mode_a2ac2bf27fe9b29dcfc5e2195bd52e953}} 
+std\+::string {\bfseries m\+\_\+path\+Walls} = \char`\"{}ASSETS/IMAGES/Walls/\char`\"{}
+\item 
+\mbox{\label{class_ui_build_mode_a469a3a5213663f4962a8127ff902866f}} 
+int {\bfseries m\+\_\+rows\+Walls} = 0
+\item 
+\mbox{\label{class_ui_build_mode_a77efe42097b198d99d096fa4b74a7838}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Floor\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_a8a5e490d36f4558b5cbd568b2a207ea1}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Floor\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a5713193eaa40f82bdeb381912a415ee1}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+floors}
+\item 
+\mbox{\label{class_ui_build_mode_a018d18adf72c0712197402bef9624647}} 
+std\+::string {\bfseries m\+\_\+path\+Floors} = \char`\"{}ASSETS/IMAGES/\textbf{ Terrain}/Grass/\char`\"{}
+\item 
+\mbox{\label{class_ui_build_mode_ad4d13f3ab54333f014d9536075d15fb5}} 
+int {\bfseries m\+\_\+rows\+Floors} = 0
+\item 
+\mbox{\label{class_ui_build_mode_a782e08ab77de3204dc0dbe349d505fd3}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Decoration\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_a407ac31fedc1bfc8eaf9d6b3c62d0e80}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Decoration\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_ad5b34ca113ccf586735f85400f633955}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+decorations}
+\item 
+\mbox{\label{class_ui_build_mode_acb653994cecbd03481ba50ecae2c1e78}} 
+std\+::string {\bfseries m\+\_\+path\+Decorations} = \char`\"{}ASSETS/IMAGES/Decorations/\char`\"{}
+\item 
+\mbox{\label{class_ui_build_mode_a3c4d28f14aee6eac158ca6858feb538c}} 
+int {\bfseries m\+\_\+rows\+Decorations} = 0
+\item 
+\mbox{\label{class_ui_build_mode_afef5575c95e49f2430598911d878288a}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Item\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_a1e567f68138280cb411a6a44d9773b28}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Item\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a55ffd1f3046ffdf6ef6ee206f981b534}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+items}
+\item 
+\mbox{\label{class_ui_build_mode_a7697a8a6fba4757143b5a8c66d1e5b34}} 
+std\+::string {\bfseries m\+\_\+path\+Items} = \char`\"{}ASSETS/IMAGES/Items/\char`\"{}
+\item 
+\mbox{\label{class_ui_build_mode_ad607f6c91a91d1f0048aab7b191b6424}} 
+int {\bfseries m\+\_\+rows\+Items} = 0
+\item 
+\mbox{\label{class_ui_build_mode_a402c5191c5265fb2b31494302a95e20e}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Enemies\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_a27d19f38639f1e8568f6900f203241c6}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Enemies\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a53824e3bdb80f4960b6de32a3a954ead}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+enemies}
+\item 
+\mbox{\label{class_ui_build_mode_a9f4053319d0dfce18671f0a614962091}} 
+std\+::string {\bfseries m\+\_\+path\+Enemies} = \char`\"{}ASSETS/IMAGES/Enemies/\char`\"{}
+\item 
+\mbox{\label{class_ui_build_mode_ab3ad30d5bb45579b1660baeaf92755dc}} 
+int {\bfseries m\+\_\+rows\+Enemies} = 0
+\item 
+\mbox{\label{class_ui_build_mode_a1c4face17c1b358078ce2512d9eeb210}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Misc\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_a8c0f96145a1a6708bc1ef2e52c709fb5}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Misc\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_af1c37ca8f56462cac6b7ade86e57bb86}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+misc\+Objects}
+\item 
+\mbox{\label{class_ui_build_mode_adbf55c9a7c2b13ffdb5c40174b9a914d}} 
+std\+::string {\bfseries m\+\_\+path\+Misc\+Objects} = \char`\"{}ASSETS/IMAGES/Misc/\char`\"{}
+\item 
+\mbox{\label{class_ui_build_mode_a085031a92ef6b88573367b533d2b3d15}} 
+int {\bfseries m\+\_\+rows\+Misc} = 0
+\item 
+\mbox{\label{class_ui_build_mode_a6edd6e21517c22dbef9cf485b166c6e5}} 
+std\+::vector$<$ \textbf{ Button} $\ast$ $>$ {\bfseries m\+\_\+prev\+Nextbuttons}
+\item 
+\mbox{\label{class_ui_build_mode_a0d91b34f32ac5a7835ce558357eaa428}} 
+std\+::vector$<$ \textbf{ Button} $\ast$ $>$ {\bfseries m\+\_\+toggle\+Grid\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_adc0fac60af4a53081fee63fff8412f41}} 
+int {\bfseries m\+\_\+current\+Row\+Index} = 0
+\item 
+\mbox{\label{class_ui_build_mode_a156e3021403ada306b55864980256b15}} 
+sf\+::\+Text {\bfseries m\+\_\+current\+Row\+Text}
+\item 
+\mbox{\label{class_ui_build_mode_a3d705f602f790acffb2ccb4806254269}} 
+sf\+::\+Text {\bfseries m\+\_\+colliders\+On\+Off\+Text}
+\item 
+\mbox{\label{class_ui_build_mode_a6a02bb74762f6226c89732edaa79c07a}} 
+sf\+::\+Text {\bfseries m\+\_\+grid\+On\+Off\+Text}
+\item 
+\mbox{\label{class_ui_build_mode_a66d5bb366f12fee1a5ccad4047969f4f}} 
+std\+::vector$<$ \textbf{ Button} $>$ {\bfseries m\+\_\+testing\+Buttons}
+\item 
+\mbox{\label{class_ui_build_mode_a42eacd311803d01b6731aca60373c975}} 
+std\+::vector$<$ \textbf{ Label} $\ast$ $>$ {\bfseries m\+\_\+testing\+Button\+Labels}
+\item 
+\mbox{\label{class_ui_build_mode_a625bef58c3880483b555174d01cae765}} 
+std\+::vector$<$ sf\+::\+Vector2f $>$ {\bfseries m\+\_\+store\+Positions}
+\item 
+\mbox{\label{class_ui_build_mode_af4ef1d8bd98f8ea56beb73da1ac04c00}} 
+\textbf{ Grid} $\ast$ {\bfseries m\+\_\+grid}
+\item 
+\mbox{\label{class_ui_build_mode_a964e5672fc4b970678261f21b39edd6b}} 
+\textbf{ Object\+Placement} $\ast$ {\bfseries m\+\_\+object\+Placement}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_ui_build_mode_a7fd5cec730e0ed56b4a681aba503d303}} 
+\index{UiBuildMode@{UiBuildMode}!deselectButtons@{deselectButtons}}
+\index{deselectButtons@{deselectButtons}!UiBuildMode@{UiBuildMode}}
+\doxysubsubsection{deselectButtons()}
+{\footnotesize\ttfamily void Ui\+Build\+Mode\+::deselect\+Buttons (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ \&}]{t\+\_\+object\+Buttons }\end{DoxyParamCaption})}
+
+
+
+deselects the currently selected button 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+object\+Buttons} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_ui_build_mode_a530e017bbefe8e1e1821f7127086abd9}} 
+\index{UiBuildMode@{UiBuildMode}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!UiBuildMode@{UiBuildMode}}
+\doxysubsubsection{processEvents()}
+{\footnotesize\ttfamily void Ui\+Build\+Mode\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Processes mouse input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_ui_build_mode_a10609a1a29cc5cfe22857526ef0943dc}} 
+\index{UiBuildMode@{UiBuildMode}!render@{render}}
+\index{render@{render}!UiBuildMode@{UiBuildMode}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Ui\+Build\+Mode\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+renders UI Elements and GUI 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ui\+Build\+Mode.\+h\item 
+Ui\+Build\+Mode.\+cpp\end{DoxyCompactItemize}

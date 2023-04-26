@@ -1,0 +1,4 @@
+<map id="SaveGame::SaveGame" name="SaveGame::SaveGame">
+<area shape="rect" id="node1" title="Overloaded constructor for the save game class that takes in the game state." alt="" coords="5,5,161,31"/>
+<area shape="rect" id="node2" href="$class_font_manager.html#ac10adb2985dcb3ea471ab92e710ba5d9" title="Checks if a font has already been loaded into memory. If it has it returns a pointer to the font If n..." alt="" coords="209,5,360,31"/>
+</map>

@@ -1,0 +1,51 @@
+\doxysection{Button.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BUTTON\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BUTTON\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Button}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ Button();}
+\DoxyCodeLine{00012\ \ \ \ \ Button(std::string\ t\_labelText);}
+\DoxyCodeLine{00013\ \ \ \ \ \string~Button();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ sf::Sprite\ getButtonSprite();}
+\DoxyCodeLine{00018\ \ \ \ \ sf::Vector2f\ getButtonPosition();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_buttonIndex;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ initButton();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ setButtonPosition(sf::Vector2f\ t\_position);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ setButtonSprite(sf::Sprite\ t\_buttonSprite);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ highlighted();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ setColor(sf::Color\ t\_color);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setButtonTexture();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{float}\ m\_xScale,\ \textcolor{keywordtype}{float}\ m\_yScale);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ getSelected();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setSelected(\textcolor{keywordtype}{bool}\ t\_tf);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ t\_onOff)\ \{\ m\_enabled\ =\ t\_onOff;\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ isButtonClicked(sf::Event\&\ t\_event,\ sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00034\ \ \ \ \ Label*\ getButtonLabel()\ \{\ \textcolor{keywordflow}{return}\ m\_label;\ \}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ Label*\ m\_label;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_selected;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasLabel\ =\ \textcolor{keyword}{false};;}
+\DoxyCodeLine{00040\ \ \ \ \ sf::Sprite\ m\_buttonSprite;}
+\DoxyCodeLine{00041\ \ \ \ \ sf::Texture\ m\_buttonTexture;}
+\DoxyCodeLine{00042\ \ \ \ \ sf::Texture\ m\_buttonHighlightTexture;}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !BUTTON\_HPP}}
+
+\end{DoxyCode}

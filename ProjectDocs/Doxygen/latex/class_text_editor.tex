@@ -1,0 +1,197 @@
+\doxysection{Text\+Editor Class Reference}
+\label{class_text_editor}\index{TextEditor@{TextEditor}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_text_editor_a7f92ef2b76b6f9ceffa3c48b8b454a78}} 
+{\bfseries Text\+Editor} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_text_editor_ad4b29fd53a8976527cb5f3874ae9d90c}} 
+{\bfseries Text\+Editor} (sf\+::\+Font \&t\+\_\+font, \textbf{ Game\+State} $\ast$t\+\_\+current\+Game\+State)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_text_editor_a67cc14c174c7b66738c40f844d4dd7d7}} 
+{\bfseries $\sim$\+Text\+Editor} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Dialogue\+Buttons} (sf\+::\+Font \&t\+\_\+arial\+Font, int \&t\+\_\+rows, std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ \&t\+\_\+object\+Buttons, std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ \&t\+\_\+labels, std\+::vector$<$ std\+::string $>$ t\+\_\+objects, std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Sets up the rows of text file buttons that can be selected. \end{DoxyCompactList}\item 
+\mbox{\label{class_text_editor_a15b203b08c83f6cecd17f22077f35bad}} 
+void {\bfseries init\+Input\+Fields} ()
+\begin{DoxyCompactList}\small\item\em Initialise the input felds. \end{DoxyCompactList}\item 
+void \textbf{ set\+Visible\+Row} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window, int t\+\_\+rows, std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ \&t\+\_\+object\+Buttons)
+\begin{DoxyCompactList}\small\item\em Sets the row of dialogue buttons that can currently be seen in the game. Can be swapped to the next or previous row using respective buttons. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Render the text editor. \end{DoxyCompactList}\item 
+bool \textbf{ is\+Enabled} ()
+\begin{DoxyCompactList}\small\item\em Checks if text editor is enabled. \end{DoxyCompactList}\item 
+\mbox{\label{class_text_editor_a3c01154a8bf2273e3ef281c2488f96b8}} 
+void {\bfseries set\+Enabled} (bool t\+\_\+on\+Off)
+\item 
+void \textbf{ process\+Text\+Editor\+Buttons} (sf\+::\+Event t\+\_\+event, sf\+::\+Render\+Window \&t\+\_\+window, \textbf{ Label} $\ast$t\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Process text editor buttons to load, save clear text etc. \end{DoxyCompactList}\item 
+\mbox{\label{class_text_editor_ab5627bae43f197d5d1c80287cf41195b}} 
+\textbf{ Input\+Field} $\ast$ {\bfseries Get\+Title} ()
+\item 
+\mbox{\label{class_text_editor_aae0a358e60b97afce9f02dba10b9d5c0}} 
+\textbf{ Input\+Field} $\ast$ {\bfseries Get\+Main\+Body} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_text_editor_aee0ae2f4598d88ef1f8115a0437f268e}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Dialogue\+Buttons}
+\item 
+\mbox{\label{class_text_editor_a79ae5db3b6884a6b8c2f35c7c542ae13}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ {\bfseries m\+\_\+selectable\+Dialogue\+Labels}
+\item 
+\mbox{\label{class_text_editor_aecc8a4e3d805eef7e431fc1811a84e22}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries m\+\_\+\+Dialogue\+Options}
+\item 
+\mbox{\label{class_text_editor_ae2a62f1795492061b9e92b9f5e4b5981}} 
+std\+::string {\bfseries m\+\_\+path\+Dialogue} = \char`\"{}Dialogue\+Boxes/\char`\"{}
+\item 
+\mbox{\label{class_text_editor_af65a7253c7c34c1b7ae97f7cf0b1088e}} 
+int {\bfseries m\+\_\+rows\+Dialogue} = 0
+\item 
+\mbox{\label{class_text_editor_aec6be4b7e470255c31864cf3b4e9f3fe}} 
+int {\bfseries m\+\_\+current\+Row\+Index} = 0
+\item 
+\mbox{\label{class_text_editor_a77d7a1a894ea582693283b0299b135ed}} 
+std\+::vector$<$ \textbf{ Button} $\ast$ $>$ {\bfseries m\+\_\+prev\+Nextbuttons}
+\item 
+\mbox{\label{class_text_editor_a56ae9f0b944ef81043a969c460f679cc}} 
+std\+::string {\bfseries file\+Name} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_text_editor_a39da05b7e3d80095769d172cdb631c2a}} 
+\index{TextEditor@{TextEditor}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!TextEditor@{TextEditor}}
+\doxysubsubsection{isEnabled()}
+{\footnotesize\ttfamily bool Text\+Editor\+::is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if text editor is enabled. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_text_editor_ad6950feed4bbbd37470905e67cfb8734}} 
+\index{TextEditor@{TextEditor}!processTextEditorButtons@{processTextEditorButtons}}
+\index{processTextEditorButtons@{processTextEditorButtons}!TextEditor@{TextEditor}}
+\doxysubsubsection{processTextEditorButtons()}
+{\footnotesize\ttfamily void Text\+Editor\+::process\+Text\+Editor\+Buttons (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{\textbf{ Label} $\ast$}]{t\+\_\+dialogue\+Label }\end{DoxyParamCaption})}
+
+
+
+Process text editor buttons to load, save clear text etc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+{\em t\+\_\+dialogue\+Label} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_text_editor_ad6950feed4bbbd37470905e67cfb8734_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_text_editor_a0f3d3b5043a07393a12d95b82c2ec091}} 
+\index{TextEditor@{TextEditor}!render@{render}}
+\index{render@{render}!TextEditor@{TextEditor}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Text\+Editor\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Render the text editor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_text_editor_a0f3d3b5043a07393a12d95b82c2ec091_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_text_editor_aa804bde128b0c5563429719362d7efee}} 
+\index{TextEditor@{TextEditor}!setUpDialogueButtons@{setUpDialogueButtons}}
+\index{setUpDialogueButtons@{setUpDialogueButtons}!TextEditor@{TextEditor}}
+\doxysubsubsection{setUpDialogueButtons()}
+{\footnotesize\ttfamily void Text\+Editor\+::set\+Up\+Dialogue\+Buttons (\begin{DoxyParamCaption}\item[{sf\+::\+Font \&}]{t\+\_\+arial\+Font,  }\item[{int \&}]{t\+\_\+rows,  }\item[{std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ \&}]{t\+\_\+object\+Buttons,  }\item[{std\+::vector$<$ std\+::vector$<$ \textbf{ Label} $\ast$ $>$ $>$ \&}]{t\+\_\+labels,  }\item[{std\+::vector$<$ std\+::string $>$}]{t\+\_\+objects,  }\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Sets up the rows of text file buttons that can be selected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+arial\+Font} & \\
+\hline
+{\em t\+\_\+rows} & \\
+\hline
+{\em t\+\_\+object\+Buttons} & \\
+\hline
+{\em t\+\_\+labels} & \\
+\hline
+{\em t\+\_\+objects} & \\
+\hline
+{\em t\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_text_editor_aa804bde128b0c5563429719362d7efee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_text_editor_af1c2e63ed2695111ebb7327f5da7f8c6}} 
+\index{TextEditor@{TextEditor}!setVisibleRow@{setVisibleRow}}
+\index{setVisibleRow@{setVisibleRow}!TextEditor@{TextEditor}}
+\doxysubsubsection{setVisibleRow()}
+{\footnotesize\ttfamily void Text\+Editor\+::set\+Visible\+Row (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event,  }\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{int}]{t\+\_\+rows,  }\item[{std\+::vector$<$ std\+::vector$<$ \textbf{ Button} $\ast$ $>$ $>$ \&}]{t\+\_\+object\+Buttons }\end{DoxyParamCaption})}
+
+
+
+Sets the row of dialogue buttons that can currently be seen in the game. Can be swapped to the next or previous row using respective buttons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & \\
+\hline
+{\em t\+\_\+window} & \\
+\hline
+{\em t\+\_\+rows} & \\
+\hline
+{\em t\+\_\+object\+Buttons} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_text_editor_af1c2e63ed2695111ebb7327f5da7f8c6_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Text\+Editor.\+h\item 
+Text\+Editor.\+cpp\end{DoxyCompactItemize}

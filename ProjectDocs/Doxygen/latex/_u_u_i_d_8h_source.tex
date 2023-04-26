@@ -1,0 +1,18 @@
+\doxysection{UUID.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <xhash>}}
+\DoxyCodeLine{00003\ \textcolor{keyword}{class\ }UUID}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00006\ \ \ \ \ uint64\_t\ m\_UUID;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ UUID();}
+\DoxyCodeLine{00010\ \ \ \ \ UUID(uint64\_t\ t\_uuid);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{operator}\ uint64\_t()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_UUID;\ \}}
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+
+\end{DoxyCode}

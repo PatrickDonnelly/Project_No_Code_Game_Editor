@@ -1,0 +1,4 @@
+<map id="TextEditor::setVisibleRow" name="TextEditor::setVisibleRow">
+<area shape="rect" id="node1" title="Sets the row of dialogue buttons that can currently be seen in the game. Can be swapped to the next o..." alt="" coords="248,13,419,38"/>
+<area shape="rect" id="node2" href="$class_text_editor.html#ad6950feed4bbbd37470905e67cfb8734" title="Process text editor buttons to load, save clear text etc." alt="" coords="5,5,200,45"/>
+</map>

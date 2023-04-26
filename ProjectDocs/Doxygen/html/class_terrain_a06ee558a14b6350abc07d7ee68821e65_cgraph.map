@@ -1,0 +1,8 @@
+<map id="Terrain::Terrain" name="Terrain::Terrain">
+<area shape="rect" id="node1" title="Overloaded constructor." alt="" coords="5,31,113,56"/>
+<area shape="rect" id="node2" href="$class_terrain.html#a358d5ffc528fd5c97ad9503160cdae5b" title="Initialise the terrain object." alt="" coords="161,31,248,56"/>
+<area shape="rect" id="node3" href="$class_terrain.html#a1c724175c03f0d2af0ea03620800eeed" title="Sets up the bounds of the terrain object." alt="" coords="296,5,443,31"/>
+<area shape="rect" id="node4" href="$class_terrain.html#aff18581fef2de67bef03eeb2584e94ef" title="Set up the terrain objects sprite." alt="" coords="301,55,438,80"/>
+<area shape="rect" id="node5" href="$class_terrain.html#acdbb70b743e808b1aa043d863399e766" title="Sets the texture of the terrain object." alt="" coords="491,55,621,80"/>
+<area shape="rect" id="node6" href="$class_texture_manager.html#aabc3af4e63581ca3ba6ab964016b254f" title="Checks if a texture is loaded in memory and returns it." alt="" coords="669,55,853,80"/>
+</map>

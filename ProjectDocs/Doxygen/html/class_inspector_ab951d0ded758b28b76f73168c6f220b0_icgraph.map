@@ -1,0 +1,7 @@
+<map id="Inspector::render" name="Inspector::render">
+<area shape="rect" id="node1" title="Render the inspector to the window." alt="" coords="235,80,353,105"/>
+<area shape="rect" id="node2" href="$class_decoration.html#a8e15fe2187167558044e459df7dabe87" title="renders the inspector when the object is selected." alt="" coords="5,5,187,31"/>
+<area shape="rect" id="node3" href="$class_enemy.html#aa16ef3809d5dc2b999db926eeadf6517" title="Renders the enemy inspector if selected." alt="" coords="16,55,176,80"/>
+<area shape="rect" id="node4" href="$class_item.html#a88b96b0b08253fa8ea2aa6b5c31eb2ea" title="Renders the inspector of the item object if it is selected." alt="" coords="24,104,168,129"/>
+<area shape="rect" id="node5" href="$class_wall.html#a9c3abd2deb7895c097543097b61ac7e5" title="Renders the wall objects inspector if it is selected." alt="" coords="23,153,169,179"/>
+</map>

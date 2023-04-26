@@ -1,0 +1,80 @@
+\doxysection{Game.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ GAME\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ GAME\_HPP}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Tile.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}SaveGame.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Grid.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Collision.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Weapon.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}UiBuildMode.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}DialogueBox.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}TextEditor.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}ObjectPlacement.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}TextureManager.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}FontManager.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}MainMenu.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}LevelList.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\#include\ "{}Inspector.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}yaml-\/cpp\(\backslash\)yaml.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}Globals.h"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }Game}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ Game();}
+\DoxyCodeLine{00038\ \ \ \ \ \string~Game();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ run();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//YAML::Node\ config\ =\ YAML::LoadFile("{}config.yaml"{});}}
+\DoxyCodeLine{00043\ \ \ \ \ MainMenu\ m\_mainMenu;}
+\DoxyCodeLine{00044\ \ \ \ \ GameState*\ m\_gameState;}
+\DoxyCodeLine{00045\ \ \ \ \ Grid*\ m\_grid\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00046\ \ \ \ \ ObjectPlacement*\ m\_objectPlacement\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00047\ \ \ \ \ Player*\ m\_player;}
+\DoxyCodeLine{00048\ \ \ \ \ Collision\ m\_checkCollision;}
+\DoxyCodeLine{00049\ \ \ \ \ Weapon*\ m\_spear;}
+\DoxyCodeLine{00050\ \ \ \ \ UiBuildMode\ m\_uiBuildMode;}
+\DoxyCodeLine{00051\ \ \ \ \ DialogueBox*\ m\_dialogueBox\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00052\ \ \ \ \ TextEditor*\ m\_textEditor\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00053\ \ \ \ \ TextureManager*\ m\_textureManager\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00054\ \ \ \ \ FontManager\ m\_fontManager;}
+\DoxyCodeLine{00055\ \ \ \ \ LevelList\ m\_levelList;}
+\DoxyCodeLine{00056\ \ \ \ \ SaveGame\ m\_saveGameScreen;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//Inspector*\ m\_inspector\{\ nullptr\ \};}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpFontAndText();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ processEvents();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ processKeys(sf::Event\ t\_event);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ update(sf::Time\ t\_deltaTime);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ render();}
+\DoxyCodeLine{00063\ \ \ \ \ Object*\ m\_currentObject\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ loadGameData();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ saveGameData();}
+\DoxyCodeLine{00066\ \ \ \ \ sf::Font\ m\_ArialFont;}
+\DoxyCodeLine{00067\ \ \ \ \ sf::Text\ m\_text;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ sf::RenderWindow\ m\_window;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_exitGame;\ \textcolor{comment}{//\ control\ exiting\ game}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !GAME\_HPP}}
+
+\end{DoxyCode}

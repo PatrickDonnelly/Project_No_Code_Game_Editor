@@ -1,0 +1,4 @@
+<map id="DialogueBox::DialogueBox" name="DialogueBox::DialogueBox">
+<area shape="rect" id="node1" title="Overloaded constructor for the dialogue box that takes in a font." alt="" coords="5,5,181,31"/>
+<area shape="rect" id="node2" href="$class_dialogue_box.html#a90168fc017d1b61077734b2f89a67522" title="Initialises the dialogue box." alt="" coords="229,5,423,31"/>
+</map>

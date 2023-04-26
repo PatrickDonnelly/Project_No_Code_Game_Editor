@@ -1,0 +1,5 @@
+<map id="Enemy::render" name="Enemy::render">
+<area shape="rect" id="node1" title="renders the enmy objects" alt="" coords="5,5,112,31"/>
+<area shape="rect" id="node2" href="$class_dialogue_box.html#aebab83be3bb4acfc933b49ebe46ec9b4" title="Checks if the dialogue box is enabled." alt="" coords="347,5,507,31"/>
+<area shape="rect" id="node3" href="$class_dialogue_box.html#a87dcb579163d1965bccbe2a9dc166779" title="renders the dialogue box" alt="" coords="160,31,299,56"/>
+</map>

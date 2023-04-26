@@ -1,0 +1,5 @@
+<map id="Label::Label" name="Label::Label">
+<area shape="rect" id="node1" title="Overloaded constructor for the label class that takes in a font and a bool to check if the label has ..." alt="" coords="5,31,97,56"/>
+<area shape="rect" id="node2" href="$class_font_manager.html#ac10adb2985dcb3ea471ab92e710ba5d9" title="Checks if a font has already been loaded into memory. If it has it returns a pointer to the font If n..." alt="" coords="145,5,296,31"/>
+<area shape="rect" id="node3" href="$class_label.html#a1f2321dc80061ce7420d9c12ca80455a" title="Initialise Text string." alt="" coords="169,55,272,80"/>
+</map>

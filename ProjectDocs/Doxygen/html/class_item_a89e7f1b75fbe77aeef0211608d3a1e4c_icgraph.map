@@ -1,0 +1,5 @@
+<map id="Item::setUpBounds" name="Item::setUpBounds">
+<area shape="rect" id="node1" title="Sets up the collidable bounds of the item object." alt="" coords="253,5,387,31"/>
+<area shape="rect" id="node2" href="$class_item.html#a2c2e77758f5db3aaf3f50d38f4d651fc" title="Initialise the item object." alt="" coords="133,5,205,31"/>
+<area shape="rect" id="node3" href="$class_item.html#a1a423f580e01d007ff3e2061df215e03" title="Overloaded constructor." alt="" coords="5,5,85,31"/>
+</map>

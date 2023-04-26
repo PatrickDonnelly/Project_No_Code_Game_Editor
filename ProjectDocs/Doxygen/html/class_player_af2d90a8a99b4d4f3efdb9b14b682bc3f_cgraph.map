@@ -1,0 +1,5 @@
+<map id="Player::animate" name="Player::animate">
+<area shape="rect" id="node1" title="Animates the player." alt="" coords="5,42,119,67"/>
+<area shape="rect" id="node2" href="$class_animator.html#a45654b363ac24e08f6b552f38630e994" title="Applies Texture changes to the sprite." alt="" coords="167,5,347,45"/>
+<area shape="rect" id="node3" href="$class_animator.html#aa0652884fb0ce07a0d443a997bce5cad" title="Updates the animation." alt="" coords="195,70,318,95"/>
+</map>

@@ -1,0 +1,626 @@
+\doxysection{Enemy Class Reference}
+\label{class_enemy}\index{Enemy@{Enemy}}
+
+
+Inheritance diagram for Enemy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_enemy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Enemy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_enemy_a94f30d348b6d2840fd71675472ba38dd}} 
+{\bfseries Enemy} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the enemy. \end{DoxyCompactList}\item 
+\textbf{ Enemy} (std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the enemy. \end{DoxyCompactList}\item 
+\textbf{ Enemy} (std\+::string t\+\_\+type\+Tag, std\+::string t\+\_\+path, \textbf{ Texture\+Manager} $\ast$t\+\_\+texture\+Manager)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the enmy class. \end{DoxyCompactList}\item 
+\mbox{\label{class_enemy_ac0eec4755e28c02688065f9657150ac3}} 
+{\bfseries $\sim$\+Enemy} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+void \textbf{ init} ()
+\begin{DoxyCompactList}\small\item\em initialises the enemy object \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Sets up the enemy objects sprite. \end{DoxyCompactList}\item 
+void \textbf{ set\+Texture} (sf\+::\+Texture \&t\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em Sets the texture of the enemy object. \end{DoxyCompactList}\item 
+void \textbf{ set\+Path\+To\+Texture} (std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Sets the the path to the directory path of a texture. \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Bounds} ()
+\begin{DoxyCompactList}\small\item\em Sets up the enemy bounds and detection radius. \end{DoxyCompactList}\item 
+void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Updates the enemy. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em renders the enmy objects \end{DoxyCompactList}\item 
+void \textbf{ render\+Inspector} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the enemy inspector if selected. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Has\+Dialogue} () override
+\item 
+void \textbf{ set\+Object\+Category} (std\+::string t\+\_\+object\+Category)
+\item 
+std\+::string \textbf{ get\+Object\+Category} ()
+\item 
+\mbox{\label{class_enemy_a1503585d8ea3126e07ec9670137bb8bc}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries get\+Dialogue\+Box} ()
+\item 
+void \textbf{ load\+Dialogue} (std\+::string t\+\_\+dialogue\+Type) override
+\begin{DoxyCompactList}\small\item\em loads the enmy objects dialogue iif they have dialogue attached \end{DoxyCompactList}\item 
+bool \textbf{ get\+In\+Range} () override
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ $\ast$ \textbf{ get\+Dialogue\+Paths} () override
+\item 
+sf\+::\+Rectangle\+Shape $\ast$ \textbf{ get\+Detection\+Radius} () override
+\item 
+\mbox{\label{class_enemy_a0ae7999f7e030f583e80b8140d3d36dd}} 
+void {\bfseries set\+Detection\+Radius} (int t\+\_\+no\+Of\+Cells)
+\item 
+int64\+\_\+t \textbf{ get\+UUID} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_a40860402e64d8008fb42329df7097cdb}} 
+{\bfseries Object} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_object_ae8f5483f459e46687bd01e6f9977afd3}} 
+{\bfseries $\sim$\+Object} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+virtual void \textbf{ init} ()=0
+\item 
+virtual void \textbf{ set\+Up\+Sprite} ()=0
+\item 
+\mbox{\label{class_object_a7d89bd060773d6b1dea859dbf325ec68}} 
+virtual void {\bfseries set\+Object\+Category} (std\+::string t\+\_\+\+Object\+Category)=0
+\item 
+virtual std\+::string \textbf{ get\+Object\+Category} ()=0
+\item 
+virtual void \textbf{ set\+Texture} (sf\+::\+Texture \&t\+\_\+texture)=0
+\item 
+virtual void \textbf{ set\+Path\+To\+Texture} (std\+::string t\+\_\+path)=0
+\item 
+virtual void \textbf{ set\+Up\+Bounds} ()=0
+\item 
+virtual void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)=0
+\item 
+virtual void \textbf{ render} (sf\+::\+Render\+Window \&window)=0
+\item 
+virtual void \textbf{ render\+Inspector} (sf\+::\+Render\+Window \&window)=0
+\item 
+\mbox{\label{class_object_a5c114a884bd8b2e403f0a9ab039287dd}} 
+virtual bool {\bfseries get\+Has\+Dialogue} ()
+\item 
+\mbox{\label{class_object_a63e401373ddf1421a688267db165c452}} 
+void {\bfseries set\+Row\+Column} (int t\+\_\+row, int t\+\_\+col)
+\item 
+\mbox{\label{class_object_a07d20326b3da66d531639ffee3c0bf0d}} 
+virtual sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Bounds} ()
+\item 
+\mbox{\label{class_object_a1c65a5cb9714327112c6eb62a7e2a814}} 
+sf\+::\+Sprite $\ast$ {\bfseries get\+Sprite} ()
+\item 
+\mbox{\label{class_object_a188fbf8d50f34c82b9eff22a29f2896e}} 
+void {\bfseries toggle\+Bounds} ()
+\item 
+\mbox{\label{class_object_a0d2e685ed20b49ec1b7feeba4c0f1cc9}} 
+bool {\bfseries is\+Collidable} ()
+\item 
+\mbox{\label{class_object_ab7ea4592b344857538ec6e9204a4b7da}} 
+int {\bfseries get\+Row} ()
+\item 
+\mbox{\label{class_object_a659906224ab5101d741409c7bf308258}} 
+int {\bfseries get\+Column} ()
+\item 
+\mbox{\label{class_object_a76638f714a77bdde109d04030c350bd7}} 
+void {\bfseries set\+Collidable} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_a5f6009ea1d51463088552c839e8c6482}} 
+bool {\bfseries get\+Selected} ()
+\item 
+\mbox{\label{class_object_a44e7dcf8d8a607f084455328c25001be}} 
+void {\bfseries set\+Selected} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_ab17d42cdb53019d43a52b3fdd051a802}} 
+void {\bfseries set\+Moving} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_abf357fcc5c94a8d783ae83cfd7aed945}} 
+void {\bfseries set\+Tag} (std\+::string t\+\_\+tag)
+\item 
+\mbox{\label{class_object_a7047e90b20c56f87e2611dc8f6122bb8}} 
+\textbf{ Inspector} $\ast$ {\bfseries get\+Inspector} ()
+\item 
+\mbox{\label{class_object_aa54fd65f9b35486bc4187e81bc2ee2d8}} 
+std\+::string {\bfseries get\+Tag} ()
+\item 
+\mbox{\label{class_object_a1a962bda9a6985b534f1070afdd108d0}} 
+std\+::string {\bfseries get\+Path} ()
+\item 
+\mbox{\label{class_object_a23bfb0a75209c99e72b33f5447c8c504}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries get\+Dialogue\+Box} ()
+\item 
+\mbox{\label{class_object_a45342e6097e3ca9ab0917021fc71bbb6}} 
+virtual bool {\bfseries get\+In\+Range} ()
+\item 
+\mbox{\label{class_object_a873a644c2d5aa8aaf141e7fb1a674fe0}} 
+virtual std\+::map$<$ std\+::string, std\+::string $>$ $\ast$ {\bfseries get\+Dialogue\+Paths} ()
+\item 
+virtual void \textbf{ load\+Dialogue} (std\+::string t\+\_\+load\+Dialogue)
+\item 
+\mbox{\label{class_object_a28376066193d54be1f5fe43efb9ab741}} 
+virtual sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Detection\+Radius} ()
+\item 
+\mbox{\label{class_object_aa990df6d103551a658d0c85b8c7b0847}} 
+virtual int64\+\_\+t {\bfseries get\+UUID} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_enemy_ad08f3d9d91b2578d910bc165b5b869b5}} 
+\textbf{ Texture\+Manager} $\ast$ {\bfseries m\+\_\+texture\+Manager}
+\item 
+\mbox{\label{class_enemy_aa931c268015da5132c46c14b22aef3f5}} 
+int {\bfseries count} = 0
+\item 
+\mbox{\label{class_enemy_a879ea26a6da80e7e17e01c62a3e06104}} 
+bool {\bfseries m\+\_\+has\+Dialogue} = false
+\item 
+\mbox{\label{class_enemy_a5a4874282304c3cdbc3960ca80d68dd3}} 
+bool {\bfseries in\+Range\+Played} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_a7e6ad48a865edde3f00b4c99e7cae007}} 
+\textbf{ Attributes} {\bfseries m\+\_\+inpector\+Data}
+\item 
+\mbox{\label{class_object_aa4d3720a4d923e80cf2f723b3e5029fb}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries m\+\_\+dialogue}
+\item 
+\mbox{\label{class_object_ad9204ea0812c7cd630eb45e2ddf720b4}} 
+bool {\bfseries m\+\_\+is\+Selected} = false
+\item 
+\mbox{\label{class_object_ab3a7652b129625dfc1b86580b6cd8b25}} 
+bool {\bfseries m\+\_\+moving} = false
+\item 
+\mbox{\label{class_object_acc2d78a19f930413701f597c24150a40}} 
+bool {\bfseries m\+\_\+has\+Been\+Selected} = false
+\item 
+\mbox{\label{class_object_ae8a784b17d2a5f62bf65b748107cdbb3}} 
+bool {\bfseries m\+\_\+has\+Dialogue} =false
+\item 
+\mbox{\label{class_object_a21c425f20aa4c0960528a1fd690ce120}} 
+bool {\bfseries m\+\_\+has\+Attributes} = false
+\item 
+\mbox{\label{class_object_a0a7dae69de1e50680776b2d88da93768}} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries m\+\_\+dialogue\+Paths}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_aec8458ef6816eeaef4f3111782584395}} 
+\textbf{ Inspector} $\ast$ {\bfseries m\+\_\+inspector}
+\item 
+\mbox{\label{class_object_a765f1496154b476b0601bf41d9f1db13}} 
+sf\+::\+Texture {\bfseries m\+\_\+object\+Texture}
+\item 
+\mbox{\label{class_object_a0a1d9501063d1b6dfefaa4d855bbbf6a}} 
+sf\+::\+Sprite {\bfseries m\+\_\+object\+Sprite}
+\item 
+\mbox{\label{class_object_abaee800d9f4e54110aa6060b5877e20d}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+object\+Bounds}
+\item 
+\mbox{\label{class_object_a32ccf7600204a33dff5b4aa1d8c7654d}} 
+int {\bfseries m\+\_\+bounds\+Width}
+\item 
+\mbox{\label{class_object_a6158d885d5a315b77be982de7b3cd473}} 
+int {\bfseries m\+\_\+bounds\+Height}
+\item 
+\mbox{\label{class_object_ac5d4d4fb959b7f1133ef61a89e0958de}} 
+bool {\bfseries m\+\_\+bounds\+On} = true
+\item 
+\mbox{\label{class_object_a39a36b44d894d3dfed0879c1e9451acd}} 
+int {\bfseries m\+\_\+row}
+\item 
+\mbox{\label{class_object_a1d79bc5a74490ade5bac9822882d3c6b}} 
+int {\bfseries m\+\_\+col}
+\item 
+\mbox{\label{class_object_af86077686f757f6a386a67384277237f}} 
+std\+::string {\bfseries m\+\_\+path} = \char`\"{}\char`\"{}
+\item 
+\mbox{\label{class_object_a847306181fed1dcd015a8ca92a8fe9fa}} 
+std\+::string {\bfseries m\+\_\+tag}
+\item 
+\mbox{\label{class_object_a7262057dfebf09f0de4e1e203a6704f7}} 
+bool {\bfseries m\+\_\+is\+Collidable} = false
+\item 
+\mbox{\label{class_object_aaa07175cf64bb19b27e985165ec353fe}} 
+std\+::string {\bfseries m\+\_\+object\+Category}
+\item 
+\mbox{\label{class_object_a85c9b3e93cc07175a3ce5fdfa5ed81d6}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+detection\+Radius}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_enemy_a22955368fa6903e9c9b5d012298f790d}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{Enemy()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a22955368fa6903e9c9b5d012298f790d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_enemy_a52a4625058a8d6ce223aef15964c9961}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{Enemy()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+type\+Tag,  }\item[{std\+::string}]{t\+\_\+path,  }\item[{\textbf{ Texture\+Manager} $\ast$}]{t\+\_\+texture\+Manager }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the enmy class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+type\+Tag} & \\
+\hline
+{\em t\+\_\+path} & \\
+\hline
+{\em t\+\_\+texture\+Manager} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a52a4625058a8d6ce223aef15964c9961_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_enemy_a3a71c34e3ca10dc0e3d582f474142ef5}} 
+\index{Enemy@{Enemy}!getDetectionRadius@{getDetectionRadius}}
+\index{getDetectionRadius@{getDetectionRadius}!Enemy@{Enemy}}
+\doxysubsubsection{getDetectionRadius()}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape $\ast$ Enemy\+::get\+Detection\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_enemy_a79167ad0cb3a2a08ce969ecb7c8d6264}} 
+\index{Enemy@{Enemy}!getDialoguePaths@{getDialoguePaths}}
+\index{getDialoguePaths@{getDialoguePaths}!Enemy@{Enemy}}
+\doxysubsubsection{getDialoguePaths()}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::string $>$ $\ast$ Enemy\+::get\+Dialogue\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_enemy_a427e623e8cadded262b9f400af9e9a77}} 
+\index{Enemy@{Enemy}!getHasDialogue@{getHasDialogue}}
+\index{getHasDialogue@{getHasDialogue}!Enemy@{Enemy}}
+\doxysubsubsection{getHasDialogue()}
+{\footnotesize\ttfamily bool Enemy\+::get\+Has\+Dialogue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_enemy_a53dcd984f46c1d7bfef247dba9f7d3f0}} 
+\index{Enemy@{Enemy}!getInRange@{getInRange}}
+\index{getInRange@{getInRange}!Enemy@{Enemy}}
+\doxysubsubsection{getInRange()}
+{\footnotesize\ttfamily bool Enemy\+::get\+In\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_enemy_a7f3b6196e970ae2fef7982ad9366c74c}} 
+\index{Enemy@{Enemy}!getObjectCategory@{getObjectCategory}}
+\index{getObjectCategory@{getObjectCategory}!Enemy@{Enemy}}
+\doxysubsubsection{getObjectCategory()}
+{\footnotesize\ttfamily std\+::string Enemy\+::get\+Object\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_enemy_ad843a8697b23647e6e6d1982c5bd6f51}} 
+\index{Enemy@{Enemy}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!Enemy@{Enemy}}
+\doxysubsubsection{getUUID()}
+{\footnotesize\ttfamily int64\+\_\+t Enemy\+::get\+UUID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_enemy_a7e78ac384d1eaefefc3b614aec4589fb}} 
+\index{Enemy@{Enemy}!init@{init}}
+\index{init@{init}!Enemy@{Enemy}}
+\doxysubsubsection{init()}
+{\footnotesize\ttfamily void Enemy\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initialises the enemy object 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a7e78ac384d1eaefefc3b614aec4589fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_enemy_a7e78ac384d1eaefefc3b614aec4589fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_enemy_aa63aaf18c88fa48337cbf907d16db0aa}} 
+\index{Enemy@{Enemy}!loadDialogue@{loadDialogue}}
+\index{loadDialogue@{loadDialogue}!Enemy@{Enemy}}
+\doxysubsubsection{loadDialogue()}
+{\footnotesize\ttfamily void Enemy\+::load\+Dialogue (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+dialogue\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+loads the enmy objects dialogue iif they have dialogue attached 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dialogue\+Type} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_aa63aaf18c88fa48337cbf907d16db0aa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_enemy_adce121a5d559e9d666d7f88c7a26dc1f}} 
+\index{Enemy@{Enemy}!render@{render}}
+\index{render@{render}!Enemy@{Enemy}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Enemy\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+renders the enmy objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_adce121a5d559e9d666d7f88c7a26dc1f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_enemy_aa16ef3809d5dc2b999db926eeadf6517}} 
+\index{Enemy@{Enemy}!renderInspector@{renderInspector}}
+\index{renderInspector@{renderInspector}!Enemy@{Enemy}}
+\doxysubsubsection{renderInspector()}
+{\footnotesize\ttfamily void Enemy\+::render\+Inspector (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Renders the enemy inspector if selected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_aa16ef3809d5dc2b999db926eeadf6517_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_enemy_a8c8bc5dc129d24eec1b0b824cbb4bee1}} 
+\index{Enemy@{Enemy}!setObjectCategory@{setObjectCategory}}
+\index{setObjectCategory@{setObjectCategory}!Enemy@{Enemy}}
+\doxysubsubsection{setObjectCategory()}
+{\footnotesize\ttfamily void Enemy\+::set\+Object\+Category (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+object\+Category }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_enemy_a3bb115d9824c0525f901eaf185eccd32}} 
+\index{Enemy@{Enemy}!setPathToTexture@{setPathToTexture}}
+\index{setPathToTexture@{setPathToTexture}!Enemy@{Enemy}}
+\doxysubsubsection{setPathToTexture()}
+{\footnotesize\ttfamily void Enemy\+::set\+Path\+To\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the the path to the directory path of a texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_enemy_a76341cd720464e111a2c1d9051184060}} 
+\index{Enemy@{Enemy}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Enemy@{Enemy}}
+\doxysubsubsection{setTexture()}
+{\footnotesize\ttfamily void Enemy\+::set\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{t\+\_\+texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the texture of the enemy object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+texture} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a76341cd720464e111a2c1d9051184060_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a76341cd720464e111a2c1d9051184060_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_enemy_a1d7da935802db616c648ee42c95f323f}} 
+\index{Enemy@{Enemy}!setUpBounds@{setUpBounds}}
+\index{setUpBounds@{setUpBounds}!Enemy@{Enemy}}
+\doxysubsubsection{setUpBounds()}
+{\footnotesize\ttfamily void Enemy\+::set\+Up\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets up the enemy bounds and detection radius. 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a1d7da935802db616c648ee42c95f323f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_enemy_a7e08700f5fb4cce72fdce7a89ea56b5b}} 
+\index{Enemy@{Enemy}!setUpSprite@{setUpSprite}}
+\index{setUpSprite@{setUpSprite}!Enemy@{Enemy}}
+\doxysubsubsection{setUpSprite()}
+{\footnotesize\ttfamily void Enemy\+::set\+Up\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets up the enemy objects sprite. 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a7e08700f5fb4cce72fdce7a89ea56b5b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a7e08700f5fb4cce72fdce7a89ea56b5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_enemy_a059f3b9c0fe1ff4df85b2b42e9e8222b}} 
+\index{Enemy@{Enemy}!update@{update}}
+\index{update@{update}!Enemy@{Enemy}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void Enemy\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Enemy.\+h\item 
+Enemy.\+cpp\end{DoxyCompactItemize}

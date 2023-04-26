@@ -1,0 +1,128 @@
+\doxysection{Grid Class Reference}
+\label{class_grid}\index{Grid@{Grid}}
+
+
+Collaboration diagram for Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{class_grid__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_grid_a0881a609c42d438693b2ebe9531306ba}} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the grid. \end{DoxyCompactList}\item 
+\mbox{\label{class_grid_a2f82bbdc8aba1e76077f0b2cd9fcc61c}} 
+void {\bfseries new\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Creates a new grid. \end{DoxyCompactList}\item 
+\mbox{\label{class_grid_addf33418b5ec2b2ab317c71d3c45776d}} 
+void {\bfseries set\+Grid\+Size} (int t\+\_\+grid\+Size)
+\item 
+\mbox{\label{class_grid_a9c20c90b0827fd1d46acab2bae7e8d1e}} 
+void {\bfseries set\+Up\+Font} ()
+\begin{DoxyCompactList}\small\item\em Loads in a font. \end{DoxyCompactList}\item 
+\mbox{\label{class_grid_ad0db30b31199161f5a6906c0c786b80d}} 
+void {\bfseries regenerate\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Regenerates the current grid to make a new one. \end{DoxyCompactList}\item 
+\mbox{\label{class_grid_a4ac9ff4f63552b4c61ff90fcb35ad66c}} 
+{\bfseries Grid} ()
+\begin{DoxyCompactList}\small\item\em Default constructor \doxyref{Grid}{p.}{class_grid}. \end{DoxyCompactList}\item 
+\textbf{ Grid} (\textbf{ Game\+State} $\ast$t\+\_\+game\+State, \textbf{ Texture\+Manager} $\ast$t\+\_\+texture\+Manager)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the \doxyref{Grid}{p.}{class_grid}. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window $\ast$t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Renders the grid to the window. \end{DoxyCompactList}\item 
+\mbox{\label{class_grid_a817316666385977babcbaa639c78a0a6}} 
+void {\bfseries clear\+Unused\+Cells} ()
+\begin{DoxyCompactList}\small\item\em Visually clears unoccupied cells in the grid by changing the outline colour to black. \end{DoxyCompactList}\item 
+\mbox{\label{class_grid_a76d2b7a620ef28935f03c0ec50f9a0e4}} 
+void {\bfseries increase\+Grid\+Size} ()
+\begin{DoxyCompactList}\small\item\em Increases the size of the grid. \end{DoxyCompactList}\item 
+\mbox{\label{class_grid_a5b901459ff24588f2190abd7e4624b42}} 
+void {\bfseries decrease\+Grid\+Size} ()
+\begin{DoxyCompactList}\small\item\em Decreases the size of the grid. \end{DoxyCompactList}\item 
+\mbox{\label{class_grid_ac402c908b149bbbeec0cc002ab909751}} 
+void {\bfseries set\+Grid\+Enabled} ()
+\item 
+\mbox{\label{class_grid_aaffece301d19245eade2db1e91e18822}} 
+void {\bfseries set\+Colliders\+Enabled} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_grid_a7369524ed9e9bb2bf8be32b897b45d21}} 
+\textbf{ Game\+State} $\ast$ {\bfseries m\+\_\+game\+State}
+\item 
+\mbox{\label{class_grid_a59b1ec48f64c043171547a8302842e67}} 
+bool {\bfseries m\+\_\+player\+Set} = false
+\item 
+\mbox{\label{class_grid_ac7f11a21ca006bb2dda5e509afc0278d}} 
+int {\bfseries m\+\_\+vect\+Grid\+Size} = 100
+\item 
+\mbox{\label{class_grid_ae2c2c7ef0014333c61f84bf73fa627e2}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Tile} $>$ $>$ {\bfseries m\+\_\+vect\+Grid}
+\item 
+\mbox{\label{class_grid_add4700f2b6a7656eabc2cb258995661e}} 
+sf\+::\+Font {\bfseries m\+\_\+text\+Font}
+\item 
+\mbox{\label{class_grid_ab1ff221e7b09701a8d2cb760dd3e3384}} 
+bool {\bfseries m\+\_\+grid\+Enabled} = true
+\item 
+\mbox{\label{class_grid_a3b22af8d703ac7aa0070cc4a51f28a87}} 
+bool {\bfseries m\+\_\+colliders\+Enabled} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_grid_adeb02c99a84ff1df96da51f3d9f67c10}} 
+\index{Grid@{Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!Grid@{Grid}}
+\doxysubsubsection{Grid()}
+{\footnotesize\ttfamily Grid\+::\+Grid (\begin{DoxyParamCaption}\item[{\textbf{ Game\+State} $\ast$}]{t\+\_\+game\+State,  }\item[{\textbf{ Texture\+Manager} $\ast$}]{t\+\_\+texture\+Manager }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for the \doxyref{Grid}{p.}{class_grid}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+game\+State} & \\
+\hline
+{\em t\+\_\+texture\+Manager} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_grid_adeb02c99a84ff1df96da51f3d9f67c10_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_grid_a5497ae8615de8f5a3407f4e19f88e3c8}} 
+\index{Grid@{Grid}!render@{render}}
+\index{render@{render}!Grid@{Grid}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Grid\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Renders the grid to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Grid.\+h\item 
+Grid.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,8 @@
+<map id="Object" name="Object">
+<area shape="rect" id="node1" title=" " alt="" coords="193,181,253,207"/>
+<area shape="rect" id="node2" href="$class_inspector.html" title=" " alt="" coords="79,93,153,119"/>
+<area shape="rect" id="node3" href="$class_font_manager.html" title=" " alt="" coords="5,5,104,31"/>
+<area shape="rect" id="node4" href="$class_label.html" title=" " alt="" coords="152,5,205,31"/>
+<area shape="rect" id="node5" href="$struct_attributes.html" title=" " alt="" coords="183,93,262,119"/>
+<area shape="rect" id="node6" href="$class_dialogue_box.html" title=" " alt="" coords="302,93,397,119"/>
+</map>

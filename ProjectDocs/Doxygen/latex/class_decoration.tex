@@ -1,0 +1,526 @@
+\doxysection{Decoration Class Reference}
+\label{class_decoration}\index{Decoration@{Decoration}}
+
+
+Inheritance diagram for Decoration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_decoration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Decoration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_decoration_a68186d9aa4a95fe70efb38a2db471f63}} 
+{\bfseries Decoration} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\textbf{ Decoration} (std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Overloaded constructer. \end{DoxyCompactList}\item 
+\textbf{ Decoration} (std\+::string t\+\_\+type\+Tag, std\+::string t\+\_\+path, \textbf{ Texture\+Manager} $\ast$t\+\_\+texture\+Manager)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_decoration_a0f92fcab2ff323945c668c6d1fc1e973}} 
+{\bfseries $\sim$\+Decoration} ()
+\begin{DoxyCompactList}\small\item\em deconstructor \end{DoxyCompactList}\item 
+void \textbf{ init} ()
+\begin{DoxyCompactList}\small\item\em initialise object \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Sprite} ()
+\begin{DoxyCompactList}\small\item\em Sets up the texture and sprite. \end{DoxyCompactList}\item 
+void \textbf{ set\+Texture} (sf\+::\+Texture \&t\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em Retrieves the texture and sets the sprites texture to it. \end{DoxyCompactList}\item 
+void \textbf{ set\+Path\+To\+Texture} (std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em sets the path to the texture in the assets directory \end{DoxyCompactList}\item 
+void \textbf{ set\+Up\+Bounds} ()
+\begin{DoxyCompactList}\small\item\em Sets up the bounds of the object. \end{DoxyCompactList}\item 
+void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Updates the object. \end{DoxyCompactList}\item 
+void \textbf{ render} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em renders the object \end{DoxyCompactList}\item 
+void \textbf{ render\+Inspector} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em renders the inspector when the object is selected. \end{DoxyCompactList}\item 
+void \textbf{ set\+Object\+Category} (std\+::string t\+\_\+object\+Category)
+\item 
+std\+::string \textbf{ get\+Object\+Category} ()
+\item 
+int64\+\_\+t \textbf{ get\+UUID} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_a40860402e64d8008fb42329df7097cdb}} 
+{\bfseries Object} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_object_ae8f5483f459e46687bd01e6f9977afd3}} 
+{\bfseries $\sim$\+Object} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+virtual void \textbf{ init} ()=0
+\item 
+virtual void \textbf{ set\+Up\+Sprite} ()=0
+\item 
+\mbox{\label{class_object_a7d89bd060773d6b1dea859dbf325ec68}} 
+virtual void {\bfseries set\+Object\+Category} (std\+::string t\+\_\+\+Object\+Category)=0
+\item 
+virtual std\+::string \textbf{ get\+Object\+Category} ()=0
+\item 
+virtual void \textbf{ set\+Texture} (sf\+::\+Texture \&t\+\_\+texture)=0
+\item 
+virtual void \textbf{ set\+Path\+To\+Texture} (std\+::string t\+\_\+path)=0
+\item 
+virtual void \textbf{ set\+Up\+Bounds} ()=0
+\item 
+virtual void \textbf{ update} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)=0
+\item 
+virtual void \textbf{ render} (sf\+::\+Render\+Window \&window)=0
+\item 
+virtual void \textbf{ render\+Inspector} (sf\+::\+Render\+Window \&window)=0
+\item 
+\mbox{\label{class_object_a5c114a884bd8b2e403f0a9ab039287dd}} 
+virtual bool {\bfseries get\+Has\+Dialogue} ()
+\item 
+\mbox{\label{class_object_a63e401373ddf1421a688267db165c452}} 
+void {\bfseries set\+Row\+Column} (int t\+\_\+row, int t\+\_\+col)
+\item 
+\mbox{\label{class_object_a07d20326b3da66d531639ffee3c0bf0d}} 
+virtual sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Bounds} ()
+\item 
+\mbox{\label{class_object_a1c65a5cb9714327112c6eb62a7e2a814}} 
+sf\+::\+Sprite $\ast$ {\bfseries get\+Sprite} ()
+\item 
+\mbox{\label{class_object_a188fbf8d50f34c82b9eff22a29f2896e}} 
+void {\bfseries toggle\+Bounds} ()
+\item 
+\mbox{\label{class_object_a0d2e685ed20b49ec1b7feeba4c0f1cc9}} 
+bool {\bfseries is\+Collidable} ()
+\item 
+\mbox{\label{class_object_ab7ea4592b344857538ec6e9204a4b7da}} 
+int {\bfseries get\+Row} ()
+\item 
+\mbox{\label{class_object_a659906224ab5101d741409c7bf308258}} 
+int {\bfseries get\+Column} ()
+\item 
+\mbox{\label{class_object_a76638f714a77bdde109d04030c350bd7}} 
+void {\bfseries set\+Collidable} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_a5f6009ea1d51463088552c839e8c6482}} 
+bool {\bfseries get\+Selected} ()
+\item 
+\mbox{\label{class_object_a44e7dcf8d8a607f084455328c25001be}} 
+void {\bfseries set\+Selected} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_ab17d42cdb53019d43a52b3fdd051a802}} 
+void {\bfseries set\+Moving} (bool t\+\_\+state)
+\item 
+\mbox{\label{class_object_abf357fcc5c94a8d783ae83cfd7aed945}} 
+void {\bfseries set\+Tag} (std\+::string t\+\_\+tag)
+\item 
+\mbox{\label{class_object_a7047e90b20c56f87e2611dc8f6122bb8}} 
+\textbf{ Inspector} $\ast$ {\bfseries get\+Inspector} ()
+\item 
+\mbox{\label{class_object_aa54fd65f9b35486bc4187e81bc2ee2d8}} 
+std\+::string {\bfseries get\+Tag} ()
+\item 
+\mbox{\label{class_object_a1a962bda9a6985b534f1070afdd108d0}} 
+std\+::string {\bfseries get\+Path} ()
+\item 
+\mbox{\label{class_object_a23bfb0a75209c99e72b33f5447c8c504}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries get\+Dialogue\+Box} ()
+\item 
+\mbox{\label{class_object_a45342e6097e3ca9ab0917021fc71bbb6}} 
+virtual bool {\bfseries get\+In\+Range} ()
+\item 
+\mbox{\label{class_object_a873a644c2d5aa8aaf141e7fb1a674fe0}} 
+virtual std\+::map$<$ std\+::string, std\+::string $>$ $\ast$ {\bfseries get\+Dialogue\+Paths} ()
+\item 
+virtual void \textbf{ load\+Dialogue} (std\+::string t\+\_\+load\+Dialogue)
+\item 
+\mbox{\label{class_object_a28376066193d54be1f5fe43efb9ab741}} 
+virtual sf\+::\+Rectangle\+Shape $\ast$ {\bfseries get\+Detection\+Radius} ()
+\item 
+\mbox{\label{class_object_aa990df6d103551a658d0c85b8c7b0847}} 
+virtual int64\+\_\+t {\bfseries get\+UUID} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_decoration_a829083309d8e2ecfe6854ee1aa9bc1b5}} 
+\textbf{ Texture\+Manager} $\ast$ {\bfseries m\+\_\+texture\+Manager}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_a7e6ad48a865edde3f00b4c99e7cae007}} 
+\textbf{ Attributes} {\bfseries m\+\_\+inpector\+Data}
+\item 
+\mbox{\label{class_object_aa4d3720a4d923e80cf2f723b3e5029fb}} 
+\textbf{ Dialogue\+Box} $\ast$ {\bfseries m\+\_\+dialogue}
+\item 
+\mbox{\label{class_object_ad9204ea0812c7cd630eb45e2ddf720b4}} 
+bool {\bfseries m\+\_\+is\+Selected} = false
+\item 
+\mbox{\label{class_object_ab3a7652b129625dfc1b86580b6cd8b25}} 
+bool {\bfseries m\+\_\+moving} = false
+\item 
+\mbox{\label{class_object_acc2d78a19f930413701f597c24150a40}} 
+bool {\bfseries m\+\_\+has\+Been\+Selected} = false
+\item 
+\mbox{\label{class_object_ae8a784b17d2a5f62bf65b748107cdbb3}} 
+bool {\bfseries m\+\_\+has\+Dialogue} =false
+\item 
+\mbox{\label{class_object_a21c425f20aa4c0960528a1fd690ce120}} 
+bool {\bfseries m\+\_\+has\+Attributes} = false
+\item 
+\mbox{\label{class_object_a0a7dae69de1e50680776b2d88da93768}} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries m\+\_\+dialogue\+Paths}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \textbf{ Object}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_object_aec8458ef6816eeaef4f3111782584395}} 
+\textbf{ Inspector} $\ast$ {\bfseries m\+\_\+inspector}
+\item 
+\mbox{\label{class_object_a765f1496154b476b0601bf41d9f1db13}} 
+sf\+::\+Texture {\bfseries m\+\_\+object\+Texture}
+\item 
+\mbox{\label{class_object_a0a1d9501063d1b6dfefaa4d855bbbf6a}} 
+sf\+::\+Sprite {\bfseries m\+\_\+object\+Sprite}
+\item 
+\mbox{\label{class_object_abaee800d9f4e54110aa6060b5877e20d}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+object\+Bounds}
+\item 
+\mbox{\label{class_object_a32ccf7600204a33dff5b4aa1d8c7654d}} 
+int {\bfseries m\+\_\+bounds\+Width}
+\item 
+\mbox{\label{class_object_a6158d885d5a315b77be982de7b3cd473}} 
+int {\bfseries m\+\_\+bounds\+Height}
+\item 
+\mbox{\label{class_object_ac5d4d4fb959b7f1133ef61a89e0958de}} 
+bool {\bfseries m\+\_\+bounds\+On} = true
+\item 
+\mbox{\label{class_object_a39a36b44d894d3dfed0879c1e9451acd}} 
+int {\bfseries m\+\_\+row}
+\item 
+\mbox{\label{class_object_a1d79bc5a74490ade5bac9822882d3c6b}} 
+int {\bfseries m\+\_\+col}
+\item 
+\mbox{\label{class_object_af86077686f757f6a386a67384277237f}} 
+std\+::string {\bfseries m\+\_\+path} = \char`\"{}\char`\"{}
+\item 
+\mbox{\label{class_object_a847306181fed1dcd015a8ca92a8fe9fa}} 
+std\+::string {\bfseries m\+\_\+tag}
+\item 
+\mbox{\label{class_object_a7262057dfebf09f0de4e1e203a6704f7}} 
+bool {\bfseries m\+\_\+is\+Collidable} = false
+\item 
+\mbox{\label{class_object_aaa07175cf64bb19b27e985165ec353fe}} 
+std\+::string {\bfseries m\+\_\+object\+Category}
+\item 
+\mbox{\label{class_object_a85c9b3e93cc07175a3ce5fdfa5ed81d6}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+detection\+Radius}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_decoration_ab7c5d963f476681b1656fb8f9892fdd7}} 
+\index{Decoration@{Decoration}!Decoration@{Decoration}}
+\index{Decoration@{Decoration}!Decoration@{Decoration}}
+\doxysubsubsection{Decoration()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Decoration\+::\+Decoration (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_ab7c5d963f476681b1656fb8f9892fdd7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_decoration_aeea6a1ab997457eb6c3f83a8b1fa04c0}} 
+\index{Decoration@{Decoration}!Decoration@{Decoration}}
+\index{Decoration@{Decoration}!Decoration@{Decoration}}
+\doxysubsubsection{Decoration()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Decoration\+::\+Decoration (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+type\+Tag,  }\item[{std\+::string}]{t\+\_\+path,  }\item[{\textbf{ Texture\+Manager} $\ast$}]{t\+\_\+texture\+Manager }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+type\+Tag} & \\
+\hline
+{\em t\+\_\+path} & \\
+\hline
+{\em t\+\_\+texture\+Manager} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_aeea6a1ab997457eb6c3f83a8b1fa04c0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_decoration_a46668bb337dc3221c7727882a4efe23b}} 
+\index{Decoration@{Decoration}!getObjectCategory@{getObjectCategory}}
+\index{getObjectCategory@{getObjectCategory}!Decoration@{Decoration}}
+\doxysubsubsection{getObjectCategory()}
+{\footnotesize\ttfamily std\+::string Decoration\+::get\+Object\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_decoration_a6478e7e672928a4857631447e40f0d85}} 
+\index{Decoration@{Decoration}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!Decoration@{Decoration}}
+\doxysubsubsection{getUUID()}
+{\footnotesize\ttfamily int64\+\_\+t Decoration\+::get\+UUID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_decoration_ab98d94f2f21a4b2cadc2abb1ef3e90b9}} 
+\index{Decoration@{Decoration}!init@{init}}
+\index{init@{init}!Decoration@{Decoration}}
+\doxysubsubsection{init()}
+{\footnotesize\ttfamily void Decoration\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initialise object 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_ab98d94f2f21a4b2cadc2abb1ef3e90b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_decoration_ab98d94f2f21a4b2cadc2abb1ef3e90b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_decoration_a83fb21f641ac5bd2f01580626128d830}} 
+\index{Decoration@{Decoration}!render@{render}}
+\index{render@{render}!Decoration@{Decoration}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily void Decoration\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+renders the object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_decoration_a8e15fe2187167558044e459df7dabe87}} 
+\index{Decoration@{Decoration}!renderInspector@{renderInspector}}
+\index{renderInspector@{renderInspector}!Decoration@{Decoration}}
+\doxysubsubsection{renderInspector()}
+{\footnotesize\ttfamily void Decoration\+::render\+Inspector (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+renders the inspector when the object is selected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_a8e15fe2187167558044e459df7dabe87_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_decoration_a7527443c8eb1dab47d66f877bfc6ec96}} 
+\index{Decoration@{Decoration}!setObjectCategory@{setObjectCategory}}
+\index{setObjectCategory@{setObjectCategory}!Decoration@{Decoration}}
+\doxysubsubsection{setObjectCategory()}
+{\footnotesize\ttfamily void Decoration\+::set\+Object\+Category (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+object\+Category }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_decoration_ae299e979082c331d34087cb130a75bba}} 
+\index{Decoration@{Decoration}!setPathToTexture@{setPathToTexture}}
+\index{setPathToTexture@{setPathToTexture}!Decoration@{Decoration}}
+\doxysubsubsection{setPathToTexture()}
+{\footnotesize\ttfamily void Decoration\+::set\+Path\+To\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+sets the path to the texture in the assets directory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+\mbox{\label{class_decoration_a63defb1c77417c5598684760609fb1b2}} 
+\index{Decoration@{Decoration}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!Decoration@{Decoration}}
+\doxysubsubsection{setTexture()}
+{\footnotesize\ttfamily void Decoration\+::set\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{t\+\_\+texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the texture and sets the sprites texture to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+texture} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_a63defb1c77417c5598684760609fb1b2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_a63defb1c77417c5598684760609fb1b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_decoration_aa16e1dce7065eefa08246f702eae60e9}} 
+\index{Decoration@{Decoration}!setUpBounds@{setUpBounds}}
+\index{setUpBounds@{setUpBounds}!Decoration@{Decoration}}
+\doxysubsubsection{setUpBounds()}
+{\footnotesize\ttfamily void Decoration\+::set\+Up\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets up the bounds of the object. 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_aa16e1dce7065eefa08246f702eae60e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_decoration_aca447471c1245d8e19240a738ca34eab}} 
+\index{Decoration@{Decoration}!setUpSprite@{setUpSprite}}
+\index{setUpSprite@{setUpSprite}!Decoration@{Decoration}}
+\doxysubsubsection{setUpSprite()}
+{\footnotesize\ttfamily void Decoration\+::set\+Up\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets up the texture and sprite. 
+
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_aca447471c1245d8e19240a738ca34eab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_decoration_aca447471c1245d8e19240a738ca34eab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_decoration_ac7c21badfc5d69093ee1571ade9245a9}} 
+\index{Decoration@{Decoration}!update@{update}}
+\index{update@{update}!Decoration@{Decoration}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void Decoration\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Object} \doxyref{}{p.}{class_object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Decoration.\+h\item 
+Decoration.\+cpp\end{DoxyCompactItemize}

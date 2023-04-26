@@ -1,0 +1,13 @@
+<map id="UiBuildMode" name="UiBuildMode">
+<area shape="rect" id="node1" title=" " alt="" coords="50,357,145,383"/>
+<area shape="rect" id="node2" href="$class_game_state.html" title=" " alt="" coords="55,93,143,119"/>
+<area shape="rect" id="node3" href="$class_grid.html" title=" " alt="" coords="76,181,122,207"/>
+<area shape="rect" id="node4" href="$class_object_placement.html" title=" " alt="" coords="166,269,288,295"/>
+<area shape="rect" id="node5" href="$class_object.html" title=" " alt="" coords="316,181,376,207"/>
+<area shape="rect" id="node6" href="$class_inspector.html" title=" " alt="" coords="212,93,287,119"/>
+<area shape="rect" id="node7" href="$class_font_manager.html" title=" " alt="" coords="139,5,238,31"/>
+<area shape="rect" id="node8" href="$class_label.html" title=" " alt="" coords="286,5,339,31"/>
+<area shape="rect" id="node9" href="$struct_attributes.html" title=" " alt="" coords="317,93,396,119"/>
+<area shape="rect" id="node10" href="$class_dialogue_box.html" title=" " alt="" coords="436,93,530,119"/>
+<area shape="rect" id="node11" href="$class_texture_manager.html" title=" " alt="" coords="400,181,515,207"/>
+</map>

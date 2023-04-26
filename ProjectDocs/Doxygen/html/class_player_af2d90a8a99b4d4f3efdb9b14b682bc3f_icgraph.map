@@ -1,0 +1,4 @@
+<map id="Player::animate" name="Player::animate">
+<area shape="rect" id="node1" title="Animates the player." alt="" coords="160,5,273,31"/>
+<area shape="rect" id="node2" href="$class_player.html#a9a05f2ffa498b33cce9237d1da00f9d7" title="Update player." alt="" coords="5,5,112,31"/>
+</map>

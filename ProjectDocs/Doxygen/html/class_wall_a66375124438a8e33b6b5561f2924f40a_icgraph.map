@@ -1,0 +1,4 @@
+<map id="Wall::init" name="Wall::init">
+<area shape="rect" id="node1" title="Initialise object." alt="" coords="136,5,209,31"/>
+<area shape="rect" id="node2" href="$class_wall.html#a74e7b38bdbd36a487c9fa0d2858a3a1e" title="Overloaded constructor." alt="" coords="5,5,88,31"/>
+</map>

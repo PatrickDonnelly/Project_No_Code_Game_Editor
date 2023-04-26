@@ -1,0 +1,5 @@
+<map id="Terrain::setUpSprite" name="Terrain::setUpSprite">
+<area shape="rect" id="node1" title="Set up the terrain objects sprite." alt="" coords="5,5,143,31"/>
+<area shape="rect" id="node2" href="$class_terrain.html#acdbb70b743e808b1aa043d863399e766" title="Sets the texture of the terrain object." alt="" coords="191,5,321,31"/>
+<area shape="rect" id="node3" href="$class_texture_manager.html#aabc3af4e63581ca3ba6ab964016b254f" title="Checks if a texture is loaded in memory and returns it." alt="" coords="369,5,553,31"/>
+</map>

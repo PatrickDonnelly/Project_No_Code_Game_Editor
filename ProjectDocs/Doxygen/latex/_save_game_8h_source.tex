@@ -1,0 +1,108 @@
+\doxysection{Save\+Game.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ SAVEGAME\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ SAVEGAME\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Label.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}PopUp.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}InputField.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}CheckBox.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}ColourPicker.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Globals.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }SaveGame}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ SaveGame();}
+\DoxyCodeLine{00027\ \ \ \ \ SaveGame(GameState*\ t\_currentGameState);}
+\DoxyCodeLine{00028\ \ \ \ \ \string~SaveGame();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ processEvents(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ t\_onOff)\ \{\ m\_enabled\ =\ t\_onOff;\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ getTitle(\textcolor{keywordtype}{bool}\ t\_isMainTitle);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ getItalics(\textcolor{keywordtype}{bool}\ t\_isMainTitle);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ getUnderlined(\textcolor{keywordtype}{bool}\ t\_isMainTitle);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ getBold(\textcolor{keywordtype}{bool}\ t\_isMainTitle);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getColorRedValue(\textcolor{keywordtype}{bool}\ t\_isMainTitle);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ getColorGreenValue(\textcolor{keywordtype}{bool}\ t\_isMainTitle);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ getColorBlueValue(\textcolor{keywordtype}{bool}\ t\_isMainTitle);}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ getFolderPath()\ \{\ \textcolor{keywordflow}{return}\ m\_folderPath;\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainTitle(std::string\ t\_string)\ \{\ m\_titleText-\/>getText()-\/>setString(t\_string);\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainTitleInputField(std::string\ t\_string)\ \{\ m\_mainTitle-\/>SetString(t\_string);\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainItalics(\textcolor{keywordtype}{bool}\ t\_isItalics)\ \{\ m\_mainTitleOptions.at(0).setEnabled(t\_isItalics);\ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainUnderlined(\textcolor{keywordtype}{bool}\ t\_isUnderlined)\ \{\ m\_mainTitleOptions.at(1).setEnabled(t\_isUnderlined);\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainBold(\textcolor{keywordtype}{bool}\ t\_isBold)\ \{\ m\_mainTitleOptions.at(2).setEnabled(t\_isBold);\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainRedValue(\textcolor{keywordtype}{int}\ t\_redValue)\ \{m\_mainTitleColor.r\ =\ t\_redValue;\ m\_titleText-\/>setTextColor(m\_mainTitleColor);\}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainGreenValue(\textcolor{keywordtype}{int}\ t\_greenValue)\ \{\ m\_mainTitleColor.g\ =\ t\_greenValue;\ m\_titleText-\/>setTextColor(m\_mainTitleColor);\}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainBlueValue(\textcolor{keywordtype}{int}\ t\_blueValue)\ \{\ m\_mainTitleColor.b\ =\ t\_blueValue;\ m\_titleText-\/>setTextColor(m\_mainTitleColor);\}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ setMainColor(\textcolor{keywordtype}{int}\ t\_red,\ \textcolor{keywordtype}{int}\ t\_green,\ \textcolor{keywordtype}{int}\ t\_blue)\ \{\ m\_titleText-\/>setTextColor(sf::Color(t\_red,\ t\_green,\ t\_blue));\ m\_mainTitleColor\ =\ (sf::Color(t\_red,\ t\_green,\ t\_blue));\}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubTitle(std::string\ t\_string)\ \{\ m\_subTitleText-\/>getText()-\/>setString(t\_string);\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubTitleInputField(std::string\ t\_string)\ \{\ m\_subTitle-\/>SetString(t\_string);\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubItalics(\textcolor{keywordtype}{bool}\ t\_isItalics)\ \{\ m\_subTitleOptions.at(0).setEnabled(t\_isItalics);\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubUnderlined(\textcolor{keywordtype}{bool}\ t\_isUnderlined)\ \{\ m\_subTitleOptions.at(1).setEnabled(t\_isUnderlined);\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubBold(\textcolor{keywordtype}{bool}\ t\_isBold)\ \{\ m\_subTitleOptions.at(2).setEnabled(t\_isBold);\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubRedValue(\textcolor{keywordtype}{int}\ t\_redValue)\ \{\ m\_subTitleColor.r\ =\ t\_redValue;\ m\_subTitleText-\/>setTextColor(m\_subTitleColor);\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubGreenValue(\textcolor{keywordtype}{int}\ t\_greenValue)\ \{\ m\_subTitleColor.g\ =\ t\_greenValue;\ m\_subTitleText-\/>setTextColor(m\_subTitleColor);\}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubBlueValue(\textcolor{keywordtype}{int}\ t\_blueValue)\ \{\ m\_subTitleColor.b\ =\ t\_blueValue;\ m\_subTitleText-\/>setTextColor(m\_subTitleColor);\}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ setSubColor(\textcolor{keywordtype}{int}\ t\_red,\ \textcolor{keywordtype}{int}\ t\_green,\ \textcolor{keywordtype}{int}\ t\_blue)\ \{\ m\_subTitleText-\/>setTextColor(sf::Color(t\_red,\ t\_green,\ t\_blue));\ m\_subTitleColor\ =\ (sf::Color(t\_red,\ t\_green,\ t\_blue));\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \ \ sf::Color\ m\_mainTitleColor;}
+\DoxyCodeLine{00066\ \ \ \ \ sf::Color\ m\_subTitleColor;}
+\DoxyCodeLine{00067\ \ \ \ \ ColourPicker\ m\_colourPicker;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_choosingColour\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00069\ \ \ \ \ std::vector<CheckBox>\ m\_subTitleOptions;}
+\DoxyCodeLine{00070\ \ \ \ \ std::vector<CheckBox>\ m\_mainTitleOptions;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ std::string\ m\_folderPath;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ InputField*\ m\_mainTitle;}
+\DoxyCodeLine{00075\ \ \ \ \ InputField*\ m\_subTitle;}
+\DoxyCodeLine{00076\ \ \ \ \ FontManager\ m\_fontManager;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ saving\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ PopUp\ m\_popUpBox;}
+\DoxyCodeLine{00080\ \ \ \ \ Label*\ m\_titleText;}
+\DoxyCodeLine{00081\ \ \ \ \ Label*\ m\_subTitleText;}
+\DoxyCodeLine{00082\ \ \ \ \ std::vector<Label*>\ m\_labels;}
+\DoxyCodeLine{00083\ \ \ \ \ std::vector<Button*>\ m\_saveAndCancelButtons;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ initInputFields();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ setSelectedInputField(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ typing(sf::Event\ t\_event);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ setTextStyle(std::vector<CheckBox>\&\ t\_textOptions,\ Label*\ t\_text,\ \textcolor{keywordtype}{int}\ t\_index,\ sf::Color\&\ t\_textColor,\ sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ processButtons(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpOptions(std::vector<CheckBox>\&\ t\_options,\ \textcolor{keywordtype}{int}\ t\_yOffsetOne,\ \textcolor{keywordtype}{int}\ t\_yOffsetTwo,\ \textcolor{keywordtype}{float}\ t\_fontSize,\ Label*\ t\_text,\ sf::Color\&\ t\_textColor);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpPopUpBox(std::string\ t\_fileName,\ \textcolor{keywordtype}{int}\ t\_noOfButtons);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ GameState*\ m\_gameState;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ sf::RectangleShape\ m\_inputFieldMainBody;}
+\DoxyCodeLine{00097\ \ \ \ \ sf::RectangleShape\ m\_inputFieldTitle;}
+\DoxyCodeLine{00098\ \ \ \ \ sf::RectangleShape\ m\_backGround;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ sf::Font\ m\_font;}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !SAVEGAME\_HPP}}
+\DoxyCodeLine{00103\ }
+
+\end{DoxyCode}

@@ -1,0 +1,12 @@
+<map id="TextEditor::processTextEditorButtons" name="TextEditor::processTextEditorButtons">
+<area shape="rect" id="node1" title="Process text editor buttons to load, save clear text etc." alt="" coords="5,195,200,235"/>
+<area shape="rect" id="node2" href="$class_input_field.html#ad5edf22bb0392ba7f6d6ba1e941f3585" title="Clears all text from the input field." alt="" coords="275,5,417,31"/>
+<area shape="rect" id="node3" href="$class_pop_up.html#aa2103e6ed364f5a35a0c830ec84e7bf8" title="gets the bounds of the pop up box" alt="" coords="249,55,443,80"/>
+<area shape="rect" id="node4" href="$class_pop_up.html#ad00c483e80e5cdf2bb36476dad2aa8b6" title="Gets the position of the pop up box." alt="" coords="248,104,444,129"/>
+<area shape="rect" id="node5" href="$class_pop_up.html#a59121a7e7749bac68163efeeba3a10cf" title="Checks if the pop up box is enabled." alt="" coords="283,153,409,179"/>
+<area shape="rect" id="node6" href="$class_pop_up.html#acf5d73b33f1f4b9965a8a5aaaf643512" title="Sets the pop up box text to a string thats passed in." alt="" coords="259,203,433,228"/>
+<area shape="rect" id="node7" href="$class_label.html#a0bb2cf2f12f82b2b88391c37f0165f85" title="Set Text." alt="" coords="294,252,398,277"/>
+<area shape="rect" id="node8" href="$class_text_editor.html#af1c2e63ed2695111ebb7327f5da7f8c6" title="Sets the row of dialogue buttons that can currently be seen in the game. Can be swapped to the next o..." alt="" coords="261,301,431,327"/>
+<area shape="rect" id="node9" href="$class_dialogue_box.html#a7024900b7d024c41c6dcef6e7c1f0dae" title="Splits the string into multiple lines for display." alt="" coords="265,351,427,376"/>
+<area shape="rect" id="node10" href="$class_check_box.html#aca5c34932b3044d3b39516bc4ede01fc" title="togle the colour of the checkbox" alt="" coords="269,400,423,425"/>
+</map>

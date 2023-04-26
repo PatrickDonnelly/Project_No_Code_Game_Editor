@@ -1,0 +1,8 @@
+<map id="Weapon::Weapon" name="Weapon::Weapon">
+<area shape="rect" id="node1" title="Overloaded cinstructor." alt="" coords="5,80,132,105"/>
+<area shape="rect" id="node2" href="$class_weapon.html#ae12708c5705a435d6968feb441bff7d8" title="Initialise the weapon." alt="" coords="235,5,329,31"/>
+<area shape="rect" id="node4" href="$class_weapon.html#ae8dd62a0b750837a0e7895c1f6d639c9" title="Loads the texture for the weapon." alt="" coords="211,55,353,80"/>
+<area shape="rect" id="node5" href="$class_weapon.html#ace2b793d4859b7f966fb74c3f8f5aed2" title="sets the colour of the bounding box" alt="" coords="185,104,379,129"/>
+<area shape="rect" id="node6" href="$class_weapon.html#acad46d87286f0182459ed16a989ea981" title="Sets up the collidable bounds of the weapon." alt="" coords="180,153,384,179"/>
+<area shape="rect" id="node3" href="$class_weapon.html#afaa7a82dd229ea9d39a5a162c3e1b3cd" title="Sets up sprite." alt="" coords="432,5,579,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SaveGame::getTitle" name="SaveGame::getTitle">
+<area shape="rect" id="node1" title="Gets the text of the main title or the subtitle depending on whether the parametre passed in is true ..." alt="" coords="5,5,140,31"/>
+<area shape="rect" id="node2" href="$class_label.html#a51a09d2b8554c8f83661540f00650e26" title="Get the text string." alt="" coords="188,5,327,31"/>
+</map>

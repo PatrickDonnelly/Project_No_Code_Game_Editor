@@ -1,0 +1,65 @@
+\doxysection{Drop\+Down\+Menu.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ DROPDOWNMENU\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ DROPDOWNMENU\_HPP}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}CheckBox.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }DropDownMenu}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ DropDownMenu();}
+\DoxyCodeLine{00014\ \ \ \ \ DropDownMenu(std::string\ t\_type);}
+\DoxyCodeLine{00015\ \ \ \ \ \string~DropDownMenu();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ Button*\ m\_dropDownMenuButton;}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<CheckBox>\ m\_dropDownMenuOptions;}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ m\_type;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ processEvents(sf::Event\ t\_event,\ sf::RenderWindow\&\ t\_window);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ setUpDropDownMenu();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ sf::Sprite\ getDropDownButtonSprite();}
+\DoxyCodeLine{00025\ \ \ \ \ sf::Vector2f\ getDropDownButtonPosition();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_buttonIndex;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ initButton();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setDropDownMenuPosition(sf::Vector2f\ t\_position,\ \textcolor{keywordtype}{float}\ t\_width);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setDropDownButtonSprite(sf::Sprite\ t\_buttonSprite);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ highlighted();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setColor(sf::Color\ t\_color);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setButtonTexture();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{float}\ m\_xScale,\ \textcolor{keywordtype}{float}\ m\_yScale);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ getSelected();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ setSelected(\textcolor{keywordtype}{bool}\ t\_tf);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnabled()\ \{\ \textcolor{keywordflow}{return}\ m\_enabled;\ \};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOpened()\ \{\ \textcolor{keywordflow}{return}\ m\_opened;\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ t\_onOff)\ \{\ m\_enabled\ =\ t\_onOff;\ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ setOpened(\textcolor{keywordtype}{bool}\ t\_onOff)\ \{\ m\_opened\ =\ t\_onOff;\ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ setOpened()\ \{\ m\_opened\ =\ !m\_opened;\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled()\ \{\ m\_enabled\ =\ !m\_enabled;\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ isButtonClicked(sf::Event\&\ t\_event,\ sf::RenderWindow*\ t\_window);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ checkEnabledOptions(std::map<std::string,\ std::string>\&\ t\_dialoguePaths,\ std::string\ t\_fileName);}
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_opened\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_selected;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_enabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_checkBoxClicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ \ \ \ \ std::string\ m\_currentlyEnabledDialogueOption;}
+\DoxyCodeLine{00054\ \ \ \ \ sf::Sprite\ m\_buttonSprite;}
+\DoxyCodeLine{00055\ \ \ \ \ sf::Texture\ m\_buttonTexture;}
+\DoxyCodeLine{00056\ \ \ \ \ sf::Texture\ m\_buttonHighlightTexture;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !DROPDOWNMENU\_HPP}}
+
+\end{DoxyCode}
