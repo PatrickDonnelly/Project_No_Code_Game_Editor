@@ -42,9 +42,6 @@
     <ClInclude Include="Animator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Obstacle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -78,9 +75,6 @@
     <ClInclude Include="InspectorOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NPC.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -100,9 +94,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RoomCreation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ObjectPlacement.h">
@@ -167,9 +158,6 @@
     <ClCompile Include="Animator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -200,9 +188,6 @@
     <ClCompile Include="InspectorOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NPC.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -219,9 +204,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RoomCreation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ObjectPlacement.cpp">

@@ -13,11 +13,10 @@ Game::Game() :
 	m_saveGameScreen = SaveGame(m_gameState);
 	setUpFontAndText();
 	m_grid = new Grid(m_gameState, m_textureManager);
-	m_roomCreation = new RoomCreation(m_gameState, m_grid);
 	m_objectPlacement = new ObjectPlacement(m_gameState, m_grid, m_textureManager);
 	m_player = new Player();
 	m_spear = new Weapon(m_player);
-	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState, m_roomCreation, m_objectPlacement);
+	m_uiBuildMode = UiBuildMode(m_ArialFont, m_grid, m_gameState, m_objectPlacement);
 	m_dialogueBox = new DialogueBox(m_ArialFont);
 	m_textEditor = new TextEditor(m_ArialFont, m_gameState);
 
@@ -215,157 +214,7 @@ void Game::update(sf::Time t_deltaTime)
 	}
 	if (m_gameState->getState() == State::SAVING)
 	{
-
-		std::cout << "Saving Game" << std::endl;
-
-		YAML::Emitter out;
-		out << YAML::BeginDoc;
-		out << YAML::BeginMap;
-		out << YAML::Key << "Grid";
-		out << YAML::Value << YAML::BeginSeq;
-		out << YAML::BeginMap;
-		out << YAML::Key << "Size" << YAML::Value << m_grid->m_vectGrid.size();
-		out << YAML::EndMap;
-		out << YAML::EndSeq;
-
-
-		out << YAML::Key << "Enemy";
-		out << YAML::BeginSeq;
-		if (m_objectPlacement->m_enemies.size() != 0)
-		{
-			for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
-			{
-				out << YAML::BeginMap;
-				out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getTag();
-				out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getUUID();
-				out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getBounds()->getPosition().x;
-				out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getBounds()->getPosition().y;
-				out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getPath();
-				out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getHasDialogue();
-				out << YAML::Key << "Row" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getRow();
-				out << YAML::Key << "Column" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getColumn();
-				out << YAML::EndMap;
-			}
-		}
-		out << YAML::EndSeq;
-		out << YAML::Key << "Decoration";
-		out << YAML::BeginSeq;
-		if (m_objectPlacement->m_decorations.size() != 0)
-		{
-			for (int i = 0; i < m_objectPlacement->m_decorations.size(); i++)
-			{
-				out << YAML::BeginMap;
-				out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getTag();
-				out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getUUID();
-				out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getBounds()->getPosition().x;
-				out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getBounds()->getPosition().y;
-				out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getPath();
-				out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getHasDialogue();
-				out << YAML::Key << "Row" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getRow();
-				out << YAML::Key << "Column" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getColumn();
-				out << YAML::EndMap;
-			}
-		}
-		out << YAML::EndSeq;
-		out << YAML::Key << "Item";
-		out << YAML::BeginSeq;
-		if (m_objectPlacement->m_items.size() != 0)
-		{
-			for (int i = 0; i < m_objectPlacement->m_items.size(); i++)
-			{
-				out << YAML::BeginMap;
-				out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_items.at(i)->getTag();
-				out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_items.at(i)->getUUID();
-				out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_items.at(i)->getBounds()->getPosition().x;
-				out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_items.at(i)->getBounds()->getPosition().y;
-				out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_items.at(i)->getPath();
-				out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_items.at(i)->getHasDialogue();
-				out << YAML::Key << "Row" << YAML::Value << m_objectPlacement->m_items.at(i)->getRow();
-				out << YAML::Key << "Column" << YAML::Value << m_objectPlacement->m_items.at(i)->getColumn();
-				out << YAML::EndMap;
-			}
-		}
-		out << YAML::EndSeq;
-		out << YAML::Key << "Wall";
-		out << YAML::BeginSeq;
-		if (m_objectPlacement->m_walls.size() != 0)
-		{
-			for (int i = 0; i < m_objectPlacement->m_walls.size(); i++)
-			{
-				out << YAML::BeginMap;
-				out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_walls.at(i)->getTag();
-				out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_walls.at(i)->getUUID();
-				out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_walls.at(i)->getBounds()->getPosition().x;
-				out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_walls.at(i)->getBounds()->getPosition().y;
-				out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_walls.at(i)->getPath();
-				out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_walls.at(i)->getHasDialogue();
-				out << YAML::Key << "Row" << YAML::Value << m_objectPlacement->m_walls.at(i)->getRow();
-				out << YAML::Key << "Column" << YAML::Value << m_objectPlacement->m_walls.at(i)->getColumn();
-				out << YAML::EndMap;
-			}
-		}
-		out << YAML::EndSeq;
-		out << YAML::Key << "Tile";
-		out << YAML::BeginSeq;
-		for (int i = 0; i < m_grid->m_vectGrid.size(); i++)
-		{
-			for (int j = 0; j < m_grid->m_vectGrid.size(); ++j)
-			{
-
-					out << YAML::BeginMap;
-					out << YAML::Key << "Cell Type" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).cellType;
-					out << YAML::Key << "Occupied" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).m_hasObject;
-					out << YAML::Key << "Xpos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPos().x;
-					out << YAML::Key << "Ypos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPos().y;
-					out << YAML::Key << "Texture" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPath();
-					out << YAML::EndMap;
-				
-			}
-		}
-		out << YAML::EndSeq;
-		out << YAML::Key << "GameName";
-		out << YAML::BeginSeq;
-	
-
-				out << YAML::BeginMap;
-				out << YAML::Key << "Name" << YAML::Value << m_saveGameScreen.getTitle(true);
-				out << YAML::Key << "Italics" << YAML::Value << m_saveGameScreen.getItalics(true);
-				out << YAML::Key << "Underlined" << YAML::Value << m_saveGameScreen.getUnderlined(true);
-				out << YAML::Key << "Bold" << YAML::Value << m_saveGameScreen.getBold(true);
-				out << YAML::Key << "Color Red Value" << YAML::Value << m_saveGameScreen.getColorRedValue(true);
-				out << YAML::Key << "Color Green Value" << YAML::Value << m_saveGameScreen.getColorGreenValue(true);
-				out << YAML::Key << "Color Blue Value" << YAML::Value << m_saveGameScreen.getColorBlueValue(true);
-
-
-				out << YAML::EndMap;
-				out << YAML::EndSeq;
-
-				out << YAML::Key << "GameSubTitle";
-				out << YAML::BeginSeq;
-				out << YAML::BeginMap;
-				out << YAML::Key << "Name" << YAML::Value << m_saveGameScreen.getTitle(false);
-				out << YAML::Key << "Italics" << YAML::Value << m_saveGameScreen.getItalics(false);
-				out << YAML::Key << "Underlined" << YAML::Value << m_saveGameScreen.getUnderlined(false);
-				out << YAML::Key << "Bold" << YAML::Value << m_saveGameScreen.getBold(false);
-				out << YAML::Key << "Color Red Value" << YAML::Value << m_saveGameScreen.getColorRedValue(false);
-				out << YAML::Key << "Color Green Value" << YAML::Value << m_saveGameScreen.getColorGreenValue(false);
-				out << YAML::Key << "Color Blue Value" << YAML::Value << m_saveGameScreen.getColorBlueValue(false);
-
-				out << YAML::EndMap;
-		
-		out << YAML::EndSeq;
-
-
-		out << YAML::EndMap;
-		out << YAML::EndDoc;
-		// player save
-		std::string _filePath = m_saveGameScreen.getFolderPath();
-		std::ofstream fout(_filePath + "\\" + m_saveGameScreen.getTitle(true) + ".yaml");
-		fout << out.c_str();
-		fout.close();
-
-		m_levelList.refreshLevelList();
-		m_gameState->setState(m_gameState->getPreviousState());
+		saveGameData();
 	}
 	if (m_gameState->getState() == State::MENU)
 	{
@@ -375,134 +224,16 @@ void Game::update(sf::Time t_deltaTime)
 	}
 	if (m_gameState->getState() == State::LOAD_GAME)
 	{
-		std::string _fileName = m_levelList.getGameToBeLoaded();
-		std::cout << _fileName << std::endl;
-		YAML::Node output = YAML::LoadFile("Games\\" + _fileName + "\\" + _fileName + ".yaml");
-		int size = output["Grid"][0]["Size"].as<int>();
-		m_objectPlacement->clearObjects();
-		m_grid->clear();
-		m_grid->setGridSize(size);
-		m_grid->regenerateGrid();
-		m_objectPlacement->clearObjects();
-		std::vector<sf::Vector2f> positions;
-		std::vector<std::string> textures;
-		std::vector<std::string> cellType;
-		std::vector<bool> hasObject;
-		std::vector<Object> object;
-
-		for (const auto& node : output["Tile"]) {
-			textures.push_back(node["Texture"].as<std::string>());
-			cellType.push_back(node["Cell Type"].as<std::string>());
-			hasObject.push_back(node["Occupied"].as<bool>());
-			positions.push_back(
-				sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>()));
-			std::cout << node["Xpos"].as<float>() << std::endl;
-		}
-		int k = 0;
-		for (int i = 0; i < m_grid->m_vectGridSize;++i)
-		{
-			for (int j = 0; j < m_grid->m_vectGridSize; ++j)
-			{
-				if (cellType.at(k) != "Empty")
-				{
-					m_grid->m_vectGrid.at(i).at(j).setFloorSprite(textures.at(k));
-					m_grid->m_vectGrid.at(i).at(j).cellType = cellType.at(k);
-					m_grid->m_vectGrid.at(i).at(j).m_hasObject = hasObject.at(k);
-				}
-				k++;
-			}
-		}
-		textures.clear();
-		positions.clear();
-		for (const auto& node : output["Enemy"]) {
-			m_objectPlacement->m_enemies.push_back(new Enemy( node["Texture"].as<std::string>()));
-			m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->setRowColumn(
-				node["Row"].as<int>(), node["Column"].as<int>());
-			m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->getBounds()->setPosition(
-				node["Xpos"].as<float>(), node["Ypos"].as<float>()
-			);
-			m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->getSprite()->setPosition(
-				m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->getBounds()->getPosition());
-			std::cout << node["Xpos"].as<float>() << std::endl;
-		}
-
-		for (const auto& node : output["Item"]) {
-			m_objectPlacement->m_items.push_back(new Item(node["Texture"].as<std::string>()));
-			m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->setRowColumn(
-				node["Row"].as<int>(), node["Column"].as<int>());
-			m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->getBounds()->setPosition(
-				node["Xpos"].as<float>(), node["Ypos"].as<float>()
-			);
-			m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->getSprite()->setPosition(
-				m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->getBounds()->getPosition());
-			std::cout << node["Xpos"].as<float>() << std::endl;
-		}
-
-		for (const auto& node : output["Decoration"]) {
-			m_objectPlacement->m_decorations.push_back(new Decoration(node["Texture"].as<std::string>()));
-			m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->setRowColumn(
-				node["Row"].as<int>(), node["Column"].as<int>());
-			m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->getBounds()->setPosition(
-				node["Xpos"].as<float>(), node["Ypos"].as<float>()
-			);
-			m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->getSprite()->setPosition(
-				m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->getBounds()->getPosition());
-			std::cout << node["Xpos"].as<float>() << std::endl;
-		}
-
-		for (const auto& node : output["Wall"]) {
-			m_objectPlacement->m_walls.push_back(new Wall(node["Texture"].as<std::string>()));
-			m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->setRowColumn(
-				node["Row"].as<int>(), node["Column"].as<int>());
-			m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->setPosition(
-				node["Xpos"].as<float>(), node["Ypos"].as<float>()
-			);
-
-			m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getSprite()->setPosition(
-				m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition());
-
-			std::cout << node["Xpos"].as<float>() << std::endl;
-		}
-
-		for (const auto& node : output["GameName"]) {
-			m_saveGameScreen.setMainTitle(node["Name"].as<std::string>());
-			m_saveGameScreen.setMainTitleInputField(node["Name"].as<std::string>());
-			m_saveGameScreen.setMainItalics(node["Italics"].as<bool>());
-			m_saveGameScreen.setMainUnderlined(node["Underlined"].as<bool>());
-			m_saveGameScreen.setMainBold(node["Bold"].as<bool>());
-			m_saveGameScreen.setMainColor(node["Color Red Value"].as<int>(), node["Color Green Value"].as<int>(), node["Color Blue Value"].as<int>());
-
-		}
-
-		for (const auto& node : output["GameSubTitle"]) {
-			m_saveGameScreen.setSubTitle(node["Name"].as<std::string>());
-			m_saveGameScreen.setSubTitleInputField(node["Name"].as<std::string>());
-			m_saveGameScreen.setSubItalics(node["Italics"].as<bool>());
-			m_saveGameScreen.setSubUnderlined(node["Underlined"].as<bool>());
-			m_saveGameScreen.setSubBold(node["Bold"].as<bool>());
-			m_saveGameScreen.setSubColor(node["Color Red Value"].as<int>(), node["Color Green Value"].as<int>(), node["Color Blue Value"].as<int>());
-
-		}
-		m_gameState->setState(State::ROOM_PLACE_OBJECTS);
+		loadGameData();
 	}
 	//std::cout << m_grid->m_vectGrid.size() << std::endl;
 	if (m_gameState->getState() != State::PAUSE_GAME)
 	{
-		if (m_roomCreation->firstFloorSet && m_grid->m_playerSet == false)
-		{
-			m_grid->m_playerSet = true;
-			m_player->getBounds()->setPosition(m_roomCreation->m_firstTilePosition.x + 16, m_roomCreation->m_firstTilePosition.y + 16);
-			//std::cout << m_player->getSprite()->getPosition().x << std::endl;
-		}
 
 		//m_textureManager->getNumberOfTextures();
 		//m_fontManager.getNumberOfFonts();
 		m_objectPlacement->update(t_deltaTime, m_window);
 
-		if (m_gameState->m_currentGameState == State::ROOM_BUILD)
-		{
-			m_roomCreation->update(t_deltaTime, m_window);
-		}
 
 
 
@@ -930,4 +661,277 @@ void Game::render()
 	}
 
 	m_window.display();
+}
+
+/// <summary>
+/// Save game data
+/// </summary>
+void Game::saveGameData()
+{
+	std::cout << "Saving Game" << std::endl;
+
+	YAML::Emitter out;
+	out << YAML::BeginDoc;
+	out << YAML::BeginMap;
+	out << YAML::Key << "Grid";
+	out << YAML::Value << YAML::BeginSeq;
+	out << YAML::BeginMap;
+	out << YAML::Key << "Size" << YAML::Value << m_grid->m_vectGrid.size();
+	out << YAML::EndMap;
+	out << YAML::EndSeq;
+
+
+	out << YAML::Key << "Enemy";
+	out << YAML::BeginSeq;
+	if (m_objectPlacement->m_enemies.size() != 0)
+	{
+		for (int i = 0; i < m_objectPlacement->m_enemies.size(); i++)
+		{
+			out << YAML::BeginMap;
+			out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getTag();
+			out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getUUID();
+			out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getBounds()->getPosition().x;
+			out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getBounds()->getPosition().y;
+			out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getPath();
+			out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getHasDialogue();
+			out << YAML::Key << "Row" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getRow();
+			out << YAML::Key << "Column" << YAML::Value << m_objectPlacement->m_enemies.at(i)->getColumn();
+			out << YAML::EndMap;
+		}
+	}
+	out << YAML::EndSeq;
+	out << YAML::Key << "Decoration";
+	out << YAML::BeginSeq;
+	if (m_objectPlacement->m_decorations.size() != 0)
+	{
+		for (int i = 0; i < m_objectPlacement->m_decorations.size(); i++)
+		{
+			out << YAML::BeginMap;
+			out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getTag();
+			out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getUUID();
+			out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getBounds()->getPosition().x;
+			out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getBounds()->getPosition().y;
+			out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getPath();
+			out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getHasDialogue();
+			out << YAML::Key << "Row" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getRow();
+			out << YAML::Key << "Column" << YAML::Value << m_objectPlacement->m_decorations.at(i)->getColumn();
+			out << YAML::EndMap;
+		}
+	}
+	out << YAML::EndSeq;
+	out << YAML::Key << "Item";
+	out << YAML::BeginSeq;
+	if (m_objectPlacement->m_items.size() != 0)
+	{
+		for (int i = 0; i < m_objectPlacement->m_items.size(); i++)
+		{
+			out << YAML::BeginMap;
+			out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_items.at(i)->getTag();
+			out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_items.at(i)->getUUID();
+			out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_items.at(i)->getBounds()->getPosition().x;
+			out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_items.at(i)->getBounds()->getPosition().y;
+			out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_items.at(i)->getPath();
+			out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_items.at(i)->getHasDialogue();
+			out << YAML::Key << "Row" << YAML::Value << m_objectPlacement->m_items.at(i)->getRow();
+			out << YAML::Key << "Column" << YAML::Value << m_objectPlacement->m_items.at(i)->getColumn();
+			out << YAML::EndMap;
+		}
+	}
+	out << YAML::EndSeq;
+	out << YAML::Key << "Wall";
+	out << YAML::BeginSeq;
+	if (m_objectPlacement->m_walls.size() != 0)
+	{
+		for (int i = 0; i < m_objectPlacement->m_walls.size(); i++)
+		{
+			out << YAML::BeginMap;
+			out << YAML::Key << "Tag" << YAML::Value << m_objectPlacement->m_walls.at(i)->getTag();
+			out << YAML::Key << "ID" << YAML::Value << m_objectPlacement->m_walls.at(i)->getUUID();
+			out << YAML::Key << "Xpos" << YAML::Value << m_objectPlacement->m_walls.at(i)->getBounds()->getPosition().x;
+			out << YAML::Key << "Ypos" << YAML::Value << m_objectPlacement->m_walls.at(i)->getBounds()->getPosition().y;
+			out << YAML::Key << "Texture" << YAML::Value << m_objectPlacement->m_walls.at(i)->getPath();
+			out << YAML::Key << "Dialogue" << YAML::Value << m_objectPlacement->m_walls.at(i)->getHasDialogue();
+			out << YAML::Key << "Row" << YAML::Value << m_objectPlacement->m_walls.at(i)->getRow();
+			out << YAML::Key << "Column" << YAML::Value << m_objectPlacement->m_walls.at(i)->getColumn();
+			out << YAML::EndMap;
+		}
+	}
+	out << YAML::EndSeq;
+	out << YAML::Key << "Tile";
+	out << YAML::BeginSeq;
+	for (int i = 0; i < m_grid->m_vectGrid.size(); i++)
+	{
+		for (int j = 0; j < m_grid->m_vectGrid.size(); ++j)
+		{
+
+			out << YAML::BeginMap;
+			out << YAML::Key << "Cell Type" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).cellType;
+			out << YAML::Key << "Occupied" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).m_hasObject;
+			out << YAML::Key << "Xpos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPos().x;
+			out << YAML::Key << "Ypos" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPos().y;
+			out << YAML::Key << "Texture" << YAML::Value << m_grid->m_vectGrid.at(i).at(j).getPath();
+			out << YAML::EndMap;
+
+		}
+	}
+	out << YAML::EndSeq;
+	out << YAML::Key << "GameName";
+	out << YAML::BeginSeq;
+
+
+	out << YAML::BeginMap;
+	out << YAML::Key << "Name" << YAML::Value << m_saveGameScreen.getTitle(true);
+	out << YAML::Key << "Italics" << YAML::Value << m_saveGameScreen.getItalics(true);
+	out << YAML::Key << "Underlined" << YAML::Value << m_saveGameScreen.getUnderlined(true);
+	out << YAML::Key << "Bold" << YAML::Value << m_saveGameScreen.getBold(true);
+	out << YAML::Key << "Color Red Value" << YAML::Value << m_saveGameScreen.getColorRedValue(true);
+	out << YAML::Key << "Color Green Value" << YAML::Value << m_saveGameScreen.getColorGreenValue(true);
+	out << YAML::Key << "Color Blue Value" << YAML::Value << m_saveGameScreen.getColorBlueValue(true);
+
+
+	out << YAML::EndMap;
+	out << YAML::EndSeq;
+
+	out << YAML::Key << "GameSubTitle";
+	out << YAML::BeginSeq;
+	out << YAML::BeginMap;
+	out << YAML::Key << "Name" << YAML::Value << m_saveGameScreen.getTitle(false);
+	out << YAML::Key << "Italics" << YAML::Value << m_saveGameScreen.getItalics(false);
+	out << YAML::Key << "Underlined" << YAML::Value << m_saveGameScreen.getUnderlined(false);
+	out << YAML::Key << "Bold" << YAML::Value << m_saveGameScreen.getBold(false);
+	out << YAML::Key << "Color Red Value" << YAML::Value << m_saveGameScreen.getColorRedValue(false);
+	out << YAML::Key << "Color Green Value" << YAML::Value << m_saveGameScreen.getColorGreenValue(false);
+	out << YAML::Key << "Color Blue Value" << YAML::Value << m_saveGameScreen.getColorBlueValue(false);
+
+	out << YAML::EndMap;
+
+	out << YAML::EndSeq;
+
+
+	out << YAML::EndMap;
+	out << YAML::EndDoc;
+	// player save
+	std::string _filePath = m_saveGameScreen.getFolderPath();
+	std::ofstream fout(_filePath + "\\" + m_saveGameScreen.getTitle(true) + ".yaml");
+	fout << out.c_str();
+	fout.close();
+
+	m_levelList.refreshLevelList();
+	m_gameState->setState(m_gameState->getPreviousState());
+}
+
+/// <summary>
+/// load game data
+/// </summary>
+void Game::loadGameData()
+{
+	std::string _fileName = m_levelList.getGameToBeLoaded();
+	std::cout << _fileName << std::endl;
+	YAML::Node output = YAML::LoadFile("Games\\" + _fileName + "\\" + _fileName + ".yaml");
+	int size = output["Grid"][0]["Size"].as<int>();
+	m_objectPlacement->clearObjects();
+	m_grid->clear();
+	m_grid->setGridSize(size);
+	m_grid->regenerateGrid();
+	m_objectPlacement->clearObjects();
+	std::vector<sf::Vector2f> positions;
+	std::vector<std::string> textures;
+	std::vector<std::string> cellType;
+	std::vector<bool> hasObject;
+	std::vector<Object> object;
+
+	for (const auto& node : output["Tile"]) {
+		textures.push_back(node["Texture"].as<std::string>());
+		cellType.push_back(node["Cell Type"].as<std::string>());
+		hasObject.push_back(node["Occupied"].as<bool>());
+		positions.push_back(
+			sf::Vector2f(node["Xpos"].as<float>(), node["Ypos"].as<float>()));
+		std::cout << node["Xpos"].as<float>() << std::endl;
+	}
+	int k = 0;
+	for (int i = 0; i < m_grid->m_vectGridSize; ++i)
+	{
+		for (int j = 0; j < m_grid->m_vectGridSize; ++j)
+		{
+			if (cellType.at(k) != "Empty")
+			{
+				m_grid->m_vectGrid.at(i).at(j).setFloorSprite(textures.at(k));
+				m_grid->m_vectGrid.at(i).at(j).cellType = cellType.at(k);
+				m_grid->m_vectGrid.at(i).at(j).m_hasObject = hasObject.at(k);
+			}
+			k++;
+		}
+	}
+	textures.clear();
+	positions.clear();
+	for (const auto& node : output["Enemy"]) {
+		m_objectPlacement->m_enemies.push_back(new Enemy(node["Texture"].as<std::string>()));
+		m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->setRowColumn(
+			node["Row"].as<int>(), node["Column"].as<int>());
+		m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->getBounds()->setPosition(
+			node["Xpos"].as<float>(), node["Ypos"].as<float>()
+		);
+		m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->getSprite()->setPosition(
+			m_objectPlacement->m_enemies.at(m_objectPlacement->m_enemies.size() - 1)->getBounds()->getPosition());
+		std::cout << node["Xpos"].as<float>() << std::endl;
+	}
+
+	for (const auto& node : output["Item"]) {
+		m_objectPlacement->m_items.push_back(new Item(node["Texture"].as<std::string>()));
+		m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->setRowColumn(
+			node["Row"].as<int>(), node["Column"].as<int>());
+		m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->getBounds()->setPosition(
+			node["Xpos"].as<float>(), node["Ypos"].as<float>()
+		);
+		m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->getSprite()->setPosition(
+			m_objectPlacement->m_items.at(m_objectPlacement->m_items.size() - 1)->getBounds()->getPosition());
+		std::cout << node["Xpos"].as<float>() << std::endl;
+	}
+
+	for (const auto& node : output["Decoration"]) {
+		m_objectPlacement->m_decorations.push_back(new Decoration(node["Texture"].as<std::string>()));
+		m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->setRowColumn(
+			node["Row"].as<int>(), node["Column"].as<int>());
+		m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->getBounds()->setPosition(
+			node["Xpos"].as<float>(), node["Ypos"].as<float>()
+		);
+		m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->getSprite()->setPosition(
+			m_objectPlacement->m_decorations.at(m_objectPlacement->m_decorations.size() - 1)->getBounds()->getPosition());
+		std::cout << node["Xpos"].as<float>() << std::endl;
+	}
+
+	for (const auto& node : output["Wall"]) {
+		m_objectPlacement->m_walls.push_back(new Wall(node["Texture"].as<std::string>()));
+		m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->setRowColumn(
+			node["Row"].as<int>(), node["Column"].as<int>());
+		m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->setPosition(
+			node["Xpos"].as<float>(), node["Ypos"].as<float>()
+		);
+
+		m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getSprite()->setPosition(
+			m_objectPlacement->m_walls.at(m_objectPlacement->m_walls.size() - 1)->getBounds()->getPosition());
+
+		std::cout << node["Xpos"].as<float>() << std::endl;
+	}
+
+	for (const auto& node : output["GameName"]) {
+		m_saveGameScreen.setMainTitle(node["Name"].as<std::string>());
+		m_saveGameScreen.setMainTitleInputField(node["Name"].as<std::string>());
+		m_saveGameScreen.setMainItalics(node["Italics"].as<bool>());
+		m_saveGameScreen.setMainUnderlined(node["Underlined"].as<bool>());
+		m_saveGameScreen.setMainBold(node["Bold"].as<bool>());
+		m_saveGameScreen.setMainColor(node["Color Red Value"].as<int>(), node["Color Green Value"].as<int>(), node["Color Blue Value"].as<int>());
+
+	}
+
+	for (const auto& node : output["GameSubTitle"]) {
+		m_saveGameScreen.setSubTitle(node["Name"].as<std::string>());
+		m_saveGameScreen.setSubTitleInputField(node["Name"].as<std::string>());
+		m_saveGameScreen.setSubItalics(node["Italics"].as<bool>());
+		m_saveGameScreen.setSubUnderlined(node["Underlined"].as<bool>());
+		m_saveGameScreen.setSubBold(node["Bold"].as<bool>());
+		m_saveGameScreen.setSubColor(node["Color Red Value"].as<int>(), node["Color Green Value"].as<int>(), node["Color Blue Value"].as<int>());
+
+	}
+	m_gameState->setState(State::ROOM_PLACE_OBJECTS);
 }

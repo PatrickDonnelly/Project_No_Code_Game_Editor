@@ -12,13 +12,11 @@
 #include "Label.h"
 #include "Player.h"
 #include "Collision.h"
-#include "Obstacle.h"
 #include "Weapon.h"
 #include "UiBuildMode.h"
 #include "GameState.h"
 #include "DialogueBox.h"
 #include "TextEditor.h"
-#include "RoomCreation.h"
 #include "ObjectPlacement.h"
 #include "TextureManager.h"
 #include "FontManager.h"
@@ -45,7 +43,6 @@ private:
 	MainMenu m_mainMenu;
 	GameState* m_gameState;
 	Grid* m_grid{ nullptr };
-	RoomCreation* m_roomCreation{ nullptr };
 	ObjectPlacement* m_objectPlacement{ nullptr };
 	Player* m_player;
 	Collision m_checkCollision;
@@ -64,7 +61,8 @@ private:
 	void update(sf::Time t_deltaTime);
 	void render();
 	Object* m_currentObject{ nullptr };
-
+	void loadGameData();
+	void saveGameData();
 	sf::Font m_ArialFont;
 	sf::Text m_text;
 

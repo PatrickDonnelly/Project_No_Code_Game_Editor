@@ -154,13 +154,10 @@
     <ClInclude Include="Label.h" />
     <ClInclude Include="LevelList.h" />
     <ClInclude Include="MainMenu.h" />
-    <ClInclude Include="NPC.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectPlacement.h" />
-    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PopUp.h" />
-    <ClInclude Include="RoomCreation.h" />
     <ClInclude Include="SaveGame.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="TextEditor.h" />
@@ -195,13 +192,10 @@
     <ClCompile Include="LevelList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectPlacement.cpp" />
-    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PopUp.cpp" />
-    <ClCompile Include="RoomCreation.cpp" />
     <ClCompile Include="SaveGame.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="TextEditor.cpp" />

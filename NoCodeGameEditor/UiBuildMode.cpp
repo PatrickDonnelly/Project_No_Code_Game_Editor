@@ -226,12 +226,11 @@ void UiBuildMode::setUpTextureRoomButtons(sf::Font& t_arialFont)
 /// Reads in the names of all object types and stores them so buttons can be created for them
 /// Sets up the toggle buttons for grid and colliders on / off
 /// </summary>
-UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState, RoomCreation* t_roomCreation, ObjectPlacement* t_objectPlacement)
+UiBuildMode::UiBuildMode(sf::Font& t_arialFont, Grid* t_grid, GameState* t_currentGameState, ObjectPlacement* t_objectPlacement)
 {
 	m_gameState = t_currentGameState;
 	m_grid = t_grid;
 	m_objectPlacement = t_objectPlacement;
-	m_roomCreation = t_roomCreation;
 	m_arialFont = t_arialFont;
 	m_inspector = new Inspector(m_arialFont);
 	m_currentTab = TabState::TAB_DECORATIONS;
@@ -405,35 +404,6 @@ void UiBuildMode::processDialogueButtons(sf::Event t_event, sf::RenderWindow& t_
 	//}
 }
 
-void UiBuildMode::processBuildRoomButtonInput(sf::Event t_event, sf::RenderWindow& t_window)
-{
-	for (int i = 0; i < m_buildButtons.size(); i++)
-	{
-		if (m_buildButtons.at(i).getButtonSprite().getGlobalBounds().contains(t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window))))
-		{
-			m_buildButtons.at(i).highlighted();
-			if (t_event.type == sf::Event::MouseButtonReleased)
-			{
-				if (t_event.mouseButton.button == sf::Mouse::Left)
-				{
-
-					if (m_buildButtonLabels.at(i)->getTextString() == "Clear Grid")
-					{
-						m_grid->regenerateGrid();
-					}
-					else if (m_buildButtonLabels.at(i)->getTextString() == "Generate Room")
-					{
-						m_roomCreation->checkRoomValidity();
-					}
-				}
-			}
-		}
-		else
-		{
-			m_buildButtons.at(i).setButtonTexture();
-		}
-	}
-}
 
 /// <summary>
 /// deselects the currently selected button
@@ -478,7 +448,6 @@ void UiBuildMode::toggleGridAndColliders(sf::Event t_event, sf::RenderWindow& t_
 					else
 					{
 						m_grid->setCollidersEnabled();
-						m_roomCreation->setCollidersEnabled();
 						m_objectPlacement->setCollidersEnabled();
 					}
 				}

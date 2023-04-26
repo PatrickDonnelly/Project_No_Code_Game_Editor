@@ -5,18 +5,12 @@
 #include <SFML/Graphics.hpp>
 #include "Tile.h"
 #include "Colliders.h"
-#include "Obstacle.h"
 #include <iostream>
 #include <vector>
 #include <stdio.h>
 #include <list>
 #include <queue>
 #include "GameState.h"
-//#include "Enemy.h"
-//#include "Terrain.h"
-//#include "Wall.h"
-//#include "Item.h"
-//#include "Decoration.h"
 #include "TextureManager.h"
 
 

@@ -5,7 +5,6 @@
 #include <SFML/Graphics.hpp>
 #include "Tile.h"
 #include "Colliders.h"
-#include "Obstacle.h"
 #include <iostream>
 #include <vector>
 #include <stdio.h>
